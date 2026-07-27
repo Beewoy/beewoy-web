@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookies — Beewoy</title>
+<meta name="description" content="Informácie o cookies a podobných technológiách na webe Beewoy. Kategórie, účely a ako spravovať súhlas.">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#f3f0e8">
+<link rel="canonical" href="https://beewoy.sk/cookies.html">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preload" href="styles.css" as="style">
+<link rel="stylesheet" href="styles.css">
+<script>
+(() => {
+  try {
+    const c = JSON.parse(localStorage.getItem("beewoy_consent") || "null");
+    if (c && c.v === 1 && c.functional) {
+      const l = document.createElement("link");
+      l.rel = "stylesheet";
+      l.href = "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap";
+      document.head.appendChild(l);
+    }
+  } catch (_) {}
+})();
+</script>
+</head>
+<body>
+<a class="skip" href="#obsah">Preskočiť na obsah</a>
+
+<header class="header scrolled" id="siteHeader">
+  <div class="header-inner">
+    <a class="logo" href="index.html" aria-label="Beewoy — úvod">
+      <img src="logo.svg" alt="Beewoy logo" width="26" height="29">beewoy
+    </a>
+    <nav class="nav" aria-label="Hlavná navigácia">
+      <a href="index.html#sluzby">Čo robíme</a>
+      <a href="index.html#preco">Prečo beewoy</a>
+      <a href="index.html#kontakt">Kontakt</a>
+    </nav>
+    <a class="btn btn-primary legal-header-cta" href="index.html#kontakt">Začať projekt <span class="arrow">→</span></a>
+  </div>
+</header>
+
+<main id="obsah" class="legal-page">
+  <div class="wrap">
+    <p class="kicker">Právne informácie</p>
+    <h1>Cookies</h1>
+    <p class="legal-meta">Posledná aktualizácia: 27. 7. 2026. Tento dokument vysvetľuje, aké cookies a podobné technológie používa web Beewoy a ako môžete spravovať svoj súhlas v súlade s GDPR a pravidlami ePrivacy.</p>
+
+    <div class="legal-content">
+      <h2>1. Čo sú cookies</h2>
+      <p>Cookies sú malé textové súbory ukladané vo vašom zariadení. Podobné technológie zahŕňajú aj <code>localStorage</code>, service worker cache alebo identifikátory prehliadača. Niektoré sú nevyhnutné pre fungovanie webu, iné používame len so súhlasom.</p>
+
+      <h2>2. Ako spravovať súhlas</h2>
+      <p>Pri prvej návšteve zobrazíme lištu so súhlasom. Môžete:</p>
+      <ul>
+        <li><strong>Prijať všetko</strong> — aktivujú sa aj voliteľné kategórie,</li>
+        <li><strong>Len nevyhnutné</strong> — vypnú sa funkčné, analytické a marketingové,</li>
+        <li><strong>Nastavenia</strong> — vyberiete kategórie jednotlivo.</li>
+      </ul>
+      <p>Súhlas môžete kedykoľvek zmeniť cez tlačidlo <button type="button" data-cookie-settings style="all:unset;cursor:pointer;text-decoration:underline;font:inherit;color:inherit">Nastavenia cookies</button> v pätičke alebo cez plávajúce tlačidlo „Cookies“.</p>
+
+      <h2>3. Kategórie</h2>
+
+      <h3>3.1 Nevyhnutné</h3>
+      <p>Vždy aktívne. Zabezpečujú základnú funkčnosť webu a uloženie vášho rozhodnutia o cookies.</p>
+      <ul>
+        <li><strong>beewoy_consent</strong> (localStorage) — uloženie súhlasu a zvolených kategórií, platnosť do 12 mesiacov / do zmeny.</li>
+      </ul>
+
+      <h3>3.2 Funkčné (voliteľné)</h3>
+      <p>Zapnú sa len so súhlasom.</p>
+      <ul>
+        <li><strong>Google Fonts</strong> — načítanie typografie z domén Google. Pri načítaní môže dôjsť k prenosu IP adresy poskytovateľovi.</li>
+        <li><strong>PWA / service worker</strong> — lokálna cache súborov webu pre rýchlejšie načítanie a možnosť „Pridať na plochu“.</li>
+      </ul>
+
+      <h3>3.3 Analytické (voliteľné)</h3>
+      <p>Pripravené pre budúce meranie návštevnosti. <strong>Aktuálne nepoužívame</strong> žiadny analytický nástroj (napr. Google Analytics). Ak ho v budúcnosti zapneme, spustí sa až po vašom súhlase v tejto kategórii.</p>
+
+      <h3>3.4 Marketingové (voliteľné)</h3>
+      <p><strong>Aktuálne nepoužívame</strong> reklamné ani remarketingové cookies. Kategória je pripravená do budúcna a bez súhlasu sa nespustí.</p>
+
+      <h2>4. Obsah tretích strán na webe</h2>
+      <p>Externé odkazy v portfóliu (napr. na weby klientov) vedú na stránky tretích strán. Po kliknutí sa uplatňujú ich vlastné pravidlá spracovania údajov. Bližšie informácie o spracovaní údajov sú v <a href="ochrana-udajov.html">Ochrane osobných údajov</a>.</p>
+
+      <h2>5. Právny základ</h2>
+      <ul>
+        <li>Nevyhnutné technológie — oprávnený záujem / nevyhnutnosť na poskytnutie služby webu.</li>
+        <li>Funkčné, analytické a marketingové — súhlas (čl. 6 ods. 1 písm. a) GDPR).</li>
+      </ul>
+
+      <h2>6. Odvolanie súhlasu</h2>
+      <p>Súhlas môžete kedykoľvek odvolať v nastaveniach cookies. Po odvolaní funkčného súhlasu prestaneme načítavať Google Fonts a service worker môžeme odregistrovať. Už uložené dáta v prehliadači môžete vymazať aj vo svojich nastaveniach prehliadača.</p>
+
+      <h2>7. Kontakt</h2>
+      <p>Otázky k cookies: <a href="mailto:ahoj@beewoy.com">ahoj@beewoy.com</a>. Viac o spracovaní údajov: <a href="ochrana-udajov.html">Ochrana osobných údajov</a>.</p>
+
+      <p class="legal-note"><strong>Dôležité:</strong> Tento dokument popisuje aktuálny stav webu. Ak pridáte analytiku alebo reklamu, aktualizujte tabuľku cookies a zapnite načítanie skriptov až po súhlase v príslušnej kategórii.</p>
+    </div>
+  </div>
+</main>
+
+<section class="final" aria-label="Pätička">
+  <div class="wrap">
+    <footer class="footer">
+      <a class="logo" href="index.html"><img src="logo.svg" alt="Beewoy" width="26" height="29">beewoy</a>
+      <nav class="footer-links" aria-label="Pätičková navigácia">
+        <a href="index.html">Domov</a>
+        <a href="cookies.html">Cookies</a>
+        <a href="ochrana-udajov.html">Ochrana údajov</a>
+      </nav>
+      <span>© 2026 Beewoy</span>
+      <div class="footer-legal">
+        <button type="button" data-cookie-settings>Nastavenia cookies</button>
+      </div>
+    </footer>
+  </div>
+</section>
+
+<script src="cookies.js" defer></script>
+</body>
+</html>
