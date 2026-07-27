@@ -50,7 +50,7 @@ Potom otvor `http://localhost:3000` (alebo port zo `serve` / `http.server`).
 - Active nav (scroll-spy)
 - Cookie banner + nastavenia (nevyhnutné / funkčné / analytické / marketingové)
 - PWA (manifest + SW) — zapne sa až po **funkčnom** cookie súhlase
-- Google Fonts sa načítajú až po funkčnom súhlase
+- Google Fonts sa načítajú vždy (nie sú viazané na cookie súhlas)
 
 ### Portfólio (aktuálne)
 

@@ -1,8 +1,6 @@
 (() => {
   const CONSENT_KEY = "beewoy_consent";
   const CONSENT_VERSION = 1;
-  const FONT_HREF =
-    "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap";
 
   const defaultConsent = (overrides = {}) => ({
     v: CONSENT_VERSION,
@@ -31,24 +29,7 @@
     window.dispatchEvent(new CustomEvent("beewoy:consent", { detail: consent }));
   };
 
-  const loadFonts = () => {
-    if (document.getElementById("beewoyFonts")) return;
-    const pre1 = document.createElement("link");
-    pre1.rel = "preconnect";
-    pre1.href = "https://fonts.googleapis.com";
-    const pre2 = document.createElement("link");
-    pre2.rel = "preconnect";
-    pre2.href = "https://fonts.gstatic.com";
-    pre2.crossOrigin = "anonymous";
-    const link = document.createElement("link");
-    link.id = "beewoyFonts";
-    link.rel = "stylesheet";
-    link.href = FONT_HREF;
-    document.head.append(pre1, pre2, link);
-  };
-
   const applyConsent = (consent) => {
-    if (consent.functional) loadFonts();
     window.beewoyConsent = consent;
   };
 
@@ -199,7 +180,7 @@
               ]),
               el("span", {
                 className: "cookie-category-desc",
-                text: "Externé fonty (Google Fonts) a PWA / service worker pre rýchlejšie načítanie a možnosť pridania na plochu."
+                text: "PWA / service worker — rýchlejšie načítanie stránky a možnosť pridania na plochu zariadenia."
               })
             ]);
           })(),
@@ -283,10 +264,6 @@
       rejectOptional
     };
   };
-
-  // Early apply for returning visitors (fonts) before paint if script is deferred — also run sync sniff in head separately
-  const early = readConsent();
-  if (early?.functional) loadFonts();
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", init);

@@ -12,21 +12,11 @@
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" href="styles.css" as="style">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<script>
-(() => {
-  try {
-    const c = JSON.parse(localStorage.getItem("beewoy_consent") || "null");
-    if (c && c.v === 1 && c.functional) {
-      const l = document.createElement("link");
-      l.rel = "stylesheet";
-      l.href = "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap";
-      document.head.appendChild(l);
-    }
-  } catch (_) {}
-})();
-</script>
 </head>
 <body>
 <a class="skip" href="#obsah">Preskočiť na obsah</a>
@@ -75,9 +65,9 @@
       <h3>3.2 Funkčné (voliteľné)</h3>
       <p>Zapnú sa len so súhlasom.</p>
       <ul>
-        <li><strong>Google Fonts</strong> — načítanie typografie z domén Google. Pri načítaní môže dôjsť k prenosu IP adresy poskytovateľovi.</li>
         <li><strong>PWA / service worker</strong> — lokálna cache súborov webu pre rýchlejšie načítanie a možnosť „Pridať na plochu“.</li>
       </ul>
+      <p>Typografia (Google Fonts) sa načítava vždy — je súčasťou zobrazenia webu, nie voliteľných cookies.</p>
 
       <h3>3.3 Analytické (voliteľné)</h3>
       <p>Pripravené pre budúce meranie návštevnosti. <strong>Aktuálne nepoužívame</strong> žiadny analytický nástroj (napr. Google Analytics). Ak ho v budúcnosti zapneme, spustí sa až po vašom súhlase v tejto kategórii.</p>
@@ -95,7 +85,7 @@
       </ul>
 
       <h2>6. Odvolanie súhlasu</h2>
-      <p>Súhlas môžete kedykoľvek odvolať v nastaveniach cookies. Po odvolaní funkčného súhlasu prestaneme načítavať Google Fonts a service worker môžeme odregistrovať. Už uložené dáta v prehliadači môžete vymazať aj vo svojich nastaveniach prehliadača.</p>
+      <p>Súhlas môžete kedykoľvek odvolať v nastaveniach cookies. Po odvolaní funkčného súhlasu môžeme odregistrovať service worker. Už uložené dáta v prehliadači môžete vymazať aj vo svojich nastaveniach prehliadača.</p>
 
       <h2>7. Kontakt</h2>
       <p>Otázky k cookies: <a href="mailto:ahoj@beewoy.com">ahoj@beewoy.com</a>. Viac o spracovaní údajov: <a href="ochrana-udajov.html">Ochrana osobných údajov</a>.</p>

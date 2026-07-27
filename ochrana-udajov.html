@@ -12,21 +12,11 @@
 <link rel="icon" href="favicon.ico" sizes="any">
 <link rel="icon" href="icons/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" href="styles.css" as="style">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
-<script>
-(() => {
-  try {
-    const c = JSON.parse(localStorage.getItem("beewoy_consent") || "null");
-    if (c && c.v === 1 && c.functional) {
-      const l = document.createElement("link");
-      l.rel = "stylesheet";
-      l.href = "https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap";
-      document.head.appendChild(l);
-    }
-  } catch (_) {}
-})();
-</script>
 </head>
 <body>
 <a class="skip" href="#obsah">Preskočiť na obsah</a>
@@ -82,7 +72,7 @@
       <p>Údaje nepredávame. Môžu byť sprístupnené:</p>
       <ul>
         <li><strong>poskytovateľovi hostingu</strong> webu (prevádzka infraštruktúry),</li>
-        <li><strong>Google Fonts</strong> (Google Ireland / Google LLC) — iba ak udelíte súhlas s funkčnými cookies; pri načítaní fontov môže dôjsť k prenosu IP adresy,</li>
+        <li><strong>Google Fonts</strong> (Google Ireland / Google LLC) — načítanie typografie potrebnej na zobrazenie webu; pri načítaní môže dôjsť k prenosu IP adresy,</li>
         <li>ďalším subjektom, ak to vyžaduje zákon alebo je to potrebné na ochranu našich práv.</li>
       </ul>
       <p>Pri prenose mimo EÚ / EHP zabezpečíme primerané záruky podľa GDPR (napr. štandardné zmluvné doložky), ak je to relevantné.</p>
