@@ -115,62 +115,6 @@
   }, { passive: true });
   updateProcessSteps();
 
-  /* Work slider — add slides with class work-slide inside #workTrack */
-  const track = document.querySelector("#workTrack");
-  const prevBtn = document.querySelector("#workPrev");
-  const nextBtn = document.querySelector("#workNext");
-  const dotsWrap = document.querySelector("#workDots");
-
-  if (track && prevBtn && nextBtn && dotsWrap) {
-    let index = 0;
-    const slides = () => [...track.querySelectorAll(".work-slide")];
-
-    const buildDots = () => {
-      dotsWrap.innerHTML = "";
-      slides().forEach((_, i) => {
-        const dot = document.createElement("button");
-        dot.type = "button";
-        dot.className = "work-dot";
-        dot.setAttribute("aria-label", `Projekt ${i + 1}`);
-        if (i === index) dot.setAttribute("aria-current", "true");
-        dot.addEventListener("click", () => goTo(i));
-        dotsWrap.appendChild(dot);
-      });
-    };
-
-    const render = () => {
-      const total = slides().length;
-      track.style.transform = `translateX(-${index * 100}%)`;
-      prevBtn.disabled = index === 0;
-      nextBtn.disabled = index >= total - 1;
-      dotsWrap.querySelectorAll(".work-dot").forEach((dot, i) => {
-        if (i === index) dot.setAttribute("aria-current", "true");
-        else dot.removeAttribute("aria-current");
-      });
-    };
-
-    const goTo = (i) => {
-      const total = slides().length;
-      index = Math.max(0, Math.min(total - 1, i));
-      render();
-    };
-
-    prevBtn.addEventListener("click", () => goTo(index - 1));
-    nextBtn.addEventListener("click", () => goTo(index + 1));
-
-    let touchX = null;
-    track.addEventListener("touchstart", (e) => { touchX = e.changedTouches[0].clientX; }, { passive: true });
-    track.addEventListener("touchend", (e) => {
-      if (touchX == null) return;
-      const dx = e.changedTouches[0].clientX - touchX;
-      if (Math.abs(dx) > 40) goTo(index + (dx < 0 ? 1 : -1));
-      touchX = null;
-    }, { passive: true });
-
-    buildDots();
-    render();
-  }
-
   const registerSW = () => {
     if (!("serviceWorker" in navigator)) return;
     navigator.serviceWorker.register("/sw.js").catch(() => {});

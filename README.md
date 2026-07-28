@@ -28,7 +28,8 @@ Potom otvor `http://localhost:3000` (alebo port zo `serve` / `http.server`).
 | --- | --- |
 | `index.html` | Hlavná landing page |
 | `styles.css` | Všetky štýly |
-| `main.js` | Navigácia, scroll-spy, slider projektov, PWA registrácia |
+| `main.js` | Navigácia, scroll-spy, PWA registrácia |
+| `projects.js` | Dáta a render kariet referencií |
 | `cookies.js` | Cookie consent (GDPR / ePrivacy) |
 | `cookies.html` | Zásady cookies |
 | `ochrana-udajov.html` | Ochrana osobných údajov |
@@ -47,7 +48,7 @@ Potom otvor `http://localhost:3000` (alebo port zo `serve` / `http.server`).
 ## Čo stránka obsahuje
 
 - Hero + služby (webové sídlo, aplikácie, interné systémy, AI/automatizácie)
-- Prečo Beewoy, proces, projekty (slider), care, pricing, tím, FAQ, kontakt
+- Prečo Beewoy, proces, referencie (grid), care, pricing, tím, FAQ, kontakt
 - Active nav (scroll-spy)
 - Cookie banner + nastavenia (nevyhnutné / funkčné / analytické / marketingové)
 - PWA (manifest + SW) — zapne sa až po **funkčnom** cookie súhlase
@@ -58,15 +59,18 @@ Potom otvor `http://localhost:3000` (alebo port zo `serve` / `http.server`).
 1. [CeKo Interier](https://www.ceko.sk/) — `projects/ceko-hero.jpg`
 2. [Športový klub Vajnory](https://skvajnory.sk/) — `projects/skvajnory-hero.jpg`
 3. [BR Interior & Exterior](https://brinteriorexterior.netlify.app/en) — `projects/br-interior-hero.jpg`
+4. [Timio](https://timio.sk/) — `projects/timio-hero.jpg`
+
+Homepage zobrazí prvých **6** projektov z `projects.js`, stránka `/referencie/` všetky.
 
 ---
 
 ## Pridať nový projekt
 
 1. Ulož hero screenshot do `projects/` (ideálne JPG ~1600px široký).
-2. V `index.html` skopíruj ďalší `<article class="work-slide">` do `#workTrack`.
-3. Uprav názov, typ, popis a live odkaz.
-4. Slider dots sa generujú automaticky v `main.js`.
+2. Pridaj záznam do poľa `PROJECTS` v `projects.js` (`name`, `type`, `result`, `resultShort`, `image`, `alt`, `url`, `linkLabel`).
+3. Na stránke `/referencie/` doplň zodpovedajúci `CreativeWork` do JSON-LD v `<head>`.
+4. Homepage aj `/referencie/` si karty vyrenderujú automaticky z `projects.js`.
 
 ---
 

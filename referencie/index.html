@@ -87,6 +87,12 @@
       "name": "BR Interior & Exterior — webové sídlo",
       "creator": { "@id": "https://beewoy.sk/#organization" },
       "url": "https://brinteriorexterior.netlify.app/en"
+    },
+    {
+      "@type": "CreativeWork",
+      "name": "Timio — webová aplikácia",
+      "creator": { "@id": "https://beewoy.sk/#organization" },
+      "url": "https://timio.sk/"
     }
   ]
 }
@@ -115,46 +121,7 @@
     <h1>Práca, ktorá hovorí za nás.</h1>
     <p class="refs-lead">Funkčné webové sídla a produkty vytvorené pre konkrétny biznisový cieľ — nie obrázky do portfólia.</p>
 
-    <div class="refs-grid">
-      <article class="ref-project">
-        <div class="project-media">
-          <img src="../projects/ceko-hero.jpg" alt="Hero sekcia webu CeKo Interier — kuchyne a nábytok na mieru" width="1600" height="1312" loading="lazy" decoding="async">
-        </div>
-        <div class="project-info">
-          <div>
-            <h2>CeKo Interier</h2>
-            <span class="project-type">Webové sídlo · Interiéry na mieru</span>
-          </div>
-          <p class="project-result"><strong>Výsledok</strong>Moderná prezentácia stolárskej dielne so silným hero, jasnými službami (kuchyne, vstavané skrine, nábytok) a jednoduchou cestou k bezplatnej konzultácii. Live: <a href="https://www.ceko.sk/" rel="noopener noreferrer" target="_blank">ceko.sk</a></p>
-        </div>
-      </article>
-
-      <article class="ref-project">
-        <div class="project-media">
-          <img src="../projects/skvajnory-hero.jpg" alt="Hero sekcia webu Športový klub Vajnory — hokejbal Bratislava" width="1600" height="1312" loading="lazy" decoding="async">
-        </div>
-        <div class="project-info">
-          <div>
-            <h2>Športový klub Vajnory</h2>
-            <span class="project-type">Webové sídlo · Športový klub</span>
-          </div>
-          <p class="project-result"><strong>Výsledok</strong>Komunitný web pre hokejbal a areál Alviano — členstvo, tréningy, tréneri a kontakt na jednom mieste. Čitateľná štruktúra pre rodičov aj dospelých hráčov. Live: <a href="https://skvajnory.sk/" rel="noopener noreferrer" target="_blank">skvajnory.sk</a></p>
-        </div>
-      </article>
-
-      <article class="ref-project">
-        <div class="project-media">
-          <img src="../projects/br-interior-hero.jpg" alt="Hero sekcia webu BR Interior &amp; Exterior — luxury interior design" width="1600" height="1312" loading="lazy" decoding="async">
-        </div>
-        <div class="project-info">
-          <div>
-            <h2>BR Interior &amp; Exterior</h2>
-            <span class="project-type">Webové sídlo · Interiérový dizajn · EN/FR/PL</span>
-          </div>
-          <p class="project-result"><strong>Výsledok</strong>Prémiové viacjazyčné sídlo pre európske stolárske a dizajnové štúdio — služby, projekty a proces od konceptu po montáž. Live: <a href="https://brinteriorexterior.netlify.app/en" rel="noopener noreferrer" target="_blank">brinteriorexterior.netlify.app</a></p>
-        </div>
-      </article>
-    </div>
+    <div class="refs-cards" data-refs-mount="page" data-asset-base="../"></div>
 
     <section class="refs-cta" aria-labelledby="refs-cta-title">
       <h2 id="refs-cta-title">Máte podobný projekt?</h2>
@@ -183,6 +150,7 @@
   </div>
 </section>
 
+<script src="../projects.js" defer></script>
 <script src="../cookies.js" defer></script>
 </body>
 </html>

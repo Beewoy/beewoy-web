@@ -361,55 +361,9 @@
         <p class="reveal">Nie obrázky do portfólia. Funkčné webové sídla a produkty vytvorené pre konkrétny biznisový cieľ.</p>
       </div>
 
-      <div class="work-controls reveal" aria-label="Ovládanie referencií">
-        <button type="button" class="work-nav-btn" id="workPrev" aria-label="Predchádzajúca referencia">←</button>
-        <button type="button" class="work-nav-btn" id="workNext" aria-label="Ďalšia referencia">→</button>
-        <div class="work-dots" id="workDots" role="tablist" aria-label="Referencie"></div>
-      </div>
-
-      <div class="work-slider reveal" id="workSlider">
-        <!-- Nový projekt: skopíruj ďalší <article class="work-slide"> do #workTrack -->
-        <div class="work-track" id="workTrack">
-          <article class="work-slide" data-project>
-            <div class="project-media">
-              <img src="projects/ceko-hero.jpg" alt="Hero sekcia webu CeKo Interier — kuchyne a nábytok na mieru" width="1600" height="1312" loading="lazy" decoding="async">
-            </div>
-            <div class="project-info">
-              <div>
-                <h3>CeKo Interier</h3>
-                <span class="project-type">Webové sídlo · Interiéry na mieru</span>
-              </div>
-              <p class="project-result"><strong>Výsledok</strong>Moderná prezentácia stolárskej dielne so silným hero, jasnými službami (kuchyne, vstavané skrine, nábytok) a jednoduchou cestou k bezplatnej konzultácii. Live: <a href="https://www.ceko.sk/" rel="noopener noreferrer" target="_blank">ceko.sk</a></p>
-            </div>
-          </article>
-          <article class="work-slide" data-project>
-            <div class="project-media">
-              <img src="projects/skvajnory-hero.jpg" alt="Hero sekcia webu Športový klub Vajnory — hokejbal Bratislava" width="1600" height="1312" loading="lazy" decoding="async">
-            </div>
-            <div class="project-info">
-              <div>
-                <h3>Športový klub Vajnory</h3>
-                <span class="project-type">Webové sídlo · Športový klub</span>
-              </div>
-              <p class="project-result"><strong>Výsledok</strong>Komunitný web pre hokejbal a areál Alviano — členstvo, tréningy, tréneri a kontakt na jednom mieste. Čitateľná štruktúra pre rodičov aj dospelých hráčov. Live: <a href="https://skvajnory.sk/" rel="noopener noreferrer" target="_blank">skvajnory.sk</a></p>
-            </div>
-          </article>
-          <article class="work-slide" data-project>
-            <div class="project-media">
-              <img src="projects/br-interior-hero.jpg" alt="Hero sekcia webu BR Interior &amp; Exterior — luxury interior design" width="1600" height="1312" loading="lazy" decoding="async">
-            </div>
-            <div class="project-info">
-              <div>
-                <h3>BR Interior &amp; Exterior</h3>
-                <span class="project-type">Webové sídlo · Interiérový dizajn · EN/FR/PL</span>
-              </div>
-              <p class="project-result"><strong>Výsledok</strong>Prémiové viacjazyčné sídlo pre európske stolárske a dizajnové štúdio — služby, projekty a proces od konceptu po montáž. Live: <a href="https://brinteriorexterior.netlify.app/en" rel="noopener noreferrer" target="_blank">brinteriorexterior.netlify.app</a></p>
-            </div>
-          </article>
-        </div>
-      </div>
+      <div class="refs-cards reveal" data-refs-mount="home" data-asset-base="" data-limit="6"></div>
       <p class="refs-more">
-        <a class="text-link" href="referencie/">Zobraziť všetky referencie <span class="arrow">→</span></a>
+        <a class="text-link" href="referencie/">Pozrieť všetky referencie <span class="arrow">→</span></a>
       </p>
     </div>
   </section>
@@ -690,6 +644,7 @@
   </symbol>
 </svg>
 
+<script src="projects.js" defer></script>
 <script src="cookies.js" defer></script>
 <script src="main.js" defer></script>
 </body>
