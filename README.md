@@ -40,6 +40,7 @@ Potom otvor `http://localhost:3000` (alebo port zo `serve` / `http.server`).
 | `sw.js` | Service worker (cache shellu) |
 | `robots.txt` / `sitemap.xml` | SEO |
 | `scripts/generate-icons.py` | Regenerácia ikon a OG z `logo.svg` |
+| `signatures/` | E-mailové podpisy (David, Tibor) |
 
 ---
 
