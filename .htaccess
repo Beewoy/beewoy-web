@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# 301 from legacy .html URLs to clean trailing-slash paths
+RewriteRule ^referencie\.html$ /referencie/ [R=301,L]
+RewriteRule ^ochrana-udajov\.html$ /ochrana-udajov/ [R=301,L]
+RewriteRule ^cookies\.html$ /cookies/ [R=301,L]

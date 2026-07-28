@@ -118,7 +118,7 @@
           el("h2", { id: "cookieBannerTitle", text: "Používame nevyhnutné cookies a podľa vášho súhlasu aj ďalšie." }),
           el("p", {
             id: "cookieBannerText",
-            html: 'Aby sme boli v súlade s GDPR a ePrivacy, neukladáme nepovinné cookies bez vášho súhlasu. Viac v dokumentoch <a href="cookies.html">Cookies</a> a <a href="ochrana-udajov.html">Ochrana osobných údajov</a>.'
+            html: 'Aby sme boli v súlade s GDPR a ePrivacy, neukladáme nepovinné cookies bez vášho súhlasu. Viac v dokumentoch <a href="/cookies/">Cookies</a> a <a href="/ochrana-udajov/">Ochrana osobných údajov</a>.'
           })
         ]),
         el("div", { className: "cookie-banner-actions" }, [

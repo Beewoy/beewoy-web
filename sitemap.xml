@@ -2,16 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://beewoy.sk/</loc>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://beewoy.sk/ochrana-udajov.html</loc>
+    <loc>https://beewoy.sk/kontakt/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://beewoy.sk/referencie/</loc>
+    <lastmod>2026-07-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://beewoy.sk/ochrana-udajov/</loc>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://beewoy.sk/cookies.html</loc>
+    <loc>https://beewoy.sk/cookies/</loc>
+    <lastmod>2026-07-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>

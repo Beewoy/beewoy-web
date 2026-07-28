@@ -1,17 +1,25 @@
 /* Beewoy shell cache — offline-friendly PWA */
-const CACHE = "beewoy-v2";
-  const ASSETS = [
+const CACHE = "beewoy-v24";
+const ASSETS = [
   "./",
   "./index.html",
+  "./kontakt/",
+  "./kontakt/index.html",
+  "./referencie/",
+  "./referencie/index.html",
   "./styles.css",
   "./main.js",
   "./cookies.js",
   "./logo.svg",
   "./favicon.ico",
   "./og-image.png",
+  "./team/david-k-portrait-v2.webp",
+  "./team/tibor-a-portrait.webp",
   "./manifest.webmanifest",
-  "./cookies.html",
-  "./ochrana-udajov.html",
+  "./cookies/",
+  "./cookies/index.html",
+  "./ochrana-udajov/",
+  "./ochrana-udajov/index.html",
   "./icons/favicon.svg",
   "./icons/apple-touch-icon.png",
   "./icons/icon-192.png",
@@ -34,12 +42,35 @@ self.addEventListener("activate", (event) => {
   );
 });
 
+function isHtmlNavigation(request) {
+  if (request.mode === "navigate") return true;
+  const accept = request.headers.get("accept") || "";
+  return accept.includes("text/html");
+}
+
 self.addEventListener("fetch", (event) => {
   if (event.request.method !== "GET") return;
 
   const url = new URL(event.request.url);
   if (url.origin !== self.location.origin) return;
 
+  // HTML: network-first so deploys show up promptly
+  if (isHtmlNavigation(event.request)) {
+    event.respondWith(
+      fetch(event.request)
+        .then((response) => {
+          if (response && response.ok) {
+            const clone = response.clone();
+            caches.open(CACHE).then((cache) => cache.put(event.request, clone));
+          }
+          return response;
+        })
+        .catch(() => caches.match(event.request).then((cached) => cached || caches.match("./index.html")))
+    );
+    return;
+  }
+
+  // Static assets: cache-first
   event.respondWith(
     caches.match(event.request).then((cached) => {
       const network = fetch(event.request)
