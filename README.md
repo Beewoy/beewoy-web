@@ -35,7 +35,8 @@ Potom otvor `http://localhost:3000` (alebo port zo `serve` / `http.server`).
 | `ochrana-udajov.html` | Ochrana osobných údajov |
 | `logo.svg` | Logo značky |
 | `icons/` | Favicony + PWA ikony |
-| `projects/` | Screenshoty hero sekcií klientov |
+| `assets/projects/` | Screenshoty hero sekcií klientov |
+| `projects/<slug>/` | HTML náhľady stránok (`index.html` → `/projects/<slug>/`) |
 | `og-image.png` | Open Graph obrázok (1200×630) |
 | `manifest.webmanifest` | PWA manifest |
 | `sw.js` | Service worker (cache shellu) |
@@ -56,10 +57,10 @@ Potom otvor `http://localhost:3000` (alebo port zo `serve` / `http.server`).
 
 ### Portfólio (aktuálne)
 
-1. [CeKo Interier](https://www.ceko.sk/) — `projects/ceko-hero.jpg`
-2. [Športový klub Vajnory](https://skvajnory.sk/) — `projects/skvajnory-hero.jpg`
-3. [BR Interior & Exterior](https://brinteriorexterior.netlify.app/en) — `projects/br-interior-hero.jpg`
-4. [Timio](https://timio.sk/) — `projects/timio-hero.jpg`
+1. [CeKo Interier](https://www.ceko.sk/) — `assets/projects/ceko-hero.jpg`
+2. [Športový klub Vajnory](https://skvajnory.sk/) — `assets/projects/skvajnory-hero.jpg`
+3. [BR Interior & Exterior](https://brinteriorexterior.netlify.app/en) — `assets/projects/br-interior-hero.jpg`
+4. [Timio](https://timio.sk/) — `assets/projects/timio-hero.jpg`
 
 Homepage zobrazí prvých **6** projektov z `projects.js`, stránka `/referencie/` všetky.
 
@@ -67,10 +68,11 @@ Homepage zobrazí prvých **6** projektov z `projects.js`, stránka `/referencie
 
 ## Pridať nový projekt
 
-1. Ulož hero screenshot do `projects/` (ideálne JPG ~1600px široký).
-2. Pridaj záznam do poľa `PROJECTS` v `projects.js` (`name`, `type`, `result`, `resultShort`, `image`, `alt`, `url`, `linkLabel`).
-3. Na stránke `/referencie/` doplň zodpovedajúci `CreativeWork` do JSON-LD v `<head>`.
-4. Homepage aj `/referencie/` si karty vyrenderujú automaticky z `projects.js`.
+1. Ulož hero screenshot do `assets/projects/` (ideálne JPG ~1600px široký).
+2. Prípadný HTML náhľad stránky daj do `projects/<slug>/`.
+3. Pridaj záznam do poľa `PROJECTS` v `projects.js` (`name`, `type`, `result`, `resultShort`, `image`, `alt`, `url`, `linkLabel`).
+4. Na stránke `/referencie/` doplň zodpovedajúci `CreativeWork` do JSON-LD v `<head>`.
+5. Homepage aj `/referencie/` si karty vyrenderujú automaticky z `projects.js`.
 
 ---
 
