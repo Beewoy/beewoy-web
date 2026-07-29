@@ -938,10 +938,11 @@ h1, h2, h3 {
   padding: 15px 14px 16px;
   border: 1px solid rgba(255,255,255,.15);
   background: rgba(255,255,255,.025);
-  animation: cmsFieldFocus 7.2s ease-in-out infinite;
+  animation: cmsFieldFocus 9.6s ease-in-out infinite;
 }
 .cms-field:nth-child(2) { animation-delay: 2.4s; }
 .cms-field:nth-child(3) { animation-delay: 4.8s; }
+.cms-field:nth-child(4) { animation-delay: 7.2s; }
 .cms-field::after {
   content: "";
   position: absolute;
@@ -950,10 +951,11 @@ h1, h2, h3 {
   background: var(--yellow);
   transform: scaleX(0);
   transform-origin: left;
-  animation: cmsFieldLine 7.2s ease-in-out infinite;
+  animation: cmsFieldLine 9.6s ease-in-out infinite;
 }
 .cms-field:nth-child(2)::after { animation-delay: 2.4s; }
 .cms-field:nth-child(3)::after { animation-delay: 4.8s; }
+.cms-field:nth-child(4)::after { animation-delay: 7.2s; }
 .cms-field > span {
   color: #77746e;
   font: 600 .61rem/1 "Manrope", sans-serif;
@@ -968,6 +970,7 @@ h1, h2, h3 {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+.cms-field:first-child strong { white-space: normal; }
 .cms-field-media > div {
   display: flex;
   align-items: center;
@@ -1064,29 +1067,39 @@ h1, h2, h3 {
   font: 600 clamp(1.45rem, 2.2vw, 2.1rem)/.98 "Manrope", sans-serif;
   letter-spacing: -.055em;
 }
-.cms-preview-copy > span {
+.cms-preview-description {
   position: relative;
   z-index: 1;
   color: var(--muted);
   font-size: .65rem;
 }
-.cms-preview-copy > i {
+.cms-preview-button {
   position: relative;
   z-index: 1;
-  width: 76px;
-  height: 26px;
+  min-height: 28px;
   margin-top: 24px;
+  padding: 0 9px;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
   background: var(--ink);
+  color: var(--paper);
+  font: 700 .47rem/1 "Manrope", sans-serif;
+  white-space: nowrap;
 }
-.cms-preview-copy > i::after {
+.cms-preview-button::before {
   content: "";
-  display: block;
-  width: 100%;
+  position: absolute;
+  inset: auto 0 0;
   height: 2px;
   background: var(--yellow);
   transform: scaleX(0);
   transform-origin: left;
-  animation: cmsPreviewPublish 7.2s var(--ease) infinite;
+  animation: cmsPreviewPublish 9.6s var(--ease) infinite;
+}
+.cms-preview-button::after {
+  content: "→";
+  font-size: .62rem;
 }
 @keyframes cmsSavedPulse {
   0%, 100% { opacity: .55; transform: scale(.85); }
@@ -1580,5 +1593,5 @@ body.cookie-modal-open { overflow: hidden; }
   .cms-save-state i,
   .cms-field,
   .cms-field::after,
-  .cms-preview-copy > i::after { animation: none !important; }
+  .cms-preview-button::before { animation: none !important; }
 }
