@@ -5,7 +5,7 @@
     {
       slug: "ceko",
       name: "CeKo Interier",
-      type: "Webové sídlo · Interiéry na mieru",
+      type: "Webová stránka · Interiéry na mieru",
       result:
         "Moderná prezentácia stolárskej dielne so silným hero, jasnými službami (kuchyne, vstavané skrine, nábytok) a jednoduchou cestou k bezplatnej konzultácii.",
       resultShort:
@@ -18,7 +18,7 @@
     {
       slug: "skvajnory",
       name: "Športový klub Vajnory",
-      type: "Webové sídlo · Športový klub",
+      type: "Webová stránka · Športový klub",
       result:
         "Komunitný web pre hokejbal a areál Alviano — členstvo, tréningy, tréneri a kontakt na jednom mieste. Čitateľná štruktúra pre rodičov aj dospelých hráčov.",
       resultShort:
@@ -31,11 +31,11 @@
     {
       slug: "br-interior",
       name: "BR Interior & Exterior",
-      type: "Webové sídlo · Interiérový dizajn · EN/FR/PL",
+      type: "Webová stránka · Interiérový dizajn · EN/FR/PL",
       result:
-        "Prémiové viacjazyčné sídlo pre európske stolárske a dizajnové štúdio — služby, projekty a proces od konceptu po montáž.",
+        "Prémiová viacjazyčná stránka pre európske stolárske a dizajnové štúdio — služby, projekty a proces od konceptu po montáž.",
       resultShort:
-        "Prémiové viacjazyčné sídlo od konceptu po montáž.",
+        "Prémiová viacjazyčná stránka od konceptu po montáž.",
       image: "projects/br-interior-hero.jpg",
       alt: "Hero sekcia webu BR Interior & Exterior — luxury interior design",
       url: "https://brinteriorexterior.netlify.app/en",
@@ -59,7 +59,7 @@
     {
       slug: "magic-ranch",
       name: "Magic Ranch Čáry",
-      type: "Webové sídlo · Jazdecký areál",
+      type: "Webová stránka · Jazdecký areál",
       result:
         "Pokojná a autentická prezentácia jazdeckého areálu v Čároch — ustajnenie koní, jazdecký výcvik, tábory a zážitky pre deti aj dospelých.",
       resultShort:
@@ -72,7 +72,7 @@
     {
       slug: "jessu-redizajn",
       name: "Autoservis JESSU",
-      type: "Webové sídlo · Autoservis a pneuservis",
+      type: "Webová stránka · Autoservis a pneuservis",
       result:
         "Výrazný redizajn webu pre autoservis a pneuservis v Holíči — služby, dôvody na výber, kontakt a priama cesta k rezervácii termínu.",
       resultShort:
@@ -85,7 +85,7 @@
     {
       slug: "vyskladaj-redesign",
       name: "Vyskladaj",
-      type: "Webové sídlo · Pekáreň a catering",
+      type: "Webová stránka · Pekáreň a catering",
       result:
         "Hrejivá prezentácia pekárne a kaviarne v Ružinove — čerstvé pečivo, raňajkové krabičky, catering a jednoduché objednanie ponuky.",
       resultShort:
@@ -98,7 +98,7 @@
     {
       slug: "club-bar-brodske",
       name: "Club Bar Brodské",
-      type: "Webové sídlo · Bar a kaviareň",
+      type: "Webová stránka · Bar a kaviareň",
       result:
         "Atmosférický web pre lokálny bar a kaviareň v Brodskom — ponuka, galéria, rezervácia stola a spojenie dennej kávy s večerným programom.",
       resultShort:
@@ -111,7 +111,7 @@
     {
       slug: "due-fratelli-redesign",
       name: "Due Fratelli",
-      type: "Webové sídlo · Motocykle a servis",
+      type: "Webová stránka · Motocykle a servis",
       result:
         "Dynamický redizajn pre predajcu motocyklov, skútrov a štvorkoliek — skladové vozidlá, servis, predajne a výrazná cesta ku kontaktu.",
       resultShort:
@@ -124,7 +124,7 @@
     {
       slug: "rutyvet-redizajn",
       name: "RutyVet",
-      type: "Webové sídlo · Veterinárna ambulancia",
+      type: "Webová stránka · Veterinárna ambulancia",
       result:
         "Dôveryhodná prezentácia veterinárnej ambulancie v Karlovej Vsi — služby, tím, ordinačné hodiny a jednoduchá žiadosť o termín.",
       resultShort:
@@ -137,9 +137,9 @@
     {
       slug: "lesteniecom",
       name: "Leštenie.com",
-      type: "Webové sídlo · Renovácia svetlometov",
+      type: "Webová stránka · Renovácia svetlometov",
       result:
-        "Konverzne orientované webové sídlo pre profesionálne leštenie a renováciu svetlometov v Bratislave — služby, cenník, ukážky práce a jednoduchá cesta k cenovej ponuke.",
+        "Konverzne orientovaná webová stránka pre profesionálne leštenie a renováciu svetlometov v Bratislave — služby, cenník, ukážky práce a jednoduchá cesta k cenovej ponuke.",
       resultShort:
         "Výrazná prezentácia renovácie svetlometov s jasnou cestou k objednávke.",
       image: "projects/lesteniecom-hero.jpg",

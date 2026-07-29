@@ -107,7 +107,7 @@ def main() -> None:
     draw.text((text_x, 210), "beewoy", font=load_font(92, True), fill=INK[:3])
     draw.rectangle((text_x, 318, text_x + 72, 322), fill=YELLOW[:3])
     draw.text((text_x, 350), "Softvér na mieru, ktorý posúva biznis.", font=load_font(34), fill=(80, 78, 72))
-    draw.text((text_x, 410), "Webové sídla · Aplikácie · Interné systémy · Slovensko", font=load_font(22), fill=(109, 106, 98))
+    draw.text((text_x, 410), "Webové stránky · Aplikácie · Interné systémy · Slovensko", font=load_font(22), fill=(109, 106, 98))
     og.convert("RGB").save(ROOT / "og-image.png", "PNG", optimize=True)
     print("Icons + og-image regenerated.")
 

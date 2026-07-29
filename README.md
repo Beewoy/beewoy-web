@@ -47,7 +47,7 @@ Potom otvor `http://localhost:3000` (alebo port zo `serve` / `http.server`).
 
 ## Čo stránka obsahuje
 
-- Hero + služby (webové sídlo, aplikácie, interné systémy, AI/automatizácie)
+- Hero + služby (webová stránka, aplikácie, interné systémy, AI/automatizácie)
 - Prečo Beewoy, proces, referencie (grid), care, pricing, tím, FAQ, kontakt
 - Active nav (scroll-spy)
 - Cookie banner + nastavenia (nevyhnutné / funkčné / analytické / marketingové)

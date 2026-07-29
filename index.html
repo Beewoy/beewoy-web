@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Beewoy — tvorba webov, aplikácií a softvéru na mieru</title>
-<meta name="description" content="Beewoy je malé softvérové štúdio zo Slovenska. Tvoríme webové sídla, webové aplikácie a interné systémy na mieru — priamo s vývojármi, bez agentúrnych medzičlánkov.">
+<meta name="description" content="Beewoy je malé softvérové štúdio zo Slovenska. Tvoríme webové stránky, webové aplikácie a interné systémy na mieru — priamo s vývojármi, bez agentúrnych medzičlánkov.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="author" content="Beewoy">
 <meta name="theme-color" content="#f3f0e8">
@@ -30,7 +30,7 @@
 <meta property="og:site_name" content="Beewoy">
 <meta property="og:url" content="https://beewoy.sk/">
 <meta property="og:title" content="Beewoy — softvér na mieru, ktorý posúva biznis">
-<meta property="og:description" content="Webové sídla, aplikácie a interné systémy. Pracujete priamo s dvoma skúsenými vývojármi zo Slovenska.">
+<meta property="og:description" content="Webové stránky, aplikácie a interné systémy. Pracujete priamo s dvoma skúsenými vývojármi zo Slovenska.">
 <meta property="og:image" content="https://beewoy.sk/og-image.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
@@ -39,14 +39,12 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Beewoy — softvér na mieru, ktorý posúva biznis">
-<meta name="twitter:description" content="Webové sídla, aplikácie a interné systémy. Priama spolupráca s vývojármi zo Slovenska.">
+<meta name="twitter:description" content="Webové stránky, aplikácie a interné systémy. Priama spolupráca s vývojármi zo Slovenska.">
 <meta name="twitter:image" content="https://beewoy.sk/og-image.png">
 <meta name="twitter:image:alt" content="Beewoy — softvér na mieru, ktorý posúva biznis">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="styles.css" as="style">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 
 <script type="application/ld+json">
@@ -66,7 +64,7 @@
       },
       "image": "https://beewoy.sk/og-image.png",
       "email": "ahoj@beewoy.sk",
-      "description": "Malé softvérové štúdio zo Slovenska. Tvoríme webové sídla, webové aplikácie a interné systémy na mieru.",
+      "description": "Malé softvérové štúdio zo Slovenska. Tvoríme webové stránky, webové aplikácie a interné systémy na mieru.",
       "areaServed": { "@type": "Country", "name": "Slovakia" },
       "sameAs": []
     },
@@ -85,7 +83,7 @@
       "name": "Beewoy — tvorba webov, aplikácií a softvéru na mieru",
       "isPartOf": { "@id": "https://beewoy.sk/#website" },
       "about": { "@id": "https://beewoy.sk/#organization" },
-      "description": "Beewoy tvorí webové sídla, webové aplikácie a interné systémy na mieru. Priama spolupráca s vývojármi zo Slovenska.",
+      "description": "Beewoy tvorí webové stránky, webové aplikácie a interné systémy na mieru. Priama spolupráca s vývojármi zo Slovenska.",
       "inLanguage": "sk-SK"
     },
     {
@@ -95,7 +93,7 @@
       "provider": { "@id": "https://beewoy.sk/#organization" },
       "areaServed": "SK",
       "serviceType": [
-        "Tvorba webových sídel",
+        "Tvorba webových stránok",
         "Vývoj webových aplikácií",
         "Interné systémy na mieru",
         "AI a automatizácie",
@@ -113,7 +111,7 @@
           "name": "Ako dlho trvá vytvorenie webu alebo aplikácie?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Menšie webové sídlo môže byť hotové za pár týždňov. Pri webových aplikáciách a interných systémoch závisí termín od rozsahu. Reálny harmonogram si odsúhlasíme ešte pred začiatkom spolupráce."
+            "text": "Menšia webová stránka môže byť hotová do 2 týždňov. Pri webových aplikáciách a interných systémoch závisí termín od rozsahu. Reálny harmonogram si odsúhlasíme ešte pred začiatkom spolupráce."
           }
         },
         {
@@ -192,10 +190,27 @@
     <div class="float-orb orb-1" aria-hidden="true"></div>
     <div class="float-orb orb-2" aria-hidden="true"></div>
     <div class="wrap hero-copy">
-      <p class="hero-label reveal"><i aria-hidden="true"></i> Softvérové štúdio · Slovensko</p>
+      <div class="hero-meta reveal">
+        <p class="hero-label"><i aria-hidden="true"></i> Softvérové štúdio · Slovensko</p>
+        <div class="hero-badges" aria-label="Informácie o spolupráci">
+          <span class="hero-badge">
+            <span class="availability-signal" aria-hidden="true"><i></i></span>
+            Prijímame nové projekty
+          </span>
+          <span class="hero-badge">
+            <span class="badge-shield" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 3 4.75 6v5.25c0 4.73 2.93 8.14 7.25 9.75 4.32-1.61 7.25-5.02 7.25-9.75V6L12 3Z"/>
+                <path d="m8.75 12 2.05 2.05 4.45-4.45"/>
+              </svg>
+            </span>
+            Garancia spokojnosti
+          </span>
+        </div>
+      </div>
       <h1 id="hero-title" class="reveal">Tvoríme digitálne produkty, <em>ktoré majú zmysel.</em></h1>
       <div class="hero-bottom reveal">
-        <p class="hero-lead">Webové sídla, webové aplikácie a interné systémy na mieru. Navrhujeme ich s rozumom a staviame tak, aby vášmu biznisu slúžili aj o pár rokov.</p>
+        <p class="hero-lead">Webové stránky, webové aplikácie a interné systémy na mieru. Navrhujeme ich s rozumom a staviame tak, aby vášmu biznisu slúžili aj o pár rokov.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="#kontakt">Povedzte nám o projekte <span class="arrow">→</span></a>
           <a class="btn" href="#referencie">Pozrieť referencie</a>
@@ -247,17 +262,17 @@
       <div class="services-intro">
         <div>
           <p class="kicker">Čo robíme</p>
-          <h2 class="section-title reveal" id="services-title">Od webového sídla po celý systém.</h2>
+          <h2 class="section-title reveal" id="services-title">Od webovej stránky po celý systém.</h2>
         </div>
         <p class="reveal">Technológia je nástroj, nie pointa. Softvér na mieru vyberáme podľa toho, čo má váš produkt reálne dosiahnuť.</p>
       </div>
       <div class="service-list">
         <article class="service reveal">
           <span class="icon service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-globe"/></svg></span>
-          <h3>Webové sídlo</h3>
+          <h3>Webová stránka</h3>
           <div class="service-copy">
             <p>Firemné stránky a produktové prezentácie, ktoré pôsobia dôveryhodne, načítajú sa rýchlo, sú pripravené na SEO a vedú návštevníkov k správnej akcii.</p>
-            <a class="text-link" href="#kontakt">Chcem nové webové sídlo <span class="arrow">→</span></a>
+            <a class="text-link" href="#kontakt">Chcem novú webovú stránku <span class="arrow">→</span></a>
           </div>
         </article>
         <article class="service reveal">
@@ -358,7 +373,7 @@
           <p class="kicker">Referencie</p>
           <h2 class="section-title reveal" id="work-title">Práca, ktorá hovorí za nás.</h2>
         </div>
-        <p class="reveal">Nie obrázky do portfólia. Funkčné webové sídla a produkty vytvorené pre konkrétny biznisový cieľ.</p>
+        <p class="reveal">Nie obrázky do portfólia. Funkčné webové stránky a produkty vytvorené pre konkrétny biznisový cieľ.</p>
       </div>
 
       <div class="refs-cards reveal" data-refs-mount="home" data-asset-base="" data-limit="6"></div>
@@ -368,20 +383,60 @@
     </div>
   </section>
 
-  <section class="section dark" aria-labelledby="care-title">
-    <div class="wrap care-grid">
-      <div class="care-copy">
-        <p class="kicker">Po spustení</p>
-        <h2 class="section-title reveal" id="care-title">Spustenie nie je koniec.</h2>
-        <p class="reveal">Web aj softvér sledujeme, udržiavame a posúvame ďalej. Rozsah podpory nastavíme podľa toho, čo skutočne potrebujete.</p>
+  <section class="section dark cms-care" aria-labelledby="cms-title">
+    <div class="wrap cms-care-grid">
+      <div class="cms-copy">
+        <p class="kicker">Jednoduchá správa obsahu</p>
+        <h2 class="section-title reveal" id="cms-title">Web, ktorý máte pod kontrolou.</h2>
+        <p class="cms-lead reveal">Texty, fotografie, referencie či novinky si upravíte sami v prehľadnom rozhraní. Bez zásahu do kódu a bez rizika, že narušíte dizajn.</p>
+        <ul class="cms-benefits reveal">
+          <li>Upravujete iba to, čo skutočne potrebujete</li>
+          <li>Zmeny vidíte ešte pred zverejnením</li>
+          <li>Staršie verzie zostávajú bezpečne dohľadateľné</li>
+        </ul>
+        <p class="cms-technology reveal">Pre jednoduché webové stránky preferujeme <strong>TinaCMS</strong>. Pri rozsiahlejších projektoch vyberieme riešenie podľa obsahu a spôsobu práce vášho tímu.</p>
+        <div class="cms-support reveal">
+          <strong>Keď nás potrebujete, zostávame.</strong>
+          <span>Hosting · bezpečnosť · výkon · nové funkcie</span>
+        </div>
       </div>
-      <div class="care-list reveal" aria-label="Možnosti ďalšej spolupráce">
-        <div class="care-item"><span class="icon care-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-shield-check"/></svg></span><span>Údržba a bezpečnosť</span></div>
-        <div class="care-item"><span class="icon care-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-plus-circle"/></svg></span><span>Nové funkcie</span></div>
-        <div class="care-item"><span class="icon care-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-server"/></svg></span><span>Hosting a monitoring</span></div>
-        <div class="care-item"><span class="icon care-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-gauge"/></svg></span><span>SEO a výkon</span></div>
-        <div class="care-item"><span class="icon care-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-message-circle"/></svg></span><span>Konzultácie</span></div>
-        <div class="care-item"><span class="icon care-item-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-arrow-up-right"/></svg></span><span>Postupné vylepšenia</span></div>
+
+      <div class="cms-editor reveal" aria-hidden="true">
+        <div class="cms-editor-bar">
+          <div class="cms-editor-title">
+            <span class="cms-editor-mark"></span>
+            Obsah webu
+          </div>
+          <span class="cms-save-state"><i></i> Uložené</span>
+        </div>
+        <div class="cms-editor-body">
+          <div class="cms-fields">
+            <div class="cms-field">
+              <span>Hlavný nadpis</span>
+              <strong>Tvoríme digitálne produkty</strong>
+            </div>
+            <div class="cms-field">
+              <span>Text tlačidla</span>
+              <strong>Povedzte nám o projekte</strong>
+            </div>
+            <div class="cms-field cms-field-media">
+              <span>Úvodný obrázok</span>
+              <div><i></i><strong>hero-produkt.webp</strong></div>
+            </div>
+          </div>
+          <div class="cms-preview">
+            <span class="cms-preview-label">Náhľad stránky</span>
+            <div class="cms-preview-page">
+              <div class="cms-preview-nav"><i></i><span></span><span></span><span></span></div>
+              <div class="cms-preview-copy">
+                <small>Digitálne produkty</small>
+                <strong>Tvoríme weby, ktoré majú zmysel.</strong>
+                <span>Od nápadu po funkčný produkt.</span>
+                <i></i>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -450,7 +505,7 @@
       <div class="faq-list">
         <details class="faq-item reveal">
           <summary>Ako dlho trvá vytvorenie webu alebo aplikácie?</summary>
-          <div class="faq-answer">Menšie webové sídlo môže byť hotové za pár týždňov. Pri webových aplikáciách a interných systémoch závisí termín od rozsahu. Reálny harmonogram si odsúhlasíme ešte pred začiatkom spolupráce.</div>
+          <div class="faq-answer">Menšia webová stránka môže byť hotová do 2 týždňov. Pri webových aplikáciách a interných systémoch závisí termín od rozsahu. Reálny harmonogram si odsúhlasíme ešte pred začiatkom spolupráce.</div>
         </details>
         <details class="faq-item reveal">
           <summary>Dokážete prevziať aj existujúci projekt?</summary>
@@ -512,7 +567,7 @@
   <section class="final" id="kontakt" aria-labelledby="contact-title">
     <div class="wrap">
       <p class="kicker">Máte projekt?</p>
-      <h2 class="reveal" id="contact-title">Poďme z neho spraviť niečo, čo <span>funguje.</span></h2>
+      <h2 class="reveal" id="contact-title">Poďme sa <span>porozprávať.</span></h2>
       <div class="contact-layout reveal">
         <p class="contact-intro">Stačí pár viet o webe, aplikácii alebo internom systéme. Ozveme sa, prejdeme možnosti a úprimne povieme, či vám vieme pomôcť.</p>
         <form class="contact-form" name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="kontakt-form">

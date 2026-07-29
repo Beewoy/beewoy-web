@@ -115,6 +115,76 @@
   }, { passive: true });
   updateProcessSteps();
 
+  /* Hero grid — cursor-reactive focus and snapped grid point */
+  const hero = document.querySelector(".hero");
+  const heroGrid = document.querySelector(".hero-grid");
+  const gridInteraction = window.matchMedia("(min-width: 901px) and (hover: hover) and (pointer: fine)");
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+  if (hero && heroGrid) {
+    const gridSize = 72;
+    let gridFrame = 0;
+    let pointerX = 0;
+    let pointerY = 0;
+    let gridPhaseX = 0;
+    let gridPhaseY = 0;
+
+    const readGridPhase = () => {
+      const drift = parseFloat(getComputedStyle(heroGrid).getPropertyValue("--grid-drift")) || 0;
+      gridPhaseX = drift;
+      gridPhaseY = drift;
+    };
+
+    const renderGridPointer = () => {
+      gridFrame = 0;
+      const rect = hero.getBoundingClientRect();
+      const x = Math.max(0, Math.min(rect.width, pointerX - rect.left));
+      const y = Math.max(0, Math.min(rect.height, pointerY - rect.top));
+      const snapX = Math.round((x - gridPhaseX) / gridSize) * gridSize + gridPhaseX;
+      const snapY = Math.round((y - gridPhaseY) / gridSize) * gridSize + gridPhaseY;
+
+      hero.style.setProperty("--grid-cursor-x", `${x}px`);
+      hero.style.setProperty("--grid-cursor-y", `${y}px`);
+      hero.style.setProperty("--grid-snap-x", `${snapX}px`);
+      hero.style.setProperty("--grid-snap-y", `${snapY}px`);
+    };
+
+    const resetGridPointer = () => {
+      hero.classList.remove("grid-active");
+      if (gridFrame) cancelAnimationFrame(gridFrame);
+      gridFrame = 0;
+    };
+
+    hero.addEventListener("pointerenter", (event) => {
+      if (!gridInteraction.matches || reducedMotion.matches) return;
+      pointerX = event.clientX;
+      pointerY = event.clientY;
+      hero.classList.add("grid-active");
+      readGridPhase();
+      renderGridPointer();
+    }, { passive: true });
+
+    hero.addEventListener("pointermove", (event) => {
+      if (!hero.classList.contains("grid-active")) {
+        if (!gridInteraction.matches || reducedMotion.matches) return;
+        hero.classList.add("grid-active");
+        readGridPhase();
+      }
+      pointerX = event.clientX;
+      pointerY = event.clientY;
+      if (gridFrame) return;
+      gridFrame = requestAnimationFrame(renderGridPointer);
+    }, { passive: true });
+
+    hero.addEventListener("pointerleave", resetGridPointer, { passive: true });
+    gridInteraction.addEventListener?.("change", (event) => {
+      if (!event.matches) resetGridPointer();
+    });
+    reducedMotion.addEventListener?.("change", (event) => {
+      if (event.matches) resetGridPointer();
+    });
+  }
+
   const registerSW = () => {
     if (!("serviceWorker" in navigator)) return;
     navigator.serviceWorker.register("/sw.js").catch(() => {});
