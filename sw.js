@@ -1,5 +1,5 @@
 /* Beewoy shell cache — offline-friendly PWA */
-const CACHE = "beewoy-v46";
+const CACHE = "beewoy-v49";
 const ASSETS = [
   "./",
   "./index.html",
@@ -7,6 +7,10 @@ const ASSETS = [
   "./kontakt/index.html",
   "./referencie/",
   "./referencie/index.html",
+  "./tvorba-webov/",
+  "./tvorba-webov/index.html",
+  "./tvorba-webov/hero-dark.css",
+  "./tvorba-webov/og-tvorba-webov.jpg",
   "./styles.css",
   "./fonts/manrope-latin.woff2",
   "./fonts/manrope-latin-ext.woff2",

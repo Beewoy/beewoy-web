@@ -116,13 +116,13 @@
   updateProcessSteps();
 
   /* Hero grid — cursor-reactive focus and snapped grid point */
-  const hero = document.querySelector(".hero");
-  const heroGrid = document.querySelector(".hero-grid");
   const gridInteraction = window.matchMedia("(min-width: 901px) and (hover: hover) and (pointer: fine)");
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const gridSize = 72;
 
-  if (hero && heroGrid) {
-    const gridSize = 72;
+  const bindHeroGrid = (hero, heroGrid) => {
+    if (!hero || !heroGrid) return;
+
     let gridFrame = 0;
     let pointerX = 0;
     let pointerY = 0;
@@ -183,7 +183,10 @@
     reducedMotion.addEventListener?.("change", (event) => {
       if (event.matches) resetGridPointer();
     });
-  }
+  };
+
+  bindHeroGrid(document.querySelector(".hero"), document.querySelector(".hero-grid"));
+  bindHeroGrid(document.querySelector(".web-hero"), document.querySelector(".web-hero-grid"));
 
   const registerSW = () => {
     if (!("serviceWorker" in navigator)) return;

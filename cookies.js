@@ -51,7 +51,6 @@
 
   let banner;
   let modal;
-  let fab;
   let checks = {};
 
   const hideBanner = () => {
@@ -84,7 +83,6 @@
     applyConsent(consent);
     hideBanner();
     closeModal();
-    if (fab) fab.hidden = false;
   };
 
   const acceptAll = () =>
@@ -221,17 +219,7 @@
       ])
     ]);
 
-    fab = el("button", {
-      type: "button",
-      className: "cookie-fab",
-      id: "cookieFab",
-      hidden: "true",
-      "aria-label": "Otvoriť nastavenia cookies",
-      text: "Cookies",
-      onClick: openModal
-    });
-
-    document.body.append(banner, modal, fab);
+    document.body.append(banner, modal);
 
     document.addEventListener("click", (event) => {
       const trigger = event.target.closest("[data-cookie-settings]");
@@ -252,7 +240,6 @@
     if (existing) {
       applyConsent(existing);
       hideBanner();
-      if (fab) fab.hidden = false;
     } else {
       showBanner();
     }

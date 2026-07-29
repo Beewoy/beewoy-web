@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tvorba webových stránok na mieru | Beewoy</title>
+<meta name="description" content="Tvorba webových stránok na mieru pre firmy, ktoré potrebujú dôveryhodný, rýchly a ľahko spravovateľný web. Priamo s vývojármi Beewoy.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="Beewoy">
+<meta name="theme-color" content="#151411">
+<meta name="geo.region" content="SK">
+<meta name="geo.placename" content="Slovensko">
+<link rel="canonical" href="https://beewoy.sk/tvorba-webov/">
+<link rel="manifest" href="../manifest.webmanifest">
+<link rel="icon" href="../favicon.ico" sizes="any">
+<link rel="icon" href="../icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="../icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../icons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../icons/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="sk_SK">
+<meta property="og:site_name" content="Beewoy">
+<meta property="og:url" content="https://beewoy.sk/tvorba-webov/">
+<meta property="og:title" content="Tvorba webových stránok na mieru | Beewoy">
+<meta property="og:description" content="Tvorba webových stránok na mieru pre firmy, ktoré potrebujú dôveryhodný, rýchly a ľahko spravovateľný web. Priamo s vývojármi Beewoy.">
+<meta property="og:image" content="https://beewoy.sk/tvorba-webov/og-tvorba-webov.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Beewoy — tvorba webových stránok na mieru">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Tvorba webových stránok na mieru | Beewoy">
+<meta name="twitter:description" content="Tvorba webových stránok na mieru pre firmy, ktoré potrebujú dôveryhodný, rýchly a ľahko spravovateľný web. Priamo s vývojármi Beewoy.">
+<meta name="twitter:image" content="https://beewoy.sk/tvorba-webov/og-tvorba-webov.jpg">
+<meta name="twitter:image:alt" content="Beewoy — tvorba webových stránok na mieru">
+
+<link rel="preload" href="../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="../styles.css" as="style">
+<link rel="stylesheet" href="../styles.css">
+<link rel="stylesheet" href="./hero-dark.css">
+<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://beewoy.sk/tvorba-webov/#webpage",
+      "url": "https://beewoy.sk/tvorba-webov/",
+      "name": "Tvorba webových stránok na mieru | Beewoy",
+      "description": "Tvorba firemných webových stránok, prezentačných webov, landing pages a redizajnov na mieru.",
+      "isPartOf": { "@id": "https://beewoy.sk/#website" },
+      "about": { "@id": "https://beewoy.sk/tvorba-webov/#service" },
+      "breadcrumb": { "@id": "https://beewoy.sk/tvorba-webov/#breadcrumb" },
+      "mainEntity": { "@id": "https://beewoy.sk/tvorba-webov/#service" },
+      "inLanguage": "sk-SK"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://beewoy.sk/tvorba-webov/#service",
+      "name": "Tvorba webových stránok na mieru",
+      "serviceType": "Tvorba webových stránok",
+      "description": "Návrh a tvorba firemných webov, prezentačných webov, landing pages a redizajnov s dôrazom na dizajn, rýchlosť, SEO, prístupnosť a jednoduchú správu obsahu.",
+      "url": "https://beewoy.sk/tvorba-webov/",
+      "provider": {
+        "@type": "Organization",
+        "@id": "https://beewoy.sk/#organization",
+        "name": "Beewoy",
+        "url": "https://beewoy.sk/",
+        "email": "ahoj@beewoy.sk"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Slovensko"
+      }
+    },
+    {
+      "@type": "Person",
+      "@id": "https://beewoy.sk/#david",
+      "name": "David",
+      "jobTitle": "Spoluzakladateľ · vývoj a technológie",
+      "worksFor": { "@id": "https://beewoy.sk/#organization" },
+      "image": "https://beewoy.sk/team/david-k-portrait-v2.webp",
+      "url": "https://beewoy.sk/tvorba-webov/#tim"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://beewoy.sk/#tibor",
+      "name": "Tibor",
+      "jobTitle": "Spoluzakladateľ · vývoj a technológie",
+      "worksFor": { "@id": "https://beewoy.sk/#organization" },
+      "image": "https://beewoy.sk/team/tibor-a-portrait.webp",
+      "url": "https://beewoy.sk/tvorba-webov/#tim"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://beewoy.sk/tvorba-webov/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Domov",
+          "item": "https://beewoy.sk/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Tvorba webov",
+          "item": "https://beewoy.sk/tvorba-webov/"
+        }
+      ]
+    },
+    {
+      "@type": "ItemList",
+      "@id": "https://beewoy.sk/tvorba-webov/#references",
+      "name": "Vybrané referencie",
+      "numberOfItems": 3,
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "CeKo Interier",
+          "url": "https://www.ceko.sk/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Timio",
+          "url": "https://timio.sk/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "BR Interior & Exterior",
+          "url": "https://brinteriorexterior.netlify.app/en"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://beewoy.sk/tvorba-webov/#faq-schema",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Koľko stojí tvorba webovej stránky?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cena závisí od cieľa, rozsahu, obsahu a funkcií webu. Po úvodnej konzultácii pripravíme zrozumiteľnú ponuku s jasne popísaným rozsahom. Nepredávame univerzálne balíčky ani nepridávame skryté položky."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Ako dlho trvá vytvorenie webu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Termín závisí od rozsahu stránky a pripravenosti podkladov. Pred začiatkom dostanete reálny harmonogram a počas práce budete vedieť, čo je hotové a čo nasleduje."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Musím dodať hotové texty a fotografie?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Nie nevyhnutne. Spoločne si určíme, aké podklady sú potrebné, pomôžeme s obsahovou štruktúrou a poradíme, čo pripraviť. Ak už texty a fotografie máte, pri návrhu ich vyhodnotíme a použijeme tam, kde fungujú."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Budem si vedieť obsah webu upravovať sám?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Áno. Ak web potrebuje pravidelné úpravy, pripravíme jednoduchú správu obsahu pre texty, fotografie, referencie alebo novinky. Rozhranie prispôsobíme tomu, čo budete skutočne meniť."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Je SEO súčasťou tvorby webu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Súčasťou je technický základ pre SEO: správna štruktúra, nadpisy a metadata, rýchlosť, responzivita, indexácia a štruktúrované dáta tam, kde dávajú zmysel. Samostatnú dlhodobú obsahovú alebo linkbuildingovú stratégiu riešime podľa dohody."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Viete zabezpečiť doménu a hosting?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Áno. Pomôžeme s výberom alebo nastavením domény a hostingu, nasadením webu, HTTPS aj základným technickým dohľadom. Ak už hosting máte, preveríme, či je pre nový web vhodný."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Čo sa deje po spustení webu?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Podľa dohody sa staráme o údržbu, bezpečnosť, výkon, úpravy obsahu a ďalší rozvoj. Poznáme technické pozadie projektu, takže pri zmene alebo probléme nezačíname od nuly."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Viete prerobiť aj existujúcu webovú stránku?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Áno. Najskôr posúdime súčasný web, obsah a technický stav. Potom odporučíme, či sa oplatí postupný redizajn, alebo bude čistejšie a efektívnejšie postaviť web nanovo."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body id="top" class="web-service-page web-landing-dark">
+<a class="skip" href="#obsah">Preskočiť na obsah</a>
+
+<header class="header" id="siteHeader">
+  <div class="header-inner">
+    <a class="logo" href="../" aria-label="Beewoy — domov">
+      <img src="../logo.svg" alt="Beewoy logo" width="26" height="29">beewoy
+    </a>
+    <nav class="nav" aria-label="Hlavná navigácia">
+      <a href="#co-ziskate">Čo získate</a>
+      <a href="#proces">Proces</a>
+      <a href="#referencie">Referencie</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-primary header-cta" href="#kontakt">Chcem nový web <span class="arrow">→</span></a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Otvoriť menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobilná navigácia">
+  <a href="#co-ziskate">Čo získate</a>
+  <a href="#proces">Proces</a>
+  <a href="#referencie">Referencie</a>
+  <a href="#faq">FAQ</a>
+  <a href="#kontakt">Chcem nový web</a>
+</nav>
+
+<main id="obsah" class="web-page">
+  <section class="web-hero" aria-labelledby="web-hero-title">
+    <div class="web-hero-grid" aria-hidden="true"></div>
+    <div class="wrap web-hero-layout">
+      <div class="web-hero-copy">
+        <nav class="breadcrumbs reveal" aria-label="Navigácia breadcrumbs">
+          <ol>
+            <li><a href="../">Domov</a></li>
+            <li aria-current="page">Tvorba webov</li>
+          </ol>
+        </nav>
+        <h1 id="web-hero-title" class="reveal">Tvorba webov, ktoré neostanú iba <em>peknou vizitkou.</em></h1>
+        <p class="web-hero-lead reveal">Navrhneme a vytvoríme rýchly, prístupný web na mieru, ktorý buduje dôveru a pomáha získavať zákazníkov. Priamo s vývojármi, bez agentúrnych medzičlánkov.</p>
+        <div class="hero-actions web-hero-actions reveal">
+          <a class="btn btn-primary" href="#kontakt">Chcem nový web <span class="arrow">→</span></a>
+          <a class="btn" href="#referencie">Pozrieť referencie</a>
+        </div>
+        <ul class="web-hero-proof reveal" aria-label="Na čom pri tvorbe webu záleží">
+          <li>Priamo s vývojármi</li>
+          <li>Web na mieru</li>
+          <li>SEO a výkon</li>
+          <li>Podpora po spustení</li>
+        </ul>
+      </div>
+
+      <div class="web-preview-cluster reveal" aria-hidden="true">
+        <div class="web-preview">
+          <div class="web-preview-toolbar">
+            <div class="web-preview-lights"><span></span><span></span><span></span></div>
+            <div class="web-preview-controls"><span>‹</span><span>›</span></div>
+            <div class="web-preview-address"><span class="web-preview-lock"></span><i>vášnovýweb.sk</i></div>
+            <span class="web-preview-more">•••</span>
+          </div>
+          <div class="web-preview-body">
+            <div class="web-preview-nav">
+              <strong><span></span>vaša značka</strong>
+              <div><span>Služby</span><span>O nás</span><span>Kontakt</span></div>
+            </div>
+            <div class="web-preview-hero">
+              <small>Jasná hodnota pre zákazníka</small>
+              <strong>Web, ktorý vysvetlí, presvedčí a privedie dopyt.</strong>
+              <span class="web-preview-line"></span>
+              <span class="web-preview-line short"></span>
+              <i>Chcem vedieť viac →</i>
+            </div>
+            <div class="web-preview-cards">
+              <div><i></i><strong>Jasný obsah</strong><span>Bez zbytočností</span></div>
+              <div><i></i><strong>Rýchly web</strong><span>Na každom zariadení</span></div>
+              <div><i></i><strong>Ľahká správa</strong><span>Obsah máte v rukách</span></div>
+            </div>
+          </div>
+        </div>
+        <ul class="web-preview-rail">
+          <li class="web-preview-badge">
+            <span class="web-preview-badge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </span>
+            <span class="web-preview-badge-copy">
+              <strong>Rýchly</strong>
+              <span>Optimalizovaný od začiatku</span>
+            </span>
+          </li>
+          <li class="web-preview-badge">
+            <span class="web-preview-badge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="7" r="1.4" fill="currentColor" stroke="none"/><path d="M12 10.5v3.5"/><path d="m9.2 20 2.8-6 2.8 6"/><path d="M8.5 14h7"/></svg>
+            </span>
+            <span class="web-preview-badge-copy">
+              <strong>Prístupný</strong>
+              <span>Použiteľný pre viac ľudí</span>
+            </span>
+          </li>
+          <li class="web-preview-badge">
+            <span class="web-preview-badge-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg>
+            </span>
+            <span class="web-preview-badge-copy">
+              <strong>Jednoduchý</strong>
+              <span>Obsah si upravíte sami</span>
+            </span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section web-gain" id="co-ziskate" aria-labelledby="offer-title">
+    <div class="wrap web-gain-layout">
+      <div class="web-gain-intro">
+        <p class="kicker">Čo získate</p>
+        <h2 class="section-title reveal" id="offer-title">Web od prvého nápadu po spustenie.</h2>
+        <p class="reveal">Pomôžeme so stratégiou, obsahom, dizajnom aj technickým riešením.</p>
+      </div>
+      <ul class="web-lined-list">
+        <li class="web-lined-item reveal">
+          <div class="web-lined-copy">
+            <h3>Smer a obsah</h3>
+            <p>Stratégia, štruktúra a jasná cesta návštevníka k dopytu.</p>
+          </div>
+        </li>
+        <li class="web-lined-item reveal">
+          <div class="web-lined-copy">
+            <h3>Dizajn a použiteľnosť</h3>
+            <p>UX/UI dizajn, responzivita a prístupnosť na každom zariadení.</p>
+          </div>
+        </li>
+        <li class="web-lined-item reveal">
+          <div class="web-lined-copy">
+            <h3>Vývoj na mieru</h3>
+            <p>Čistý technický základ s dôrazom na rýchlosť a výkon.</p>
+          </div>
+        </li>
+        <li class="web-lined-item reveal">
+          <div class="web-lined-copy">
+            <h3>SEO a meranie</h3>
+            <p>Technické SEO, správna indexácia a analytika dôležitých akcií.</p>
+          </div>
+        </li>
+        <li class="web-lined-item reveal">
+          <div class="web-lined-copy">
+            <h3>Jednoduchá správa</h3>
+            <p>CMS nastavené iba na obsah, ktorý budete skutočne meniť.</p>
+          </div>
+        </li>
+        <li class="web-lined-item reveal">
+          <div class="web-lined-copy">
+            <h3>Spustenie a podpora</h3>
+            <p>Nasadenie, kontrola a partner pre ďalšie úpravy a rozvoj.</p>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section web-kinds" id="ake-weby" aria-labelledby="kinds-title">
+    <div class="wrap">
+      <h2 class="kicker reveal" id="kinds-title">Aké weby tvoríme</h2>
+      <ul class="web-kind-list">
+        <li class="web-kind-item reveal">
+          <h3>Firemné weby</h3>
+          <p>Pre firmy, ktoré potrebujú dôveryhodne predstaviť služby, tím a skúsenosti. Jasná štruktúra, silný kontakt a obsah, ktorý buduje dôveru ešte pred prvým hovorom.</p>
+        </li>
+        <li class="web-kind-item reveal">
+          <h3>Weby pre služby a značky</h3>
+          <p>Pre odborníkov a značky, ktorých hodnota musí byť jasná na prvý pohľad. Odlišujeme vás od konkurencie bez zbytočného vizuálneho šumu.</p>
+        </li>
+        <li class="web-kind-item reveal">
+          <h3>Landing pages</h3>
+          <p>Pre konkrétnu službu, produkt alebo kampaň s jedným hlavným cieľom. Jedna jasná CTA, krátka cesta návštevníka a merateľný výsledok.</p>
+        </li>
+        <li class="web-kind-item reveal">
+          <h3>Redizajny webov</h3>
+          <p>Keď súčasný web už nezodpovedá značke, obsahu ani potrebám zákazníkov. Posúdime, čo zachovať (vrátane SEO), a čo postaviť nanovo čistejšie.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section dark" id="proces" aria-labelledby="process-title">
+    <div class="wrap process-layout">
+      <div class="process-sticky">
+        <p class="kicker">Ako vzniká nový web</p>
+        <h2 class="section-title reveal" id="process-title">Od prvého rozhovoru po ďalší rast.</h2>
+        <p class="reveal">Jasné kroky, priebežné ukážky a rozhodnutia vtedy, keď ich treba urobiť. Bez veľkého odhalenia až na konci.</p>
+      </div>
+      <div class="steps">
+        <article class="step reveal">
+          <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-message-circle"/></svg></span>
+          <h3>Úvodná konzultácia</h3>
+          <p>Prejdeme váš biznis, zákazníkov, súčasný stav a cieľ, ktorý má nový web splniť.</p>
+        </article>
+        <article class="step reveal">
+          <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-compass"/></svg></span>
+          <h3>Rozsah a ponuka</h3>
+          <p>Navrhneme vhodný rozsah, priority, harmonogram a zrozumiteľnú cenovú ponuku.</p>
+        </article>
+        <article class="step reveal">
+          <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-blocks"/></svg></span>
+          <h3>Štruktúra a obsah</h3>
+          <p>Rozložíme informácie do logickej cesty a pomôžeme určiť, čo má stránka komunikovať.</p>
+        </article>
+        <article class="step reveal">
+          <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-layout-grid"/></svg></span>
+          <h3>Dizajn a vývoj</h3>
+          <p>Vizuálny návrh premieňame na funkčný web a priebežne vám ukazujeme výsledok.</p>
+        </article>
+        <article class="step reveal">
+          <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-shield-check"/></svg></span>
+          <h3>Testovanie a spustenie</h3>
+          <p>Skontrolujeme zariadenia, rýchlosť, prístupnosť, SEO základ, formuláre a nasadenie.</p>
+        </article>
+        <article class="step reveal">
+          <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-heart-handshake"/></svg></span>
+          <h3>Podpora a rozvoj</h3>
+          <p>Po štarte vieme web udržiavať, vyhodnocovať a rozvíjať podľa nových potrieb.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section web-team" id="tim" aria-labelledby="team-title">
+    <div class="wrap">
+      <div class="team-intro">
+        <div>
+          <p class="kicker">Kto tvorí váš web</p>
+          <h2 class="section-title reveal" id="team-title">Ľudia, ktorých budete poznať po mene.</h2>
+        </div>
+        <p class="reveal">Web navrhujeme, vyvíjame a po spustení sa oň staráme osobne. Keď niečo riešite, hovoríte priamo s človekom, ktorý to vie zmeniť.</p>
+      </div>
+      <div class="team-grid">
+        <article class="person reveal">
+          <div class="person-portrait">
+            <picture>
+              <source srcset="../team/david-k-portrait-v2.webp" type="image/webp" sizes="(max-width: 600px) 180px, 270px">
+              <img src="../team/david-k-portrait-v2.png" alt="David, spoluzakladateľ Beewoy" width="1200" height="1200" sizes="(max-width: 600px) 180px, 270px" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="person-copy">
+            <h3>David</h3>
+            <p class="person-role">Spoluzakladateľ · vývoj a technológie</p>
+            <p class="person-note">Premieňa zložité požiadavky na weby, ktoré sú rýchle, zrozumiteľné a príjemné na používanie.</p>
+          </div>
+        </article>
+        <article class="person reveal">
+          <div class="person-portrait">
+            <picture>
+              <source srcset="../team/tibor-a-portrait.webp" type="image/webp" sizes="(max-width: 600px) 180px, 270px">
+              <img src="../team/tibor-a-portrait.png" alt="Tibor, spoluzakladateľ Beewoy" width="1200" height="1200" sizes="(max-width: 600px) 180px, 270px" loading="lazy" decoding="async">
+            </picture>
+          </div>
+          <div class="person-copy">
+            <h3>Tibor</h3>
+            <p class="person-role">Spoluzakladateľ · vývoj a technológie</p>
+            <p class="person-note">Stará sa o spoľahlivý technický základ, čisté riešenia a hladký chod webu aj po spustení.</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section web-references" id="referencie" aria-labelledby="references-title">
+    <div class="wrap">
+      <div class="work-top">
+        <div>
+          <p class="kicker">Vybrané referencie</p>
+          <h2 class="section-title reveal" id="references-title">Weby pre skutočné značky a ich zákazníkov.</h2>
+        </div>
+        <p class="reveal">Každý z nich má vlastný obsah, vizuálny charakter aj cieľ. Presne tak má podľa nás vyzerať web na mieru.</p>
+      </div>
+      <div class="refs-cards refs-cards--home reveal">
+        <a class="ref-card ref-card--home" href="https://www.ceko.sk/" rel="noopener noreferrer" target="_blank">
+          <div class="project-media">
+            <img src="../assets/projects/ceko-hero.jpg" alt="Hero sekcia webu CeKo Interier — kuchyne a nábytok na mieru" width="1600" height="1000" loading="lazy" decoding="async">
+          </div>
+          <div class="ref-card-body">
+            <h3 class="ref-card-title">CeKo Interier</h3>
+            <span class="project-type">Webová stránka · Interiéry na mieru</span>
+            <p class="ref-card-result">Moderná prezentácia stolárskej dielne so silným hero a jasnou cestou k konzultácii.</p>
+            <span class="ref-card-footer">ceko.sk <span class="arrow" aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="ref-card ref-card--home" href="https://timio.sk/" rel="noopener noreferrer" target="_blank">
+          <div class="project-media">
+            <img src="../assets/projects/timio-hero.jpg" alt="Hero sekcia Timio — aplikácia na organizáciu tréningov, zápasov a udalostí" width="1600" height="1000" loading="lazy" decoding="async">
+          </div>
+          <div class="ref-card-body">
+            <h3 class="ref-card-title">Timio</h3>
+            <span class="project-type">Webová aplikácia · SaaS · Šport a komunity</span>
+            <p class="ref-card-result">Organizácia tímových udalostí, účasti a komunikácie bez chaosu v skupinových chatoch.</p>
+            <span class="ref-card-footer">timio.sk <span class="arrow" aria-hidden="true">→</span></span>
+          </div>
+        </a>
+        <a class="ref-card ref-card--home" href="https://brinteriorexterior.netlify.app/en" rel="noopener noreferrer" target="_blank">
+          <div class="project-media">
+            <img src="../assets/projects/br-interior-hero.jpg" alt="Hero sekcia webu BR Interior &amp; Exterior — luxury interior design" width="1600" height="1000" loading="lazy" decoding="async">
+          </div>
+          <div class="ref-card-body">
+            <h3 class="ref-card-title">BR Interior &amp; Exterior</h3>
+            <span class="project-type">Webová stránka · Interiérový dizajn · EN/FR/PL</span>
+            <p class="ref-card-result">Prémiová viacjazyčná stránka od konceptu po montáž.</p>
+            <span class="ref-card-footer">brinteriorexterior.netlify.app <span class="arrow" aria-hidden="true">→</span></span>
+          </div>
+        </a>
+      </div>
+      <p class="refs-more">
+        <a class="text-link" href="../referencie/">Pozrieť všetky referencie <span class="arrow">→</span></a>
+      </p>
+    </div>
+  </section>
+
+  <section class="pricing web-pricing" aria-labelledby="price-title">
+    <div class="wrap pricing-grid">
+      <div>
+        <p class="kicker">Cena webovej stránky</p>
+        <h2 class="reveal" id="price-title">Férová cena podľa toho, čo má web dosiahnuť.</h2>
+      </div>
+      <div class="pricing-copy reveal">
+        <p>Konkrétnu cenu ovplyvňuje rozsah stránok, pripravenosť obsahu, jazykové verzie, funkcie, CMS a napojenia. Po úvodnej konzultácii dostanete ponuku s jasným rozsahom — bez fiktívnych balíčkov a skrytých položiek.</p>
+        <ul class="web-price-factors">
+          <li>Viete, čo je v cene</li>
+          <li>Viete, aký bude postup</li>
+          <li>Viete, čo dostanete pri odovzdaní</li>
+        </ul>
+        <a class="btn btn-primary" href="#kontakt">Požiadať o nezáväznú ponuku <span class="arrow">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark" id="faq" aria-labelledby="faq-title">
+    <div class="wrap faq-grid">
+      <div>
+        <p class="kicker">Časté otázky</p>
+        <h2 class="section-title reveal" id="faq-title">Čo je dobré vedieť pred začiatkom.</h2>
+      </div>
+      <div class="faq-list">
+        <details class="faq-item reveal">
+          <summary>Koľko stojí tvorba webovej stránky?</summary>
+          <div class="faq-answer">Cena závisí od cieľa, rozsahu, obsahu a funkcií webu. Po úvodnej konzultácii pripravíme zrozumiteľnú ponuku s jasne popísaným rozsahom. Nepredávame univerzálne balíčky ani nepridávame skryté položky.</div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Ako dlho trvá vytvorenie webu?</summary>
+          <div class="faq-answer">Termín závisí od rozsahu stránky a pripravenosti podkladov. Pred začiatkom dostanete reálny harmonogram a počas práce budete vedieť, čo je hotové a čo nasleduje.</div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Musím dodať hotové texty a fotografie?</summary>
+          <div class="faq-answer">Nie nevyhnutne. Spoločne si určíme, aké podklady sú potrebné, pomôžeme s obsahovou štruktúrou a poradíme, čo pripraviť. Ak už texty a fotografie máte, pri návrhu ich vyhodnotíme a použijeme tam, kde fungujú.</div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Budem si vedieť obsah webu upravovať sám?</summary>
+          <div class="faq-answer">Áno. Ak web potrebuje pravidelné úpravy, pripravíme jednoduchú správu obsahu pre texty, fotografie, referencie alebo novinky. Rozhranie prispôsobíme tomu, čo budete skutočne meniť.</div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Je SEO súčasťou tvorby webu?</summary>
+          <div class="faq-answer">Súčasťou je technický základ pre SEO: správna štruktúra, nadpisy a metadata, rýchlosť, responzivita, indexácia a štruktúrované dáta tam, kde dávajú zmysel. Samostatnú dlhodobú obsahovú alebo linkbuildingovú stratégiu riešime podľa dohody.</div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Viete zabezpečiť doménu a hosting?</summary>
+          <div class="faq-answer">Áno. Pomôžeme s výberom alebo nastavením domény a hostingu, nasadením webu, HTTPS aj základným technickým dohľadom. Ak už hosting máte, preveríme, či je pre nový web vhodný.</div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Čo sa deje po spustení webu?</summary>
+          <div class="faq-answer">Podľa dohody sa staráme o údržbu, bezpečnosť, výkon, úpravy obsahu a ďalší rozvoj. Poznáme technické pozadie projektu, takže pri zmene alebo probléme nezačíname od nuly.</div>
+        </details>
+        <details class="faq-item reveal">
+          <summary>Viete prerobiť aj existujúcu webovú stránku?</summary>
+          <div class="faq-answer">Áno. Najskôr posúdime súčasný web, obsah a technický stav. Potom odporučíme, či sa oplatí postupný redizajn, alebo bude čistejšie a efektívnejšie postaviť web nanovo.</div>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="final web-final" id="kontakt" aria-labelledby="contact-title">
+    <div class="wrap">
+      <p class="kicker">Nezáväzný dopyt</p>
+      <h2 class="reveal" id="contact-title">Váš nový web sa môže začať <span>jedným rozhovorom.</span></h2>
+      <div class="contact-layout reveal">
+        <div class="web-contact-copy">
+          <p class="contact-intro">Napíšte nám, čo dnes na vašom webe nefunguje alebo čo potrebujete vytvoriť. Prejdeme si možnosti a otvorene povieme, či a ako vám vieme pomôcť.</p>
+          <ul>
+            <li>Bezplatná úvodná konzultácia</li>
+            <li>Priamo s Davidom a Tiborom</li>
+            <li>Bez tlaku a zbytočných záväzkov</li>
+          </ul>
+        </div>
+        <form class="contact-form" name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="kontakt-form">
+          <input type="hidden" name="form-name" value="kontakt">
+          <p class="form-honeypot" aria-hidden="true">
+            <label>Neplňte toto pole: <input name="bot-field" tabindex="-1" autocomplete="off"></label>
+          </p>
+          <div class="form-field">
+            <label for="contact-name">Meno</label>
+            <input type="text" id="contact-name" name="meno" required autocomplete="name">
+          </div>
+          <div class="form-field">
+            <label for="contact-email">E-mail</label>
+            <input type="email" id="contact-email" name="email" required autocomplete="email">
+          </div>
+          <div class="form-field">
+            <label for="contact-type">Typ projektu</label>
+            <select id="contact-type" name="typ-projektu" required>
+              <option value="" disabled>— vyberte —</option>
+              <option value="Nový web / prezentácia" selected>Nový web / prezentácia</option>
+              <option value="Webová aplikácia na mieru">Webová aplikácia na mieru</option>
+              <option value="Integrácia / automatizácia">Integrácia / automatizácia</option>
+              <option value="SEO, výkon alebo servis">SEO, výkon alebo servis</option>
+              <option value="Prístupnosť webu">Prístupnosť webu</option>
+              <option value="Prevzatie existujúceho projektu">Prevzatie existujúceho projektu</option>
+              <option value="Iné / neviem zaradiť">Iné / neviem zaradiť</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="contact-message">Správa</label>
+            <textarea id="contact-message" name="sprava" rows="5" required placeholder="Čo má nový web zmeniť alebo zlepšiť?"></textarea>
+          </div>
+          <label class="form-consent">
+            <input type="checkbox" name="gdpr" value="súhlas" required>
+            <span>Súhlasím so spracovaním údajov podľa <a href="../ochrana-udajov/">Ochrany osobných údajov</a>.</span>
+          </label>
+          <div class="form-actions">
+            <button type="submit" class="btn btn-light">Nezáväzne odoslať dopyt <span class="arrow">→</span></button>
+          </div>
+          <p class="form-status" role="status" aria-live="polite" hidden></p>
+        </form>
+      </div>
+      <p class="contact-alt reveal">Radšej e-mail? Napíšte na <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a></p>
+      <footer class="footer">
+        <a class="logo" href="../"><img src="../logo.svg" alt="Beewoy" width="26" height="29">beewoy</a>
+        <nav class="footer-links" aria-label="Pätičková navigácia">
+          <a href="../">Domov</a>
+          <a href="./" aria-current="page">Tvorba webov</a>
+          <a href="../referencie/">Referencie</a>
+          <a href="../kontakt/">Kontakt</a>
+        </nav>
+        <span>© 2026 Beewoy · weby na mieru · Slovensko</span>
+        <div class="footer-legal">
+          <a href="../ochrana-udajov/">Ochrana údajov</a>
+          <a href="../cookies/">Cookies</a>
+          <button type="button" data-cookie-settings>Nastavenia cookies</button>
+        </div>
+      </footer>
+    </div>
+  </section>
+</main>
+
+<form name="kontakt" data-netlify="true" netlify-honeypot="bot-field" hidden>
+  <input type="hidden" name="form-name" value="kontakt">
+  <input name="bot-field">
+  <input name="meno">
+  <input name="email">
+  <input name="typ-projektu">
+  <textarea name="sprava"></textarea>
+  <input name="gdpr">
+</form>
+
+<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none">
+  <symbol id="icon-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>
+    <path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/>
+  </symbol>
+  <symbol id="icon-trending-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
+  </symbol>
+  <symbol id="icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
+  </symbol>
+  <symbol id="icon-layout-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/>
+  </symbol>
+  <symbol id="icon-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/>
+  </symbol>
+  <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
+  </symbol>
+  <symbol id="icon-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"/><circle cx="12" cy="12" r="10"/>
+  </symbol>
+  <symbol id="icon-blocks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <rect width="7" height="7" x="14" y="3" rx="1"/><path d="M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3"/>
+  </symbol>
+  <symbol id="icon-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
+  </symbol>
+  <symbol id="icon-heart-handshake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/><path d="m18 15-2-2"/><path d="m15 18-2-2"/>
+  </symbol>
+  <symbol id="icon-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>
+  </symbol>
+  <symbol id="icon-message-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
+  </symbol>
+</svg>
+
+<script src="../cookies.js" defer></script>
+<script src="../main.js" defer></script>
+</body>
+</html>

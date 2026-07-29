@@ -1,0 +1,288 @@
+/* Dark hero variant — scoped to /tvorba-webov/ only */
+.web-landing-dark {
+  --wh-bg: #151411;
+  --wh-bg-2: #1b1915;
+  --wh-text: #f5f1e8;
+  --wh-muted: #b8b3a9;
+  --wh-em: #a39f96;
+  --wh-border: rgba(255, 255, 255, .12);
+  --wh-border-strong: rgba(255, 255, 255, .35);
+  --wh-glow: rgba(241, 196, 15, .13);
+  --wh-glow-soft: rgba(241, 196, 15, .09);
+}
+
+/* Header — continues the dark hero */
+.web-landing-dark .header {
+  background: transparent;
+  border-bottom-color: transparent;
+  color: var(--wh-text);
+}
+.web-landing-dark .header.scrolled {
+  background: rgba(21, 20, 17, .88);
+  border-bottom-color: var(--wh-border);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+.web-landing-dark .logo {
+  color: var(--wh-text);
+}
+.web-landing-dark .nav a {
+  color: var(--wh-muted);
+}
+.web-landing-dark .nav a:hover,
+.web-landing-dark .nav a.active {
+  color: var(--wh-text);
+}
+.web-landing-dark .nav a:focus-visible {
+  outline-color: var(--yellow);
+}
+.web-landing-dark .burger {
+  border-color: var(--wh-border-strong);
+}
+.web-landing-dark .burger:hover {
+  border-color: var(--wh-text);
+  background: rgba(255, 255, 255, .04);
+}
+.web-landing-dark .burger span {
+  background: var(--wh-text);
+}
+.web-landing-dark .burger:focus-visible {
+  outline-color: var(--yellow);
+}
+
+/* Primary CTA — yellow on dark */
+.web-landing-dark .header-cta.btn-primary,
+.web-landing-dark .web-hero-actions .btn-primary {
+  background: var(--yellow);
+  color: var(--ink);
+  border-color: #e0b50e;
+  box-shadow: none;
+}
+.web-landing-dark .header-cta.btn-primary:hover,
+.web-landing-dark .web-hero-actions .btn-primary:hover {
+  background: #f6d34a;
+  color: var(--ink);
+  border-color: #f6d34a;
+  box-shadow: 0 10px 26px rgba(241, 196, 15, .28);
+}
+.web-landing-dark .header-cta.btn-primary:focus-visible,
+.web-landing-dark .web-hero-actions .btn-primary:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+.web-landing-dark .web-hero-actions .btn-primary::before {
+  background: conic-gradient(
+    from var(--cta-loop-angle),
+    transparent 0 74%,
+    rgba(21, 21, 21, .08) 80%,
+    rgba(21, 21, 21, .35) 91%,
+    transparent 100%
+  );
+}
+
+/* Secondary CTA */
+.web-landing-dark .web-hero-actions .btn:not(.btn-primary) {
+  background: transparent;
+  color: var(--wh-text);
+  border-color: var(--wh-border-strong);
+}
+.web-landing-dark .web-hero-actions .btn:not(.btn-primary):hover {
+  background: rgba(255, 255, 255, .06);
+  color: #fff;
+  border-color: rgba(255, 255, 255, .5);
+}
+.web-landing-dark .web-hero-actions .btn:not(.btn-primary):focus-visible {
+  outline: 3px solid var(--yellow);
+  outline-offset: 3px;
+}
+
+/* Mobile menu over dark hero */
+.web-landing-dark .mobile-menu {
+  background: var(--wh-bg);
+}
+.web-landing-dark .mobile-menu a {
+  color: var(--wh-muted);
+  border-bottom-color: var(--wh-border);
+}
+.web-landing-dark .mobile-menu a:hover,
+.web-landing-dark .mobile-menu a.active {
+  color: var(--wh-text);
+}
+.web-landing-dark .mobile-menu a:focus-visible {
+  outline-color: var(--yellow);
+}
+
+/* Hero surface */
+.web-landing-dark .web-hero {
+  color: var(--wh-text);
+  border-bottom: 1px solid var(--wh-border);
+  background:
+    radial-gradient(ellipse 48% 42% at 12% 58%, var(--wh-glow-soft), transparent 70%),
+    radial-gradient(ellipse 52% 48% at 86% 16%, var(--wh-glow), transparent 68%),
+    linear-gradient(180deg, var(--wh-bg-2) 0%, var(--wh-bg) 100%);
+}
+.web-landing-dark .web-hero-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .05) 1px, transparent 1px);
+  -webkit-mask-image:
+    radial-gradient(ellipse 88% 78% at 48% 40%, #000 22%, rgba(0, 0, 0, .55) 58%, transparent 82%);
+  mask-image:
+    radial-gradient(ellipse 88% 78% at 48% 40%, #000 22%, rgba(0, 0, 0, .55) 58%, transparent 82%);
+}
+.web-landing-dark .web-hero-grid::before {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, .14) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, .14) 1px, transparent 1px);
+}
+.web-landing-dark .web-hero-grid::after {
+  border-color: rgba(21, 21, 21, .55);
+  box-shadow: 0 0 0 7px rgba(241, 196, 15, .18);
+}
+
+/* Copy */
+.web-landing-dark .web-hero .breadcrumbs {
+  color: var(--wh-muted);
+}
+.web-landing-dark .breadcrumbs li:not(:last-child)::after {
+  color: rgba(255, 255, 255, .28);
+}
+.web-landing-dark .breadcrumbs a:hover {
+  color: var(--wh-text);
+}
+.web-landing-dark .breadcrumbs a:focus-visible {
+  outline-color: var(--yellow);
+}
+.web-landing-dark .breadcrumbs [aria-current="page"] {
+  color: var(--wh-text);
+}
+.web-landing-dark .web-hero .hero-label {
+  color: var(--wh-muted);
+}
+.web-landing-dark .web-hero h1 {
+  color: var(--wh-text);
+}
+.web-landing-dark .web-hero h1 em {
+  color: var(--wh-em);
+}
+.web-landing-dark .web-hero-lead {
+  color: var(--wh-muted);
+}
+.web-landing-dark .web-hero-proof {
+  border-top-color: var(--wh-border);
+}
+.web-landing-dark .web-hero-proof li {
+  color: var(--wh-muted);
+}
+
+/* Browser mockup — stays light, deeper shadow on dark */
+.web-landing-dark .web-preview {
+  color: var(--ink);
+  box-shadow:
+    23px 25px 0 var(--yellow),
+    0 30px 70px rgba(0, 0, 0, .48),
+    0 8px 24px rgba(0, 0, 0, .28),
+    inset 0 1px 0 rgba(255, 255, 255, .8);
+}
+.web-landing-dark .web-preview-address i {
+  color: #55534e;
+}
+.web-landing-dark .web-preview-controls span {
+  color: #797771;
+}
+.web-landing-dark .web-preview-controls span:last-child {
+  color: #aaa8a2;
+}
+.web-landing-dark .web-preview-more {
+  color: #77746e;
+}
+.web-landing-dark .web-preview-nav strong {
+  color: var(--ink);
+}
+.web-landing-dark .web-preview-nav div span {
+  color: #77746e;
+}
+.web-landing-dark .web-preview-hero small {
+  color: #6d6a62;
+}
+.web-landing-dark .web-preview-hero > strong {
+  color: var(--ink);
+}
+.web-landing-dark .web-preview-hero i {
+  background: var(--ink);
+  color: var(--paper);
+}
+.web-landing-dark .web-preview-cards strong {
+  color: var(--ink);
+}
+.web-landing-dark .web-preview-cards span {
+  color: #6d6a62;
+}
+@media (min-width: 1024px) {
+  .web-landing-dark .web-preview {
+    box-shadow:
+      23px 25px 0 var(--yellow),
+      0 30px 70px rgba(0, 0, 0, .48),
+      0 8px 24px rgba(0, 0, 0, .28),
+      inset 0 1px 0 rgba(255, 255, 255, .8);
+  }
+}
+@media (max-width: 600px) {
+  .web-landing-dark .web-preview {
+    box-shadow:
+      10px 12px 0 var(--yellow),
+      0 20px 44px rgba(0, 0, 0, .42),
+      inset 0 1px 0 rgba(255, 255, 255, .8);
+  }
+  .web-landing-dark .web-preview-rail {
+    margin-top: 8px;
+  }
+}
+
+/* Badges — warm light cards on dark */
+.web-landing-dark .web-preview-badge {
+  background: #f7f4ed;
+  border-color: rgba(21, 21, 21, .1);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, .08),
+    0 6px 16px rgba(0, 0, 0, .28),
+    0 14px 32px rgba(0, 0, 0, .22);
+}
+@media (min-width: 1024px) {
+  .web-landing-dark .web-preview-badge {
+    box-shadow:
+      0 0 0 1px rgba(255, 255, 255, .08),
+      0 5px 14px rgba(0, 0, 0, .3),
+      0 16px 34px rgba(0, 0, 0, .24);
+  }
+}
+
+/* Clean edge into the light page below */
+.web-landing-dark .web-hero + .section {
+  border-top: 0;
+}
+
+/* Mobile atmosphere — glow + grid across the stacked layout */
+@media (max-width: 900px) {
+  .web-landing-dark .web-hero {
+    background:
+      radial-gradient(ellipse 85% 50% at 18% 78%, var(--wh-glow-soft), transparent 72%),
+      radial-gradient(ellipse 75% 45% at 88% 62%, var(--wh-glow), transparent 70%),
+      linear-gradient(180deg, var(--wh-bg-2) 0%, var(--wh-bg) 100%);
+  }
+  .web-landing-dark .web-hero-grid {
+    -webkit-mask-image:
+      radial-gradient(ellipse 110% 90% at 50% 48%, #000 28%, rgba(0, 0, 0, .5) 62%, transparent 88%);
+    mask-image:
+      radial-gradient(ellipse 110% 90% at 50% 48%, #000 28%, rgba(0, 0, 0, .5) 62%, transparent 88%);
+  }
+}
+
+@media (max-width: 600px) {
+  .web-landing-dark .web-hero {
+    background:
+      radial-gradient(ellipse 95% 42% at 22% 82%, rgba(241, 196, 15, .11), transparent 74%),
+      radial-gradient(ellipse 80% 38% at 92% 58%, rgba(241, 196, 15, .14), transparent 72%),
+      linear-gradient(180deg, var(--wh-bg-2) 0%, var(--wh-bg) 100%);
+  }
+}

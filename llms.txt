@@ -1,0 +1,14 @@
+# Beewoy
+
+> Malé softvérové štúdio zo Slovenska. Tvoríme webové stránky, webové aplikácie a interné systémy na mieru — priamo s vývojármi, bez agentúrnych medzičlánkov.
+
+## Služby
+
+- [Tvorba webových stránok](https://beewoy.sk/tvorba-webov/): Firemné weby, weby pre služby a značky, landing pages a redizajny na mieru. Dôraz na dizajn, rýchlosť, SEO, prístupnosť a jednoduchú správu obsahu.
+- [Referencie](https://beewoy.sk/referencie/): Vybrané projekty pre klientov.
+- [Kontakt](https://beewoy.sk/kontakt/): Nezáväzný dopyt a mini-audit webu.
+
+## Kontakt
+
+- Email: ahoj@beewoy.sk
+- Web: https://beewoy.sk/
