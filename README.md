@@ -36,7 +36,7 @@ Potom otvor `http://localhost:3000` (alebo port zo `serve` / `http.server`).
 | `logo.svg` | Logo značky |
 | `icons/` | Favicony + PWA ikony |
 | `assets/projects/` | Screenshoty hero sekcií klientov |
-| `projects/<slug>/` | HTML náhľady stránok (`index.html` → `/projects/<slug>/`) |
+| `projekty/navrhy/<slug>/` | HTML náhľady konceptov (`index.html` → `/projekty/navrhy/<slug>/`, `noindex`) |
 | `og-image.png` | Open Graph obrázok (1200×630) |
 | `manifest.webmanifest` | PWA manifest |
 | `sw.js` | Service worker (cache shellu) |
@@ -69,7 +69,7 @@ Homepage zobrazí prvých **6** projektov z `projects.js`, stránka `/referencie
 ## Pridať nový projekt
 
 1. Ulož hero screenshot do `assets/projects/` (ideálne JPG ~1600px široký).
-2. Prípadný HTML náhľad stránky daj do `projects/<slug>/`.
+2. Prípadný HTML náhľad konceptu daj do `projekty/navrhy/<slug>/` (stránky majú `noindex`).
 3. Pridaj záznam do poľa `PROJECTS` v `projects.js` (`name`, `type`, `result`, `resultShort`, `image`, `alt`, `url`, `linkLabel`).
 4. Na stránke `/referencie/` doplň zodpovedajúci `CreativeWork` do JSON-LD v `<head>`.
 5. Homepage aj `/referencie/` si karty vyrenderujú automaticky z `projects.js`.
@@ -120,6 +120,7 @@ Vygeneruje favicony, maskable PWA ikony a `og-image.png` z `logo.svg`.
 
 ## Poznámky
 
+- Náhľady v `projekty/navrhy/` sú neindexované (`noindex`) a nie sú určené na verejné SEO; screenshoty zostávajú v `assets/projects/`.
 - Jazyk UI: slovenčina (`lang="sk"`)
 - Dizajn: paper estetika (`#f3f0e8`), žltý akcent, fonty DM Sans + Manrope
 - Žiadny npm build — po úprave HTML/CSS/JS stačí refresh / redeploy
