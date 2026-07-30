@@ -1,424 +1,546 @@
 <!doctype html>
 <html lang="sk">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="robots" content="noindex, nofollow">
-    <title>Strictly | Kompletná stavebná činnosť</title>
-    <meta
-      name="description"
-      content="Domy na kľúč, rekonštrukcie, bazény, záhrady a inžinierske práce pre domácnosti, firmy a samosprávy."
-    />
-    <meta property="og:title" content="Strictly | Stavby, ktoré stoja na dôvere" />
-    <meta
-      property="og:description"
-      content="Kompletná stavebná činnosť pre domácnosti, firmy a samosprávy."
-    />
-    <meta property="og:image" content="og.png" />
-    <meta property="og:locale" content="sk_SK" />
-    <meta property="og:type" content="website" />
-    <link rel="icon" href="favicon.png" type="image/png" />
-    <link rel="stylesheet" href="assets/site.css" />
-    <script src="assets/site.js" defer></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#17191c">
+    <meta name="description" content="Komplexné stavebné práce, rekonštrukcie, domy na kľúč a inžinierske siete v Bratislave, Senci a okolí.">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.strictly.sk/">
+    <link rel="preload" as="image" href="assets/images/hero-house.webp" imagesrcset="assets/images/hero-house-960.webp 960w, assets/images/hero-house.webp 1736w" imagesizes="100vw">
+    <link rel="stylesheet" href="assets/styles.css">
+    <title>STRICTLY | Stavebné práce Bratislava, Senec a okolie</title>
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="sk_SK">
+    <meta property="og:title" content="STRICTLY — Staviame na dôvere">
+    <meta property="og:description" content="Od rekonštrukcie po dom na kľúč. Komplexné stavebné práce v Bratislave, Senci a okolí.">
+    <meta property="og:url" content="https://www.strictly.sk/">
+    <meta property="og:image" content="https://www.strictly.sk/assets/images/og-strictly.webp">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ConstructionCompany",
+        "name": "STRICTLY s.r.o.",
+        "url": "https://www.strictly.sk/",
+        "email": "info@strictly.sk",
+        "telephone": "+421911235942",
+        "taxID": "2120545713",
+        "vatID": "SK2120545713",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Jelenia 1",
+          "postalCode": "811 05",
+          "addressLocality": "Bratislava",
+          "addressCountry": "SK"
+        },
+        "areaServed": ["Bratislava", "Senec", "Bratislavský kraj"],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+421911235942",
+          "contactType": "sales",
+          "availableLanguage": ["Slovak"]
+        }
+      }
+    </script>
   </head>
+
   <body>
-    <main>
-      <header class="site-header">
-        <a class="brand" href="#domov" aria-label="Strictly – domov">
-          <img
-            src="assets/images/strictly-logo.png"
-            width="290"
-            height="150"
-            alt="Strictly – kompletná stavebná činnosť"
-          />
+    <a class="skip-link" href="#obsah">Preskočiť na obsah</a>
+
+    <header class="site-header" data-header>
+      <div class="container header-inner">
+        <a class="brand" href="#uvod" aria-label="STRICTLY — úvod">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-word">STRICTLY</span>
         </a>
 
-        <nav class="main-nav" aria-label="Hlavná navigácia">
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav" data-menu-toggle>
+          <span class="menu-toggle-label">Menu</span>
+          <span class="menu-toggle-lines" aria-hidden="true"></span>
+        </button>
+
+        <nav class="main-nav" id="main-nav" aria-label="Hlavná navigácia" data-nav>
           <a href="#sluzby">Služby</a>
           <a href="#realizacie">Realizácie</a>
           <a href="#o-nas">O nás</a>
-          <a href="#kariera">Kariéra</a>
+          <a href="#referencie">Referencie</a>
+          <a href="#postup">Ako pracujeme</a>
           <a href="#kontakt">Kontakt</a>
-          <a class="nav-phone" href="tel:+421911235942">+421 911 235 942</a>
         </nav>
 
-        <a class="button button-small header-cta" href="#kontakt">Cenová ponuka</a>
+        <a class="button button-small header-cta" href="#kontakt">Získať ponuku</a>
+      </div>
+    </header>
 
-        <button
-          class="menu-toggle"
-          type="button"
-          aria-label="Otvoriť menu"
-          aria-expanded="false"
-        >
-          <span></span><span></span><span></span>
-        </button>
-      </header>
+    <main id="obsah">
+      <div class="first-screen">
+        <section class="hero" id="uvod" aria-labelledby="hero-title">
+          <picture class="hero-media">
+            <source media="(max-width: 760px)" srcset="assets/images/hero-house-960.webp">
+            <img src="assets/images/hero-house.webp" alt="Moderný rodinný dom vo finálnej fáze výstavby a pracovníci konzultujúci projekt" width="1736" height="906">
+          </picture>
+          <div class="hero-shade"></div>
 
-      <section class="hero" id="domov">
-        <div class="hero-content">
-          <p class="eyebrow eyebrow-light">Stavebná spoločnosť zo Senca</p>
-          <h1>Stavby, ktoré stoja <em>na dôvere.</em></h1>
-          <p class="hero-lead">
-            Realizujeme domy, rekonštrukcie a inžinierske práce pre domácnosti,
-            firmy aj samosprávy. Jeden tím, jasná zodpovednosť a poctivý výsledok.
-          </p>
-          <div class="hero-actions">
-            <a class="button" href="#kontakt">
-              Požiadať o ponuku <span aria-hidden="true">↗</span>
-            </a>
-            <a class="text-link text-link-light" href="#realizacie">
-              Pozrieť realizácie <span aria-hidden="true">→</span>
-            </a>
+          <div class="container hero-inner">
+            <div class="hero-copy">
+              <p class="eyebrow light hero-anim" style="--d:0">Bratislava · Senec · okolie</p>
+              <h1 id="hero-title" class="hero-anim" style="--d:1">Staviame<br>na dôvere.</h1>
+              <p class="hero-lead hero-anim" style="--d:2">Od rekonštrukcie po dom na kľúč. Jeden spoľahlivý partner pre celý projekt.</p>
+              <div class="hero-actions hero-anim" style="--d:3">
+                <a class="button" href="#kontakt">Získať cenovú ponuku <span aria-hidden="true">↗</span></a>
+                <a class="text-link light-link" href="#realizacie">Pozrieť realizácie <span aria-hidden="true">↓</span></a>
+              </div>
+            </div>
+
+            <aside class="hero-proof hero-anim" style="--d:4" aria-label="Hlavné výhody">
+              <p class="proof-kicker">STRICTLY s.r.o.</p>
+              <p>Komplexná realizácia pod jednou strechou.</p>
+              <a href="tel:+421911235942">+421 911 235 942</a>
+            </aside>
           </div>
-          <div class="hero-trust">
-            <span>15 rokov skúseností</span>
-            <span>Vlastný realizačný tím</span>
-            <span>Senec a okolie</span>
+        </section>
+
+        <section class="metrics" aria-label="Skúsenosti spoločnosti" data-metrics>
+          <div class="container metrics-grid">
+            <div class="metric">
+              <strong><span data-count="15">15</span><span>+</span></strong>
+              <p>rokov skúseností tímu</p>
+            </div>
+            <div class="metric">
+              <strong><span data-count="500">500</span><span>+</span></strong>
+              <p>spokojných zákazníkov</p>
+            </div>
+            <div class="metric">
+              <strong><span data-count="780">780</span><span>+</span></strong>
+              <p>odovzdaných projektov</p>
+            </div>
+            <div class="metric metric-message">
+              <p>Poctivé remeslo. Jasná dohoda. Zodpovedný výsledok.</p>
+            </div>
           </div>
-        </div>
+        </section>
+      </div>
 
-        <div class="hero-media">
-          <img
-            src="assets/images/hero-construction.png"
-            alt="Realizácia priemyselného stavebného objektu"
-          />
-          <div class="hero-note">
-            <strong>780+</strong>
-            <span>dokončených projektov</span>
-          </div>
-        </div>
-      </section>
-
-      <section class="proof-strip" aria-label="Strictly v číslach">
-        <div><strong>15</strong><span>rokov skúseností</span></div>
-        <div><strong>500+</strong><span>spokojných zákazníkov</span></div>
-        <div><strong>30</strong><span>členov tímu</span></div>
-        <div><strong>780+</strong><span>realizovaných projektov</span></div>
-      </section>
-
-      <section class="section intro-section">
-        <div class="section-heading">
-          <p class="eyebrow">Čo pre vás postavíme</p>
-          <h2>Od rodinného domu po infraštruktúru.</h2>
-        </div>
-        <div class="audience-grid">
-          <article>
-            <span>01</span>
-            <h3>Pre domácnosti</h3>
-            <p>Domy, rekonštrukcie, bazény, záhrady a exteriérové úpravy.</p>
-          </article>
-          <article>
-            <span>02</span>
-            <h3>Pre firmy</h3>
-            <p>Stavebné práce, technické riešenia, lešenie a spevnené plochy.</p>
-          </article>
-          <article>
-            <span>03</span>
-            <h3>Pre samosprávy</h3>
-            <p>Komunikácie, inžinierske siete a zodpovedne odovzdané zákazky.</p>
-          </article>
-        </div>
-      </section>
-
-      <section class="section services-section" id="sluzby">
-        <div class="section-heading section-heading-row">
-          <div>
-            <p class="eyebrow eyebrow-light">Naše služby</p>
-            <h2>Všetko potrebné pod jednou strechou.</h2>
-          </div>
-          <p>
-            Od prípravy projektu po posledný detail. Koordinujeme ľudí, materiál
-            aj termíny tak, aby ste mali jedného spoľahlivého partnera.
-          </p>
-        </div>
-
-        <div class="services-grid">
-          <article class="service-card">
-            <img src="assets/images/house-pool.png" alt="" loading="lazy" />
-            <div class="service-card-overlay"></div>
-            <span class="service-number">01</span>
-            <div class="service-card-content">
-              <h3>Domy na kľúč</h3>
-              <p>Od prvého návrhu a koordinácie profesií až po odovzdanie hotového domu.</p>
-              <a href="#kontakt">Mám záujem <span aria-hidden="true">↗</span></a>
-            </div>
-          </article>
-          <article class="service-card">
-            <img src="assets/images/renovation.png" alt="" loading="lazy" />
-            <div class="service-card-overlay"></div>
-            <span class="service-number">02</span>
-            <div class="service-card-content">
-              <h3>Renovácie objektov</h3>
-              <p>Komplexné rekonštrukcie rodinných domov, budov a komerčných priestorov.</p>
-              <a href="#kontakt">Mám záujem <span aria-hidden="true">↗</span></a>
-            </div>
-          </article>
-          <article class="service-card">
-            <img src="assets/images/pool-build.png" alt="" loading="lazy" />
-            <div class="service-card-overlay"></div>
-            <span class="service-number">03</span>
-            <div class="service-card-content">
-              <h3>Bazény a záhrady</h3>
-              <p>Premyslené exteriéry, ktoré spájajú stavebnú kvalitu s komfortom.</p>
-              <a href="#kontakt">Mám záujem <span aria-hidden="true">↗</span></a>
-            </div>
-          </article>
-          <article class="service-card">
-            <img src="assets/images/roadworks.png" alt="" loading="lazy" />
-            <div class="service-card-overlay"></div>
-            <span class="service-number">04</span>
-            <div class="service-card-content">
-              <h3>Cesty a inžinierske siete</h3>
-              <p>Výkopy, zakladanie, prípojky, komunikácie a infraštruktúrne práce.</p>
-              <a href="#kontakt">Mám záujem <span aria-hidden="true">↗</span></a>
-            </div>
-          </article>
-          <article class="service-card">
-            <img src="assets/images/scaffolding.png" alt="" loading="lazy" />
-            <div class="service-card-overlay"></div>
-            <span class="service-number">05</span>
-            <div class="service-card-content">
-              <h3>Prenájom lešenia</h3>
-              <p>Bezpečné lešenárske riešenia pre menšie stavby aj väčšie realizácie.</p>
-              <a href="#kontakt">Mám záujem <span aria-hidden="true">↗</span></a>
-            </div>
-          </article>
-          <article class="service-card">
-            <img src="assets/images/concrete-fence.png" alt="" loading="lazy" />
-            <div class="service-card-overlay"></div>
-            <span class="service-number">06</span>
-            <div class="service-card-content">
-              <h3>Betónové ploty a DT tvárnice</h3>
-              <p>Dodávka trvácnych betónových prvkov pre súkromné aj firemné projekty.</p>
-              <a href="#kontakt">Mám záujem <span aria-hidden="true">↗</span></a>
-            </div>
-          </article>
-        </div>
-
-        <div class="service-extra">
-          <div>
-            <span class="service-extra-mark">S</span>
+      <section class="section services" id="sluzby" aria-labelledby="services-title">
+        <div class="container">
+          <div class="section-head reveal">
             <div>
-              <strong>Hľadáte výkup paliet?</strong>
-              <p>Ozvite sa nám a dohodneme podmienky, množstvo aj termín odberu.</p>
+              <p class="eyebrow">Čo robíme</p>
+              <h2 id="services-title">Od prvého výkopu<br>po posledný detail.</h2>
+            </div>
+            <p class="section-intro">Koordinujeme remeslá, materiál aj harmonogram. Vy komunikujete s jedným partnerom a máte prehľad v každej fáze stavby.</p>
+          </div>
+
+          <div class="service-list">
+            <article class="service-row reveal">
+              <span class="service-number">01</span>
+              <div class="service-main">
+                <h3>Domy na kľúč</h3>
+                <p>Kompletná realizácia rodinného domu od základov až po odovzdanie.</p>
+              </div>
+              <ul class="service-tags" aria-label="Súvisiace práce">
+                <li>Hrubá stavba</li>
+                <li>Dokončenie</li>
+                <li>Koordinácia</li>
+              </ul>
+              <a class="circle-link" href="#kontakt" aria-label="Dopyt na dom na kľúč">↗</a>
+            </article>
+
+            <article class="service-row reveal">
+              <span class="service-number">02</span>
+              <div class="service-main">
+                <h3>Rekonštrukcie</h3>
+                <p>Premena bytov, domov, kancelárií a komerčných priestorov bez zbytočných prestojov.</p>
+              </div>
+              <ul class="service-tags" aria-label="Súvisiace práce">
+                <li>Byty a domy</li>
+                <li>Kancelárie</li>
+                <li>Interiéry</li>
+              </ul>
+              <a class="circle-link" href="#kontakt" aria-label="Dopyt na rekonštrukciu">↗</a>
+            </article>
+
+            <article class="service-row reveal">
+              <span class="service-number">03</span>
+              <div class="service-main">
+                <h3>Stavebné práce</h3>
+                <p>Murárske, betonárske, sadrokartónové, obkladacie a dokončovacie práce.</p>
+              </div>
+              <ul class="service-tags" aria-label="Súvisiace práce">
+                <li>Betonáž</li>
+                <li>Murivo</li>
+                <li>Povrchy</li>
+              </ul>
+              <a class="circle-link" href="#kontakt" aria-label="Dopyt na stavebné práce">↗</a>
+            </article>
+
+            <article class="service-row reveal">
+              <span class="service-number">04</span>
+              <div class="service-main">
+                <h3>Výkopy a siete</h3>
+                <p>Zemné práce, zakladanie, prípojky a inžinierske siete pre súkromné aj verejné projekty.</p>
+              </div>
+              <ul class="service-tags" aria-label="Súvisiace práce">
+                <li>Výkopy</li>
+                <li>Zakladanie</li>
+                <li>Prípojky</li>
+              </ul>
+              <a class="circle-link" href="#kontakt" aria-label="Dopyt na výkopové práce a siete">↗</a>
+            </article>
+
+            <article class="service-row reveal">
+              <span class="service-number">05</span>
+              <div class="service-main">
+                <h3>Cesty a plochy</h3>
+                <p>Rekonštrukcie ciest, chodníkov, parkovísk, námestí a ďalších spevnených plôch.</p>
+              </div>
+              <ul class="service-tags" aria-label="Súvisiace práce">
+                <li>Komunikácie</li>
+                <li>Chodníky</li>
+                <li>Parkoviská</li>
+              </ul>
+              <a class="circle-link" href="#kontakt" aria-label="Dopyt na cesty a spevnené plochy">↗</a>
+            </article>
+          </div>
+
+          <div class="secondary-services reveal">
+            <p>Ďalšie služby</p>
+            <div>
+              <span>Prenájom lešenia</span>
+              <span>Betónové ploty a tvárnice</span>
+              <span>Výkup EUR paliet</span>
             </div>
           </div>
-          <a class="text-link text-link-light" href="#kontakt">
-            Kontaktovať nás <span aria-hidden="true">→</span>
-          </a>
         </div>
       </section>
 
-      <section class="section projects-section" id="realizacie">
-        <div class="section-heading section-heading-row">
-          <div>
-            <p class="eyebrow">Vybrané realizácie</p>
-            <h2>Výsledky hovoria najhlasnejšie.</h2>
+      <section class="section projects" id="realizacie" aria-labelledby="projects-title">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <p class="eyebrow light">Vybrané realizácie</p>
+              <h2 id="projects-title">Výsledky, ktoré<br>hovoria za nás.</h2>
+            </div>
+            <p class="section-intro light-copy">Každý projekt riadime s dôrazom na kvalitu, bezpečnosť a čisté odovzdanie. Pozrite si ukážku nášho záberu.</p>
           </div>
-          <p>
-            Každý projekt riešime ako celok — od prvého rozhovoru po čisté a
-            bezpečné odovzdanie.
-          </p>
-        </div>
 
-        <div class="filter-row" aria-label="Filtrovať realizácie">
-          <button type="button" class="active" data-filter="Všetky" aria-pressed="true">Všetky</button>
-          <button type="button" data-filter="Domy" aria-pressed="false">Domy</button>
-          <button type="button" data-filter="Rekonštrukcie" aria-pressed="false">Rekonštrukcie</button>
-          <button type="button" data-filter="Exteriéry" aria-pressed="false">Exteriéry</button>
-          <button type="button" data-filter="Komerčné" aria-pressed="false">Komerčné</button>
-          <button type="button" data-filter="Infraštruktúra" aria-pressed="false">Infraštruktúra</button>
-        </div>
+          <div class="project-grid">
+            <article class="project-card project-large reveal">
+              <div class="project-image">
+                <picture>
+                  <source media="(max-width: 760px)" srcset="assets/images/hero-house-960.webp">
+                  <img src="assets/images/hero-house.webp" alt="Rodinný dom vo finálnej fáze výstavby" width="1736" height="906" loading="lazy">
+                </picture>
+                <span class="project-index"><span class="project-index-num">01</span><span class="project-index-arrow" aria-hidden="true">↗</span></span>
+              </div>
+              <div class="project-meta">
+                <div>
+                  <p>Dom na kľúč</p>
+                  <h3>Rodinný dom · Senec</h3>
+                </div>
+                <span>Kompletná realizácia</span>
+              </div>
+            </article>
 
-        <div class="projects-grid" aria-live="polite">
-          <article class="project-card project-card-wide" data-category="Domy">
-            <img src="assets/images/house-pool.png" alt="Rodinný dom a bazén" loading="lazy" />
-            <div class="project-card-footer">
-              <div><span>Dom na kľúč</span><h3>Rodinný dom a bazén</h3></div>
-              <a href="#kontakt" aria-label="Získať informácie – Rodinný dom a bazén">↗</a>
-            </div>
-          </article>
-          <article class="project-card" data-category="Rekonštrukcie">
-            <img src="assets/images/renovation.png" alt="Renovácia objektu" loading="lazy" />
-            <div class="project-card-footer">
-              <div><span>Kompletná renovácia</span><h3>Renovácia objektu</h3></div>
-              <a href="#kontakt" aria-label="Získať informácie – Renovácia objektu">↗</a>
-            </div>
-          </article>
-          <article class="project-card" data-category="Exteriéry">
-            <img src="assets/images/pool-build.png" alt="Bazén na kľúč" loading="lazy" />
-            <div class="project-card-footer">
-              <div><span>Bazén a technológia</span><h3>Bazén na kľúč</h3></div>
-              <a href="#kontakt" aria-label="Získať informácie – Bazén na kľúč">↗</a>
-            </div>
-          </article>
-          <article class="project-card" data-category="Exteriéry">
-            <img src="assets/images/garden.png" alt="Záhrada na kľúč" loading="lazy" />
-            <div class="project-card-footer">
-              <div><span>Úprava exteriéru</span><h3>Záhrada na kľúč</h3></div>
-              <a href="#kontakt" aria-label="Získať informácie – Záhrada na kľúč">↗</a>
-            </div>
-          </article>
-          <article class="project-card" data-category="Komerčné">
-            <img src="assets/images/hero-construction.png" alt="Priemyselný objekt" loading="lazy" />
-            <div class="project-card-footer">
-              <div><span>Kompletná stavebná činnosť</span><h3>Priemyselný objekt</h3></div>
-              <a href="#kontakt" aria-label="Získať informácie – Priemyselný objekt">↗</a>
-            </div>
-          </article>
-          <article class="project-card" data-category="Infraštruktúra">
-            <img src="assets/images/roadworks.png" alt="Rekonštrukcia komunikácie" loading="lazy" />
-            <div class="project-card-footer">
-              <div><span>Cesty a spevnené plochy</span><h3>Rekonštrukcia komunikácie</h3></div>
-              <a href="#kontakt" aria-label="Získať informácie – Rekonštrukcia komunikácie">↗</a>
-            </div>
-          </article>
-        </div>
-      </section>
+            <article class="project-card reveal">
+              <div class="project-image">
+                <picture>
+                  <source media="(max-width: 760px)" srcset="assets/images/project-interior-720.webp">
+                  <img src="assets/images/project-interior.webp" alt="Rekonštrukcia svetlého mestského bytu" width="1536" height="1024" loading="lazy">
+                </picture>
+                <span class="project-index"><span class="project-index-num">02</span><span class="project-index-arrow" aria-hidden="true">↗</span></span>
+              </div>
+              <div class="project-meta">
+                <div>
+                  <p>Rekonštrukcia</p>
+                  <h3>Mestský byt · Bratislava</h3>
+                </div>
+                <span>Interiér</span>
+              </div>
+            </article>
 
-      <section class="section process-section">
-        <div class="process-intro">
-          <p class="eyebrow eyebrow-light">Ako spolupráca prebieha</p>
-          <h2>Jasný postup. Žiadne prekvapenia.</h2>
-          <p>
-            Na začiatku si nastavíme rozsah, očakávania a zodpovednosti. Počas
-            realizácie viete, čo sa deje a čo nasleduje.
-          </p>
-          <a class="button button-light" href="#kontakt">Začať konzultáciou</a>
-        </div>
-        <ol class="process-list">
-          <li><span>01</span><div><h3>Konzultácia</h3><p>Prejdeme vaše zadanie, predstavu, rozpočet a termín.</p></div></li>
-          <li><span>02</span><div><h3>Obhliadka a návrh</h3><p>Zameriame miesto a pripravíme zrozumiteľný rozsah riešenia.</p></div></li>
-          <li><span>03</span><div><h3>Realizácia</h3><p>Koordinujeme tím, materiál a priebeh prác podľa dohody.</p></div></li>
-          <li><span>04</span><div><h3>Kontrola a odovzdanie</h3><p>Projekt skontrolujeme, upraceme a odovzdáme pripravený na používanie.</p></div></li>
-        </ol>
-      </section>
+            <article class="project-card reveal">
+              <div class="project-image">
+                <picture>
+                  <source media="(max-width: 760px)" srcset="assets/images/project-road-720.webp">
+                  <img src="assets/images/project-road.webp" alt="Rekonštrukcia miestnej komunikácie a chodníka" width="1536" height="1024" loading="lazy">
+                </picture>
+                <span class="project-index"><span class="project-index-num">03</span><span class="project-index-arrow" aria-hidden="true">↗</span></span>
+              </div>
+              <div class="project-meta">
+                <div>
+                  <p>Verejný priestor</p>
+                  <h3>Komunikácia a chodník</h3>
+                </div>
+                <span>Infraštruktúra</span>
+              </div>
+            </article>
+          </div>
 
-      <section class="section about-section" id="o-nas">
-        <div class="about-copy">
-          <p class="eyebrow">O spoločnosti Strictly</p>
-          <h2>Staviame tak, aby sme sa pod výsledok mohli podpísať.</h2>
-          <p class="about-lead">
-            Strictly je stavebná spoločnosť so sídlom v Senci. Spájame skúsený
-            tím, remeselnú presnosť a otvorenú komunikáciu, aby projekt napredoval
-            bezpečne a podľa dohody.
-          </p>
-          <ul>
-            <li>Vlastný kvalifikovaný personál</li>
-            <li>Dodržiavanie dohodnutých termínov</li>
-            <li>Transparentná komunikácia počas stavby</li>
-            <li>Dôraz na bezpečnosť, čistotu a kvalitu</li>
-          </ul>
-        </div>
-        <blockquote>
-          <span class="quote-mark">“</span>
-          <p>
-            Práce boli vždy odvedené načas a vo vysokej kvalite. Strictly
-            vnímame ako lokálnu, veľmi profesionálnu a spoľahlivú spoločnosť.
-          </p>
-          <footer><strong>Peter Múčka</strong><span>starosta obce Boldog</span></footer>
-        </blockquote>
-      </section>
-
-      <section class="partners" aria-label="Partneri a zákazníci">
-        <span>Dôverujú nám</span>
-        <div>
-          <strong>STRABAG</strong>
-          <strong>PERI</strong>
-          <strong>EUROBETON</strong>
-          <strong>OBEC BOLDOG</strong>
-        </div>
-      </section>
-
-      <section
-        class="career-section"
-        id="kariera"
-        style="background-image: linear-gradient(90deg, rgba(8,27,22,.97), rgba(8,27,22,.78)), url('assets/images/scaffolding.png')"
-      >
-        <div>
-          <p class="eyebrow eyebrow-light">Kariéra</p>
-          <h2>Dobrá stavba stojí na dobrých ľuďoch.</h2>
-          <p>
-            Hľadáme skúsených majstrov, murárov, fasádnikov a ľudí, ktorí chcú
-            za sebou vidieť kvalitnú prácu.
-          </p>
-        </div>
-        <a
-          class="button button-light"
-          href="mailto:info@strictly.sk?subject=Reakcia%20na%20pracovn%C3%BA%20ponuku"
-        >
-          Chcem pracovať v Strictly
-        </a>
-      </section>
-
-      <section class="section contact-section" id="kontakt">
-        <div class="contact-copy">
-          <p class="eyebrow">Poďme sa porozprávať</p>
-          <h2>Máte projekt? Dajme mu pevný základ.</h2>
-          <p>
-            Napíšte nám základné informácie. Ozveme sa, prejdeme zadanie a
-            navrhneme ďalší krok.
-          </p>
-          <div class="contact-details">
-            <a href="tel:+421911235942"><span>Telefón</span><strong>+421 911 235 942</strong></a>
-            <a href="mailto:info@strictly.sk"><span>E-mail</span><strong>info@strictly.sk</strong></a>
-            <div><span>Adresa</span><strong>Boldocká cesta 375, 903 01 Senec</strong></div>
+          <div class="projects-note reveal">
+            <p>Máte podobný projekt?</p>
+            <a class="text-link light-link" href="#kontakt">Prejdime si zadanie <span aria-hidden="true">↗</span></a>
           </div>
         </div>
+      </section>
 
-        <form class="inquiry-form">
-          <div class="form-grid">
-            <label>Meno a priezvisko<input type="text" name="name" autocomplete="name" required /></label>
-            <label>E-mail<input type="email" name="email" autocomplete="email" required /></label>
-            <label>Telefón<input type="tel" name="phone" autocomplete="tel" /></label>
+      <section class="section about" id="o-nas" aria-labelledby="about-title">
+        <div class="container about-grid">
+          <div class="about-number reveal" aria-hidden="true">
+            <span>15</span>
+            <sup>+</sup>
+          </div>
+          <div class="about-copy reveal">
+            <p class="eyebrow">O spoločnosti</p>
+            <h2 id="about-title">Dôvera sa nehovorí.<br>Dôvera sa stavia.</h2>
+            <p class="large-copy">STRICTLY je stavebná spoločnosť pre klientov, ktorí hľadajú vecnú komunikáciu, pevné dohody a poctivo odvedenú prácu.</p>
+            <p>Realizujeme menšie aj komplexné stavebné projekty pre súkromných klientov, firmy a samosprávy. Sledujeme harmonogram, koordinujeme profesie a miesto po práci odovzdávame upratané a bezpečné.</p>
+            <div class="value-grid">
+              <div>
+                <strong>Kvalifikovaný tím</strong>
+                <span>Skúsení pracovníci a overení špecialisti.</span>
+              </div>
+              <div>
+                <strong>Dodržané termíny</strong>
+                <span>Realistický plán a priebežná komunikácia.</span>
+              </div>
+              <div>
+                <strong>Jasný rozsah</strong>
+                <span>Viete, čo realizujeme a za akých podmienok.</span>
+              </div>
+              <div>
+                <strong>Čisté odovzdanie</strong>
+                <span>Poriadok a bezpečnosť sú súčasťou práce.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section references" id="referencie" aria-labelledby="references-title">
+        <div class="container">
+          <div class="references-head reveal">
+            <p class="eyebrow">Referencie</p>
+            <h2 id="references-title">Naše referencie sú stále<br>k spokojnosti zákazníka.</h2>
+          </div>
+
+          <div class="references-grid">
+            <figure class="reference-card reveal">
+              <blockquote>
+                <p>Strictly s.r.o. nám realizovali celú stavbu rodinného domu. Oceňujem profesionálny prístup, vysokú kvalitu práce — práce si sami rozvrhli, aby bola stavba časovo najefektívnejšia. Majiteľ nám poradil kopec vecí, ktoré by nás ako laikov nenapadli. Odporúčam.</p>
+              </blockquote>
+              <figcaption>
+                <strong>Šestáková Stanislava</strong>
+              </figcaption>
+            </figure>
+
+            <figure class="reference-card reveal">
+              <blockquote>
+                <p>Spoločnosť Strictly s.r.o. dodávala niekoľko stavieb a stavebných prác pre obec Boldog ako úspešný uchádzač vo verejných obstarávaniach. Naša samospráva ju vníma ako ideálnu, veľmi profesionálnu a spoľahlivú spoločnosť. Práce boli vždy odvedené načas a vo vysokej kvalite. Hoci všetky uskutočnené stavebné diela podliehajú overovaniu a prísnej kontrole, nemali sme nikdy žiadny problém. Oceňujem profesionálny a zároveň ľudský prístup, férové jednanie a nadpriemernú kvalitu prevedenej práce. Počas realizácie aj po jej ukončení zostalo stavenisko vždy čisté, upratané a bezpečné. V spolupráci budeme určite pokračovať aj naďalej.</p>
+              </blockquote>
+              <figcaption>
+                <strong>Peter Múčka</strong>
+                <span>starosta obce Boldog</span>
+              </figcaption>
+            </figure>
+
+            <figure class="reference-card reveal">
+              <blockquote>
+                <p>Je veľmi ťažké v dnešnej dobe nájsť korektnú firmu. My sme sa rozhodli pre firmu Strictly a sme veľmi radi. Naša záhrada s bazénom nám robí veľkú radosť. Ďakujeme za super prístup k práci ako aj ku komunikácii, keď sa hľadali najlepšie riešenia.</p>
+              </blockquote>
+              <figcaption>
+                <strong>Hradecký</strong>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="section process" id="postup" aria-labelledby="process-title">
+        <div class="container">
+          <div class="section-head reveal">
+            <div>
+              <p class="eyebrow">Ako spolupracujeme</p>
+              <h2 id="process-title">Jasný postup.<br>Žiadne prekvapenia.</h2>
+            </div>
+            <p class="section-intro">Od prvého telefonátu po odovzdanie stavby poznáte ďalší krok, zodpovednosť aj dohodnutý výsledok.</p>
+          </div>
+
+          <ol class="process-list">
+            <li class="reveal">
+              <span>01</span>
+              <div>
+                <h3>Konzultácia a obhliadka</h3>
+                <p>Prejdeme si zámer, miesto, rozsah a vaše priority.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <span>02</span>
+              <div>
+                <h3>Rozpočet a harmonogram</h3>
+                <p>Pripravíme zrozumiteľnú ponuku a realistický termín.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <span>03</span>
+              <div>
+                <h3>Realizácia a kontrola</h3>
+                <p>Koordinujeme profesie, kvalitu aj priebeh prác.</p>
+              </div>
+            </li>
+            <li class="reveal">
+              <span>04</span>
+              <div>
+                <h3>Odovzdanie</h3>
+                <p>Výsledok prejdeme spoločne a odovzdáme čistý projekt.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="section faq" aria-labelledby="faq-title">
+        <div class="container faq-grid">
+          <div class="faq-intro reveal">
+            <p class="eyebrow">Časté otázky</p>
+            <h2 id="faq-title">Čo potrebujete vedieť pred začiatkom.</h2>
+            <a class="text-link" href="#kontakt">Máte inú otázku? Napíšte nám <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="faq-list reveal">
+            <details>
+              <summary>V ktorých lokalitách realizujete práce?</summary>
+              <p>Primárne pôsobíme v Bratislave, Senci a okolí. Pri väčších projektoch posúdime aj vzdialenejšiu lokalitu.</p>
+            </details>
+            <details>
+              <summary>Je úvodná obhliadka spoplatnená?</summary>
+              <p>Podmienky obhliadky závisia od typu a vzdialenosti projektu. Ozvite sa nám a vopred vám ich potvrdíme.</p>
+            </details>
+            <details>
+              <summary>Viete zabezpečiť kompletnú rekonštrukciu?</summary>
+              <p>Áno. Vieme koordinovať búracie práce, stavebné profesie, rozvody aj dokončovacie práce pod jedným vedením.</p>
+            </details>
+            <details>
+              <summary>Ako rýchlo dostanem cenovú ponuku?</summary>
+              <p>Po získaní všetkých podkladov a obhliadke vám oznámime konkrétny termín spracovania podľa rozsahu projektu.</p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <section class="contact" id="kontakt" aria-labelledby="contact-title">
+        <div class="container contact-grid">
+          <div class="contact-copy reveal">
+            <p class="eyebrow light">Poďme začať</p>
+            <h2 id="contact-title">Máte projekt?<br>Prejdime si ho.</h2>
+            <p>Napíšte nám základné informácie. Ozveme sa, doplníme podklady a navrhneme ďalší krok.</p>
+
+            <div class="contact-details">
+              <a href="tel:+421911235942">
+                <span>Telefón</span>
+                <strong>+421 911 235 942</strong>
+              </a>
+              <a href="mailto:info@strictly.sk">
+                <span>E-mail</span>
+                <strong>info@strictly.sk</strong>
+              </a>
+              <div>
+                <span>Prevádzka</span>
+                <strong>Boldocká cesta 375<br>903 01 Senec</strong>
+              </div>
+            </div>
+          </div>
+
+          <form class="contact-form reveal" data-contact-form>
+            <div class="form-row">
+              <label>
+                <span>Meno a priezvisko *</span>
+                <input type="text" name="name" autocomplete="name" required>
+              </label>
+              <label>
+                <span>Telefón *</span>
+                <input type="tel" name="phone" autocomplete="tel" required>
+              </label>
+            </div>
+            <div class="form-row">
+              <label>
+                <span>E-mail</span>
+                <input type="email" name="email" autocomplete="email">
+              </label>
+              <label>
+                <span>Typ projektu</span>
+                <select name="service">
+                  <option value="Dom na kľúč">Dom na kľúč</option>
+                  <option value="Rekonštrukcia">Rekonštrukcia</option>
+                  <option value="Stavebné práce">Stavebné práce</option>
+                  <option value="Výkopy a siete">Výkopy a siete</option>
+                  <option value="Cesty a plochy">Cesty a plochy</option>
+                  <option value="Iné">Iné</option>
+                </select>
+              </label>
+            </div>
             <label>
-              Typ projektu
-              <select name="project">
-                <option value="" disabled selected>Vyberte službu</option>
-                <option>Dom na kľúč</option>
-                <option>Rekonštrukcia</option>
-                <option>Bazén alebo záhrada</option>
-                <option>Cesty a inžinierske siete</option>
-                <option>Prenájom lešenia</option>
-                <option>Betónové prvky</option>
-                <option>Výkup paliet</option>
-                <option>Iné</option>
-              </select>
+              <span>Lokalita projektu</span>
+              <input type="text" name="location" autocomplete="address-level2" placeholder="Napr. Bratislava — Ružinov">
             </label>
-          </div>
-          <label>Stručne opíšte váš projekt<textarea name="message" rows="5" required></textarea></label>
-          <div class="form-submit">
-            <button class="button" type="submit">
-              Pripraviť e-mail s dopytom <span aria-hidden="true">↗</span>
-            </button>
-            <small>Po kliknutí sa otvorí vaša e-mailová aplikácia.</small>
-          </div>
-        </form>
-      </section>
+            <label>
+              <span>Stručný opis *</span>
+              <textarea name="message" rows="4" required placeholder="Čo potrebujete realizovať a v akom termíne?"></textarea>
+            </label>
+            <label class="consent">
+              <input type="checkbox" name="consent" required>
+              <span>Súhlasím so spracovaním údajov podľa <a href="ochrana-osobnych-udajov.html">zásad ochrany osobných údajov</a>.</span>
+            </label>
+            <button class="button form-submit" type="submit">Odoslať dopyt <span aria-hidden="true">↗</span></button>
+            <p class="form-status" role="status" aria-live="polite" data-form-status>Formulár pripraví správu vo vašej e-mailovej aplikácii.</p>
+          </form>
+        </div>
 
-      <footer class="site-footer">
-        <div class="footer-top">
-          <a class="footer-brand" href="#domov">
-            <img src="assets/images/strictly-logo.png" width="290" height="150" alt="Strictly" />
-          </a>
-          <p>Kompletná stavebná činnosť pre domácnosti, firmy a samosprávy.</p>
-          <div class="footer-nav">
-            <a href="#sluzby">Služby</a>
-            <a href="#realizacie">Realizácie</a>
-            <a href="#o-nas">O nás</a>
-            <a href="#kariera">Kariéra</a>
-            <a href="#kontakt">Kontakt</a>
+        <div class="container map-wrap reveal">
+          <div class="map-placeholder" data-map>
+            <div class="map-grid-art" aria-hidden="true"></div>
+            <div class="map-content">
+              <span>Prevádzka STRICTLY</span>
+              <strong>Boldocká cesta 375, Senec</strong>
+              <button class="button button-dark" type="button" data-map-load>Načítať mapu</button>
+              <small>Mapa sa načíta zo služby Google až po kliknutí.</small>
+            </div>
           </div>
         </div>
-        <div class="footer-bottom">
-          <span>© 2026 Strictly s.r.o.</span>
-          <span>IČO 50964828 · IČ DPH SK2120545713</span>
-          <div>
-            <a href="mailto:info@strictly.sk">info@strictly.sk</a>
-            <a href="tel:+421911235942">+421 911 235 942</a>
-          </div>
-        </div>
-      </footer>
+      </section>
     </main>
+
+    <footer class="site-footer">
+      <div class="container footer-main">
+        <a class="brand footer-brand" href="#uvod" aria-label="STRICTLY — späť na úvod">
+          <span class="brand-mark" aria-hidden="true"></span>
+          <span class="brand-word">STRICTLY</span>
+        </a>
+        <p>Stavebné práce, rekonštrukcie a realizácie pod jednou strechou.</p>
+        <div class="footer-links">
+          <a href="#sluzby">Služby</a>
+          <a href="#realizacie">Realizácie</a>
+          <a href="#o-nas">O nás</a>
+          <a href="#referencie">Referencie</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+      </div>
+      <div class="container footer-legal">
+        <p>© <span data-year>2026</span> STRICTLY s.r.o. · IČO 50964828</p>
+        <div>
+          <a href="ochrana-osobnych-udajov.html">Ochrana osobných údajov</a>
+          <a href="pravne-informacie.html">Právne informácie</a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="mobile-cta" aria-label="Rýchly kontakt">
+      <a href="tel:+421911235942">Zavolať</a>
+      <a href="#kontakt">Cenová ponuka</a>
+    </div>
+
+    <script src="assets/site.js" defer></script>
   </body>
 </html>
