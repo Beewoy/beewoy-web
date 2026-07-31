@@ -1,5 +1,7 @@
 (() => {
   const FIREBASE_VERSION = "12.17.0";
+  const CONSENT_KEY = "beewoy_consent";
+  const CONSENT_VERSION = 1;
   const firebaseConfig = {
     apiKey: "AIzaSyBPMHHJDUT64ImRLpjomO4oXGJFi6iMklw",
     authDomain: "beewoy-59e34.firebaseapp.com",
@@ -23,6 +25,33 @@
 
   const pageTitle = () => document.title || "Beewoy";
 
+  const proposalMeta = () => {
+    const match = pagePath().match(/^\/projekty\/navrhy\/([^/]+)(?:\/(.*))?$/);
+    if (!match) return null;
+    const proposalId = match[1];
+    const subpath = match[2] || "";
+    return {
+      content_group: "navrh",
+      proposal_id: proposalId,
+      proposal_page: subpath ? `${proposalId}/${subpath}` : proposalId
+    };
+  };
+
+  const readStoredConsent = () => {
+    try {
+      const raw = localStorage.getItem(CONSENT_KEY);
+      if (!raw) return null;
+      const data = JSON.parse(raw);
+      if (!data || data.v !== CONSENT_VERSION) return null;
+      return data;
+    } catch {
+      return null;
+    }
+  };
+
+  const currentConsent = () =>
+    window.BeewoyConsent?.get?.() || window.beewoyConsent || readStoredConsent();
+
   const initFirebase = async () => {
     if (analytics) return analytics;
     if (initPromise) return initPromise;
@@ -37,7 +66,6 @@
         if (!(await analyticsMod.isSupported())) return null;
 
         const app = initializeApp(firebaseConfig);
-        // Manual page_view — avoids duplicate automatic hits and keeps page_path consistent.
         analytics = analyticsMod.initializeAnalytics(app, {
           config: { send_page_view: false }
         });
@@ -53,21 +81,36 @@
     return initPromise;
   };
 
+  const baseParams = () => {
+    const proposal = proposalMeta();
+    return {
+      page_title: pageTitle(),
+      page_location: window.location.href,
+      page_path: pagePath(),
+      ...(proposal || {})
+    };
+  };
+
   const sendPageView = () => {
     if (!enabled || !analytics || !logEventFn || pageViewSent) return;
     pageViewSent = true;
-    logEventFn(analytics, "page_view", {
-      page_title: pageTitle(),
-      page_location: window.location.href,
-      page_path: pagePath()
-    });
+    const params = baseParams();
+    logEventFn(analytics, "page_view", params);
+    if (params.proposal_id) {
+      logEventFn(analytics, "proposal_view", {
+        proposal_id: params.proposal_id,
+        proposal_page: params.proposal_page,
+        page_path: params.page_path,
+        page_title: params.page_title
+      });
+    }
   };
 
   const track = (name, params = {}) => {
     if (!enabled || !name) return;
     initFirebase().then((instance) => {
       if (!instance || !logEventFn || !enabled) return;
-      logEventFn(instance, name, params);
+      logEventFn(instance, name, { ...baseParams(), ...params });
     });
   };
 
@@ -96,8 +139,7 @@
         track("cta_click", {
           cta_id: cta.getAttribute("data-analytics-cta") || "unknown",
           link_url: cta.getAttribute("href") || undefined,
-          link_text: (cta.textContent || "").trim().slice(0, 80) || undefined,
-          page_path: pagePath()
+          link_text: (cta.textContent || "").trim().slice(0, 80) || undefined
         });
         return;
       }
@@ -110,8 +152,7 @@
         if (url.origin === window.location.origin) return;
         track("outbound_click", {
           link_url: url.href,
-          link_domain: url.hostname,
-          page_path: pagePath()
+          link_domain: url.hostname
         });
       } catch {
         /* ignore invalid href */
@@ -121,13 +162,14 @@
 
   const init = () => {
     bindUiEvents();
-    syncConsent(window.BeewoyConsent?.get?.() || window.beewoyConsent || null);
+    syncConsent(currentConsent());
     window.addEventListener("beewoy:consent", (event) => syncConsent(event.detail));
   };
 
   window.BeewoyAnalytics = {
     track,
-    pagePath
+    pagePath,
+    proposalMeta
   };
 
   if (document.readyState === "loading") {

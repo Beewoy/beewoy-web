@@ -19,6 +19,7 @@ const ASSETS = [
   "./main.js",
   "./projects.js",
   "./cookies.js",
+  "./cookies-embed.css",
   "./analytics.js",
   "./logo.svg",
   "./favicon.ico",
