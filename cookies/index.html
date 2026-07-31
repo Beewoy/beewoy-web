@@ -93,7 +93,7 @@
   <div class="wrap">
     <p class="kicker">Právne informácie</p>
     <h1>Cookies</h1>
-    <p class="legal-meta">Posledná aktualizácia: 27. 7. 2026. Tento dokument vysvetľuje, aké cookies a podobné technológie používa web Beewoy a ako môžete spravovať svoj súhlas v súlade s GDPR a pravidlami ePrivacy.</p>
+    <p class="legal-meta">Posledná aktualizácia: 31. 7. 2026. Tento dokument vysvetľuje, aké cookies a podobné technológie používa web Beewoy a ako môžete spravovať svoj súhlas v súlade s GDPR a pravidlami ePrivacy.</p>
 
     <div class="legal-content">
       <h2>1. Čo sú cookies</h2>
@@ -124,7 +124,14 @@
       <p>Typografia (Google Fonts) sa načítava vždy — je súčasťou zobrazenia webu, nie voliteľných cookies.</p>
 
       <h3>3.3 Analytické (voliteľné)</h3>
-      <p>Pripravené pre budúce meranie návštevnosti. <strong>Aktuálne nepoužívame</strong> žiadny analytický nástroj (napr. Google Analytics). Ak ho v budúcnosti zapneme, spustí sa až po vašom súhlase v tejto kategórii.</p>
+      <p>Zapnú sa len so súhlasom. Používame <strong>Firebase Analytics</strong> (Google Ireland / Google LLC, measurement ID <code>G-E9CCZPVP2X</code>) na meranie návštevnosti a interakcií na webe.</p>
+      <ul>
+        <li><strong>page_view</strong> — zobrazenie stránky (URL, názov stránky),</li>
+        <li><strong>cta_click</strong> — kliknutie na vybrané výzvy k akcii,</li>
+        <li><strong>outbound_click</strong> — odchod na externý odkaz,</li>
+        <li><strong>generate_lead</strong> / <strong>form_error</strong> — výsledok odoslania kontaktného formulára.</li>
+      </ul>
+      <p>Skript sa nenačíta, kým v cookie lište neudelíte súhlas s analytickými cookies. Po odvolaní súhlasu ďalšie eventy neodosielame.</p>
 
       <h3>3.4 Marketingové (voliteľné)</h3>
       <p><strong>Aktuálne nepoužívame</strong> reklamné ani remarketingové cookies. Kategória je pripravená do budúcna a bez súhlasu sa nespustí.</p>
@@ -144,7 +151,7 @@
       <h2>7. Kontakt</h2>
       <p>Otázky k cookies: <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a>. Viac o spracovaní údajov: <a href="../ochrana-udajov/">Ochrana osobných údajov</a>.</p>
 
-      <p class="legal-note"><strong>Dôležité:</strong> Tento dokument popisuje aktuálny stav webu. Ak pridáte analytiku alebo reklamu, aktualizujte tabuľku cookies a zapnite načítanie skriptov až po súhlase v príslušnej kategórii.</p>
+      <p class="legal-note"><strong>Dôležité:</strong> Analytika beží výhradne po súhlase. Marketingové cookies zatiaľ nepoužívame.</p>
     </div>
   </div>
 </main>
@@ -168,5 +175,6 @@
 </section>
 
 <script src="../cookies.js" defer></script>
+<script src="../analytics.js" defer></script>
 </body>
 </html>

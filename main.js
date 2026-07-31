@@ -281,8 +281,16 @@
 
       contactForm.reset();
       showFormStatus("Ďakujeme! Správu sme dostali a ozveme sa vám čo najskôr.", "success");
+      window.BeewoyAnalytics?.track?.("generate_lead", {
+        form_id: "kontakt",
+        page_path: window.BeewoyAnalytics.pagePath?.() || window.location.pathname
+      });
     } catch {
       showFormStatus("Odoslanie sa nepodarilo. Skúste to znova alebo nám napíšte na ahoj@beewoy.sk.", "error");
+      window.BeewoyAnalytics?.track?.("form_error", {
+        form_id: "kontakt",
+        page_path: window.BeewoyAnalytics.pagePath?.() || window.location.pathname
+      });
     } finally {
       submitBtn.disabled = false;
     }

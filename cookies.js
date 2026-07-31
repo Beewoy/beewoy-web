@@ -192,7 +192,7 @@
               ]),
               el("span", {
                 className: "cookie-category-desc",
-                text: "Pomáhajú pochopiť návštevnosť webu. Aktuálne neaktívne — pripravené pre budúce meranie (napr. anonymizovaná analytika)."
+                text: "Firebase Analytics (Google) — návštevnosť stránok a anonymizované eventy (napr. odoslanie formulára, kliknutia na CTA). Spúšťa sa až po súhlase."
               })
             ]);
           })(),
