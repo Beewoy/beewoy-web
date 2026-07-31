@@ -1,0 +1,41 @@
+# Repository and deployment metadata
+.git
+.git/**
+.gitignore
+.assetsignore
+wrangler.json
+wrangler.jsonc
+.env
+.env.*
+**/.env
+**/.env.*
+
+# Local tooling and platform state
+.netlify
+.netlify/**
+.wrangler
+.wrangler/**
+.venv
+.venv/**
+node_modules
+node_modules/**
+
+# Development-only files
+.DS_Store
+**/.DS_Store
+.htaccess
+_redirects
+**/_redirects
+_headers
+**/_headers
+README.md
+**/README.md
+**/README.txt
+scripts
+scripts/**
+**/__pycache__
+**/*.py[cod]
+
+# Source files used to generate social images
+og-main-source.html
+tvorba-webov/og-tvorba-webov-source.html
