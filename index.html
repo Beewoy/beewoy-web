@@ -601,10 +601,12 @@
       <h2 class="reveal" id="contact-title">Poďme sa <span>porozprávať.</span></h2>
       <div class="contact-layout reveal">
         <p class="contact-intro">Stačí pár viet o webe, aplikácii alebo internom systéme. Ozveme sa, prejdeme možnosti a úprimne povieme, či vám vieme pomôcť.</p>
-        <form class="contact-form" name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="kontakt-form">
-          <input type="hidden" name="form-name" value="kontakt">
+        <form class="contact-form" name="kontakt" method="POST" action="https://formsubmit.co/ahoj@beewoy.sk" id="kontakt-form">
+          <input type="hidden" name="_subject" value="Nová správa z kontaktného formulára na beewoy.sk">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_next" value="https://beewoy.sk/?odoslane=1#kontakt-form">
           <p class="form-honeypot" aria-hidden="true">
-            <label>Neplňte toto pole: <input name="bot-field"></label>
+            <label>Neplňte toto pole: <input type="text" name="_honey" tabindex="-1" autocomplete="off"></label>
           </p>
           <div class="form-field">
             <label for="contact-name">Meno</label>
@@ -663,16 +665,6 @@
     </div>
   </section>
 </main>
-
-<form name="kontakt" data-netlify="true" netlify-honeypot="bot-field" hidden>
-  <input type="hidden" name="form-name" value="kontakt">
-  <input name="bot-field">
-  <input name="meno">
-  <input name="email">
-  <input name="typ-projektu">
-  <textarea name="sprava"></textarea>
-  <input name="gdpr">
-</form>
 
 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none">
   <symbol id="icon-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">

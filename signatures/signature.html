@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E-mailový podpis – David Kolisek</title>
+</head>
+<body style="margin:0;padding:0;background:#ffffff;">
+  <div style="margin:0 0 24px 0;padding:16px;background:#f3f3f3;font-family:Arial,Helvetica,sans-serif;">
+    <button type="button" id="copy-signature"
+      style="padding:10px 16px;border:0;border-radius:6px;background:#111111;color:#ffffff;font:700 14px Arial,Helvetica,sans-serif;cursor:pointer;">
+      Skopírovať podpis
+    </button>
+    <span id="copy-status" style="margin-left:10px;color:#333333;font:13px Arial,Helvetica,sans-serif;"></span>
+  </div>
+
+  <table id="email-signature" role="presentation" border="0" cellspacing="0" cellpadding="0"
+    style="border-collapse:collapse;border-spacing:0;font-family:Arial,Helvetica,sans-serif;color:#111111;">
+    <tr>
+      <td width="72" valign="middle" style="width:72px;vertical-align:middle;padding:0;">
+        <a href="https://beewoy.sk/" target="_blank" style="display:block;text-decoration:none;border:0;">
+          <img src="https://beewoy.sk/icons/icon-192.png" width="72" height="72" alt="Beewoy"
+            style="display:block;width:72px;height:72px;border:0;outline:none;text-decoration:none;">
+        </a>
+      </td>
+      <td width="14" style="width:14px;padding:0;font-size:0;line-height:0;">&nbsp;</td>
+      <td width="3" bgcolor="#f3cb2a" style="width:3px;padding:0;background:#f3cb2a;font-size:0;line-height:0;">&nbsp;</td>
+      <td width="14" style="width:14px;padding:0;font-size:0;line-height:0;">&nbsp;</td>
+      <td valign="middle" style="vertical-align:middle;padding:0;font-family:Arial,Helvetica,sans-serif;color:#111111;white-space:nowrap;">
+        <div style="margin:0 0 7px 0;font-family:Arial,Helvetica,sans-serif;font-size:16px;line-height:19px;font-weight:700;color:#111111;">
+          Tibor Antal
+        </div>
+        <div style="margin:0 0 8px 0;font-family:Arial,Helvetica,sans-serif;font-size:12px;line-height:16px;font-weight:400;color:#111111;">
+          Spoluzakladateľ&nbsp;·&nbsp;vývoj a technológie
+        </div>
+        <div style="margin:0;font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:19px;color:#111111;">
+          <a href="tel:+421948473255" style="color:#111111;text-decoration:none;"><strong>T</strong>&nbsp;&nbsp;+421 948 473 255</a><br>
+          <a href="mailto:ahoj@beewoy.sk" style="color:#111111;text-decoration:none;"><strong>E</strong>&nbsp;&nbsp;ahoj@beewoy.sk</a><br>
+          <a href="https://beewoy.sk/" target="_blank" style="color:#111111;text-decoration:none;"><strong>W</strong>&nbsp;&nbsp;beewoy.sk</a>
+        </div>
+      </td>
+    </tr>
+  </table>
+
+  <script>
+    document.getElementById('copy-signature').addEventListener('click', function () {
+      var signature = document.getElementById('email-signature');
+      var selection = window.getSelection();
+      var range = document.createRange();
+
+      range.selectNode(signature);
+      selection.removeAllRanges();
+      selection.addRange(range);
+
+      var copied = document.execCommand('copy');
+      selection.removeAllRanges();
+
+      document.getElementById('copy-status').textContent = copied
+        ? 'Hotovo'
+        : 'Kopírovanie zlyhalo. Povoľ prehliadaču prístup ku schránke.';
+    });
+  </script>
+</body>
+</html>

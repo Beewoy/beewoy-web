@@ -263,36 +263,26 @@
     formStatus.classList.add(type === "success" ? "is-success" : "is-error");
   };
 
-  contactForm?.addEventListener("submit", async (event) => {
-    event.preventDefault();
-    const submitBtn = contactForm.querySelector('button[type="submit"]');
-    submitBtn.disabled = true;
-    formStatus.hidden = true;
-
-    try {
-      const body = new URLSearchParams(new FormData(contactForm)).toString();
-      const response = await fetch("/", {
-        method: "POST",
-        headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body
-      });
-
-      if (!response.ok) throw new Error("submit failed");
-
-      contactForm.reset();
+  const initFormResult = () => {
+    const url = new URL(window.location.href);
+    if (url.searchParams.get("odoslane") === "1") {
       showFormStatus("Ďakujeme! Správu sme dostali a ozveme sa vám čo najskôr.", "success");
       window.BeewoyAnalytics?.track?.("generate_lead", {
         form_id: "kontakt",
         page_path: window.BeewoyAnalytics.pagePath?.() || window.location.pathname
       });
-    } catch {
-      showFormStatus("Odoslanie sa nepodarilo. Skúste to znova alebo nám napíšte na ahoj@beewoy.sk.", "error");
-      window.BeewoyAnalytics?.track?.("form_error", {
-        form_id: "kontakt",
-        page_path: window.BeewoyAnalytics.pagePath?.() || window.location.pathname
-      });
-    } finally {
-      submitBtn.disabled = false;
+      url.searchParams.delete("odoslane");
+      window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
     }
+  };
+  initFormResult();
+
+  contactForm?.addEventListener("submit", () => {
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    if (submitBtn) {
+      submitBtn.disabled = true;
+      submitBtn.setAttribute("aria-busy", "true");
+    }
+    if (formStatus) formStatus.hidden = true;
   });
 })();
