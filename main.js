@@ -274,6 +274,13 @@
 
     try {
       const formData = new FormData(contactForm);
+      const honeyValue = String(formData.get("_honey") || "").trim();
+      const submittedEmail = String(formData.get("email") || "").trim();
+
+      // Some browser autofill/password managers copy the user's email into
+      // off-screen text fields. Do not let that create a false spam rejection.
+      if (honeyValue && honeyValue === submittedEmail) formData.set("_honey", "");
+
       const payload = Object.fromEntries(formData.entries());
       const response = await fetch("https://formsubmit.co/ajax/ahoj@beewoy.sk", {
         method: "POST",
