@@ -263,26 +263,49 @@
     formStatus.classList.add(type === "success" ? "is-success" : "is-error");
   };
 
-  const initFormResult = () => {
-    const url = new URL(window.location.href);
-    if (url.searchParams.get("odoslane") === "1") {
-      showFormStatus("Ďakujeme! Správu sme dostali a ozveme sa vám čo najskôr.", "success");
-      window.BeewoyAnalytics?.track?.("generate_lead", {
-        form_id: "kontakt",
-        page_path: window.BeewoyAnalytics.pagePath?.() || window.location.pathname
-      });
-      url.searchParams.delete("odoslane");
-      window.history.replaceState({}, "", `${url.pathname}${url.search}${url.hash}`);
-    }
-  };
-  initFormResult();
-
-  contactForm?.addEventListener("submit", () => {
+  contactForm?.addEventListener("submit", async (event) => {
+    event.preventDefault();
     const submitBtn = contactForm.querySelector('button[type="submit"]');
     if (submitBtn) {
       submitBtn.disabled = true;
       submitBtn.setAttribute("aria-busy", "true");
     }
     if (formStatus) formStatus.hidden = true;
+
+    try {
+      const formData = new FormData(contactForm);
+      const payload = Object.fromEntries(formData.entries());
+      const response = await fetch("https://formsubmit.co/ajax/ahoj@beewoy.sk", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(payload)
+      });
+      const result = await response.json().catch(() => null);
+
+      if (!response.ok || result?.success === false || result?.success === "false") {
+        throw new Error("submit failed");
+      }
+
+      contactForm.reset();
+      showFormStatus("Ďakujeme! Správu sme dostali a ozveme sa vám čo najskôr.", "success");
+      window.BeewoyAnalytics?.track?.("generate_lead", {
+        form_id: "kontakt",
+        page_path: window.BeewoyAnalytics.pagePath?.() || window.location.pathname
+      });
+    } catch {
+      showFormStatus("Odoslanie sa nepodarilo. Skúste to znova alebo nám napíšte na ahoj@beewoy.sk.", "error");
+      window.BeewoyAnalytics?.track?.("form_error", {
+        form_id: "kontakt",
+        page_path: window.BeewoyAnalytics.pagePath?.() || window.location.pathname
+      });
+    } finally {
+      if (submitBtn) {
+        submitBtn.disabled = false;
+        submitBtn.removeAttribute("aria-busy");
+      }
+    }
   });
 })();
