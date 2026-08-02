@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /ochrana-osobnych-udajov.html
+
+Sitemap: https://www.eurobeton.sk/sitemap.xml
