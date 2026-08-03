@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Screen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Poppins:wght@100..900&family=Fira+Code:wght@300..700&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+    <style type="text/tailwindcss">
+      @import "tailwindcss";
+      @theme inline {
+        --color-background: var(--background);
+        --color-foreground: var(--foreground);
+        --color-primary: var(--primary);
+        --color-primary-foreground: var(--primary-foreground);
+        --color-secondary: var(--secondary);
+        --color-secondary-foreground: var(--secondary-foreground);
+        --color-tertiary: var(--tertiary);
+        --color-muted: var(--muted);
+        --color-muted-foreground: var(--muted-foreground);
+        --color-accent: var(--accent);
+        --color-destructive: var(--destructive);
+        --color-card: var(--card);
+        --color-card-foreground: var(--card-foreground);
+        --color-border: var(--border);
+        --color-input: var(--input);
+        --color-ring: var(--ring);
+        --radius-sm: calc(var(--radius) - 4px);
+        --radius-md: calc(var(--radius) - 2px);
+        --radius-lg: var(--radius);
+        --font-family-sans: var(--font-sans);
+        --font-family-heading: var(--font-heading);
+        --font-family-mono: var(--font-mono);
+      }
+      :root { --background: #FAF9F5;
+        --foreground: #1B2E1D;
+        --primary: #1E4620;
+        --primary-foreground: #FFFFFF;
+        --secondary: #8ED081;
+        --secondary-foreground: #1B2E1D;
+        --tertiary: #1E4620;
+        --muted: #F1EFE9;
+        --muted-foreground: #7F897E;
+        --accent: #D7DCD3;
+        --accent-foreground: #1B2E1D;
+        --card: #FFFFFF;
+        --card-foreground: #1B2E1D;
+        --destructive: #FF6B6B;
+        --border: #E6E4DC;
+        --input: #E6E4DC;
+        --ring: #8ED081;
+        --radius: 1rem;
+        --font-sans: Inter, sans-serif;
+        --font-heading: Inter, sans-serif;
+        --font-mono: JetBrains Mono, monospace;
+        --shadow-offset-x: 0;
+        --shadow-offset-y: 10;
+        --shadow-blur: 30;
+        --shadow-spread: -8;
+        --shadow-color: rgba(15, 23, 42, 0.12); }
+    </style>
+    <style>
+      .brand-gradient { background-image: linear-gradient(135deg, var(--primary), var(--accent)); }
+      .shadow-theme {
+        box-shadow:
+          calc(var(--shadow-offset-x, 0) * 1px) calc(var(--shadow-offset-y, 10) * 1px)
+          calc(var(--shadow-blur, 30) * 1px) calc(var(--shadow-spread, -8) * 1px)
+          var(--shadow-color, rgba(15, 23, 42, 0.12));
+      }
+    </style>
+  </head>
+  <body>
+<div class="min-h-screen w-full bg-background flex flex-col relative text-foreground font-sans selection:bg-secondary selection:text-primary overflow-x-hidden">
+  
+  <!-- 1. TOP INFORMATION BAR -->
+  <div class="w-full bg-primary text-primary-foreground py-2.5 px-6 text-sm font-medium border-b border-border/10 z-50">
+    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+        <span>Akreditovaná súkromná materská škola MŠVVaŠ SR</span>
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-6 text-xs sm:text-sm">
+        <a href="#kontakt" class="hover:text-secondary transition-colors flex items-center gap-1.5">
+          <iconify-icon icon="lucide:map-pin" class="text-secondary"></iconify-icon>
+          <span>Slivková 18, Rovinka</span>
+        </a>
+        <div class="flex items-center gap-1.5 text-primary-foreground/90">
+          <iconify-icon icon="lucide:sparkles" class="text-secondary"></iconify-icon>
+          <span>Pre deti od 2 do 6 rokov</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STICKY NAVIGATION BAR -->
+  <header class="sticky top-0 w-full bg-background/95 backdrop-blur-md border-b border-border z-40 transition-all duration-300">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-primary font-bold text-xl shadow-sm group-hover:scale-105 transition-transform">
+          <iconify-icon icon="lucide:baby" class="text-2xl"></iconify-icon>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-heading font-extrabold text-2xl tracking-tight text-primary leading-none">Hrášok</span>
+          <span class="text-[10px] uppercase tracking-widest text-muted-foreground font-semibold">Súkromná MŠ</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-8">
+        <a href="#o-nas" class="text-[15px] font-semibold text-foreground/80 hover:text-primary transition-colors">O nás</a>
+        <a href="#edukacia" class="text-[15px] font-semibold text-foreground/80 hover:text-primary transition-colors">Edukácia</a>
+        <a href="#priestory" class="text-[15px] font-semibold text-foreground/80 hover:text-primary transition-colors">Priestory</a>
+        <a href="#triedy" class="text-[15px] font-semibold text-foreground/80 hover:text-primary transition-colors">Triedy</a>
+        <a href="#kruzky" class="text-[15px] font-semibold text-foreground/80 hover:text-primary transition-colors">Krúžky</a>
+        <a href="#cennik" class="text-[15px] font-semibold text-foreground/80 hover:text-primary transition-colors">Cenník</a>
+        <a href="#kontakt" class="text-[15px] font-semibold text-foreground/80 hover:text-primary transition-colors">Kontakt</a>
+      </nav>
+
+      <!-- CTA -->
+      <div class="hidden sm:block">
+        <a href="#kontakt" class="inline-flex items-center gap-2 bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-full hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-md shadow-primary/10">
+          <span>Dohodnúť návštevu</span>
+          <iconify-icon icon="lucide:arrow-right" class="text-secondary"></iconify-icon>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- 2. HERO SECTION -->
+  <section class="relative pt-16 pb-24 px-6 overflow-hidden">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left text info -->
+      <div class="lg:col-span-6 space-y-8 relative z-10">
+        <div class="inline-flex items-center gap-2 bg-secondary/20 text-primary border border-secondary/30 px-4 py-2 rounded-full text-xs font-semibold uppercase tracking-wider">
+          <iconify-icon icon="lucide:heart" class="text-primary animate-pulse"></iconify-icon>
+          Príjímanie detí na šk. rok 2026/2027 otvorené
+        </div>
+        
+        <h1 class="text-4xl md:text-6xl font-heading font-extrabold text-primary leading-[1.1] tracking-tight">
+          Miesto, kde deti rastú <br>
+          <span class="relative inline-block text-primary">
+            s radosťou.
+            <svg class="absolute -bottom-2 left-0 w-full h-3 text-secondary" viewBox="0 0 100 10" preserveAspectRatio="none">
+              <path d="M0,5 Q50,10 100,5" stroke="currentColor" stroke-width="4" fill="none" stroke-linecap="round"/>
+            </svg>
+          </span>
+        </h1>
+        
+        <p class="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-xl">
+          Rodinná starostlivosť, malé triedy a učenie hrou v bezpečnom a podnetnom prostredí pre deti od 2 do 6 rokov.
+        </p>
+
+        <div class="flex flex-wrap gap-4 pt-2">
+          <a href="#kontakt" class="inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold px-8 py-4 rounded-full text-base hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-lg shadow-primary/15">
+            <span>Dohodnúť si návštevu</span>
+            <iconify-icon icon="lucide:calendar-clock" class="text-secondary text-lg"></iconify-icon>
+          </a>
+          <a href="#o-nas" class="inline-flex items-center justify-center gap-2 bg-background text-primary border-2 border-primary/10 font-bold px-8 py-4 rounded-full text-base hover:bg-muted/50 hover:border-primary/20 hover:scale-[1.02] active:scale-[0.98] transition-all">
+            <span>Spoznajte Hrášok</span>
+            <iconify-icon icon="lucide:info" class="text-primary/70"></iconify-icon>
+          </a>
+        </div>
+
+        <!-- Handwritten Accent Note -->
+        <div class="flex items-center gap-3 pt-4 text-primary/80">
+          <iconify-icon icon="lucide:arrow-right" class="rotate-45 text-secondary text-2xl"></iconify-icon>
+          <span class="font-semibold text-sm italic tracking-wide">Bezpečný areál v pokojnej lokalite blízko hrádze!</span>
+        </div>
+      </div>
+
+      <!-- Right image collage (using real images from original site) -->
+      <div class="lg:col-span-6 relative flex justify-center items-center">
+        <!-- Playful Background elements -->
+        <div class="absolute w-[400px] h-[400px] bg-secondary/10 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute w-72 h-72 bg-yellow-200/20 rounded-full blur-3xl -z-10 -right-10 -top-10"></div>
+
+        <!-- Main Collage Grid with asymmetrical layouts -->
+        <div class="relative grid grid-cols-2 gap-4 max-w-lg w-full">
+          
+          <!-- Image 1: Main Classroom (Real kindergarten photo from site) -->
+          <div class="col-span-2 relative group rounded-[2.5rem] overflow-hidden border-4 border-border shadow-xl rotate-[-1deg] hover:rotate-0 transition-transform duration-500">
+            <img src="assets/hero-classroom.webp" alt="Trieda a priestory škôlky Hrášok" class="w-full h-64 object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-6">
+              <span class="text-primary-foreground font-medium text-sm">Naša priestranná herňa plná hračiek</span>
+            </div>
+          </div>
+
+          <!-- Image 2: Child play zone -->
+          <div class="relative group rounded-[2rem] overflow-hidden border-4 border-border shadow-lg rotate-[2deg] hover:rotate-0 transition-transform duration-500">
+            <img src="assets/hero-play.webp" alt="Deti sa hrajú v škôlke Hrášok" class="w-full h-44 object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+              <span class="text-primary-foreground font-medium text-xs">Bezpečné herné prvky</span>
+            </div>
+          </div>
+
+          <!-- Image 3: Garden / Outdoor playground -->
+          <div class="relative group rounded-[2rem] overflow-hidden border-4 border-border shadow-lg rotate-[-3deg] hover:rotate-0 transition-transform duration-500">
+            <img src="assets/hero-garden.webp" alt="Detské ihrisko a záhrada" class="w-full h-44 object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-primary/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+              <span class="text-primary-foreground font-medium text-xs">Vlastná oplotená záhrada</span>
+            </div>
+          </div>
+
+          <!-- Decorative hand-drawn stars & plants -->
+          <div class="absolute -top-6 -left-6 text-yellow-400 animate-bounce">
+            <iconify-icon icon="lucide:star" class="text-4xl fill-yellow-400"></iconify-icon>
+          </div>
+          <div class="absolute -bottom-6 -right-4 text-secondary">
+            <iconify-icon icon="lucide:flower" class="text-5xl"></iconify-icon>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Hand-drawn grass divider below the hero -->
+    <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-[0]">
+      <svg class="relative block w-full h-[30px] text-secondary/30" viewBox="0 0 1200 120" preserveAspectRatio="none">
+        <path d="M0,0 C150,90 350,10 500,70 C650,110 850,30 1000,80 C1150,120 1200,40 1200,40 L1200,120 L0,120 Z" fill="currentColor"></path>
+      </svg>
+    </div>
+  </section>
+
+  <!-- 3. TRUST BENEFITS -->
+  <section class="bg-secondary/15 py-12 px-6 relative border-y border-secondary/20">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
+      
+      <!-- Benefit 1 -->
+      <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-background/50 transition-colors">
+        <div class="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center shrink-0 shadow-md">
+          <iconify-icon icon="lucide:shield-check" class="text-2xl text-secondary"></iconify-icon>
+        </div>
+        <div>
+          <h3 class="font-heading font-bold text-lg text-primary">Akreditovaná materská škola</h3>
+          <p class="text-muted-foreground text-sm mt-1">Zaradená v oficiálnej sieti škôl Ministerstva školstva SR.</p>
+        </div>
+      </div>
+
+      <!-- Benefit 2 -->
+      <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-background/50 transition-colors">
+        <div class="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center shrink-0 shadow-md">
+          <iconify-icon icon="lucide:users" class="text-2xl text-secondary"></iconify-icon>
+        </div>
+        <div>
+          <h3 class="font-heading font-bold text-lg text-primary">Maximálne 10 detí v triede</h3>
+          <p class="text-muted-foreground text-sm mt-1">Garantujeme vysoko individuálny a trpezlivý prístup.</p>
+        </div>
+      </div>
+
+      <!-- Benefit 3 -->
+      <div class="flex items-start gap-4 p-4 rounded-2xl hover:bg-background/50 transition-colors">
+        <div class="w-12 h-12 rounded-full bg-primary text-primary-foreground flex items-center justify-center shrink-0 shadow-md">
+          <iconify-icon icon="lucide:languages" class="text-2xl text-secondary"></iconify-icon>
+        </div>
+        <div>
+          <h3 class="font-heading font-bold text-lg text-primary">Angličtina hrou</h3>
+          <p class="text-muted-foreground text-sm mt-1">Prirodzená výučba so skúseným lektorom a skvelými pomôckami.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. ABOUT SECTION -->
+  <section id="o-nas" class="py-24 px-6 relative">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <span class="text-primary font-bold uppercase tracking-wider text-xs bg-secondary/30 px-3 py-1.5 rounded-full">Kto sme</span>
+        <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-primary">Malá škôlka s veľkým srdcom.</h2>
+        <p class="text-muted-foreground text-base md:text-lg">
+          Hrášok je moderné rodinné vzdelávacie zariadenie v tichom prostredí blízko hrádze v Rovinke. Spájame kvalifikovaný odborný prístup s láskavou rodinnou atmosférou, kde sa každé dieťa cíti bezpečne a výnimočne.
+        </p>
+      </div>
+
+      <!-- Playful Grid of 4 Cards (asymmetrical rotations & backgrounds) -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Card 1 -->
+        <div class="bg-background p-8 rounded-3xl border border-border hover:shadow-xl transition-all duration-300 rotate-[-1deg] hover:rotate-0 flex flex-col justify-between h-full relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-secondary/10 rounded-bl-full -z-10 group-hover:scale-110 transition-transform"></div>
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-secondary/20 text-primary flex items-center justify-center mb-6">
+              <iconify-icon icon="lucide:award" class="text-2xl"></iconify-icon>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-primary mb-3">Akreditovaná škôlka</h3>
+            <p class="text-muted-foreground text-sm leading-relaxed">
+              Spĺňame prísne štátne štandardy kvality, hygieny a vzdelávacieho programu pre plnohodnotný rozvoj detí.
+            </p>
+          </div>
+          <div class="pt-6 text-xs text-primary font-semibold flex items-center gap-1">
+            <span>Spoznajte nás viac</span>
+            <iconify-icon icon="lucide:arrow-right" class="text-secondary"></iconify-icon>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-background p-8 rounded-3xl border border-border hover:shadow-xl transition-all duration-300 rotate-[1deg] hover:rotate-0 flex flex-col justify-between h-full relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-yellow-100 rounded-bl-full -z-10 group-hover:scale-110 transition-transform"></div>
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-yellow-100 text-yellow-800 flex items-center justify-center mb-6">
+              <iconify-icon icon="lucide:users-round" class="text-2xl"></iconify-icon>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-primary mb-3">Malé triedy</h3>
+            <p class="text-muted-foreground text-sm leading-relaxed">
+              S maximálne 10 deťmi v jednej triede máme dostatok času na rozvoj individuality a potrieb každého z nich.
+            </p>
+          </div>
+          <div class="pt-6 text-xs text-primary font-semibold flex items-center gap-1">
+            <span>Spoznajte nás viac</span>
+            <iconify-icon icon="lucide:arrow-right" class="text-secondary"></iconify-icon>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-background p-8 rounded-3xl border border-border hover:shadow-xl transition-all duration-300 rotate-[-1.5deg] hover:rotate-0 flex flex-col justify-between h-full relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-blue-50 rounded-bl-full -z-10 group-hover:scale-110 transition-transform"></div>
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-700 flex items-center justify-center mb-6">
+              <iconify-icon icon="lucide:globe" class="text-2xl"></iconify-icon>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-primary mb-3">Angličtina hrou</h3>
+            <p class="text-muted-foreground text-sm leading-relaxed">
+              Osvojovanie si cudzieho jazyka prirodzenou a zábavnou formou, pesničkami a interaktívnymi hrami.
+            </p>
+          </div>
+          <div class="pt-6 text-xs text-primary font-semibold flex items-center gap-1">
+            <span>Spoznajte nás viac</span>
+            <iconify-icon icon="lucide:arrow-right" class="text-secondary"></iconify-icon>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-background p-8 rounded-3xl border border-border hover:shadow-xl transition-all duration-300 rotate-[1.5deg] hover:rotate-0 flex flex-col justify-between h-full relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-red-50 rounded-bl-full -z-10 group-hover:scale-110 transition-transform"></div>
+          <div>
+            <div class="w-12 h-12 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center mb-6">
+              <iconify-icon icon="lucide:shield-check" class="text-2xl"></iconify-icon>
+            </div>
+            <h3 class="font-heading font-bold text-xl text-primary mb-3">Odborný tím</h3>
+            <p class="text-muted-foreground text-sm leading-relaxed">
+              Kvalifikované pani učiteľky úzko spolupracujú s logopédom, psychológom a grafomotorickým špecialistom.
+            </p>
+          </div>
+          <div class="pt-6 text-xs text-primary font-semibold flex items-center gap-1">
+            <span>Spoznajte nás viac</span>
+            <iconify-icon icon="lucide:arrow-right" class="text-secondary"></iconify-icon>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 5. EDUCATION SECTION -->
+  <section id="edukacia" class="py-24 px-6 bg-secondary/10 relative">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left Content -->
+        <div class="lg:col-span-7 space-y-8">
+          <div class="space-y-4">
+            <span class="text-primary font-bold uppercase tracking-wider text-xs bg-background border border-border px-3 py-1.5 rounded-full">Vzdelávací program</span>
+            <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-primary leading-tight">Učenie, ktoré vyzerá ako hra.</h2>
+            <p class="text-muted-foreground text-base md:text-lg leading-relaxed">
+              Vzdelávame podľa oficiálneho Štátneho vzdelávacieho programu pre predprimárne vzdelávanie v materských školách. Do dennej rutiny citlivo integrujeme moderné vzdelávacie prvky a metodiky.
+            </p>
+          </div>
+
+          <!-- Feature List -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+            
+            <div class="bg-background p-6 rounded-2xl border border-border shadow-sm flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-secondary/20 text-primary flex items-center justify-center shrink-0">
+                <iconify-icon icon="lucide:book-open" class="text-xl"></iconify-icon>
+              </div>
+              <div>
+                <h4 class="font-bold text-primary">Cambridge & Oxford</h4>
+                <p class="text-muted-foreground text-xs mt-1">Učebné materiály svetovej úrovne pre základy angličtiny.</p>
+              </div>
+            </div>
+
+            <div class="bg-background p-6 rounded-2xl border border-border shadow-sm flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-secondary/20 text-primary flex items-center justify-center shrink-0">
+                <iconify-icon icon="lucide:pen-tool" class="text-xl"></iconify-icon>
+              </div>
+              <div>
+                <h4 class="font-bold text-primary">Croco Pen & LOGICO</h4>
+                <p class="text-muted-foreground text-xs mt-1">Interaktívne a logické hry Logico Primo pre rozvoj myslenia.</p>
+              </div>
+            </div>
+
+            <div class="bg-background p-6 rounded-2xl border border-border shadow-sm flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-secondary/20 text-primary flex items-center justify-center shrink-0">
+                <iconify-icon icon="lucide:message-square" class="text-xl"></iconify-icon>
+              </div>
+              <div>
+                <h4 class="font-bold text-primary">Logopedická podpora</h4>
+                <p class="text-muted-foreground text-xs mt-1">Pravidelná spolupráca s klinickým logopédom.</p>
+              </div>
+            </div>
+
+            <div class="bg-background p-6 rounded-2xl border border-border shadow-sm flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-secondary/20 text-primary flex items-center justify-center shrink-0">
+                <iconify-icon icon="lucide:brain" class="text-xl"></iconify-icon>
+              </div>
+              <div>
+                <h4 class="font-bold text-primary">Odborná diagnostika</h4>
+                <p class="text-muted-foreground text-xs mt-1">Spolupráca s psychológom a grafomotorickým špecialistom.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Content: Daily Schedule Card -->
+        <div class="lg:col-span-5">
+          <div class="bg-background p-8 rounded-3xl border-2 border-primary/10 shadow-xl relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-secondary/10 rounded-bl-full -z-10"></div>
+            
+            <div class="flex items-center justify-between mb-6">
+              <h3 class="font-heading font-extrabold text-2xl text-primary">Denný harmonogram</h3>
+              <span class="text-xs bg-primary text-primary-foreground font-bold px-3 py-1 rounded-full">7:00 - 18:00</span>
+            </div>
+
+            <!-- Schedule Items -->
+            <div class="space-y-4">
+              
+              <div class="flex items-center gap-4 py-2 border-b border-border">
+                <span class="text-sm font-bold text-primary w-24 shrink-0">07:00 - 08:30</span>
+                <div class="text-sm">
+                  <span class="font-semibold text-foreground">Príchod detí</span>
+                  <p class="text-muted-foreground text-xs">Hry a individuálne aktivity</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 py-2 border-b border-border">
+                <span class="text-sm font-bold text-primary w-24 shrink-0">08:30 - 09:00</span>
+                <div class="text-sm">
+                  <span class="font-semibold text-foreground">Ranné cvičenie & Desiata</span>
+                  <p class="text-muted-foreground text-xs">Zdravý ranný rituál a ovocie</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 py-2 border-b border-border">
+                <span class="text-sm font-bold text-primary w-24 shrink-0">09:00 - 11:30</span>
+                <div class="text-sm">
+                  <span class="font-semibold text-foreground">Edukácia & Pobyt vonku</span>
+                  <p class="text-muted-foreground text-xs">Angličtina, tvorivé dielne, ihrisko</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 py-2 border-b border-border">
+                <span class="text-sm font-bold text-primary w-24 shrink-0">11:30 - 12:30</span>
+                <div class="text-sm">
+                  <span class="font-semibold text-foreground">Obed</span>
+                  <p class="text-muted-foreground text-xs">Zdravé teplé jedlo plné živín</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 py-2 border-b border-border">
+                <span class="text-sm font-bold text-primary w-24 shrink-0">12:30 - 14:30</span>
+                <div class="text-sm">
+                  <span class="font-semibold text-foreground">Popoludňajší odpočinok</span>
+                  <p class="text-muted-foreground text-xs">Oddych, čítanie rozprávok</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 py-2 border-b border-border">
+                <span class="text-sm font-bold text-primary w-24 shrink-0">14:30 - 15:00</span>
+                <div class="text-sm">
+                  <span class="font-semibold text-foreground">Olovrant</span>
+                  <p class="text-muted-foreground text-xs">Ľahké občerstvenie a pitný režim</p>
+                </div>
+              </div>
+
+              <div class="flex items-center gap-4 py-2">
+                <span class="text-sm font-bold text-primary w-24 shrink-0">15:00 - 18:00</span>
+                <div class="text-sm">
+                  <span class="font-semibold text-foreground">Krúžky & Voľné hry</span>
+                  <p class="text-muted-foreground text-xs">Záujmové aktivity, odchod domov</p>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 6. FACILITIES (PRIESTORY) -->
+  <section id="priestory" class="py-24 px-6 relative">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center mb-16">
+        
+        <!-- Left Title & Info -->
+        <div class="lg:col-span-6 space-y-6">
+          <span class="text-primary font-bold uppercase tracking-wider text-xs bg-secondary/30 px-3 py-1.5 rounded-full">Kde rastieme</span>
+          <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-primary">Priestor na hru, objavovanie aj oddych.</h2>
+          <p class="text-muted-foreground text-base md:text-lg">
+            Škôlka disponuje tromi priestrannými a svetlými triedami pre celkovo 26 detí. S maximálne 10 deťmi v triede vieme zaručiť nadštandardnú starostlivosť a plnú pozornosť.
+          </p>
+
+          <!-- List of features -->
+          <div class="grid grid-cols-2 gap-4 pt-4">
+            <div class="flex items-center gap-2">
+              <iconify-icon icon="lucide:check-circle" class="text-secondary text-lg"></iconify-icon>
+              <span class="font-semibold text-sm">Vlastná súkromná záhrada</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <iconify-icon icon="lucide:check-circle" class="text-secondary text-lg"></iconify-icon>
+              <span class="font-semibold text-sm">Bezpečné detské ihrisko</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <iconify-icon icon="lucide:check-circle" class="text-secondary text-lg"></iconify-icon>
+              <span class="font-semibold text-sm">Dopravné ihrisko</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <iconify-icon icon="lucide:check-circle" class="text-secondary text-lg"></iconify-icon>
+              <span class="font-semibold text-sm">Veľká trampolína</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <iconify-icon icon="lucide:check-circle" class="text-secondary text-lg"></iconify-icon>
+              <span class="font-semibold text-sm">Nafukovací hrad</span>
+            </div>
+            <div class="flex items-center gap-2">
+              <iconify-icon icon="lucide:check-circle" class="text-secondary text-lg"></iconify-icon>
+              <span class="font-semibold text-sm">Pokojná lokalita</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Real Image Showcase (Irregular collage) -->
+        <div class="lg:col-span-6 grid grid-cols-2 gap-4">
+          <div class="space-y-4">
+            <div class="rounded-[2rem] overflow-hidden border-4 border-border shadow-lg rotate-[-2deg] hover:rotate-0 transition-transform duration-300">
+              <img src="assets/space-bedroom.webp" alt="Detská izba a postieľky" class="w-full h-48 object-cover">
+            </div>
+            <div class="rounded-[2rem] overflow-hidden border-4 border-border shadow-lg rotate-[1deg] hover:rotate-0 transition-transform duration-300">
+              <img src="assets/space-playroom.webp" alt="Hračky a herňa" class="w-full h-64 object-cover">
+            </div>
+          </div>
+          <div class="space-y-4 pt-8">
+            <div class="rounded-[2rem] overflow-hidden border-4 border-border shadow-lg rotate-[3deg] hover:rotate-0 transition-transform duration-300">
+              <img src="assets/space-naproom.webp" alt="Spálňa pre deti" class="w-full h-64 object-cover">
+            </div>
+            <div class="rounded-[2rem] overflow-hidden border-4 border-border shadow-lg rotate-[-1deg] hover:rotate-0 transition-transform duration-300">
+              <img src="assets/space-playground.webp" alt="Záhradné ihrisko" class="w-full h-48 object-cover">
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 7. CLASSES (TRIEDY) -->
+  <section id="triedy" class="py-24 px-6 bg-primary text-primary-foreground relative overflow-hidden">
+    <!-- Playful absolute designs -->
+    <div class="absolute -top-12 -left-12 w-48 h-48 bg-secondary/10 rounded-full blur-2xl"></div>
+    <div class="absolute -bottom-12 -right-12 w-48 h-48 bg-yellow-400/10 rounded-full blur-2xl"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <span class="text-secondary font-bold uppercase tracking-wider text-xs bg-background/10 px-3 py-1.5 rounded-full">Naše triedy</span>
+        <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-primary-foreground">Tri farebné svety plné objavov.</h2>
+        <p class="text-primary-foreground/80 text-base md:text-lg">
+          Deti delíme do tried podľa veku a potrieb tak, aby sme im poskytli optimálne podmienky na socializáciu a učenie.
+        </p>
+      </div>
+
+      <!-- Class Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Card 1: Lienky -->
+        <div class="bg-background text-foreground p-8 rounded-3xl border-2 border-border hover:scale-[1.03] transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-red-500/10 rounded-bl-full -z-10 group-hover:scale-110 transition-transform"></div>
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center mb-6">
+              <iconify-icon icon="lucide:heart" class="text-3xl"></iconify-icon>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-widest text-red-500">Najmenší kamaráti</span>
+            <h3 class="font-heading font-extrabold text-2xl text-primary mt-1 mb-3">Lienky</h3>
+            <p class="text-muted-foreground text-sm leading-relaxed mb-6">
+              Pre deti od 2 do 3 rokov. Zameriavame sa na jemnú adaptáciu, rozvoj sebaobsluhy, reči a prvé kamarátske vzťahy v rodinnom prostredí.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-border flex justify-between items-center text-xs font-bold text-primary">
+            <span>VEK: 2 až 3 ROKY</span>
+            <span class="bg-red-100 text-red-600 px-2.5 py-1 rounded-full">Kapacita 10 detí</span>
+          </div>
+        </div>
+
+        <!-- Card 2: Motýle -->
+        <div class="bg-background text-foreground p-8 rounded-3xl border-2 border-border hover:scale-[1.03] transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-blue-500/10 rounded-bl-full -z-10 group-hover:scale-110 transition-transform"></div>
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center mb-6">
+              <iconify-icon icon="lucide:sparkles" class="text-3xl"></iconify-icon>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-widest text-blue-500">Zvedaví objavitelia</span>
+            <h3 class="font-heading font-extrabold text-2xl text-primary mt-1 mb-3">Motýle</h3>
+            <p class="text-muted-foreground text-sm leading-relaxed mb-6">
+              Pre deti od 4 do 5 rokov. Rozvíjame tvorivosť, logické myslenie, základy angličtiny a jemnú motoriku prostredníctvom interaktívnych aktivít.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-border flex justify-between items-center text-xs font-bold text-primary">
+            <span>VEK: 4 až 5 ROKOV</span>
+            <span class="bg-blue-100 text-blue-600 px-2.5 py-1 rounded-full">Kapacita 10 detí</span>
+          </div>
+        </div>
+
+        <!-- Card 3: Žabky -->
+        <div class="bg-background text-foreground p-8 rounded-3xl border-2 border-border hover:scale-[1.03] transition-all duration-300 flex flex-col justify-between relative overflow-hidden group">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-secondary/20 rounded-bl-full -z-10 group-hover:scale-110 transition-transform"></div>
+          <div>
+            <div class="w-14 h-14 rounded-2xl bg-secondary/30 text-primary flex items-center justify-center mb-6">
+              <iconify-icon icon="lucide:graduation-cap" class="text-3xl"></iconify-icon>
+            </div>
+            <span class="text-xs font-bold uppercase tracking-widest text-primary">Predškolská príprava</span>
+            <h3 class="font-heading font-extrabold text-2xl text-primary mt-1 mb-3">Žabky</h3>
+            <p class="text-muted-foreground text-sm leading-relaxed mb-6">
+              Pre deti od 5 do 6 rokov. Dôkladná predškolská príprava, grafomotorika, rozvoj sústredenia a samostatnosti pre plynulý prechod na základnú školu.
+            </p>
+          </div>
+          <div class="pt-4 border-t border-border flex justify-between items-center text-xs font-bold text-primary">
+            <span>VEK: 5 až 6 ROKOV</span>
+            <span class="bg-secondary/35 text-primary px-2.5 py-1 rounded-full">Kapacita 10 detí</span>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 8. ACTIVITIES (KRÚŽKY) -->
+  <section id="kruzky" class="py-24 px-6 relative">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <span class="text-primary font-bold uppercase tracking-wider text-xs bg-secondary/30 px-3 py-1.5 rounded-full">Záujmová činnosť</span>
+        <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-primary">Každé dieťa môže objaviť, čo ho baví.</h2>
+        <p class="text-muted-foreground text-base md:text-lg">
+          Ponúkame pestrú škálu krúžkov priamo v priestoroch našej škôlky pod vedením skúsených certifikovaných lektorov a pedagógov.
+        </p>
+      </div>
+
+      <!-- Activities Grid -->
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Activity 1 -->
+        <div class="bg-background p-6 rounded-3xl border border-border hover:shadow-lg transition-all duration-300 flex gap-4 items-start">
+          <div class="w-12 h-12 rounded-2xl bg-orange-100 text-orange-600 flex items-center justify-center shrink-0">
+            <iconify-icon icon="lucide:heart-handshake" class="text-2xl"></iconify-icon>
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-lg text-primary">Koníky a animoterapia</h3>
+            <p class="text-muted-foreground text-sm mt-1 leading-relaxed">Rozvoj empatie, motoriky a pozitívneho vzťahu k zvieratám prostredníctvom liečivého kontaktu.</p>
+          </div>
+        </div>
+
+        <!-- Activity 2 -->
+        <div class="bg-background p-6 rounded-3xl border border-border hover:shadow-lg transition-all duration-300 flex gap-4 items-start">
+          <div class="w-12 h-12 rounded-2xl bg-blue-100 text-blue-600 flex items-center justify-center shrink-0">
+            <iconify-icon icon="lucide:music" class="text-2xl"></iconify-icon>
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-lg text-primary">Flauta</h3>
+            <p class="text-muted-foreground text-sm mt-1 leading-relaxed">Rozvoj správneho dýchania, hudobného sluchu, rytmiky a trpezlivosti už od útleho veku.</p>
+          </div>
+        </div>
+
+        <!-- Activity 3 -->
+        <div class="bg-background p-6 rounded-3xl border border-border hover:shadow-lg transition-all duration-300 flex gap-4 items-start">
+          <div class="w-12 h-12 rounded-2xl bg-red-100 text-red-600 flex items-center justify-center shrink-0">
+            <iconify-icon icon="lucide:sparkles" class="text-2xl"></iconify-icon>
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-lg text-primary">Tanečný folklór</h3>
+            <p class="text-muted-foreground text-sm mt-1 leading-relaxed">Zoznámenie sa so slovenskými tradíciami, rytmicko-pohybové hry a radosť z tanca.</p>
+          </div>
+        </div>
+
+        <!-- Activity 4 -->
+        <div class="bg-background p-6 rounded-3xl border border-border hover:shadow-lg transition-all duration-300 flex gap-4 items-start">
+          <div class="w-12 h-12 rounded-2xl bg-purple-100 text-purple-600 flex items-center justify-center shrink-0">
+            <iconify-icon icon="lucide:palette" class="text-2xl"></iconify-icon>
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-lg text-primary">Šikovné ruky & arteterapia</h3>
+            <p class="text-muted-foreground text-sm mt-1 leading-relaxed">Kreatívne tvorenie s netradičnými materiálmi pre uvoľnenie emócií a rozvoj tvorivosti.</p>
+          </div>
+        </div>
+
+        <!-- Activity 5 -->
+        <div class="bg-background p-6 rounded-3xl border border-border hover:shadow-lg transition-all duration-300 flex gap-4 items-start">
+          <div class="w-12 h-12 rounded-2xl bg-yellow-100 text-yellow-800 flex items-center justify-center shrink-0">
+            <iconify-icon icon="lucide:theater" class="text-2xl"></iconify-icon>
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-lg text-primary">Dramatický krúžok</h3>
+            <p class="text-muted-foreground text-sm mt-1 leading-relaxed">Podpora vyjadrovacích schopností, odbúranie trémy a rozvoj detskej fantázie.</p>
+          </div>
+        </div>
+
+        <!-- Activity 6 -->
+        <div class="bg-background p-6 rounded-3xl border border-border hover:shadow-lg transition-all duration-300 flex gap-4 items-start">
+          <div class="w-12 h-12 rounded-2xl bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0">
+            <iconify-icon icon="lucide:activity" class="text-2xl"></iconify-icon>
+          </div>
+          <div>
+            <h3 class="font-heading font-bold text-lg text-primary">Športový krúžok</h3>
+            <p class="text-muted-foreground text-sm mt-1 leading-relaxed">Základy gymnastiky, loptových hier a budovanie pozitívneho vzťahu k pohybu a zdraviu.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 9. FOOD SECTION (STRAVOVANIE) -->
+  <section class="py-24 px-6 bg-secondary/10 relative">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Text / Info -->
+      <div class="lg:col-span-7 space-y-6">
+        <span class="text-primary font-bold uppercase tracking-wider text-xs bg-background border border-border px-3 py-1.5 rounded-full">Zdravá strava</span>
+        <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-primary">Zdravé jedlo je súčasťou dobrého dňa.</h2>
+        <p class="text-muted-foreground text-base md:text-lg">
+          Záleží nám na tom, čo deti jedia. Ponúkame pestrú a nutrične vyváženú stravu 3 až 4-krát denne s ohľadom na zdravý vývoj detského organizmu a celodenný pitný režim.
+        </p>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-4">
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-secondary text-primary flex items-center justify-center shrink-0 mt-0.5">
+              <iconify-icon icon="lucide:check" class="text-sm font-bold"></iconify-icon>
+            </div>
+            <div>
+              <span class="font-bold text-primary">Strava 3–4x denne</span>
+              <p class="text-xs text-muted-foreground">Desiata, obed, olovrant a zdravé maškrty.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-secondary text-primary flex items-center justify-center shrink-0 mt-0.5">
+              <iconify-icon icon="lucide:check" class="text-sm font-bold"></iconify-icon>
+            </div>
+            <div>
+              <span class="font-bold text-primary">Projekt „Školské ovocie“</span>
+              <p class="text-xs text-muted-foreground">Pravidelný prísun čerstvého lokálneho ovocia a zeleniny.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-secondary text-primary flex items-center justify-center shrink-0 mt-0.5">
+              <iconify-icon icon="lucide:check" class="text-sm font-bold"></iconify-icon>
+            </div>
+            <div>
+              <span class="font-bold text-primary">Kvalitné suroviny</span>
+              <p class="text-xs text-muted-foreground">Strukoviny, ryby, chudé mäso a celozrnné pečivo.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3">
+            <div class="w-6 h-6 rounded-full bg-secondary text-primary flex items-center justify-center shrink-0 mt-0.5">
+              <iconify-icon icon="lucide:check" class="text-sm font-bold"></iconify-icon>
+            </div>
+            <div>
+              <span class="font-bold text-primary">Celodenný pitný režim</span>
+              <p class="text-xs text-muted-foreground">Čistá voda, nesladené čaje a ovocné šťavy.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Playful Graphic Card -->
+      <div class="lg:col-span-5">
+        <div class="bg-background p-8 rounded-3xl border border-border shadow-xl relative overflow-hidden rotate-[1.5deg] hover:rotate-0 transition-transform duration-300">
+          <div class="absolute -top-6 -right-6 w-24 h-24 bg-yellow-100 rounded-full -z-10"></div>
+          
+          <div class="flex items-center gap-4 mb-6">
+            <div class="w-12 h-12 rounded-2xl bg-secondary/20 text-primary flex items-center justify-center">
+              <iconify-icon icon="lucide:apple" class="text-2xl"></iconify-icon>
+            </div>
+            <div>
+              <h4 class="font-heading font-bold text-lg text-primary">S láskou k zdraviu</h4>
+              <p class="text-xs text-muted-foreground">Individuálne úpravy pre alergikov po dohode</p>
+            </div>
+          </div>
+
+          <blockquote class="text-sm italic text-muted-foreground border-l-4 border-secondary pl-4 py-1 leading-relaxed">
+            „Deti učíme správnym stravovacím návykom hravou formou. Spoločne spoznávame nové chute a učíme sa, prečo je ovocie a zelenina dôležitá.“
+          </blockquote>
+
+          <div class="mt-6 pt-6 border-t border-border flex justify-between items-center text-xs">
+            <span class="font-bold text-primary uppercase">Zdravá škôlka</span>
+            <span class="text-muted-foreground">Rovinka</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 10. PRICING (CENNÍK) -->
+  <section id="cennik" class="py-24 px-6 relative">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="text-center max-w-2xl mx-auto mb-16 space-y-4">
+        <span class="text-primary font-bold uppercase tracking-wider text-xs bg-secondary/30 px-3 py-1.5 rounded-full">Financovanie</span>
+        <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-primary">Transparentný a férový cenník.</h2>
+        <p class="text-muted-foreground text-base md:text-lg">
+          Všetky poplatky sú konečné a transparentné. Cenník je platný od 1. apríla 2026. Strava sa dopláca samostatne podľa reálne odobratých jedál.
+        </p>
+      </div>
+
+      <!-- Pricing Cards Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        
+        <!-- Card 1: Celodenná -->
+        <div class="bg-background p-8 rounded-[2.5rem] border-2 border-primary/10 shadow-xl flex flex-col justify-between relative overflow-hidden group">
+          <div class="absolute top-0 right-0 bg-primary text-primary-foreground text-[10px] font-bold uppercase tracking-widest px-4 py-1.5 rounded-bl-2xl">Najobľúbenejšie</div>
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 rounded-2xl bg-secondary/20 text-primary flex items-center justify-center">
+                <iconify-icon icon="lucide:clock" class="text-2xl"></iconify-icon>
+              </div>
+              <div>
+                <h3 class="font-heading font-extrabold text-xl text-primary">Celodenná starostlivosť</h3>
+                <p class="text-xs text-muted-foreground">Kompletný program od 7:00 do 18:00</p>
+              </div>
+            </div>
+
+            <!-- Price -->
+            <div class="my-6">
+              <span class="text-4xl md:text-5xl font-heading font-black text-primary">430 €</span>
+              <span class="text-muted-foreground font-semibold text-sm"> / mesiac s DPH</span>
+            </div>
+
+            <!-- Features -->
+            <ul class="space-y-3.5 my-6">
+              <li class="flex items-center gap-2.5 text-sm">
+                <iconify-icon icon="lucide:check-circle" class="text-secondary text-lg"></iconify-icon>
+                <span>Pobyt v škôlke od 7:00 do 18:00</span>
+              </li>
+              <li class="flex items-center gap-2.5 text-sm">
+                <iconify-icon icon="lucide:check-circle" class="text-secondary text-lg"></iconify-icon>
+                <span>Kompletný štátny vzdelávací program</span>
+              </li>
+              <li class="flex items-center gap-2.5 text-sm">
+                <iconify-icon icon="lucide:check-circle" class="text-secondary text-lg"></iconify-icon>
+                <span>Angličtina hrou a učebné materiály</span>
+              </li>
+              <li class="flex items-center gap-2.5 text-sm">
+                <iconify-icon icon="lucide:check-circle" class="text-secondary text-lg"></iconify-icon>
+                <span>Spolupráca s logopédom a špecialistami</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-6 border-t border-border mt-6">
+            <div class="flex justify-between items-center text-xs text-muted-foreground mb-4">
+              <span>Poplatok za stravu (celý deň):</span>
+              <span class="font-bold text-primary">5.00 € / deň</span>
+            </div>
+            <a href="#kontakt" class="w-full inline-flex items-center justify-center gap-2 bg-primary text-primary-foreground font-bold py-3.5 rounded-full hover:bg-primary/90 hover:scale-[1.01] transition-all">
+              <span>Prihlásiť dieťa</span>
+              <iconify-icon icon="lucide:arrow-right" class="text-secondary"></iconify-icon>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: Poldenná -->
+        <div class="bg-background p-8 rounded-[2.5rem] border border-border shadow-md flex flex-col justify-between relative overflow-hidden group">
+          <div>
+            <div class="flex items-center gap-3 mb-6">
+              <div class="w-12 h-12 rounded-2xl bg-muted text-primary flex items-center justify-center">
+                <iconify-icon icon="lucide:sun" class="text-2xl"></iconify-icon>
+              </div>
+              <div>
+                <h3 class="font-heading font-extrabold text-xl text-primary">Poldenná starostlivosť</h3>
+                <p class="text-xs text-muted-foreground">Ideálne pre adaptáciu dieťaťa</p>
+              </div>
+            </div>
+
+            <!-- Price -->
+            <div class="my-6">
+              <span class="text-4xl md:text-5xl font-heading font-black text-primary">370 €</span>
+              <span class="text-muted-foreground font-semibold text-sm"> / mesiac s DPH</span>
+            </div>
+
+            <!-- Features -->
+            <ul class="space-y-3.5 my-6">
+              <li class="flex items-center gap-2.5 text-sm text-muted-foreground">
+                <iconify-icon icon="lucide:check-circle" class="text-secondary text-lg"></iconify-icon>
+                <span class="text-foreground">Pobyt v škôlke od 7:00 do 12:30</span>
+              </li>
+              <li class="flex items-center gap-2.5 text-sm text-muted-foreground">
+                <iconify-icon icon="lucide:check-circle" class="text-secondary text-lg"></iconify-icon>
+                <span class="text-foreground">Dopoludňajší vzdelávací blok</span>
+              </li>
+              <li class="flex items-center gap-2.5 text-sm text-muted-foreground">
+                <iconify-icon icon="lucide:check-circle" class="text-secondary text-lg"></iconify-icon>
+                <span class="text-foreground">Maximálne 2 mesiace (adaptačný pobyt)</span>
+              </li>
+              <li class="flex items-center gap-2.5 text-sm text-muted-foreground">
+                <iconify-icon icon="lucide:check-circle" class="text-secondary text-lg"></iconify-icon>
+                <span class="text-foreground">Angličtina a dopoludňajšie aktivity</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-6 border-t border-border mt-6">
+            <div class="flex justify-between items-center text-xs text-muted-foreground mb-4">
+              <span>Poplatok za stravu (pol dňa):</span>
+              <span class="font-bold text-primary">4.50 € / deň</span>
+            </div>
+            <a href="#kontakt" class="w-full inline-flex items-center justify-center gap-2 bg-muted text-primary border border-border font-bold py-3.5 rounded-full hover:bg-muted/80 transition-all">
+              <span>Zvoliť poldennú</span>
+              <iconify-icon icon="lucide:arrow-right" class="text-primary/70"></iconify-icon>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 11. DOCUMENTS (DOKUMENTY NA STIAHNUTIE) -->
+  <section class="py-20 px-6 bg-secondary/10 relative">
+    <div class="max-w-4xl mx-auto text-center space-y-10">
+      <div class="space-y-3">
+        <span class="text-primary font-bold uppercase tracking-wider text-xs bg-background border border-border px-3 py-1.5 rounded-full">Na stiahnutie</span>
+        <h2 class="text-3xl md:text-4xl font-heading font-extrabold text-primary">Dôležité dokumenty pre rodičov.</h2>
+        <p class="text-muted-foreground text-sm md:text-base">
+          Stiahnite si potrebné tlačivá a informácie pre úspešný nástup vášho dieťaťa do našej materskej školy.
+        </p>
+      </div>
+
+      <!-- Document Download Cards -->
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 text-left">
+        
+        <!-- Doc 1 -->
+        <a href="#" class="bg-background p-6 rounded-2xl border border-border hover:shadow-lg transition-all duration-300 flex items-center justify-between group">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-red-100 text-red-600 flex items-center justify-center">
+              <iconify-icon icon="lucide:file-text" class="text-2xl"></iconify-icon>
+            </div>
+            <div>
+              <h4 class="font-bold text-primary text-sm group-hover:text-secondary transition-colors">Základné informácie</h4>
+              <span class="text-[10px] text-muted-foreground uppercase font-semibold">PDF • 1.2 MB</span>
+            </div>
+          </div>
+          <iconify-icon icon="lucide:download" class="text-primary/40 group-hover:text-primary transition-colors text-xl"></iconify-icon>
+        </a>
+
+        <!-- Doc 2 -->
+        <a href="#" class="bg-background p-6 rounded-2xl border border-border hover:shadow-lg transition-all duration-300 flex items-center justify-between group">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center">
+              <iconify-icon icon="lucide:file-edit" class="text-2xl"></iconify-icon>
+            </div>
+            <div>
+              <h4 class="font-bold text-primary text-sm group-hover:text-secondary transition-colors">Prihláška</h4>
+              <span class="text-[10px] text-muted-foreground uppercase font-semibold">DOCX • 450 KB</span>
+            </div>
+          </div>
+          <iconify-icon icon="lucide:download" class="text-primary/40 group-hover:text-primary transition-colors text-xl"></iconify-icon>
+        </a>
+
+        <!-- Doc 3 -->
+        <a href="#" class="bg-background p-6 rounded-2xl border border-border hover:shadow-lg transition-all duration-300 flex items-center justify-between group">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-xl bg-secondary/30 text-primary flex items-center justify-center">
+              <iconify-icon icon="lucide:clipboard-list" class="text-2xl"></iconify-icon>
+            </div>
+            <div>
+              <h4 class="font-bold text-primary text-sm group-hover:text-secondary transition-colors">Zdravotný dotazník</h4>
+              <span class="text-[10px] text-muted-foreground uppercase font-semibold">PDF • 850 KB</span>
+            </div>
+          </div>
+          <iconify-icon icon="lucide:download" class="text-primary/40 group-hover:text-primary transition-colors text-xl"></iconify-icon>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 12. CONTACT AND VISIT FORM -->
+  <section id="kontakt" class="py-24 px-6 relative">
+    <div class="max-w-7xl mx-auto">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        
+        <!-- Left Column: Contact details -->
+        <div class="lg:col-span-5 space-y-8">
+          <div class="space-y-4">
+            <span class="text-primary font-bold uppercase tracking-wider text-xs bg-secondary/30 px-3 py-1.5 rounded-full">Kontakt</span>
+            <h2 class="text-3xl md:text-5xl font-heading font-extrabold text-primary">Príďte sa k nám pozrieť osobne.</h2>
+            <p class="text-muted-foreground">
+              Radi vás privítame a ukážeme vám naše priestory. Dohodnite si osobné stretnutie alebo nám napíšte správu.
+            </p>
+          </div>
+
+          <!-- Contact Cards -->
+          <div class="space-y-4">
+            
+            <div class="bg-background p-6 rounded-2xl border border-border flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-secondary/20 text-primary flex items-center justify-center shrink-0">
+                <iconify-icon icon="lucide:map-pin" class="text-xl"></iconify-icon>
+              </div>
+              <div>
+                <span class="text-xs uppercase tracking-wider text-muted-foreground font-bold">Adresa</span>
+                <p class="font-bold text-primary mt-0.5">Súkromná materská škola Hrášok</p>
+                <p class="text-sm text-muted-foreground">Slivková 18, 900 41 Rovinka</p>
+              </div>
+            </div>
+
+            <div class="bg-background p-6 rounded-2xl border border-border flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-secondary/20 text-primary flex items-center justify-center shrink-0">
+                <iconify-icon icon="lucide:phone" class="text-xl"></iconify-icon>
+              </div>
+              <div>
+                <span class="text-xs uppercase tracking-wider text-muted-foreground font-bold">Telefón & E-mail</span>
+                <p class="font-bold text-primary mt-0.5">02 / 3810 3645</p>
+                <p class="text-sm text-muted-foreground">info@hrasok.sk</p>
+              </div>
+            </div>
+
+            <div class="bg-background p-6 rounded-2xl border border-border flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-secondary/20 text-primary flex items-center justify-center shrink-0">
+                <iconify-icon icon="lucide:users" class="text-xl"></iconify-icon>
+              </div>
+              <div>
+                <span class="text-xs uppercase tracking-wider text-muted-foreground font-bold">Vedenie škôlky</span>
+                <p class="font-bold text-primary mt-0.5">Mgr. Andrea Vargová <span class="text-xs font-normal text-muted-foreground">(Riaditeľka)</span></p>
+                <p class="text-sm text-muted-foreground mt-1">Ing. Jana Šajtyová <span class="text-xs font-normal text-muted-foreground">(Manažér / ekonóm)</span></p>
+                <p class="text-sm font-semibold text-primary mt-0.5">0905 345 222</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Right Column: Interactive Enquiry Form -->
+        <div class="lg:col-span-7">
+          <div class="bg-background p-8 md:p-10 rounded-[2.5rem] border-2 border-primary/10 shadow-xl">
+            <h3 class="font-heading font-extrabold text-2xl text-primary mb-6">Napíšte nám a dohodnite si návštevu</h3>
+            
+            <form class="space-y-6" onsubmit="event.preventDefault(); alert('Ďakujeme! Váš dopyt bol úspešne odoslaný. Budeme vás čoskoro kontaktovať.');">
+              
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-xs font-bold text-primary uppercase tracking-wider mb-2">Meno rodiča *</label>
+                  <input type="text" required placeholder="Napr. Mária Kováčová" class="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:border-secondary transition-colors text-sm">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-primary uppercase tracking-wider mb-2">Vek dieťaťa *</label>
+                  <input type="text" required placeholder="Napr. 3 roky" class="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:border-secondary transition-colors text-sm">
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-xs font-bold text-primary uppercase tracking-wider mb-2">E-mail *</label>
+                  <input type="email" required placeholder="maria.kovacova@gmail.com" class="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:border-secondary transition-colors text-sm">
+                </div>
+                <div>
+                  <label class="block text-xs font-bold text-primary uppercase tracking-wider mb-2">Telefón *</label>
+                  <input type="tel" required placeholder="+421 905 123 456" class="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:border-secondary transition-colors text-sm">
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-xs font-bold text-primary uppercase tracking-wider mb-2">Správa / Otázka</label>
+                <textarea rows="4" placeholder="Dobrý deň, mali by sme záujem o osobnú návštevu..." class="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:border-secondary transition-colors text-sm"></textarea>
+              </div>
+
+              <div class="flex items-start gap-3">
+                <input type="checkbox" required id="consent" class="mt-1 accent-primary">
+                <label for="consent" class="text-xs text-muted-foreground leading-relaxed cursor-pointer">
+                  Súhlasím so spracovaním osobných údajov pre účely kontaktovania a dohodnutia návštevy v súlade s GDPR pravidlami škôlky. *
+                </label>
+              </div>
+
+              <button type="submit" class="w-full bg-primary text-primary-foreground font-bold py-4 rounded-full hover:bg-primary/90 hover:scale-[1.01] active:scale-[0.99] transition-all shadow-lg shadow-primary/15 flex items-center justify-center gap-2">
+                <span>Odoslať dopyt</span>
+                <iconify-icon icon="lucide:send" class="text-secondary"></iconify-icon>
+              </button>
+
+            </form>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 13. FOOTER -->
+  <footer class="bg-primary text-primary-foreground pt-16 pb-8 px-6 relative border-t border-border/10">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 pb-12 border-b border-border/10">
+      
+      <!-- Brand column -->
+      <div class="md:col-span-4 space-y-4">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-primary font-bold text-xl">
+            <iconify-icon icon="lucide:baby" class="text-2xl"></iconify-icon>
+          </div>
+          <span class="font-heading font-extrabold text-2xl tracking-tight text-primary-foreground">Hrášok</span>
+        </div>
+        <p class="text-primary-foreground/70 text-sm leading-relaxed max-w-sm">
+          Súkromná materská škola Hrášok je miestom, kde deti spoznávajú svet hrou v bezpečnom a rodinnom prostredí blízko prírody v Rovinke.
+        </p>
+        <!-- Social links -->
+        <div class="flex items-center gap-4 pt-2">
+          <a href="#" class="w-10 h-10 rounded-full bg-background/10 hover:bg-secondary hover:text-primary transition-all flex items-center justify-center text-primary-foreground text-lg">
+            <iconify-icon icon="lucide:facebook"></iconify-icon>
+          </a>
+          <a href="#" class="w-10 h-10 rounded-full bg-background/10 hover:bg-secondary hover:text-primary transition-all flex items-center justify-center text-primary-foreground text-lg">
+            <iconify-icon icon="lucide:instagram"></iconify-icon>
+          </a>
+        </div>
+      </div>
+
+      <!-- Quick links -->
+      <div class="md:col-span-3 space-y-4">
+        <h4 class="font-heading font-bold text-lg text-secondary">Rýchle odkazy</h4>
+        <ul class="space-y-2 text-sm text-primary-foreground/70">
+          <li><a href="#o-nas" class="hover:text-primary-foreground transition-colors">O nás</a></li>
+          <li><a href="#edukacia" class="hover:text-primary-foreground transition-colors">Edukácia</a></li>
+          <li><a href="#priestory" class="hover:text-primary-foreground transition-colors">Priestory</a></li>
+          <li><a href="#triedy" class="hover:text-primary-foreground transition-colors">Triedy</a></li>
+          <li><a href="#kruzky" class="hover:text-primary-foreground transition-colors">Krúžky</a></li>
+          <li><a href="#cennik" class="hover:text-primary-foreground transition-colors">Cenník</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact Info -->
+      <div class="md:col-span-5 space-y-4">
+        <h4 class="font-heading font-bold text-lg text-secondary">Kontaktujte nás</h4>
+        <ul class="space-y-3 text-sm text-primary-foreground/70">
+          <li class="flex items-start gap-2.5">
+            <iconify-icon icon="lucide:map-pin" class="text-secondary mt-0.5 shrink-0"></iconify-icon>
+            <span>Slivková 18, 900 41 Rovinka, Slovensko</span>
+          </li>
+          <li class="flex items-center gap-2.5">
+            <iconify-icon icon="lucide:phone" class="text-secondary shrink-0"></iconify-icon>
+            <span>02 / 3810 3645</span>
+          </li>
+          <li class="flex items-center gap-2.5">
+            <iconify-icon icon="lucide:mail" class="text-secondary shrink-0"></iconify-icon>
+            <span>info@hrasok.sk</span>
+          </li>
+          <li class="flex items-start gap-2.5 pt-2 border-t border-border/10">
+            <iconify-icon icon="lucide:file-text" class="text-secondary mt-0.5 shrink-0"></iconify-icon>
+            <div class="flex flex-col gap-1 text-xs">
+              <a href="#" class="hover:text-primary-foreground transition-colors">Ochrana osobných údajov (GDPR)</a>
+              <a href="#" class="hover:text-primary-foreground transition-colors">Školský poriadok</a>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Copyright -->
+    <div class="max-w-7xl mx-auto pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-primary-foreground/50">
+      <span>Copyright © 2026 SKOLKA HRASOK. Všetky práva vyhradené.</span>
+      <div class="flex gap-4">
+        <a href="#" class="hover:text-primary-foreground transition-colors">Zásady cookies</a>
+        <a href="#" class="hover:text-primary-foreground transition-colors">Podmienky používania</a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+</body></html>
