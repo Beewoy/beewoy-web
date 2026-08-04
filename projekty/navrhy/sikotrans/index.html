@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ŠIKOTRANS — Náskok vďaka logistike</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#15181c;
+    --ink-2:#1e2227;
+    --ink-3:#282d33;
+    --steel:#5b6470;
+    --fog:#edece5;
+    --fog-2:#e3e1d7;
+    --paper:#faf9f5;
+    --signal:#ea1e25;
+    --signal-dim:#ea1e25;
+    --line:#d7d4c8;
+    --line-dark:rgba(255,255,255,.14);
+    --ink-text:#15181c;
+    --off-white:#f4f3ee;
+    --radius-lg:28px;
+    --radius-md:18px;
+    --radius-sm:10px;
+    --shadow-1:0 20px 50px -20px rgba(21,24,28,.35);
+    --shadow-2:0 10px 30px -12px rgba(21,24,28,.25);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--off-white);
+    color:var(--ink-text);
+    font-family:'IBM Plex Sans',system-ui,sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Big Shoulders Display','IBM Plex Sans',sans-serif;
+    text-transform:uppercase;
+    letter-spacing:.01em;
+    font-weight:800;
+    line-height:.92;
+    margin:0;
+  }
+  .mono{font-family:'IBM Plex Mono',monospace;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1280px;margin:0 auto;padding:0 32px;}
+  @media(max-width:720px){.wrap{padding:0 20px;}}
+
+  ::selection{background:var(--signal);color:#fff;}
+  :focus-visible{outline:3px solid var(--signal);outline-offset:3px;}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important;scroll-behavior:auto !important;}
+  }
+
+  /* ---------- reveal on scroll ---------- */
+  .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;top:0;z-index:100;
+    background:rgba(21,24,28,0);
+    transition:background .35s ease, box-shadow .35s ease, padding .35s ease;
+    padding:10px 0;
+  }
+  header.solid{background:rgba(21,24,28,.94);backdrop-filter:blur(10px);box-shadow:0 1px 0 var(--line-dark);padding:14px 0;}
+  .navbar{display:flex;align-items:center;justify-content:space-between;gap:24px;}
+  .brand{display:flex;align-items:center;gap:12px;}
+  .brand-badge{border-radius:10px;display:flex;align-items:center;box-shadow:0 6px 16px -6px rgba(0,0,0,.4);}
+  .brand img{height:60px;width:auto;display:block;}
+  .brand-fallback{font-family:'Big Shoulders Display';font-weight:900;font-size:22px;color:#fff;letter-spacing:.03em;}
+  nav.links{display:flex;gap:30px;align-items:center;}
+  nav.links a{
+    color:#e9e7df;font-size:14px;font-weight:500;letter-spacing:.02em;
+    position:relative;padding:4px 0;
+  }
+  nav.links a::after{
+    content:'';position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--signal);
+    transition:width .25s ease;
+  }
+  nav.links a:hover::after{width:100%;}
+  .nav-cta{
+    background:var(--signal);color:#fff !important;padding:11px 20px;border-radius:999px;
+    font-weight:600;font-size:13px;white-space:nowrap;
+    box-shadow:0 8px 20px -8px rgba(243,30,37,.7);
+    transition:transform .2s ease, box-shadow .2s ease;
+  }
+  .nav-cta:hover{transform:translateY(-2px);box-shadow:0 12px 26px -8px rgba(255,106,19,.85);}
+  .burger{display:none;background:none;border:0;color:#fff;font-size:26px;cursor:pointer;}
+  @media(max-width:980px){
+    nav.links{display:none;}
+    .burger{display:block;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:linear-gradient(180deg,var(--ink) 0%, var(--ink-2) 70%, var(--ink-3) 100%);
+    color:#fff;position:relative;
+    padding:70px 0 0;
+    margin-top:-86px;
+    overflow:hidden;
+  }
+  .hero::before{
+    content:'';position:absolute;inset:0;
+    background-image:
+      repeating-linear-gradient(90deg, transparent 0 118px, rgba(255,255,255,.045) 118px 120px);
+    pointer-events:none;
+  }
+  .hero-grid{
+    display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;
+    position:relative;padding-top:64px;
+  }
+  @media(max-width:980px){.hero-grid{grid-template-columns:1fr;padding-top:30px;}}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:10px;
+    font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--signal);margin-bottom:22px;
+  }
+  .eyebrow::before{content:'';width:26px;height:2px;background:var(--signal);display:inline-block;}
+  .hero h1{
+    font-size:clamp(48px,7.4vw,104px);color:#fff;
+  }
+  .hero h1 span{color:var(--signal);}
+  .hero p.lead{
+    font-size:19px;line-height:1.55;color:#c7c9cd;max-width:520px;margin:26px 0 34px;
+  }
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:56px;}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:15px 26px;border-radius:999px;font-weight:600;font-size:14.5px;
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+    cursor:pointer;border:none;
+  }
+  .btn-primary{background:var(--signal);color:#fff;box-shadow:0 10px 26px -8px rgba(243,30,37,.7);}
+  .btn-primary:hover{transform:translateY(-2px);background:var(--signal-dim);}
+  .btn-ghost{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.35);}
+  .btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,.06);}
+
+  .hero-visual{position:relative;}
+  .hero-photo-frame{
+    position:relative;border-radius:var(--radius-lg);overflow:hidden;
+    aspect-ratio:16/9;background:#0e1013;
+    box-shadow:var(--shadow-1);
+  }
+  .hero-photo-frame img{width:100%;height:100%;object-fit:cover;object-position:center 45%;}
+  .hero-photo-frame::after{
+    content:'';position:absolute;inset:0;
+    background:linear-gradient(180deg, rgba(21,24,28,0) 45%, rgba(21,24,28,.75) 100%);
+  }
+
+  /* manifest / waybill ticket - signature element */
+  .ticket{
+    background:var(--paper);color:var(--ink-text);
+    border-radius:var(--radius-md);
+    padding:22px 24px;
+    position:relative;
+    box-shadow:var(--shadow-2);
+    border:1px solid var(--line);
+  }
+  .ticket::before,.ticket::after{
+    content:'';position:absolute;top:50%;transform:translateY(-50%);
+    width:22px;height:22px;border-radius:50%;background:var(--off-white);
+  }
+  .ticket::before{left:-11px;}
+  .ticket::after{right:-11px;}
+  .ticket-notch{
+    background-image:repeating-linear-gradient(90deg, var(--line) 0 6px, transparent 6px 12px);
+    height:1px;margin:14px 0;
+  }
+  .ticket-row{display:flex;justify-content:space-between;align-items:baseline;font-family:'IBM Plex Mono';font-size:12.5px;}
+  .ticket-row + .ticket-row{margin-top:8px;}
+  .ticket-row .k{color:var(--steel);letter-spacing:.06em;text-transform:uppercase;font-size:10.5px;}
+  .ticket-row .v{font-weight:600;}
+  .ticket-title{font-family:'Big Shoulders Display';font-size:20px;font-weight:800;text-transform:uppercase;margin-bottom:2px;}
+
+  .hero-ticket-float{
+    position:absolute;left:-30px;bottom:-30px;width:250px;z-index:3;
+  }
+  @media(max-width:980px){.hero-ticket-float{position:static;width:100%;margin-top:-40px;}}
+  @media(max-width:600px){.hero-ticket-float{margin-top:20px;}}
+
+  /* ---------- CERTIFICATES ---------- */
+  .certs{
+    background:var(--paper);
+    padding:0 0 90px;
+    border-bottom:1px solid var(--line);
+    position:relative;
+  }
+  .certs::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:1px;
+    background:linear-gradient(90deg, transparent, var(--signal), transparent);
+    opacity:.35;
+  }
+  .certs-bar{
+    background:var(--ink-2);color:#fff;padding:18px 0;border-bottom:1px solid var(--line-dark);
+  }
+  .certs-bar-row{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;}
+  .certs-bar-label{
+    font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--signal);display:flex;align-items:center;gap:10px;
+  }
+  .certs-bar-label::before{content:'';width:20px;height:2px;background:var(--signal);}
+  .trust-phone{
+    display:flex;align-items:center;gap:12px;font-family:'IBM Plex Mono';font-size:17px;font-weight:600;
+    color:#fff;white-space:nowrap;
+  }
+  .trust-phone .dot{width:9px;height:9px;border-radius:50%;background:var(--signal);box-shadow:0 0 0 4px rgba(234,30,37,.25);}
+
+  .certs-inner{padding-top:64px;}
+  .certs-head{text-align:center;max-width:680px;margin:0 auto 48px;}
+  .certs-head h2{font-size:clamp(32px,4.2vw,52px);margin-bottom:16px;}
+  .certs-head p{color:var(--steel);font-size:17px;line-height:1.65;}
+
+  .certs-grid{
+    display:grid;
+    grid-template-columns:1.15fr 1fr;
+    gap:28px;
+    align-items:stretch;
+  }
+  @media(max-width:900px){.certs-grid{grid-template-columns:1fr;}}
+
+  .cert-featured{
+    background:#fff;
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+    padding:32px 34px;
+    box-shadow:var(--shadow-2);
+    display:flex;
+    flex-direction:column;
+    gap:22px;
+    position:relative;
+    overflow:hidden;
+  }
+  .cert-featured::before{
+    content:'';position:absolute;top:0;left:0;right:0;height:4px;
+    background:linear-gradient(90deg, #8bc53f, #6ba82e);
+  }
+  .cert-featured-badge{
+    display:flex;align-items:flex-start;gap:28px;flex-wrap:wrap;
+  }
+  .cert-featured img{
+    width:min(100%, 280px);
+    height:auto;
+    border-radius:var(--radius-sm);
+    box-shadow:0 8px 24px -10px rgba(21,24,28,.25);
+    border:1px solid var(--line);
+    background:#fff;
+  }
+  .cert-featured-copy h3{
+    font-size:clamp(22px,2.4vw,28px);
+    margin-bottom:10px;
+    text-transform:none;
+    letter-spacing:0;
+    font-weight:800;
+  }
+  .cert-featured-copy p{
+    color:var(--steel);font-size:15px;line-height:1.65;margin:0;max-width:42ch;
+  }
+  .cert-featured-meta{
+    display:flex;flex-wrap:wrap;gap:10px;
+  }
+  .cert-pill{
+    font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    padding:8px 14px;border-radius:999px;
+    background:#edf6e3;color:#3d5c1f;border:1px solid #c8e4a8;
+  }
+
+  .cert-stack{
+    display:grid;
+    grid-template-rows:auto 1fr;
+    gap:18px;
+  }
+  .cert-iso-panel{
+    background:var(--ink);
+    color:#fff;
+    border-radius:var(--radius-lg);
+    padding:28px 30px;
+    border:1px solid var(--line-dark);
+  }
+  .cert-iso-panel h4{
+    font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--signal);margin:0 0 20px;font-weight:600;
+  }
+  .cert-iso-row{
+    display:flex;align-items:center;justify-content:center;gap:20px;flex-wrap:wrap;
+  }
+  .cert-iso-row a{
+    background:#fff;border-radius:12px;padding:10px 14px;
+    transition:transform .25s ease, box-shadow .25s ease;
+    box-shadow:0 6px 18px -8px rgba(0,0,0,.35);
+  }
+  .cert-iso-row a:hover{transform:translateY(-4px);box-shadow:0 14px 28px -10px rgba(0,0,0,.45);}
+  .cert-iso-row img{height:72px;width:auto;display:block;}
+
+  .cert-trust-panel{
+    background:var(--fog);
+    border:1px solid var(--line);
+    border-radius:var(--radius-md);
+    padding:24px 26px;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+  }
+  @media(max-width:600px){.cert-trust-panel{grid-template-columns:1fr;}}
+  .cert-trust-stat{text-align:center;padding:8px 4px;}
+  .cert-trust-stat .n{
+    font-family:'Big Shoulders Display';font-size:34px;font-weight:900;color:var(--signal);line-height:1;
+  }
+  .cert-trust-stat .l{
+    font-family:'IBM Plex Mono';font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--steel);margin-top:8px;display:block;
+  }
+
+  .certs-cta{
+    margin-top:36px;text-align:center;
+  }
+  .certs-cta a{
+    font-family:'IBM Plex Mono';font-size:13px;letter-spacing:.04em;
+    color:var(--ink-text);border-bottom:2px solid var(--signal);padding-bottom:3px;
+    transition:color .2s ease;
+  }
+  .certs-cta a:hover{color:var(--signal);}
+
+  /* legacy trust helpers removed — see .certs */
+
+  /* ---------- SECTION SHELL ---------- */
+  section{padding:110px 0;}
+  @media(max-width:720px){section{padding:70px 0;}}
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px;margin-bottom:56px;flex-wrap:wrap;}
+  .section-head h2{font-size:clamp(34px,4.6vw,58px);}
+  .section-head .num{font-family:'IBM Plex Mono';font-size:13px;color:var(--steel);letter-spacing:.1em;}
+  .section-tag{
+    font-family:'IBM Plex Mono';font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--signal-dim);margin-bottom:14px;display:block;font-weight:600;
+  }
+
+  /* ---------- CAPACITY / STATS (dark, manifest theme) ---------- */
+  .capacity{background:var(--ink);color:#fff;}
+  .capacity-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:64px;align-items:center;}
+  @media(max-width:980px){.capacity-grid{grid-template-columns:1fr;gap:40px;}}
+  .capacity-copy h2{color:#fff;font-size:clamp(32px,4.4vw,52px);margin-bottom:22px;}
+  .capacity-copy p{color:#c7c9cd;font-size:16.5px;line-height:1.7;max-width:520px;}
+  .stat-tickets{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:34px;}
+  .stat-ticket{
+    background:var(--ink-3);border:1px solid var(--line-dark);border-radius:var(--radius-sm);
+    padding:20px;position:relative;
+  }
+  .stat-ticket .big{font-family:'Big Shoulders Display';font-size:40px;font-weight:800;color:var(--signal);line-height:1;}
+  .stat-ticket .lab{font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.08em;color:#9aa0a8;text-transform:uppercase;margin-top:8px;display:block;}
+  .capacity-photo{border-radius:var(--radius-lg);overflow:hidden;box-shadow:var(--shadow-1);aspect-ratio:5/4;}
+  .capacity-photo img{width:100%;height:100%;object-fit:cover;}
+
+  /* ---------- SERVICES asymmetric grid ---------- */
+  .services{background:var(--off-white);}
+  .svc-grid{
+    display:grid;grid-template-columns:repeat(6,1fr);gap:22px;
+  }
+  @media(max-width:900px){.svc-grid{grid-template-columns:1fr;}}
+  .svc-card{
+    position:relative;border-radius:var(--radius-lg);overflow:hidden;background:var(--ink);
+    box-shadow:var(--shadow-2);
+    transition:transform .35s ease, box-shadow .35s ease;
+  }
+  .svc-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-1);}
+  .svc-card img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0;opacity:.55;transition:opacity .35s ease, transform .5s ease;}
+  .svc-card:hover img{opacity:.4;transform:scale(1.04);}
+  .svc-card .content{position:relative;z-index:2;padding:30px;display:flex;flex-direction:column;justify-content:flex-end;height:100%;color:#fff;}
+  .svc-card::before{content:'';position:absolute;inset:0;background:linear-gradient(180deg, rgba(21,24,28,.15) 0%, rgba(21,24,28,.92) 100%);z-index:1;}
+  .svc-card .idx{font-family:'IBM Plex Mono';color:var(--signal);font-size:12px;margin-bottom:12px;}
+  .svc-card h3{font-size:26px;color:#fff;margin-bottom:10px;}
+  .svc-card p{font-size:14px;color:#cfd1d5;line-height:1.55;margin:0;max-width:340px;}
+  .svc-card.large{grid-column:span 4;min-height:440px;}
+  .svc-card.small{grid-column:span 2;min-height:440px;}
+  @media(max-width:900px){.svc-card.large,.svc-card.small{grid-column:span 1;min-height:340px;}}
+
+  /* ---------- ROUTE / COVERAGE ---------- */
+  .route{background:var(--fog);}
+  .route-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+  @media(max-width:980px){.route-grid{grid-template-columns:1fr;gap:40px;}}
+  .route-copy p{font-size:16.5px;line-height:1.75;color:#3a3f45;max-width:480px;}
+  .chip-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px;}
+  .chip{
+    font-family:'IBM Plex Mono';font-size:12.5px;padding:9px 16px;border-radius:999px;
+    background:var(--paper);border:1px solid var(--line);color:var(--ink-text);
+  }
+  .route-map{position:relative;}
+  .route-stops{margin:22px 0 6px;}
+  .route-stop{display:flex;align-items:center;gap:16px;padding:14px 0;}
+  .route-stop .dot{width:14px;height:14px;border-radius:50%;background:var(--fog-2);border:2px solid var(--line);flex-shrink:0;}
+  .route-stop .dot.origin{background:var(--signal);border-color:var(--signal);}
+  .route-stop div{display:flex;flex-direction:column;gap:2px;}
+  .route-stop strong{font-family:'IBM Plex Sans';font-weight:600;font-size:15.5px;}
+  .route-stop span{font-family:'IBM Plex Mono';font-size:11.5px;color:var(--steel);text-transform:uppercase;letter-spacing:.05em;}
+  .route-line{width:2px;height:22px;margin-left:6px;background-image:repeating-linear-gradient(180deg, var(--line) 0 5px, transparent 5px 10px);}
+
+  /* ---------- EXTRA SERVICES STRIP ---------- */
+  .strip{background:var(--ink);color:#fff;padding:60px 0;}
+  .strip-grid{display:flex;gap:14px;flex-wrap:wrap;}
+  .strip-item{
+    flex:1 1 210px;background:var(--ink-3);border:1px solid var(--line-dark);border-radius:var(--radius-sm);
+    padding:22px;transition:border-color .25s ease, background .25s ease;
+  }
+  .strip-item:hover{border-color:var(--signal);background:var(--ink-2);}
+  .strip-item .n{font-family:'IBM Plex Mono';font-size:11px;color:var(--signal);letter-spacing:.08em;text-transform:uppercase;margin-bottom:10px;display:block;}
+  .strip-item h4{font-size:16px;font-weight:600;margin:0;color:#fff;font-family:'IBM Plex Sans';text-transform:none;letter-spacing:0;}
+
+  /* ---------- ABOUT / HISTORY ---------- */
+  .about{background:var(--off-white);}
+  .about-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:60px;align-items:flex-start;}
+  @media(max-width:980px){.about-grid{grid-template-columns:1fr;}}
+  .about-num{font-family:'Big Shoulders Display';font-size:clamp(90px,11vw,160px);font-weight:900;color:var(--fog-2);line-height:.8;}
+  .about-num span{color:var(--signal);}
+  .about-copy p{font-size:17px;line-height:1.75;color:#3a3f45;max-width:560px;}
+  .about-copy p + p{margin-top:16px;}
+
+  /* ---------- CAREERS ---------- */
+  .careers{background:var(--ink-2);color:#fff;}
+  .careers-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px;}
+  @media(max-width:800px){.careers-grid{grid-template-columns:1fr;}}
+  .career-card{
+    background:var(--ink-3);border-radius:var(--radius-md);padding:34px;border:1px solid var(--line-dark);
+    display:flex;flex-direction:column;gap:14px;transition:transform .3s ease,border-color .3s ease;
+  }
+  .career-card:hover{transform:translateY(-4px);border-color:var(--signal);}
+  .career-card h3{font-size:26px;color:#fff;}
+  .career-card p{color:#c7c9cd;font-size:15px;line-height:1.6;margin:0;}
+  .career-card .go{font-family:'IBM Plex Mono';font-size:13px;color:var(--signal);}
+
+  /* ---------- CONTACT / CTA ---------- */
+  .cta-final{
+    background:linear-gradient(135deg, var(--ink) 0%, #1a2e28 130%);
+    color:#fff;position:relative;overflow:hidden;
+  }
+  .cta-final::before{
+    content:'';position:absolute;right:-10%;top:-30%;width:60%;height:160%;
+    background:radial-gradient(circle, rgba(255,106,19,.18) 0%, transparent 65%);
+  }
+  .cta-final-inner{position:relative;text-align:center;max-width:760px;margin:0 auto;}
+  .cta-final h2{font-size:clamp(38px,6vw,72px);color:#fff;margin-bottom:22px;}
+  .cta-final p{color:#c7c9cd;font-size:17px;margin-bottom:38px;}
+  .cta-final .btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink);color:#9aa0a8;padding:64px 0 30px;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:44px;border-bottom:1px solid var(--line-dark);}
+  @media(max-width:800px){.footer-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:520px){.footer-grid{grid-template-columns:1fr;}}
+  .footer-brand p{font-size:13.5px;line-height:1.6;max-width:280px;color:#8a909a;}
+  .footer-col h5{font-family:'IBM Plex Mono';font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#fff;margin:0 0 16px;}
+  .footer-col a{display:block;font-size:14px;color:#9aa0a8;margin-bottom:11px;transition:color .2s ease;}
+  .footer-col a:hover{color:var(--signal);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:26px;font-size:12.5px;color:#6b7078;flex-wrap:wrap;gap:12px;}
+
+  /* skip link */
+  .skip{position:absolute;left:-999px;top:0;background:#fff;color:#000;padding:10px;z-index:999;}
+  .skip:focus{left:10px;}
+</style>
+</head>
+<body>
+<a href="#hlavny-obsah" class="skip">Preskočiť na obsah</a>
+
+<header id="siteHeader">
+  <div class="wrap navbar">
+    <a href="#" class="brand" aria-label="ŠIKOTRANS — domov">
+      <span class="brand-badge">
+        <img src="https://www.sikotrans.sk/css/img/logo-sikotrans.png" alt="ŠIKOTRANS logo" onerror="this.parentElement.style.display='none'; this.parentElement.nextElementSibling.style.display='block';">
+      </span>
+      <span class="brand-fallback" style="display:none;">ŠIKOTRANS</span>
+    </a>
+    <nav class="links" aria-label="Hlavná navigácia">
+      <a href="#certifikaty">Certifikáty</a>
+      <a href="#o-nas">O nás</a>
+      <a href="#sluzby">Služby</a>
+      <a href="#autopark">Autopark</a>
+      <a href="#kariera">Kariéra</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <a href="#kontakt" class="nav-cta">Vyžiadať ponuku</a>
+    <button class="burger" aria-label="Menu">☰</button>
+  </div>
+</header>
+
+<main id="hlavny-obsah">
+
+  <!-- HERO -->
+  <section class="hero" style="padding-bottom:0;">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">Medzinárodná cestná doprava · Kúty, SK</span>
+        <h1>Náskok<br>vďaka<br><span>logistike.</span></h1>
+        <p class="lead">28 rokov prevážame tovar naprieč strednou a západnou Európou — mega návesovými súpravami, dvojpodlažnou technológiou a špedíciou, ktorá zaskočí aj vtedy, keď je vlastný autopark plne obsadený.</p>
+        <div class="hero-ctas">
+          <a href="#kontakt" class="btn btn-primary">Vyžiadať prepravnú ponuku →</a>
+          <a href="https://www.sikotrans.sk/sk/online-monitoring/" class="btn btn-ghost">Sledovať zásielku</a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-photo-frame">
+          <img src="https://scontent-waw2-2.xx.fbcdn.net/v/t39.30808-6/487506390_4151113425209022_5466900855504951113_n.jpg?stp=dst-jpg_tt6&amp;cstp=mx1600x722&amp;ctp=s1600x722&amp;_nc_cat=106&amp;ccb=1-7&amp;_nc_sid=cc71e4&amp;_nc_ohc=BGOx09-XQ7sQ7kNvwFddhTJ&amp;_nc_oc=Ado_BbMsQampTryb2ZcIt2y65ZTdASPz_hhy-F3v0LP7cAyTj_aod3kGVYJ_QLs8rWA&amp;_nc_zt=23&amp;_nc_ht=scontent-waw2-2.xx&amp;_nc_gid=3iqc2cDLj3aBcUkq49djrA&amp;_nc_ss=7b2a8&amp;oh=00_AQAkoZVM4uTXffemet6pUN_b5zZyCFDnVi0ENvsU_LJayw&amp;oe=6A57E662" alt="ŠIKOTRANS — preprava traktorov a nadrozmerného nákladu">
+        </div>
+        <div class="hero-ticket-float ticket">
+          <div class="ticket-title">Prepravný list</div>
+          <span class="mono" style="font-size:11px;color:var(--steel);">SK-2026 / MEGA</span>
+          <div class="ticket-notch"></div>
+          <div class="ticket-row"><span class="k">Trasa</span><span class="v">SK → CE / ZE</span></div>
+          <div class="ticket-row"><span class="k">Vozidlá</span><span class="v">Mega návesy</span></div>
+          <div class="ticket-row"><span class="k">V pohybe</span><span class="v">28 rokov</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATES -->
+  <section class="certs" id="certifikaty">
+    <div class="certs-bar">
+      <div class="wrap certs-bar-row">
+        <span class="certs-bar-label">Overená dopravná spoločnosť</span>
+        <a href="tel:+421346941460" class="trust-phone"><span class="dot"></span> +421 34 6941 460</a>
+      </div>
+    </div>
+    <div class="wrap certs-inner">
+      <div class="certs-head reveal">
+        <span class="section-tag">Dôvera partnerov</span>
+        <h2>Certifikáty, ktoré hovoria za nás</h2>
+        <p>Stabilita, kvalita a transparentnosť — presne to, čo od medzinárodného dopravcu očakávate. Naše certifikáty a Bisnode hodnotenie potvrdzujú, že ŠIKOTRANS je spoľahlivý partner pre náročných zákazníkov.</p>
+      </div>
+
+      <div class="certs-grid reveal">
+        <article class="cert-featured">
+          <div class="cert-featured-badge">
+            <a href="https://www.sikotrans.sk/sk/o-nas/certifikaty-a-dokumenty/" target="_blank" rel="noopener noreferrer">
+              <img src="https://www.sikotrans.sk/images/bisnode-certifikacia-small.png" alt="Bisnode certifikácia — Register solventných firiem, ŠIKOTRANS s.r.o.">
+            </a>
+            <div class="cert-featured-copy">
+              <h3>Bisnode certifikácia</h3>
+              <p>ŠIKOTRANS, s.r.o. je zapísaná v <strong>Registri solventných firiem</strong>. Bisnode certifikácia je pre našich partnerov jasným signálom finančnej stability a dôveryhodnosti.</p>
+              <div class="cert-featured-meta">
+                <span class="cert-pill">Register solventných firiem</span>
+                <span class="cert-pill">IČO: 36248601</span>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <div class="cert-stack">
+          <div class="cert-iso-panel">
+            <h4>Systémy manažérstva kvality</h4>
+            <div class="cert-iso-row">
+              <a href="https://www.sikotrans.sk/sk/o-nas/certifikaty-a-dokumenty/" target="_blank" rel="noopener noreferrer" title="ISO certifikát 1">
+                <img src="https://www.sikotrans.sk/css/img/certifikat1.png" alt="ISO certifikát 1">
+              </a>
+              <a href="https://www.sikotrans.sk/sk/o-nas/certifikaty-a-dokumenty/" target="_blank" rel="noopener noreferrer" title="ISO certifikát 2">
+                <img src="https://www.sikotrans.sk/css/img/certifikat2.png" alt="ISO certifikát 2">
+              </a>
+              <a href="https://www.sikotrans.sk/sk/o-nas/certifikaty-a-dokumenty/" target="_blank" rel="noopener noreferrer" title="ISO certifikát 3">
+                <img src="https://www.sikotrans.sk/css/img/certifikat3.png" alt="ISO certifikát 3">
+              </a>
+            </div>
+          </div>
+          <div class="cert-trust-panel">
+            <div class="cert-trust-stat">
+              <span class="n">28+</span>
+              <span class="l">Rokov na trhu</span>
+            </div>
+            <div class="cert-trust-stat">
+              <span class="n">ISO</span>
+              <span class="l">Certifikované procesy</span>
+            </div>
+            <div class="cert-trust-stat">
+              <span class="n">Bisnode</span>
+              <span class="l">Solventná firma</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <p class="certs-cta reveal">
+        <a href="https://www.sikotrans.sk/sk/o-nas/certifikaty-a-dokumenty/">Všetky certifikáty a dokumenty →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- CAPACITY / DOUBLE DECK -->
+  <section class="capacity" id="autopark">
+    <div class="wrap capacity-grid">
+      <div class="capacity-copy reveal">
+        <span class="section-tag">Špecialita autoparku</span>
+        <h2>Dvojpodlažné<br>mega návesy</h2>
+        <p>Riešenie pre citlivý a krehký tovar, ktorý sa nesmie vysoko stohovať. Náklad rozdelíme do dvoch podlahových úrovní bez straty nosnosti — ideálne pre výrobcov jemne baleného tovaru.</p>
+        <div class="stat-tickets">
+          <div class="stat-ticket"><span class="big">67</span><span class="lab">Paliet na súprave</span></div>
+          <div class="stat-ticket"><span class="big">100 m³</span><span class="lab">Ložný objem</span></div>
+          <div class="stat-ticket"><span class="big">25 t</span><span class="lab">Celková nosnosť</span></div>
+          <div class="stat-ticket"><span class="big">2,9 m</span><span class="lab">Výška nákladu</span></div>
+        </div>
+      </div>
+      <div class="capacity-photo reveal">
+        <img src="https://www.sikotrans.sk/useruploads/images/34.jpg" alt="Dvojpodlažný náves ŠIKOTRANS">
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services" id="sluzby">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="section-tag">Čo prevážame a ako</span>
+          <h2>Naše služby</h2>
+        </div>
+        <span class="num">01 → 04</span>
+      </div>
+      <div class="svc-grid">
+        <a href="https://www.sikotrans.sk/sk/sluzby/medzinarodna-doprava/" class="svc-card large reveal">
+          <img src="https://www.sikotrans.sk/useruploads/images/2.png" alt="Medzinárodná doprava">
+          <div class="content">
+            <span class="idx">01 / Doprava</span>
+            <h3>Medzinárodná doprava</h3>
+            <p>Plachtové mega návesové súpravy pre strednú a západnú Európu — nakládka aj vykládka z boku, z vrchu alebo zozadu.</p>
+          </div>
+        </a>
+        <a href="https://www.sikotrans.sk/sk/sluzby/spedicia-a-zasielatelstvo/" class="svc-card small reveal">
+          <img src="https://www.sikotrans.sk/useruploads/images/baba.jpg" alt="Špedícia a zasielateľstvo">
+          <div class="content">
+            <span class="idx">02 / Špedícia</span>
+            <h3>Špedícia a zasielateľstvo</h3>
+            <p>Zabezpečíme prepravu aj vtedy, keď je náš vlastný autopark plne vyťažený.</p>
+          </div>
+        </a>
+        <a href="https://www.sikotrans.sk/sk/sluzby/dvojpodlazne-navesy/" class="svc-card small reveal">
+          <img src="https://www.sikotrans.sk/useruploads/images/34.jpg" alt="Dvojpodlažné návesy">
+          <div class="content">
+            <span class="idx">03 / Špecialita</span>
+            <h3>Dvojpodlažné návesy</h3>
+            <p>Dve podlahové úrovne pre citlivý a krehký tovar, bez straty nosnosti.</p>
+          </div>
+        </a>
+        <a href="http://www.frenat.sk/" class="svc-card large reveal">
+          <img src="https://www.sikotrans.sk/useruploads/images/3.jpg" alt="Servis vozidiel FRENAT">
+          <div class="content">
+            <span class="idx">04 / Servis</span>
+            <h3>Servis vozidiel · FRENAT</h3>
+            <p>Sesterská spoločnosť FRENAT s.r.o. zabezpečuje servis a náhradné diely pre nákladné aj osobné vozidlá, aj pre širšiu verejnosť.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROUTE / COVERAGE -->
+  <section class="route">
+    <div class="wrap route-grid">
+      <div class="route-copy reveal">
+        <span class="section-tag">Pokrytie</span>
+        <h2 style="font-size:clamp(30px,4vw,46px);margin-bottom:20px;">Kúty ako východisko,<br>Európa ako cieľ</h2>
+        <p>Zázemie v Kútoch nám dáva rýchly nájazd na diaľničnú sieť smerom do Rakúska, Nemecka, Beneluxu aj ďalej do západnej Európy. Malé, stredné aj veľké súpravy volíme podľa objemu a charakteru zásielky.</p>
+        <div class="chip-row">
+          <span class="chip">Malé vozidlá</span>
+          <span class="chip">Stredné vozidlá</span>
+          <span class="chip">Veľké návesové súpravy</span>
+          <span class="chip">Práce s VZV</span>
+        </div>
+      </div>
+      <div class="route-map reveal">
+        <div class="route-ticket ticket" style="border-radius:var(--radius-lg);padding:34px 30px;">
+          <div class="ticket-title" style="font-size:15px;letter-spacing:.1em;color:var(--steel);">Trasa · prepravný list</div>
+          <div class="route-stops">
+            <div class="route-stop">
+              <span class="dot origin"></span>
+              <div><strong>Kúty, SK</strong><span>Zázemie a nakládka</span></div>
+            </div>
+            <div class="route-line"></div>
+            <div class="route-stop">
+              <span class="dot"></span>
+              <div><strong>Rakúsko / Nemecko</strong><span>Stredná Európa</span></div>
+            </div>
+            <div class="route-line"></div>
+            <div class="route-stop">
+              <span class="dot"></span>
+              <div><strong>Benelux / Francúzsko</strong><span>Západná Európa</span></div>
+            </div>
+          </div>
+          <div class="ticket-notch"></div>
+          <div class="ticket-row"><span class="k">Vozový park</span><span class="v">Malé · stredné · veľké súpravy</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXTRA SERVICES STRIP -->
+  <div class="strip">
+    <div class="wrap">
+      <div class="section-head" style="margin-bottom:30px;">
+        <div><span class="section-tag" style="color:var(--signal);">Pre vodičov a partnerov</span></div>
+      </div>
+      <div class="strip-grid">
+        <div class="strip-item"><span class="n">Servis</span><h4>Tankovanie PHM a AdBlue</h4></div>
+        <div class="strip-item"><span class="n">Servis</span><h4>Umývanie nákladných vozidiel</h4></div>
+        <div class="strip-item"><span class="n">Parkovanie</span><h4>Strážené parkovacie služby</h4></div>
+        <div class="strip-item"><span class="n">Ubytovanie</span><h4>Ubytovacie služby pre vodičov</h4></div>
+        <div class="strip-item"><span class="n">Predaj</span><h4>Predaj autodielov</h4></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ABOUT -->
+  <section class="about" id="o-nas">
+    <div class="wrap about-grid">
+      <div class="reveal">
+        <div class="about-num">28<span>+</span></div>
+        <p class="mono" style="color:var(--steel);font-size:13px;letter-spacing:.06em;">ROKOV V POHYBE</p>
+      </div>
+      <div class="about-copy reveal">
+        <span class="section-tag">O nás</span>
+        <h2 style="font-size:clamp(28px,3.6vw,42px);margin-bottom:18px;">Rodinná firma s medzinárodným dosahom</h2>
+        <p>ŠIKOTRANS pôsobí v medzinárodnej cestnej doprave už 28 rokov, so zázemím v Kútoch. Sídlime vo vlastnej administratívnej budove a prevádzku podporuje sesterská spoločnosť FRENAT, s.r.o., ktorá sa stará o servis vozidiel a predaj náhradných dielov.</p>
+        <p>Naše certifikáty a Bisnode hodnotenie potvrdzujú stabilitu, ktorú od dopravcu očakávajú aj najnáročnejší zákazníci.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CAREERS -->
+  <section class="careers" id="kariera">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <div>
+          <span class="section-tag">Pridajte sa k nám</span>
+          <h2 style="color:#fff;">Kariéra v ŠIKOTRANS</h2>
+        </div>
+      </div>
+      <div class="careers-grid">
+        <a href="https://www.sikotrans.sk/sk/kariera/vodic-mkd/" class="career-card reveal">
+          <h3>Vodič MKD</h3>
+          <p>Medzinárodná kamiónová doprava na mega návesových súpravách, stabilné trasy po strednej a západnej Európe.</p>
+          <span class="go">Zobraziť pozíciu →</span>
+        </a>
+        <a href="https://www.sikotrans.sk/sk/kariera/disponent-mkd/" class="career-card reveal">
+          <h3>Disponent MKD</h3>
+          <p>Plánovanie trás a komunikácia s vodičmi aj zákazníkmi v zázemí administratívnej budovy v Kútoch.</p>
+          <span class="go">Zobraziť pozíciu →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FINAL CTA -->
+  <section class="cta-final" id="kontakt">
+    <div class="wrap cta-final-inner">
+      <span class="section-tag" style="color:var(--signal);">Poďme prepravovať spolu</span>
+      <h2>Pripravte<br>zásielku na cestu.</h2>
+      <p>Napíšte nám parametre nákladu — do 24 hodín pripravíme cenovú kalkuláciu prepravy.</p>
+      <div class="btns">
+        <a href="https://www.sikotrans.sk/sk/o-nas/cenova-ponuka/" class="btn btn-primary">Cenová kalkulácia prepravy →</a>
+        <a href="tel:+421346941460" class="btn btn-ghost">+421 34 6941 460</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="brand-badge" style="display:inline-flex;margin-bottom:16px;">
+          <img src="https://www.sikotrans.sk/css/img/logo-sikotrans-footer.png" alt="ŠIKOTRANS" style="height:22px;" onerror="this.parentElement.style.display='none';">
+        </span>
+        <p>Medzinárodná cestná doprava a špedícia so zázemím v Kútoch. 28 rokov v pohybe naprieč strednou a západnou Európou.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Firma</h5>
+        <a href="https://www.sikotrans.sk/sk/o-nas/historia-a-sucasnost/">História a súčasnosť</a>
+        <a href="https://www.sikotrans.sk/sk/o-nas/certifikaty-a-dokumenty/">Certifikáty a dokumenty</a>
+        <a href="https://www.sikotrans.sk/sk/o-nas/referencie/">Referencie</a>
+      </div>
+      <div class="footer-col">
+        <h5>Služby</h5>
+        <a href="https://www.sikotrans.sk/sk/sluzby/medzinarodna-doprava/">Medzinárodná doprava</a>
+        <a href="https://www.sikotrans.sk/sk/sluzby/spedicia-a-zasielatelstvo/">Špedícia</a>
+        <a href="https://www.sikotrans.sk/sk/parkovacie-sluzby/">Parkovacie služby</a>
+        <a href="https://www.sikotrans.sk/sk/ubytovacie-sluzby/">Ubytovacie služby</a>
+      </div>
+      <div class="footer-col">
+        <h5>Kontakt</h5>
+        <a href="tel:+421346941460">+421 34 6941 460</a>
+        <a href="https://www.sikotrans.sk/sk/kontakt/kde-nas-najdete/">Kde nás nájdete</a>
+        <a href="https://www.sikotrans.sk/sk/online-monitoring/">Online monitoring</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 ŠIKOTRANS, s. r. o. · Kúty</span>
+      <span class="mono">28 rokov v pohybe</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const header = document.getElementById('siteHeader');
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('solid', window.scrollY > 40);
+  });
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('in'); });
+  }, {threshold:.15});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
