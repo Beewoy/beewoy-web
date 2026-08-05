@@ -15,6 +15,8 @@ Obsah bol spracovaný z verejných stránok `https://www.kontraktsk.sk/`: Úvod,
 
 Farebný systém redizajnu nadväzuje na pôvodnú identitu: červenú z loga dopĺňajú teplé drevené a neutrálne sivé tóny. Samostatný report zámerne používa neutrálny, opakovateľný analytický vizuál.
 
+Report pripravený štúdiom Beewoy používa lokálne uložené oficiálne logo zo zdroja `https://beewoy.sk/logo.svg`. Čierno-žltý vizuálny systém reportu je oddelený od firemnej identity klienta; logo Beewoy sa v `index.html` nepoužíva.
+
 ## Formulár
 
 Projekt je statický, preto formulár nepredstiera serverové odoslanie. Po validácii otvorí predvyplnenú správu pre `info@kontraktsk.sk` v e-mailovom programe používateľa. Pri nasadení odporúčame napojiť formulár na overený backend alebo formulárovú službu, doplniť ochranu proti spamu a informácie o spracúvaní osobných údajov.
