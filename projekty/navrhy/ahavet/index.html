@@ -1,0 +1,721 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Veterinárna klinika AHA-VET v Bratislave poskytuje prevenciu, diagnostiku, chirurgiu, hospitalizáciu a rehabilitáciu pre psy, mačky, drobné zvieratá a exoty.">
+  <meta name="theme-color" content="#0088b8">
+  <title>AHA-VET | Veterinárna klinika Bratislava – Dlhé diely</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://images.unsplash.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&amp;family=Manrope:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    :root {
+      /* Farby z loga AHAVET: #0088b8 (modrá) + #78b850 (zelená) */
+      --ink: #0f3a48;
+      --ink-soft: #54707a;
+      --forest: #0088b8;
+      --forest-dark: #006c94;
+      --mint: #dff3f9;
+      --mint-light: #eef8fb;
+      --cream: #f6fafb;
+      --sand: #eef6e8;
+      --white: #fff;
+      --coral: #78b850;
+      --coral-dark: #5a9635;
+      --line: rgba(15, 58, 72, .13);
+      --shadow-sm: 0 14px 34px rgba(0, 108, 148, .1);
+      --shadow-lg: 0 30px 80px rgba(0, 108, 148, .16);
+      --radius-sm: 16px;
+      --radius-md: 27px;
+      --radius-lg: 42px;
+      --container: 1180px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 112px; }
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      color: var(--ink);
+      background: var(--cream);
+      font: 400 16px/1.65 "Manrope", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    body.menu-open { overflow: hidden; }
+    img { display: block; width: 100%; height: auto; }
+    a { color: inherit; text-decoration: none; }
+    button, input, select, textarea { font: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid rgba(120, 184, 80, .75); outline-offset: 4px; }
+    .skip-link {
+      position: fixed; z-index: 100; top: -80px; left: 16px;
+      padding: 12px 18px; border-radius: 999px; color: #fff;
+      background: var(--forest); font-weight: 800; transition: top .2s ease;
+    }
+    .skip-link:focus { top: 16px; }
+    .container { width: min(calc(100% - 40px), var(--container)); margin-inline: auto; }
+    .section { padding: 108px 0; }
+    .section-mint { background: var(--mint-light); }
+    .kicker, .eyebrow {
+      margin: 0 0 14px; color: var(--coral-dark); font-size: 12px;
+      font-weight: 800; letter-spacing: .13em; text-transform: uppercase;
+    }
+    .eyebrow { display: flex; align-items: center; gap: 9px; color: var(--forest); }
+    .eyebrow-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--coral); box-shadow: 0 0 0 5px rgba(120,184,80,.18); }
+    h1, h2 { margin: 0; font-family: "Fraunces", Georgia, serif; font-weight: 600; line-height: 1.04; letter-spacing: -.045em; }
+    h1 { max-width: 760px; font-size: clamp(52px, 5.5vw, 78px); }
+    h1 em { color: var(--coral-dark); font-style: normal; }
+    h2 { font-size: clamp(40px, 4vw, 58px); }
+    h3 { margin: 0; font-size: 18px; line-height: 1.3; }
+    p { margin: 0; }
+    .section-heading { max-width: 760px; margin-bottom: 50px; }
+    .section-heading.center { margin-inline: auto; text-align: center; }
+    .section-heading > p:last-child { margin-top: 20px; color: var(--ink-soft); }
+    .btn {
+      min-height: 50px; display: inline-flex; align-items: center; justify-content: center;
+      gap: 10px; padding: 13px 22px; border: 1px solid transparent; border-radius: 999px;
+      cursor: pointer; font-weight: 800; transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn svg { width: 19px; height: 19px; flex: none; }
+    .btn-primary { color: #fff; background: var(--forest); box-shadow: 0 13px 30px rgba(0,136,184,.22); }
+    .btn-primary:hover { background: var(--forest-dark); }
+    .btn-secondary { border-color: var(--line); background: rgba(255,255,255,.65); }
+    .btn-secondary:hover { background: #fff; box-shadow: var(--shadow-sm); }
+    .btn-emergency { color: #fff; background: var(--coral-dark); box-shadow: 0 13px 30px rgba(90,150,53,.22); }
+
+    .announcement { position: relative; z-index: 31; color: #fff; background: var(--forest-dark); font-size: 13px; font-weight: 700; }
+    .announcement-inner { min-height: 40px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .announcement-group { display: flex; align-items: center; gap: 8px; }
+    .announcement svg { width: 17px; height: 17px; color: #9fd6ea; flex: none; }
+    .announcement a:hover { color: #c5ebf6; }
+
+    .site-header {
+      position: sticky; z-index: 30; top: 0; border-bottom: 1px solid transparent;
+      background: rgba(246,250,251,.92); backdrop-filter: blur(18px);
+      transition: border-color .25s ease, box-shadow .25s ease;
+    }
+    .site-header.is-scrolled { border-color: var(--line); box-shadow: 0 10px 30px rgba(0,108,148,.08); }
+    .nav-wrap { height: 84px; display: flex; align-items: center; justify-content: space-between; gap: 25px; }
+    .logo { display: inline-flex; align-items: center; flex: none; }
+    .logo-img {
+      display: block;
+      width: auto;
+      height: 64px;
+      border-radius: 10px;
+    }
+    .main-nav { display: flex; align-items: center; gap: 24px; margin-left: auto; }
+    .main-nav a { position: relative; padding: 10px 0; font-size: 13px; font-weight: 700; }
+    .main-nav a::after { content: ""; position: absolute; right: 0; bottom: 5px; left: 0; height: 2px; background: var(--coral); transform: scaleX(0); transition: transform .2s ease; }
+    .main-nav a:hover::after, .main-nav a.active::after { transform: scaleX(1); }
+    .header-cta {
+      min-height: 46px; display: inline-flex; align-items: center; gap: 8px; padding: 11px 17px;
+      border-radius: 999px; color: #fff; background: var(--forest); font-size: 12px; font-weight: 800;
+    }
+    .header-cta svg { width: 17px; height: 17px; }
+    .menu-toggle {
+      width: 46px; height: 46px; display: none; place-items: center; padding: 0;
+      border: 1px solid var(--line); border-radius: 14px; color: var(--ink); background: #fff; cursor: pointer;
+    }
+    .menu-toggle svg { width: 22px; height: 22px; }
+    .icon-close { display: none; }
+
+    .hero { position: relative; padding: 72px 0 82px; }
+    .hero::before {
+      content: ""; position: absolute; top: 30px; left: -120px; width: 300px; height: 300px;
+      border-radius: 50%; background: var(--mint); filter: blur(2px); opacity: .75;
+    }
+    .hero-grid { position: relative; display: grid; grid-template-columns: minmax(0,1.08fr) minmax(420px,.92fr); align-items: center; gap: 74px; }
+    .hero-lead { max-width: 680px; margin-top: 25px; color: var(--ink-soft); font-size: 18px; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+    .hero-assurance { display: flex; flex-wrap: wrap; gap: 12px 20px; margin-top: 27px; color: var(--ink-soft); font-size: 12px; font-weight: 700; }
+    .hero-assurance span { display: flex; align-items: center; gap: 6px; }
+    .hero-assurance svg { width: 16px; height: 16px; color: var(--coral-dark); }
+    .hero-visual { position: relative; min-height: 610px; }
+    .hero-photo-shell { position: absolute; inset: 0 18px 34px 0; overflow: hidden; border: 9px solid #fff; border-radius: 42px 42px 140px 42px; box-shadow: var(--shadow-lg); }
+    .hero-photo-shell img { height: 100%; object-fit: cover; object-position: 52% center; }
+    .photo-detail { position: absolute; top: 42px; right: -5px; width: 95px; height: 95px; border: 7px solid var(--cream); border-radius: 50%; background: var(--coral); }
+    .photo-detail::before, .photo-detail::after { content: ""; position: absolute; top: 46px; left: 24px; width: 47px; height: 2px; background: #fff; }
+    .photo-detail::after { transform: rotate(90deg); }
+    .hero-contact-card {
+      position: absolute; right: 0; bottom: 0; display: flex; align-items: center; gap: 13px;
+      min-width: 270px; padding: 16px 19px; border: 1px solid var(--line); border-radius: 20px;
+      background: rgba(255,255,255,.96); box-shadow: var(--shadow-sm);
+    }
+    .hero-contact-icon { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 13px; color: #fff; background: var(--forest); }
+    .hero-contact-icon svg { width: 20px; height: 20px; }
+    .hero-contact-card small { display: block; color: var(--ink-soft); font-size: 10px; }
+    .hero-contact-card strong { font-size: 15px; }
+
+    .trust-strip { padding-bottom: 94px; }
+    .trust-grid { display: grid; grid-template-columns: repeat(4,1fr); overflow: hidden; border: 1px solid var(--line); border-radius: var(--radius-md); background: #fff; box-shadow: var(--shadow-sm); }
+    .trust-item { min-width: 0; display: flex; align-items: center; gap: 14px; padding: 24px 20px; }
+    .trust-item + .trust-item { border-left: 1px solid var(--line); }
+    .trust-icon { width: 42px; height: 42px; display: grid; place-items: center; flex: none; border-radius: 14px; color: var(--forest); background: var(--mint); }
+    .trust-icon.coral { color: var(--coral-dark); background: #e8f5db; }
+    .trust-icon svg { width: 21px; height: 21px; }
+    .trust-item strong, .trust-item span span { display: block; }
+    .trust-item strong { font-size: 13px; line-height: 1.3; }
+    .trust-item span span { margin-top: 4px; color: var(--ink-soft); font-size: 10px; line-height: 1.45; }
+
+    .services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .service-card { min-height: 290px; padding: 29px; border: 1px solid var(--line); border-radius: var(--radius-md); background: rgba(255,255,255,.78); transition: transform .25s ease, box-shadow .25s ease; }
+    .service-card:hover { transform: translateY(-5px); box-shadow: var(--shadow-sm); }
+    .service-icon { width: 51px; height: 51px; display: grid; place-items: center; margin-bottom: 26px; border-radius: 17px; color: var(--forest); background: var(--mint); }
+    .service-card:nth-child(2n) .service-icon { color: var(--coral-dark); background: #e8f5db; }
+    .service-icon svg { width: 25px; height: 25px; }
+    .service-card p { margin-top: 13px; color: var(--ink-soft); font-size: 13px; }
+
+    .about-grid, .rehab-grid { display: grid; grid-template-columns: .92fr 1.08fr; align-items: center; gap: 82px; }
+    .about-visual, .rehab-visual { position: relative; min-height: 610px; }
+    .about-photo, .rehab-photo { position: absolute; inset: 0 28px 34px 0; overflow: hidden; border-radius: 38px 125px 38px 38px; box-shadow: var(--shadow-lg); }
+    .about-photo img, .rehab-photo img { height: 100%; object-fit: cover; }
+    .about-note {
+      position: absolute; right: 0; bottom: 0; width: 235px; padding: 20px;
+      border: 6px solid var(--cream); border-radius: 23px; color: #fff; background: var(--forest);
+    }
+    .about-note strong, .about-note span { display: block; }
+    .about-note span { margin-top: 5px; color: #c5e7f2; font-size: 11px; }
+    .split-copy > p:not(.kicker) { margin-top: 18px; color: var(--ink-soft); }
+    .feature-list { display: grid; gap: 12px; padding: 0; margin: 26px 0 0; list-style: none; }
+    .feature-list li { display: flex; align-items: flex-start; gap: 11px; font-size: 13px; font-weight: 700; }
+    .feature-list li span { width: 24px; height: 24px; display: grid; place-items: center; flex: none; border-radius: 50%; color: #fff; background: var(--coral-dark); }
+    .feature-list svg { width: 14px; height: 14px; }
+
+    .journey { padding: 0 0 108px; }
+    .journey-card { padding: 52px; border-radius: var(--radius-lg); color: #fff; background: var(--forest); box-shadow: var(--shadow-lg); }
+    .journey-card .kicker { color: #b8e08f; }
+    .journey-card h2 { max-width: 700px; font-size: clamp(36px,3.5vw,50px); }
+    .steps-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 44px; margin-top: 43px; }
+    .step { position: relative; display: flex; gap: 15px; }
+    .step:not(:last-child)::after { content: ""; position: absolute; top: 17px; right: -25px; width: 28px; border-top: 1px dashed rgba(255,255,255,.35); }
+    .step-number { color: #b8e08f; font: 600 25px/1 "Fraunces",Georgia,serif; }
+    .step h3 { font-size: 16px; }
+    .step p { margin-top: 8px; color: #c5e7f2; font-size: 12px; }
+
+    .rehab-section { background: var(--sand); }
+    .rehab-grid { grid-template-columns: 1fr 1fr; }
+    .rehab-photo { inset: 0; border-radius: 110px 38px 38px 38px; }
+    .rehab-copy .btn { margin-top: 30px; }
+    .hospital-panel {
+      display: grid; grid-template-columns: auto 1fr; gap: 22px; margin-top: 46px; padding: 28px;
+      border: 1px solid var(--line); border-radius: 24px; background: rgba(255,255,255,.7);
+    }
+    .hospital-icon { width: 52px; height: 52px; display: grid; place-items: center; border-radius: 17px; color: var(--forest); background: var(--mint); }
+    .hospital-icon svg { width: 26px; height: 26px; }
+    .hospital-panel h3 { font-family: "Fraunces",Georgia,serif; font-size: 25px; }
+    .hospital-panel p { margin-top: 8px; color: var(--ink-soft); font-size: 13px; }
+
+    .team-head { display: flex; align-items: end; justify-content: space-between; gap: 50px; margin-bottom: 46px; }
+    .team-head > p { max-width: 470px; color: var(--ink-soft); }
+    .team-grid { display: grid; grid-template-columns: repeat(2,minmax(0,360px)); gap: 20px; }
+    .team-card { min-height: 285px; display: grid; place-items: center; align-content: center; padding: 30px; border: 1px solid var(--line); border-radius: var(--radius-md); background: #fff; text-align: center; box-shadow: var(--shadow-sm); }
+    .team-avatar { width: 120px; height: 120px; display: grid; place-items: center; margin-bottom: 23px; border-radius: 50%; color: #fff; background: var(--forest); font: 600 35px/1 "Fraunces",Georgia,serif; }
+    .team-card:nth-child(2) .team-avatar { background: var(--coral-dark); }
+    .team-card p { margin-top: 7px; color: var(--ink-soft); font-size: 12px; }
+
+    .reviews-wrap { display: grid; grid-template-columns: 300px 1fr; gap: 52px; align-items: start; }
+    .rating-card { padding: 34px; border-radius: var(--radius-md); color: #fff; background: var(--forest); box-shadow: var(--shadow-lg); }
+    .rating-card strong { display: block; font: 600 50px/1 "Fraunces",Georgia,serif; }
+    .rating-card span { display: block; margin-top: 10px; color: #c5e7f2; font-size: 13px; }
+    .rating-stars { margin-top: 16px; color: #b8e08f; letter-spacing: .16em; }
+    .review-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+    .review-card { padding: 25px; border: 1px solid var(--line); border-radius: 22px; background: #fff; }
+    .review-card p { font-family: "Fraunces",Georgia,serif; font-size: 17px; line-height: 1.45; }
+    .review-card small { display: block; margin-top: 20px; color: var(--coral-dark); font-weight: 800; text-transform: uppercase; letter-spacing: .09em; }
+
+    .emergency { padding: 0 0 108px; }
+    .emergency-card { display: flex; align-items: center; justify-content: space-between; gap: 35px; padding: 38px 42px; border: 1px solid rgba(90,150,53,.28); border-radius: var(--radius-md); background: #eef7e6; }
+    .emergency-copy { max-width: 700px; }
+    .emergency-copy h2 { font-size: clamp(31px,3vw,43px); }
+    .emergency-copy p { margin-top: 12px; color: #4f6a45; }
+    .emergency-actions { flex: none; text-align: center; }
+    .emergency-actions > a:first-child { display: block; margin-bottom: 12px; color: var(--coral-dark); font-weight: 800; }
+
+    .contact-section { padding-top: 108px; background: var(--mint-light); }
+    .contact-shell { display: grid; grid-template-columns: .88fr 1.12fr; overflow: hidden; border-radius: 40px 40px 0 0; background: #fff; box-shadow: var(--shadow-lg); }
+    .contact-info { padding: 48px; color: #fff; background: var(--forest); }
+    .contact-info .kicker { color: #b8e08f; }
+    .contact-intro h2 { font-size: clamp(39px,4vw,53px); }
+    .contact-intro > p:last-child { margin-top: 17px; color: #c5e7f2; font-size: 13px; }
+    .contact-list { display: grid; gap: 8px; margin-top: 30px; }
+    .contact-row { display: flex; align-items: center; gap: 13px; padding: 12px; border-radius: 16px; transition: background .2s ease; }
+    .contact-row:hover { background: rgba(255,255,255,.08); }
+    .contact-row-icon { width: 40px; height: 40px; display: grid; place-items: center; flex: none; border-radius: 13px; color: #fff; background: rgba(255,255,255,.11); }
+    .contact-row-icon svg { width: 19px; height: 19px; }
+    .contact-row small, .contact-row strong { display: block; }
+    .contact-row small { color: #9fd0e4; font-size: 9px; text-transform: uppercase; letter-spacing: .08em; }
+    .contact-row strong { overflow-wrap: anywhere; font-size: 13px; }
+    .hours { margin-top: 28px; padding-top: 25px; border-top: 1px solid rgba(255,255,255,.16); }
+    .hours-title { margin-bottom: 11px; color: #b8e08f; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
+    .hours-row { display: flex; justify-content: space-between; gap: 20px; padding: 9px 0; color: #c5e7f2; font-size: 12px; }
+    .hours-row strong { color: #fff; }
+    .appointment-panel { padding: 48px; }
+    .appointment-panel > p { margin-top: 10px; color: var(--ink-soft); font-size: 12px; }
+    .urgent-note { margin-top: 15px!important; padding: 12px 14px; border-radius: 12px; color: #3f5f32!important; background: #eef7e6; font-weight: 700; }
+    .appointment-form { display: grid; grid-template-columns: 1fr 1fr; gap: 17px; margin-top: 27px; }
+    .field { display: grid; gap: 7px; }
+    .field.full, .form-actions { grid-column: 1/-1; }
+    .field label { font-size: 11px; font-weight: 800; }
+    .field input, .field select, .field textarea { width: 100%; min-width: 0; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; color: var(--ink); background: #fbfcfb; }
+    .field input, .field select { min-height: 47px; }
+    .field textarea { min-height: 108px; resize: vertical; }
+    .field input:focus, .field select:focus, .field textarea:focus { border-color: var(--forest); outline: 3px solid rgba(0,136,184,.14); }
+    .form-actions { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 4px; }
+    .form-actions small { max-width: 330px; color: var(--ink-soft); font-size: 10px; }
+    .map-strip { position: relative; height: 350px; }
+    .map-strip iframe { width: 100%; height: 100%; border: 0; filter: saturate(.75) contrast(.96); }
+    .map-card { position: absolute; top: 50%; left: max(20px,calc((100% - var(--container))/2)); width: min(310px,calc(100% - 40px)); padding: 22px; border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.96); box-shadow: var(--shadow-sm); transform: translateY(-50%); }
+    .map-card strong { display: block; }
+    .map-card p { margin: 5px 0 12px; color: var(--ink-soft); font-size: 12px; }
+    .map-card a { color: var(--forest); font-size: 12px; font-weight: 800; }
+
+    .site-footer { padding: 38px 0; color: rgba(255,255,255,.72); background: #054a66; font-size: 11px; }
+    .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 26px; }
+    .footer-brand { display: flex; align-items: center; gap: 14px; }
+    .footer-brand .logo-img {
+      height: 52px;
+      border-radius: 8px;
+      background: #fff;
+    }
+    .footer-brand-copy strong { display: block; color: #fff; font: 600 16px/1.2 "Fraunces",Georgia,serif; }
+    .footer-links { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 18px; }
+    .footer-links a:hover { color: #fff; }
+    .mobile-call { position: fixed; z-index: 25; right: 18px; bottom: 18px; width: 58px; height: 58px; display: none; place-items: center; border: 5px solid rgba(246,250,251,.9); border-radius: 50%; color: #fff; background: var(--forest); box-shadow: 0 15px 32px rgba(0,108,148,.28); }
+    .mobile-call svg { width: 23px; height: 23px; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .65s ease, transform .65s cubic-bezier(.2,.75,.25,1); }
+    .reveal.is-visible { opacity: 1; transform: none; }
+    .delay-1 { transition-delay: .08s; }
+    .delay-2 { transition-delay: .16s; }
+
+    @media (max-width: 1100px) {
+      .main-nav { gap: 17px; }
+      .main-nav a { font-size: 12px; }
+      .hero-grid { gap: 44px; }
+      .reviews-wrap { grid-template-columns: 260px 1fr; gap: 30px; }
+    }
+    @media (max-width: 960px) {
+      .main-nav {
+        position: fixed; inset: 84px 20px auto; display: grid; gap: 0; padding: 16px;
+        border: 1px solid var(--line); border-radius: 22px; background: rgba(255,255,255,.98);
+        box-shadow: var(--shadow-lg); opacity: 0; visibility: hidden; transform: translateY(-12px);
+        transition: opacity .2s ease, visibility .2s ease, transform .2s ease;
+      }
+      .main-nav a { min-height: 44px; padding: 12px; border-radius: 12px; font-size: 14px; }
+      .main-nav a:hover { background: var(--mint-light); }
+      .main-nav a::after { display: none; }
+      .nav-wrap.nav-open .main-nav { opacity: 1; visibility: visible; transform: none; }
+      .menu-toggle { display: grid; }
+      .nav-wrap.nav-open .icon-menu { display: none; }
+      .nav-wrap.nav-open .icon-close { display: block; }
+      .header-cta { margin-left: auto; }
+      .hero-grid, .about-grid, .rehab-grid, .contact-shell { grid-template-columns: 1fr; }
+      .hero-copy { max-width: 760px; }
+      .hero-visual, .about-visual, .rehab-visual { width: min(680px,100%); min-height: 590px; margin-inline: auto; }
+      .trust-grid { grid-template-columns: repeat(2,1fr); }
+      .trust-item + .trust-item { border-left: 0; }
+      .trust-item:nth-child(2n) { border-left: 1px solid var(--line); }
+      .trust-item:nth-child(n+3) { border-top: 1px solid var(--line); }
+      .services-grid { grid-template-columns: repeat(2,1fr); }
+      .about-grid, .rehab-grid { gap: 52px; }
+      .rehab-copy { order: -1; }
+      .reviews-wrap { grid-template-columns: 1fr; }
+      .rating-card { max-width: 360px; }
+      .contact-shell { border-radius: 34px 34px 0 0; }
+    }
+    @media (max-width: 760px) {
+      .section { padding: 78px 0; }
+      .container { width: min(calc(100% - 28px),var(--container)); }
+      .announcement-inner { min-height: 37px; justify-content: center; font-size: 11px; }
+      .announcement-inner > .announcement-group:first-child { display: none; }
+      .nav-wrap { height: 72px; }
+      .main-nav { inset: 72px 14px auto; }
+      .logo-img { height: 52px; }
+      .header-cta { display: none; }
+      .hero { padding: 50px 0 62px; }
+      h1 { font-size: clamp(42px,12.2vw,58px); text-wrap: balance; }
+      .hero-lead { font-size: 16px; }
+      .hero-actions { display: grid; }
+      .btn { width: 100%; min-height: 52px; }
+      .hero-assurance { display: grid; }
+      .hero-visual { min-height: 465px; }
+      .hero-photo-shell { inset: 0 0 32px; border-width: 7px; border-radius: 31px 31px 95px 31px; }
+      .photo-detail { top: 24px; right: -7px; width: 82px; height: 82px; border-width: 6px; }
+      .photo-detail::before, .photo-detail::after { top: 38px; left: 20px; width: 40px; }
+      .hero-contact-card { right: 10px; left: 10px; min-width: 0; }
+      .trust-strip { padding-bottom: 68px; }
+      .trust-item { align-items: flex-start; padding: 18px 14px; }
+      .trust-icon { width: 38px; height: 38px; }
+      .trust-item strong { font-size: 11px; }
+      .services-grid, .steps-grid, .review-grid { grid-template-columns: 1fr; }
+      .service-card { min-height: 0; }
+      .about-visual, .rehab-visual { min-height: 455px; }
+      .about-photo { inset: 0 22px 30px 0; border-radius: 30px 85px 30px 30px; }
+      .about-note { width: 215px; padding: 16px; }
+      .journey { padding-bottom: 78px; }
+      .journey-card { padding: 36px 24px; }
+      .steps-grid { gap: 27px; }
+      .step::after { display: none; }
+      .hospital-panel { grid-template-columns: 1fr; }
+      .team-head { display: block; }
+      .team-head > p { margin-top: 18px; }
+      .team-grid { grid-template-columns: 1fr; }
+      .emergency { padding-bottom: 78px; }
+      .emergency-card { align-items: stretch; flex-direction: column; padding: 30px 24px; }
+      .emergency-actions { text-align: left; }
+      .contact-section { padding-top: 78px; }
+      .contact-shell { margin-inline: -14px; border-radius: 30px 30px 0 0; }
+      .contact-info, .appointment-panel { padding: 35px 24px; }
+      .appointment-form { grid-template-columns: 1fr; }
+      .field.full, .form-actions { grid-column: auto; }
+      .form-actions { align-items: stretch; flex-direction: column; }
+      .hours-row { flex-direction: column; gap: 2px; }
+      .map-strip { height: 410px; }
+      .map-card { top: auto; right: 18px; bottom: 18px; left: 18px; width: auto; transform: none; }
+      .footer-inner { align-items: flex-start; flex-direction: column; }
+      .footer-links { justify-content: flex-start; }
+      .mobile-call { display: grid; }
+    }
+    @media (max-width: 390px) {
+      h1 { font-size: 42px; }
+      .trust-item { display: grid; gap: 9px; }
+      .trust-icon { width: 34px; height: 34px; }
+      .trust-item span span { font-size: 9px; }
+      .hero-visual { min-height: 425px; }
+      .about-visual, .rehab-visual { min-height: 420px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms!important; animation-iteration-count: 1!important; scroll-behavior: auto!important; transition-duration: .01ms!important; }
+      .reveal { opacity: 1; transform: none; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Preskočiť na obsah</a>
+
+  <div class="announcement">
+    <div class="container announcement-inner">
+      <div class="announcement-group">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+        <span><span class="hours-full">Pondelok – piatok </span>9:00–19:00 · <span class="hours-full">Sobota – nedeľa </span>14:00–16:00</span>
+      </div>
+      <a class="announcement-group" href="tel:+421918242838">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-4-1-2 2c-4.2-1.8-7.2-4.8-9-9l2-2-1-4Z"/></svg>
+        <span>Recepcia: +421 918 242 838</span>
+      </a>
+    </div>
+  </div>
+
+  <header class="site-header" id="header">
+    <div class="container nav-wrap" id="navWrap">
+      <a class="logo" href="#domov" aria-label="AHA-VET – domov">
+        <img class="logo-img" src="ahavet.jpg" alt="AHA-VET – veterinárna klinika" width="492" height="492" decoding="async">
+      </a>
+      <nav class="main-nav" id="mainNav" aria-label="Hlavná navigácia">
+        <a href="#sluzby">Služby</a>
+        <a href="#klinika">Klinika</a>
+        <a href="#rehabilitacia">Rehabilitácia</a>
+        <a href="#tim">Tím</a>
+        <a href="#recenzie">Recenzie</a>
+        <a href="#kontakt">Kontakt</a>
+      </nav>
+      <a class="header-cta" href="tel:+421918242838">
+        <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-4-1-2 2c-4.2-1.8-7.2-4.8-9-9l2-2-1-4Z"/></svg>
+        Objednať návštevu
+      </a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-expanded="false" aria-controls="mainNav" aria-label="Otvoriť menu">
+        <svg class="icon-menu" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+        <svg class="icon-close" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="domov">
+      <div class="container hero-grid">
+        <div class="hero-copy reveal">
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Veterinárna klinika · Bratislava – Dlhé diely</p>
+          <h1>Komplexná starostlivosť pre <em>zdravie vášho zvieraťa.</em></h1>
+          <p class="hero-lead">Prevencia, diagnostika, chirurgia, hospitalizácia aj rehabilitácia na jednom pracovisku. Ošetrujeme psy, mačky, drobné domáce zvieratá, plazy aj exoty.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="tel:+421918242838">
+              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-4-1-2 2c-4.2-1.8-7.2-4.8-9-9l2-2-1-4Z"/></svg>
+              Objednať telefonicky
+            </a>
+            <a class="btn btn-secondary" href="#sluzby">Pozrieť služby</a>
+          </div>
+          <div class="hero-assurance">
+            <span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg> Diagnostika na jednom mieste</span>
+            <span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg> Hospitalizácia pacientov</span>
+            <span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg> Starostlivosť aj o exoty</span>
+          </div>
+        </div>
+        <div class="hero-visual reveal delay-1">
+          <div class="hero-photo-shell">
+            <!-- TODO: nahradiť autentickou fotografiou AHAVET -->
+            <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?auto=format&amp;fit=crop&amp;w=1400&amp;q=88" alt="Veterinárka pri pokojnom vyšetrení mačky" width="1400" height="1050" loading="eager" fetchpriority="high">
+          </div>
+          <span class="photo-detail" aria-hidden="true"></span>
+          <div class="hero-contact-card">
+            <span class="hero-contact-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-4-1-2 2c-4.2-1.8-7.2-4.8-9-9l2-2-1-4Z"/></svg></span>
+            <span><small>Recepcia</small><strong><a href="tel:+421918242838">+421 918 242 838</a></strong></span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Základné informácie">
+      <div class="container trust-grid reveal">
+        <article class="trust-item"><span class="trust-icon coral"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 2.7 5.5 6.1.9-4.4 4.3 1 6.1-5.4-2.9-5.4 2.9 1-6.1-4.4-4.3 6.1-.9L12 3Z"/></svg></span><span><strong>Google hodnotenie</strong><span>4,7/5 z 217 recenzií</span></span></article>
+        <article class="trust-item"><span class="trust-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><strong>Ordinačné hodiny</strong><span>Po–Pi do 19:00</span></span></article>
+        <article class="trust-item"><span class="trust-icon coral"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="3"/><path d="M7 15c1.5-4 3-4 5 0s3.5 4 5 0M8 8h.01"/></svg></span><span><strong>Rozšírená diagnostika</strong><span>RTG, USG, EKG a laboratórium</span></span></article>
+        <article class="trust-item"><span class="trust-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V8l8-5 8 5v12"/><path d="M8 20v-6h8v6M12 7v4M10 9h4"/></svg></span><span><strong>Na jednom mieste</strong><span>Liečba, hospitalizácia a rehabilitácia</span></span></article>
+      </div>
+    </section>
+
+    <section class="section section-mint" id="sluzby">
+      <div class="container">
+        <header class="section-heading center reveal">
+          <p class="kicker">Naše služby</p>
+          <h2>Starostlivosť pre bežné aj náročnejšie prípady</h2>
+          <p>Rozsah vyšetrení a liečby vždy prispôsobujeme konkrétnemu pacientovi. Na jednom pracovisku spájame prevenciu, diagnostiku, zákroky aj následnú starostlivosť.</p>
+        </header>
+        <div class="services-grid">
+          <article class="service-card reveal"><span class="service-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3v18M3 12h18"/><circle cx="12" cy="12" r="9"/></svg></span><h3>Prevencia a interná medicína</h3><p>Preventívne prehliadky, vakcinácia, čipovanie a riešenie ochorení tráviaceho, dýchacieho, močového, srdcovocievneho a hormonálneho systému.</p></article>
+          <article class="service-card reveal delay-1"><span class="service-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 3h6M10 3v6l-5 9a2 2 0 0 0 1.7 3h10.6a2 2 0 0 0 1.7-3l-5-9V3M8 15h8"/></svg></span><h3>Laboratórna a zobrazovacia diagnostika</h3><p>Vyšetrenie krvi, krvný obraz, biochémia, cytologické vyšetrenia, RTG, USG, EKG a endoskopická diagnostika.</p></article>
+          <article class="service-card reveal delay-2"><span class="service-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="m14 4 6 6M17 3l4 4-12 12-5 1 1-5L17 3Z"/><path d="M3 21h18"/></svg></span><h3>Chirurgia a akútna medicína</h3><p>Chirurgické zákroky, ošetrenie úrazov, traumatológia a starostlivosť o pacientov v akútnom stave.</p></article>
+          <article class="service-card reveal"><span class="service-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 4c4 0 4 5 8 5s4-5 4-5M6 20c4 0 4-5 8-5s4 5 4 5M4 12h16"/></svg></span><h3>Ortopédia a neurológia</h3><p>Diagnostika a liečba porúch pohybového aparátu, neurologických problémov a chronických ortopedických pacientov.</p></article>
+          <article class="service-card reveal delay-1"><span class="service-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M7.5 3C4.5 3 3 5.6 3 8.3c0 2.5 1.6 4.7 2.2 7.1.7 2.6 1.1 5.6 3.1 5.6 1.7 0 1.6-4.3 3.7-4.3s2 4.3 3.7 4.3c2 0 2.4-3 3.1-5.6.6-2.4 2.2-4.6 2.2-7.1C21 5.6 19.5 3 16.5 3c-1.9 0-3 1-4.5 1S9.4 3 7.5 3Z"/></svg></span><h3>Stomatológia a špecializované vyšetrenia</h3><p>Ošetrenie chrupu, dermatológia, alergológia, oftalmológia, onkológia, urológia a gynekológia.</p></article>
+          <article class="service-card reveal delay-2"><span class="service-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 21c-4-3-7-5.7-7-10a4 4 0 0 1 7-2.7A4 4 0 0 1 19 11c0 4.3-3 7-7 10Z"/><circle cx="7" cy="5" r="1.4"/><circle cx="12" cy="3.7" r="1.4"/><circle cx="17" cy="5" r="1.4"/></svg></span><h3>Exotické a drobné zvieratá</h3><p>Veterinárna starostlivosť pre králiky, hlodavce, exotické vtáky, plazy a ďalšie drobné domáce zvieratá.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="klinika">
+      <div class="container about-grid">
+        <div class="about-visual reveal">
+          <div class="about-photo">
+            <!-- TODO: nahradiť autentickou fotografiou AHAVET -->
+            <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?auto=format&amp;fit=crop&amp;w=1200&amp;q=86" alt="Pes počas pokojnej veterinárnej starostlivosti" width="1200" height="900" loading="lazy">
+          </div>
+          <div class="about-note"><strong>Komplexná starostlivosť na jednom pracovisku</strong><span>Bratislava – Dlhé diely</span></div>
+        </div>
+        <div class="split-copy reveal delay-1">
+          <p class="kicker">Veterinárna klinika AHAVET</p>
+          <h2>Klinika pripravená na každodennú aj nadväzujúcu starostlivosť</h2>
+          <p>AHAVET poskytuje komplexnú veterinárnu starostlivosť pre psy, mačky, drobné domáce zvieratá, plazy a exoty. Dlhoročnú prax spája s diagnostickým vybavením, chirurgickou starostlivosťou, hospitalizáciou a rehabilitáciou pacientov.</p>
+          <p>Cieľom je nájsť vhodný ďalší postup pre konkrétne zviera – od prvého vyšetrenia cez potrebnú diagnostiku a liečbu až po kontrolu alebo návrat k bežnému pohybu.</p>
+          <ul class="feature-list">
+            <li><span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg></span> Široký rozsah diagnostiky a ošetrení</li>
+            <li><span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg></span> Oddelená hospitalizácia psov a mačiek</li>
+            <li><span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg></span> Starostlivosť aj o drobné zvieratá a exoty</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="journey" aria-labelledby="journey-title">
+      <div class="container">
+        <div class="journey-card reveal">
+          <p class="kicker">Ako prebieha návšteva</p>
+          <h2 id="journey-title">Od prvého telefonátu k vhodnému ďalšiemu postupu</h2>
+          <div class="steps-grid">
+            <article class="step"><span class="step-number">01</span><span><h3>Zavolajte na recepciu</h3><p>Stručne opíšte problém a dohodnite si vhodný termín návštevy.</p></span></article>
+            <article class="step"><span class="step-number">02</span><span><h3>Vyšetrenie a diagnostika</h3><p>Veterinár vyšetrí pacienta a podľa zdravotného stavu odporučí potrebné vyšetrenia.</p></span></article>
+            <article class="step"><span class="step-number">03</span><span><h3>Liečba a ďalší postup</h3><p>Dohodnete sa na liečbe, zákroku, hospitalizácii, rehabilitácii alebo kontrolnom vyšetrení.</p></span></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section rehab-section" id="rehabilitacia">
+      <div class="container">
+        <div class="rehab-grid">
+          <div class="rehab-copy split-copy reveal">
+            <p class="kicker">Rehabilitácia a fyzioterapia</p>
+            <h2>Starostlivosť sa nekončí stanovením diagnózy</h2>
+            <p>Pri ortopedických, neurologických a pooperačných pacientoch môže byť dôležitou súčasťou liečby aj postupný návrat k pohybu. AHAVET poskytuje fyzioterapiu, rehabilitáciu a hydroterapiu podľa potrieb konkrétneho pacienta.</p>
+            <ul class="feature-list">
+              <li><span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg></span> Pooperačná rehabilitácia</li>
+              <li><span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg></span> Starostlivosť o chronických ortopedických pacientov</li>
+              <li><span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg></span> Neurologická rehabilitácia</li>
+              <li><span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg></span> Fyzioterapia a hydroterapia</li>
+              <li><span><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 4 4L19 6"/></svg></span> Priebežné sledovanie pokroku</li>
+            </ul>
+            <a class="btn btn-primary" href="tel:+421918242838">Dohodnúť konzultáciu</a>
+          </div>
+          <div class="rehab-visual reveal delay-1">
+            <div class="rehab-photo">
+              <!-- TODO: nahradiť autentickou fotografiou AHAVET -->
+              <img src="https://images.unsplash.com/photo-1558788353-f76d92427f16?auto=format&amp;fit=crop&amp;w=1300&amp;q=86" alt="Pes pri kontrolovanom pohybe počas následnej starostlivosti" width="1300" height="975" loading="lazy">
+            </div>
+          </div>
+        </div>
+        <aside class="hospital-panel reveal" aria-labelledby="hospital-title">
+          <span class="hospital-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 20V8l8-5 8 5v12"/><path d="M8 20v-6h8v6M12 7v4M10 9h4"/></svg></span>
+          <div><p class="kicker">Hospitalizácia</p><h3 id="hospital-title">Dohľad a pokojné zázemie pre pacientov, ktorí ho potrebujú</h3><p>Klinika poskytuje hospitalizáciu s oddelenými priestormi pre psy a mačky. Konkrétne možnosti prijatia a ďalší postup je potrebné dohodnúť telefonicky.</p></div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="tim">
+      <div class="container">
+        <header class="team-head reveal">
+          <div><p class="kicker">Náš tím</p><h2>Ľudia, ktorým zverujete svojho pacienta</h2></div>
+          <p>Veterinárna starostlivosť je založená na odbornom vyšetrení, zrozumiteľnej komunikácii a hľadaní vhodného ďalšieho postupu pre konkrétne zviera.</p>
+        </header>
+        <div class="team-grid">
+          <article class="team-card reveal"><span class="team-avatar" aria-hidden="true">JT</span><h3>MVDr. Jozef Talajka</h3><p>Veterinárny lekár</p></article>
+          <article class="team-card reveal delay-1"><span class="team-avatar" aria-hidden="true">ZD</span><h3>MVDr. Zuzana Dzuríková</h3><p>Veterinárna lekárka</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-mint" id="recenzie">
+      <div class="container">
+        <header class="section-heading reveal"><p class="kicker">Skúsenosti klientov</p><h2>Dôvera postavená na starostlivosti</h2><p>Čo klienti oceňujú pri návšteve kliniky.</p></header>
+        <div class="reviews-wrap">
+          <div class="rating-card reveal"><strong>4,7/5</strong><span>na Google · 217 recenzií</span><div class="rating-stars" aria-label="Hodnotenie 4,7 z 5">★★★★★</div></div>
+          <div class="review-grid">
+            <article class="review-card reveal"><p>Profesionálny prístup a viditeľný záujem o zdravotný stav zvieraťa.</p><small>Google recenzia · parafráza</small></article>
+            <article class="review-card reveal delay-1"><p>Dôkladné vyšetrenie a zrozumiteľné vysvetlenie ďalšieho postupu.</p><small>Google recenzia · parafráza</small></article>
+            <article class="review-card reveal delay-2"><p>Citlivý prístup k pacientovi aj jeho majiteľovi.</p><small>Google recenzia · parafráza</small></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="emergency section-mint" aria-labelledby="emergency-title">
+      <div class="container">
+        <div class="emergency-card reveal">
+          <div class="emergency-copy"><p class="kicker">Pohotovosť</p><h2 id="emergency-title">Pohotovosť pri život ohrozujúcich stavoch</h2><p>Pred príchodom vždy telefonicky kontaktujte pohotovostné číslo a overte dostupnosť lekára.</p></div>
+          <div class="emergency-actions"><a href="tel:+421911242838">+421 911 242 838</a><a class="btn btn-emergency" href="tel:+421911242838">Zavolať na pohotovosť</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="kontakt">
+      <div class="container">
+        <div class="contact-shell">
+          <div class="contact-info">
+            <div class="contact-intro"><p class="kicker">Kontakt a ordinačné hodiny</p><h2>Dohodnime si návštevu</h2><p>Na objednanie termínu je najrýchlejší telefonát na recepciu.</p></div>
+            <div class="contact-list">
+              <a class="contact-row" href="tel:+421918242838"><span class="contact-row-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-4-1-2 2c-4.2-1.8-7.2-4.8-9-9l2-2-1-4Z"/></svg></span><span><small>Recepcia</small><strong>+421 918 242 838</strong></span></a>
+              <a class="contact-row" href="tel:+421911242838"><span class="contact-row-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3v10M12 17v.01"/><circle cx="12" cy="12" r="9"/></svg></span><span><small>Pohotovosť</small><strong>+421 911 242 838</strong></span></a>
+              <a class="contact-row" href="mailto:ahavet.ambulancia@gmail.com"><span class="contact-row-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></span><span><small>E-mail</small><strong>ahavet.ambulancia@gmail.com</strong></span></a>
+              <a class="contact-row" href="https://www.google.com/maps/search/?api=1&amp;query=%C4%BDudov%C3%ADta+Fullu+7%2C+841+05+Bratislava" target="_blank" rel="noopener"><span class="contact-row-icon"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg></span><span><small>Adresa</small><strong>Ľudovíta Fullu 7, 841 05 Bratislava</strong></span></a>
+            </div>
+            <div class="hours"><div class="hours-title">Ordinačné hodiny</div><div class="hours-row"><span>Pondelok – piatok</span><strong>9:00 – 19:00</strong></div><div class="hours-row"><span>Sobota – nedeľa</span><strong>14:00 – 16:00</strong></div></div>
+          </div>
+          <div class="appointment-panel">
+            <h3>Požiadať o termín e-mailom</h3>
+            <p>Vyplňte základné údaje a pripravíme správu pre kliniku.</p>
+            <p class="urgent-note">Pri urgentnom stave formulár nepoužívajte. Zavolajte na pohotovosť: <a href="tel:+421911242838">+421 911 242 838</a>.</p>
+            <form class="appointment-form" id="appointmentForm">
+              <div class="field"><label for="name">Meno a priezvisko</label><input id="name" name="name" type="text" autocomplete="name" required></div>
+              <div class="field"><label for="phone">Telefón</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+421 ..." required></div>
+              <div class="field"><label for="animal">Druh zvieraťa</label><select id="animal" name="animal" required><option value="">Vyberte možnosť</option><option>Pes</option><option>Mačka</option><option>Králik</option><option>Hlodavec</option><option>Exotický vták</option><option>Plaz</option><option>Iné</option></select></div>
+              <div class="field"><label for="visit">Dôvod návštevy</label><select id="visit" name="visit" required><option value="">Vyberte možnosť</option><option>Preventívna prehliadka</option><option>Zdravotné ťažkosti</option><option>Diagnostika</option><option>Kontrolné vyšetrenie</option><option>Rehabilitácia</option><option>Iné</option></select></div>
+              <div class="field full"><label for="message">Krátky popis problému</label><textarea id="message" name="message" placeholder="Napíšte stručne, s čím potrebujete pomôcť."></textarea></div>
+              <div class="form-actions"><small>Formulár neposiela údaje priamo na server. Po kliknutí sa otvorí vaša e-mailová aplikácia s pripravenou správou.</small><button class="btn btn-primary" type="submit">Pripraviť e-mail</button></div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div class="map-strip">
+        <iframe title="Mapa – Veterinárna klinika AHA-VET, Ľudovíta Fullu 7, Bratislava" src="https://www.google.com/maps?q=%C4%BDudov%C3%ADta%20Fullu%207%2C%20841%2005%20Bratislava&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <div class="map-card"><strong>Veterinárna klinika AHA-VET</strong><p>Ľudovíta Fullu 7<br>841 05 Bratislava</p><a href="https://www.google.com/maps/search/?api=1&amp;query=%C4%BDudov%C3%ADta+Fullu+7%2C+841+05+Bratislava" target="_blank" rel="noopener">Otvoriť trasu v Google Maps →</a></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img class="logo-img" src="ahavet.jpg" alt="AHA-VET" width="492" height="492" loading="lazy" decoding="async">
+        <span class="footer-brand-copy"><strong>Veterinárna klinika</strong>MVDr. Jozef Talajka<br>Ľudovíta Fullu 7, Bratislava</span>
+      </div>
+      <div class="footer-links"><span>© <span id="year"></span> AHA-VET</span><a href="#sluzby">Služby</a><a href="#klinika">Klinika</a><a href="#kontakt">Kontakt</a></div>
+    </div>
+  </footer>
+
+  <a class="mobile-call" href="tel:+421918242838" aria-label="Zavolať na recepciu AHA-VET"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"><path d="M7 3H4a1 1 0 0 0-1 1c0 9.4 7.6 17 17 17a1 1 0 0 0 1-1v-3l-4-1-2 2c-4.2-1.8-7.2-4.8-9-9l2-2-1-4Z"/></svg></a>
+
+  <script>
+    (() => {
+      const header = document.getElementById('header');
+      const navWrap = document.getElementById('navWrap');
+      const menuToggle = document.getElementById('menuToggle');
+      const navLinks = [...document.querySelectorAll('.main-nav a')];
+      const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const closeMenu = () => {
+        navWrap.classList.remove('nav-open');
+        document.body.classList.remove('menu-open');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.setAttribute('aria-label', 'Otvoriť menu');
+      };
+      menuToggle.addEventListener('click', () => {
+        const open = !navWrap.classList.contains('nav-open');
+        navWrap.classList.toggle('nav-open', open);
+        document.body.classList.toggle('menu-open', open);
+        menuToggle.setAttribute('aria-expanded', String(open));
+        menuToggle.setAttribute('aria-label', open ? 'Zavrieť menu' : 'Otvoriť menu');
+      });
+      navLinks.forEach(link => link.addEventListener('click', closeMenu));
+      document.addEventListener('keydown', event => { if (event.key === 'Escape') closeMenu(); });
+      window.addEventListener('resize', () => { if (window.innerWidth > 960) closeMenu(); });
+      const onScroll = () => header.classList.toggle('is-scrolled', window.scrollY > 10);
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      const revealItems = document.querySelectorAll('.reveal');
+      if (reducedMotion || !('IntersectionObserver' in window)) {
+        revealItems.forEach(item => item.classList.add('is-visible'));
+      } else {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: .1, rootMargin: '0px 0px -45px' });
+        revealItems.forEach(item => revealObserver.observe(item));
+      }
+
+      const sections = [...document.querySelectorAll('main section[id]')];
+      if ('IntersectionObserver' in window) {
+        const sectionObserver = new IntersectionObserver(entries => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            navLinks.forEach(link => link.classList.toggle('active', link.getAttribute('href') === '#' + entry.target.id));
+          });
+        }, { rootMargin: '-35% 0px -55%', threshold: 0 });
+        sections.forEach(section => sectionObserver.observe(section));
+      }
+
+      document.getElementById('appointmentForm').addEventListener('submit', event => {
+        event.preventDefault();
+        const form = new FormData(event.currentTarget);
+        const subject = `Žiadosť o termín – ${form.get('animal')}`;
+        const body = [
+          `Meno a priezvisko: ${form.get('name')}`,
+          `Telefón: ${form.get('phone')}`,
+          `Druh zvieraťa: ${form.get('animal')}`,
+          `Dôvod návštevy: ${form.get('visit')}`,
+          '',
+          `Krátky popis problému: ${form.get('message') || 'Neuvedené'}`
+        ].join('\n');
+        window.location.href = `mailto:ahavet.ambulancia@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      });
+      document.getElementById('year').textContent = new Date().getFullYear();
+    })();
+  </script>
+  <script src="../../../cookies.js" defer></script>
+  <script src="../../../analytics.js" defer></script>
+</body>
+</html>
