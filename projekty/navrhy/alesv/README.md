@@ -19,6 +19,8 @@ Použité firemné podklady boli stiahnuté z verejne dostupného webu ALEŠ‑V
 
 Piktogramy v `assets/icons/` pochádzajú z otvorenej knižnice [Lucide](https://lucide.dev/) a sú použité podľa licencie ISC.
 
+- `assets/images/beewoy-logo.svg` — oficiálne logo autora reportu z https://beewoy.sk/logo.svg
+
 Pred produkčným nasadením odporúčame potvrdiť právo na ich ďalšie používanie a prípadne dodať kvalitnejšie originály. Priečinky `assets/icons/` a `assets/fonts/` sú zámerne prázdne; návrh používa CSS a systémové fonty.
 
 ## Formulár
