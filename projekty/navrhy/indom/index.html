@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IN-DOM | Dvere, podlahy a riešenia pre interiér v Seredi a Galante</title>
+  <meta name="description" content="Vyberte si dvere, podlahy, obklady, vstavané skrine, stavebné puzdrá a tienenie v interiérových štúdiách IN-DOM v Seredi a Galante.">
+  <meta name="theme-color" content="#111111">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"HomeAndConstructionBusiness","name":"IN-DOM s.r.o.","url":"https://www.in-dom.sk/","email":["sered@in-dom.sk","galanta@in-dom.sk"],"telephone":["+421917745111","+421917132958"],"areaServed":["Sereď","Galanta"],"sameAs":["https://www.facebook.com/@indom.svk"]}
+  </script>
+  <style>
+    :root { --red:#e32219; --red-dark:#b71812; --ink:#111; --muted:#666; --paper:#f5f3ef; --white:#fff; --line:#dedbd5; --radius:18px; --shadow:0 18px 50px rgba(0,0,0,.1); }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; scroll-padding-top:88px; }
+    body { margin:0; color:var(--ink); background:var(--white); font-family:Arial,"Helvetica Neue",sans-serif; line-height:1.55; }
+    body.menu-open { overflow:hidden; }
+    img { display:block; max-width:100%; }
+    a { color:inherit; }
+    button, input, textarea, select { font:inherit; }
+    :focus-visible { outline:3px solid var(--red); outline-offset:4px; }
+    .skip { position:fixed; top:10px; left:10px; z-index:100; padding:10px 14px; background:var(--white); transform:translateY(-160%); }
+    .skip:focus { transform:none; }
+    .container { width:min(100% - 40px,1180px); margin-inline:auto; }
+    .site-header { position:sticky; top:0; z-index:50; background:rgba(255,255,255,.96); border-bottom:1px solid rgba(17,17,17,.1); backdrop-filter:blur(12px); }
+    .nav { min-height:78px; display:flex; align-items:center; justify-content:space-between; gap:28px; }
+    .logo img { width:160px; height:40px; object-fit:contain; }
+    .nav-links { display:flex; align-items:center; gap:28px; list-style:none; margin:0; padding:0; }
+    .nav-links a { font-size:.92rem; font-weight:700; text-decoration:none; }
+    .nav-links a:not(.btn):hover { color:var(--red-dark); }
+    .menu-toggle { display:none; width:48px; height:48px; border:1px solid var(--line); border-radius:50%; background:var(--white); font-weight:800; cursor:pointer; }
+    .btn { min-height:50px; display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 20px; border:2px solid transparent; border-radius:999px; background:var(--red); color:var(--white); font-weight:800; text-align:center; text-decoration:none; cursor:pointer; transition:background .2s,transform .2s; }
+    .btn:hover { background:var(--red-dark); transform:translateY(-1px); }
+    .btn-dark { background:var(--ink); }
+    .btn-dark:hover { background:#333; }
+    .btn-outline { background:transparent; border-color:rgba(255,255,255,.65); color:var(--white); }
+    .btn-outline:hover { background:var(--white); color:var(--ink); }
+    .hero { position:relative; min-height:720px; display:grid; align-items:end; color:var(--white); background:#242424; overflow:hidden; }
+    .hero-media { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center; opacity:.62; transform:scale(1.015); }
+    .hero::after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.58) 48%,rgba(0,0,0,.16) 100%),linear-gradient(0deg,rgba(0,0,0,.72),transparent 52%); }
+    .hero-content { position:relative; z-index:1; padding:118px 0 80px; }
+    .kicker { display:flex; align-items:center; gap:12px; margin:0 0 20px; font-size:.78rem; font-weight:800; letter-spacing:.13em; text-transform:uppercase; }
+    .kicker::before { content:""; width:28px; height:4px; background:var(--red); }
+    h1 { max-width:870px; margin:0; font-size:clamp(3rem,7vw,6.8rem); line-height:.91; letter-spacing:-.065em; }
+    .hero-copy { max-width:650px; margin:28px 0 0; font-size:clamp(1.05rem,2vw,1.25rem); color:#f0f0f0; }
+    .hero-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:34px; }
+    .hero-meta { display:flex; flex-wrap:wrap; gap:12px 28px; margin-top:58px; padding-top:24px; border-top:1px solid rgba(255,255,255,.35); color:#eee; font-size:.9rem; }
+    .hero-meta strong { color:var(--white); }
+    .section { padding:100px 0; }
+    .section-soft { background:var(--paper); }
+    .section-dark { background:var(--ink); color:var(--white); }
+    .section-head { display:grid; grid-template-columns:.75fr 1.45fr; gap:60px; align-items:start; margin-bottom:50px; }
+    .label { margin:0; color:var(--red-dark); font-size:.76rem; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+    .section-dark .label { color:#ff5a52; }
+    h2 { margin:0; font-size:clamp(2.25rem,5vw,4.6rem); line-height:.98; letter-spacing:-.05em; }
+    .section-intro { max-width:700px; margin:22px 0 0; color:var(--muted); font-size:1.08rem; }
+    .section-dark .section-intro { color:#bfbfbf; }
+    .about-grid { display:grid; grid-template-columns:1.25fr .75fr; gap:60px; align-items:end; }
+    .about-grid h2 { max-width:780px; }
+    .about-card { padding:30px; border-left:4px solid var(--red); background:var(--paper); }
+    .about-card p { margin:0; color:var(--muted); }
+    .about-card p + p { margin-top:14px; }
+    .services { display:grid; grid-template-columns:repeat(12,1fr); gap:18px; }
+    .service { position:relative; min-height:330px; grid-column:span 4; border-radius:var(--radius); overflow:hidden; background:#222; color:var(--white); box-shadow:var(--shadow); }
+    .service.wide { grid-column:span 6; }
+    .service img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; opacity:.7; transition:transform .45s; }
+    .service:hover img { transform:scale(1.035); }
+    .service::after { content:""; position:absolute; inset:0; background:linear-gradient(0deg,rgba(0,0,0,.9),rgba(0,0,0,.05) 76%); }
+    .service-body { position:absolute; z-index:1; inset:auto 0 0; padding:28px; }
+    .service h3 { margin:0 0 8px; font-size:1.55rem; }
+    .service p { margin:0; color:#e5e5e5; font-size:.92rem; }
+    .benefits { display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:#343434; border:1px solid #343434; }
+    .benefit { padding:36px; background:var(--ink); }
+    .benefit span { display:block; color:#ff5a52; font-size:.78rem; font-weight:850; }
+    .benefit h3 { margin:16px 0 10px; font-size:1.3rem; }
+    .benefit p { margin:0; color:#bfbfbf; font-size:.94rem; }
+    .gallery { display:grid; grid-template-columns:1.35fr .8fr .8fr; gap:18px; }
+    .work { margin:0; }
+    .work img { width:100%; aspect-ratio:4/5; object-fit:cover; border-radius:var(--radius); }
+    .work:first-child img { aspect-ratio:1.06/1; }
+    .work figcaption { margin-top:12px; font-weight:750; }
+    .work small { display:block; color:var(--muted); font-weight:400; }
+    .trust-row { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .trust-card { padding:34px; border:1px solid var(--line); border-radius:var(--radius); }
+    .trust-card h3 { margin:0 0 10px; font-size:1.35rem; }
+    .trust-card p { margin:0; color:var(--muted); }
+    .trust-card a { color:var(--red-dark); font-weight:800; }
+    .brands { display:flex; flex-wrap:wrap; gap:10px; margin-top:26px; }
+    .brands span { padding:8px 12px; border-radius:999px; background:var(--paper); font-size:.83rem; font-weight:750; }
+    .faq { max-width:880px; margin-left:auto; }
+    details { border-top:1px solid #3b3b3b; }
+    details:last-child { border-bottom:1px solid #3b3b3b; }
+    summary { position:relative; padding:24px 48px 24px 0; font-size:1.1rem; font-weight:800; cursor:pointer; }
+    summary::marker { content:""; }
+    summary::after { content:"+"; position:absolute; right:4px; top:20px; color:#ff5a52; font-size:1.5rem; }
+    details[open] summary::after { content:"−"; }
+    details p { margin:0; padding:0 50px 24px 0; color:#bfbfbf; }
+    .contact-grid { display:grid; grid-template-columns:.8fr 1.2fr; gap:70px; align-items:start; }
+    .stores { display:grid; gap:16px; margin-top:32px; }
+    .store { padding:22px 0; border-top:1px solid var(--line); }
+    .store h3 { margin:0 0 8px; }
+    .store p { margin:4px 0; color:var(--muted); }
+    .store a { font-weight:750; }
+    form { padding:38px; border-radius:var(--radius); background:var(--paper); }
+    .form-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .field { display:grid; gap:7px; }
+    .field.full { grid-column:1/-1; }
+    label { font-size:.88rem; font-weight:800; }
+    input, select, textarea { width:100%; min-height:52px; padding:12px 14px; border:1px solid #aaa; border-radius:8px; background:var(--white); color:var(--ink); }
+    textarea { min-height:130px; resize:vertical; }
+    .form-note { margin:16px 0; color:var(--muted); font-size:.82rem; }
+    .form-status { min-height:25px; margin:14px 0 0; color:var(--red-dark); font-weight:750; }
+    .site-footer { padding:54px 0 26px; background:#090909; color:#d2d2d2; }
+    .footer-grid { display:grid; grid-template-columns:1fr auto auto; gap:55px; align-items:start; padding-bottom:42px; }
+    .footer-grid img { width:160px; height:40px; object-fit:contain; filter:none; }
+    .footer-grid h3 { margin:0 0 14px; color:var(--white); font-size:.9rem; }
+    .footer-grid ul { margin:0; padding:0; list-style:none; }
+    .footer-grid li + li { margin-top:8px; }
+    .footer-grid a { color:#d2d2d2; }
+    .copyright { padding-top:22px; border-top:1px solid #343434; font-size:.78rem; color:#8f8f8f; }
+    @media (max-width:900px) {
+      .menu-toggle { display:block; }
+      .nav-links { position:fixed; inset:79px 0 auto; display:none; align-items:stretch; flex-direction:column; gap:0; padding:20px; background:var(--white); border-bottom:1px solid var(--line); box-shadow:0 12px 28px rgba(0,0,0,.12); }
+      .nav-links.open { display:flex; }
+      .nav-links li { border-bottom:1px solid var(--line); }
+      .nav-links li:last-child { border:0; padding-top:14px; }
+      .nav-links a { display:block; padding:15px 2px; }
+      .nav-links .btn { display:flex; }
+      .hero { min-height:680px; }
+      .section-head, .about-grid, .contact-grid { grid-template-columns:1fr; gap:30px; }
+      .service, .service.wide { grid-column:span 6; }
+      .benefits { grid-template-columns:1fr; }
+      .gallery { grid-template-columns:1fr 1fr; }
+      .work:first-child { grid-column:1/-1; }
+      .work:first-child img { aspect-ratio:16/9; }
+      .footer-grid { grid-template-columns:1fr 1fr; }
+      .footer-grid > :first-child { grid-column:1/-1; }
+    }
+    @media (max-width:600px) {
+      .container { width:min(100% - 28px,1180px); }
+      .logo img { width:136px; height:34px; }
+      .hero { min-height:650px; }
+      .hero-content { padding:90px 0 54px; }
+      .hero::after { background:linear-gradient(0deg,rgba(0,0,0,.92),rgba(0,0,0,.35)); }
+      h1 { font-size:clamp(3rem,15vw,4.6rem); }
+      .hero-actions .btn { width:100%; }
+      .section { padding:74px 0; }
+      .service, .service.wide { grid-column:1/-1; min-height:300px; }
+      .gallery, .trust-row, .form-grid, .footer-grid { grid-template-columns:1fr; }
+      .work:first-child { grid-column:auto; }
+      .work:first-child img, .work img { aspect-ratio:4/3; }
+      form { padding:26px 20px; }
+      .footer-grid > :first-child { grid-column:auto; }
+    }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } *,*::before,*::after { transition-duration:.01ms !important; animation-duration:.01ms !important; } }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#obsah">Preskočiť na obsah</a>
+  <header class="site-header">
+    <nav class="container nav" aria-label="Hlavná navigácia">
+      <a class="logo" href="#top" aria-label="IN-DOM – domov"><img src="assets/images/in-dom-logo.jpg" alt="IN-DOM"></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Otvoriť menu">Menu</button>
+      <ul class="nav-links" id="menu">
+        <li><a href="#ponuka">Ponuka</a></li><li><a href="#realizacie">Realizácie</a></li><li><a href="#o-nas">O nás</a></li><li><a href="#faq">Otázky</a></li><li><a class="btn" href="#kontakt">Dohodnúť konzultáciu</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="obsah">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <img class="hero-media" src="assets/images/hero-dvere.jpg" alt="Moderné interiérové dvere z ponuky IN-DOM">
+      <div class="container hero-content">
+        <p class="kicker">Interiérové štúdio Sereď a Galanta</p>
+        <h1 id="hero-title">Dvere, podlahy a interiér, ktoré spolu ladia.</h1>
+        <p class="hero-copy">Vyberte si riešenie pre byt, dom alebo pracovný priestor na jednom mieste — od dverí a podláh po obklady, skrine a tienenie.</p>
+        <div class="hero-actions"><a class="btn" href="#kontakt">Poradiť sa s nami</a><a class="btn btn-outline" href="#ponuka">Prejsť ponuku</a></div>
+        <div class="hero-meta"><span><strong>2 predajne</strong> · Sereď a Galanta</span><span><strong>Výber značiek</strong> pre rôzne štýly a rozpočty</span><span><strong>Realizácie</strong> zverejnené na pôvodnom webe</span></div>
+      </div>
+    </section>
+
+    <section class="section" id="o-nas">
+      <div class="container about-grid">
+        <div><p class="label">IN-DOM</p><h2>Výber interiéru začína rozhovorom, nie katalógom.</h2></div>
+        <div class="about-card"><p>IN-DOM je interiérové štúdio s predajňami v Seredi a Galante. Ponuku tvorí viacero kategórií vybavenia interiéru a exteriérového tienenia.</p><p>V návrhu odporúčame začať potrebou zákazníka a vhodné produkty či značky vybrať až následne.</p></div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="ponuka" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head"><p class="label">Ponuka</p><div><h2 id="services-title">Riešenia podľa toho, čo práve zariaďujete.</h2><p class="section-intro">Jednotlivé prvky môžete vyberať samostatne alebo ich zladiť v rámci jedného interiéru.</p></div></div>
+        <div class="services">
+          <article class="service wide"><img src="assets/images/hero-dvere.jpg" alt="Výber interiérových dverí"><div class="service-body"><h3>Dvere a zárubne</h3><p>Interiérové, vchodové, posuvné aj technické dvere od viacerých výrobcov.</p></div></article>
+          <article class="service wide"><img src="assets/images/podlahy.jpg" alt="Drevená podlaha v interiéri"><div class="service-body"><h3>Podlahy a parkety</h3><p>Laminátové, vinylové a drevené riešenia v rôznych dekoroch a vlastnostiach.</p></div></article>
+          <article class="service"><img src="assets/images/obklady.jpg" alt="Dekoratívne obklady stien"><div class="service-body"><h3>Obklady stien</h3><p>Lamelové panely pre zvýraznenie steny alebo rozdelenie priestoru.</p></div></article>
+          <article class="service"><img src="assets/images/skrine.jpg" alt="Vstavaná šatníková skriňa"><div class="service-body"><h3>Skrine na mieru</h3><p>Úložné riešenia pre štandardné, atypické aj podkrovné priestory.</p></div></article>
+          <article class="service"><img src="assets/images/puzdra.jpg" alt="Posuvné dvere v stavebnom puzdre"><div class="service-body"><h3>Stavebné puzdrá</h3><p>Riešenie pre posuvné dvere, ktoré pomáha šetriť miesto.</p></div></article>
+          <article class="service wide"><img src="assets/images/tienenie.jpg" alt="Tieniaca technika pri dome"><div class="service-body"><h3>Tienenie a pergoly</h3><p>Plachty, rolety a drevené či hliníkové pergoly z ponuky IN-DOM.</p></div></article>
+          <article class="service wide"><img src="assets/images/realizacia-schody.jpg" alt="Drevený obklad schodov z galérie realizácií IN-DOM"><div class="service-body"><h3>Ďalšie riešenia</h3><p>Pôvodný web prezentuje aj obklady schodov, terasy a nerezové zábradlia.</p></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" aria-labelledby="benefits-title">
+      <div class="container">
+        <div class="section-head"><p class="label">Prečo IN-DOM</p><div><h2 id="benefits-title">Viac možností. Jednoduchšie rozhodovanie.</h2><p class="section-intro">Návrh stavia dôveryhodnosť na tom, čo možno overiť priamo z ponuky firmy.</p></div></div>
+        <div class="benefits"><article class="benefit"><span>01</span><h3>Ponuka pre viac častí interiéru</h3><p>Dvere, podlahy, obklady a úložné riešenia môžete vyberať v jednom štúdiu.</p></article><article class="benefit"><span>02</span><h3>Viacerí etablovaní výrobcovia</h3><p>Web uvádza značky ako ERKADO, PORTA, Quick-Step, EGGER, KAINDL, JAP a ECLISSE.</p></article><article class="benefit"><span>03</span><h3>Osobný kontakt v dvoch mestách</h3><p>Produkty a možnosti môžete konzultovať v predajni v Seredi alebo Galante.</p></article></div>
+      </div>
+    </section>
+
+    <section class="section" id="realizacie" aria-labelledby="works-title">
+      <div class="container">
+        <div class="section-head"><p class="label">Zverejnené realizácie</p><div><h2 id="works-title">Pozrite sa na riešenia v skutočnom priestore.</h2><p class="section-intro">Fotografie pochádzajú z galérie realizácií na pôvodnom webe IN-DOM.</p></div></div>
+        <div class="gallery"><figure class="work"><img src="assets/images/realizacia-schody.jpg" alt="Drevený obklad schodiska z realizácií IN-DOM"><figcaption>Obklad schodov<small>Galéria IN-DOM</small></figcaption></figure><figure class="work"><img src="assets/images/realizacia-skrina.jpg" alt="Vstavaná skriňa z realizácií IN-DOM"><figcaption>Vstavaná skriňa<small>Galéria IN-DOM</small></figcaption></figure><figure class="work"><img src="assets/images/realizacia-terasa.jpg" alt="Terasa z realizácií IN-DOM"><figcaption>Terasa<small>Galéria IN-DOM</small></figcaption></figure></div>
+      </div>
+    </section>
+
+    <section class="section section-soft" aria-labelledby="trust-title">
+      <div class="container">
+        <div class="section-head"><p class="label">Dôveryhodnosť</p><div><h2 id="trust-title">Značky a realizácie, ktoré si môžete preveriť.</h2></div></div>
+        <div class="trust-row"><article class="trust-card"><h3>Výrobcovia v ponuke</h3><p>Pôvodný web uvádza široký výber dodávateľov. Konkrétnu dostupnosť a vhodnosť produktu si overte pri konzultácii.</p><div class="brands" aria-label="Vybrané značky"><span>ERKADO</span><span>PORTA</span><span>VERTE</span><span>Quick-Step</span><span>EGGER</span><span>KAINDL</span><span>JAP</span><span>ECLISSE</span></div></article><article class="trust-card"><h3>Sledujte IN-DOM na Facebooku</h3><p>Facebook je jediný sociálny profil, na ktorý aktuálny web odkazuje platnou adresou. Aktivitu profilu si môžete overiť priamo na platforme.</p><p style="margin-top:20px"><a href="https://www.facebook.com/@indom.svk" target="_blank" rel="noopener noreferrer">Otvoriť Facebook →</a></p></article></div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="faq" aria-labelledby="faq-title">
+      <div class="container section-head"><p class="label">Časté otázky</p><div><h2 id="faq-title">Čo je dobré vedieť pred návštevou.</h2></div></div>
+      <div class="container faq"><details><summary>Kde si môžem produkty pozrieť?</summary><p>IN-DOM uvádza predajne na Cukrovarskej 150 v Seredi a v OC Jaspark v Galante. Pred návštevou odporúčame overiť dostupnosť konkrétnej vzorky telefonicky.</p></details><details><summary>Pomôžete mi vybrať vhodnú kombináciu?</summary><p>Web prezentuje širokú ponuku pre viac častí interiéru. Rozsah poradenstva a prípadného zamerania je potrebné potvrdiť priamo s predajňou.</p></details><details><summary>Ako získam cenovú ponuku?</summary><p>Kontaktujte zvolenú predajňu telefonicky alebo e-mailom a uveďte, čo zariaďujete. Formulár nižšie je návrh budúcej konverznej cesty a zatiaľ nie je napojený na odosielanie.</p></details></div>
+    </section>
+
+    <section class="section" id="kontakt" aria-labelledby="contact-title">
+      <div class="container contact-grid">
+        <div><p class="label">Kontakt</p><h2 id="contact-title">Začnime tým, čo potrebujete vyriešiť.</h2><p class="section-intro">Vyberte si najbližšiu predajňu alebo pripravte nezáväzný dopyt.</p><div class="stores"><article class="store"><h3>Sereď</h3><p>Cukrovarská 150, 926 01 Sereď</p><p><a href="tel:+421917745111">0917 745 111</a> · <a href="mailto:sered@in-dom.sk">sered@in-dom.sk</a></p><p>Po–Pi 09:00–17:00 · So 09:00–12:00</p></article><article class="store"><h3>Galanta</h3><p>OC Jaspark, 914 01 Galanta</p><p><a href="tel:+421917132958">0917 132 958</a> · <a href="mailto:galanta@in-dom.sk">galanta@in-dom.sk</a></p><p>Po–Pi 09:00–17:00</p></article></div></div>
+        <form id="inquiry-form" action="#" method="post"><div class="form-grid"><div class="field"><label for="name">Meno a priezvisko</label><input id="name" name="name" autocomplete="name" required></div><div class="field"><label for="contact">Telefón alebo e-mail</label><input id="contact" name="contact" autocomplete="email" required></div><div class="field full"><label for="topic">Čo riešite?</label><select id="topic" name="topic" required><option value="">Vyberte možnosť</option><option>Dvere a zárubne</option><option>Podlahy a parkety</option><option>Obklady alebo schody</option><option>Vstavaná skriňa</option><option>Stavebné puzdro</option><option>Tienenie alebo pergola</option><option>Iné</option></select></div><div class="field full"><label for="message">Krátky opis</label><textarea id="message" name="message" placeholder="Priestor, približné rozmery alebo predstava…" required></textarea></div></div><p class="form-note">Ukážkový formulár nie je napojený na odosielanie ani spracovanie osobných údajov.</p><button class="btn btn-dark" type="submit">Skontrolovať dopyt</button><p class="form-status" id="form-status" role="status" aria-live="polite"></p></form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container footer-grid"><div><img src="assets/images/in-dom-logo.jpg" alt="IN-DOM"><p>Návrh bol vytvorený so zohľadnením základných princípov digitálnej prístupnosti.</p></div><div><h3>Predajne</h3><ul><li><a href="tel:+421917745111">Sereď · 0917 745 111</a></li><li><a href="tel:+421917132958">Galanta · 0917 132 958</a></li></ul></div><div><h3>Odkazy</h3><ul><li><a href="#ponuka">Ponuka</a></li><li><a href="#realizacie">Realizácie</a></li><li><a href="#kontakt">Kontakt</a></li><li><a href="https://www.facebook.com/@indom.svk" target="_blank" rel="noopener noreferrer">Facebook</a></li></ul></div></div><div class="container copyright">IN-DOM s.r.o. · Koncepčný návrh úvodnej stránky · Kontaktné údaje podľa verejného webu in-dom.sk</div></footer>
+
+  <script>
+    const toggle=document.querySelector('.menu-toggle'); const menu=document.querySelector('#menu');
+    toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));toggle.setAttribute('aria-label',open?'Otvoriť menu':'Zatvoriť menu');menu.classList.toggle('open',!open);document.body.classList.toggle('menu-open',!open);});
+    menu.addEventListener('click',e=>{if(e.target.closest('a')){menu.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.setAttribute('aria-label','Otvoriť menu');document.body.classList.remove('menu-open');}});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu.classList.contains('open')){menu.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.focus();document.body.classList.remove('menu-open');}});
+    document.querySelector('#inquiry-form').addEventListener('submit',e=>{e.preventDefault();const status=document.querySelector('#form-status');if(!e.currentTarget.checkValidity()){e.currentTarget.reportValidity();return;}status.textContent='Dopyt je vyplnený. Na reálnom webe sa tu napojí formulárová služba; zatiaľ kontaktujte vybranú predajňu telefonicky alebo e-mailom.';});
+  </script>
+</body>
+</html>

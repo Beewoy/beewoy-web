@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Stručné zhodnotenie webovej stránky IN-DOM, pripravené digitálnym štúdiom Beewoy.">
+  <title>Zhodnotenie webovej stránky IN-DOM | Beewoy</title>
+  <style>
+    :root { --bg:#f8f7f2; --surface:#fff; --ink:#111; --muted:#66666d; --line:#deddd7; --accent:#f5bf00; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif; line-height:1.55; }
+    a { color:inherit; }
+    a:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
+    .wrap { width:min(100% - 40px, 1040px); margin-inline:auto; }
+    .masthead { padding:34px 0 28px; border-bottom:1px solid var(--line); }
+    .masthead-inner { display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand img { display:block; width:122px; height:auto; }
+    .eyebrow { margin:0 0 6px; color:var(--muted); font-size:.75rem; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+    .meta { margin:0; color:var(--muted); font-size:.9rem; text-align:right; }
+    main { padding:72px 0 38px; }
+    .intro { display:grid; grid-template-columns:minmax(0,1fr) 170px; gap:70px; align-items:end; padding-bottom:72px; }
+    h1 { max-width:800px; margin:0; font-size:clamp(2.35rem,6vw,4.9rem); line-height:.99; letter-spacing:-.055em; }
+    .lead { max-width:700px; margin:26px 0 0; color:var(--muted); font-size:clamp(1.05rem,2vw,1.25rem); }
+    .score { border-left:1px solid var(--line); padding-left:28px; }
+    .score strong { display:block; font-size:2.2rem; line-height:1; letter-spacing:-.04em; }
+    .score span { display:block; margin-top:12px; color:var(--muted); font-size:.77rem; line-height:1.45; }
+    .section { padding:62px 0; border-top:1px solid var(--line); }
+    .section-label { margin:0 0 30px; font-size:.75rem; font-weight:750; letter-spacing:.13em; text-transform:uppercase; }
+    .findings { display:grid; grid-template-columns:repeat(3,1fr); gap:0; }
+    .finding { min-width:0; padding:0 30px; border-left:1px solid var(--line); }
+    .finding:first-child { padding-left:0; border-left:0; }
+    .finding:last-child { padding-right:0; }
+    .num { display:inline-flex; align-items:center; justify-content:center; width:36px; height:36px; border-radius:50%; background:var(--accent); font-size:.75rem; font-weight:800; }
+    h2 { margin:18px 0 10px; font-size:1.25rem; line-height:1.25; letter-spacing:-.025em; }
+    .finding p, .access p, .ecosystem p { margin:0; color:var(--muted); font-size:.95rem; }
+    .access-grid { display:grid; grid-template-columns:.9fr 1.4fr; gap:80px; align-items:start; }
+    .access h2 { margin:0; font-size:clamp(1.65rem,3vw,2.5rem); }
+    .access p + p { margin-top:14px; }
+    .note { margin-top:22px !important; padding-left:16px; border-left:3px solid var(--accent); color:var(--ink) !important; }
+    .ecosystem { margin-top:36px; padding:24px 0 0; border-top:1px solid var(--line); }
+    .ecosystem strong { color:var(--ink); }
+    .recs { display:grid; grid-template-columns:repeat(2,1fr); gap:0 54px; margin:0; padding:0; list-style:none; counter-reset:rec; }
+    .recs li { counter-increment:rec; display:grid; grid-template-columns:28px 1fr; gap:15px; padding:18px 0; border-top:1px solid var(--line); }
+    .recs li::before { content:counter(rec, decimal-leading-zero); color:var(--muted); font-size:.75rem; font-weight:750; padding-top:3px; }
+    .cta { margin-top:26px; padding:54px; border-radius:20px; background:var(--ink); color:#fff; display:grid; grid-template-columns:1fr auto; gap:40px; align-items:center; }
+    .cta h2 { max-width:650px; margin:0; font-size:clamp(1.55rem,3.2vw,2.45rem); }
+    .button { min-height:52px; display:inline-flex; align-items:center; justify-content:center; gap:12px; padding:14px 20px; border-radius:999px; background:#fff; color:var(--ink); font-weight:750; text-decoration:none; white-space:nowrap; }
+    .button::after { content:"→"; color:#8a6700; font-size:1.2rem; }
+    footer { padding:34px 0 50px; color:var(--muted); font-size:.84rem; }
+    footer p { margin:0; }
+    @media (max-width:760px) {
+      .wrap { width:min(100% - 28px,1040px); }
+      .masthead-inner { align-items:flex-start; }
+      .meta { max-width:170px; }
+      main { padding-top:48px; }
+      .intro { grid-template-columns:1fr; gap:34px; padding-bottom:50px; }
+      .score { border-left:0; border-top:1px solid var(--line); padding:22px 0 0; }
+      .findings { grid-template-columns:1fr; }
+      .finding, .finding:first-child, .finding:last-child { padding:26px 0; border-left:0; border-top:1px solid var(--line); }
+      .finding:first-child { border-top:0; padding-top:0; }
+      .access-grid, .cta { grid-template-columns:1fr; gap:26px; }
+      .recs { grid-template-columns:1fr; }
+      .cta { padding:34px 26px; }
+      .button { width:100%; white-space:normal; text-align:center; }
+    }
+    @media print {
+      body { background:#fff; }
+      .cta { break-inside:avoid; }
+    }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap masthead-inner">
+      <a class="brand" href="https://beewoy.sk/" aria-label="Beewoy – prejsť na web">
+        <img src="assets/images/beewoy-logo.svg" alt="Beewoy">
+      </a>
+      <p class="meta">Zhodnotenie webovej stránky<br><strong>IN-DOM · 6. august 2026</strong><br>Pripravil Beewoy</p>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="intro" aria-labelledby="summary-title">
+      <div>
+        <p class="eyebrow">Hlavné zhrnutie</p>
+        <h1 id="summary-title">Široká ponuka prekrýva dôvod, prečo si vybrať práve IN-DOM.</h1>
+        <p class="lead">Návštevník nájde veľa produktov a značiek, no len málo pomoci s výberom a ďalším krokom. To môže komplikovať rozhodovanie a znižovať počet relevantných dopytov.</p>
+      </div>
+      <aside class="score" aria-label="Orientačné hodnotenie">
+        <strong>54 / 100</strong>
+        <span>Orientačné zhodnotenie viditeľných oblastí. Nenahrádza úplný technický ani certifikovaný audit.</span>
+      </aside>
+    </section>
+
+    <section class="section" aria-labelledby="findings-title">
+      <p class="section-label" id="findings-title">Tri hlavné zistenia</p>
+      <div class="findings">
+        <article class="finding"><span class="num">01</span><h2>Ponuka bez jasnej priority</h2><p>Dvere, podlahy, obklady, skrine aj tienenie sú prezentované v dlhom produktovom toku bez zrozumiteľnej cesty podľa potreby zákazníka.</p></article>
+        <article class="finding"><span class="num">02</span><h2>Slabá cesta ku kontaktu</h2><p>Web uvádza telefóny a e-maily dvoch predajní, no pri produktoch chýba výrazná výzva na konzultáciu, návštevu alebo cenovú ponuku.</p></article>
+        <article class="finding"><span class="num">03</span><h2>Dôvera zostáva bokom</h2><p>Realizácie a známe značky sú prínosom, no skúsenosť firmy, proces spolupráce a overené hodnotenia nie sú zapojené do rozhodovania.</p></article>
+      </div>
+    </section>
+
+    <section class="section access" aria-labelledby="access-title">
+      <div class="access-grid">
+        <div><p class="section-label">Digitálna prístupnosť</p><h2 id="access-title">Zrozumiteľný web slúži väčšiemu počtu ľudí.</h2></div>
+        <div>
+          <p>Web používajú ľudia s rôznym zrakom, motorikou, zariadením aj mierou digitálnej istoty. Lepšia štruktúra nadpisov, viditeľné ovládacie prvky, popisy ikon a overenie ovládania klávesnicou môžu uľahčiť cestu k ponuke aj kontaktu.</p>
+          <p class="note"><strong>Oblasť na preverenie:</strong> systematický test kontrastu, klávesnice, focus stavov a významu alternatívnych textov v celom webe.</p>
+        </div>
+      </div>
+      <div class="ecosystem">
+        <p><strong>Digitálny ekosystém:</strong> web odkazuje na Facebook. Instagramový odkaz smeruje na neplatnú adresu; LinkedIn, YouTube, WhatsApp ani Messenger sa na webe nenachádzajú. Google profily a aktuálnosť externých kanálov odporúčame preveriť a následne prepojiť len overené zdroje, fotografie a recenzie.</p>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="recommendations-title">
+      <p class="section-label" id="recommendations-title">Odporúčané zmeny</p>
+      <ol class="recs">
+        <li>Vysvetliť hlavnú hodnotu IN-DOM jednou vetou a rozdeliť ponuku podľa potrieb zákazníka.</li>
+        <li>Pri každej kľúčovej službe ponúknuť jasný ďalší krok: konzultáciu, návštevu predajne alebo cenovú ponuku.</li>
+        <li>Prepojiť realizácie, značky, proces a iba overené recenzie do jedného dôveryhodného príbehu.</li>
+        <li>Opraviť neplatné externé odkazy a overiť responzívnosť, klávesnicu, kontrast a popisy prvkov.</li>
+      </ol>
+      <div class="cta">
+        <h2>Odporúčania sme už zapracovali do návrhu novej úvodnej stránky.</h2>
+        <a class="button" href="index.html">Pozrieť nový návrh stránky</a>
+      </div>
+    </section>
+  </main>
+
+  <footer><div class="wrap"><p>Zhodnotenie a návrh novej úvodnej stránky pripravilo digitálne štúdio Beewoy.</p></div></footer>
+</body>
+</html>
