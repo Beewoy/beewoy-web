@@ -21,7 +21,7 @@
 <meta property="og:url" content="https://beewoy.sk/cennik/">
 <meta property="og:title" content="Cenník tvorby webov | Start 39 €, Profi 59 € | Beewoy">
 <meta property="og:description" content="Cenník Beewoy: Start 39 €/mes, Profi 59 €/mes a Individual podľa dohody. Web na mieru, starostlivosť a rast — bez viazanosti.">
-<meta property="og:image" content="https://beewoy.sk/og-image.png">
+<meta property="og:image" content="https://beewoy.sk/og-main.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -30,7 +30,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Cenník tvorby webov | Start 39 €, Profi 59 € | Beewoy">
 <meta name="twitter:description" content="Cenník Beewoy: Start 39 €/mes, Profi 59 €/mes a Individual podľa dohody. Web na mieru, starostlivosť a rast — bez viazanosti.">
-<meta name="twitter:image" content="https://beewoy.sk/og-image.png">
+<meta name="twitter:image" content="https://beewoy.sk/og-main.png">
 <meta name="twitter:image:alt" content="Cenník tvorby webov — Beewoy">
 
 <link rel="preload" href="../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
@@ -45,10 +45,11 @@
       "@type": "WebPage",
       "@id": "https://beewoy.sk/cennik/#webpage",
       "url": "https://beewoy.sk/cennik/",
-      "name": "Cenník tvorby webov | Beewoy",
-      "description": "Cenník Beewoy: Start 39 €/mes, Profi 59 €/mes a Individual podľa dohody.",
+      "name": "Cenník tvorby webov | Start 39 €, Profi 59 € | Beewoy",
+      "description": "Cenník Beewoy: Start 39 €/mes, Profi 59 €/mes a Individual podľa dohody. Web na mieru, starostlivosť a rast — bez viazanosti.",
       "isPartOf": { "@id": "https://beewoy.sk/#website" },
-      "inLanguage": "sk-SK"
+      "inLanguage": "sk-SK",
+      "mainEntity": { "@id": "https://beewoy.sk/cennik/#offers" }
     },
     {
       "@type": "BreadcrumbList",
@@ -56,6 +57,53 @@
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "Domov", "item": "https://beewoy.sk/" },
         { "@type": "ListItem", "position": 2, "name": "Cenník", "item": "https://beewoy.sk/cennik/" }
+      ]
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://beewoy.sk/cennik/#offers",
+      "name": "Mesačné plány tvorby webov",
+      "url": "https://beewoy.sk/cennik/",
+      "itemListElement": [
+        {
+          "@type": "Offer",
+          "name": "Start",
+          "description": "Web na mieru + starostlivosť: hosting, SSL, technický SEO základ a zmeny obsahu podľa dohody.",
+          "url": "https://beewoy.sk/cennik/",
+          "price": "39",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "39",
+            "priceCurrency": "EUR",
+            "billingDuration": "P1M",
+            "unitText": "mesiac"
+          },
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Profi",
+          "description": "Všetko zo Start plus aktívny rast: Google profil, recenzie a socials.",
+          "url": "https://beewoy.sk/cennik/",
+          "price": "59",
+          "priceCurrency": "EUR",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "59",
+            "priceCurrency": "EUR",
+            "billingDuration": "P1M",
+            "unitText": "mesiac"
+          },
+          "availability": "https://schema.org/InStock"
+        },
+        {
+          "@type": "Offer",
+          "name": "Individual",
+          "description": "Web na mieru podľa rozsahu — atypické funkcie, integrácie alebo viacjazyčnosť. Cena dohodou.",
+          "url": "https://beewoy.sk/cennik/",
+          "availability": "https://schema.org/InStock"
+        }
       ]
     },
     {
@@ -91,7 +139,7 @@
           "name": "Ako dlho trvá dodávka?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Pri pripravených podkladoch vieme dodať výrazne rýchlejšie — orientačne aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+            "text": "Pri pripravených podkladoch vieme dodať web aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
           }
         }
       ]
@@ -144,8 +192,7 @@
         </ol>
       </nav>
       <h1 id="cennik-title">Mesačné plány</h1>
-      <p class="cennik-meta">Tri plány · Žiadna viazanosť · Priamy kontakt s vývojármi</p>
-      <p class="cennik-lead">Web na mieru, starostlivosť a rast v mesačnom pláne. <strong>Start 39 €/mes</strong>, <strong>Profi 59 €/mes</strong>, alebo <strong>Individual</strong> podľa dohody.</p>
+      <p class="cennik-lead">Bez viazanosti. Priamy kontakt s vývojármi.</p>
     </div>
   </section>
 
@@ -209,20 +256,21 @@
     <div class="wrap">
       <div class="cennik-section-head">
         <p class="kicker">Porovnanie</p>
-        <h2 class="section-title" id="compare-title">Čo je v ktorom pláne</h2>
+        <h2 class="section-title" id="compare-title">Čo zahŕňa každý plán</h2>
       </div>
       <div class="cennik-table-wrap">
         <table class="cennik-table">
+          <caption class="visually-hidden">Porovnanie plánov Start, Profi a Individual</caption>
           <thead>
             <tr>
               <th scope="col"><span class="visually-hidden">Položka</span></th>
               <th scope="col">
                 <span class="cennik-th-name">Start</span>
-                <span class="cennik-th-price">39€/mes</span>
+                <span class="cennik-th-price">39 €/mes</span>
               </th>
               <th scope="col" class="cennik-col-profi">
                 <span class="cennik-th-name">Profi</span>
-                <span class="cennik-th-price">59€/mes</span>
+                <span class="cennik-th-price">59 €/mes</span>
               </th>
               <th scope="col">
                 <span class="cennik-th-name">Individual</span>
@@ -233,45 +281,45 @@
           <tbody>
             <tr>
               <th scope="row">Web na mieru</th>
-              <td class="cennik-yes"><span class="visually-hidden">Áno</span></td>
-              <td class="cennik-yes cennik-col-profi"><span class="visually-hidden">Áno</span></td>
-              <td class="cennik-yes"><span class="visually-hidden">Áno</span></td>
+              <td class="cennik-yes"><span class="cennik-status">Áno</span></td>
+              <td class="cennik-yes cennik-col-profi"><span class="cennik-status">Áno</span></td>
+              <td class="cennik-yes"><span class="cennik-status">Áno</span></td>
             </tr>
             <tr>
               <th scope="row">Hosting, SSL, údržba</th>
-              <td class="cennik-yes"><span class="visually-hidden">Áno</span></td>
-              <td class="cennik-yes cennik-col-profi"><span class="visually-hidden">Áno</span></td>
-              <td class="cennik-text">podľa dohody</td>
+              <td class="cennik-yes"><span class="cennik-status">Áno</span></td>
+              <td class="cennik-yes cennik-col-profi"><span class="cennik-status">Áno</span></td>
+              <td class="cennik-text"><span class="cennik-status cennik-status--soft">Podľa dohody</span></td>
             </tr>
             <tr>
               <th scope="row">Technický SEO základ</th>
-              <td class="cennik-yes"><span class="visually-hidden">Áno</span></td>
-              <td class="cennik-yes cennik-col-profi"><span class="visually-hidden">Áno</span></td>
-              <td class="cennik-yes"><span class="visually-hidden">Áno</span></td>
+              <td class="cennik-yes"><span class="cennik-status">Áno</span></td>
+              <td class="cennik-yes cennik-col-profi"><span class="cennik-status">Áno</span></td>
+              <td class="cennik-yes"><span class="cennik-status">Áno</span></td>
             </tr>
             <tr>
               <th scope="row">Zmeny obsahu</th>
-              <td class="cennik-text">podľa dohody</td>
-              <td class="cennik-text cennik-col-profi">podľa dohody</td>
-              <td class="cennik-text">podľa dohody</td>
+              <td class="cennik-text"><span class="cennik-status cennik-status--soft">Podľa dohody</span></td>
+              <td class="cennik-text cennik-col-profi"><span class="cennik-status cennik-status--soft">Podľa dohody</span></td>
+              <td class="cennik-text"><span class="cennik-status cennik-status--soft">Podľa dohody</span></td>
             </tr>
             <tr>
               <th scope="row">Google profil</th>
-              <td class="cennik-no"><span class="visually-hidden">Nie</span></td>
-              <td class="cennik-yes cennik-col-profi"><span class="visually-hidden">Áno</span></td>
-              <td class="cennik-text">podľa dohody</td>
+              <td class="cennik-no"><span class="cennik-status">Nie</span></td>
+              <td class="cennik-yes cennik-col-profi"><span class="cennik-status">Áno</span></td>
+              <td class="cennik-text"><span class="cennik-status cennik-status--soft">Podľa dohody</span></td>
             </tr>
             <tr>
               <th scope="row">Recenzie a socials</th>
-              <td class="cennik-no"><span class="visually-hidden">Nie</span></td>
-              <td class="cennik-yes cennik-col-profi"><span class="visually-hidden">Áno</span></td>
-              <td class="cennik-text">podľa dohody</td>
+              <td class="cennik-no"><span class="cennik-status">Nie</span></td>
+              <td class="cennik-yes cennik-col-profi"><span class="cennik-status">Áno</span></td>
+              <td class="cennik-text"><span class="cennik-status cennik-status--soft">Podľa dohody</span></td>
             </tr>
             <tr>
               <th scope="row">Atypické funkcie</th>
-              <td class="cennik-no"><span class="visually-hidden">Nie</span></td>
-              <td class="cennik-no cennik-col-profi"><span class="visually-hidden">Nie</span></td>
-              <td class="cennik-yes"><span class="visually-hidden">Áno</span></td>
+              <td class="cennik-no"><span class="cennik-status">Nie</span></td>
+              <td class="cennik-no cennik-col-profi"><span class="cennik-status">Nie</span></td>
+              <td class="cennik-yes"><span class="cennik-status">Áno</span></td>
             </tr>
           </tbody>
         </table>
@@ -300,7 +348,7 @@
         </details>
         <details class="faq-item">
           <summary>Ako dlho trvá dodávka?</summary>
-          <div class="faq-answer">Pri pripravených podkladoch vieme dodať výrazne rýchlejšie — orientačne aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu.</div>
+          <div class="faq-answer">Pri pripravených podkladoch vieme dodať web aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu.</div>
         </details>
       </div>
     </div>

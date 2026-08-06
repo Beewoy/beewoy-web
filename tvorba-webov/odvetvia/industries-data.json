@@ -19,7 +19,7 @@
       "hero_lead": "Keď zákazník nevidí kvalitu vašej práce online, vyberie si niekoho, kto ju ukáže. Navrhneme web, ktorý predstaví realizácie, vysvetlí služby a privedie nezáväzné dopyty — priamo s vývojármi, bez agentúrnych medzičlánkov.",
       "hero_proof": [
         "Galéria realizácií",
-        "CMS pre nové projekty",
+        "Aktuálne realizácie",
         "Lokálne SEO",
         "Jasná cena"
       ],
@@ -68,7 +68,7 @@
         },
         {
           "t": "Udržať obsah živý",
-          "d": "CMS na nové realizácie.",
+          "d": "Nové realizácie pridávame za vás.",
           "icon": "edit"
         }
       ],
@@ -95,8 +95,8 @@
           "icon": "edit"
         },
         {
-          "t": "CMS pre realizácie",
-          "d": "Pridávanie bez vývojára.",
+          "t": "Aktualizácie realizácií",
+          "d": "Nové projekty v rámci starostlivosti.",
           "icon": "edit"
         },
         {
@@ -161,7 +161,7 @@
       "price_factors": [
         "Rozsah stránok",
         "Veľkosť galérie",
-        "CMS",
+        "Starostlivosť",
         "Migrácia",
         "Lokálne podstránky",
         "Ďalší rozvoj"
@@ -175,21 +175,21 @@
         "Formulár a telefón",
         "Región",
         "FAQ",
-        "CMS",
+        "Starostlivosť",
         "SEO a rýchle fotky"
       ],
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Máme plány Start od 39 € a Profi od 59 € s DPH, plus Individual podľa dohody. Vhodný plán prejdeme na nezáväznej konzultácii."
+          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
-          "a": "Pri pripravených podkladoch vieme dodať výrazne rýchlejšie — orientačne aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+          "a": "Pri pripravených podkladoch vieme dodať web aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
         },
         {
-          "q": "Viem si pridávať projekty sám?",
-          "a": "Áno — pripravíme CMS, aby ste mohli pridávať nové realizácie bez vývojára."
+          "q": "Ako sa aktualizujú nové realizácie?",
+          "a": "Zmeny obsahu a nové projekty riešime v rámci mesačnej starostlivosti — podľa dohody v pláne."
         },
         {
           "q": "Potrebujem e-shop?",
@@ -226,7 +226,7 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start a Profi s DPH; Individual podľa dohody.",
+        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
@@ -308,7 +308,7 @@
       "title": "Tvorba webu pre stavebnú firmu | Beewoy",
       "description": "Web pre malú stavebnú firmu: prehľad prác, dôvera, región a jasný dopyt. Start, Profi alebo Individual — Beewoy.",
       "h1": "Web pre stavebnú firmu",
-      "hero_lead": "Stavebná firma predáva dôveru skôr než vizuál. Navrhneme web, ktorý ukáže rozsah prác, pôsobí seriózne a pomáha zbierať dopyty — individuálne, bez univerzálnych balíčkov.",
+      "hero_lead": "Stavebná firma predáva dôveru skôr než vizuál. Navrhneme web, ktorý ukáže rozsah prác, pôsobí seriózne a pomáha zbierať dopyty — s jasnou cenou a cestou ku kontaktu.",
       "hero_proof": [
         "Prehľad prác",
         "Oprávnenia",
@@ -393,8 +393,8 @@
           "icon": "smartphone"
         },
         {
-          "t": "CMS",
-          "d": "Nové realizácie bez vývojára.",
+          "t": "Starostlivosť",
+          "d": "Nové realizácie v rámci starostlivosti.",
           "icon": "edit"
         }
       ],
@@ -411,7 +411,7 @@
       "price_factors": [
         "Počet podstránok",
         "Galéria",
-        "CMS",
+        "Starostlivosť",
         "Migrácia",
         "B2B/B2C štruktúra",
         "Rozvoj"
@@ -430,11 +430,11 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Máme plány Start od 39 € a Profi od 59 € s DPH, plus Individual podľa dohody. Vhodný plán prejdeme na nezáväznej konzultácii."
+          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
-          "a": "Pri pripravených podkladoch vieme dodať výrazne rýchlejšie — orientačne aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+          "a": "Pri pripravených podkladoch vieme dodať web aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
         },
         {
           "q": "Formulár alebo telefón?",
@@ -498,7 +498,7 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start a Profi s DPH; Individual podľa dohody.",
+        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
@@ -585,7 +585,7 @@
         "Služby a tím",
         "Objednanie",
         "Lokálne SEO",
-        "Jednoduchá správa"
+        "Mesačná starostlivosť"
       ],
       "cta_primary": "Chcem web pre ambulanciu",
       "cta_secondary": "",
@@ -670,8 +670,8 @@
           "icon": "search"
         },
         {
-          "t": "CMS",
-          "d": "Zmeny hodín a služieb bez vývojára.",
+          "t": "Starostlivosť",
+          "d": "Zmeny hodín a služieb v rámci starostlivosti.",
           "icon": "edit"
         }
       ],
@@ -689,7 +689,7 @@
         "Počet podstránok",
         "Objednávkový formulár",
         "Fotky a tím",
-        "CMS",
+        "Starostlivosť",
         "Viacjazyčnosť",
         "Rozvoj"
       ],
@@ -703,16 +703,16 @@
         "GDPR text",
         "Mapa",
         "SEO základ",
-        "CMS"
+        "Starostlivosť"
       ],
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Máme plány Start od 39 € a Profi od 59 € s DPH, plus Individual podľa dohody. Vhodný plán prejdeme na nezáväznej konzultácii."
+          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
-          "a": "Pri pripravených podkladoch vieme dodať výrazne rýchlejšie — orientačne aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+          "a": "Pri pripravených podkladoch vieme dodať web aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
         },
         {
           "q": "Objednávka online alebo telefón?",
@@ -779,7 +779,7 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start a Profi s DPH; Individual podľa dohody.",
+        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
@@ -951,7 +951,7 @@
           "icon": "shield"
         },
         {
-          "t": "CMS",
+          "t": "Starostlivosť",
           "d": "Zmeny hodín a tímu.",
           "icon": "edit"
         }
@@ -971,7 +971,7 @@
         "Tím",
         "Formulár",
         "Prístupnosť",
-        "CMS",
+        "Starostlivosť",
         "Rozvoj"
       ],
       "proof_title": "Checklist webu pre rehabilitáciu a fyzioterapiu",
@@ -989,11 +989,11 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Máme plány Start od 39 € a Profi od 59 € s DPH, plus Individual podľa dohody. Vhodný plán prejdeme na nezáväznej konzultácii."
+          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
-          "a": "Pri pripravených podkladoch vieme dodať výrazne rýchlejšie — orientačne aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+          "a": "Pri pripravených podkladoch vieme dodať web aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
         },
         {
           "q": "Formulár alebo telefón?",
@@ -1057,7 +1057,7 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start a Profi s DPH; Individual podľa dohody.",
+        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
@@ -1141,7 +1141,7 @@
       "h1": "Web pre reštauráciu",
       "hero_lead": "Hostia rozhodujú skôr, než prekročia prah: menu, hodiny, rezervácia a dojem z prevádzky. Navrhneme web, ktorý tieto informácie udrží aktuálne a zrozumiteľné — oddelený od kaviarne či cukrárne.",
       "hero_proof": [
-        "Menu a CMS",
+        "Aktuálne menu",
         "Rezervácia",
         "Lokálne SEO",
         "Jasná cena"
@@ -1172,7 +1172,7 @@
       "help_points": [
         {
           "t": "Udržať menu živé",
-          "d": "CMS namiesto večných PDF.",
+          "d": "Aktuálne menu namiesto večných PDF.",
           "icon": "utensils"
         },
         {
@@ -1195,7 +1195,7 @@
       "features": [
         {
           "t": "Menu / denná ponuka",
-          "d": "HTML menu + CMS.",
+          "d": "Aktuálne HTML menu.",
           "icon": "utensils"
         },
         {
@@ -1260,26 +1260,26 @@
         "Rezervácia",
         "Galéria",
         "Mapa",
-        "CMS",
+        "Starostlivosť",
         "SEO",
         "Mobil"
       ],
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Máme plány Start od 39 € a Profi od 59 € s DPH, plus Individual podľa dohody. Vhodný plán prejdeme na nezáväznej konzultácii."
+          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
-          "a": "Pri pripravených podkladoch vieme dodať výrazne rýchlejšie — orientačne aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+          "a": "Pri pripravených podkladoch vieme dodať web aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
         },
         {
           "q": "Online menu alebo PDF?",
-          "a": "Odporúčame editovateľné menu v CMS — PDF rýchlo zastaráva."
+          "a": "Odporúčame aktuálne HTML menu na webe — PDF rýchlo zastaráva. Aktualizácie riešime v rámci starostlivosti."
         },
         {
-          "q": "Viem si meniť menu sám?",
-          "a": "Áno. CMS nastavíme tak, aby ste vedeli meniť dennú a sezónnu ponuku."
+          "q": "Ako sa aktualizuje menu?",
+          "a": "Menu držíme aktuálne v rámci starostlivosti. PDF namiesto toho neodporúčame — rýchlo zastaráva."
         }
       ],
       "related": [
@@ -1335,7 +1335,7 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start a Profi s DPH; Individual podľa dohody.",
+        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
@@ -1502,7 +1502,7 @@
           "icon": "globe"
         },
         {
-          "t": "CMS a SEO",
+          "t": "Aktualizácie a SEO",
           "d": "Aktualizácie a technický základ.",
           "icon": "search"
         }
@@ -1521,7 +1521,7 @@
         "EN verzia",
         "Počet služieb",
         "Formulár",
-        "CMS",
+        "Starostlivosť",
         "Redizajn vs nový",
         "Rozvoj"
       ],
@@ -1540,11 +1540,11 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Máme plány Start od 39 € a Profi od 59 € s DPH, plus Individual podľa dohody. Vhodný plán prejdeme na nezáväznej konzultácii."
+          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
-          "a": "Pri pripravených podkladoch vieme dodať výrazne rýchlejšie — orientačne aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+          "a": "Pri pripravených podkladoch vieme dodať web aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
         },
         {
           "q": "Ako nastaviť formulár?",
@@ -1608,7 +1608,7 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start a Profi s DPH; Individual podľa dohody.",
+        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
@@ -1780,7 +1780,7 @@
           "icon": "star"
         },
         {
-          "t": "CMS a SEO",
+          "t": "Aktualizácie a SEO",
           "d": "Aktualizácie a viditeľnosť.",
           "icon": "search"
         }
@@ -1798,7 +1798,7 @@
       "price_factors": [
         "Počet strán",
         "Galéria",
-        "CMS",
+        "Starostlivosť",
         "Lokálne texty",
         "Migrácia",
         "Rozvoj"
@@ -1818,11 +1818,11 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Máme plány Start od 39 € a Profi od 59 € s DPH, plus Individual podľa dohody. Vhodný plán prejdeme na nezáväznej konzultácii."
+          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
-          "a": "Pri pripravených podkladoch vieme dodať výrazne rýchlejšie — orientačne aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+          "a": "Pri pripravených podkladoch vieme dodať web aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
         },
         {
           "q": "Lokálne SEO?",
@@ -1886,7 +1886,7 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start a Profi s DPH; Individual podľa dohody.",
+        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {

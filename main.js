@@ -37,10 +37,18 @@
 
   /* Active nav anchor (scroll spy) */
   const navAnchors = [...document.querySelectorAll('.nav a[href^="#"], .mobile-menu a[href^="#"]')]
-    .filter(a => a.getAttribute("href") !== "#kontakt");
+    .filter(a => {
+      const href = a.getAttribute("href");
+      return href && href !== "#kontakt" && href !== "#top";
+    });
   const navSections = [...new Set(navAnchors.map(a => a.getAttribute("href")))]
     .map(href => document.querySelector(href))
     .filter(Boolean);
+
+  const getNavOffset = () => {
+    const headerHeight = header?.getBoundingClientRect().height || 72;
+    return headerHeight + 12;
+  };
 
   const setActiveNav = (id) => {
     navAnchors.forEach(a => {
@@ -53,23 +61,39 @@
 
   const updateActiveNav = () => {
     if (!navSections.length) return;
-    const marker = Math.min(120, window.innerHeight * 0.28);
+    const marker = getNavOffset();
     let current = null;
     for (const section of navSections) {
-      if (section.getBoundingClientRect().top <= marker) current = section;
+      if (section.getBoundingClientRect().top <= marker + 8) current = section;
     }
     setActiveNav(current ? "#" + current.id : null);
   };
 
   let navRaf = 0;
-  window.addEventListener("scroll", () => {
+  const scheduleActiveNav = () => {
     if (navRaf) return;
     navRaf = requestAnimationFrame(() => {
       navRaf = 0;
       updateActiveNav();
     });
-  }, { passive: true });
+  };
+  window.addEventListener("scroll", scheduleActiveNav, { passive: true });
+  window.addEventListener("resize", scheduleActiveNav, { passive: true });
   updateActiveNav();
+
+  navAnchors.forEach((anchor) => {
+    anchor.addEventListener("click", () => {
+      const href = anchor.getAttribute("href");
+      if (!href || !href.startsWith("#")) return;
+      setActiveNav(href);
+      window.setTimeout(updateActiveNav, 350);
+      window.setTimeout(updateActiveNav, 700);
+    });
+  });
+  window.addEventListener("hashchange", () => {
+    window.setTimeout(updateActiveNav, 50);
+    window.setTimeout(updateActiveNav, 400);
+  });
 
   /* Process timeline — highlight steps while scrolling top to bottom */
   const processSection = document.querySelector("#proces");

@@ -1,12 +1,21 @@
 # Beewoy
 
-> Malé softvérové štúdio zo Slovenska. Tvoríme webové stránky, webové aplikácie a interné systémy na mieru — priamo s vývojármi, bez agentúrnych medzičlánkov.
+> Malé softvérové štúdio zo Slovenska. Tvoríme moderné weby na mieru s mesačnou starostlivosťou — aj webové aplikácie a interné systémy. Priamo s vývojármi, bez agentúrnych medzičlánkov.
 
-## Služby
+## Ponuka
 
-- [Tvorba webových stránok](https://beewoy.sk/tvorba-webov/): Firemné weby, weby pre služby a značky, landing pages a redizajny na mieru. Dôraz na dizajn, rýchlosť, SEO, prístupnosť a jednoduchú správu obsahu.
-- [Referencie](https://beewoy.sk/referencie/): Vybrané projekty pre klientov.
-- [Kontakt](https://beewoy.sk/kontakt/): Nezáväzný dopyt a mini-audit webu.
+- Web do ~48 hodín pri pripravených podkladoch
+- Mesačné plány bez vstupného poplatku a bez viazanosti: **Start 39 €/mes**, **Profi 59 €/mes**, **Individual** dohodou
+- V paušále: návrh, realizácia, hosting, údržba a zmeny obsahu podľa plánu; Profi pridáva Google profil, recenzie a socials
+
+## Stránky
+
+- [Domov](https://beewoy.sk/): Hero, ako to funguje, služby, referencie, cenník, FAQ, tím, kontakt
+- [Tvorba webových stránok](https://beewoy.sk/tvorba-webov/): Firemné weby, landing pages a redizajny — dizajn, rýchlosť, SEO, prístupnosť
+- [Cenník](https://beewoy.sk/cennik/): Start, Profi, Individual — porovnanie a FAQ k cenám
+- [Weby podľa odvetvia](https://beewoy.sk/tvorba-webov/odvetvia/): Stolárstvo, stavebníctvo, ambulancie, rehab, reštaurácie, logistika, elektrikári
+- [Referencie](https://beewoy.sk/referencie/): Vybrané projekty
+- [Kontakt](https://beewoy.sk/kontakt/): Nezáväzný dopyt
 
 ## Kontakt
 

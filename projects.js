@@ -182,7 +182,7 @@
         <span class="project-type">${escapeHtml(project.type)}</span>
         <p class="ref-card-result">${escapeHtml(project.resultShort)}</p>
         <span class="ref-card-footer">
-          ${escapeHtml(project.linkLabel)} <span class="arrow" aria-hidden="true">→</span>
+          Viac <span class="arrow" aria-hidden="true">→</span>
         </span>
       </div>
     </a>`;

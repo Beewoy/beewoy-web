@@ -23,7 +23,7 @@ const ASSETS = [
   "./analytics.js",
   "./logo.svg",
   "./favicon.ico",
-  "./og-image.png",
+  "./og-main.png",
   "./team/david-k-portrait-v2.webp",
   "./team/tibor-a-portrait.webp",
   "./manifest.webmanifest",

@@ -46,7 +46,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 96px;
+  scroll-padding-top: 88px;
 }
 .section-anchor {
   width: 0;
@@ -83,7 +83,7 @@ h1, h2, h3 {
 }
 .wrap { width: min(calc(100% - 48px), var(--max)); margin-inline: auto; }
 .section { padding: 150px 0; }
-.section[id] { scroll-margin-top: 100px; }
+.section[id] { scroll-margin-top: 0; }
 .dark { background: var(--ink); color: var(--paper); }
 .dark h2, .dark h3 { color: var(--paper); }
 .skip {
@@ -380,19 +380,23 @@ h1, h2, h3 {
   display: flex;
   flex-direction: column;
   flex: 1;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: clamp(28px, 5vh, 48px);
 }
 .hero-meta {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: clamp(12px, 2vh, 28px);
-  margin-bottom: clamp(8px, 1.8vh, 24px);
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: clamp(12px, 2.5vw, 28px);
   flex-shrink: 0;
 }
 .hero-badges {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-end;
+  justify-content: center;
   gap: 24px;
 }
 .hero-badge {
@@ -465,49 +469,41 @@ h1, h2, h3 {
   font: 600 .78rem/1 "Manrope", sans-serif; letter-spacing: .08em; text-transform: uppercase;
 }
 .hero-label i { width: 9px; height: 9px; background: var(--yellow); border-radius: 50%; }
-.hero-title-block {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) auto;
-  align-items: start;
-  column-gap: clamp(12px, 2.5vw, 28px);
-  margin-block: auto;
-  margin-inline: auto;
-  flex: 0 1 auto;
-  min-height: 0;
-  width: fit-content;
-  max-width: min(720px, 100%);
-}
-.hero-title-copy {
-  display: grid;
-  gap: clamp(12px, 2vh, 20px);
-  min-width: 0;
+.hero-main {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(18px, 2.8vh, 28px);
+  width: min(100%, 760px);
 }
 .hero h1 {
   margin: 0;
-  font-size: clamp(2.35rem, min(8vw, 9.2vh), 6.4rem);
+  font-size: clamp(2.5rem, min(7.5vw, 8.5vh), 5.6rem);
   font-weight: 600;
-  line-height: 1.02;
-  max-width: 11ch;
-  text-align: left;
+  line-height: 1.05;
+  max-width: 14ch;
+  text-align: center;
   text-wrap: balance;
 }
 .hero h1 em { font-style: normal; color: var(--muted); }
 .hero-sub {
   margin: 0;
-  max-width: 38ch;
+  max-width: 42ch;
   color: var(--muted);
-  font-size: clamp(.95rem, min(1.5vw, 1.8vh), 1.15rem);
-  line-height: 1.45;
+  font-size: clamp(1rem, min(1.5vw, 1.8vh), 1.18rem);
+  line-height: 1.5;
   text-wrap: pretty;
 }
 .hero-speed-sticker {
-  position: relative;
+  position: absolute;
+  top: -8px;
+  right: clamp(-8px, -2vw, 12px);
   isolation: isolate;
   display: grid;
   place-items: center;
-  width: clamp(92px, 9vw, 118px);
-  height: clamp(92px, 9vw, 118px);
-  margin: clamp(4px, 1vh, 14px) 0 0;
+  width: clamp(88px, 9vw, 112px);
+  height: clamp(88px, 9vw, 112px);
   color: var(--ink);
   background: var(--yellow);
   border: 2.5px solid var(--ink);
@@ -516,6 +512,7 @@ h1, h2, h3 {
   transform: rotate(9deg);
   animation: heroStickerIn .75s var(--ease) both;
   animation-delay: .2s;
+  z-index: 2;
 }
 .hero-speed-sticker-ring {
   position: absolute;
@@ -539,7 +536,7 @@ h1, h2, h3 {
   text-transform: uppercase;
 }
 .hero-speed-sticker strong {
-  font: 800 clamp(1.2rem, 2vw, 1.55rem)/1 "Manrope", sans-serif;
+  font: 800 clamp(1.15rem, 2vw, 1.45rem)/1 "Manrope", sans-serif;
   letter-spacing: -.045em;
 }
 @keyframes heroStickerIn {
@@ -552,26 +549,12 @@ h1, h2, h3 {
     transform: rotate(9deg) scale(1) translate(0, 0);
   }
 }
-.hero-bottom {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(20px, 4vw, 64px);
-  align-items: start;
-  padding-top: clamp(14px, 2.6vh, 34px);
-  border-top: 1px solid var(--line);
-  flex-shrink: 0;
-}
-.hero-lead {
-  max-width: 590px;
-  margin: 0;
-  font-size: clamp(1rem, min(1.8vw, 2.1vh), 1.55rem);
-  line-height: 1.4;
-}
 .hero-actions {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   flex-wrap: wrap;
-  gap: clamp(8px, 1.2vh, 10px);
+  gap: 10px;
+  margin-top: clamp(4px, 1vh, 10px);
 }
 .hero-actions .btn {
   min-height: clamp(48px, 6.5vh, 56px);
@@ -671,33 +654,26 @@ h1, h2, h3 {
   align-items: center;
   justify-content: space-between;
   gap: 20px 28px;
-  margin-top: clamp(24px, 3.5vh, 32px);
-  padding: clamp(22px, 3vw, 28px) clamp(20px, 3vw, 28px);
-  border: 1px solid var(--line);
-  border-left: 4px solid var(--yellow);
-  background: var(--white, #fff);
+  margin-top: clamp(28px, 4vh, 40px);
+  padding: clamp(26px, 3.2vw, 34px) clamp(22px, 3vw, 32px);
+  background: var(--ink);
+  color: var(--paper);
+  box-shadow: 8px 8px 0 var(--yellow);
 }
 .how-industry-copy {
-  flex: 1 1 280px;
-  max-width: 52ch;
+  flex: 1 1 auto;
+  min-width: min(280px, 100%);
+  max-width: 42ch;
 }
-.how-industry-label {
-  margin: 0 0 8px;
-  color: var(--muted);
-  font: 600 .7rem/1 "Manrope", sans-serif;
-  letter-spacing: .08em;
-  text-transform: uppercase;
+.how-industry .kicker {
+  margin: 0 0 10px;
+  color: var(--yellow);
 }
 .how-industry-title {
-  margin: 0 0 8px;
-  font: 700 1.15rem/1.25 "Manrope", sans-serif;
-  letter-spacing: -.02em;
-}
-.how-industry-text {
   margin: 0;
-  color: var(--muted);
-  font-size: .98rem;
-  line-height: 1.45;
+  font: 700 clamp(1.25rem, 2.2vw, 1.55rem)/1.2 "Manrope", sans-serif;
+  letter-spacing: -.03em;
+  color: var(--paper);
 }
 .how-industry .btn {
   flex-shrink: 0;
@@ -1581,7 +1557,7 @@ h1, h2, h3 {
   text-align: left;
 }
 .contact-intro { margin: 0; max-width: 420px; color: #aaa7a0; font-size: 1.15rem; }
-.contact-form { display: grid; gap: 18px; scroll-margin-top: 100px; }
+.contact-form { display: grid; gap: 18px; scroll-margin-top: 0; }
 .form-honeypot { position: absolute; left: -9999px; }
 .form-field { display: grid; gap: 8px; }
 .form-field label {
@@ -2650,20 +2626,21 @@ body.cookie-modal-open { overflow: hidden; }
     --hero-pad-top: clamp(76px, 10vh, 96px);
     --hero-pad-bottom: clamp(14px, 2.5vh, 28px);
   }
-  .hero-meta { margin-bottom: clamp(8px, 1.6vh, 16px); }
+  .hero-copy { gap: clamp(18px, 3vh, 28px); }
   .hero-badges { gap: 14px; }
-  .hero-title-block {
-    column-gap: 10px;
-  }
+  .hero-main { gap: clamp(14px, 2vh, 20px); }
   .hero h1 {
-    font-size: clamp(2.15rem, min(7.5vw, 8vh), 5.2rem);
+    font-size: clamp(2.15rem, min(7.5vw, 8vh), 4.6rem);
   }
   .hero-sub {
     font-size: clamp(.9rem, 1.6vh, 1.05rem);
     line-height: 1.4;
   }
-  .hero-bottom { padding-top: clamp(10px, 2vh, 20px); }
-  .hero-lead { font-size: clamp(.95rem, 2vh, 1.2rem); line-height: 1.35; }
+  .hero-speed-sticker {
+    width: 84px;
+    height: 84px;
+    right: -4px;
+  }
   .hero-actions .btn { min-height: 48px; }
 }
 
@@ -2735,6 +2712,18 @@ body.cookie-modal-open { overflow: hidden; }
   .how-industry {
     flex-direction: column;
     align-items: stretch;
+    gap: 16px;
+    margin-top: 24px;
+    padding: 20px 18px;
+    box-shadow: 5px 5px 0 var(--yellow);
+  }
+  .how-industry-copy {
+    flex: 0 1 auto;
+    max-width: none;
+  }
+  .how-industry .kicker { margin-bottom: 8px; }
+  .how-industry-title {
+    font-size: 1.15rem;
   }
   .how-industry .btn {
     width: 100%;
@@ -2751,7 +2740,7 @@ body.cookie-modal-open { overflow: hidden; }
     width: 100%;
     transform: rotate(.4deg);
   }
-  .hero-actions { justify-content: flex-start; }
+  .hero-actions { justify-content: center; }
   .service { grid-template-columns: 48px 1fr; }
   .service-icon { margin-top: 0.35rem; }
   .service-copy { grid-column: 2; }
@@ -2783,8 +2772,8 @@ body.cookie-modal-open { overflow: hidden; }
 }
 
 @media (max-width: 600px) {
-  html { scroll-padding-top: 80px; }
-  .section[id] { scroll-margin-top: 80px; }
+  html { scroll-padding-top: 72px; }
+  .section[id] { scroll-margin-top: 0; }
   .wrap, .header-inner { width: min(calc(100% - 32px), var(--max)); }
   .section { padding: 82px 0; }
   .web-service-page .section { padding: 48px 0; }
@@ -2878,37 +2867,36 @@ body.cookie-modal-open { overflow: hidden; }
   .web-team .team-intro { margin-bottom: 48px; }
   .web-team .person-portrait { width: min(100%, 220px); }
   .hero-meta {
-    align-items: flex-start;
-    flex-direction: column;
     gap: clamp(10px, 1.8vh, 16px);
-    margin-bottom: clamp(12px, 2vh, 22px);
   }
-  .hero-badges { width: 100%; justify-content: flex-start; gap: 18px; }
+  .hero-badges { gap: 18px; }
   .hero-badge { min-height: 24px; gap: 6px; font-size: .6rem; letter-spacing: .045em; }
   .badge-shield { width: 16px; height: 18px; flex-basis: 16px; }
-  .hero-title-block {
-    column-gap: 8px;
-    max-width: 100%;
+  .hero-main {
+    width: min(100%, 560px);
+    padding-top: 12px;
   }
-  .hero-title-copy { gap: 12px; }
   .hero h1 {
-    font-size: clamp(2.15rem, min(10.5vw, 8vh), 4.2rem);
+    font-size: clamp(2.15rem, min(10.5vw, 8vh), 3.8rem);
   }
   .hero-sub {
     max-width: 34ch;
     font-size: clamp(.92rem, 2.2vh, 1.05rem);
   }
   .hero-speed-sticker {
-    width: 78px;
-    height: 78px;
-    margin-top: 2px;
+    top: -4px;
+    right: 0;
+    width: 74px;
+    height: 74px;
     box-shadow: 4px 4px 0 var(--ink);
   }
   .hero-speed-sticker-ring { inset: 5px; }
   .hero-speed-sticker-label { font-size: .5rem; }
-  .hero-speed-sticker strong { font-size: 1.1rem; }
-  .hero-bottom { gap: clamp(16px, 2.5vh, 28px); }
-  .hero-lead { font-size: clamp(.95rem, 2.4vh, 1.15rem); }
+  .hero-speed-sticker strong { font-size: 1.05rem; }
+  .hero-actions {
+    width: 100%;
+    flex-direction: column;
+  }
   .hero-actions .btn { width: 100%; }
   .section-title { margin-bottom: 45px; }
   .truth { gap: 12px; padding: 22px 0; }
@@ -2988,28 +2976,23 @@ body.cookie-modal-open { overflow: hidden; }
 .cennik-hero .kicker { margin-bottom: 12px; }
 .cennik-hero h1 {
   max-width: 16ch;
-  margin: 0 0 14px;
+  margin: 0 0 12px;
   font-size: clamp(2.2rem, 3.5vw + .8rem, 3.6rem);
   font-weight: 600;
   line-height: 1.08;
 }
-.cennik-meta {
-  margin: 0 0 14px;
-  color: var(--muted);
-  font: 600 .78rem/1.35 "Manrope", sans-serif;
-  letter-spacing: .04em;
-  text-transform: uppercase;
-}
 .cennik-lead {
-  max-width: 58ch;
+  max-width: 36ch;
   margin: 0;
   color: var(--muted);
-  font-size: clamp(1.05rem, 1.3vw, 1.2rem);
-  line-height: 1.55;
+  font-size: clamp(1.05rem, 1.3vw, 1.15rem);
+  line-height: 1.5;
 }
-.cennik-lead strong { color: var(--ink); font-weight: 600; }
 
 .cennik-plans-section { padding-top: clamp(40px, 6vh, 64px); }
+#cennik .cennik-plans {
+  margin-top: clamp(28px, 4vh, 40px);
+}
 .cennik-plans {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -3126,10 +3109,13 @@ body.cookie-modal-open { overflow: hidden; }
   border-block: 1px solid var(--line);
 }
 .cennik-section-head { margin-bottom: 28px; }
+.cennik-section-head .section-title {
+  max-width: 18ch;
+}
 .cennik-table-wrap {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
-  border: 1px solid var(--line);
+  border: 1px solid var(--ink);
   background: var(--paper);
 }
 .cennik-table {
@@ -3140,12 +3126,12 @@ body.cookie-modal-open { overflow: hidden; }
 }
 .cennik-table th,
 .cennik-table td {
-  padding: 16px 18px;
+  padding: 18px 20px;
   vertical-align: middle;
   border-bottom: 1px solid var(--line);
 }
 .cennik-table thead th {
-  padding: 20px 18px;
+  padding: 22px 20px;
   text-align: center;
   background: var(--paper);
   border-bottom: 2px solid var(--ink);
@@ -3153,22 +3139,23 @@ body.cookie-modal-open { overflow: hidden; }
 }
 .cennik-table thead th:first-child {
   text-align: left;
-  width: 32%;
+  width: 34%;
 }
 .cennik-th-name {
   display: block;
-  font: 700 .78rem/1.2 "Manrope", sans-serif;
+  font: 700 .82rem/1.2 "Manrope", sans-serif;
   letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--ink);
 }
 .cennik-th-price {
   display: block;
-  margin-top: 6px;
-  font: 600 .88rem/1.2 "DM Sans", sans-serif;
+  margin-top: 8px;
+  font: 600 1rem/1.2 "DM Sans", sans-serif;
   letter-spacing: 0;
   text-transform: none;
-  color: var(--muted);
+  color: var(--ink);
+  opacity: .72;
 }
 .cennik-table thead th.cennik-col-profi {
   background: var(--ink);
@@ -3176,10 +3163,13 @@ body.cookie-modal-open { overflow: hidden; }
   box-shadow: inset 0 3px 0 var(--yellow);
 }
 .cennik-table thead th.cennik-col-profi .cennik-th-name { color: var(--yellow); }
-.cennik-table thead th.cennik-col-profi .cennik-th-price { color: rgba(255,255,255,.65); }
+.cennik-table thead th.cennik-col-profi .cennik-th-price {
+  color: var(--paper);
+  opacity: .85;
+}
 .cennik-table tbody th {
   text-align: left;
-  font: 600 .95rem/1.35 "DM Sans", sans-serif;
+  font: 600 1rem/1.35 "DM Sans", sans-serif;
   color: var(--ink);
   background: var(--paper);
   position: sticky;
@@ -3188,46 +3178,52 @@ body.cookie-modal-open { overflow: hidden; }
 }
 .cennik-table tbody td {
   text-align: center;
-  font-size: .9rem;
-  color: var(--muted);
   background: var(--paper);
 }
 .cennik-table tbody td.cennik-col-profi {
-  background: rgba(21, 21, 21, .04);
+  background: rgba(21, 21, 21, .05);
 }
 .cennik-table tbody tr:hover th,
 .cennik-table tbody tr:hover td {
-  background: rgba(241, 196, 15, .12);
+  background: rgba(241, 196, 15, .14);
 }
 .cennik-table tbody tr:hover td.cennik-col-profi {
-  background: rgba(241, 196, 15, .2);
+  background: rgba(241, 196, 15, .22);
 }
 .cennik-table tbody tr:last-child th,
 .cennik-table tbody tr:last-child td { border-bottom: 0; }
-.cennik-yes::before,
-.cennik-no::before {
-  content: "";
-  display: inline-block;
-  vertical-align: middle;
-}
-.cennik-yes::before {
-  width: 10px;
-  height: 10px;
-  background: var(--yellow);
-  box-shadow: 0 0 0 2px rgba(241, 196, 15, .28);
-}
-.cennik-no::before {
-  width: 14px;
-  height: 2px;
-  background: rgba(21, 21, 21, .28);
-}
-.cennik-text {
-  font-size: .82rem;
-  font-weight: 600;
-  letter-spacing: .01em;
+.cennik-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.4em;
+  padding: 6px 10px;
+  font: 700 .88rem/1 "Manrope", sans-serif;
+  letter-spacing: .02em;
   color: var(--ink);
+  background: var(--yellow);
 }
-.cennik-col-profi .cennik-text { color: var(--ink); }
+.cennik-no .cennik-status {
+  color: var(--ink);
+  background: transparent;
+  border: 1px solid rgba(21, 21, 21, .35);
+  font-weight: 600;
+  opacity: .85;
+}
+.cennik-status--soft {
+  min-width: 0;
+  padding: 6px 10px;
+  color: var(--ink);
+  background: transparent;
+  border: 1px dashed rgba(21, 21, 21, .35);
+  font-weight: 600;
+  font-size: .82rem;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+.cennik-col-profi .cennik-status--soft {
+  border-color: rgba(21, 21, 21, .4);
+}
 
 .cennik-faq .section-title { color: var(--white); }
 .cennik-final h2 {
