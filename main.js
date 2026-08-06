@@ -214,13 +214,33 @@
   /* Contact form */
   const contactForm = document.querySelector("#kontakt-form");
   const typeSelect = document.querySelector("#contact-type");
+  const industryInput = document.querySelector("#contact-industry");
   const nameInput = document.querySelector("#contact-name");
   const formStatus = document.querySelector(".form-status");
   const SEO_OPTION = "SEO, výkon alebo servis";
+  const PACKAGE_IDS = new Set(["start", "profi", "individual", "ine"]);
+
+  const setBalikValue = (value) => {
+    if (value == null || value === "") return false;
+    const radio = contactForm?.querySelector(`input[type="radio"][name="balik"][value="${value}"]`);
+    if (radio) {
+      radio.checked = true;
+      radio.dispatchEvent(new Event("change", { bubbles: true }));
+      return true;
+    }
+    if (!typeSelect) return false;
+    const match = [...typeSelect.options].find((o) => o.value === value);
+    if (!match) return false;
+    typeSelect.value = value;
+    return true;
+  };
 
   const applyPreset = (preset) => {
-    if (preset !== "seo" || !typeSelect) return;
-    typeSelect.value = SEO_OPTION;
+    if (preset === "seo") {
+      if (!setBalikValue("ine")) setBalikValue(SEO_OPTION);
+      return;
+    }
+    if (PACKAGE_IDS.has(preset)) setBalikValue(preset);
   };
 
   const focusFirstEmpty = () => {
@@ -228,7 +248,12 @@
       nameInput.focus();
       return;
     }
-    const firstEmpty = contactForm?.querySelector("input:not([type=hidden]):not([type=checkbox]):invalid, textarea:invalid");
+    const checkedBalik = contactForm?.querySelector('input[type="radio"][name="balik"]:checked');
+    if (contactForm?.querySelector('input[type="radio"][name="balik"]') && !checkedBalik) {
+      contactForm.querySelector('input[type="radio"][name="balik"]')?.focus();
+      return;
+    }
+    const firstEmpty = contactForm?.querySelector("input:not([type=hidden]):not([type=checkbox]):not([type=radio]):invalid, textarea:invalid, select:invalid");
     firstEmpty?.focus();
   };
 
@@ -248,9 +273,20 @@
   const initFormPreset = () => {
     const params = new URLSearchParams(window.location.search);
     const hash = window.location.hash;
-    if (params.get("typ") === "seo" || hash === "#kontakt-form") {
+    const balik = (params.get("balik") || params.get("plan") || "").toLowerCase();
+    const odvetvie = (params.get("odvetvie") || "").trim();
+    const typ = (params.get("typ") || "").toLowerCase();
+
+    if (industryInput && odvetvie) industryInput.value = odvetvie;
+
+    if (PACKAGE_IDS.has(balik)) {
+      applyPreset(balik);
+      window.setTimeout(focusFirstEmpty, 300);
+    } else if (typ === "seo") {
       applyPreset("seo");
-      if (hash === "#kontakt-form") window.setTimeout(focusFirstEmpty, 300);
+    } else if (hash === "#kontakt-form" && !contactForm?.querySelector('input[type="radio"][name="balik"]')) {
+      applyPreset("seo");
+      window.setTimeout(focusFirstEmpty, 300);
     }
   };
   initFormPreset();

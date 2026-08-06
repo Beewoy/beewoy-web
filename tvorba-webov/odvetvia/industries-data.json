@@ -1,0 +1,1962 @@
+{
+  "hub": {
+    "title": "Weby podľa odvetvia | Beewoy",
+    "description": "Tvorba webov pre konkrétne odvetvia na Slovensku. Stolárstvo, stavebné firmy, ambulancie, reštaurácie, logistika, elektrikári a ďalšie. Plány Start, Profi a Individual.",
+    "h1": "Weby podľa odvetvia",
+    "lead": "Každé odvetvie má iné otázky, iný spôsob dopytu a inú dôveru. Preto nepredávame univerzálnu šablónu — navrhujeme web podľa toho, čo vaši zákazníci skutočne potrebujú nájsť."
+  },
+  "industries": [
+    {
+      "slug": "stolarstvo-interiery",
+      "name": "Stolárstvo / interiéry na mieru",
+      "short_name": "Stolárstvo a interiéry",
+      "cluster": "Remeslá a stavebníctvo",
+      "depth": "flagship",
+      "hub_blurb": "Galéria realizácií, proces od merania po montáž a web, ktorý privedie dopyty na konzultáciu.",
+      "title": "Tvorba webu pre stolárstvo a interiéry | Beewoy",
+      "description": "Web pre stolársku dielňu a interiéry na mieru: galéria realizácií, prehľad služieb a jasná cesta k dopytu. Start, Profi alebo Individual — Beewoy.",
+      "h1": "Web pre stolárstvo a interiéry na mieru",
+      "hero_lead": "Keď zákazník nevidí kvalitu vašej práce online, vyberie si niekoho, kto ju ukáže. Navrhneme web, ktorý predstaví realizácie, vysvetlí služby a privedie nezáväzné dopyty — priamo s vývojármi, bez agentúrnych medzičlánkov.",
+      "hero_proof": [
+        "Galéria realizácií",
+        "CMS pre nové projekty",
+        "Lokálne SEO",
+        "Jasná cena"
+      ],
+      "cta_primary": "Chcem konzultáciu k webu pre stolárstvo",
+      "cta_secondary": "",
+      "audience": "Pre majiteľov stolárskych dielní a výrobcov kuchýň, skríň či celých interiérov na mieru. Hodí sa, ak predávate remeslo, nie len katalogový nábytok.",
+      "problems_intro": "V stolárstve rozhoduje dôvera v detail. Web často túto dôveru nenesie.",
+      "problems": [
+        {
+          "t": "Realizácie nie sú viditeľné",
+          "d": "Bez dobre popísanej galérie zákazník nevie posúdiť materiál, precíznosť ani štýl."
+        },
+        {
+          "t": "Nejasný rozsah služieb",
+          "d": "Nie je zrejmé, či robíte kuchyne, skrine, celý interiér, alebo všetko."
+        },
+        {
+          "t": "Chýba cesta k dopytu",
+          "d": "Telefón v pätičke nestačí. Ľudia chcú napísať a poslať rozmery alebo fotku."
+        },
+        {
+          "t": "Web sa neaktualizuje",
+          "d": "Nové projekty pribúdajú v dielni, na webe ostáva starý obsah."
+        },
+        {
+          "t": "Slabé lokálne zachytenie",
+          "d": "Bez štruktúry a obsahu web nezachytí lokálne dopyty na kuchyne na mieru."
+        }
+      ],
+      "help_intro": "Dobrý web pre stolárstvo je predajný nástroj, ktorý prevedie záujemcu od fotky k konzultácii.",
+      "help_points": [
+        {
+          "t": "Ukázať remeslo",
+          "d": "Fotky s kontextom projektu.",
+          "icon": "image"
+        },
+        {
+          "t": "Vysvetliť proces",
+          "d": "Meranie, návrh, výroba, montáž.",
+          "icon": "workflow"
+        },
+        {
+          "t": "Zjednodušiť dopyt",
+          "d": "Formulár s typom projektu a lokalitou.",
+          "icon": "phone"
+        },
+        {
+          "t": "Udržať obsah živý",
+          "d": "CMS na nové realizácie.",
+          "icon": "edit"
+        }
+      ],
+      "features_intro": "Funkcie podľa potrieb dielne — nie univerzálny zoznam.",
+      "features": [
+        {
+          "t": "Galéria s filtrami",
+          "d": "Kuchyne, skrine, interiéry s popisom.",
+          "icon": "layers"
+        },
+        {
+          "t": "Katalóg služieb",
+          "d": "Prehľadná hierarchia.",
+          "icon": "list"
+        },
+        {
+          "t": "Proces meranie → montáž",
+          "d": "Znižuje neistotu pred kontaktom.",
+          "icon": "workflow"
+        },
+        {
+          "t": "Formulár dopytu",
+          "d": "Typ projektu, lokalita, termín.",
+          "icon": "edit"
+        },
+        {
+          "t": "CMS pre realizácie",
+          "d": "Pridávanie bez vývojára.",
+          "icon": "edit"
+        },
+        {
+          "t": "Región a mapa",
+          "d": "Kde pôsobíte.",
+          "icon": "map"
+        },
+        {
+          "t": "Optimalizácia fotiek",
+          "d": "Rýchle načítanie galérie.",
+          "icon": "gauge"
+        },
+        {
+          "t": "Technické SEO",
+          "d": "Štruktúra, metadata, indexácia.",
+          "icon": "search"
+        },
+        {
+          "t": "Prístupnosť",
+          "d": "Použiteľný web pre viac ľudí.",
+          "icon": "eye"
+        },
+        {
+          "t": "Mobilná verzia",
+          "d": "Dopyty z telefónu.",
+          "icon": "smartphone"
+        }
+      ],
+      "scenario_title": "Cesta zákazníka",
+      "scenario_intro": "Typický scenár záujemcu o interiér na mieru:",
+      "scenario": [
+        "Vidí, že ide o výrobu na mieru.",
+        "Prejde galériu podobných realizácií.",
+        "Prečíta proces spolupráce.",
+        "Odošle dopyt alebo zavolá.",
+        "Vy dostanete kvalifikovanejší lead."
+      ],
+      "process_intro": "Obsah a štruktúra sú postavené okolo stolárstva; proces spolupráce je Beewoy štandard.",
+      "process": [
+        {
+          "t": "Úvodná konzultácia",
+          "d": "Dielňa, zákazníci, súčasný web, ciele."
+        },
+        {
+          "t": "Rozsah a ponuka",
+          "d": "Štruktúra, priority, individuálna cena."
+        },
+        {
+          "t": "Obsah a dizajn",
+          "d": "Osnova, fotky, vizuál k remeslu."
+        },
+        {
+          "t": "Vývoj a spustenie",
+          "d": "Testy, nasadenie."
+        },
+        {
+          "t": "Podpora",
+          "d": "Údržba a nové realizácie."
+        }
+      ],
+      "price_intro": "Individuálna ponuka — bez mesačných balíčkov. Cenu ovplyvňuje:",
+      "price_factors": [
+        "Rozsah stránok",
+        "Veľkosť galérie",
+        "CMS",
+        "Migrácia",
+        "Lokálne podstránky",
+        "Ďalší rozvoj"
+      ],
+      "proof_title": "Odporúčaný model webu pre stolárstvo",
+      "proof_intro": "Namiesto vymyslených referencií pracujeme s checklistom. Pomenovanú case study publikujeme len so súhlasom klienta.",
+      "checklist": [
+        "Jasná ponuka kuchýň / interiérov",
+        "Galéria s filtrami",
+        "Proces meranie–montáž",
+        "Formulár a telefón",
+        "Región",
+        "FAQ",
+        "CMS",
+        "SEO a rýchle fotky"
+      ],
+      "faq": [
+        {
+          "q": "Koľko stojí web?",
+          "a": "Máme plány Start od 39 € a Profi od 59 € s DPH, plus Individual podľa dohody. Vhodný plán prejdeme na nezáväznej konzultácii."
+        },
+        {
+          "q": "Ako dlho trvá dodávka?",
+          "a": "Pri pripravených podkladoch vieme dodať výrazne rýchlejšie — orientačne aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+        },
+        {
+          "q": "Viem si pridávať projekty sám?",
+          "a": "Áno — pripravíme CMS, aby ste mohli pridávať nové realizácie bez vývojára."
+        },
+        {
+          "q": "Potrebujem e-shop?",
+          "a": "Zvyčajne nie. Pre zákazky na mieru stačí galéria a dopytový formulár."
+        }
+      ],
+      "related": [
+        {
+          "slug": "stavebna-firma",
+          "label": "Stavebná firma",
+          "blurb": "Web pre stavebné firmy"
+        },
+        {
+          "slug": "elektrikar",
+          "label": "Elektrikár",
+          "blurb": "Web pre elektroinštalácie"
+        },
+        {
+          "slug": "restauracia",
+          "label": "Reštaurácia",
+          "blurb": "Iný odvetvový prístup"
+        }
+      ],
+      "final_title": "Ukážme vaše remeslo tak, aby z neho vznikali dopyty.",
+      "final_text": "Napíšte nám o dielni a tom, čo na webe chýba. Pripravíme nezáväzný pohľad na rozsah.",
+      "layout": {
+        "hero_centered": true,
+        "show_audience": false,
+        "show_scenario": false,
+        "show_checklist": false,
+        "show_secondary_cta": false,
+        "show_process_steps": false,
+        "pricing_model": "packages",
+        "hide_depth_in_kicker": true
+      },
+      "packages": {
+        "intro": "Tri plány, žiadna viazanosť. Start a Profi s DPH; Individual podľa dohody.",
+        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "items": [
+          {
+            "id": "start",
+            "name": "Start",
+            "price": "39€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web + starostlivosť"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "v cene"
+              },
+              {
+                "label": "Ideálne pre",
+                "value": "dielne, ktoré chcú galériu a spoľahlivý dopyt"
+              }
+            ],
+            "cta": "Chcem Start"
+          },
+          {
+            "id": "profi",
+            "name": "Profi",
+            "price": "59€",
+            "period": "/mes",
+            "popular": true,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web + aktívny rast"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "v cene"
+              },
+              {
+                "label": "Rast",
+                "value": "Google profil, realizácie, socials"
+              }
+            ],
+            "cta": "Chcem Profi"
+          },
+          {
+            "id": "individual",
+            "name": "Individual",
+            "custom": true,
+            "price_label": "Dohodou",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web na mieru"
+              },
+              {
+                "label": "Rozsah",
+                "value": "podľa dohody"
+              },
+              {
+                "label": "Ideálne pre",
+                "value": "väčšie dielne alebo atypický rozsah"
+              }
+            ],
+            "cta": "Chcem Individual"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "stavebna-firma",
+      "name": "Stavebná firma",
+      "short_name": "Stavebná firma",
+      "cluster": "Remeslá a stavebníctvo",
+      "depth": "standard",
+      "hub_blurb": "Dôveryhodný web s prehľadom prác, regiónom a jasnou cestou k dopytu.",
+      "title": "Tvorba webu pre stavebnú firmu | Beewoy",
+      "description": "Web pre malú stavebnú firmu: prehľad prác, dôvera, región a jasný dopyt. Start, Profi alebo Individual — Beewoy.",
+      "h1": "Web pre stavebnú firmu",
+      "hero_lead": "Stavebná firma predáva dôveru skôr než vizuál. Navrhneme web, ktorý ukáže rozsah prác, pôsobí seriózne a pomáha zbierať dopyty — individuálne, bez univerzálnych balíčkov.",
+      "hero_proof": [
+        "Prehľad prác",
+        "Oprávnenia",
+        "Formulár dopytu",
+        "Jasná cena"
+      ],
+      "cta_primary": "Chcem web pre svoju stavebnú firmu",
+      "cta_secondary": "",
+      "audience": "Pre majiteľov malých stavebných a remeselných firiem — stavby, rekonštrukcie a špecializované práce pre domácnosti aj menší B2B.",
+      "problems_intro": "V stavebníctve rozhoduje dojem spoľahlivosti. Slabý web ju často podkopáva ešte pred prvým telefonátom.",
+      "problems": [
+        {
+          "t": "Web nepôsobí dôveryhodne",
+          "d": "Zastaraný dizajn a stock fotky pôsobia nepripravené."
+        },
+        {
+          "t": "Nejasný rozsah prác",
+          "d": "Zákazník nevie, čo firma robí a čo nie."
+        },
+        {
+          "t": "Chýbajú oprávnenia",
+          "d": "Certifikácie sú v šuflíku, nie na webe."
+        },
+        {
+          "t": "Chaotická galéria",
+          "d": "Fotky bez kontextu nepredávajú."
+        }
+      ],
+      "help_intro": "Web má potvrdiť, že ste správna voľba, a uľahčiť prvý kontakt.",
+      "help_points": [
+        {
+          "t": "Vyjasniť ponuku",
+          "d": "Hierarchia služieb.",
+          "icon": "list"
+        },
+        {
+          "t": "Ukázovať prácu",
+          "d": "Realizácie s popisom rozsahu.",
+          "icon": "image"
+        },
+        {
+          "t": "Budovať dôveru",
+          "d": "Oprávnenia, región, kontakt.",
+          "icon": "shield"
+        },
+        {
+          "t": "Zbierať dopyty",
+          "d": "Formulár s typom práce a lokalitou.",
+          "icon": "phone"
+        }
+      ],
+      "features_intro": "Funkcie pre malú stavebnú firmu — nie marketingový balast.",
+      "features": [
+        {
+          "t": "Prehľad typov prác",
+          "d": "Jasná štruktúra ponuky.",
+          "icon": "list"
+        },
+        {
+          "t": "Galéria realizácií",
+          "d": "Fotky s popisom rozsahu.",
+          "icon": "image"
+        },
+        {
+          "t": "Certifikácie",
+          "d": "Sekcia, ktorú zákazník hľadá.",
+          "icon": "shield"
+        },
+        {
+          "t": "Región pôsobenia",
+          "d": "Mapa alebo zoznam oblastí.",
+          "icon": "map"
+        },
+        {
+          "t": "Formulár dopytu",
+          "d": "Typ práce, lokalita, termín.",
+          "icon": "edit"
+        },
+        {
+          "t": "Mobil a SEO",
+          "d": "Rýchly, indexovateľný web.",
+          "icon": "smartphone"
+        },
+        {
+          "t": "CMS",
+          "d": "Nové realizácie bez vývojára.",
+          "icon": "edit"
+        }
+      ],
+      "scenario_title": "Cesta zákazníka",
+      "scenario_intro": "Ako môže vyzerať rozhodovanie majiteľa domu:",
+      "scenario": [
+        "Porovná firmy online.",
+        "Overí typ prác a región.",
+        "Hľadá reálne fotky.",
+        "Napíše cez formulár.",
+        "Vy dostanete dopyt s kontextom."
+      ],
+      "price_intro": "Cenu ovplyvňuje rozsah — nie balíček Start/Growth:",
+      "price_factors": [
+        "Počet podstránok",
+        "Galéria",
+        "CMS",
+        "Migrácia",
+        "B2B/B2C štruktúra",
+        "Rozvoj"
+      ],
+      "proof_title": "Checklist dôveryhodného webu stavebnej firmy",
+      "proof_intro": "Stránku vieme postaviť aj bez pomenovanej klientskej referencie. Dôležitý je odborný model a čestná prezentácia práce.",
+      "checklist": [
+        "Typy prác",
+        "Galéria s kontextom",
+        "Oprávnenia",
+        "Región",
+        "Formulár",
+        "Kontakt a mobil",
+        "SEO základ"
+      ],
+      "faq": [
+        {
+          "q": "Koľko stojí web?",
+          "a": "Máme plány Start od 39 € a Profi od 59 € s DPH, plus Individual podľa dohody. Vhodný plán prejdeme na nezáväznej konzultácii."
+        },
+        {
+          "q": "Ako dlho trvá dodávka?",
+          "a": "Pri pripravených podkladoch vieme dodať výrazne rýchlejšie — orientačne aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+        },
+        {
+          "q": "Formulár alebo telefón?",
+          "a": "Najčastejšie funguje kombinácia: výrazný telefón + formulár s typom práce a lokalitou."
+        },
+        {
+          "q": "Ako prezentovať referencie?",
+          "a": "Len overené projekty — s popisom rozsahu a fotkami. Bez vymyslených referencií."
+        }
+      ],
+      "related": [
+        {
+          "slug": "stolarstvo-interiery",
+          "label": "Stolárstvo a interiéry",
+          "blurb": "Web pre dielne na mieru"
+        },
+        {
+          "slug": "elektrikar",
+          "label": "Elektrikár",
+          "blurb": "Web pre elektroinštalácie"
+        },
+        {
+          "slug": "logistika-spedicia",
+          "label": "Logistika",
+          "blurb": "B2B web a dôvera"
+        }
+      ],
+      "final_title": "Postavme web, ktorý zvládne prvý dojem aj dopyt.",
+      "final_text": "Napíšte nám, aké práce robíte a čo na webe chýba.",
+      "process_intro": "Spolupráca prebieha priamo s Davidom a Tiborom — bez account managerov.",
+      "process": [
+        {
+          "t": "Úvodná konzultácia",
+          "d": "Prejdeme biznis, zákazníkov, súčasný stav a cieľ webu."
+        },
+        {
+          "t": "Rozsah a ponuka",
+          "d": "Navrhneme štruktúru, priority, harmonogram a individuálnu cenu."
+        },
+        {
+          "t": "Obsah a návrh",
+          "d": "Pripravíme osnovu, texty a vizuál podľa odvetvia."
+        },
+        {
+          "t": "Vývoj a spustenie",
+          "d": "Postavíme web, otestujeme zariadenia, formuláre, rýchlosť a SEO základ."
+        },
+        {
+          "t": "Podpora",
+          "d": "Po štarte vieme web udržiavať a rozvíjať."
+        }
+      ],
+      "layout": {
+        "hero_centered": true,
+        "show_audience": false,
+        "show_scenario": false,
+        "show_checklist": false,
+        "show_secondary_cta": false,
+        "show_process_steps": false,
+        "pricing_model": "packages",
+        "hide_depth_in_kicker": true
+      },
+      "packages": {
+        "intro": "Tri plány, žiadna viazanosť. Start a Profi s DPH; Individual podľa dohody.",
+        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "items": [
+          {
+            "id": "start",
+            "name": "Start",
+            "price": "39€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web + starostlivosť"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "v cene"
+              },
+              {
+                "label": "Ideálne pre",
+                "value": "malé firmy, ktoré chcú dôveryhodný web a dopyty"
+              }
+            ],
+            "cta": "Chcem Start"
+          },
+          {
+            "id": "profi",
+            "name": "Profi",
+            "price": "59€",
+            "period": "/mes",
+            "popular": true,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web + aktívny rast"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "v cene"
+              },
+              {
+                "label": "Rast",
+                "value": "Google profil, referencie, socials"
+              }
+            ],
+            "cta": "Chcem Profi"
+          },
+          {
+            "id": "individual",
+            "name": "Individual",
+            "custom": true,
+            "price_label": "Dohodou",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web na mieru"
+              },
+              {
+                "label": "Rozsah",
+                "value": "podľa dohody"
+              },
+              {
+                "label": "Ideálne pre",
+                "value": "firmy s viacerými službami alebo regiónmi"
+              }
+            ],
+            "cta": "Chcem Individual"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "zubna-ambulancia",
+      "name": "Zubná ambulancia",
+      "short_name": "Zubná ambulancia",
+      "cluster": "Zdravie a starostlivosť",
+      "depth": "standard",
+      "hub_blurb": "Web pre dentálnu prax: služby, hodiny, dôvera pacienta a jasná cesta k objednaniu.",
+      "title": "Tvorba webu pre zubnú ambulanciu | Beewoy",
+      "description": "Web pre zubnú ambulanciu: služby, ordinačné hodiny, dôvera a cesta k objednaniu. Start, Profi alebo Individual — Beewoy.",
+      "h1": "Web pre zubnú ambulanciu",
+      "hero_lead": "Pre majiteľov zubných ambulancií, ktorí chcú dôveryhodný web: jasné služby, hodiny, tím a jednoduché objednanie — bez marketingových fráz namiesto obsahu.",
+      "hero_proof": [
+        "Služby a tím",
+        "Objednanie",
+        "Lokálne SEO",
+        "Jednoduchá správa"
+      ],
+      "cta_primary": "Chcem web pre ambulanciu",
+      "cta_secondary": "",
+      "audience": "Pre majiteľov zubných ambulancií a dentálnych praxí, ktoré chcú pôsobiť dôveryhodne a zjednodušiť objednávanie.",
+      "problems_intro": "Dentálny web často zlyháva na základných informáciách, ktoré pacient potrebuje pred telefonátom.",
+      "problems": [
+        {
+          "t": "Služby a cenník sú nejasné",
+          "d": "Pacient nevie, čo ambulancia robí a čo má očakávať."
+        },
+        {
+          "t": "Nejasné objednanie",
+          "d": "Len telefón v pracovnej dobe nestačí každému."
+        },
+        {
+          "t": "Chýba tím",
+          "d": "Bez mien a tvárí klesá dôvera."
+        },
+        {
+          "t": "Obavy z údajov",
+          "d": "Formulár bez zmienky o ochrane údajov pôsobí neisto."
+        }
+      ],
+      "help_intro": "Web ambulancie má znížiť neistotu pacienta a priviesť ho k objednaniu.",
+      "help_points": [
+        {
+          "t": "Vysvetliť služby",
+          "d": "Zrozumiteľný jazyk, nie len odborné skratky.",
+          "icon": "list"
+        },
+        {
+          "t": "Ukázať ľudí",
+          "d": "Tím a kvalifikácie budujú dôveru pacienta.",
+          "icon": "users"
+        },
+        {
+          "t": "Uľahčiť objednanie",
+          "d": "Formulár alebo jasný telefonický CTA.",
+          "icon": "calendar"
+        },
+        {
+          "t": "Rešpektovať údaje",
+          "d": "Transparentný prístup k ochrane osobných údajov.",
+          "icon": "shield"
+        }
+      ],
+      "features_intro": "Funkcie pre dentálnu prax — nie gastro ani e-shop balík.",
+      "features": [
+        {
+          "t": "Katalóg služieb a zákrokov",
+          "d": "Srozumiteľne pre pacienta.",
+          "icon": "tooth"
+        },
+        {
+          "t": "Ordinačné hodiny",
+          "d": "Vrátane výnimiek a sviatkov.",
+          "icon": "clock"
+        },
+        {
+          "t": "Objednávkový formulár",
+          "d": "Alebo výrazný telefón.",
+          "icon": "calendar"
+        },
+        {
+          "t": "Tím a kvalifikácie",
+          "d": "Mená, fotky, zameranie.",
+          "icon": "users"
+        },
+        {
+          "t": "Orientačný cenník",
+          "d": "Ak ambulancia chce — férový a aktuálny.",
+          "icon": "tag"
+        },
+        {
+          "t": "GDPR informácie",
+          "d": "Jasný text pri formulári.",
+          "icon": "shield"
+        },
+        {
+          "t": "Prístupnosť a SEO",
+          "d": "Lokálna viditeľnosť a použiteľnosť.",
+          "icon": "search"
+        },
+        {
+          "t": "CMS",
+          "d": "Zmeny hodín a služieb bez vývojára.",
+          "icon": "edit"
+        }
+      ],
+      "scenario_title": "Cesta pacienta",
+      "scenario_intro": "Čo pacient typicky potrebuje nájsť:",
+      "scenario": [
+        "Overí služby a lokalitu.",
+        "Pozrie tím a hodiny.",
+        "Zváži objednanie online alebo telefonicky.",
+        "Odošle dopyt.",
+        "Ambulancia dostane čitateľný lead."
+      ],
+      "price_intro": "Cenu ovplyvňuje rozsah praxe a funkcie — nie mesačný balíček:",
+      "price_factors": [
+        "Počet podstránok",
+        "Objednávkový formulár",
+        "Fotky a tím",
+        "CMS",
+        "Viacjazyčnosť",
+        "Rozvoj"
+      ],
+      "proof_title": "Checklist webu zubnej ambulancie",
+      "proof_intro": "Pracujeme s odborným modelom webu. Interné koncepty neoznačujeme ako hotové klientske realizácie bez overenia.",
+      "checklist": [
+        "Služby",
+        "Hodiny a kontakt",
+        "Tím",
+        "Cesta k objednaniu",
+        "GDPR text",
+        "Mapa",
+        "SEO základ",
+        "CMS"
+      ],
+      "faq": [
+        {
+          "q": "Koľko stojí web?",
+          "a": "Máme plány Start od 39 € a Profi od 59 € s DPH, plus Individual podľa dohody. Vhodný plán prejdeme na nezáväznej konzultácii."
+        },
+        {
+          "q": "Ako dlho trvá dodávka?",
+          "a": "Pri pripravených podkladoch vieme dodať výrazne rýchlejšie — orientačne aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+        },
+        {
+          "q": "Objednávka online alebo telefón?",
+          "a": "Záleží od procesu ambulancie. Často funguje kombinácia: formulár + výrazný telefón."
+        },
+        {
+          "q": "GDPR vo formulári?",
+          "a": "Pripravíme zrozumiteľný súhlas a odkaz na ochranu údajov."
+        }
+      ],
+      "related": [
+        {
+          "slug": "rehabilitacne-centrum",
+          "label": "Rehabilitačné centrum",
+          "blurb": "Web pre rehab a fyzioterapiu — dôvera a objednávky."
+        },
+        {
+          "slug": "elektrikar",
+          "label": "Elektrikár",
+          "blurb": "Lokálny web s jasnou ponukou a rýchlym kontaktom."
+        },
+        {
+          "slug": "stolarstvo-interiery",
+          "label": "Stolárstvo",
+          "blurb": "Prezentácia zákaziek a dopytov pre remeslo."
+        }
+      ],
+      "final_title": "Web, ktorý pacientovi uľahčí rozhodnutie.",
+      "final_text": "Napíšte nám o ambulancii a súčasnom webe. Pripravíme nezáväzný pohľad na rozsah.",
+      "process": [
+        {
+          "t": "Úvodná konzultácia",
+          "d": "Prejdeme biznis, zákazníkov, súčasný stav a cieľ webu."
+        },
+        {
+          "t": "Rozsah a ponuka",
+          "d": "Navrhneme štruktúru, priority, harmonogram a individuálnu cenu."
+        },
+        {
+          "t": "Obsah a návrh",
+          "d": "Pripravíme osnovu, texty a vizuál podľa odvetvia."
+        },
+        {
+          "t": "Vývoj a spustenie",
+          "d": "Postavíme web, otestujeme formuláre, rýchlosť a SEO základ."
+        },
+        {
+          "t": "Podpora",
+          "d": "Po štarte vieme web udržiavať a rozvíjať."
+        }
+      ],
+      "process_intro": "Spolupráca prebieha priamo s Davidom a Tiborom — bez account managerov.",
+      "problems_title": "Čo na webe ambulancie najčastejšie chýba",
+      "help_title": "Čo web vyrieši",
+      "features_title": "Funkcie pre dentálnu prax",
+      "layout": {
+        "hero_centered": true,
+        "show_audience": false,
+        "show_scenario": false,
+        "show_checklist": false,
+        "show_secondary_cta": false,
+        "show_process_steps": false,
+        "pricing_model": "packages",
+        "hide_depth_in_kicker": true
+      },
+      "packages": {
+        "intro": "Tri plány, žiadna viazanosť. Start a Profi s DPH; Individual podľa dohody.",
+        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "items": [
+          {
+            "id": "start",
+            "name": "Start",
+            "price": "39€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web + starostlivosť"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "v cene"
+              },
+              {
+                "label": "Ideálne pre",
+                "value": "ambulancie, ktoré chcú jasný a spoľahlivý web"
+              }
+            ],
+            "cta": "Chcem Start"
+          },
+          {
+            "id": "profi",
+            "name": "Profi",
+            "price": "59€",
+            "period": "/mes",
+            "popular": true,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web + aktívny rast"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "v cene"
+              },
+              {
+                "label": "Rast",
+                "value": "Google profil, recenzie, socials"
+              }
+            ],
+            "cta": "Chcem Profi"
+          },
+          {
+            "id": "individual",
+            "name": "Individual",
+            "custom": true,
+            "price_label": "Dohodou",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web na mieru"
+              },
+              {
+                "label": "Rozsah",
+                "value": "podľa dohody"
+              },
+              {
+                "label": "Ideálne pre",
+                "value": "ambulancie so špecifickými požiadavkami"
+              }
+            ],
+            "cta": "Chcem Individual"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "rehabilitacne-centrum",
+      "name": "Rehabilitačné a fyzioterapeutické centrum",
+      "short_name": "Rehabilitačné centrum",
+      "cluster": "Zdravie a starostlivosť",
+      "depth": "standard",
+      "hub_blurb": "Špecializácie, tím terapeutov, objednanie a prístupný web pre rehabilitáciu a fyzioterapiu.",
+      "title": "Web pre rehabilitačné a fyzioterapeutické centrum | Beewoy",
+      "description": "Web pre rehabilitáciu a fyzioterapiu: špecializácie, tím, hodiny a jasné objednanie. Start, Profi alebo Individual — Beewoy.",
+      "h1": "Web pre rehabilitačné a fyzioterapeutické centrum",
+      "hero_lead": "Pacient potrebuje pochopiť špecializácie, nájsť terapeuta a vedieť, ako sa objednať. Navrhneme web, ktorý je zrozumiteľný a prístupný — nie tenký one-pager s generickými frázami.",
+      "hero_proof": [
+        "Špecializácie",
+        "Tím",
+        "Prístupnosť",
+        "Jasná cena"
+      ],
+      "cta_primary": "Chcem web pre rehabilitačné centrum",
+      "cta_secondary": "",
+      "audience": "Pre majiteľov rehabilitačných centier a fyzioterapeutických praxí, ktoré chcú jasnejšie komunikovať ponuku a uľahčiť objednanie.",
+      "problems_intro": "Rehab a fyzio weby často skrývajú to najdôležitejšie: kto pomáha, s čím a ako sa dostať na termín.",
+      "problems": [
+        {
+          "t": "Nejasné špecializácie",
+          "d": "Pacient nevie, či riešite jeho typ ťažkostí."
+        },
+        {
+          "t": "Chýba tím",
+          "d": "Bez terapeutov klesá dôvera."
+        },
+        {
+          "t": "Skryté hodiny",
+          "d": "Kontakt a dostupnosť nie sú na očiach."
+        },
+        {
+          "t": "Slabá prístupnosť",
+          "d": "Web, ktorý je ťažko použiť, odrazí práve tých, ktorí pomoc potrebujú."
+        }
+      ],
+      "help_intro": "Web má spojiť správneho pacienta so správnou starostlivosťou — a znížiť trením pri objednaní.",
+      "help_points": [
+        {
+          "t": "Mapovať terapie",
+          "d": "Prehľad špecializácií.",
+          "icon": "activity"
+        },
+        {
+          "t": "Predstaviť ľudí",
+          "d": "Tím a zameranie.",
+          "icon": "users"
+        },
+        {
+          "t": "Uľahčiť objednanie",
+          "d": "Formulár alebo telefón.",
+          "icon": "calendar"
+        },
+        {
+          "t": "Zvýšiť použiteľnosť",
+          "d": "Prístupnosť ako súčasť návrhu.",
+          "icon": "eye"
+        }
+      ],
+      "features_intro": "Funkcie pre terapeutickú prax — nie fitness členstvo ani e-shop.",
+      "features": [
+        {
+          "t": "Špecializácie a typy terapie",
+          "d": "Jasná navigácia.",
+          "icon": "activity"
+        },
+        {
+          "t": "Tím terapeutov",
+          "d": "Foto a zameranie.",
+          "icon": "users"
+        },
+        {
+          "t": "Ordinačné hodiny",
+          "d": "Aktuálne a viditeľné.",
+          "icon": "clock"
+        },
+        {
+          "t": "Objednávkový formulár",
+          "d": "Alebo silný telefonický CTA.",
+          "icon": "calendar"
+        },
+        {
+          "t": "Prístupnosť webu",
+          "d": "Kontrast, klávesnica, sémantika.",
+          "icon": "eye"
+        },
+        {
+          "t": "Mapa a kontakt",
+          "d": "Vrátane praktických info.",
+          "icon": "map"
+        },
+        {
+          "t": "GDPR",
+          "d": "Citlivý zber údajov.",
+          "icon": "shield"
+        },
+        {
+          "t": "CMS",
+          "d": "Zmeny hodín a tímu.",
+          "icon": "edit"
+        }
+      ],
+      "scenario_title": "Cesta pacienta",
+      "scenario_intro": "Typický priebeh pred objednaním:",
+      "scenario": [
+        "Hľadá konkrétnu terapiu alebo rehabilitáciu.",
+        "Overí tím a lokalitu.",
+        "Skontroluje hodiny.",
+        "Objedná sa formulárom alebo telefónom.",
+        "Centrum dostane zrozumiteľný dopyt."
+      ],
+      "price_intro": "Individuálna cena podľa rozsahu — bez mesačných balíčkov:",
+      "price_factors": [
+        "Počet terapií",
+        "Tím",
+        "Formulár",
+        "Prístupnosť",
+        "CMS",
+        "Rozvoj"
+      ],
+      "proof_title": "Checklist webu pre rehabilitáciu a fyzioterapiu",
+      "proof_intro": "Nepoužívame neoverené mená klientov ani projekty označené ako nevhodné na publikáciu. Stačí odborný model webu a checklist.",
+      "checklist": [
+        "Špecializácie",
+        "Tím",
+        "Hodiny",
+        "Objednanie",
+        "Prístupnosť",
+        "GDPR",
+        "Mapa",
+        "SEO základ"
+      ],
+      "faq": [
+        {
+          "q": "Koľko stojí web?",
+          "a": "Máme plány Start od 39 € a Profi od 59 € s DPH, plus Individual podľa dohody. Vhodný plán prejdeme na nezáväznej konzultácii."
+        },
+        {
+          "q": "Ako dlho trvá dodávka?",
+          "a": "Pri pripravených podkladoch vieme dodať výrazne rýchlejšie — orientačne aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+        },
+        {
+          "q": "Formulár alebo telefón?",
+          "a": "Záleží od procesu. Často funguje kombinácia: formulár + výrazný telefón."
+        },
+        {
+          "q": "Čo znamená prístupnosť?",
+          "a": "Web, ktorý sa ľahko číta a ovláda — aj na mobile a s asistenčnými technológiami."
+        }
+      ],
+      "related": [
+        {
+          "slug": "zubna-ambulancia",
+          "label": "Zubná ambulancia",
+          "blurb": "Web pre dentálnu prax"
+        },
+        {
+          "slug": "elektrikar",
+          "label": "Elektrikár",
+          "blurb": "Iný odvetvový model"
+        },
+        {
+          "slug": "stavebna-firma",
+          "label": "Stavebná firma",
+          "blurb": "Dôvera a dopyty"
+        }
+      ],
+      "final_title": "Prístupný web, ktorý pomôže k objednaniu.",
+      "final_text": "Napíšte nám o centre a tom, čo pacienti dnes na webe nedokážu nájsť.",
+      "process": [
+        {
+          "t": "Úvodná konzultácia",
+          "d": "Prejdeme biznis, zákazníkov, súčasný stav a cieľ webu."
+        },
+        {
+          "t": "Rozsah a ponuka",
+          "d": "Navrhneme štruktúru, priority, harmonogram a individuálnu cenu."
+        },
+        {
+          "t": "Obsah a návrh",
+          "d": "Pripravíme osnovu, texty a vizuál podľa odvetvia."
+        },
+        {
+          "t": "Vývoj a spustenie",
+          "d": "Postavíme web, otestujeme formuláre, rýchlosť a SEO základ."
+        },
+        {
+          "t": "Podpora",
+          "d": "Po štarte vieme web udržiavať a rozvíjať."
+        }
+      ],
+      "process_intro": "Spolupráca prebieha priamo s Davidom a Tiborom — bez account managerov.",
+      "layout": {
+        "hero_centered": true,
+        "show_audience": false,
+        "show_scenario": false,
+        "show_checklist": false,
+        "show_secondary_cta": false,
+        "show_process_steps": false,
+        "pricing_model": "packages",
+        "hide_depth_in_kicker": true
+      },
+      "packages": {
+        "intro": "Tri plány, žiadna viazanosť. Start a Profi s DPH; Individual podľa dohody.",
+        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "items": [
+          {
+            "id": "start",
+            "name": "Start",
+            "price": "39€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web + starostlivosť"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "v cene"
+              },
+              {
+                "label": "Ideálne pre",
+                "value": "centrá, ktoré chcú jasný a prístupný web"
+              }
+            ],
+            "cta": "Chcem Start"
+          },
+          {
+            "id": "profi",
+            "name": "Profi",
+            "price": "59€",
+            "period": "/mes",
+            "popular": true,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web + aktívny rast"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "v cene"
+              },
+              {
+                "label": "Rast",
+                "value": "Google profil, recenzie, socials"
+              }
+            ],
+            "cta": "Chcem Profi"
+          },
+          {
+            "id": "individual",
+            "name": "Individual",
+            "custom": true,
+            "price_label": "Dohodou",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web na mieru"
+              },
+              {
+                "label": "Rozsah",
+                "value": "podľa dohody"
+              },
+              {
+                "label": "Ideálne pre",
+                "value": "väčšie centrá alebo viac špecializácií"
+              }
+            ],
+            "cta": "Chcem Individual"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "restauracia",
+      "name": "Reštaurácia",
+      "short_name": "Reštaurácia",
+      "cluster": "Gastro a ubytovanie",
+      "depth": "standard",
+      "hub_blurb": "Aktuálne menu, otváracie hodiny, rezervácia a atmosféra prevádzky na jednom mieste.",
+      "title": "Tvorba webu pre reštauráciu | Beewoy",
+      "description": "Web pre reštauráciu: aktuálne menu, otváracie hodiny, rezervácia a atmosféra prevádzky. Start, Profi alebo Individual — Beewoy.",
+      "h1": "Web pre reštauráciu",
+      "hero_lead": "Hostia rozhodujú skôr, než prekročia prah: menu, hodiny, rezervácia a dojem z prevádzky. Navrhneme web, ktorý tieto informácie udrží aktuálne a zrozumiteľné — oddelený od kaviarne či cukrárne.",
+      "hero_proof": [
+        "Menu a CMS",
+        "Rezervácia",
+        "Lokálne SEO",
+        "Jasná cena"
+      ],
+      "cta_primary": "Chcem web pre reštauráciu",
+      "cta_secondary": "",
+      "audience": "Pre majiteľov reštaurácií so stolovaním a rezerváciami — nie primárne pre kaviareň, cukráreň alebo čistý take-away.",
+      "problems_intro": "Gastro web zlyháva, keď hostia nedôverujú aktuálnosti alebo nevedia rezervovať stôl.",
+      "problems": [
+        {
+          "t": "Neaktuálne menu",
+          "d": "PDF staré mesiace odrazí viac než pomôže."
+        },
+        {
+          "t": "Hodiny nesedia",
+          "d": "Rozdiel medzi webom a Google kazí dôveru."
+        },
+        {
+          "t": "Rezervácia je nejasná",
+          "d": "Len Instagram stories nestačí."
+        },
+        {
+          "t": "Chýba atmosféra",
+          "d": "Bez fotiek interiéru a jedál je ťažké rozhodnúť sa."
+        }
+      ],
+      "help_intro": "Web reštaurácie má pripraviť návštevu: informovať, zaujať a uľahčiť rezerváciu.",
+      "help_points": [
+        {
+          "t": "Udržať menu živé",
+          "d": "CMS namiesto večných PDF.",
+          "icon": "utensils"
+        },
+        {
+          "t": "Zjednodušiť rezerváciu",
+          "d": "Formulár alebo dohodnutá integrácia.",
+          "icon": "calendar"
+        },
+        {
+          "t": "Ukázovať prevádzku",
+          "d": "Fotky jedál a interiéru.",
+          "icon": "image"
+        },
+        {
+          "t": "Lokálna viditeľnosť",
+          "d": "SEO a mapa.",
+          "icon": "search"
+        }
+      ],
+      "features_intro": "Funkcie pre reštauráciu — nie dentálne objednávky ani fleet logistiky.",
+      "features": [
+        {
+          "t": "Menu / denná ponuka",
+          "d": "HTML menu + CMS.",
+          "icon": "utensils"
+        },
+        {
+          "t": "Otváracie hodiny",
+          "d": "Viditeľné above the fold.",
+          "icon": "clock"
+        },
+        {
+          "t": "Rezervácia stola",
+          "d": "Formulár (osoby, dátum, čas).",
+          "icon": "calendar"
+        },
+        {
+          "t": "Galéria",
+          "d": "Interiér a jedlá.",
+          "icon": "image"
+        },
+        {
+          "t": "Mapa a kontakt",
+          "d": "Jednoduché navigovanie.",
+          "icon": "map"
+        },
+        {
+          "t": "Lokálne SEO",
+          "d": "Technický základ.",
+          "icon": "search"
+        },
+        {
+          "t": "Viacjazyčnosť",
+          "d": "Ak to dáva zmysel (SK/EN).",
+          "icon": "globe"
+        },
+        {
+          "t": "Rýchlosť fotiek",
+          "d": "Aby sa web nenačítaval večnosť.",
+          "icon": "gauge"
+        }
+      ],
+      "scenario_title": "Cesta hosťa",
+      "scenario_intro": "Pred rezerváciou hostia typicky:",
+      "scenario": [
+        "Skontrolujú hodiny.",
+        "Pozrú menu.",
+        "Pozrú fotky.",
+        "Rezervujú stôl.",
+        "Prídu pripravení."
+      ],
+      "price_intro": "Cenu ovplyvňuje frekvencia zmien a funkcie:",
+      "price_factors": [
+        "Jazyky",
+        "Frekvencia menu",
+        "Rezervácia",
+        "Galéria",
+        "Migrácia",
+        "Rozvoj"
+      ],
+      "proof_title": "Checklist webu reštaurácie",
+      "proof_intro": "Nepoužívame nesúvisiace demá ako „reštauračnú referenciu“. Stačí jasný model prevádzkového webu.",
+      "checklist": [
+        "Aktuálne menu",
+        "Hodiny",
+        "Rezervácia",
+        "Galéria",
+        "Mapa",
+        "CMS",
+        "SEO",
+        "Mobil"
+      ],
+      "faq": [
+        {
+          "q": "Koľko stojí web?",
+          "a": "Máme plány Start od 39 € a Profi od 59 € s DPH, plus Individual podľa dohody. Vhodný plán prejdeme na nezáväznej konzultácii."
+        },
+        {
+          "q": "Ako dlho trvá dodávka?",
+          "a": "Pri pripravených podkladoch vieme dodať výrazne rýchlejšie — orientačne aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+        },
+        {
+          "q": "Online menu alebo PDF?",
+          "a": "Odporúčame editovateľné menu v CMS — PDF rýchlo zastaráva."
+        },
+        {
+          "q": "Viem si meniť menu sám?",
+          "a": "Áno. CMS nastavíme tak, aby ste vedeli meniť dennú a sezónnu ponuku."
+        }
+      ],
+      "related": [
+        {
+          "slug": "stolarstvo-interiery",
+          "label": "Stolárstvo",
+          "blurb": "Iný odvetvový prístup"
+        },
+        {
+          "slug": "logistika-spedicia",
+          "label": "Logistika",
+          "blurb": "B2B odvetvová stránka"
+        },
+        {
+          "slug": "zubna-ambulancia",
+          "label": "Zubná ambulancia",
+          "blurb": "Objednávanie a dôvera"
+        }
+      ],
+      "final_title": "Web, ktorý hostí pripraví na návštevu.",
+      "final_text": "Napíšte nám o prevádzke a tom, čo dnes na webe hosťom chýba.",
+      "process": [
+        {
+          "t": "Úvodná konzultácia",
+          "d": "Prejdeme biznis, zákazníkov, súčasný stav a cieľ webu."
+        },
+        {
+          "t": "Rozsah a ponuka",
+          "d": "Navrhneme štruktúru, priority, harmonogram a individuálnu cenu."
+        },
+        {
+          "t": "Obsah a návrh",
+          "d": "Pripravíme osnovu, texty a vizuál podľa odvetvia."
+        },
+        {
+          "t": "Vývoj a spustenie",
+          "d": "Postavíme web, otestujeme formuláre, rýchlosť a SEO základ."
+        },
+        {
+          "t": "Podpora",
+          "d": "Po štarte vieme web udržiavať a rozvíjať."
+        }
+      ],
+      "process_intro": "Spolupráca prebieha priamo s Davidom a Tiborom — bez account managerov.",
+      "layout": {
+        "hero_centered": true,
+        "show_audience": false,
+        "show_scenario": false,
+        "show_checklist": false,
+        "show_secondary_cta": false,
+        "show_process_steps": false,
+        "pricing_model": "packages",
+        "hide_depth_in_kicker": true
+      },
+      "packages": {
+        "intro": "Tri plány, žiadna viazanosť. Start a Profi s DPH; Individual podľa dohody.",
+        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "items": [
+          {
+            "id": "start",
+            "name": "Start",
+            "price": "39€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web + starostlivosť"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "v cene"
+              },
+              {
+                "label": "Ideálne pre",
+                "value": "prevádzky, ktoré chcú aktuálne menu a rezervácie"
+              }
+            ],
+            "cta": "Chcem Start"
+          },
+          {
+            "id": "profi",
+            "name": "Profi",
+            "price": "59€",
+            "period": "/mes",
+            "popular": true,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web + aktívny rast"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "v cene"
+              },
+              {
+                "label": "Rast",
+                "value": "Google profil, recenzie, socials"
+              }
+            ],
+            "cta": "Chcem Profi"
+          },
+          {
+            "id": "individual",
+            "name": "Individual",
+            "custom": true,
+            "price_label": "Dohodou",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web na mieru"
+              },
+              {
+                "label": "Rozsah",
+                "value": "podľa dohody"
+              },
+              {
+                "label": "Ideálne pre",
+                "value": "reštaurácie s vlastným rezervačným alebo multilingual setupom"
+              }
+            ],
+            "cta": "Chcem Individual"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "logistika-spedicia",
+      "name": "Logistika a spedícia",
+      "short_name": "Logistická firma",
+      "cluster": "Doprava a technické služby",
+      "depth": "standard",
+      "hub_blurb": "B2B web pre logistiku a spedíciu: služby, kapacity, dôvera a štruktúrovaný dopyt.",
+      "title": "Tvorba webu pre logistiku a spedíciu | Beewoy",
+      "description": "B2B web pre logistickú a spedičnú firmu: služby, kapacity, dôvera a jasný dopyt. Start, Profi alebo Individual — Beewoy.",
+      "h1": "Web pre logistiku a spedíciu",
+      "hero_lead": "V logistike rozhoduje dojem spoľahlivosti. Navrhneme B2B web, ktorý komunikuje služby, pokrytie a cestu k dopytu — seriózne, bez reklamného balastu a bez falošných metrík.",
+      "hero_proof": [
+        "B2B štruktúra",
+        "Formulár dopytu",
+        "Trust prvky",
+        "Jasná cena"
+      ],
+      "cta_primary": "Chcem B2B web pre logistiku",
+      "cta_secondary": "",
+      "audience": "Pre majiteľov logistických a spedičných firiem, ktoré oslovujú B2B zákazníkov na Slovensku aj v rámci EÚ.",
+      "problems_intro": "Spedičný web často vyzerá ako vizitka z minulého desaťročia — a stráca dôveru ešte pred ponukou.",
+      "problems": [
+        {
+          "t": "Slabý B2B dojem",
+          "d": "Marketingový tone namiesto faktov."
+        },
+        {
+          "t": "Nejasné služby a trasy",
+          "d": "Zákazník nevie, čo viete previezť a kam."
+        },
+        {
+          "t": "Chýbajú kapacity",
+          "d": "Fleet a možnosti nie sú komunikované."
+        },
+        {
+          "t": "Náštruktúrovaný dopyt",
+          "d": "E-mail bez polí = nekvalitné leady."
+        }
+      ],
+      "help_intro": "B2B web má skrátiť cestu od prvého dojmu k kvalifikovanému dopytu.",
+      "help_points": [
+        {
+          "t": "Vyjasniť ponuku",
+          "d": "Typy prepráv a pokrytie.",
+          "icon": "list"
+        },
+        {
+          "t": "Ukázovať spoľahlivosť",
+          "d": "Certifikácie a fakty — nie vymyslené čísla.",
+          "icon": "shield"
+        },
+        {
+          "t": "Získať lepšie leady",
+          "d": "Formulár s typom nákladu a trasou.",
+          "icon": "edit"
+        },
+        {
+          "t": "Pôsobiť seriózne",
+          "d": "Jazyk a štruktúra pre rozhodovateľov.",
+          "icon": "building"
+        }
+      ],
+      "features_intro": "Funkcie pre spedíciu — nie menu reštaurácie ani dentálne objednávky.",
+      "features": [
+        {
+          "t": "Služby a typy prepráv",
+          "d": "Jasná B2B ponuka.",
+          "icon": "truck"
+        },
+        {
+          "t": "Trasy a pokrytie",
+          "d": "SK / región / EÚ.",
+          "icon": "route"
+        },
+        {
+          "t": "Fleet alebo kapacity",
+          "d": "Orientačne, bez citlivých dát.",
+          "icon": "truck"
+        },
+        {
+          "t": "Certifikácie",
+          "d": "Len s právom na použitie log.",
+          "icon": "shield"
+        },
+        {
+          "t": "B2B formulár dopytu",
+          "d": "Náklad, trasa, termín, kontakt.",
+          "icon": "edit"
+        },
+        {
+          "t": "SK / EN",
+          "d": "Ak pracujete medzinárodne.",
+          "icon": "globe"
+        },
+        {
+          "t": "CMS a SEO",
+          "d": "Aktualizácie a technický základ.",
+          "icon": "search"
+        }
+      ],
+      "scenario_title": "Cesta B2B rozhodovateľa",
+      "scenario_intro": "Ako môže vyzerať prvý kontakt:",
+      "scenario": [
+        "Overí, či firmá vôbec robí daný typ prepravy.",
+        "Skontroluje pokrytie a dôveru.",
+        "Vyplní formulár s parametrami nákladu.",
+        "Vy dostanete použiteľný dopyt.",
+        "Nasleduje ponuka mimo webu."
+      ],
+      "price_intro": "Cenu ovplyvňuje najmä B2B rozsah:",
+      "price_factors": [
+        "EN verzia",
+        "Počet služieb",
+        "Formulár",
+        "CMS",
+        "Redizajn vs nový",
+        "Rozvoj"
+      ],
+      "proof_title": "Checklist B2B webu pre logistiku",
+      "proof_intro": "Nepoužívame projekty označené ako nevhodné na publikáciu. Dôkazom je odborná štruktúra a jasný proces dopytu.",
+      "checklist": [
+        "Služby",
+        "Pokrytie",
+        "Kapacity",
+        "Certifikácie",
+        "B2B formulár",
+        "Kontakt",
+        "SEO",
+        "Voliteľne EN"
+      ],
+      "faq": [
+        {
+          "q": "Koľko stojí web?",
+          "a": "Máme plány Start od 39 € a Profi od 59 € s DPH, plus Individual podľa dohody. Vhodný plán prejdeme na nezáväznej konzultácii."
+        },
+        {
+          "q": "Ako dlho trvá dodávka?",
+          "a": "Pri pripravených podkladoch vieme dodať výrazne rýchlejšie — orientačne aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+        },
+        {
+          "q": "Ako nastaviť formulár?",
+          "a": "Polia pre typ nákladu, trasu a kontakt — aby ste dostávali použiteľné leady, nie prázdne e-maily."
+        },
+        {
+          "q": "B2B vs B2C messaging?",
+          "a": "Pre spedíciu držíme B2B tón: fakty, kapacity, pokrytie — nie marketingové frázy."
+        }
+      ],
+      "related": [
+        {
+          "slug": "stavebna-firma",
+          "label": "Stavebná firma",
+          "blurb": "Dôvera a dopyty"
+        },
+        {
+          "slug": "elektrikar",
+          "label": "Elektrikár",
+          "blurb": "Remeselný lokálny web"
+        },
+        {
+          "slug": "restauracia",
+          "label": "Reštaurácia",
+          "blurb": "Iný odvetvový model"
+        }
+      ],
+      "final_title": "B2B web, ktorý unesie prvý dojem aj dopyt.",
+      "final_text": "Napíšte nám o službách a pokrytí. Pripravíme nezáväzný pohľad na rozsah.",
+      "process": [
+        {
+          "t": "Úvodná konzultácia",
+          "d": "Prejdeme biznis, zákazníkov, súčasný stav a cieľ webu."
+        },
+        {
+          "t": "Rozsah a ponuka",
+          "d": "Navrhneme štruktúru, priority, harmonogram a individuálnu cenu."
+        },
+        {
+          "t": "Obsah a návrh",
+          "d": "Pripravíme osnovu, texty a vizuál podľa odvetvia."
+        },
+        {
+          "t": "Vývoj a spustenie",
+          "d": "Postavíme web, otestujeme formuláre, rýchlosť a SEO základ."
+        },
+        {
+          "t": "Podpora",
+          "d": "Po štarte vieme web udržiavať a rozvíjať."
+        }
+      ],
+      "process_intro": "Spolupráca prebieha priamo s Davidom a Tiborom — bez account managerov.",
+      "layout": {
+        "hero_centered": true,
+        "show_audience": false,
+        "show_scenario": false,
+        "show_checklist": false,
+        "show_secondary_cta": false,
+        "show_process_steps": false,
+        "pricing_model": "packages",
+        "hide_depth_in_kicker": true
+      },
+      "packages": {
+        "intro": "Tri plány, žiadna viazanosť. Start a Profi s DPH; Individual podľa dohody.",
+        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "items": [
+          {
+            "id": "start",
+            "name": "Start",
+            "price": "39€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web + starostlivosť"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "v cene"
+              },
+              {
+                "label": "Ideálne pre",
+                "value": "firmy, ktoré chcú seriózny B2B web a dopyty"
+              }
+            ],
+            "cta": "Chcem Start"
+          },
+          {
+            "id": "profi",
+            "name": "Profi",
+            "price": "59€",
+            "period": "/mes",
+            "popular": true,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web + aktívny rast"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "v cene"
+              },
+              {
+                "label": "Rast",
+                "value": "Google profil, LinkedIn, socials"
+              }
+            ],
+            "cta": "Chcem Profi"
+          },
+          {
+            "id": "individual",
+            "name": "Individual",
+            "custom": true,
+            "price_label": "Dohodou",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web na mieru"
+              },
+              {
+                "label": "Rozsah",
+                "value": "podľa dohody"
+              },
+              {
+                "label": "Ideálne pre",
+                "value": "firmy s viacerými službami, jazykmi alebo integráciami"
+              }
+            ],
+            "cta": "Chcem Individual"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "elektrikar",
+      "name": "Elektrikár",
+      "short_name": "Elektrikár",
+      "cluster": "Remeslá a stavebníctvo",
+      "depth": "standard",
+      "hub_blurb": "Web pre elektrikára: služby, oprávnenia, región a jasný lokálny dopyt — aj bez case study.",
+      "title": "Tvorba webu pre elektrikára | Beewoy",
+      "description": "Web pre elektrikára a elektroinštalácie: služby, oprávnenia, región a jasný dopyt. Start, Profi alebo Individual — Beewoy.",
+      "h1": "Web pre elektrikára",
+      "hero_lead": "Zákazník chce vedieť, či ste dostupní, oprávnení a či pôsobíte v jeho regióne. Navrhneme web elektrikára, ktorý tieto otázky zodpovie — aj keď ešte nemáte veľké portfólio referencií.",
+      "hero_proof": [
+        "Oprávnenia",
+        "Región",
+        "Lokálne dopyty",
+        "Jasná cena"
+      ],
+      "cta_primary": "Chcem web pre elektrikára",
+      "cta_secondary": "",
+      "audience": "Pre elektrikárov a malé elektroinštalačné firmy, ktoré obsluhujú domácnosti aj menšie firmy.",
+      "problems_intro": "Remeselný web často neexistuje — alebo nevyzerá dôveryhodne práve vtedy, keď zákazník potrebuje rýchlu istotu.",
+      "problems": [
+        {
+          "t": "Neoveriteľné oprávnenia",
+          "d": "Zákazník nevie, či ste kvalifikovaní."
+        },
+        {
+          "t": "Nejasný rozsah",
+          "d": "Dom, byt, firma — čo vlastne robíte?"
+        },
+        {
+          "t": "Nedostupný kontakt",
+          "d": "Nonstop alebo bežný čas nie je komunikovaný."
+        },
+        {
+          "t": "Chýba región",
+          "d": "Lokálne dopyty odchádzajú konkurencii."
+        }
+      ],
+      "help_intro": "Web elektrikára má získať lokálny dopyt a potvrdiť, že ste spoľahlivá voľba.",
+      "help_points": [
+        {
+          "t": "Vyjasniť služby",
+          "d": "Dom / byt / firma.",
+          "icon": "list"
+        },
+        {
+          "t": "Ukázovať oprávnenia",
+          "d": "Stručne a zrozumiteľne.",
+          "icon": "shield"
+        },
+        {
+          "t": "Byť dostupný",
+          "d": "Telefón a formulár.",
+          "icon": "phone"
+        },
+        {
+          "t": "Zacieliť región",
+          "d": "Lokálne SEO základy.",
+          "icon": "map"
+        }
+      ],
+      "features_intro": "Funkcie pre remeslo — nie e-shop ani gastro rezervácie.",
+      "features": [
+        {
+          "t": "Služby (dom / byt / firma)",
+          "d": "Jasná ponuka.",
+          "icon": "zap"
+        },
+        {
+          "t": "Certifikácie a oprávnenia",
+          "d": "Budovanie dôvery.",
+          "icon": "shield"
+        },
+        {
+          "t": "Nonstop / havarijný kontakt",
+          "d": "Ak ho reálne poskytujete.",
+          "icon": "phone"
+        },
+        {
+          "t": "Región pôsobenia",
+          "d": "Kde jazdíte.",
+          "icon": "map"
+        },
+        {
+          "t": "Formulár dopytu",
+          "d": "Typ práce, mesto, termín.",
+          "icon": "edit"
+        },
+        {
+          "t": "Mobil first",
+          "d": "Havárie sa riešia z telefónu.",
+          "icon": "smartphone"
+        },
+        {
+          "t": "Priestor na recenzie",
+          "d": "Keď ich klient dodá.",
+          "icon": "star"
+        },
+        {
+          "t": "CMS a SEO",
+          "d": "Aktualizácie a viditeľnosť.",
+          "icon": "search"
+        }
+      ],
+      "scenario_title": "Cesta zákazníka",
+      "scenario_intro": "Typický priebeh pred dopytom:",
+      "scenario": [
+        "Hľadá elektrikára v regióne.",
+        "Overí služby a oprávnenia.",
+        "Zavolá alebo napíše.",
+        "Vy dostanete lokálny dopyt.",
+        "Dohodnete výjazd."
+      ],
+      "price_intro": "Individuálna cena podľa rozsahu — bez balíčkov:",
+      "price_factors": [
+        "Počet strán",
+        "Galéria",
+        "CMS",
+        "Lokálne texty",
+        "Migrácia",
+        "Rozvoj"
+      ],
+      "proof_title": "Typická štruktúra webu elektrikára",
+      "proof_intro": "Táto stránka nepotrebuje case study na publikáciu. Namiesto fiktívnych referencií ukazujeme odborný model webu.",
+      "checklist": [
+        "Domov s jasnou ponukou",
+        "Služby",
+        "Oprávnenia",
+        "Región",
+        "Kontakt / nonstop",
+        "Formulár",
+        "SEO základ",
+        "Mobil"
+      ],
+      "faq": [
+        {
+          "q": "Koľko stojí web?",
+          "a": "Máme plány Start od 39 € a Profi od 59 € s DPH, plus Individual podľa dohody. Vhodný plán prejdeme na nezáväznej konzultácii."
+        },
+        {
+          "q": "Ako dlho trvá dodávka?",
+          "a": "Pri pripravených podkladoch vieme dodať výrazne rýchlejšie — orientačne aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+        },
+        {
+          "q": "Lokálne SEO?",
+          "a": "Áno — technický základ a lokálny obsah, aby vás našli ľudia v regióne."
+        },
+        {
+          "q": "Ako uviesť certifikácie?",
+          "a": "Stručne a zrozumiteľne na webe — nie len v šuflíku."
+        }
+      ],
+      "related": [
+        {
+          "slug": "stavebna-firma",
+          "label": "Stavebná firma",
+          "blurb": "Web pre stavebné firmy"
+        },
+        {
+          "slug": "stolarstvo-interiery",
+          "label": "Stolárstvo",
+          "blurb": "Remeslo a galéria"
+        },
+        {
+          "slug": "logistika-spedicia",
+          "label": "Logistika",
+          "blurb": "B2B odvetvový web"
+        }
+      ],
+      "final_title": "Jednoduchý web, ktorý privedie lokálne dopyty.",
+      "final_text": "Napíšte nám región a typ prác. Pripravíme nezáväzný pohľad na rozsah.",
+      "process": [
+        {
+          "t": "Úvodná konzultácia",
+          "d": "Prejdeme biznis, zákazníkov, súčasný stav a cieľ webu."
+        },
+        {
+          "t": "Rozsah a ponuka",
+          "d": "Navrhneme štruktúru, priority, harmonogram a individuálnu cenu."
+        },
+        {
+          "t": "Obsah a návrh",
+          "d": "Pripravíme osnovu, texty a vizuál podľa odvetvia."
+        },
+        {
+          "t": "Vývoj a spustenie",
+          "d": "Postavíme web, otestujeme formuláre, rýchlosť a SEO základ."
+        },
+        {
+          "t": "Podpora",
+          "d": "Po štarte vieme web udržiavať a rozvíjať."
+        }
+      ],
+      "process_intro": "Spolupráca prebieha priamo s Davidom a Tiborom — bez account managerov.",
+      "layout": {
+        "hero_centered": true,
+        "show_audience": false,
+        "show_scenario": false,
+        "show_checklist": false,
+        "show_secondary_cta": false,
+        "show_process_steps": false,
+        "pricing_model": "packages",
+        "hide_depth_in_kicker": true
+      },
+      "packages": {
+        "intro": "Tri plány, žiadna viazanosť. Start a Profi s DPH; Individual podľa dohody.",
+        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "items": [
+          {
+            "id": "start",
+            "name": "Start",
+            "price": "39€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web + starostlivosť"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "v cene"
+              },
+              {
+                "label": "Ideálne pre",
+                "value": "remeselníkov, ktorí chcú lokálne dopyty"
+              }
+            ],
+            "cta": "Chcem Start"
+          },
+          {
+            "id": "profi",
+            "name": "Profi",
+            "price": "59€",
+            "period": "/mes",
+            "popular": true,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web + aktívny rast"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "v cene"
+              },
+              {
+                "label": "Rast",
+                "value": "Google profil, recenzie, socials"
+              }
+            ],
+            "cta": "Chcem Profi"
+          },
+          {
+            "id": "individual",
+            "name": "Individual",
+            "custom": true,
+            "price_label": "Dohodou",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web na mieru"
+              },
+              {
+                "label": "Rozsah",
+                "value": "podľa dohody"
+              },
+              {
+                "label": "Ideálne pre",
+                "value": "firmy s viacerými službami alebo regiónmi"
+              }
+            ],
+            "cta": "Chcem Individual"
+          }
+        ]
+      }
+    }
+  ]
+}

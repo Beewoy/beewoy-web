@@ -95,7 +95,8 @@
       <img src="../logo.svg" alt="Beewoy logo" width="26" height="29">beewoy
     </a>
     <nav class="nav" aria-label="Hlavná navigácia">
-      <a href="../#sluzby">Čo robíme</a>
+      <a href="../tvorba-webov/">Tvorba webov</a>
+      <a href="../cennik/">Cenník</a>
       <a href="../referencie/">Referencie</a>
       <a href="./" aria-current="page">Kontakt</a>
     </nav>
@@ -149,12 +150,13 @@
 
   <section class="final kontakt-form-section" id="kontakt" aria-labelledby="contact-title">
     <div class="wrap">
-      <p class="kicker">Máte projekt?</p>
-      <h2 id="contact-title">Poďme z neho spraviť niečo, čo <span>funguje.</span></h2>
-      <div class="contact-layout">
-        <p class="contact-intro">Stačí pár viet o webe, aplikácii alebo internom systéme. Ozveme sa, prejdeme možnosti a úprimne povieme, či vám vieme pomôcť.</p>
+      <p class="kicker">Kontakt</p>
+      <h2 id="contact-title">Napíšte nám.</h2>
+      <div class="contact-layout contact-layout--centered">
+        <p class="contact-intro">Vyberte balík alebo napíšte o softvérovom projekte. Ozveme sa, prejdeme možnosti a úprimne povieme, či vám vieme pomôcť.</p>
         <form class="contact-form" name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="kontakt-form">
           <input type="hidden" name="form-name" value="kontakt">
+          <input type="hidden" name="odvetvie" id="contact-industry" value="">
           <p class="form-honeypot" aria-hidden="true">
             <label>Neplňte toto pole: <input name="bot-field"></label>
           </p>
@@ -166,22 +168,47 @@
             <label for="contact-email">E-mail</label>
             <input type="email" id="contact-email" name="email" required autocomplete="email">
           </div>
-          <div class="form-field">
-            <label for="contact-type">Typ projektu</label>
-            <select id="contact-type" name="typ-projektu" required>
-              <option value="" disabled selected>— vyberte —</option>
-              <option value="Nový web / prezentácia">Nový web / prezentácia</option>
-              <option value="Webová aplikácia na mieru">Webová aplikácia na mieru</option>
-              <option value="Integrácia / automatizácia">Integrácia / automatizácia</option>
-              <option value="SEO, výkon alebo servis">SEO, výkon alebo servis</option>
-              <option value="Prístupnosť webu">Prístupnosť webu</option>
-              <option value="Prevzatie existujúceho projektu">Prevzatie existujúceho projektu</option>
-              <option value="Iné / neviem zaradiť">Iné / neviem zaradiť</option>
-            </select>
-          </div>
+          <fieldset class="form-field package-radios">
+            <legend>Balík</legend>
+            <div class="package-radio-grid" role="radiogroup" aria-label="Výber balíka">
+              <label class="package-radio">
+                <input type="radio" name="balik" value="start" required>
+                <span class="package-radio-card">
+                  <strong>Start</strong>
+                  <em>39 €/mes</em>
+                  <small>Web + starostlivosť</small>
+                </span>
+              </label>
+              <label class="package-radio package-radio--popular">
+                <input type="radio" name="balik" value="profi" required>
+                <span class="package-radio-card">
+                  <span class="package-radio-badge">Populárne</span>
+                  <strong>Profi</strong>
+                  <em>59 €/mes</em>
+                  <small>Web + aktívny rast</small>
+                </span>
+              </label>
+              <label class="package-radio">
+                <input type="radio" name="balik" value="individual" required>
+                <span class="package-radio-card">
+                  <strong>Individual</strong>
+                  <em>Dohodou</em>
+                  <small>Web na mieru</small>
+                </span>
+              </label>
+              <label class="package-radio">
+                <input type="radio" name="balik" value="ine" required>
+                <span class="package-radio-card">
+                  <strong>Iné</strong>
+                  <em>Podľa dohody</em>
+                  <small>Softvér / aplikácia</small>
+                </span>
+              </label>
+            </div>
+          </fieldset>
           <div class="form-field">
             <label for="contact-message">Správa</label>
-            <textarea id="contact-message" name="sprava" rows="5" required></textarea>
+            <textarea id="contact-message" name="sprava" rows="5" required placeholder="Stručne o firme, webe a čo potrebujete."></textarea>
           </div>
           <label class="form-consent">
             <input type="checkbox" name="gdpr" value="súhlas" required>
@@ -203,7 +230,8 @@
   <input name="bot-field">
   <input name="meno">
   <input name="email">
-  <input name="typ-projektu">
+  <input name="balik">
+  <input name="odvetvie">
   <textarea name="sprava"></textarea>
   <input name="gdpr">
 </form>
@@ -215,6 +243,7 @@
       <nav class="footer-links" aria-label="Pätičková navigácia">
         <a href="../">Domov</a>
         <a href="../tvorba-webov/">Tvorba webov</a>
+        <a href="../cennik/">Cenník</a>
         <a href="../referencie/">Referencie</a>
         <a href="./">Kontakt</a>
         <a href="../cookies/">Cookies</a>
