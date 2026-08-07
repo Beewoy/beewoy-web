@@ -243,6 +243,10 @@
   const formStatus = document.querySelector(".form-status");
   const SEO_OPTION = "SEO, výkon alebo servis";
   const PACKAGE_IDS = new Set(["start", "profi", "individual", "ine"]);
+  const PROJECT_TYPE_MAP = {
+    redizajn: "Redizajn existujúceho webu",
+    novy: "Nový web",
+  };
 
   const setBalikValue = (value) => {
     if (value == null || value === "") return false;
@@ -259,6 +263,16 @@
     return true;
   };
 
+  const setProjectType = (key) => {
+    if (!typeSelect || !key) return false;
+    const value = PROJECT_TYPE_MAP[key] || key;
+    const match = [...typeSelect.options].find((o) => o.value === value);
+    if (!match) return false;
+    typeSelect.value = value;
+    typeSelect.dispatchEvent(new Event("change", { bubbles: true }));
+    return true;
+  };
+
   const applyPreset = (preset) => {
     if (preset === "seo") {
       if (!setBalikValue("ine")) setBalikValue(SEO_OPTION);
@@ -268,21 +282,41 @@
   };
 
   const focusFirstEmpty = () => {
+    const focusOpts = { preventScroll: true };
     if (nameInput && !nameInput.value) {
-      nameInput.focus();
+      nameInput.focus(focusOpts);
+      return;
+    }
+    if (typeSelect && !typeSelect.value) {
+      typeSelect.focus(focusOpts);
       return;
     }
     const checkedBalik = contactForm?.querySelector('input[type="radio"][name="balik"]:checked');
     if (contactForm?.querySelector('input[type="radio"][name="balik"]') && !checkedBalik) {
-      contactForm.querySelector('input[type="radio"][name="balik"]')?.focus();
+      contactForm.querySelector('input[type="radio"][name="balik"]')?.focus(focusOpts);
       return;
     }
     const firstEmpty = contactForm?.querySelector("input:not([type=hidden]):not([type=checkbox]):not([type=radio]):invalid, textarea:invalid, select:invalid");
-    firstEmpty?.focus();
+    firstEmpty?.focus(focusOpts);
   };
 
   const scrollToForm = () => {
-    contactForm?.scrollIntoView({ behavior: "smooth", block: "start" });
+    const target = document.querySelector("#kontakt") || contactForm;
+    if (!target) return;
+    const top = window.scrollY + target.getBoundingClientRect().top - getNavOffset();
+    window.scrollTo({ top: Math.max(0, top), behavior: "smooth" });
+  };
+
+  const afterScrollSettled = (fn) => {
+    let done = false;
+    const run = () => {
+      if (done) return;
+      done = true;
+      window.removeEventListener("scrollend", run);
+      fn();
+    };
+    window.addEventListener("scrollend", run, { once: true });
+    window.setTimeout(run, 700);
   };
 
   document.querySelectorAll("[data-preset]").forEach((trigger) => {
@@ -290,7 +324,27 @@
       event.preventDefault();
       applyPreset(trigger.dataset.preset);
       scrollToForm();
-      window.setTimeout(focusFirstEmpty, 400);
+      afterScrollSettled(focusFirstEmpty);
+    });
+  });
+
+  document.querySelectorAll("[data-typ]").forEach((trigger) => {
+    trigger.addEventListener("click", (event) => {
+      event.preventDefault();
+      setProjectType(trigger.dataset.typ);
+      scrollToForm();
+      afterScrollSettled(focusFirstEmpty);
+    });
+  });
+
+  document.querySelectorAll('a[href="#kontakt"]').forEach((trigger) => {
+    if (trigger.hasAttribute("data-typ") || trigger.hasAttribute("data-preset")) return;
+    trigger.addEventListener("click", (event) => {
+      const target = document.querySelector("#kontakt");
+      if (!target) return;
+      event.preventDefault();
+      scrollToForm();
+      history.pushState(null, "", "#kontakt");
     });
   });
 
@@ -308,6 +362,9 @@
       window.setTimeout(focusFirstEmpty, 300);
     } else if (typ === "seo") {
       applyPreset("seo");
+    } else if (PROJECT_TYPE_MAP[typ]) {
+      setProjectType(typ);
+      window.setTimeout(focusFirstEmpty, 300);
     } else if (hash === "#kontakt-form" && !contactForm?.querySelector('input[type="radio"][name="balik"]')) {
       applyPreset("seo");
       window.setTimeout(focusFirstEmpty, 300);

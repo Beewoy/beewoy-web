@@ -219,13 +219,12 @@
       <img src="logo.svg" alt="Beewoy logo" width="26" height="29">beewoy
     </a>
     <nav class="nav" aria-label="Hlavná navigácia">
-      <a href="#sluzby">Čo robíme</a>
       <a href="tvorba-webov/">Tvorba webov</a>
       <a href="#cennik">Cenník</a>
+      <a href="#sluzby">Správa obsahu</a>
       <a href="#referencie">Referencie</a>
-      <a href="#tim">Tím</a>
     </nav>
-    <a class="btn btn-primary header-cta" href="#kontakt" data-analytics-cta="header_start">Začať projekt <span class="arrow">→</span></a>
+    <a class="btn btn-primary header-cta" href="#kontakt" data-analytics-cta="header_start">Chcem web <span class="arrow">→</span></a>
     <button class="burger" id="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Otvoriť menu">
       <span></span><span></span>
     </button>
@@ -233,12 +232,11 @@
 </header>
 
 <nav class="mobile-menu" id="mobileMenu" aria-label="Mobilná navigácia">
-  <a href="#sluzby">Čo robíme</a>
   <a href="tvorba-webov/">Tvorba webov</a>
   <a href="#cennik">Cenník</a>
+  <a href="#sluzby">Správa obsahu</a>
   <a href="#referencie">Referencie</a>
-  <a href="#tim">Tím</a>
-  <a href="#kontakt">Začať projekt</a>
+  <a href="#kontakt">Chcem web</a>
 </nav>
 
 <main id="obsah">
@@ -281,81 +279,38 @@
       <div class="how-intro">
         <div class="how-intro-copy">
           <p class="kicker">Ako to funguje</p>
-          <h2 class="section-title reveal" id="how-title">Pošlete dopyt. My sa ozveme.</h2>
+          <h2 class="section-title section-title--sm reveal" id="how-title">Pošlite dopyt. My sa ozveme.</h2>
+          <p class="how-intro-lead reveal">Napíšte nám pár viet o projekte. Ozveme sa, prejdeme si vaše potreby a navrhneme ďalší postup. Nezáväzne.</p>
+          <a class="btn btn-primary how-intro-cta reveal" href="#kontakt" data-analytics-cta="how_inquiry">Poslať nezáväzný dopyt <span class="arrow">→</span></a>
         </div>
-        <p class="how-intro-lead reveal">Bez záväzku prejdeme, čo potrebujete — a až potom ideme do práce.</p>
       </div>
       <div class="how-paths">
-        <article class="how-path reveal">
+        <a class="how-path reveal" href="#kontakt" data-typ="redizajn" data-analytics-cta="how_redesign">
           <p class="how-path-label">
             <span class="how-path-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-refresh"/></svg></span>
-            Máte starý web
+            Mám starý web
           </p>
-          <h3>Prerobíme ho</h3>
-          <p>Štruktúra, rýchlosť, texty, technický základ — moderný web, nie ďalšia záplata.</p>
-        </article>
-        <article class="how-path reveal">
+          <h3>Chcem nový web</h3>
+          <p>Štruktúra, dizajn, obsah aj technický základ — moderný web namiesto ďalšej záplaty.</p>
+          <span class="how-path-cta">Dopyt na redizajn <span class="arrow">→</span></span>
+        </a>
+        <a class="how-path reveal" href="#kontakt" data-typ="novy" data-analytics-cta="how_new_web">
           <p class="how-path-label">
             <span class="how-path-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-plus-circle"/></svg></span>
-            Nemáte web
+            Nemám web
           </p>
-          <h3>Postavíme nový</h3>
-          <p>Od návrhu po hosting a správu. Vy poviete o firme — zvyšok je na nás.</p>
-        </article>
+          <h3>Potrebujem web od nuly</h3>
+          <p>Od návrhu cez realizáciu až po nasadenie a správu.</p>
+          <span class="how-path-cta">Dopyt na nový web <span class="arrow">→</span></span>
+        </a>
       </div>
       <aside class="how-industry reveal" aria-label="Web podľa odvetvia">
         <div class="how-industry-copy">
           <p class="kicker">Podľa odvetvia</p>
           <p class="how-industry-title">Web pripravený pre váš typ biznisu</p>
         </div>
-        <a class="btn btn-light" href="tvorba-webov/#odvetvia">Pozrieť odvetvia <span class="arrow">→</span></a>
+        <a class="text-link how-industry-link" href="tvorba-webov/odvetvia/">Pozrieť odvetvia <span class="arrow">→</span></a>
       </aside>
-    </div>
-  </section>
-
-  <section class="section dark" id="sluzby" aria-labelledby="services-title">
-    <div class="wrap">
-      <div class="services-intro">
-        <div>
-          <p class="kicker">Čo robíme</p>
-          <h2 class="section-title reveal" id="services-title">Od webovej stránky po celý systém.</h2>
-        </div>
-        <p class="reveal">Technológia je nástroj, nie pointa. Softvér na mieru vyberáme podľa toho, čo má váš produkt reálne dosiahnuť.</p>
-      </div>
-      <div class="service-list">
-        <article class="service reveal">
-          <span class="icon service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-globe"/></svg></span>
-          <h3>Webová stránka</h3>
-          <div class="service-copy">
-            <p>Firemné stránky a produktové prezentácie, ktoré pôsobia dôveryhodne, načítajú sa rýchlo, sú pripravené na SEO aj základnú prístupnosť a vedú návštevníkov k správnej akcii.</p>
-            <a class="text-link" href="tvorba-webov/">Viac o tvorbe webových stránok <span class="arrow">→</span></a>
-          </div>
-        </article>
-        <article class="service reveal">
-          <span class="icon service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-layout-grid"/></svg></span>
-          <h3>Webové aplikácie</h3>
-          <div class="service-copy">
-            <p>Portály, klientské zóny, konfigurátory a digitálne produkty vytvorené presne podľa procesov a cieľov vášho biznisu.</p>
-            <a class="text-link" href="#kontakt">Mám nápad na aplikáciu <span class="arrow">→</span></a>
-          </div>
-        </article>
-        <article class="service reveal">
-          <span class="icon service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-database"/></svg></span>
-          <h3>Interné systémy</h3>
-          <div class="service-copy">
-            <p>Nástroje na mieru, ktoré spájajú dáta, zjednodušujú interné procesy a dávajú tímu poriadok v každodennej práci.</p>
-            <a class="text-link" href="#kontakt">Chcem zjednodušiť procesy <span class="arrow">→</span></a>
-          </div>
-        </article>
-        <article class="service reveal">
-          <span class="icon service-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-accessibility"/></svg></span>
-          <h3>Prístupnosť webu</h3>
-          <div class="service-copy">
-            <p>Človek so znevýhodnením je stále návštevník — a často aj zákazník. Weby staviame a upravujeme tak, aby sa na nich dalo pracovať aj so čítačom obrazovky, klávesnicou či slabším zrakom. V EÚ už prístupnosť digitálnych služieb nie je len „dobrá vôľa“ — pomôžeme vám byť v poriadku ľudsky aj voči predpisom.</p>
-            <a class="text-link" href="#kontakt">Chcem prístupnejší web <span class="arrow">→</span></a>
-          </div>
-        </article>
-      </div>
     </div>
   </section>
 
@@ -364,7 +319,7 @@
       <div class="work-top">
         <div>
           <p class="kicker">Cenník</p>
-          <h2 class="section-title reveal" id="plans-title">Mesačné plány. Bez viazanosti.</h2>
+          <h2 class="section-title section-title--lg reveal" id="plans-title">Mesačné plány. Bez viazanosti.</h2>
         </div>
         <p class="reveal">Web, hosting a starostlivosť v jednom paušále. Vy podnikáte — my držíme web.</p>
       </div>
@@ -426,17 +381,84 @@
     </div>
   </section>
 
+  <section class="section dark" id="sluzby" aria-labelledby="manage-title">
+    <div class="wrap">
+      <div class="manage-intro">
+        <div>
+          <p class="kicker">Správa obsahu</p>
+          <h2 class="section-title section-title--lg reveal" id="manage-title">Web je váš.<br>Obsah máte pod kontrolou.</h2>
+        </div>
+        <p class="reveal">Nechceme vás nútiť do komplikovaných administračných systémov. Obsah si môžete jednoducho upraviť sami — alebo nám napíšete a zmenu spravíme za vás.</p>
+      </div>
+
+      <div class="manage-options">
+        <article class="manage-option reveal">
+          <div class="manage-option-copy">
+            <p class="manage-label">01 — Upravujem si sám</p>
+            <h3>Jednoduchá administrácia.<br>Bez zbytočností.</h3>
+            <p>Ak chcete mať obsah vo vlastných rukách, pripravíme vám jednoduché rozhranie presne na to, čo potrebujete meniť — texty, fotografie, služby alebo kontaktné údaje.</p>
+            <ul class="manage-tags" aria-label="Čo môžete meniť">
+              <li>Texty</li>
+              <li>Fotografie</li>
+              <li>Služby</li>
+              <li>Kontakt</li>
+            </ul>
+          </div>
+          <div class="manage-admin" aria-hidden="true">
+            <div class="manage-admin-fields">
+              <div class="manage-admin-field">
+                <span>Text</span>
+                <strong>Vitajte v našej prevádzke</strong>
+              </div>
+              <div class="manage-admin-field">
+                <span>Fotografia</span>
+                <strong>prevadzka.jpg</strong>
+              </div>
+              <div class="manage-admin-field">
+                <span>Služba</span>
+                <strong>Konzultácia — 45 min</strong>
+              </div>
+              <div class="manage-admin-field">
+                <span>Kontakt</span>
+                <strong>Po–Pia 8:00–17:00</strong>
+              </div>
+            </div>
+            <div class="manage-admin-save">Uložiť zmenu</div>
+          </div>
+        </article>
+
+        <article class="manage-option reveal">
+          <div class="manage-option-copy">
+            <p class="manage-label">02 — Nechám to na vás</p>
+            <h3>Napíšete nám.<br>My to zmeníme.</h3>
+            <p>Pošlete nám správu s tým, čo potrebujete upraviť, a postaráme sa o to. Bez prihlasovania, návodov a hľadania, kde sa čo mení.</p>
+          </div>
+          <div class="manage-chat" aria-hidden="true">
+            <div class="manage-bubble manage-bubble--in">
+              Ahojte, prosím zmeňte otváracie hodiny na 8:00–17:00.
+            </div>
+            <div class="manage-bubble manage-bubble--out">
+              Jasné, hotovo <span class="manage-check">✓</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <p class="manage-note reveal">Vyberiete si spôsob, ktorý vám vyhovuje.<br>A pokojne ho neskôr zmeníte.</p>
+    </div>
+  </section>
+
   <section class="section" id="referencie" aria-labelledby="work-title">
     <div class="wrap">
       <div class="work-top">
         <div>
           <p class="kicker">Referencie</p>
-          <h2 class="section-title reveal" id="work-title">Práca, ktorá hovorí za nás.</h2>
+          <h2 class="section-title section-title--lg reveal" id="work-title">Práca, ktorá hovorí za nás.</h2>
         </div>
-        <p class="reveal">Nie obrázky do portfólia. Funkčné webové stránky a produkty vytvorené pre konkrétny biznisový cieľ.</p>
+        <p class="reveal">Nie obrázky do portfólia. Funkčné webové stránky vytvorené pre konkrétny biznisový cieľ.</p>
       </div>
 
-      <div class="refs-cards reveal" data-refs-mount="home" data-asset-base="" data-limit="6"></div>
+      <div class="refs-showcase reveal" data-refs-mount="home" data-asset-base=""></div>
       <p class="refs-more">
         <a class="text-link" href="referencie/">Pozrieť všetky referencie <span class="arrow">→</span></a>
       </p>
@@ -448,7 +470,7 @@
     <div class="wrap faq-grid">
       <div>
         <p class="kicker">Časté otázky</p>
-        <h2 class="section-title reveal" id="faq-title">Na rovinu.</h2>
+        <h2 class="section-title section-title--lg reveal" id="faq-title">Na rovinu.</h2>
       </div>
       <div class="faq-list">
         <details class="faq-item reveal">
@@ -479,55 +501,10 @@
     </div>
   </section>
 
-  <section class="section" id="tim" aria-labelledby="team-title">
-    <div class="wrap">
-      <div class="team-intro">
-        <div>
-          <p class="kicker">Kto je Beewoy</p>
-          <h2 class="section-title reveal" id="team-title">Dvaja ľudia. Jedna priama linka.</h2>
-        </div>
-        <p class="reveal">Žiadni predajcovia, žiadne preposielanie správ. Len skúsení vývojári, ktorí poznajú váš projekt do detailu a nesú zaň zodpovednosť.</p>
-      </div>
-      <div class="team-grid">
-        <article class="person reveal">
-          <div class="person-portrait">
-            <picture>
-              <source srcset="team/david-k-portrait-v2.webp" type="image/webp">
-              <img src="team/david-k-portrait-v2.png" alt="David, spoluzakladateľ Beewoy" width="1200" height="1200" loading="lazy" decoding="async">
-            </picture>
-          </div>
-          <div class="person-copy">
-            <h3>David</h3>
-            <p class="person-role">Spoluzakladateľ · vývoj a technológie</p>
-            <p class="person-note">Premieňa zložité požiadavky na produkty, ktoré sú rýchle, zrozumiteľné a príjemné na používanie.</p>
-          </div>
-        </article>
-        <article class="person reveal">
-          <div class="person-portrait">
-            <picture>
-              <source srcset="team/tibor-a-portrait.webp" type="image/webp">
-              <img src="team/tibor-a-portrait.png" alt="Tibor, spoluzakladateľ Beewoy" width="1200" height="1200" loading="lazy" decoding="async">
-            </picture>
-          </div>
-          <div class="person-copy">
-            <h3>Tibor</h3>
-            <p class="person-role">Spoluzakladateľ · vývoj a technológie</p>
-            <p class="person-note">Stará sa o spoľahlivý technický základ, čisté riešenia a hladký chod produktu.</p>
-          </div>
-        </article>
-      </div>
-      <div class="team-facts reveal">
-        <div class="fact"><strong>20+</strong><span>rokov skúseností spolu</span></div>
-        <div class="fact"><strong>5+</strong><span>rokov spoločnej práce</span></div>
-        <div class="fact"><strong>0</strong><span>zbytočných medzičlánkov</span></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="final kontakt-form-section" id="kontakt" aria-labelledby="contact-title">
+  <section class="section kontakt-form-section" id="kontakt" aria-labelledby="contact-title">
     <div class="wrap">
       <p class="kicker">Kontakt</p>
-      <h2 id="contact-title">Napíšte nám.</h2>
+      <h2 class="section-title section-title--sm" id="contact-title">Napíšte nám.</h2>
       <div class="contact-layout contact-layout--centered">
         <p class="contact-intro">Vyberte balík alebo napíšte o softvérovom projekte. Ozveme sa, prejdeme možnosti a úprimne povieme, či vám vieme pomôcť.</p>
         <form class="contact-form" name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="kontakt-form">
@@ -543,6 +520,16 @@
           <div class="form-field">
             <label for="contact-email">E-mail</label>
             <input type="email" id="contact-email" name="email" required autocomplete="email">
+          </div>
+          <div class="form-field">
+            <label for="contact-type">Typ projektu</label>
+            <select id="contact-type" name="typ_projektu">
+              <option value="" disabled selected>Vyberte…</option>
+              <option value="Redizajn existujúceho webu">Redizajn existujúceho webu</option>
+              <option value="Nový web">Nový web</option>
+              <option value="Softvér / aplikácia">Softvér / aplikácia</option>
+              <option value="Iné">Iné</option>
+            </select>
           </div>
           <fieldset class="form-field package-radios">
             <legend>Balík</legend>
@@ -591,39 +578,49 @@
             <span>Súhlasím so spracovaním údajov podľa <a href="ochrana-udajov/">Ochrany osobných údajov</a>.</span>
           </label>
           <div class="form-actions">
-            <button type="submit" class="btn btn-light">Odoslať správu <span class="arrow">→</span></button>
+            <button type="submit" class="btn btn-primary">Odoslať správu <span class="arrow">→</span></button>
           </div>
           <p class="form-status" role="status" aria-live="polite" hidden></p>
         </form>
       </div>
       <p class="contact-alt">Alebo napíšte na <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a></p>
-      <footer class="footer">
-        <a class="logo" href="#top"><img src="logo.svg" alt="Beewoy" width="26" height="29">beewoy</a>
-        <nav class="footer-links" aria-label="Pätičková navigácia">
-          <a href="#sluzby">Služby</a>
-          <a href="tvorba-webov/">Tvorba webov</a>
-          <a href="#cennik">Cenník</a>
-          <a href="referencie/">Referencie</a>
-          <a href="#tim">Tím</a>
-          <a href="#faq">FAQ</a>
-          <a href="kontakt/">Kontakt</a>
-        </nav>
-        <span>© 2026 Beewoy · tvorba webov · Slovensko</span>
-        <div class="footer-legal">
-          <a href="ochrana-udajov/">Ochrana údajov</a>
-          <a href="cookies/">Cookies</a>
-          <button type="button" data-cookie-settings>Nastavenia cookies</button>
-        </div>
-      </footer>
     </div>
   </section>
 </main>
+
+<section class="final kontakt-footer" aria-label="Pätička">
+  <div class="wrap">
+    <footer class="footer">
+      <a class="logo" href="#top"><img src="logo.svg" alt="Beewoy" width="26" height="29">beewoy</a>
+      <nav class="footer-links" aria-label="Pätičková navigácia">
+        <a href="tvorba-webov/">Tvorba webov</a>
+        <a href="#cennik">Cenník</a>
+        <a href="#sluzby">Správa obsahu</a>
+        <a href="referencie/">Referencie</a>
+        <a href="#faq">FAQ</a>
+        <a href="kontakt/">Kontakt</a>
+      </nav>
+      <span>© 2026 Beewoy · tvorba webov · Slovensko</span>
+      <div class="footer-legal">
+        <a href="ochrana-udajov/">Ochrana údajov</a>
+        <a href="cookies/">Cookies</a>
+        <button type="button" data-cookie-settings>Nastavenia cookies</button>
+      </div>
+    </footer>
+  </div>
+</section>
 
 <form name="kontakt" data-netlify="true" netlify-honeypot="bot-field" hidden>
   <input type="hidden" name="form-name" value="kontakt">
   <input name="bot-field">
   <input name="meno">
   <input name="email">
+  <select name="typ_projektu">
+    <option value="Redizajn existujúceho webu">Redizajn existujúceho webu</option>
+    <option value="Nový web">Nový web</option>
+    <option value="Softvér / aplikácia">Softvér / aplikácia</option>
+    <option value="Iné">Iné</option>
+  </select>
   <input name="balik">
   <input name="odvetvie">
   <textarea name="sprava"></textarea>

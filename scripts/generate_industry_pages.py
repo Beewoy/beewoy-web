@@ -11,7 +11,7 @@ ROOT = Path(__file__).resolve().parents[1]
 TV = ROOT / "tvorba-webov"
 DATA = TV / "odvetvia" / "industries-data.json"
 BASE = "https://beewoy.sk"
-TODAY = "2026-08-06"
+TODAY = "2026-08-07"
 
 
 def e(s: str) -> str:
@@ -197,6 +197,17 @@ ICONS = {
     "eye": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>',
     "workflow": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>',
     "gauge": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>',
+    "wrench": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
+    "flame": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>',
+    "truck": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>',
+    "compass": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"/></svg>',
+    "brain": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.023 10.125a4 4 0 0 1 1.652-1.25"/><path d="M19.325 8.875a4 4 0 0 1 1.652 1.25"/><path d="M6.445 17.138a4 4 0 0 1-1.42-.98"/><path d="M19 16.158a4 4 0 0 1-1.42.98"/></svg>',
+    "scissors": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg>',
+    "home": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>',
+    "leaf": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>',
+    "coffee": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg>',
+    "cake": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h0.01"/><path d="M12 4h0.01"/><path d="M17 4h0.01"/></svg>',
+    "scale": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>',
 }
 
 INDUSTRY_ICONS = {
@@ -207,6 +218,23 @@ INDUSTRY_ICONS = {
     "stavebna-firma": "building",
     "restauracia": "utensils",
     "logistika-spedicia": "truck",
+    "autoservis-pneuservis": "wrench",
+    "betonova-vyroba-kamenarstvo": "layers",
+    "geodet-kartografia": "compass",
+    "gynekologia-ambulancia": "users",
+    "kovovyroba-zvarenie": "flame",
+    "psycholog-ambulancia": "brain",
+    "kadernictvo-barbershop": "scissors",
+    "hotel-penzion-ubytovanie": "building",
+    "realitna-kancelaria": "home",
+    "zahradnictvo-udrzba-zelene": "leaf",
+    "bezpecnostne-systemy-cctv": "eye",
+    "kaviaren-pekaren": "coffee",
+    "nechtovy-salon": "spark",
+    "cukraren": "cake",
+    "advokat-pravna-kancelaria": "scale",
+    "fitness-centrum": "activity",
+    "stahovanie-vypratavanie": "truck",
 }
 
 
@@ -264,7 +292,7 @@ def render_packages(packages: dict, depth: str, slug: str) -> str:
     <div class="wrap">
       <div class="ind-section-head center reveal">
         <p class="kicker">Proces a cena</p>
-        <h2 class="section-title" id="price-title">Transparentný cenník</h2>
+        <h2 class="section-title section-title--sm" id="price-title">Transparentný cenník</h2>
         <p class="ind-lead">{e(packages["intro"])}</p>
       </div>
       <div class="ind-plans">{"".join(cards)}</div>
@@ -403,7 +431,7 @@ def render_industry(ind: dict, all_inds=None) -> str:
   <section class="ind-section" aria-labelledby="audience-title">
     <div class="wrap-narrow">
       <p class="kicker">Pre koho</p>
-      <h2 class="section-title reveal" id="audience-title">Komu je táto stránka určená</h2>
+      <h2 class="section-title section-title--lg reveal" id="audience-title">Komu je táto stránka určená</h2>
       <p class="ind-lead reveal">{e(ind["audience"])}</p>
     </div>
   </section>
@@ -420,7 +448,7 @@ def render_industry(ind: dict, all_inds=None) -> str:
   <section class="ind-section" aria-labelledby="scenario-title">
     <div class="wrap-narrow">
       <p class="kicker">Scenár</p>
-      <h2 class="section-title reveal" id="scenario-title">{e(ind["scenario_title"])}</h2>
+      <h2 class="section-title section-title--lg reveal" id="scenario-title">{e(ind["scenario_title"])}</h2>
       <div class="ind-scenario reveal">
         <p>{e(ind["scenario_intro"])}</p>
         <ol>{scenario}</ol>
@@ -435,7 +463,7 @@ def render_industry(ind: dict, all_inds=None) -> str:
   <section class="ind-section alt" aria-labelledby="process-title">
     <div class="wrap-narrow">
       <p class="kicker">Proces</p>
-      <h2 class="section-title reveal" id="process-title">Ako prebieha spolupráca s Beewoy</h2>
+      <h2 class="section-title section-title--lg reveal" id="process-title">Ako prebieha spolupráca s Beewoy</h2>
       <p class="ind-lead reveal">{e(ind.get("process_intro", ""))}</p>
       {render_steps(ind["process"])}
       <p class="ind-note reveal">Viac o tvorbe webov nájdete na stránke <a href="../">Tvorba webov</a>.</p>
@@ -451,7 +479,7 @@ def render_industry(ind: dict, all_inds=None) -> str:
   <section class="ind-section" aria-labelledby="price-title">
     <div class="wrap-narrow">
       <p class="kicker">Cena</p>
-      <h2 class="section-title reveal" id="price-title">Čo ovplyvňuje cenu</h2>
+      <h2 class="section-title section-title--lg reveal" id="price-title">Čo ovplyvňuje cenu</h2>
       <p class="ind-lead reveal">{e(ind.get("price_intro", ""))}</p>
       <ul class="ind-price-factors reveal">{price}</ul>
       <p class="ind-note reveal">Po konzultácii dostanete individuálnu nezáväznú ponuku.</p>
@@ -465,7 +493,7 @@ def render_industry(ind: dict, all_inds=None) -> str:
   <section class="ind-section alt" aria-labelledby="proof-title">
     <div class="wrap-narrow">
       <p class="kicker">Odborný model</p>
-      <h2 class="section-title reveal" id="proof-title">{e(ind["proof_title"])}</h2>
+      <h2 class="section-title section-title--lg reveal" id="proof-title">{e(ind["proof_title"])}</h2>
       <p class="ind-lead reveal">{e(ind["proof_intro"])}</p>
       {render_checklist(ind["checklist"])}
     </div>
@@ -505,7 +533,7 @@ def render_industry(ind: dict, all_inds=None) -> str:
     <div class="wrap">
       <div class="ind-section-head center reveal">
         <p class="kicker">Problémy odvetvia</p>
-        <h2 class="section-title" id="problems-title">{e(problems_title)}</h2>
+        <h2 class="section-title section-title--sm" id="problems-title">{e(problems_title)}</h2>
         <p class="ind-lead">{e(ind["problems_intro"])}</p>
       </div>
       {render_problems(ind["problems"])}
@@ -516,7 +544,7 @@ def render_industry(ind: dict, all_inds=None) -> str:
     <div class="wrap">
       <div class="ind-section-head reveal">
         <p class="kicker">Ako pomáha web</p>
-        <h2 class="section-title" id="help-title">{e(help_title)}</h2>
+        <h2 class="section-title section-title--lg" id="help-title">{e(help_title)}</h2>
         <p class="ind-lead">{e(ind["help_intro"])}</p>
       </div>
       {render_cards(ind["help_points"])}
@@ -527,7 +555,7 @@ def render_industry(ind: dict, all_inds=None) -> str:
     <div class="wrap">
       <div class="ind-section-head reveal">
         <p class="kicker">Funkcie</p>
-        <h2 class="section-title" id="features-title">{e(features_title)}</h2>
+        <h2 class="section-title section-title--lg" id="features-title">{e(features_title)}</h2>
         <p class="ind-lead">{e(ind["features_intro"])}</p>
       </div>
       {render_cards(ind["features"])}
@@ -541,7 +569,7 @@ def render_industry(ind: dict, all_inds=None) -> str:
     <div class="wrap faq-grid">
       <div>
         <p class="kicker">FAQ</p>
-        <h2 class="section-title reveal" id="faq-title">Časté otázky</h2>
+        <h2 class="section-title section-title--lg reveal" id="faq-title">Časté otázky</h2>
       </div>
       <div class="faq-list">{render_faq(ind["faq"])}</div>
     </div>
@@ -551,7 +579,7 @@ def render_industry(ind: dict, all_inds=None) -> str:
     <div class="wrap">
       <div class="ind-section-head center reveal">
         <p class="kicker">Súvisiace</p>
-        <h2 class="section-title" id="related-title">Ďalšie odvetvia a služby</h2>
+        <h2 class="section-title section-title--sm" id="related-title">Ďalšie odvetvia a služby</h2>
         <p class="ind-lead">Prehľad <a href="../odvetvia/">všetkých odvetví</a> a pilier <a href="../">tvorby webov</a>.</p>
       </div>
       {render_related(peers)}
@@ -594,12 +622,13 @@ def render_hub(data: dict) -> str:
 
     cards = "".join(
         f"""
-      <a class="ind-hub-card reveal" href="../pre-{e(i['slug'])}/">
-        <span class="cluster">{e(i['cluster'])}</span>
-        <h2>{e(i['short_name'])}</h2>
-        <p>{e(i['hub_blurb'])}</p>
-        <span class="more">Pozrieť stránku <span class="arrow">→</span></span>
-      </a>"""
+        <a class="reveal" href="../pre-{e(i['slug'])}/">
+          <span class="ind-related-icon" aria-hidden="true">{icon_html(INDUSTRY_ICONS.get(i['slug'], 'spark'))}</span>
+          <span class="ind-related-copy">
+            <strong>{e(i['short_name'])}</strong>
+            <span class="ind-related-desc">{e(i['hub_blurb'])}</span>
+          </span>
+        </a>"""
         for i in inds
     )
 
@@ -647,7 +676,7 @@ def render_hub(data: dict) -> str:
 <body id="top" class="industry-page">
 {header_nav(depth, current="hub")}
 <main id="obsah">
-  <section class="ind-hero" aria-labelledby="hub-hero-title">
+  <section class="ind-hero centered" aria-labelledby="hub-hero-title">
     <div class="wrap">
       <nav class="breadcrumbs reveal" aria-label="Navigácia breadcrumbs">
         <ol>
@@ -656,29 +685,34 @@ def render_hub(data: dict) -> str:
           <li aria-current="page">Odvetvia</li>
         </ol>
       </nav>
-      <p class="kicker reveal">Tvorba webov</p>
-      <h1 id="hub-hero-title" class="reveal">{e(hub["h1"])}</h1>
-      <p class="ind-hero-lead reveal">{e(hub["lead"])}</p>
-      <div class="ind-hero-actions reveal">
-        <a class="btn btn-primary" href="{depth}kontakt/" data-analytics-cta="hub_hero">Chcem konzultáciu <span class="arrow">→</span></a>
-        <a class="btn" href="../">Späť na tvorbu webov</a>
+      <div class="ind-hero-inner">
+        <p class="kicker reveal">Tvorba webov</p>
+        <h1 id="hub-hero-title" class="reveal">{e(hub["h1"])}</h1>
+        <p class="ind-hero-lead reveal">{e(hub["lead"])}</p>
+        <div class="ind-hero-actions reveal">
+          <a class="btn btn-primary" href="{depth}kontakt/" data-analytics-cta="hub_hero">Chcem konzultáciu <span class="arrow">→</span></a>
+          <a class="btn" href="../">Späť na tvorbu webov</a>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="ind-section" aria-labelledby="hub-list-title">
     <div class="wrap">
-      <p class="kicker">Wave 1</p>
-      <h2 class="section-title reveal" id="hub-list-title">Aktívne odvetvové stránky</h2>
-      <p class="ind-lead reveal">Sedem stránok s unikátnym obsahom pre konkrétne odvetvia. Každá má vlastné problémy, funkcie, FAQ a argumentáciu — nie len vymenený názov v šablóne.</p>
-      <div class="ind-hub-grid">{cards}</div>
+      <div class="ind-section-head center">
+        <p class="kicker">Odvetvia</p>
+        <h2 class="section-title section-title--sm reveal" id="hub-list-title">Vyberte si svoje odvetvie</h2>
+        <p class="ind-lead reveal">Každá stránka rieši iné otázky zákazníkov — od galérie a objednania až po B2B dopyt. Otvorte to, čo je vám najbližšie.</p>
+      </div>
+      <div class="ind-related ind-related--rich">{cards}
+      </div>
     </div>
   </section>
 
   <section class="ind-section alt" aria-labelledby="hub-more-title">
     <div class="wrap-narrow">
       <p class="kicker">Ďalšie odvetvia</p>
-      <h2 class="section-title reveal" id="hub-more-title">Nemáte svoje odvetvie v zozname?</h2>
+      <h2 class="section-title section-title--lg reveal" id="hub-more-title">Nemáte svoje odvetvie v zozname?</h2>
       <p class="ind-lead reveal">Pripravujeme ďalšie kategórie. Ak potrebujete web pre iný segment, navrhneme riešenie podľa vašich zákazníkov a cieľov — v plánoch Start, Profi alebo Individual.</p>
       <div class="ind-hero-actions reveal">
         <a class="btn btn-primary" href="{depth}kontakt/">Napísať o inom odvetví <span class="arrow">→</span></a>
@@ -738,51 +772,48 @@ def update_sitemap(slugs: list[str]) -> None:
 
 
 def patch_tvorba_webov(inds: list[dict]) -> None:
+    """No-op if service page already has the industries teaser (manual source of truth)."""
     path = TV / "index.html"
     text = path.read_text(encoding="utf-8")
-    marker = '  <section class="section dark" id="faq"'
-    if "web-industries-teaser" in text:
+    if "web-industries--teaser" in text or "web-industries-teaser" in text:
         return
+    # Legacy one-shot inject kept for older checkouts only.
+    marker = '  <section class="section dark" id="faq"'
+    if marker not in text:
+        return
+    tips = [
+        i for i in inds
+        if i["slug"] in {"stolarstvo-interiery", "zubna-ambulancia", "restauracia", "elektrikar"}
+    ] or inds[:4]
     cards = "".join(
-        f"""
-        <a class="ind-hub-card reveal" href="./pre-{html.escape(i['slug'])}/">
-          <span class="cluster">{html.escape(i['cluster'])}</span>
-          <h3 style="margin:0;font-size:1.15rem">{html.escape(i['short_name'])}</h3>
-          <p>{html.escape(i['hub_blurb'])}</p>
-          <span class="more">Viac <span class="arrow">→</span></span>
-        </a>"""
-        for i in inds[:4]
+        f'''
+        <a class="reveal" href="./pre-{e(i['slug'])}/">
+          <span class="ind-related-icon" aria-hidden="true">{icon_html(INDUSTRY_ICONS.get(i['slug'], 'spark'))}</span>
+          <strong>{e(i['short_name'])}</strong>
+        </a>'''
+        for i in tips
     )
     block = f"""
-  <section class="section web-industries-teaser" id="odvetvia" aria-labelledby="industries-teaser-title">
+  <section class="section web-industries web-industries--teaser" id="odvetvia" aria-labelledby="industries-title">
     <div class="wrap">
-      <p class="kicker">Podľa odvetvia</p>
-      <h2 class="section-title reveal" id="industries-teaser-title">Weby, ktoré rozumejú konkrétnemu biznisu.</h2>
-      <p class="reveal" style="max-width:62ch;color:var(--muted);line-height:1.55">Pripravili sme odvetvové stránky so špecifickými problémami, funkciami a FAQ. Pozrite si prehľad alebo prejdite rovno na svoje odvetvie.</p>
-      <p class="reveal" style="margin-top:18px"><a class="btn btn-primary" href="./odvetvia/">Všetky odvetvia <span class="arrow">→</span></a></p>
-      <div class="ind-hub-grid" style="margin-top:28px">{cards}
+      <div class="ind-section-head center">
+        <p class="kicker">Podľa odvetvia</p>
+        <h2 class="section-title section-title--sm reveal" id="industries-title">Web podľa vášho odvetvia.</h2>
+        <p class="ind-lead reveal">Stolár, ambulancia, autoservis, kaderníctvo aj reštaurácia potrebujú iný web. Vyberte si odvetvie a pozrite, čo konkrétne riešime.</p>
+      </div>
+      <div class="ind-related">{cards}
+      </div>
+      <div class="web-industries-actions reveal">
+        <a class="btn btn-primary" href="./odvetvia/">Všetky odvetvia <span class="arrow">→</span></a>
       </div>
     </div>
   </section>
 
 """
-    # inject stylesheet for teaser if missing
     if "odvetvia/odvetvia.css" not in text:
         text = text.replace(
             '<link rel="stylesheet" href="./hero-dark.css">',
             '<link rel="stylesheet" href="./hero-dark.css">\n<link rel="stylesheet" href="./odvetvia/odvetvia.css">',
-        )
-    # add nav link
-    if 'href="#odvetvia"' not in text and 'href="./odvetvia/"' not in text.split("nav")[1][:800]:
-        text = text.replace(
-            '<a href="#co-ziskate">Čo získate</a>',
-            '<a href="#co-ziskate">Čo získate</a>\n      <a href="./odvetvia/">Odvetvia</a>',
-            1,
-        )
-        text = text.replace(
-            '<a href="#co-ziskate">Čo získate</a>\n  <a href="#proces">Proces</a>',
-            '<a href="#co-ziskate">Čo získate</a>\n  <a href="./odvetvia/">Odvetvia</a>\n  <a href="#proces">Proces</a>',
-            1,
         )
     text = text.replace(marker, block + marker)
     path.write_text(text, encoding="utf-8")

@@ -25,13 +25,13 @@
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Kontakt a mini-audit webu — Beewoy">
+<meta property="og:image:alt" content="Kontaktný formulár Beewoy">
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Kontakt — Beewoy | web od 39 €/mes">
 <meta name="twitter:description" content="Napíšte Beewoy o novom webe (Start 39 € / Profi 59 €) alebo softvérovom projekte. Nezáväzne — ozveme sa a prejdeme možnosti.">
 <meta name="twitter:image" content="https://beewoy.sk/og-main.png">
-<meta name="twitter:image:alt" content="Kontakt a mini-audit webu — Beewoy">
+<meta name="twitter:image:alt" content="Kontaktný formulár Beewoy">
 
 <link rel="preload" href="../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="../styles.css" as="style">
@@ -45,8 +45,8 @@
       "@type": "ContactPage",
       "@id": "https://beewoy.sk/kontakt/#webpage",
       "url": "https://beewoy.sk/kontakt/",
-      "name": "Kontakt a mini-audit webu — Beewoy",
-      "description": "Kontaktný formulár a bezplatný mini-audit webu od softvérového štúdia Beewoy.",
+      "name": "Kontakt — Beewoy",
+      "description": "Kontaktný formulár softvérového štúdia Beewoy — nový web, balíky Start/Profi alebo softvérový projekt.",
       "isPartOf": { "@id": "https://beewoy.sk/#website" },
       "about": { "@id": "https://beewoy.sk/#organization" },
       "inLanguage": "sk-SK"
@@ -100,58 +100,15 @@
       <a href="../referencie/">Referencie</a>
       <a href="./" aria-current="page">Kontakt</a>
     </nav>
-    <a class="btn btn-primary legal-header-cta" href="#kontakt-form">Začať projekt <span class="arrow">→</span></a>
+    <a class="btn btn-primary legal-header-cta" href="#kontakt-form">Chcem web <span class="arrow">→</span></a>
   </div>
 </header>
 
 <main id="obsah" class="kontakt-page">
-  <section class="section audit-section" aria-labelledby="audit-title">
-    <div class="wrap audit-grid">
-      <div class="audit-copy">
-        <p class="kicker">Bezplatný mini-audit</p>
-        <h1 class="section-title" id="audit-title">Máte web a neviete, na čom ste?</h1>
-        <p class="audit-lead">Pošleme vám <strong>bezplatný mini-audit</strong> existujúceho webu — konkrétne zistenia, žiadne frázy. Úplne nezáväzne.</p>
-      </div>
-      <div class="audit-side">
-        <div class="truths" aria-label="Čo skontrolujeme">
-          <p class="truths-label">Čo skontrolujeme</p>
-          <div class="truth">
-            <span class="truth-icon icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-gauge"/></svg></span>
-            <div class="truth-body">
-              <p class="truth-title">Rýchlosť načítania a Core Web Vitals</p>
-            </div>
-          </div>
-          <div class="truth">
-            <span class="truth-icon icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-search"/></svg></span>
-            <div class="truth-body">
-              <p class="truth-title">Technické SEO — indexácia, schema, sitemap</p>
-            </div>
-          </div>
-          <div class="truth">
-            <span class="truth-icon icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-shield-check"/></svg></span>
-            <div class="truth-body">
-              <p class="truth-title">Základná kontrola bezpečnosti a HTTPS</p>
-            </div>
-          </div>
-          <div class="truth">
-            <span class="truth-icon icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-accessibility"/></svg></span>
-            <div class="truth-body">
-              <p class="truth-title">Prístupnosť — či sa na web dostanú aj ľudia so znevýhodnením</p>
-            </div>
-          </div>
-        </div>
-        <div class="audit-cta">
-          <a class="btn btn-primary" href="#kontakt-form" data-preset="seo" data-analytics-cta="seo_audit">Chcem bezplatný audit <span class="arrow">→</span></a>
-          <p class="audit-note">Bez záväzku · audit pošleme do 2–3 dní</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="final kontakt-form-section" id="kontakt" aria-labelledby="contact-title">
+  <section class="section kontakt-form-section" id="kontakt" aria-labelledby="contact-title">
     <div class="wrap">
       <p class="kicker">Kontakt</p>
-      <h2 id="contact-title">Napíšte nám.</h2>
+      <h1 class="section-title section-title--sm" id="contact-title">Napíšte nám.</h1>
       <div class="contact-layout contact-layout--centered">
         <p class="contact-intro">Vyberte balík alebo napíšte o softvérovom projekte. Ozveme sa, prejdeme možnosti a úprimne povieme, či vám vieme pomôcť.</p>
         <form class="contact-form" name="kontakt" method="POST" data-netlify="true" netlify-honeypot="bot-field" id="kontakt-form">
@@ -167,6 +124,16 @@
           <div class="form-field">
             <label for="contact-email">E-mail</label>
             <input type="email" id="contact-email" name="email" required autocomplete="email">
+          </div>
+          <div class="form-field">
+            <label for="contact-type">Typ projektu</label>
+            <select id="contact-type" name="typ_projektu">
+              <option value="" disabled selected>Vyberte…</option>
+              <option value="Redizajn existujúceho webu">Redizajn existujúceho webu</option>
+              <option value="Nový web">Nový web</option>
+              <option value="Softvér / aplikácia">Softvér / aplikácia</option>
+              <option value="Iné">Iné</option>
+            </select>
           </div>
           <fieldset class="form-field package-radios">
             <legend>Balík</legend>
@@ -215,12 +182,49 @@
             <span>Súhlasím so spracovaním údajov podľa <a href="../ochrana-udajov/">Ochrany osobných údajov</a>.</span>
           </label>
           <div class="form-actions">
-            <button type="submit" class="btn btn-light">Odoslať správu <span class="arrow">→</span></button>
+            <button type="submit" class="btn btn-primary">Odoslať správu <span class="arrow">→</span></button>
           </div>
           <p class="form-status" role="status" aria-live="polite" hidden></p>
         </form>
       </div>
       <p class="contact-alt">Alebo napíšte na <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a></p>
+    </div>
+  </section>
+
+  <section class="section audit-section" aria-labelledby="audit-title">
+    <div class="wrap audit-grid">
+      <div class="audit-copy">
+        <p class="kicker">Bezplatný mini-audit</p>
+        <h2 class="section-title section-title--lg" id="audit-title">Máte už web?</h2>
+        <p class="audit-lead">Pošleme vám <strong>bezplatný mini-audit</strong> — konkrétne zistenia, žiadne frázy. Úplne nezáväzne.</p>
+      </div>
+      <div class="audit-side">
+        <div class="truths" aria-label="Čo skontrolujeme">
+          <p class="truths-label">Čo skontrolujeme</p>
+          <div class="truth">
+            <span class="truth-icon icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-gauge"/></svg></span>
+            <div class="truth-body">
+              <p class="truth-title">Rýchlosť načítania a Core Web Vitals</p>
+            </div>
+          </div>
+          <div class="truth">
+            <span class="truth-icon icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-search"/></svg></span>
+            <div class="truth-body">
+              <p class="truth-title">Technické SEO — indexácia, schema, sitemap</p>
+            </div>
+          </div>
+          <div class="truth">
+            <span class="truth-icon icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-shield-check"/></svg></span>
+            <div class="truth-body">
+              <p class="truth-title">Základná kontrola bezpečnosti a HTTPS</p>
+            </div>
+          </div>
+        </div>
+        <div class="audit-cta">
+          <a class="btn btn-primary" href="#kontakt-form" data-preset="seo" data-analytics-cta="seo_audit">Chcem bezplatný audit <span class="arrow">→</span></a>
+          <p class="audit-note">Bez záväzku · audit pošleme do 2–3 dní</p>
+        </div>
+      </div>
     </div>
   </section>
 </main>
@@ -230,6 +234,12 @@
   <input name="bot-field">
   <input name="meno">
   <input name="email">
+  <select name="typ_projektu">
+    <option value="Redizajn existujúceho webu">Redizajn existujúceho webu</option>
+    <option value="Nový web">Nový web</option>
+    <option value="Softvér / aplikácia">Softvér / aplikácia</option>
+    <option value="Iné">Iné</option>
+  </select>
   <input name="balik">
   <input name="odvetvie">
   <textarea name="sprava"></textarea>
@@ -270,13 +280,6 @@
   </symbol>
   <symbol id="icon-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
     <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>
-  </symbol>
-  <symbol id="icon-accessibility" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="16" cy="4" r="1"/>
-    <path d="m18 19 1-7-6 1"/>
-    <path d="m5 8 3-3 5.5 3-2.36 3.5"/>
-    <path d="M4.24 14.5a5 5 0 0 0 6.88 6"/>
-    <path d="M13.76 17.5a5 5 0 0 0-6.88-6"/>
   </symbol>
 </svg>
 </body>
