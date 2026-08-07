@@ -92,11 +92,14 @@ def head_block(
 """
 
 
-def header_nav(depth: str, *, current: str = "") -> str:
+def header_nav(depth: str, *, current: str = "", odvetvie: str = "") -> str:
     odvetvia = f"{depth}tvorba-webov/odvetvia/"
     tvorba = f"{depth}tvorba-webov/"
     cennik = f"{depth}cennik/"
     kontakt = f"{depth}kontakt/"
+    kontakt_cta = (
+        f"{kontakt}?odvetvie={e(odvetvie)}#kontakt-form" if odvetvie else kontakt
+    )
     aria = ' aria-current="page"' if current == "hub" else ""
     return f"""
 <a class="skip" href="#obsah">Preskočiť na obsah</a>
@@ -112,7 +115,7 @@ def header_nav(depth: str, *, current: str = "") -> str:
       <a href="{depth}referencie/">Referencie</a>
       <a href="{kontakt}">Kontakt</a>
     </nav>
-    <a class="btn btn-primary header-cta" href="{kontakt}" data-analytics-cta="header_industry">Chcem web <span class="arrow">→</span></a>
+    <a class="btn btn-primary header-cta" href="{kontakt_cta}" data-analytics-cta="header_industry">Chcem web <span class="arrow">→</span></a>
     <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Otvoriť menu">
       <span></span><span></span>
     </button>
@@ -504,7 +507,7 @@ def render_industry(ind: dict, all_inds=None) -> str:
 
     body = f"""
 <body id="top" class="industry-page">
-{header_nav(depth)}
+{header_nav(depth, odvetvie=slug)}
 <main id="obsah">
   <section class="{hero_class}" aria-labelledby="ind-hero-title">
     <div class="wrap">
@@ -521,7 +524,7 @@ def render_industry(ind: dict, all_inds=None) -> str:
         <h1 id="ind-hero-title" class="reveal">{e(ind["h1"])}</h1>
         <p class="ind-hero-lead reveal">{e(ind["hero_lead"])}</p>
         <div class="ind-hero-actions reveal">
-          <a class="btn btn-primary" href="{depth}kontakt/" data-analytics-cta="industry_hero_{e(slug)}">{e(ind["cta_primary"])} <span class="arrow">→</span></a>
+          <a class="btn btn-primary" href="{depth}kontakt/?odvetvie={e(slug)}#kontakt-form" data-analytics-cta="industry_hero_{e(slug)}">{e(ind["cta_primary"])} <span class="arrow">→</span></a>
           {secondary_cta}
         </div>
         <ul class="ind-hero-meta reveal" aria-label="Čo na stránke nájdete">{proof_li}</ul>
@@ -592,7 +595,7 @@ def render_industry(ind: dict, all_inds=None) -> str:
       <h2 class="reveal" id="final-title">{e(ind["final_title"])}</h2>
       <p class="reveal">{e(ind["final_text"])}</p>
       <div class="hero-actions reveal">
-        <a class="btn btn-light" href="{depth}kontakt/" data-analytics-cta="industry_final_{e(slug)}">Požiadať o konzultáciu <span class="arrow">→</span></a>
+        <a class="btn btn-light" href="{depth}kontakt/?odvetvie={e(slug)}#kontakt-form" data-analytics-cta="industry_final_{e(slug)}">Požiadať o konzultáciu <span class="arrow">→</span></a>
         <a class="btn btn-outline" href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a>
       </div>
       {footer_block(depth)}
