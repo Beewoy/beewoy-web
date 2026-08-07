@@ -137,11 +137,23 @@
 }
 .ind-section .kicker { margin-bottom: 10px; }
 .ind-section .section-title {
-  margin: 0 0 12px;
+  margin-top: 0;
+  margin-bottom: 12px;
   max-width: 28ch;
 }
 .ind-section-head { margin-bottom: 22px; }
-.ind-section-head.center { text-align: center; }
+.ind-section-head.center {
+  text-align: center;
+}
+.ind-section-head.center .kicker {
+  display: inline-flex;
+  justify-content: center;
+}
+.ind-section-head.center .section-title {
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
 .ind-section-head.center .ind-lead {
   margin-left: auto;
   margin-right: auto;
