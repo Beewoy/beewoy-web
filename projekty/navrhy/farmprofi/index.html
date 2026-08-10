@@ -1,0 +1,1199 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Návrh webovej stránky FARM PROFI — výroba potravinárskych strojov, nerezová zákazková výroba a servis v Modre.">
+  <meta name="theme-color" content="#1E4620">
+  <title>FARM PROFI | Potravinárske stroje, nerezová výroba a servis — návrh webu</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+  <style>
+    :root {
+      --ink: #1B2E1D;
+      --ink-soft: #4F5F52;
+      --muted: #657064;
+      --forest: #1E4620;
+      --forest-deep: #143318;
+      --leaf: #6FBF62;
+      --leaf-soft: #8ED081;
+      --mist: #EEF1EB;
+      --paper: #F7F8F5;
+      --white: #FFFFFF;
+      --line: #D8DDD4;
+      --danger: #B42318;
+      --shadow: 0 22px 60px rgba(20, 40, 24, 0.12);
+      --radius: 18px;
+      --container: 1180px;
+      --font-sans: "Source Sans 3", "Segoe UI", sans-serif;
+      --font-heading: Archivo, "Segoe UI", sans-serif;
+    }
+
+    *,
+    *::before,
+    *::after { box-sizing: border-box; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 96px;
+    }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-sans);
+      font-size: 17px;
+      line-height: 1.6;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.menu-open { overflow: hidden; }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a { color: inherit; }
+
+    button,
+    input,
+    select,
+    textarea { font: inherit; }
+
+    button,
+    a { -webkit-tap-highlight-color: transparent; }
+
+    :focus-visible {
+      outline: 3px solid var(--leaf);
+      outline-offset: 3px;
+    }
+
+    .skip {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 100;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: var(--white);
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration: none;
+      transform: translateY(-160%);
+    }
+
+    .skip:focus { transform: none; }
+
+    .container {
+      width: min(100% - 40px, var(--container));
+      margin-inline: auto;
+    }
+
+    .proposal-bar {
+      background: var(--forest-deep);
+      color: rgba(255, 255, 255, 0.88);
+      font-size: 0.9rem;
+    }
+
+    .proposal-bar .container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px 24px;
+      min-height: 46px;
+      padding-block: 10px;
+    }
+
+    .proposal-bar strong { color: #fff; font-weight: 700; }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      border-bottom: 1px solid rgba(30, 70, 32, 0.12);
+      background: rgba(247, 248, 245, 0.94);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      min-height: 78px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-mark {
+      display: grid;
+      place-items: center;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: var(--forest);
+      color: #fff;
+    }
+
+    .brand-mark iconify-icon { font-size: 1.25rem; }
+
+    .brand-text strong {
+      display: block;
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+    }
+
+    .brand-text small {
+      display: block;
+      margin-top: 2px;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-size: 0.94rem;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .nav-links a:not(.btn):hover { color: var(--forest); }
+
+    .menu-toggle {
+      display: none;
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--white);
+      color: var(--ink);
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      min-height: 48px;
+      padding: 0 1.2rem;
+      border: 2px solid transparent;
+      border-radius: 12px;
+      background: var(--forest);
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s, border-color 0.2s, color 0.2s;
+    }
+
+    .btn:hover {
+      background: var(--forest-deep);
+      transform: translateY(-1px);
+    }
+
+    .btn-leaf {
+      background: var(--leaf-soft);
+      color: var(--ink);
+    }
+
+    .btn-leaf:hover { background: var(--leaf); }
+
+    .btn-outline {
+      background: transparent;
+      border-color: rgba(255, 255, 255, 0.45);
+      color: #fff;
+    }
+
+    .btn-outline:hover {
+      background: #fff;
+      color: var(--forest);
+      border-color: #fff;
+    }
+
+    .btn-ghost {
+      background: var(--white);
+      border-color: var(--line);
+      color: var(--ink);
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--forest);
+      color: var(--forest);
+    }
+
+    .hero {
+      position: relative;
+      min-height: min(92vh, 760px);
+      display: grid;
+      align-items: end;
+      overflow: hidden;
+      color: #fff;
+      background: var(--forest-deep);
+    }
+
+    .hero-media {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0.48;
+      transform: scale(1.02);
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(105deg, rgba(14, 34, 18, 0.92) 0%, rgba(20, 51, 24, 0.72) 48%, rgba(20, 51, 24, 0.35) 100%),
+        linear-gradient(0deg, rgba(14, 34, 18, 0.78), transparent 55%);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      padding: 110px 0 72px;
+    }
+
+    .kicker {
+      margin: 0 0 18px;
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+    }
+
+    .hero-brand {
+      margin: 0 0 18px;
+      font-family: var(--font-heading);
+      font-size: clamp(2.4rem, 5vw, 3.6rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 0.95;
+    }
+
+    .hero h1 {
+      max-width: 18ch;
+      margin: 0;
+      font-family: var(--font-heading);
+      font-size: clamp(2.5rem, 6vw, 4.6rem);
+      font-weight: 800;
+      letter-spacing: -0.045em;
+      line-height: 0.98;
+    }
+
+    .hero-copy {
+      max-width: 560px;
+      margin: 22px 0 0;
+      color: rgba(255, 255, 255, 0.86);
+      font-size: clamp(1.05rem, 2vw, 1.2rem);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 28px;
+      margin-top: 48px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.28);
+      color: rgba(255, 255, 255, 0.78);
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .proof {
+      border-bottom: 1px solid var(--line);
+      background: var(--mist);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px 28px;
+      padding-block: 28px;
+    }
+
+    .proof-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .proof-icon {
+      display: grid;
+      flex: 0 0 auto;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--white);
+      color: var(--forest);
+    }
+
+    .proof-icon iconify-icon {
+      font-size: 1.25rem;
+    }
+
+    .proof-item strong {
+      display: block;
+      padding-top: 8px;
+      font-family: var(--font-heading);
+      font-size: 1.02rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+
+    .section { padding: 96px 0; }
+
+    .section-soft { background: var(--mist); }
+
+    .section-dark {
+      background: var(--forest);
+      color: #fff;
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 36px;
+      margin-bottom: 42px;
+    }
+
+    .label {
+      margin: 0 0 12px;
+      color: #3F7A3A;
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .section-dark .label { color: var(--leaf-soft); }
+
+    h2 {
+      margin: 0;
+      max-width: 16ch;
+      font-family: var(--font-heading);
+      font-size: clamp(2rem, 4.2vw, 3.4rem);
+      font-weight: 800;
+      letter-spacing: -0.04em;
+      line-height: 1.02;
+    }
+
+    .section-intro {
+      max-width: 380px;
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .section-dark .section-intro { color: rgba(255, 255, 255, 0.75); }
+
+    .paths {
+      display: grid;
+      grid-template-columns: 1.15fr 1.15fr;
+      gap: 18px;
+    }
+
+    .path {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: 0 10px 28px rgba(20, 40, 24, 0.05);
+    }
+
+    .path-dark {
+      border: 0;
+      background: var(--forest);
+      color: #fff;
+    }
+
+    .path img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+
+    .path-dark img { opacity: 0.82; }
+
+    .path-body { padding: 26px; }
+
+    .path-body .label { margin-bottom: 8px; }
+
+    .path h3 {
+      margin: 0;
+      font-family: var(--font-heading);
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .path p {
+      margin: 12px 0 0;
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .path-dark p { color: rgba(255, 255, 255, 0.76); }
+
+    .path a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 22px;
+      font-weight: 800;
+      text-decoration: none;
+      color: var(--forest);
+    }
+
+    .path-dark a { color: #fff; }
+
+    .path-note {
+      margin-top: auto;
+      padding: 14px 16px;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: var(--paper);
+    }
+
+    .path-note span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .path-note strong {
+      display: block;
+      margin-top: 4px;
+      font-size: 0.95rem;
+    }
+
+    .catalog {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+    }
+
+    .catalog article {
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--white);
+    }
+
+    .catalog span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .catalog h3 {
+      margin: 10px 0 0;
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .catalog p {
+      margin: 10px 0 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .tech {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .tech img {
+      width: 100%;
+      min-height: 420px;
+      object-fit: cover;
+      border-radius: var(--radius);
+    }
+
+    .caps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0 18px;
+      margin-top: 28px;
+    }
+
+    .caps div {
+      padding: 16px 0;
+      border-top: 1px solid var(--line);
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 18px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .steps li {
+      padding-top: 14px;
+      border-top: 1px solid rgba(255, 255, 255, 0.28);
+    }
+
+    .steps b {
+      color: var(--leaf-soft);
+      font-size: 0.85rem;
+      letter-spacing: 0.08em;
+    }
+
+    .steps h3 {
+      margin: 12px 0 0;
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      font-weight: 800;
+    }
+
+    .steps p {
+      margin: 8px 0 0;
+      color: rgba(255, 255, 255, 0.72);
+      font-size: 0.94rem;
+    }
+
+    .refs {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--line);
+      border-left: 1px solid var(--line);
+    }
+
+    .refs div {
+      padding: 26px 22px;
+      border-right: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+    }
+
+    .refs .muted {
+      color: var(--muted);
+      font-family: var(--font-sans);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 28px;
+    }
+
+    .contact-list a,
+    .contact-list p {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .contact-list iconify-icon {
+      color: var(--forest);
+      font-size: 1.3rem;
+    }
+
+    .form {
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .form h3 {
+      margin: 0;
+      font-family: var(--font-heading);
+      font-size: 1.55rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 22px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      font-size: 0.92rem;
+      font-weight: 700;
+    }
+
+    .field.full { grid-column: 1 / -1; }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      padding: 0.8rem 0.9rem;
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--paper);
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .field textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .form-status {
+      display: none;
+      margin-top: 14px;
+      padding: 12px 14px;
+      border-radius: 10px;
+      background: var(--mist);
+      color: var(--ink-soft);
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .form-status.is-visible { display: block; }
+
+    .form-status.is-error {
+      background: #fdecea;
+      color: var(--danger);
+    }
+
+    .form-hint {
+      display: block;
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 0.85rem;
+      font-weight: 500;
+    }
+
+    .site-footer {
+      padding: 56px 0 36px;
+      background: var(--forest-deep);
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr 1fr;
+      gap: 28px;
+    }
+
+    .footer-grid strong {
+      display: block;
+      margin-bottom: 12px;
+      color: #fff;
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 800;
+    }
+
+    .footer-grid p {
+      margin: 0;
+      font-size: 0.94rem;
+    }
+
+    .footer-title {
+      margin: 0 0 12px;
+      color: rgba(255, 255, 255, 0.55);
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .footer-bottom {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 12px;
+      margin-top: 36px;
+      padding-top: 22px;
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+      font-size: 0.86rem;
+    }
+
+    .footer-bottom a {
+      color: #fff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    @media (max-width: 980px) {
+      .proof-grid { grid-template-columns: 1fr 1fr; }
+      .paths,
+      .tech,
+      .process,
+      .contact,
+      .footer-grid { grid-template-columns: 1fr; }
+      .catalog { grid-template-columns: 1fr 1fr; }
+      .refs { grid-template-columns: 1fr 1fr; }
+      .section-head {
+        flex-direction: column;
+        align-items: start;
+      }
+      .section-intro { max-width: none; }
+      .tech img { min-height: 280px; }
+      .nav-links {
+        position: fixed;
+        inset: 124px 16px auto;
+        z-index: 60;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 12px;
+        border: 1px solid var(--line);
+        border-radius: 16px;
+        background: var(--white);
+        box-shadow: var(--shadow);
+      }
+      .nav-links.is-open { display: flex; }
+      .nav-links li { width: 100%; }
+      .nav-links a {
+        display: flex;
+        align-items: center;
+        min-height: 48px;
+        padding: 0 12px;
+        border-radius: 10px;
+      }
+      .nav-links .btn { width: 100%; margin-top: 6px; }
+      .menu-toggle { display: inline-grid; place-items: center; }
+    }
+
+    @media (max-width: 640px) {
+      .container { width: min(100% - 28px, var(--container)); }
+      .hero { min-height: auto; }
+      .hero-content { padding: 78px 0 56px; }
+      .proof-grid,
+      .catalog,
+      .form-grid,
+      .caps,
+      .steps,
+      .refs { grid-template-columns: 1fr; }
+      .proof-grid { gap: 16px; padding-block: 22px; }
+      .section { padding: 72px 0; }
+      .form { padding: 22px; }
+      .footer-bottom { flex-direction: column; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *,
+      *::before,
+      *::after {
+        animation: none !important;
+        transition: none !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip" href="#main">Preskočiť na hlavný obsah</a>
+
+  <div class="proposal-bar">
+    <div class="container">
+      <span><strong>Návrh webovej stránky</strong> pripravený štúdiom Beewoy pre FARM PROFI s.r.o.</span>
+      <span>Ukážka konceptu · nie finálna produkčná verzia</span>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#top" aria-label="FARM PROFI — úvod">
+        <span class="brand-mark" aria-hidden="true"><iconify-icon icon="lucide:factory"></iconify-icon></span>
+        <span class="brand-text">
+          <strong>FARM PROFI</strong>
+          <small>Modra · Slovensko</small>
+        </span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu" aria-label="Otvoriť menu">☰</button>
+      <ul id="menu" class="nav-links" aria-label="Hlavná navigácia">
+        <li><a href="#produkty">Produkty</a></li>
+        <li><a href="#technologie">Technológie</a></li>
+        <li><a href="#vyroba">Výroba na mieru</a></li>
+        <li><a href="#servis">Servis</a></li>
+        <li><a href="#referencie">Referencie</a></li>
+        <li><a href="#kontakt">Kontakt</a></li>
+        <li><a class="btn" href="#kontakt">Nezáväzne konzultovať <iconify-icon icon="lucide:arrow-right"></iconify-icon></a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <img
+        class="hero-media"
+        src="https://uxmagic.blob.core.windows.net/public/agent-images/farm-hero-1786364319476-b12badsp299.png"
+        alt="Nerezový potravinársky stroj vo výrobnej prevádzke"
+        width="1600"
+        height="900"
+      >
+      <div class="container hero-content">
+        <p class="kicker">Stroje · Technológie · Zákazková výroba</p>
+        <p class="hero-brand">FARM PROFI</p>
+        <h1>Technológie pre potravinársku výrobu, ktoré vydržia pracovať.</h1>
+        <p class="hero-copy">Navrhujeme, vyrábame a servisujeme stroje a technologické zariadenia pre potravinársky priemysel. Od jednotlivých komponentov až po riešenia vyrábané na mieru.</p>
+        <div class="hero-actions">
+          <a class="btn btn-leaf" href="#kontakt">Nezáväzne konzultovať riešenie <iconify-icon icon="lucide:arrow-right"></iconify-icon></a>
+          <a class="btn btn-outline" href="#produkty">Pozrieť produkty <iconify-icon icon="lucide:arrow-down"></iconify-icon></a>
+        </div>
+        <div class="hero-meta">
+          <span>Výroba v Modre</span>
+          <span>Nerez · Konštrukcia · Servis</span>
+          <span>Od roku 2000</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof" aria-label="Kľúčové silné stránky">
+      <div class="container proof-grid">
+        <div class="proof-item">
+          <span class="proof-icon" aria-hidden="true"><iconify-icon icon="lucide:calendar-check"></iconify-icon></span>
+          <strong>Od roku 2000 vo výrobe</strong>
+        </div>
+        <div class="proof-item">
+          <span class="proof-icon" aria-hidden="true"><iconify-icon icon="lucide:factory"></iconify-icon></span>
+          <strong>Vlastná konštrukcia a výroba</strong>
+        </div>
+        <div class="proof-item">
+          <span class="proof-icon" aria-hidden="true"><iconify-icon icon="lucide:wrench"></iconify-icon></span>
+          <strong>Servis a náhradné diely</strong>
+        </div>
+        <div class="proof-item">
+          <span class="proof-icon" aria-hidden="true"><iconify-icon icon="lucide:pencil-ruler"></iconify-icon></span>
+          <strong>Výroba na mieru</strong>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="label">02 / Kľúčové oblasti</p>
+            <h2>Od návrhu až po dlhodobý servis</h2>
+          </div>
+          <p class="section-intro">Štyri cesty k riešeniu pre výrobu, údržbu a technické oddelenie.</p>
+        </div>
+        <div class="paths">
+          <article class="path">
+            <img src="https://uxmagic.blob.core.windows.net/public/agent-images/farm-hero-1786364319476-b12badsp299.png" alt="Potravinárska technológia z nerezu" width="800" height="440" loading="lazy">
+            <div class="path-body">
+              <p class="label">01 / Produkty</p>
+              <h3>Potravinárske stroje</h3>
+              <p>Zariadenia pre spracovanie mäsa a potravín, navrhnuté pre reálnu prevádzku.</p>
+              <a href="#produkty">Zobraziť produkty <iconify-icon icon="lucide:arrow-right"></iconify-icon></a>
+            </div>
+          </article>
+          <article class="path path-dark" id="vyroba">
+            <img src="https://uxmagic.blob.core.windows.net/public/agent-images/farm-workshop-1786364329589-53eglrjz429.png" alt="Zákazková nerezová výroba vo firme FARM PROFI" width="800" height="440" loading="lazy">
+            <div class="path-body">
+              <p class="label">02 / Zákazka</p>
+              <h3>Výroba na mieru</h3>
+              <p>Nerezové stroje a technologické zariadenia podľa výrobných požiadaviek zákazníka.</p>
+              <a href="#kontakt">Možnosti výroby <iconify-icon icon="lucide:arrow-right"></iconify-icon></a>
+            </div>
+          </article>
+          <article class="path" id="servis">
+            <img src="https://uxmagic.blob.core.windows.net/public/agent-images/farm-service-1786364338811-bdzs2t3vtn7.png" alt="Servis potravinárskeho stroja" width="800" height="440" loading="lazy">
+            <div class="path-body">
+              <p class="label">03 / Podpora</p>
+              <h3>Servis a náhradné diely</h3>
+              <p>Opravy, generálne opravy a diely pre stroje FARM PROFI aj ďalších výrobcov.</p>
+              <a href="#kontakt">Potrebujem servis <iconify-icon icon="lucide:arrow-right"></iconify-icon></a>
+            </div>
+          </article>
+          <article class="path">
+            <div class="path-body" style="min-height: 100%;">
+              <p class="label">04 / Dostupné stroje</p>
+              <h3>Repasované stroje</h3>
+              <p>Profesionálne repasované zariadenia pripravené na priemyselné nasadenie.</p>
+              <div class="path-note" style="margin-top: 28px;">
+                <span>Prehľad dostupnosti</span>
+                <strong>Individuálne podľa aktuálnej ponuky</strong>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="produkty">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="label">03 / Katalóg</p>
+            <h2>Stroje pre reálnu výrobu</h2>
+          </div>
+          <a class="btn btn-ghost" href="#kontakt">Dopytovať produkt <iconify-icon icon="lucide:arrow-right"></iconify-icon></a>
+        </div>
+        <div class="catalog">
+          <article><span>Miešanie</span><h3>Miešačky na mäso</h3><p>Konštrukcia pre stabilný proces miešania.</p></article>
+          <article><span>Spracovanie</span><h3>Masírovačky</h3><p>Pre technologické spracovanie mäsových výrobkov.</p></article>
+          <article><span>Hygiena</span><h3>Umývačky prepraviek</h3><p>Zariadenia pre efektívnu hygienu prevádzky.</p></article>
+          <article><span>Tepelné procesy</span><h3>Varné kotly</h3><p>Nerezové riešenia pre prípravu a spracovanie.</p></article>
+          <article><span>Manipulácia</span><h3>Zdvíhacie zariadenia</h3><p>Bezpečná manipulácia so surovinou a nádobami.</p></article>
+          <article><span>Komponenty</span><h3>Náhradné diely</h3><p>Diely a komponenty pre servisné zásahy.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="technologie">
+      <div class="container tech">
+        <img src="https://uxmagic.blob.core.windows.net/public/agent-images/farm-workshop-1786364329589-53eglrjz429.png" alt="Zváranie nerezovej konštrukcie" width="900" height="600" loading="lazy">
+        <div>
+          <p class="label">04 / Výrobné kapacity</p>
+          <h2>Technológie pod jednou strechou</h2>
+          <p class="section-intro" style="max-width: none; margin-top: 18px;">Vlastná konštrukcia a výroba dávajú zákazkovému riešeniu jasnú technickú kontinuitu — od požiadavky po montáž. Výrobný komplex v Modre má rozlohu 10&nbsp;000&nbsp;m².</p>
+          <div class="caps">
+            <div>01 / Spracovanie nerezu</div>
+            <div>02 / Obrábanie</div>
+            <div>03 / Zváranie</div>
+            <div>04 / Konštrukcia</div>
+            <div>05 / Montáž</div>
+            <div>06 / Servis</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark">
+      <div class="container process">
+        <div>
+          <p class="label">05 / Zákazkový postup</p>
+          <h2>Keď štandardný stroj nestačí.</h2>
+          <p class="section-intro" style="margin-top: 18px;">Náš konštrukčný tím pripraví riešenie podľa priestoru, výrobného procesu a požiadaviek vašej prevádzky.</p>
+          <a class="btn btn-leaf" href="#kontakt" style="margin-top: 28px;">Konzultovať zákazkovú výrobu <iconify-icon icon="lucide:arrow-right"></iconify-icon></a>
+        </div>
+        <ol class="steps">
+          <li><b>01</b><h3>Konzultácia</h3><p>Pochopenie výrobnej požiadavky.</p></li>
+          <li><b>02</b><h3>Návrh</h3><p>Konštrukčné a technické riešenie.</p></li>
+          <li><b>03</b><h3>Výroba</h3><p>Nerezová výroba v Modre.</p></li>
+          <li><b>04</b><h3>Montáž a servis</h3><p>Uvedenie do prevádzky a podpora.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="referencie">
+      <div class="container">
+        <p class="label">06 / Referencie a partneri</p>
+        <h2>Technológie overené v priemysle</h2>
+        <div class="refs" style="margin-top: 36px;">
+          <div>Mecom</div>
+          <div>Tauris</div>
+          <div>Mäso Spiš</div>
+          <div>TES Bratislava</div>
+          <div>Kovymont</div>
+          <div class="muted">Nadratowski · Nowicki</div>
+          <div class="muted">Servis Vemag, LASKA a ďalších</div>
+          <div class="muted">Ďalšie prevádzky</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="kontakt">
+      <div class="container contact">
+        <div>
+          <p class="label">07 / Dopyt</p>
+          <h2>Hľadáte stroj, technologické riešenie alebo servis?</h2>
+          <p class="section-intro" style="max-width: none; margin-top: 18px;">Povedzte nám, čo potrebujete vyriešiť. Navrhneme ďalší postup podľa vašej prevádzky a požiadaviek.</p>
+          <div class="contact-list">
+            <a href="tel:+421336472752"><iconify-icon icon="lucide:phone"></iconify-icon>+421 33 647 27 52</a>
+            <a href="mailto:farmprofi@farmprofi.sk"><iconify-icon icon="lucide:mail"></iconify-icon>farmprofi@farmprofi.sk</a>
+            <p><iconify-icon icon="lucide:map-pin"></iconify-icon>Štefánikova 94, 900 01 Modra</p>
+          </div>
+        </div>
+        <form class="form" id="inquiry" novalidate>
+          <h3>Nezáväzný dopyt</h3>
+          <div class="form-grid">
+            <label class="field">Meno a priezvisko *
+              <input id="name" name="name" autocomplete="name" required placeholder="Vaše meno">
+            </label>
+            <label class="field">Firma
+              <input id="company" name="company" autocomplete="organization" placeholder="Názov spoločnosti">
+            </label>
+            <label class="field">E-mail *
+              <input id="email" name="email" type="email" autocomplete="email" required placeholder="obchod@firma.sk">
+            </label>
+            <label class="field">O čo máte záujem? *
+              <select id="interest" name="interest" required>
+                <option value="">Vyberte možnosť</option>
+                <option>Potravinársky stroj</option>
+                <option>Zákazková výroba</option>
+                <option>Servis</option>
+                <option>Náhradné diely</option>
+                <option>Repasovaný stroj</option>
+              </select>
+            </label>
+            <label class="field full">Popíšte, čo potrebujete *
+              <textarea id="message" name="message" required placeholder="Typ prevádzky, požiadavka, rozmer alebo problém…"></textarea>
+            </label>
+          </div>
+          <div class="form-status" id="form-status" role="status" tabindex="-1"></div>
+          <button class="btn" type="submit" style="width: 100%; margin-top: 18px;">Odoslať dopyt <iconify-icon icon="lucide:send"></iconify-icon></button>
+          <span class="form-hint">* Povinné údaje. V tejto ukážke formulár otvorí e-mailový program — neposiela dáta na server.</span>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <strong>FARM PROFI s.r.o.</strong>
+          <p>Stroje, nerezová výroba a servis pre potravinárske prevádzky.</p>
+        </div>
+        <div>
+          <p class="footer-title">Produkty</p>
+          <p>Stroje · Technológie · Repasované stroje</p>
+        </div>
+        <div>
+          <p class="footer-title">Partneri</p>
+          <p>Nadratowski · Nowicki</p>
+        </div>
+        <div>
+          <p class="footer-title">Kontakt</p>
+          <p>farmprofi@farmprofi.sk<br>+421 33 647 27 52</p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 FARM PROFI s.r.o. · Návrh pripravil <a href="https://beewoy.sk" rel="noopener">Beewoy</a></span>
+        <span>Koncept pre prezentáciu — pred nasadením sa doladia texty, fotografie a funkcie.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const toggle = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('#menu');
+      if (toggle && menu) {
+        const setMenu = (open) => {
+          toggle.setAttribute('aria-expanded', String(open));
+          toggle.setAttribute('aria-label', open ? 'Zatvoriť menu' : 'Otvoriť menu');
+          menu.classList.toggle('is-open', open);
+          document.body.classList.toggle('menu-open', open);
+        };
+        toggle.addEventListener('click', () => {
+          setMenu(toggle.getAttribute('aria-expanded') !== 'true');
+        });
+        menu.addEventListener('click', (e) => {
+          if (e.target.closest('a')) setMenu(false);
+        });
+      }
+
+      const form = document.querySelector('#inquiry');
+      const status = document.querySelector('#form-status');
+      if (!form || !status) return;
+
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        status.classList.remove('is-error');
+        if (!form.checkValidity()) {
+          status.textContent = 'Skontrolujte, prosím, povinné polia a správny tvar e-mailu.';
+          status.classList.add('is-visible', 'is-error');
+          status.focus();
+          form.reportValidity();
+          return;
+        }
+        const data = new FormData(form);
+        const subject = 'Dopyt z webu — ' + data.get('interest');
+        const body = [
+          'Meno: ' + data.get('name'),
+          'Firma: ' + (data.get('company') || '—'),
+          'E-mail: ' + data.get('email'),
+          'Záujem: ' + data.get('interest'),
+          '',
+          'Požiadavka:',
+          data.get('message')
+        ].join('\n');
+        status.textContent = 'Otváram váš e-mailový program. Správu pred odoslaním skontrolujte.';
+        status.classList.add('is-visible');
+        status.focus();
+        window.location.href = 'mailto:farmprofi@farmprofi.sk?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+      });
+    })();
+  </script>
+</body>
+</html>

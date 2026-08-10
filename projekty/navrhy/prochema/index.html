@@ -1,0 +1,1650 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="PROCHEMA dodáva profesionálnym pestovateľom prípravky na ochranu rastlín, hnojivá a osivá spolu s odborným poradenstvom, agrotechnikou a logistikou komodít.">
+  <meta name="theme-color" content="#214a12">
+  <link rel="icon" type="image/png" href="assets/images/prochema/prochema-logo.png">
+  <title>PROCHEMA | Poľnohospodárska chémia, osivá a odborné poradenstvo</title>
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "PROCHEMA s.r.o.",
+      "url": "https://prochema.sk/",
+      "logo": "assets/images/prochema/prochema-logo.png",
+      "email": "office@prochema.sk",
+      "telephone": "+421336475453",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Dolná 142",
+        "addressLocality": "Modra",
+        "postalCode": "900 01",
+        "addressCountry": "SK"
+      },
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+421908192901",
+        "contactType": "sales",
+        "availableLanguage": "Slovak"
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --ink: #172015;
+      --ink-soft: #4f5b4c;
+      --forest: #214a12;
+      --forest-deep: #15340a;
+      --leaf: #71c442;
+      --leaf-soft: #dff0d1;
+      --cream: #f5f3e8;
+      --paper: #fffef8;
+      --line: #d9ddcf;
+      --white: #ffffff;
+      --error: #a92f25;
+      --container: 1180px;
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --shadow: 0 24px 70px rgba(31, 63, 19, 0.13);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 96px;
+    }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--leaf);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: fixed;
+      z-index: 1000;
+      top: 12px;
+      left: 12px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      background: var(--forest-deep);
+      color: var(--white);
+      font-weight: 700;
+      transform: translateY(-160%);
+      transition: transform 180ms ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: var(--forest);
+      font-size: 0.76rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 28px;
+      height: 2px;
+      background: var(--leaf);
+      content: "";
+    }
+
+    .section-title {
+      max-width: 780px;
+      margin: 0;
+      font-size: clamp(2.15rem, 4.7vw, 4.55rem);
+      font-weight: 720;
+      letter-spacing: -0.058em;
+      line-height: 1.02;
+    }
+
+    .section-intro {
+      max-width: 650px;
+      margin: 24px 0 0;
+      color: var(--ink-soft);
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 14px 21px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      cursor: pointer;
+      font-size: 0.94rem;
+      font-weight: 760;
+      line-height: 1.2;
+      text-decoration: none;
+      transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--forest);
+      color: var(--white);
+    }
+
+    .button-primary:hover {
+      background: var(--forest-deep);
+    }
+
+    .button-secondary {
+      border-color: #b9c2ae;
+      background: rgba(255, 255, 255, 0.72);
+      color: var(--forest);
+    }
+
+    .button-secondary:hover {
+      border-color: var(--forest);
+      background: var(--white);
+    }
+
+    .button-light {
+      background: var(--leaf);
+      color: #10220a;
+    }
+
+    .button-light:hover {
+      background: #8ad35f;
+    }
+
+    .site-header {
+      position: sticky;
+      z-index: 120;
+      top: 0;
+      border-bottom: 1px solid rgba(33, 74, 18, 0.1);
+      background: rgba(255, 254, 248, 0.94);
+      backdrop-filter: blur(16px);
+    }
+
+    .header-inner {
+      display: flex;
+      min-height: 84px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      min-width: 116px;
+      min-height: 56px;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 108px;
+      height: 64px;
+      object-fit: contain;
+    }
+
+    .desktop-nav {
+      display: flex;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .nav-list {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-list a {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      color: #354232;
+      font-size: 0.92rem;
+      font-weight: 650;
+      text-decoration: none;
+    }
+
+    .nav-list a:hover {
+      color: var(--forest);
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 48px;
+      height: 48px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      background: var(--white);
+      color: var(--forest);
+      cursor: pointer;
+    }
+
+    .menu-icon,
+    .menu-icon::before,
+    .menu-icon::after {
+      display: block;
+      width: 20px;
+      height: 2px;
+      border-radius: 2px;
+      background: currentColor;
+      transition: transform 180ms ease, opacity 180ms ease;
+    }
+
+    .menu-icon {
+      position: relative;
+    }
+
+    .menu-icon::before,
+    .menu-icon::after {
+      position: absolute;
+      left: 0;
+      content: "";
+    }
+
+    .menu-icon::before { top: -6px; }
+    .menu-icon::after { top: 6px; }
+
+    .menu-toggle[aria-expanded="true"] .menu-icon {
+      background: transparent;
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-icon::before {
+      top: 0;
+      transform: rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-icon::after {
+      top: 0;
+      transform: rotate(-45deg);
+    }
+
+    .mobile-menu {
+      display: none;
+    }
+
+    .mobile-menu[hidden] {
+      display: none !important;
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(48px, 7vw, 92px) 0 54px;
+      background:
+        radial-gradient(circle at 12% 12%, rgba(113, 196, 66, 0.18), transparent 33%),
+        var(--cream);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.04fr) minmax(410px, 0.96fr);
+      gap: clamp(44px, 7vw, 88px);
+      align-items: center;
+    }
+
+    .hero h1 {
+      max-width: 760px;
+      margin: 0;
+      font-size: clamp(3rem, 6.2vw, 6.25rem);
+      font-weight: 740;
+      letter-spacing: -0.072em;
+      line-height: 0.94;
+    }
+
+    .hero h1 span {
+      color: var(--forest);
+    }
+
+    .hero-copy {
+      max-width: 690px;
+      margin: 28px 0 0;
+      color: var(--ink-soft);
+      font-size: clamp(1.06rem, 1.7vw, 1.28rem);
+      line-height: 1.58;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .hero-note {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin: 25px 0 0;
+      color: #53604f;
+      font-size: 0.82rem;
+      font-weight: 650;
+    }
+
+    .hero-note::before {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--leaf);
+      box-shadow: 0 0 0 5px rgba(113, 196, 66, 0.16);
+      content: "";
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 560px;
+    }
+
+    .hero-image-wrap {
+      position: absolute;
+      inset: 0 0 34px 34px;
+      overflow: hidden;
+      border-radius: 180px 22px 22px 22px;
+      background: #d7ddce;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-image-wrap::after {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, transparent 52%, rgba(18, 42, 10, 0.42));
+      content: "";
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-badge {
+      position: absolute;
+      z-index: 2;
+      bottom: 0;
+      left: 0;
+      width: 206px;
+      padding: 25px 24px;
+      border: 8px solid var(--cream);
+      border-radius: 22px;
+      background: var(--forest);
+      color: var(--white);
+      box-shadow: 0 18px 45px rgba(21, 52, 10, 0.2);
+    }
+
+    .hero-badge strong {
+      display: block;
+      font-size: 2.5rem;
+      letter-spacing: -0.06em;
+      line-height: 1;
+    }
+
+    .hero-badge span {
+      display: block;
+      margin-top: 8px;
+      color: #d7e7cf;
+      font-size: 0.82rem;
+      font-weight: 650;
+      line-height: 1.35;
+    }
+
+    .proof-strip {
+      background: var(--forest-deep);
+      color: var(--white);
+    }
+
+    .proof-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .proof-item {
+      min-height: 142px;
+      padding: 30px 28px;
+      border-left: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .proof-item:last-child {
+      border-right: 1px solid rgba(255, 255, 255, 0.13);
+    }
+
+    .proof-value {
+      display: block;
+      color: var(--leaf);
+      font-size: clamp(1.55rem, 2.7vw, 2.3rem);
+      font-weight: 760;
+      letter-spacing: -0.045em;
+      line-height: 1.1;
+    }
+
+    .proof-label {
+      display: block;
+      max-width: 210px;
+      margin-top: 9px;
+      color: #dbe5d6;
+      font-size: 0.84rem;
+      line-height: 1.45;
+    }
+
+    .section {
+      padding: clamp(78px, 10vw, 132px) 0;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: clamp(50px, 9vw, 120px);
+      align-items: end;
+    }
+
+    .intro-lead {
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: clamp(1.12rem, 2vw, 1.5rem);
+      line-height: 1.5;
+    }
+
+    .intro-link {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      gap: 10px;
+      margin-top: 22px;
+      color: var(--forest);
+      font-weight: 760;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 5px;
+    }
+
+    .services {
+      background: var(--cream);
+    }
+
+    .section-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 36px;
+      margin-bottom: 46px;
+    }
+
+    .section-head .section-intro {
+      max-width: 430px;
+      margin: 0;
+    }
+
+    .service-grid {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .service-card {
+      position: relative;
+      grid-column: span 6;
+      min-height: 410px;
+      overflow: hidden;
+      border: 1px solid rgba(33, 74, 18, 0.12);
+      border-radius: var(--radius-md);
+      background: var(--paper);
+    }
+
+    .service-card-text {
+      display: flex;
+      min-height: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(28px, 4vw, 42px);
+    }
+
+    .service-number {
+      color: var(--forest);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+    }
+
+    .service-card h3 {
+      max-width: 470px;
+      margin: 68px 0 14px;
+      font-size: clamp(1.6rem, 3vw, 2.6rem);
+      letter-spacing: -0.045em;
+      line-height: 1.08;
+    }
+
+    .service-card p {
+      max-width: 520px;
+      margin: 0;
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+    }
+
+    .service-card-image {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      grid-column: span 12;
+      min-height: 430px;
+      background: var(--forest);
+      color: var(--white);
+    }
+
+    .service-card-image .service-card-text {
+      padding: clamp(34px, 5vw, 58px);
+    }
+
+    .service-card-image h3 {
+      margin-top: 42px;
+    }
+
+    .service-card-image p {
+      color: #dce7d8;
+    }
+
+    .service-card-image .service-number {
+      color: var(--leaf);
+    }
+
+    .service-media {
+      min-height: 430px;
+      overflow: hidden;
+    }
+
+    .service-media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .advantages {
+      overflow: hidden;
+      background: var(--forest-deep);
+      color: var(--white);
+    }
+
+    .advantages-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+      gap: clamp(48px, 8vw, 110px);
+      align-items: center;
+    }
+
+    .advantages .eyebrow {
+      color: #d7e7cf;
+    }
+
+    .advantages-list {
+      margin: 42px 0 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .advantages-list li {
+      display: grid;
+      grid-template-columns: 34px minmax(0, 1fr);
+      gap: 18px;
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+    }
+
+    .advantages-list span {
+      color: var(--leaf);
+      font-size: 0.76rem;
+      font-weight: 800;
+    }
+
+    .advantages-list p {
+      margin: 0;
+      color: #e5ece1;
+      font-size: 0.96rem;
+    }
+
+    .advantage-visual {
+      position: relative;
+      min-height: 660px;
+    }
+
+    .advantage-visual img {
+      width: 100%;
+      height: 660px;
+      border-radius: 22px 180px 22px 22px;
+      object-fit: cover;
+    }
+
+    .advantage-card {
+      position: absolute;
+      right: -34px;
+      bottom: 28px;
+      width: min(330px, 88%);
+      padding: 28px;
+      border: 8px solid var(--forest-deep);
+      border-radius: 20px;
+      background: var(--leaf);
+      color: #14240d;
+    }
+
+    .advantage-card strong {
+      display: block;
+      font-size: 1.35rem;
+      letter-spacing: -0.03em;
+      line-height: 1.2;
+    }
+
+    .advantage-card p {
+      margin: 9px 0 0;
+      font-size: 0.86rem;
+      line-height: 1.45;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: clamp(50px, 9vw, 120px);
+      align-items: center;
+    }
+
+    .story-image {
+      position: relative;
+      min-height: 560px;
+      overflow: hidden;
+      border-radius: 22px 22px 180px 22px;
+      background: #e1e4d9;
+    }
+
+    .story-image img {
+      width: 100%;
+      height: 560px;
+      object-fit: cover;
+    }
+
+    .story-copy p {
+      margin: 26px 0 0;
+      color: var(--ink-soft);
+      font-size: 1.03rem;
+    }
+
+    .story-points {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .story-point {
+      min-height: 126px;
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: var(--cream);
+    }
+
+    .story-point strong {
+      display: block;
+      color: var(--forest);
+      font-size: 1.05rem;
+      line-height: 1.3;
+    }
+
+    .story-point span {
+      display: block;
+      margin-top: 8px;
+      color: var(--ink-soft);
+      font-size: 0.82rem;
+      line-height: 1.45;
+    }
+
+    .faq {
+      background: var(--cream);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr);
+      gap: clamp(50px, 9vw, 120px);
+      align-items: start;
+    }
+
+    .faq-list {
+      border-top: 1px solid #cbd1c2;
+    }
+
+    details {
+      border-bottom: 1px solid #cbd1c2;
+    }
+
+    summary {
+      position: relative;
+      display: flex;
+      min-height: 74px;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 20px 44px 20px 0;
+      cursor: pointer;
+      color: var(--ink);
+      font-size: 1.05rem;
+      font-weight: 720;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker {
+      display: none;
+    }
+
+    summary::before,
+    summary::after {
+      position: absolute;
+      top: 50%;
+      right: 6px;
+      width: 18px;
+      height: 2px;
+      background: var(--forest);
+      content: "";
+      transform: translateY(-50%);
+      transition: transform 180ms ease;
+    }
+
+    summary::after {
+      transform: translateY(-50%) rotate(90deg);
+    }
+
+    details[open] summary::after {
+      transform: translateY(-50%) rotate(0deg);
+    }
+
+    .faq-answer {
+      max-width: 700px;
+      padding: 0 44px 24px 0;
+      color: var(--ink-soft);
+      font-size: 0.94rem;
+    }
+
+    .faq-answer p {
+      margin: 0;
+    }
+
+    .contact {
+      background: var(--paper);
+    }
+
+    .contact-shell {
+      overflow: hidden;
+      border-radius: var(--radius-lg);
+      background: var(--forest);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr);
+    }
+
+    .contact-info {
+      padding: clamp(42px, 6vw, 72px);
+      background:
+        radial-gradient(circle at 0 100%, rgba(113, 196, 66, 0.28), transparent 37%),
+        var(--forest-deep);
+    }
+
+    .contact-info .eyebrow {
+      color: #d9e7d4;
+    }
+
+    .contact-info h2 {
+      margin: 0;
+      font-size: clamp(2.3rem, 4.3vw, 4.3rem);
+      letter-spacing: -0.06em;
+      line-height: 1;
+    }
+
+    .contact-info > p {
+      max-width: 460px;
+      margin: 22px 0 0;
+      color: #dce7d8;
+    }
+
+    .contact-list {
+      display: grid;
+      gap: 13px;
+      margin: 42px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .contact-list a,
+    .contact-list span {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      color: var(--white);
+      font-weight: 660;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    .contact-form-wrap {
+      padding: clamp(42px, 6vw, 72px);
+      background: var(--white);
+      color: var(--ink);
+    }
+
+    .form-heading {
+      margin: 0 0 28px;
+      font-size: 1.45rem;
+      letter-spacing: -0.035em;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .field-full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 7px;
+      color: #334030;
+      font-size: 0.82rem;
+      font-weight: 720;
+    }
+
+    .required {
+      color: var(--error);
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      min-height: 50px;
+      border: 1px solid #bfc7b8;
+      border-radius: 10px;
+      background: #fffefb;
+      color: var(--ink);
+      font-size: 0.95rem;
+    }
+
+    input,
+    select {
+      padding: 0 14px;
+    }
+
+    textarea {
+      min-height: 132px;
+      padding: 13px 14px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--forest);
+      outline: 3px solid rgba(113, 196, 66, 0.34);
+      outline-offset: 1px;
+    }
+
+    .form-note {
+      margin: 18px 0 20px;
+      color: #5f695c;
+      font-size: 0.78rem;
+      line-height: 1.5;
+    }
+
+    .form-status {
+      min-height: 24px;
+      margin: 12px 0 0;
+      color: var(--forest);
+      font-size: 0.82rem;
+      font-weight: 650;
+    }
+
+    .site-footer {
+      padding: 58px 0 28px;
+      background: #11190f;
+      color: var(--white);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.7fr 0.7fr;
+      gap: 54px;
+      padding-bottom: 44px;
+    }
+
+    .footer-brand img {
+      width: 146px;
+      height: 102px;
+      padding: 8px;
+      border-radius: 12px;
+      background: var(--cream);
+      object-fit: contain;
+    }
+
+    .footer-brand p {
+      max-width: 420px;
+      margin: 14px 0 0;
+      color: #bfc9bb;
+      font-size: 0.88rem;
+    }
+
+    .footer-title {
+      margin: 0 0 16px;
+      color: #a9b7a5;
+      font-size: 0.73rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: grid;
+      gap: 8px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .footer-links a,
+    .footer-links span {
+      display: inline-flex;
+      min-height: 38px;
+      align-items: center;
+      color: #e5ebe2;
+      font-size: 0.88rem;
+      text-underline-offset: 4px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      color: #a9b4a5;
+      font-size: 0.76rem;
+    }
+
+    @media (max-width: 980px) {
+      .desktop-nav {
+        display: none;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+      }
+
+      .mobile-menu {
+        position: fixed;
+        z-index: 110;
+        inset: 84px 0 0;
+        display: none;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        padding: 8px 20px calc(40px + env(safe-area-inset-bottom, 0px));
+        background: var(--paper);
+        overscroll-behavior: contain;
+      }
+
+      .mobile-menu.is-open {
+        display: block;
+      }
+
+      .mobile-nav-list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        border-top: 1px solid var(--line);
+      }
+
+      .mobile-nav-list a {
+        display: flex;
+        min-height: 64px;
+        align-items: center;
+        justify-content: space-between;
+        border-bottom: 1px solid var(--line);
+        color: var(--ink);
+        font-size: 1.08rem;
+        font-weight: 720;
+        text-decoration: none;
+      }
+
+      .mobile-menu .button {
+        width: 100%;
+        margin-top: 24px;
+      }
+
+      .hero-grid,
+      .intro-grid,
+      .advantages-grid,
+      .story-grid,
+      .faq-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-grid {
+        gap: 52px;
+      }
+
+      .hero-visual {
+        min-height: 520px;
+      }
+
+      .proof-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .proof-item:nth-child(2) {
+        border-right: 1px solid rgba(255, 255, 255, 0.13);
+      }
+
+      .proof-item:nth-child(-n + 2) {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head .section-intro {
+        margin-top: 22px;
+      }
+
+      .service-card-image {
+        grid-template-columns: 1fr;
+      }
+
+      .service-media {
+        order: -1;
+        min-height: 340px;
+      }
+
+      .advantage-card {
+        right: -4px;
+      }
+
+      .story-image {
+        order: 2;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-brand {
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (max-width: 680px) {
+      .container {
+        width: min(calc(100% - 32px), var(--container));
+      }
+
+      .header-inner {
+        min-height: 74px;
+      }
+
+      .brand img {
+        width: 92px;
+        height: 56px;
+      }
+
+      .mobile-menu {
+        inset: 74px 0 0;
+      }
+
+      .hero {
+        padding-top: 40px;
+      }
+
+      .hero h1 {
+        font-size: clamp(2.8rem, 15vw, 4.6rem);
+      }
+
+      .hero-actions {
+        display: grid;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .hero-visual {
+        min-height: 410px;
+      }
+
+      .hero-image-wrap {
+        inset: 0 0 30px 14px;
+        border-radius: 110px 16px 16px 16px;
+      }
+
+      .hero-badge {
+        width: 176px;
+        padding: 21px 20px;
+      }
+
+      .proof-item {
+        min-height: 128px;
+        padding: 25px 18px;
+      }
+
+      .proof-label {
+        font-size: 0.76rem;
+      }
+
+      .service-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card,
+      .service-card-image {
+        grid-column: 1;
+      }
+
+      .service-card {
+        min-height: 350px;
+      }
+
+      .service-card h3 {
+        margin-top: 44px;
+      }
+
+      .advantage-visual,
+      .advantage-visual img {
+        min-height: 470px;
+        height: 470px;
+      }
+
+      .advantage-visual img {
+        border-radius: 18px 100px 18px 18px;
+      }
+
+      .advantage-card {
+        bottom: -22px;
+      }
+
+      .story-image,
+      .story-image img {
+        min-height: 390px;
+        height: 390px;
+      }
+
+      .story-points,
+      .form-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-brand {
+        grid-column: auto;
+      }
+
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#hlavny-obsah">Preskočiť na hlavný obsah</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="PROCHEMA — úvodná stránka">
+        <img src="assets/images/prochema/prochema-logo.png" alt="PROCHEMA">
+      </a>
+
+      <nav class="desktop-nav" aria-label="Hlavná navigácia">
+        <ul class="nav-list">
+          <li><a href="#sluzby">Služby</a></li>
+          <li><a href="#vyhody">Prečo PROCHEMA</a></li>
+          <li><a href="#o-firme">O firme</a></li>
+          <li><a href="#otazky">Časté otázky</a></li>
+        </ul>
+        <a class="button button-primary" href="#kontakt">Kontaktovať poradcu <span aria-hidden="true">→</span></a>
+      </nav>
+
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Otvoriť menu">
+        <span class="menu-icon" aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-menu" id="mobile-menu" aria-label="Mobilná navigácia" hidden>
+    <ul class="mobile-nav-list">
+      <li><a href="#sluzby">Služby <span aria-hidden="true">→</span></a></li>
+      <li><a href="#vyhody">Prečo PROCHEMA <span aria-hidden="true">→</span></a></li>
+      <li><a href="#o-firme">O firme <span aria-hidden="true">→</span></a></li>
+      <li><a href="#otazky">Časté otázky <span aria-hidden="true">→</span></a></li>
+    </ul>
+    <a class="button button-primary" href="#kontakt">Kontaktovať poradcu</a>
+  </nav>
+
+  <main id="hlavny-obsah">
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <p class="eyebrow">Partner pre profesionálnych pestovateľov</p>
+          <h1>Chémia, osivá a poradenstvo pre <span>rastlinnú výrobu.</span></h1>
+          <p class="hero-copy">PROCHEMA dodáva prípravky na ochranu rastlín, hnojivá a osivá spolu s odborným poradenstvom, agrotechnikou a logistikou komodít.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#kontakt">Vyžiadať ponuku <span aria-hidden="true">→</span></a>
+            <a class="button button-secondary" href="#sluzby">Pozrieť služby</a>
+          </div>
+          <p class="hero-note">Individuálne riešenie podľa plodiny, porastu a obchodných potrieb</p>
+        </div>
+
+        <div class="hero-visual" aria-label="Poľnohospodársky stroj pri práci na poli">
+          <div class="hero-image-wrap">
+            <img class="hero-image" src="assets/images/prochema/hero-field.jpg" alt="Traktor pripravujúci rozsiahle poľnohospodárske pole" width="612" height="405">
+          </div>
+          <div class="hero-badge">
+            <strong>20+</strong>
+            <span>rokov pôsobenia v agrosektore</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof-strip" aria-label="Hlavné výhody spolupráce">
+      <div class="container proof-grid">
+        <div class="proof-item"><strong class="proof-value">12 hod.</strong><span class="proof-label">garantované dodanie od finálnej objednávky</span></div>
+        <div class="proof-item"><strong class="proof-value">220 dní</strong><span class="proof-label">možná splatnosť podľa dohodnutých podmienok</span></div>
+        <div class="proof-item"><strong class="proof-value">8× ročne</strong><span class="proof-label">signalizačné správy v rámci infoservisu</span></div>
+        <div class="proof-item"><strong class="proof-value">Bez viazanosti</strong><span class="proof-label">nulové zazmluvnenie pre odberateľov</span></div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="intro-title">
+      <div class="container intro-grid">
+        <div>
+          <p class="eyebrow">Spolupráca počas celej sezóny</p>
+          <h2 class="section-title" id="intro-title">Od výberu účinnej látky po logistiku úrody.</h2>
+        </div>
+        <div>
+          <p class="intro-lead">Nie iba dodávka produktov. PROCHEMA prepája poľnohospodárske vstupy s praktickým poradenstvom, technikou a obchodom s komoditami, aby mal pestovateľ správne riešenie v správnom čase.</p>
+          <a class="intro-link" href="#kontakt">Prekonzultovať potreby porastu <span aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section services" id="sluzby" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Portfólio služieb</p>
+            <h2 class="section-title" id="services-title">Vstupy, know-how aj technika na jednom mieste.</h2>
+          </div>
+          <p class="section-intro">Vyberte oblasť, ktorú potrebujete vyriešiť. Konkrétne produkty a podmienky sa nastavujú podľa vašej prevádzky.</p>
+        </div>
+
+        <div class="service-grid">
+          <article class="service-card">
+            <div class="service-card-text">
+              <span class="service-number">01 / Ochrana a výživa</span>
+              <div>
+                <h3>Poľnohospodárska chémia, hnojivá a osivá</h3>
+                <p>Pesticídy, priemyselné a listové hnojivá a osivá pre profesionálnu rastlinnú výrobu, s pomocou pri výbere účinnej látky.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card-text">
+              <span class="service-number">02 / Poradenstvo</span>
+              <div>
+                <h3>Ochranné plány a signalizačný infoservis</h3>
+                <p>Individuálne odporúčania pre ochranu rastlín a viniča vrátane termínu a množstva aplikácie a pravidelných signalizačných správ.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-card service-card-image">
+            <div class="service-card-text">
+              <span class="service-number">03 / Agrotechnika</span>
+              <div>
+                <h3>Technika pre presnú a efektívnu prácu na poli</h3>
+                <p>Služby postrekovačom Agrifac Condor so záberom 36 metrov, rozmetadlom Sulky a bezorebnou sejačkou SUMO.</p>
+              </div>
+            </div>
+            <div class="service-media">
+              <img src="assets/images/prochema/sprayer-field.jpg" alt="Poľnohospodársky postrekovač pri práci na poli" width="612" height="392" loading="lazy">
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card-text">
+              <span class="service-number">04 / Komodity</span>
+              <div>
+                <h3>Obchodovanie, rozbory a logistika komodít</h3>
+                <p>Podpora pri odbytoch rastlinných komodít, laboratórne rozbory v súlade s normami a zabezpečenie logistiky.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card-text">
+              <span class="service-number">05 / Maloobchod</span>
+              <div>
+                <h3>Predaj pre menších pestovateľov</h3>
+                <p>Vybrané poľnohospodárske produkty a odborné usmernenie sú dostupné aj pre zákazníkov s menším odberom.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section advantages" id="vyhody" aria-labelledby="advantages-title">
+      <div class="container advantages-grid">
+        <div>
+          <p class="eyebrow">Prečo PROCHEMA</p>
+          <h2 class="section-title" id="advantages-title">Obchodné podmienky aj agronomické riešenie na mieru.</h2>
+          <ul class="advantages-list">
+            <li><span>01</span><p>Individuálny návrh ochrany rastlín podľa konkrétneho porastu a situácie.</p></li>
+            <li><span>02</span><p>Odborná pomoc pri výbere účinnej látky, termínu a množstva aplikácie.</p></li>
+            <li><span>03</span><p>Možnosť platiť komoditami za burzové ceny a flexibilne nastaviť splatnosť.</p></li>
+            <li><span>04</span><p>Doprava zdarma a dodanie do 12 hodín od finálnej objednávky.</p></li>
+            <li><span>05</span><p>Dôraz na profesionálny prístup k životnému prostrediu.</p></li>
+          </ul>
+        </div>
+
+        <div class="advantage-visual">
+          <img src="assets/images/prochema/maize-seedling.jpg" alt="Mladé rastliny kukurice v pestovateľskom riadku" width="612" height="408" loading="lazy">
+          <div class="advantage-card">
+            <strong>Výsledná cena vzniká dialógom.</strong>
+            <p>Ponuka sa nastavuje podľa produktu, množstva, dopravy a dohodnutých obchodných podmienok.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="o-firme" aria-labelledby="story-title">
+      <div class="container story-grid">
+        <div class="story-image">
+          <img src="assets/images/prochema/farm-advice.jpg" alt="Obchodné stretnutie pri poľnohospodárskej prevádzke" width="612" height="435" loading="lazy">
+        </div>
+        <div class="story-copy">
+          <p class="eyebrow">O spoločnosti</p>
+          <h2 class="section-title" id="story-title">Skúsenosti z trhu, ktoré sa premietajú do praktických rozhodnutí.</h2>
+          <p>PROCHEMA s.r.o. pôsobí v agrosektore viac ako 20 rokov. Z Modry zabezpečuje pre pestovateľov poľnohospodárske vstupy, odborné poradenstvo, služby technikou a obchodovanie s komoditami.</p>
+          <div class="story-points">
+            <div class="story-point"><strong>Odborné semináre</strong><span>Zdieľanie informácií pre vinohradníkov a pracovníkov v rastlinnej výrobe.</span></div>
+            <div class="story-point"><strong>Komoditné noviny</strong><span>Partnerský informačný kanál o vývoji na komoditných trhoch.</span></div>
+            <div class="story-point"><strong>Konkrétne kontakty</strong><span>Priamy kontakt na obchod, ekonomiku, logistiku aj vedenie spoločnosti.</span></div>
+            <div class="story-point"><strong>Prevádzka v Modre</strong><span>Kancelárie na Dolnej 142, otvorené počas pracovných dní.</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section faq" id="otazky" aria-labelledby="faq-title">
+      <div class="container faq-grid">
+        <div>
+          <p class="eyebrow">Časté otázky</p>
+          <h2 class="section-title" id="faq-title">Čo je dobré vedieť pred prvým kontaktom.</h2>
+        </div>
+        <div class="faq-list">
+          <details>
+            <summary>Aké produkty dokáže PROCHEMA dodať?</summary>
+            <div class="faq-answer"><p>Portfólio zahŕňa pesticídy, priemyselné a listové hnojivá a osivá pre profesionálnych aj menších pestovateľov. Dostupnosť konkrétneho produktu si overíte priamym dopytom.</p></div>
+          </details>
+          <details>
+            <summary>Je súčasťou dodávky aj odborné poradenstvo?</summary>
+            <div class="faq-answer"><p>Áno. Firma komunikuje poradenstvo pri výbere účinných látok, príprave ochranných plánov a určení termínu aj množstva aplikácie. Odberatelia môžu využívať aj signalizačný infoservis.</p></div>
+          </details>
+          <details>
+            <summary>Akú agrotechniku je možné využiť?</summary>
+            <div class="faq-answer"><p>PROCHEMA uvádza služby postrekovačom Agrifac Condor, rozmetadlom priemyselných hnojív Sulky a bezorebnou sejačkou SUMO. Termín a rozsah sa dohodnú individuálne.</p></div>
+          </details>
+          <details>
+            <summary>Ako najrýchlejšie získam konkrétnu ponuku?</summary>
+            <div class="faq-answer"><p>Pripravte názov produktu alebo služby, plodinu, región a požadovaný termín. Zavolajte na +421 908 192 901 alebo použite formulár nižšie, ktorý otvorí pripravenú správu vo vašej e-mailovej aplikácii.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="kontakt" aria-labelledby="contact-title">
+      <div class="container contact-shell">
+        <div class="contact-grid">
+          <div class="contact-info">
+            <p class="eyebrow">Kontakt</p>
+            <h2 id="contact-title">Povedzte nám, čo potrebujete vyriešiť.</h2>
+            <p>Uveďte plodinu, produkt alebo službu a región. O konkrétnych možnostiach sa poradíte priamo s tímom PROCHEMA.</p>
+            <ul class="contact-list">
+              <li><a href="tel:+421908192901">+421 908 192 901</a></li>
+              <li><a href="mailto:office@prochema.sk">office@prochema.sk</a></li>
+              <li><span>Dolná 142, 900 01 Modra</span></li>
+              <li><span>Po–Pi: 7:00–15:30</span></li>
+            </ul>
+          </div>
+
+          <div class="contact-form-wrap">
+            <h3 class="form-heading">Pripraviť e-mailový dopyt</h3>
+            <form id="inquiry-form">
+              <div class="form-grid">
+                <div>
+                  <label for="name">Meno a priezvisko <span class="required" aria-hidden="true">*</span></label>
+                  <input id="name" name="name" type="text" autocomplete="name" required>
+                </div>
+                <div>
+                  <label for="email">E-mail <span class="required" aria-hidden="true">*</span></label>
+                  <input id="email" name="email" type="email" autocomplete="email" required>
+                </div>
+                <div>
+                  <label for="phone">Telefón</label>
+                  <input id="phone" name="phone" type="tel" autocomplete="tel">
+                </div>
+                <div>
+                  <label for="region">Región pôsobnosti</label>
+                  <input id="region" name="region" type="text" autocomplete="address-level2">
+                </div>
+                <div class="field-full">
+                  <label for="topic">Oblasť záujmu <span class="required" aria-hidden="true">*</span></label>
+                  <select id="topic" name="topic" required>
+                    <option value="">Vyberte oblasť</option>
+                    <option>Poľnohospodárska chémia, hnojivá alebo osivá</option>
+                    <option>Poradenstvo a infoservis</option>
+                    <option>Prenájom agrotechniky</option>
+                    <option>Obchodovanie s komoditami</option>
+                    <option>Maloobchodný predaj</option>
+                    <option>Iná požiadavka</option>
+                  </select>
+                </div>
+                <div class="field-full">
+                  <label for="message">Vaša požiadavka <span class="required" aria-hidden="true">*</span></label>
+                  <textarea id="message" name="message" required></textarea>
+                </div>
+              </div>
+              <p class="form-note">Táto statická ukážka neodosiela údaje na server. Tlačidlo pripraví správu vo vašej e-mailovej aplikácii; odoslanie následne potvrdíte vy.</p>
+              <button class="button button-primary" type="submit">Otvoriť e-mail s dopytom <span aria-hidden="true">→</span></button>
+              <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <img src="assets/images/prochema/prochema-logo.png" alt="PROCHEMA" width="2091" height="1474">
+          <p>Poľnohospodárska chémia, osivá, odborné poradenstvo, agrotechnika a obchodovanie s komoditami.</p>
+        </div>
+        <div>
+          <p class="footer-title">Navigácia</p>
+          <ul class="footer-links">
+            <li><a href="#sluzby">Služby</a></li>
+            <li><a href="#vyhody">Prečo PROCHEMA</a></li>
+            <li><a href="#o-firme">O firme</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Kontaktné údaje</p>
+          <ul class="footer-links">
+            <li><a href="mailto:office@prochema.sk">office@prochema.sk</a></li>
+            <li><a href="tel:+421336475453">+421 33 647 54 53</a></li>
+            <li><span>IČO: 34133721</span></li>
+            <li><a href="https://www.komoditnenoviny.sk/odber/">Komoditné noviny ↗</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year">2026</span> PROCHEMA s.r.o.</span>
+        <span>Návrh bol vytvorený so zohľadnením základných princípov digitálnej prístupnosti.</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (() => {
+      const toggle = document.querySelector('.menu-toggle');
+      const menu = document.querySelector('#mobile-menu');
+      const menuLinks = menu.querySelectorAll('a');
+
+      const setMenu = (open) => {
+        toggle.setAttribute('aria-expanded', String(open));
+        toggle.setAttribute('aria-label', open ? 'Zatvoriť menu' : 'Otvoriť menu');
+        menu.hidden = !open;
+        menu.classList.toggle('is-open', open);
+        document.body.classList.toggle('menu-open', open);
+      };
+
+      toggle.addEventListener('click', () => {
+        setMenu(toggle.getAttribute('aria-expanded') !== 'true');
+      });
+
+      menuLinks.forEach((link) => link.addEventListener('click', () => setMenu(false)));
+
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
+          setMenu(false);
+          toggle.focus();
+        }
+      });
+
+      window.addEventListener('resize', () => {
+        if (window.innerWidth > 980 && toggle.getAttribute('aria-expanded') === 'true') {
+          setMenu(false);
+        }
+      });
+
+      const form = document.querySelector('#inquiry-form');
+      const status = document.querySelector('#form-status');
+
+      form.addEventListener('submit', (event) => {
+        event.preventDefault();
+        if (!form.reportValidity()) return;
+
+        const data = new FormData(form);
+        const subject = `Dopyt pre PROCHEMA – ${data.get('topic')}`;
+        const body = [
+          `Meno: ${data.get('name')}`,
+          `E-mail: ${data.get('email')}`,
+          `Telefón: ${data.get('phone') || 'neuvedený'}`,
+          `Región: ${data.get('region') || 'neuvedený'}`,
+          `Oblasť: ${data.get('topic')}`,
+          '',
+          'Požiadavka:',
+          data.get('message')
+        ].join('\n');
+
+        status.textContent = 'Otvárame vašu e-mailovú aplikáciu. Správu odošlete až po vlastnom potvrdení.';
+        window.location.href = `mailto:office@prochema.sk?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      });
+
+      document.querySelector('#year').textContent = String(new Date().getFullYear());
+    })();
+  </script>
+</body>
+</html>

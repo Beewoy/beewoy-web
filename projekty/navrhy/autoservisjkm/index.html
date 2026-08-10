@@ -1,0 +1,2152 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Autoservis JKM v Pezinku: mechanický servis, karosárske a lakovnícke práce, diagnostika, geometria a kompletné riešenie poistných udalostí.">
+  <meta name="theme-color" content="#121416">
+  <link rel="canonical" href="https://autoservisjkm.sk/">
+  <title>Autoservis JKM Pezinok | Servis, opravy a poistné udalosti</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Autoservis JKM",
+    "legalName": "JKM Trade SK, s. r. o.",
+    "url": "https://autoservisjkm.sk/",
+    "telephone": "+421918882573",
+    "email": "jurik.jkm@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Viničnianska cesta 6202/23",
+      "postalCode": "902 01",
+      "addressLocality": "Pezinok",
+      "addressCountry": "SK"
+    },
+    "openingHoursSpecification": [{
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+      "opens": "08:00",
+      "closes": "17:00"
+    }],
+    "areaServed": ["Pezinok", "Bratislavský kraj"],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "name": "Andrej Jurík",
+      "telephone": "+421918882573",
+      "email": "jurik.jkm@gmail.com",
+      "contactType": "customer service"
+    }, {
+      "@type": "ContactPoint",
+      "name": "Janka Juríková",
+      "telephone": "+421908512627",
+      "email": "jurikova.jkm@gmail.com",
+      "contactType": "customer service"
+    }]
+  }
+  </script>
+
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #121416;
+      --ink-soft: #2b2e33;
+      --muted: #61656d;
+      --surface: #ffffff;
+      --surface-soft: #f4f5f7;
+      --surface-warm: #faf9f6;
+      --line: #dfe1e5;
+      --brand-red: #c91425;
+      --brand-red-dark: #a80f1e;
+      --brand-blue: #315fba;
+      --brand-grey: #aeb1b5;
+      --focus: #ffd43b;
+      --success: #176b45;
+      --container: 1200px;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --shadow: 0 20px 60px rgba(18, 20, 22, 0.12);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 92px;
+    }
+
+    body {
+      margin: 0;
+      overflow-x: hidden;
+      background: var(--surface);
+      color: var(--ink);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body.menu-open {
+      overflow: hidden;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    button,
+    a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 100;
+      transform: translateY(-160%);
+      padding: 12px 16px;
+      background: var(--ink);
+      color: #ffffff;
+      font-weight: 750;
+      text-decoration: none;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--container));
+      margin-inline: auto;
+    }
+
+    .eyebrow {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin: 0 0 16px;
+      color: var(--brand-red);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      width: 28px;
+      height: 3px;
+      background: currentColor;
+      content: "";
+    }
+
+    .eyebrow-light {
+      color: #ff8892;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      text-wrap: pretty;
+    }
+
+    h1,
+    h2,
+    h3 {
+      margin-top: 0;
+      color: var(--ink);
+      line-height: 1.08;
+    }
+
+    h1 {
+      max-width: 760px;
+      margin-bottom: 24px;
+      font-size: clamp(2.65rem, 6vw, 5.45rem);
+      font-weight: 800;
+      letter-spacing: -0.058em;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      font-size: clamp(2rem, 4vw, 3.75rem);
+      font-weight: 780;
+      letter-spacing: -0.045em;
+    }
+
+    h3 {
+      margin-bottom: 12px;
+      font-size: 1.28rem;
+      font-weight: 750;
+      letter-spacing: -0.022em;
+    }
+
+    .section {
+      padding: clamp(76px, 9vw, 120px) 0;
+      scroll-margin-top: 92px;
+    }
+
+    .section-soft {
+      background: var(--surface-soft);
+    }
+
+    .section-dark {
+      background: var(--ink);
+      color: #ffffff;
+    }
+
+    .section-dark h2,
+    .section-dark h3 {
+      color: #ffffff;
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: minmax(0, 0.8fr) minmax(280px, 0.7fr);
+      gap: 56px;
+      align-items: end;
+      margin-bottom: 52px;
+    }
+
+    .section-head h2 {
+      margin-bottom: 0;
+    }
+
+    .section-lead {
+      max-width: 620px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 50px;
+      gap: 10px;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border: 2px solid transparent;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 0.95rem;
+      font-weight: 780;
+      line-height: 1.2;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-2px);
+    }
+
+    .button-primary {
+      background: var(--brand-red);
+      color: #ffffff;
+    }
+
+    .button-primary:hover {
+      background: var(--brand-red-dark);
+    }
+
+    .button-dark {
+      background: var(--ink);
+      color: #ffffff;
+    }
+
+    .button-dark:hover {
+      background: #2d3035;
+    }
+
+    .button-outline {
+      border-color: #babdc2;
+      background: transparent;
+      color: var(--ink);
+    }
+
+    .button-outline:hover {
+      border-color: var(--ink);
+      background: var(--ink);
+      color: #ffffff;
+    }
+
+    .button-light-outline {
+      border-color: #555a62;
+      color: #ffffff;
+    }
+
+    .button-light-outline:hover {
+      border-color: #ffffff;
+      background: #ffffff;
+      color: var(--ink);
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      flex: 0 0 auto;
+      fill: none;
+      stroke: currentColor;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 2;
+    }
+
+    .site-header {
+      position: relative;
+      z-index: 50;
+      background: var(--surface);
+    }
+
+    .topbar {
+      background: var(--ink);
+      color: #ffffff;
+    }
+
+    .topbar-inner {
+      display: flex;
+      min-height: 42px;
+      gap: 24px;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.82rem;
+    }
+
+    .topbar-group {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+
+    .topbar a {
+      min-height: 42px;
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      color: #ffffff;
+      font-weight: 680;
+      text-decoration: none;
+    }
+
+    .topbar a:hover {
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .main-nav {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.96);
+      backdrop-filter: blur(14px);
+    }
+
+    .nav-inner {
+      display: flex;
+      min-height: 82px;
+      gap: 30px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: inline-flex;
+      min-width: 190px;
+      min-height: 50px;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .brand img {
+      width: 230px;
+      height: auto;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      margin-left: auto;
+    }
+
+    .nav-links > a:not(.button) {
+      display: inline-flex;
+      min-height: 46px;
+      align-items: center;
+      padding: 8px 10px;
+      color: var(--ink-soft);
+      font-size: 0.91rem;
+      font-weight: 680;
+      text-decoration: none;
+    }
+
+    .nav-links > a:not(.button):hover {
+      color: var(--brand-red);
+    }
+
+    .nav-cta {
+      margin-left: 10px;
+    }
+
+    .menu-toggle {
+      display: none;
+      width: 50px;
+      height: 50px;
+      padding: 12px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--surface);
+      color: var(--ink);
+      cursor: pointer;
+    }
+
+    .menu-toggle-lines {
+      display: grid;
+      gap: 5px;
+    }
+
+    .menu-toggle-lines span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: currentColor;
+      transition: transform 180ms ease, opacity 180ms ease;
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-lines span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-lines span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] .menu-toggle-lines span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      padding: clamp(54px, 7vw, 88px) 0 0;
+      background: var(--surface-warm);
+    }
+
+    .hero::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 38%;
+      height: 6px;
+      background: linear-gradient(90deg, var(--brand-grey) 0 32%, var(--brand-blue) 32% 64%, var(--brand-red) 64% 100%);
+      content: "";
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(370px, 0.92fr);
+      gap: clamp(40px, 6vw, 88px);
+      align-items: center;
+    }
+
+    .hero-copy {
+      padding-bottom: 64px;
+    }
+
+    .hero-lead {
+      max-width: 680px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1.08rem, 1.8vw, 1.3rem);
+      line-height: 1.62;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .hero-note {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      margin: 24px 0 0;
+      color: var(--muted);
+      font-size: 0.91rem;
+    }
+
+    .hero-note .icon {
+      color: var(--brand-blue);
+    }
+
+    .hero-visual {
+      position: relative;
+      align-self: stretch;
+      min-height: 550px;
+    }
+
+    .hero-visual img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: 49% center;
+    }
+
+    .hero-address {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: min(330px, calc(100% - 30px));
+      padding: 22px 24px;
+      background: var(--ink);
+      color: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .hero-address strong,
+    .hero-address span {
+      display: block;
+    }
+
+    .hero-address strong {
+      margin-bottom: 3px;
+      font-size: 1rem;
+    }
+
+    .hero-address span {
+      color: #c9cbd0;
+      font-size: 0.88rem;
+    }
+
+    .trust-strip {
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .trust-item {
+      display: flex;
+      min-height: 112px;
+      align-items: center;
+      justify-content: center;
+      padding: 22px 16px;
+      border-right: 1px solid var(--line);
+    }
+
+    .trust-item:last-child {
+      border-right: 0;
+    }
+
+    .trust-item-inner {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      max-width: 100%;
+    }
+
+    .trust-icon {
+      display: inline-flex;
+      width: 40px;
+      height: 40px;
+      flex: 0 0 auto;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background: #fdebed;
+      color: var(--brand-red);
+    }
+
+    .trust-item-text {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      min-width: 0;
+    }
+
+    .trust-item-text strong {
+      display: block;
+      font-size: 0.94rem;
+      line-height: 1.3;
+    }
+
+    .trust-item-text span {
+      display: block;
+      color: var(--muted);
+      font-size: 0.8rem;
+      line-height: 1.35;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .service-card {
+      min-height: 270px;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+      transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+    }
+
+    .service-card:hover {
+      border-color: #bfc2c8;
+      box-shadow: 0 16px 36px rgba(18, 20, 22, 0.08);
+      transform: translateY(-4px);
+    }
+
+    .service-card-highlight {
+      border-top: 4px solid var(--brand-red);
+    }
+
+    .service-icon {
+      display: inline-flex;
+      width: 50px;
+      height: 50px;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 30px;
+      border-radius: 6px;
+      background: var(--surface-soft);
+      color: var(--brand-blue);
+    }
+
+    .service-icon .icon {
+      width: 26px;
+      height: 26px;
+    }
+
+    .service-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.94rem;
+    }
+
+    .rental-band {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 28px;
+      align-items: center;
+      margin-top: 22px;
+      padding: 28px 30px;
+      border-left: 5px solid var(--brand-blue);
+      background: #eaf0fc;
+    }
+
+    .rental-band h3 {
+      margin-bottom: 5px;
+    }
+
+    .rental-band p {
+      margin: 0;
+      color: #4c566a;
+    }
+
+    .insurance-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(360px, 0.75fr);
+      gap: clamp(56px, 8vw, 110px);
+      align-items: start;
+    }
+
+    .insurance-copy > p:not(.eyebrow) {
+      max-width: 670px;
+      margin: 0;
+      color: #c3c6cb;
+      font-size: 1.08rem;
+    }
+
+    .steps {
+      display: grid;
+      gap: 0;
+      margin: 42px 0 36px;
+      padding: 0;
+      list-style: none;
+      counter-reset: step;
+    }
+
+    .steps li {
+      position: relative;
+      display: grid;
+      grid-template-columns: 54px 1fr;
+      gap: 18px;
+      padding: 0 0 30px;
+      counter-increment: step;
+    }
+
+    .steps li:not(:last-child)::after {
+      position: absolute;
+      top: 44px;
+      bottom: 4px;
+      left: 21px;
+      width: 1px;
+      background: #484c53;
+      content: "";
+    }
+
+    .steps li::before {
+      display: inline-flex;
+      width: 44px;
+      height: 44px;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #5a5f67;
+      border-radius: 50%;
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      content: counter(step, decimal-leading-zero);
+    }
+
+    .steps h3 {
+      margin: 1px 0 6px;
+      font-size: 1.08rem;
+    }
+
+    .steps p {
+      margin: 0;
+      color: #aeb2b8;
+      font-size: 0.91rem;
+    }
+
+    .insurance-panel {
+      padding: 34px;
+      border-top: 5px solid var(--brand-red);
+      background: #212429;
+    }
+
+    .insurance-panel h3 {
+      font-size: 1.4rem;
+    }
+
+    .insurance-panel > p {
+      margin: 0 0 22px;
+      color: #bfc2c8;
+    }
+
+    .check-list {
+      display: grid;
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .check-list li {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 12px;
+      color: #ffffff;
+      font-size: 0.94rem;
+    }
+
+    .check-list .icon {
+      color: #ff6b78;
+    }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(360px, 0.95fr) minmax(0, 0.85fr);
+      gap: clamp(48px, 8vw, 104px);
+      align-items: center;
+    }
+
+    .about-image {
+      position: relative;
+    }
+
+    .about-image::after {
+      position: absolute;
+      right: -16px;
+      bottom: -16px;
+      width: 42%;
+      height: 42%;
+      z-index: -1;
+      background: var(--brand-blue);
+      content: "";
+    }
+
+    .about-image img {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .about-copy > p:not(.eyebrow) {
+      margin: 0 0 28px;
+      color: var(--muted);
+      font-size: 1.05rem;
+    }
+
+    .advantage-list {
+      display: grid;
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .advantage-list li {
+      display: grid;
+      grid-template-columns: 32px 1fr;
+      gap: 14px;
+      align-items: start;
+      font-weight: 650;
+    }
+
+    .advantage-list .icon {
+      margin-top: 2px;
+      color: var(--brand-red);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr 0.85fr;
+      gap: 16px;
+    }
+
+    .gallery-item {
+      position: relative;
+      min-height: 380px;
+      overflow: hidden;
+      border-radius: var(--radius-sm);
+      background: #d9dadd;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 350ms ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.025);
+    }
+
+    .gallery-item figcaption {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      left: 16px;
+      padding: 12px 14px;
+      background: rgba(18, 20, 22, 0.88);
+      color: #ffffff;
+      font-size: 0.87rem;
+      font-weight: 700;
+      backdrop-filter: blur(8px);
+    }
+
+    .testimonial-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 54px;
+    }
+
+    .testimonial {
+      display: flex;
+      min-height: 290px;
+      flex-direction: column;
+      padding: 30px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      background: var(--surface);
+    }
+
+    .quote-mark {
+      color: var(--brand-red);
+      font-family: Georgia, serif;
+      font-size: 3.2rem;
+      line-height: 0.8;
+    }
+
+    .testimonial blockquote {
+      margin: 24px 0 28px;
+      color: var(--ink-soft);
+      font-size: 1rem;
+    }
+
+    .testimonial footer {
+      margin-top: auto;
+    }
+
+    .testimonial cite {
+      display: block;
+      color: var(--ink);
+      font-style: normal;
+      font-weight: 760;
+    }
+
+    .testimonial small {
+      color: var(--muted);
+    }
+
+    .partners-wrap {
+      display: grid;
+      grid-template-columns: minmax(250px, 0.6fr) 1fr;
+      gap: clamp(44px, 7vw, 94px);
+      align-items: center;
+    }
+
+    .partners-copy p:not(.eyebrow) {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .partner-logos {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .partner-logo {
+      display: flex;
+      min-height: 148px;
+      align-items: center;
+      justify-content: center;
+      padding: 22px;
+      border-right: 1px solid var(--line);
+    }
+
+    .partner-logo:last-child {
+      border-right: 0;
+    }
+
+    .partner-logo img {
+      width: 100%;
+      max-width: 112px;
+      height: 92px;
+      object-fit: contain;
+    }
+
+    .partners-note {
+      margin: 18px 0 0;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .faq-layout {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.55fr) minmax(0, 1fr);
+      gap: clamp(48px, 8vw, 110px);
+      align-items: start;
+    }
+
+    .faq-intro p:not(.eyebrow) {
+      margin: 0 0 28px;
+      color: var(--muted);
+    }
+
+    .faq-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .faq-item {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .faq-item summary {
+      position: relative;
+      min-height: 70px;
+      display: flex;
+      align-items: center;
+      padding: 18px 52px 18px 0;
+      cursor: pointer;
+      font-weight: 740;
+      list-style: none;
+    }
+
+    .faq-item summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq-item summary::after {
+      position: absolute;
+      right: 10px;
+      width: 14px;
+      height: 14px;
+      border-right: 2px solid var(--ink);
+      border-bottom: 2px solid var(--ink);
+      transform: rotate(45deg) translateY(-3px);
+      transition: transform 180ms ease;
+      content: "";
+    }
+
+    .faq-item[open] summary::after {
+      transform: rotate(225deg) translate(-2px, -2px);
+    }
+
+    .faq-answer {
+      max-width: 720px;
+      padding: 0 52px 22px 0;
+      color: var(--muted);
+    }
+
+    .faq-answer p {
+      margin: 0;
+    }
+
+    .contact-section {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .contact-section::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--brand-grey) 0 33%, var(--brand-blue) 33% 66%, var(--brand-red) 66% 100%);
+      content: "";
+    }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(320px, 0.75fr) minmax(0, 1fr);
+      gap: clamp(52px, 8vw, 108px);
+      align-items: start;
+    }
+
+    .contact-copy > p:not(.eyebrow) {
+      margin: 0;
+      color: #c4c7cc;
+      font-size: 1.05rem;
+    }
+
+    .contact-blocks {
+      display: grid;
+      gap: 24px;
+      margin-top: 38px;
+    }
+
+    .contact-block {
+      display: grid;
+      grid-template-columns: 34px 1fr;
+      gap: 14px;
+    }
+
+    .contact-block .icon {
+      margin-top: 3px;
+      color: #ff7c87;
+    }
+
+    .contact-block strong,
+    .contact-block span,
+    .contact-block a {
+      display: block;
+    }
+
+    .contact-block strong {
+      color: #ffffff;
+    }
+
+    .contact-block span {
+      color: #aeb2b8;
+      font-size: 0.87rem;
+    }
+
+    .contact-block a {
+      min-height: 32px;
+      color: #ffffff;
+      font-weight: 720;
+      text-decoration-color: #6f747b;
+      text-underline-offset: 4px;
+    }
+
+    .contact-block a:hover {
+      text-decoration-color: #ffffff;
+    }
+
+    .contact-form {
+      padding: clamp(28px, 5vw, 48px);
+      border-radius: var(--radius-md);
+      background: var(--surface);
+      color: var(--ink);
+      box-shadow: var(--shadow);
+    }
+
+    .contact-form h3 {
+      margin-bottom: 8px;
+      font-size: 1.7rem;
+    }
+
+    .form-intro {
+      margin: 0 0 28px;
+      color: var(--muted);
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+
+    .field {
+      display: grid;
+      gap: 7px;
+    }
+
+    .field-full {
+      grid-column: 1 / -1;
+    }
+
+    .field label,
+    .consent label {
+      color: var(--ink);
+      font-size: 0.88rem;
+      font-weight: 720;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      width: 100%;
+      min-height: 50px;
+      padding: 12px 13px;
+      border: 1px solid #b8bbc1;
+      border-radius: 4px;
+      background: #ffffff;
+      color: var(--ink);
+    }
+
+    .field textarea {
+      min-height: 132px;
+      resize: vertical;
+    }
+
+    .field input:hover,
+    .field select:hover,
+    .field textarea:hover {
+      border-color: #777b83;
+    }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--brand-blue);
+      outline: 3px solid rgba(49, 95, 186, 0.24);
+      outline-offset: 1px;
+    }
+
+    .field-help {
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    .consent {
+      display: grid;
+      grid-template-columns: 22px 1fr;
+      gap: 10px;
+      align-items: start;
+      margin: 22px 0;
+    }
+
+    .consent input {
+      width: 20px;
+      height: 20px;
+      margin: 2px 0 0;
+      accent-color: var(--brand-red);
+    }
+
+    .consent label {
+      font-weight: 500;
+      line-height: 1.45;
+    }
+
+    .consent a {
+      text-underline-offset: 3px;
+    }
+
+    .form-demo-note {
+      margin: 0 0 16px;
+      padding: 11px 13px;
+      border-left: 3px solid var(--brand-blue);
+      background: #eef3fc;
+      color: #34405a;
+      font-size: 0.82rem;
+    }
+
+    .form-status {
+      margin: 18px 0 0;
+      padding: 12px 14px;
+      border: 1px solid #9bc9b2;
+      background: #eff9f4;
+      color: var(--success);
+      font-size: 0.9rem;
+      font-weight: 650;
+    }
+
+    .site-footer {
+      padding: 54px 0 26px;
+      border-top: 1px solid #34383e;
+      background: #0c0e10;
+      color: #ffffff;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.7fr 0.7fr;
+      gap: 60px;
+      padding-bottom: 42px;
+    }
+
+    .footer-brand {
+      display: inline-block;
+      width: 250px;
+      max-width: 100%;
+      padding: 13px 16px;
+      background: #ffffff;
+    }
+
+    .footer-brand img {
+      width: 100%;
+      height: auto;
+    }
+
+    .footer-about {
+      max-width: 440px;
+      margin: 22px 0 0;
+      color: #aeb2b8;
+      font-size: 0.9rem;
+    }
+
+    .footer-title {
+      margin: 0 0 16px;
+      color: #ffffff;
+      font-size: 0.9rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .footer-links {
+      display: grid;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .footer-links a {
+      min-height: 42px;
+      display: inline-flex;
+      align-items: center;
+      color: #d0d2d6;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
+
+    .footer-bottom {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 22px;
+      border-top: 1px solid #2b2f34;
+      color: #8f9399;
+      font-size: 0.8rem;
+    }
+
+    .footer-bottom p {
+      margin: 0;
+    }
+
+    .mobile-call {
+      display: none;
+    }
+
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    [hidden] {
+      display: none !important;
+    }
+
+    @media (max-width: 1040px) {
+      .nav-links {
+        gap: 2px;
+      }
+
+      .nav-links > a:not(.button) {
+        padding-inline: 7px;
+        font-size: 0.86rem;
+      }
+
+      .brand img {
+        width: 195px;
+      }
+
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr) minmax(340px, 0.8fr);
+        gap: 44px;
+      }
+
+      .trust-grid,
+      .partner-logos {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .trust-item:nth-child(2) {
+        border-right: 0;
+      }
+
+      .trust-item:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .partner-logo:nth-child(2) {
+        border-right: 0;
+      }
+
+      .partner-logo:nth-child(-n+2) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .topbar {
+        display: none;
+      }
+
+      .main-nav {
+        position: sticky;
+      }
+
+      .nav-inner {
+        min-height: 72px;
+      }
+
+      .brand img {
+        width: 205px;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .nav-links {
+        position: absolute;
+        top: 72px;
+        right: 0;
+        left: 0;
+        display: none;
+        max-height: calc(100vh - 72px);
+        overflow-y: auto;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 14px 20px 24px;
+        border-bottom: 1px solid var(--line);
+        background: #ffffff;
+        box-shadow: 0 20px 35px rgba(18, 20, 22, 0.14);
+      }
+
+      .nav-links.is-open {
+        display: flex;
+      }
+
+      .nav-links > a:not(.button) {
+        min-height: 52px;
+        padding: 10px 4px;
+        border-bottom: 1px solid var(--line);
+        font-size: 1rem;
+      }
+
+      .nav-cta {
+        width: 100%;
+        margin: 14px 0 0;
+      }
+
+      .hero {
+        padding-top: 58px;
+      }
+
+      .hero-grid,
+      .insurance-layout,
+      .about-layout,
+      .partners-wrap,
+      .faq-layout,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-copy {
+        padding-bottom: 0;
+      }
+
+      .hero-visual {
+        min-height: 440px;
+      }
+
+      .insurance-layout,
+      .contact-layout {
+        gap: 50px;
+      }
+
+      .about-image {
+        max-width: 760px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+      }
+
+      .gallery-item:last-child {
+        grid-column: 1 / -1;
+        min-height: 320px;
+      }
+
+      .testimonial-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .testimonial {
+        min-height: 0;
+      }
+    }
+
+    @media (max-width: 700px) {
+      body {
+        padding-bottom: 70px;
+      }
+
+      .container {
+        width: min(calc(100% - 32px), var(--container));
+      }
+
+      .section-head {
+        grid-template-columns: 1fr;
+        gap: 18px;
+        align-items: start;
+      }
+
+      .hero-actions {
+        display: grid;
+      }
+
+      .hero-actions .button {
+        width: 100%;
+      }
+
+      .hero-visual {
+        min-height: 350px;
+        margin-inline: -16px;
+      }
+
+      .hero-address {
+        right: 16px;
+      }
+
+      .trust-grid,
+      .services-grid,
+      .partner-logos,
+      .form-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .trust-item {
+        min-height: 96px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .trust-item:nth-child(3) {
+        border-bottom: 1px solid var(--line);
+      }
+
+      .trust-item:last-child {
+        border-bottom: 0;
+      }
+
+      .service-card {
+        min-height: 0;
+      }
+
+      .rental-band {
+        grid-template-columns: 1fr;
+      }
+
+      .insurance-panel {
+        padding: 28px 24px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item,
+      .gallery-item:last-child {
+        grid-column: auto;
+        min-height: 330px;
+      }
+
+      .partner-logo,
+      .partner-logo:nth-child(2) {
+        min-height: 124px;
+        border-right: 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .partner-logo:last-child {
+        border-bottom: 0;
+      }
+
+      .field-full {
+        grid-column: auto;
+      }
+
+      .footer-grid {
+        gap: 38px;
+      }
+
+      .footer-bottom {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .mobile-call {
+        position: fixed;
+        right: 12px;
+        bottom: max(12px, env(safe-area-inset-bottom));
+        left: 12px;
+        z-index: 80;
+        display: inline-flex;
+        min-height: 52px;
+        gap: 10px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 6px;
+        background: var(--brand-red);
+        color: #ffffff;
+        box-shadow: 0 10px 28px rgba(18, 20, 22, 0.3);
+        font-weight: 800;
+        text-decoration: none;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .brand {
+        min-width: 0;
+      }
+
+      .brand img {
+        width: 180px;
+      }
+
+      .hero-address {
+        width: calc(100% - 32px);
+      }
+
+      .contact-form {
+        margin-inline: -6px;
+        padding: 26px 20px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    @media print {
+      .topbar,
+      .main-nav,
+      .mobile-call,
+      .contact-form,
+      .hero-actions {
+        display: none !important;
+      }
+
+      body {
+        padding: 0;
+      }
+
+      .section,
+      .hero {
+        padding: 32px 0;
+      }
+
+      .section-dark,
+      .site-footer {
+        background: #ffffff;
+        color: #111111;
+      }
+
+      .section-dark h2,
+      .section-dark h3,
+      .contact-block strong,
+      .contact-block a {
+        color: #111111;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#hlavny-obsah">Preskočiť na hlavný obsah</a>
+
+  <header class="site-header">
+    <div class="topbar">
+      <div class="container topbar-inner">
+        <div class="topbar-group">
+          <span>Pondelok – piatok: 08:00 – 17:00</span>
+          <span>Viničnianska cesta, Pezinok</span>
+        </div>
+        <div class="topbar-group">
+          <a href="tel:+421918882573">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.62a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.28-1.28a2 2 0 0 1 2.11-.45c.84.29 1.72.5 2.62.62A2 2 0 0 1 22 16.92z"/></svg>
+            +421 918 882 573
+          </a>
+          <a href="mailto:jurik.jkm@gmail.com">jurik.jkm@gmail.com</a>
+        </div>
+      </div>
+    </div>
+
+    <nav class="main-nav" aria-label="Hlavná navigácia">
+      <div class="container nav-inner">
+        <a class="brand" href="#uvod" aria-label="Autoservis JKM — úvod">
+          <img src="assets/images/jkm/logo.png" alt="JKM Autoservis">
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links">
+          <span class="sr-only">Otvoriť menu</span>
+          <span class="menu-toggle-lines" aria-hidden="true"><span></span><span></span><span></span></span>
+        </button>
+
+        <div class="nav-links" id="nav-links">
+          <a href="#sluzby">Služby</a>
+          <a href="#poistna-udalost">Poistná udalosť</a>
+          <a href="#o-nas">O nás</a>
+          <a href="#realizacie">Realizácie</a>
+          <a href="#kontakt">Kontakt</a>
+          <a class="button button-primary nav-cta" href="https://services.bookio.com/jkm-trade-sk/widget" target="_blank" rel="noopener" aria-label="Objednať termín online — otvorí sa v novom okne">Online rezervácia</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="hlavny-obsah">
+    <section class="hero" id="uvod" aria-labelledby="hero-title">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Rodinný autoservis v Pezinku</p>
+          <h1 id="hero-title">Servis auta aj poistnú udalosť vybavíte na jednom mieste.</h1>
+          <p class="hero-lead">Mechanické opravy, karosárske a lakovnícke práce, diagnostika, geometria a kompletné riešenie škody s poisťovňou — pre osobné aj úžitkové vozidlá.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://services.bookio.com/jkm-trade-sk/widget" target="_blank" rel="noopener" aria-label="Objednať servis online — otvorí sa v novom okne">
+              Objednať servis
+              <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="button button-outline" href="tel:+421918882573">
+              <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.62a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.28-1.28a2 2 0 0 1 2.11-.45c.84.29 1.72.5 2.62.62A2 2 0 0 1 22 16.92z"/></svg>
+              Zavolať do servisu
+            </a>
+          </div>
+          <p class="hero-note">
+            <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg>
+            Pri vybraných poisťovniach vykonávame obhliadku priamo v servise.
+          </p>
+        </div>
+
+        <div class="hero-visual">
+          <img src="assets/images/jkm/prevadzka.jpg" alt="Budova prevádzky JKM Autoservis v Pezinku" fetchpriority="high" decoding="async">
+          <div class="hero-address">
+            <strong>Autoservis JKM, Pezinok</strong>
+            <span>Prijímacia kancelária: Viničnianska cesta 15, Strojárske centrum — bočný vchod</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="trust-strip" aria-label="Hlavné výhody">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <div class="trust-item-inner">
+            <span class="trust-icon"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg></span>
+            <span class="trust-item-text"><strong>Zmluvný servis</strong><span>Spolupráca s poisťovňami</span></span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-item-inner">
+            <span class="trust-icon"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <span class="trust-item-text"><strong>Obhliadka v servise</strong><span>Pre vybrané poisťovne</span></span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-item-inner">
+            <span class="trust-icon"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m14.7 6.3-3 3 3 3 3-3a4.2 4.2 0 0 0 1.3-3 4.2 4.2 0 0 0-.4-1.8L22 1l1 1-3.5 3.5a4.2 4.2 0 0 0-4.8.8Z"/><path d="m9.3 17.7 3-3-3-3-3 3a4.2 4.2 0 0 0-1.3 3 4.2 4.2 0 0 0 .4 1.8L2 23l-1-1 3.5-3.5a4.2 4.2 0 0 0 4.8-.8Z"/></svg></span>
+            <span class="trust-item-text"><strong>Vlastná lakovňa</strong><span>Karosárske a lakovnícke práce</span></span>
+          </div>
+        </div>
+        <div class="trust-item">
+          <div class="trust-item-inner">
+            <span class="trust-icon"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+            <span class="trust-item-text"><strong>Po–Pi 08:00–17:00</strong><span>Termín si dohodnite vopred</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" id="sluzby" aria-labelledby="services-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Služby podľa vašej situácie</p>
+            <h2 id="services-title">Od pravidelného servisu po opravu po nehode.</h2>
+          </div>
+          <p class="section-lead">Vyberte, čo potrebujete vyriešiť. Pri objednaní stačí uviesť vozidlo a stručný popis — ďalší postup s vami dohodneme.</p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card service-card-highlight">
+            <span class="service-icon"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M4 17h16l-1.5-5.5A2 2 0 0 0 16.6 10H7.4a2 2 0 0 0-1.9 1.5L4 17Z"/><path d="M5 17v3M19 17v3M7 20h10M7 14h.01M17 14h.01"/></svg></span>
+            <h3>Opravy po poistnej udalosti</h3>
+            <p>Nahlásenie škody, obhliadka pri vybraných poisťovniach, administratíva aj samotná oprava vozidla.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="m14.7 6.3-3 3 3 3 3-3a4.2 4.2 0 0 0 1.3-3 4.2 4.2 0 0 0-.4-1.8L22 1l1 1-3.5 3.5a4.2 4.2 0 0 0-4.8.8Z"/><path d="m9.3 17.7 3-3-3-3-3 3a4.2 4.2 0 0 0-1.3 3 4.2 4.2 0 0 0 .4 1.8L2 23l-1-1 3.5-3.5a4.2 4.2 0 0 0 4.8-.8Z"/></svg></span>
+            <h3>Mechanický servis</h3>
+            <p>Výmena oleja a filtrov, servis bŕzd, výmena rozvodov a ďalšie mechanické práce na osobných aj úžitkových vozidlách.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M3 21h18M6 17 18 5M14 5h4v4M6 17h4v4"/><path d="m7 8 2 2M14 15l2 2"/></svg></span>
+            <h3>Karoséria a lakovňa</h3>
+            <p>Klampiarske a lakovnícke práce vo vlastnej dielni vrátane opráv komplikovanejších poškodení karosérie a laku.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 4v5M12 15v5M4 12h5M15 12h5"/></svg></span>
+            <h3>Geometria a diagnostika</h3>
+            <p>Meranie a nastavenie geometrie pomocou 3D zariadenia a diagnostika elektronických riadiacich jednotiek vozidla.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><path d="M12 3v5M12 16v5M3 12h5M16 12h5"/></svg></span>
+            <h3>Pneuservis a príprava na STK/EK</h3>
+            <p>Prezutie, vyváženie, oprava defektov a kontrola vozidla pred technickou a emisnou kontrolou.</p>
+          </article>
+
+          <article class="service-card">
+            <span class="service-icon"><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 12h18M9 12v2M15 12v2"/></svg></span>
+            <h3>Servis vozových parkov</h3>
+            <p>Servis a údržba firemných vozidiel, opravy po poistných udalostiach a možnosť prenájmu áut pre firmy.</p>
+          </article>
+        </div>
+
+        <div class="rental-band">
+          <div>
+            <h3>Potrebujete zostať mobilní?</h3>
+            <p>Autoservis ponúka možnosť náhradného vozidla počas opravy aj samostatnú autopožičovňu.</p>
+          </div>
+          <a class="button button-dark" href="https://autoservisjkm.sk/autopozicovna/">Pozrieť autopožičovňu</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark" id="poistna-udalost" aria-labelledby="insurance-title">
+      <div class="container insurance-layout">
+        <div class="insurance-copy">
+          <p class="eyebrow eyebrow-light">Poistné udalosti</p>
+          <h2 id="insurance-title">Menej vybavovania. Jeden servis pre celý postup.</h2>
+          <p>Pri poistnej udalosti vám pomôžeme s nahlásením, potrebnými dokumentmi, obhliadkou a opravou vozidla.</p>
+
+          <ol class="steps">
+            <li>
+              <div>
+                <h3>Ozvite sa nám</h3>
+                <p>Zavolajte alebo odošlite pripravený dopyt s údajmi o vozidle a poškodení.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Dohodneme obhliadku a postup</h3>
+                <p>Pri vybraných zmluvných poisťovniach vykonávame samoobhliadku priamo v servise.</p>
+              </div>
+            </li>
+            <li>
+              <div>
+                <h3>Vozidlo opravíme</h3>
+                <p>Karosárske a lakovnícke práce realizujeme vo vlastnej prevádzke; k dispozícii je aj možnosť náhradného vozidla.</p>
+              </div>
+            </li>
+          </ol>
+
+          <a class="button button-primary" href="#kontakt">Riešim poistnú udalosť</a>
+        </div>
+
+        <aside class="insurance-panel" aria-label="Čo vybavíme">
+          <h3>Čo vieme zastrešiť</h3>
+          <p>Rozsah konkrétneho postupu závisí od poisťovne a typu škody.</p>
+          <ul class="check-list">
+            <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Pomoc s nahlásením škodovej udalosti</span></li>
+            <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Obhliadka vozidla pri vybraných poisťovniach</span></li>
+            <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Odovzdanie a vyplnenie potrebných dokumentov</span></li>
+            <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Karosárska a lakovnícka oprava vozidla</span></li>
+            <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Odťah vozidla a možnosť náhradného auta</span></li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" id="o-nas" aria-labelledby="about-title">
+      <div class="container about-layout">
+        <div class="about-image">
+          <img src="assets/images/jkm/dielna.jpg" alt="Vybavená dielňa Autoservisu JKM s vozidlami na oprave" loading="lazy" decoding="async">
+        </div>
+        <div class="about-copy">
+          <p class="eyebrow">O Autoservise JKM</p>
+          <h2 id="about-title">Rodinný servis pre osobné, úžitkové aj firemné vozidlá.</h2>
+          <p>Autoservis JKM sa venuje údržbe vozidiel, mechanickým opravám, karosárskym a lakovníckym prácam. Výhodou je prepojenie bežného servisu s kompletným riešením poistných udalostí.</p>
+          <ul class="advantage-list">
+            <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Mechanické, karosárske a lakovnícke práce pod jednou strechou</span></li>
+            <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Skúsenosti so servisom vozidiel aj likvidáciou poistných udalostí</span></li>
+            <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Odťahová služba a možnosť zapožičania vozidla</span></li>
+            <li><svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></svg><span>Servis a údržba vozových parkov pre firmy</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="realizacie" aria-labelledby="work-title">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Priamo z prevádzky</p>
+            <h2 id="work-title">Dielňa, lakovňa a reálne práce.</h2>
+          </div>
+          <p class="section-lead">Fotografie pochádzajú z galérie Autoservisu JKM a ukazujú priestory aj typy prác, ktoré servis realizuje.</p>
+        </div>
+
+        <div class="gallery-grid">
+          <figure class="gallery-item">
+            <img src="assets/images/jkm/lakovna.jpg" width="1600" height="1200" alt="Nalakovaná modrá karoséria vozidla v lakovni Autoservisu JKM" loading="lazy" decoding="async">
+            <figcaption>Karosárske a lakovnícke práce</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/images/jkm/mechanicka-oprava.jpg" width="2040" height="1530" alt="Detail mechanickej opravy rozvodovej časti motora" loading="lazy" decoding="async">
+            <figcaption>Mechanická oprava vozidla</figcaption>
+          </figure>
+          <figure class="gallery-item">
+            <img src="assets/images/jkm/servis-vozidiel.jpg" width="1600" height="1200" alt="Úžitkové a osobné vozidlá v dielni Autoservisu JKM" loading="lazy" decoding="async">
+            <figcaption>Servis osobných aj úžitkových vozidiel</figcaption>
+          </figure>
+        </div>
+
+        <div class="testimonial-grid" aria-label="Poďakovania zákazníkov">
+          <article class="testimonial">
+            <span class="quote-mark" aria-hidden="true">“</span>
+            <blockquote>„Skvelý servis, moja poistná udalosť bolo vyriešená rýchlo a bez akýchkoľvek ďalších problémov. Ďakujem.“</blockquote>
+            <footer><cite>Vierka</cite><small>Poďakovanie zákazníčky</small></footer>
+          </article>
+          <article class="testimonial">
+            <span class="quote-mark" aria-hidden="true">“</span>
+            <blockquote>„Bol som maximálne prekvapený z výsledku, ani som nedúfal, že to takto opravia! Super robota. Veľká spokojnosť.“</blockquote>
+            <footer><cite>Peter</cite><small>Poďakovanie zákazníka</small></footer>
+          </article>
+          <article class="testimonial">
+            <span class="quote-mark" aria-hidden="true">“</span>
+            <blockquote>„Profesionálny a zároveň ľudský prístup. Veľká spokojnosť pri vybavovaní poistnej udalosti. Odporúčam.“</blockquote>
+            <footer><cite>Martin</cite><small>Poďakovanie zákazníka</small></footer>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="partners-title">
+      <div class="container partners-wrap">
+        <div class="partners-copy">
+          <p class="eyebrow">Zmluvní partneri</p>
+          <h2 id="partners-title">Obhliadky priamo v servise.</h2>
+          <p>Pre uvedené poisťovne Autoservis JKM vykonáva samoobhliadky na svojej prevádzke.</p>
+        </div>
+        <div>
+          <div class="partner-logos" aria-label="Poisťovne so samoobhliadkou na prevádzke">
+            <div class="partner-logo"><img src="assets/images/jkm/partner-csob.jpg" width="245" height="245" alt="ČSOB Poisťovňa" loading="lazy" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/images/jkm/partner-generali.jpg" width="245" height="245" alt="Generali" loading="lazy" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/images/jkm/partner-wustenrot.jpg" width="245" height="245" alt="Wüstenrot" loading="lazy" decoding="async"></div>
+            <div class="partner-logo"><img src="assets/images/jkm/partner-union.jpg" width="245" height="245" alt="Union" loading="lazy" decoding="async"></div>
+          </div>
+          <p class="partners-note">Ďalší uvádzaní partneri: Allianz, UNIQA, KOOPERATIVA a Komunálna poisťovňa.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-soft" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-layout">
+        <div class="faq-intro">
+          <p class="eyebrow">Časté otázky</p>
+          <h2 id="faq-title">Čo je dobré vedieť pred návštevou.</h2>
+          <p>Ak potrebujete riešiť konkrétnu opravu, najrýchlejšie je zavolať a dohodnúť ďalší postup.</p>
+          <a class="button button-dark" href="tel:+421918882573">Zavolať +421 918 882 573</a>
+        </div>
+
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Ako postupovať po poistnej udalosti?</summary>
+            <div class="faq-answer"><p>Ozvite sa servisu telefonicky alebo cez dopyt. Dohodnete si ďalší postup, potrebné dokumenty a termín obhliadky vozidla.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Robíte obhliadku vozidla priamo v servise?</summary>
+            <div class="faq-answer"><p>Áno, pre vybrané zmluvné poisťovne vykonáva Autoservis JKM samoobhliadku priamo na prevádzke. Konkrétny postup si overte pri objednaní.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Servisujete aj úžitkové a firemné vozidlá?</summary>
+            <div class="faq-answer"><p>Áno. Servis sa venuje osobným aj úžitkovým vozidlám a ponúka údržbu vozových parkov pre firmy.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Je možné zapožičať si náhradné vozidlo?</summary>
+            <div class="faq-answer"><p>Autoservis uvádza možnosť náhradného vozidla počas opravy a prevádzkuje aj samostatnú autopožičovňu. Dostupnosť si potvrďte pri rezervácii.</p></div>
+          </details>
+          <details class="faq-item">
+            <summary>Kedy je servis otvorený?</summary>
+            <div class="faq-answer"><p>Prevádzkové hodiny sú od pondelka do piatka, 08:00–17:00. Termín návštevy odporúčame dohodnúť vopred.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-dark contact-section" id="kontakt" aria-labelledby="contact-title">
+      <div class="container contact-layout">
+        <div class="contact-copy">
+          <p class="eyebrow eyebrow-light">Kontakt a dopyt</p>
+          <h2 id="contact-title">Dohodnime termín alebo obhliadku.</h2>
+          <p>Zavolajte priamo do servisu alebo vyplňte pripravený formulár s tým, čo potrebujete vyriešiť.</p>
+
+          <div class="contact-blocks">
+            <div class="contact-block">
+              <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.62a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.28-1.28a2 2 0 0 1 2.11-.45c.84.29 1.72.5 2.62.62A2 2 0 0 1 22 16.92z"/></svg>
+              <div><strong>Andrej Jurík</strong><a href="tel:+421918882573">+421 918 882 573</a><a href="mailto:jurik.jkm@gmail.com">jurik.jkm@gmail.com</a></div>
+            </div>
+            <div class="contact-block">
+              <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.62a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.28-1.28a2 2 0 0 1 2.11-.45c.84.29 1.72.5 2.62.62A2 2 0 0 1 22 16.92z"/></svg>
+              <div><strong>Janka Juríková</strong><a href="tel:+421908512627">+421 908 512 627</a><a href="mailto:jurikova.jkm@gmail.com">jurikova.jkm@gmail.com</a></div>
+            </div>
+            <div class="contact-block">
+              <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M20 10c0 5-8 12-8 12S4 15 4 10a8 8 0 1 1 16 0Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+              <div>
+                <strong>JKM Trade SK, s. r. o.</strong>
+                <span>Viničnianska cesta 6202/23, 902 01 Pezinok</span>
+                <span>Prijímacia kancelária: Viničnianska cesta 15, Strojárske centrum — bočný vchod</span>
+                <a href="https://www.google.com/maps/search/?api=1&amp;query=Autoservis+JKM+Pezinok" target="_blank" rel="noopener" aria-label="Otvoriť Autoservis JKM v Google Mapách — otvorí sa v novom okne">Otvoriť v Google Mapách</a>
+              </div>
+            </div>
+            <div class="contact-block">
+              <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+              <div><strong>Prevádzkové hodiny</strong><span>Pondelok – piatok: 08:00 – 17:00</span></div>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact-form" id="contact-form" action="" method="post">
+          <h3>Pripraviť dopyt</h3>
+          <p class="form-intro">Povinné polia sú označené hviezdičkou.</p>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="name">Meno a priezvisko *</label>
+              <input id="name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="phone">Telefón *</label>
+              <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required>
+            </div>
+            <div class="field">
+              <label for="email">E-mail</label>
+              <input id="email" name="email" type="email" inputmode="email" autocomplete="email">
+            </div>
+            <div class="field">
+              <label for="vehicle">Vozidlo</label>
+              <input id="vehicle" name="vehicle" type="text" placeholder="Napr. Škoda Octavia, 2021">
+            </div>
+            <div class="field field-full">
+              <label for="service">Čo potrebujete vyriešiť? *</label>
+              <select id="service" name="service" required>
+                <option value="">Vyberte možnosť</option>
+                <option value="mechanicky-servis">Bežný servis alebo mechanická oprava</option>
+                <option value="poistna-udalost">Poistná udalosť alebo obhliadka</option>
+                <option value="karoseria-lak">Karoséria alebo lakovanie</option>
+                <option value="diagnostika-geometria">Diagnostika alebo geometria</option>
+                <option value="pneuservis-stk">Pneuservis alebo príprava na STK/EK</option>
+                <option value="firma">Servis firemného vozového parku</option>
+                <option value="autopozicovna">Autopožičovňa</option>
+                <option value="ine">Iné</option>
+              </select>
+            </div>
+            <div class="field field-full">
+              <label for="message">Stručný popis *</label>
+              <textarea id="message" name="message" required aria-describedby="message-help"></textarea>
+              <span class="field-help" id="message-help">Uveďte poruchu, poškodenie alebo požadovanú službu.</span>
+            </div>
+          </div>
+
+          <div class="consent">
+            <input id="consent" name="consent" type="checkbox" required>
+            <label for="consent">Súhlasím so spracovaním údajov na účely vybavenia dopytu. <a href="https://autoservisjkm.sk/ochrana-sukromia/" target="_blank" rel="noopener">Zásady ochrany súkromia</a> *</label>
+          </div>
+
+          <p class="form-demo-note">Ukážkový formulár: reálne odosielanie bude aktívne až po napojení formulárovej služby.</p>
+          <button class="button button-primary" type="submit">Skontrolovať pripravený dopyt</button>
+          <p class="form-status" id="form-status" role="status" tabindex="-1" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="footer-brand" href="#uvod" aria-label="Autoservis JKM — späť na úvod">
+            <img src="assets/images/jkm/logo.png" width="2029" height="149" alt="JKM Autoservis">
+          </a>
+          <p class="footer-about">Rodinný autoservis v Pezinku pre osobné a úžitkové vozidlá, mechanické opravy, karosárske a lakovnícke práce a riešenie poistných udalostí.</p>
+        </div>
+        <div>
+          <p class="footer-title">Rýchle odkazy</p>
+          <ul class="footer-links">
+            <li><a href="#sluzby">Služby</a></li>
+            <li><a href="#poistna-udalost">Poistná udalosť</a></li>
+            <li><a href="#realizacie">Realizácie</a></li>
+            <li><a href="#faq">Časté otázky</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-title">Informácie</p>
+          <ul class="footer-links">
+            <li><a href="https://autoservisjkm.sk/cennik/">Orientačný cenník</a></li>
+            <li><a href="https://autoservisjkm.sk/autopozicovna/">Autopožičovňa</a></li>
+            <li><a href="https://services.bookio.com/jkm-trade-sk/widget" target="_blank" rel="noopener">Online rezervácia</a></li>
+            <li><a href="https://autoservisjkm.sk/ochrana-sukromia/">Ochrana súkromia</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 JKM Trade SK, s. r. o. Všetky práva vyhradené.</p>
+        <p>IČO: 45325341 · DIČ: 2022943571 · IČ DPH: SK2022943571</p>
+      </div>
+    </div>
+  </footer>
+
+  <a class="mobile-call" href="tel:+421918882573">
+    <svg class="icon" aria-hidden="true" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.12.9.33 1.78.62 2.62a2 2 0 0 1-.45 2.11L8 9.73a16 16 0 0 0 6 6l1.28-1.28a2 2 0 0 1 2.11-.45c.84.29 1.72.5 2.62.62A2 2 0 0 1 22 16.92z"/></svg>
+    Zavolať do servisu
+  </a>
+
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const navLinks = document.querySelector('.nav-links');
+    const menuLabel = menuButton.querySelector('.sr-only');
+
+    function closeMenu() {
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuLabel.textContent = 'Otvoriť menu';
+      navLinks.classList.remove('is-open');
+      document.body.classList.remove('menu-open');
+    }
+
+    menuButton.addEventListener('click', () => {
+      const willOpen = menuButton.getAttribute('aria-expanded') !== 'true';
+      menuButton.setAttribute('aria-expanded', String(willOpen));
+      menuLabel.textContent = willOpen ? 'Zatvoriť menu' : 'Otvoriť menu';
+      navLinks.classList.toggle('is-open', willOpen);
+      document.body.classList.toggle('menu-open', willOpen);
+    });
+
+    navLinks.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && menuButton.getAttribute('aria-expanded') === 'true') {
+        closeMenu();
+        menuButton.focus();
+      }
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) closeMenu();
+    });
+
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    contactForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!contactForm.reportValidity()) return;
+
+      formStatus.hidden = false;
+      formStatus.textContent = 'Dopyt je vyplnený, ale nebol odoslaný. Na reálne odosielanie je potrebné napojiť formulárovú službu.';
+      formStatus.focus();
+    });
+  </script>
+</body>
+</html>

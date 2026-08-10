@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Stručné zhodnotenie webovej stránky spoločnosti JŠ servis, s.r.o., pripravené štúdiom Beewoy.">
+  <title>Zhodnotenie webovej stránky — JŠ servis, s.r.o.</title>
+  <style>
+    :root {
+      --background: #f8f7f2;
+      --surface: #ffffff;
+      --text: #111111;
+      --muted: #66666d;
+      --line: #deddd7;
+      --accent: #f5bf00;
+      --max-width: 1040px;
+      --radius: 3px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      color-scheme: light;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 4px;
+    }
+
+    .report {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .report-header {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 32px;
+      align-items: end;
+      padding: 44px 0 30px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .eyebrow,
+    .section-label,
+    .finding-number {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      line-height: 1.4;
+      text-transform: uppercase;
+    }
+
+    .report-title {
+      margin: 8px 0 0;
+      font-size: clamp(1.35rem, 3vw, 2rem);
+      font-weight: 650;
+      letter-spacing: -0.025em;
+      line-height: 1.15;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: 20px 32px;
+      margin: 0;
+    }
+
+    .meta div {
+      display: grid;
+      gap: 2px;
+    }
+
+    .meta dt {
+      color: var(--muted);
+      font-size: 0.75rem;
+      font-weight: 650;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .meta dd {
+      margin: 0;
+      font-size: 0.92rem;
+      font-weight: 600;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 190px;
+      gap: clamp(40px, 8vw, 96px);
+      align-items: end;
+      padding: clamp(72px, 10vw, 118px) 0 clamp(72px, 10vw, 110px);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .summary h2 {
+      max-width: 780px;
+      margin: 16px 0 24px;
+      font-size: clamp(2.35rem, 6vw, 4.9rem);
+      font-weight: 650;
+      letter-spacing: -0.062em;
+      line-height: 0.99;
+      text-wrap: balance;
+    }
+
+    .summary-copy {
+      max-width: 720px;
+      margin: 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      line-height: 1.55;
+    }
+
+    .score {
+      padding: 20px 0 2px 22px;
+      border-left: 3px solid var(--accent);
+    }
+
+    .score-value {
+      display: block;
+      margin: 5px 0 8px;
+      font-size: 2rem;
+      font-weight: 650;
+      letter-spacing: -0.04em;
+      line-height: 1;
+    }
+
+    .score p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .findings {
+      padding: clamp(68px, 9vw, 104px) 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin: 14px 0 48px;
+      font-size: clamp(1.75rem, 4vw, 2.8rem);
+      font-weight: 620;
+      letter-spacing: -0.045em;
+      line-height: 1.12;
+    }
+
+    .finding-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .finding {
+      display: grid;
+      grid-template-columns: 58px minmax(190px, 0.8fr) minmax(260px, 1.2fr);
+      gap: 26px;
+      padding: 30px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .finding h3 {
+      margin: 0;
+      font-size: 1.1rem;
+      font-weight: 650;
+      letter-spacing: -0.015em;
+      line-height: 1.35;
+    }
+
+    .finding p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.55;
+    }
+
+    .lower-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+      gap: clamp(48px, 9vw, 104px);
+      padding: clamp(68px, 9vw, 104px) 0;
+    }
+
+    .accessibility,
+    .recommendations {
+      min-width: 0;
+    }
+
+    .lower-grid h2 {
+      margin: 14px 0 20px;
+      font-size: clamp(1.55rem, 3vw, 2.15rem);
+      font-weight: 620;
+      letter-spacing: -0.04em;
+      line-height: 1.16;
+    }
+
+    .accessibility > p:last-child {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .recommendations ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      border-top: 1px solid var(--line);
+    }
+
+    .recommendations li {
+      position: relative;
+      padding: 18px 8px 18px 28px;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.95rem;
+    }
+
+    .recommendations li::before {
+      position: absolute;
+      top: 1.12rem;
+      left: 0;
+      color: var(--accent);
+      content: "●";
+      font-size: 0.72rem;
+    }
+
+    .cta {
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 36px;
+      align-items: center;
+      padding: clamp(36px, 6vw, 64px);
+      border-radius: var(--radius);
+      background: var(--text);
+      color: #ffffff;
+    }
+
+    .cta::before {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 112px;
+      height: 5px;
+      background: var(--accent);
+      content: "";
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0;
+      font-size: clamp(1.35rem, 3vw, 2.15rem);
+      font-weight: 600;
+      letter-spacing: -0.035em;
+      line-height: 1.2;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 20px;
+      border: 2px solid #ffffff;
+      border-radius: 2px;
+      background: #ffffff;
+      color: var(--text);
+      font-size: 0.94rem;
+      font-weight: 700;
+      line-height: 1.3;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 180ms ease, color 180ms ease, border-color 180ms ease;
+    }
+
+    .button:hover {
+      border-color: var(--accent);
+      background: var(--accent);
+    }
+
+    .button:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 5px;
+    }
+
+    .report-footer {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 22px;
+      align-items: center;
+      padding: 44px 0 54px;
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    .beewoy-link {
+      display: inline-flex;
+      min-width: 48px;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      border-radius: 2px;
+    }
+
+    .beewoy-logo {
+      display: block;
+      width: 36px;
+      height: auto;
+    }
+
+    .report-footer p {
+      margin: 0;
+    }
+
+    .footer-title {
+      color: var(--text);
+      font-weight: 650;
+    }
+
+    @media (max-width: 760px) {
+      .report {
+        width: min(calc(100% - 32px), var(--max-width));
+      }
+
+      .report-header,
+      .summary,
+      .lower-grid,
+      .cta {
+        grid-template-columns: 1fr;
+      }
+
+      .report-header {
+        align-items: start;
+      }
+
+      .meta {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .summary {
+        gap: 44px;
+      }
+
+      .score {
+        max-width: 250px;
+      }
+
+      .finding {
+        grid-template-columns: 42px minmax(0, 1fr);
+        gap: 12px 18px;
+      }
+
+      .finding p {
+        grid-column: 2;
+      }
+
+      .cta {
+        align-items: start;
+      }
+
+      .button {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 430px) {
+      .meta {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+
+      .summary h2 {
+        font-size: clamp(2.2rem, 12vw, 3.25rem);
+      }
+
+      .finding {
+        grid-template-columns: 1fr;
+      }
+
+      .finding p {
+        grid-column: 1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    @media print {
+      @page {
+        margin: 16mm;
+      }
+
+      body {
+        background: #ffffff;
+        font-size: 10pt;
+      }
+
+      .report {
+        width: 100%;
+      }
+
+      .report-header,
+      .summary,
+      .findings,
+      .lower-grid,
+      .report-footer {
+        padding-top: 18mm;
+        padding-bottom: 18mm;
+      }
+
+      .summary h2 {
+        font-size: 34pt;
+      }
+
+      .cta {
+        break-inside: avoid;
+        print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="report">
+    <header class="report-header">
+      <div>
+        <p class="eyebrow">Zhodnotenie webovej stránky</p>
+        <h1 class="report-title">JŠ servis, s.r.o.</h1>
+      </div>
+      <dl class="meta">
+        <div>
+          <dt>Dátum</dt>
+          <dd><time datetime="2026-08-10">10. augusta 2026</time></dd>
+        </div>
+        <div>
+          <dt>Autor</dt>
+          <dd>Pripravil Beewoy</dd>
+        </div>
+      </dl>
+    </header>
+
+    <section class="summary" aria-labelledby="summary-title">
+      <div>
+        <p class="section-label">Hlavné zhrnutie</p>
+        <h2 id="summary-title">Silná ponuka sa na webe stráca v technickom obsahu.</h2>
+        <p class="summary-copy">Návštevník musí sám rozlíšiť viacero odlišných činností a dohľadať správny kontakt. To môže komplikovať rozhodovanie a znižovať počet relevantných dopytov.</p>
+      </div>
+      <aside class="score" aria-label="Orientačné hodnotenie 42 zo 100">
+        <span class="section-label">Orientačné hodnotenie</span>
+        <strong class="score-value">42 / 100</strong>
+        <p>Orientačné zhodnotenie viditeľných oblastí. Nenahrádza úplný technický ani certifikovaný audit.</p>
+      </aside>
+    </section>
+
+    <section class="findings" aria-labelledby="findings-title">
+      <p class="section-label">Tri hlavné zistenia</p>
+      <h2 class="section-heading" id="findings-title">Najväčšie bariéry medzi ponukou a dopytom</h2>
+      <ol class="finding-list">
+        <li class="finding">
+          <span class="finding-number">01</span>
+          <h3>Ponuke chýba jasná priorita</h3>
+          <p>Betón, stavebná činnosť, prenájom, energetická certifikácia aj maloobchod sú v jednej úrovni bez vysvetlenia, pre koho je ktorá služba určená.</p>
+        </li>
+        <li class="finding">
+          <span class="finding-number">02</span>
+          <h3>Cesta ku kontaktu je nevýrazná</h3>
+          <p>Web nemá zreteľnú primárnu výzvu na objednávku alebo cenovú ponuku a kontakty sa objavia až za dlhým technickým obsahom.</p>
+        </li>
+        <li class="finding">
+          <span class="finding-number">03</span>
+          <h3>Mobil komplikuje čítanie</h3>
+          <p>Pevná šírka stránky 770 px sa na úzkom displeji neprispôsobí, preto časť obsahu zostáva mimo obrazovky a vyžaduje horizontálne posúvanie.</p>
+        </li>
+      </ol>
+    </section>
+
+    <div class="lower-grid">
+      <section class="accessibility" aria-labelledby="accessibility-title">
+        <p class="section-label">Digitálna prístupnosť</p>
+        <h2 id="accessibility-title">Web používajú rôzni ľudia</h2>
+        <p>Približne každý šiesty človek na svete žije s významnou formou zdravotného znevýhodnenia. Väčší text, zrozumiteľné popisy obrázkov, viditeľný fokus a responzívne rozloženie pomáhajú väčšiemu počtu používateľov dostať sa k ponuke aj kontaktu.</p>
+      </section>
+
+      <section class="recommendations" aria-labelledby="recommendations-title">
+        <p class="section-label">Odporúčané zmeny</p>
+        <h2 id="recommendations-title">Štyri kroky s najväčším prínosom</h2>
+        <ul>
+          <li>Zoskupiť ponuku podľa potrieb zákazníka a určiť jednu hlavnú službu na úvodnej stránke.</li>
+          <li>Umiestniť telefón, žiadosť o cenovú ponuku a jasné CTA do prvého zobrazenia.</li>
+          <li>Prepojiť certifikáciu, fotografie, firemný Facebook, mapu a overené recenzie do dôveryhodného celku.</li>
+          <li>Vytvoriť responzívne rozloženie s čitateľnou typografiou, zmysluplnými alt textami a focus stavmi.</li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="cta" aria-labelledby="cta-title">
+      <p id="cta-title">Odporúčania sme už zapracovali do návrhu novej úvodnej stránky.</p>
+      <a class="button" href="index.html">Pozrieť nový návrh stránky</a>
+    </section>
+
+    <footer class="report-footer">
+      <a class="beewoy-link" href="https://beewoy.sk/" aria-label="Navštíviť web Beewoy">
+        <img class="beewoy-logo" src="assets/images/beewoy-logo.svg" alt="Beewoy" width="234" height="257">
+      </a>
+      <p><span class="footer-title">Pripravil Beewoy.</span><br>Zhodnotenie a návrh novej úvodnej stránky pripravilo digitálne štúdio Beewoy.</p>
+    </footer>
+  </main>
+</body>
+</html>

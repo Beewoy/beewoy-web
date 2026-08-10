@@ -1,0 +1,696 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Stručné zhodnotenie webovej stránky FARM PROFI od digitálneho štúdia Beewoy.">
+  <title>Zhodnotenie webovej stránky — FARM PROFI</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --background: #f8f7f2;
+      --surface: #ffffff;
+      --text: #111111;
+      --muted: #66666d;
+      --line: #deddd7;
+      --accent: #f5bf00;
+      --focus: #8a6800;
+      --container: 1040px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: var(--background);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 17px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 10;
+      transform: translateY(-160%);
+      padding: 12px 16px;
+      background: var(--text);
+      color: #ffffff;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .container {
+      width: min(calc(100% - 48px), var(--container));
+      margin-inline: auto;
+    }
+
+    .report-header {
+      padding: 32px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      margin: 0 0 6px;
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 750;
+      letter-spacing: 0.12em;
+      line-height: 1.3;
+      text-transform: uppercase;
+    }
+
+    .report-title {
+      margin: 0;
+      font-size: clamp(1.15rem, 2vw, 1.35rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .meta {
+      display: grid;
+      grid-template-columns: repeat(2, auto);
+      gap: 10px 28px;
+      margin: 0;
+      text-align: right;
+    }
+
+    .meta div {
+      display: grid;
+      gap: 1px;
+    }
+
+    .meta dt {
+      color: var(--muted);
+      font-size: 0.76rem;
+      font-weight: 650;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .meta dd {
+      margin: 0;
+      font-size: 0.94rem;
+      font-weight: 650;
+    }
+
+    main section {
+      border-bottom: 1px solid var(--line);
+    }
+
+    .summary {
+      padding: clamp(72px, 10vw, 116px) 0 76px;
+    }
+
+    .summary-mark {
+      width: 42px;
+      height: 6px;
+      margin-bottom: 32px;
+      background: var(--accent);
+    }
+
+    h1 {
+      max-width: 920px;
+      margin: 0;
+      font-size: clamp(2.5rem, 6.3vw, 5rem);
+      font-weight: 730;
+      letter-spacing: -0.055em;
+      line-height: 0.98;
+      text-wrap: balance;
+    }
+
+    .lead {
+      max-width: 770px;
+      margin: 34px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.08rem, 2vw, 1.35rem);
+      line-height: 1.55;
+    }
+
+    .score-section {
+      padding: 42px 0;
+      background: var(--surface);
+    }
+
+    .score-grid {
+      display: grid;
+      grid-template-columns: minmax(190px, 0.36fr) 1fr;
+      gap: 56px;
+      align-items: center;
+    }
+
+    .score-number {
+      display: flex;
+      gap: 8px;
+      align-items: baseline;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .score-number strong {
+      font-size: 2.2rem;
+      line-height: 1;
+    }
+
+    .score-number span {
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .score-copy p {
+      max-width: 660px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .score-line {
+      height: 3px;
+      margin-bottom: 15px;
+      overflow: hidden;
+      background: #e5e3dd;
+    }
+
+    .score-line::before {
+      display: block;
+      width: 44%;
+      height: 100%;
+      background: var(--accent);
+      content: "";
+    }
+
+    .section-shell {
+      padding: 76px 0 84px;
+    }
+
+    .section-intro {
+      display: grid;
+      grid-template-columns: 0.55fr 1.45fr;
+      gap: 48px;
+      margin-bottom: 54px;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: clamp(1.8rem, 3.2vw, 2.7rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      line-height: 1.12;
+    }
+
+    .section-note {
+      max-width: 630px;
+      margin: 2px 0 0;
+      color: var(--muted);
+    }
+
+    .findings-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: finding;
+    }
+
+    .finding {
+      display: grid;
+      grid-template-columns: 84px 0.75fr 1.25fr;
+      gap: 28px;
+      padding: 30px 0;
+      border-top: 1px solid var(--line);
+      counter-increment: finding;
+    }
+
+    .finding::before {
+      color: var(--muted);
+      font-size: 0.82rem;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+      content: counter(finding, decimal-leading-zero);
+    }
+
+    .finding h3 {
+      margin: 0;
+      font-size: 1.2rem;
+      line-height: 1.35;
+    }
+
+    .finding p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .accessibility-grid {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .accessibility-copy {
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.06rem;
+    }
+
+    .accessibility-copy strong {
+      color: var(--text);
+      font-weight: 680;
+    }
+
+    .recommendations {
+      display: grid;
+      grid-template-columns: 0.8fr 1.2fr;
+      gap: 64px;
+    }
+
+    .recommendation-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .recommendation-list li {
+      position: relative;
+      padding: 0 0 22px 28px;
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 22px;
+    }
+
+    .recommendation-list li:last-child {
+      margin-bottom: 0;
+    }
+
+    .recommendation-list li::before {
+      position: absolute;
+      top: 0.62em;
+      left: 0;
+      width: 8px;
+      height: 8px;
+      background: var(--accent);
+      border-radius: 50%;
+      content: "";
+    }
+
+    .cta-section {
+      padding: 72px 0 80px;
+      border-bottom: 0;
+    }
+
+    .cta-block {
+      display: grid;
+      grid-template-columns: 1.2fr auto;
+      gap: 42px;
+      align-items: center;
+      padding: clamp(36px, 6vw, 64px);
+      background: var(--text);
+      color: #ffffff;
+    }
+
+    .cta-kicker {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+      margin: 0 0 16px;
+      color: #d6d6d8;
+      font-size: 0.77rem;
+      font-weight: 750;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .cta-kicker::before {
+      width: 28px;
+      height: 4px;
+      background: var(--accent);
+      content: "";
+    }
+
+    .cta-block h2 {
+      max-width: 660px;
+      font-size: clamp(1.75rem, 4vw, 3.2rem);
+    }
+
+    .cta-button {
+      display: inline-flex;
+      min-height: 52px;
+      align-items: center;
+      justify-content: center;
+      padding: 14px 22px;
+      border: 2px solid var(--accent);
+      background: var(--accent);
+      color: var(--text);
+      font-size: 0.95rem;
+      font-weight: 780;
+      line-height: 1.2;
+      text-align: center;
+      text-decoration: none;
+      transition: background-color 180ms ease, color 180ms ease, transform 180ms ease;
+    }
+
+    .cta-button:hover {
+      background: transparent;
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+
+    .cta-button:focus-visible {
+      outline-color: #ffffff;
+      box-shadow: 0 0 0 5px var(--accent);
+    }
+
+    .report-footer {
+      padding: 34px 0 46px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .brand-link {
+      display: inline-flex;
+      width: 42px;
+      height: 46px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .brand-link img {
+      display: block;
+      width: 38px;
+      height: 42px;
+      object-fit: contain;
+    }
+
+    .footer-text {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .footer-link {
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      color: var(--text);
+      font-size: 0.88rem;
+      font-weight: 700;
+      text-underline-offset: 4px;
+    }
+
+    @media (max-width: 760px) {
+      .container {
+        width: min(calc(100% - 32px), var(--container));
+      }
+
+      .report-header {
+        padding: 24px 0;
+      }
+
+      .header-grid,
+      .score-grid,
+      .section-intro,
+      .accessibility-grid,
+      .recommendations,
+      .cta-block {
+        grid-template-columns: 1fr;
+      }
+
+      .header-grid {
+        gap: 22px;
+      }
+
+      .meta {
+        justify-content: start;
+        text-align: left;
+      }
+
+      .summary {
+        padding: 66px 0 58px;
+      }
+
+      h1 {
+        font-size: clamp(2.35rem, 13vw, 3.8rem);
+      }
+
+      .score-grid,
+      .section-intro,
+      .accessibility-grid,
+      .recommendations {
+        gap: 28px;
+      }
+
+      .section-shell {
+        padding: 58px 0 64px;
+      }
+
+      .section-intro {
+        margin-bottom: 36px;
+      }
+
+      .finding {
+        grid-template-columns: 48px 1fr;
+        gap: 8px 18px;
+        padding: 26px 0;
+      }
+
+      .finding p {
+        grid-column: 2;
+      }
+
+      .cta-section {
+        padding: 48px 0 56px;
+      }
+
+      .cta-block {
+        gap: 30px;
+      }
+
+      .cta-button {
+        width: 100%;
+      }
+
+      .footer-grid {
+        grid-template-columns: auto 1fr;
+      }
+
+      .footer-link {
+        grid-column: 2;
+        justify-self: start;
+      }
+    }
+
+    @media (max-width: 430px) {
+      body {
+        font-size: 16px;
+      }
+
+      .meta {
+        grid-template-columns: 1fr;
+      }
+
+      .finding {
+        grid-template-columns: 1fr;
+      }
+
+      .finding p {
+        grid-column: 1;
+      }
+
+      .cta-block {
+        padding: 30px 22px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+
+    @media print {
+      body {
+        background: #ffffff;
+      }
+
+      .container {
+        width: 100%;
+      }
+
+      .report-header,
+      .summary,
+      .score-section,
+      .section-shell,
+      .cta-section,
+      .report-footer {
+        padding-left: 14mm;
+        padding-right: 14mm;
+      }
+
+      .cta-block {
+        break-inside: avoid;
+      }
+
+      .cta-button {
+        color: #111111;
+      }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#obsah">Preskočiť na obsah</a>
+
+  <header class="report-header">
+    <div class="container header-grid">
+      <div>
+        <p class="eyebrow">Zhodnotenie webovej stránky</p>
+        <p class="report-title">FARM PROFI</p>
+      </div>
+      <dl class="meta">
+        <div>
+          <dt>Dátum</dt>
+          <dd><time datetime="2026-08-10">10. august 2026</time></dd>
+        </div>
+        <div>
+          <dt>Pripravil</dt>
+          <dd>Beewoy</dd>
+        </div>
+      </dl>
+    </div>
+  </header>
+
+  <main id="obsah">
+    <section class="summary" aria-labelledby="summary-title">
+      <div class="container">
+        <div class="summary-mark" aria-hidden="true"></div>
+        <h1 id="summary-title">Výrobná sila firmy je na webe ukrytá za históriou a zoznamom strojov.</h1>
+        <p class="lead">FARM PROFI má od roku 2000 vlastnú nerezovú výrobu, konštrukciu, servis aj zastúpenia Nadratowski a Nowicki. Úvodná stránka však začína dlhším textom o firme a návštevník musí sám skladať, čo firma reálne rieši a ako ju kontaktovať.</p>
+      </div>
+    </section>
+
+    <section class="score-section" aria-labelledby="score-title">
+      <div class="container score-grid">
+        <div>
+          <p class="eyebrow" id="score-title">Orientačné hodnotenie</p>
+          <div class="score-number" aria-label="44 bodov zo 100">
+            <strong>44</strong><span>/ 100</span>
+          </div>
+        </div>
+        <div class="score-copy">
+          <div class="score-line" aria-hidden="true"></div>
+          <p>Orientačné zhodnotenie viditeľných oblastí na <a href="https://www.farmprofi.sk/">farmprofi.sk</a>. Nenahrádza úplný technický ani certifikovaný audit.</p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="findings-title">
+      <div class="container section-shell">
+        <div class="section-intro">
+          <h2 id="findings-title">Tri hlavné zistenia</h2>
+          <p class="section-note">Najväčší priestor na zlepšenie nie je v šírke ponuky, ale v tom, ako rýchlo ju B2B návštevník pochopí a ako jednoducho odošle dopyt.</p>
+        </div>
+
+        <ol class="findings-list">
+          <li class="finding">
+            <h3>Úvod nehovorí jasne, čo firma predáva</h3>
+            <p>Homepage otvára sekcia „O nás“ s históriou, počtom pracovníkov a rozlohou areálu. Chýba krátky prísľub typu stroje / zákazková nerezová výroba / servis a viditeľná výzva na nezáväznú konzultáciu.</p>
+          </li>
+          <li class="finding">
+            <h3>Katalóg je dlhý zoznam bez rozhodovacej hierarchie</h3>
+            <p>Produkty sú radené ako rovnocenný zoznam desiatok položiek. Návštevník nemá rýchle vstupy podľa typu prevádzky alebo procesu a silné argumenty — vlastná konštrukcia, 10&nbsp;000&nbsp;m², servis Vemag aj ďalších značiek — nie sú vizuálne prioritné.</p>
+          </li>
+          <li class="finding">
+            <h3>Kontakt je telefónny zoznam, nie cesta k dopytu</h3>
+            <p>Kontaktná stránka obsahuje veľa interných liniek a e-mailov, no chýba jednoduchý formulár dopytu. Na partnerských stránkach sa navyše objavujú nedotiahnuté texty a popis „image description“, čo oslabuje dôveryhodnosť pri prvom kontakte.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section aria-labelledby="accessibility-title">
+      <div class="container section-shell accessibility-grid">
+        <div>
+          <p class="eyebrow">Pre viac ľudí</p>
+          <h2 id="accessibility-title">Digitálna prístupnosť</h2>
+        </div>
+        <p class="accessibility-copy"><strong>Web používajú ľudia s rôznym zrakom, motorikou aj spôsobom ovládania.</strong> Približne každý šiesty človek na svete žije s významnou formou zdravotného znevýhodnenia. Jasnejšia hierarchia, dostatočný kontrast, väčšie aktívne prvky, zmysluplné popisy obrázkov a overenie ovládania klávesnicou pomáhajú väčšiemu počtu používateľov — vrátane technikov a nákupcov, ktorí web prechádzajú rýchlo a na mobile.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="recommendations-title">
+      <div class="container section-shell recommendations">
+        <div>
+          <p class="eyebrow">Priorita</p>
+          <h2 id="recommendations-title">Odporúčané zmeny</h2>
+        </div>
+        <ul class="recommendation-list">
+          <li>Postaviť úvod na jasnom prísľube: potravinárske stroje, nerezová výroba na mieru a servis — s jednou hlavnou výzvou na dopyt.</li>
+          <li>Zoskupiť katalóg podľa použitia (miešanie, spracovanie, hygiena, manipulácia, diely) a z každej skupiny viesť k nezáväznému dopytu.</li>
+          <li>Presunúť vyššie dôkazy dôvery: výrobná kapacita, vlastná konštrukcia, servisné pokrytie a partnerstvá Nadratowski / Nowicki.</li>
+          <li>Nahradiť telefónny zoznam jednoduchým kontaktným formulárom a zjednotiť hlavné kontakty pre obchod a servis.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="cta-section" aria-labelledby="cta-title">
+      <div class="container">
+        <div class="cta-block">
+          <div>
+            <p class="cta-kicker">Ďalší krok</p>
+            <h2 id="cta-title">Odporúčania sme už zapracovali do návrhu novej úvodnej stránky.</h2>
+          </div>
+          <a class="cta-button" href="index.html">Pozrieť nový návrh stránky</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="report-footer">
+    <div class="container footer-grid">
+      <a class="brand-link" href="https://beewoy.sk/" aria-label="Beewoy — prejsť na web">
+        <img src="assets/images/beewoy-logo.svg" alt="Beewoy" width="38" height="42">
+      </a>
+      <p class="footer-text">Zhodnotenie a návrh novej úvodnej stránky pripravilo digitálne štúdio Beewoy.</p>
+      <a class="footer-link" href="https://beewoy.sk/">beewoy.sk</a>
+    </div>
+  </footer>
+</body>
+</html>
