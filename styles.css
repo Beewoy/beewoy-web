@@ -402,14 +402,8 @@ h1, h2, h3 {
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: clamp(12px, 2.5vw, 28px);
+  gap: clamp(10px, 2vw, 22px);
   flex-shrink: 0;
-}
-.hero-badges {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 24px;
 }
 .hero-badge {
   position: relative;
@@ -2713,7 +2707,6 @@ body.cookie-modal-open { overflow: hidden; }
     --hero-pad-bottom: clamp(14px, 2.5vh, 28px);
   }
   .hero-copy { gap: clamp(18px, 3vh, 28px); }
-  .hero-badges { gap: 14px; }
   .hero-main { gap: clamp(14px, 2vh, 20px); }
   .hero h1 {
     font-size: clamp(2.15rem, min(7.5vw, 8vh), 4.6rem);
@@ -2721,11 +2714,6 @@ body.cookie-modal-open { overflow: hidden; }
   .hero-sub {
     font-size: clamp(.9rem, 1.6vh, 1.05rem);
     line-height: 1.4;
-  }
-  .hero-speed-sticker {
-    width: 84px;
-    height: 84px;
-    right: -4px;
   }
   .hero-actions .btn { min-height: 48px; }
 }
@@ -2981,35 +2969,58 @@ body.cookie-modal-open { overflow: hidden; }
   .web-team .team-intro { margin-bottom: 48px; }
   .web-team .person-portrait { width: min(100%, 220px); }
   .hero-meta {
-    gap: clamp(10px, 1.8vh, 16px);
+    gap: 10px 16px;
   }
-  .hero-badges { gap: 18px; }
   .hero-badge { min-height: 24px; gap: 6px; font-size: .6rem; letter-spacing: .045em; }
   .badge-shield { width: 16px; height: 18px; flex-basis: 16px; }
   .hero-main {
     width: min(100%, 560px);
-    padding-top: 12px;
+    gap: clamp(14px, 2.2vh, 20px);
   }
   .hero h1 {
-    font-size: clamp(2.15rem, min(10.5vw, 8vh), 3.8rem);
+    font-size: clamp(2.2rem, min(10.5vw, 8vh), 3.6rem);
   }
   .hero-sub {
     max-width: 34ch;
-    font-size: clamp(.92rem, 2.2vh, 1.05rem);
+    font-size: clamp(.95rem, 2.2vh, 1.08rem);
   }
+  /* Mobile: keep the circular badge, but under the H1 in normal flow. */
   .hero-speed-sticker {
-    top: -4px;
-    right: 0;
-    width: 74px;
-    height: 74px;
+    position: static;
+    top: auto;
+    right: auto;
+    width: 76px;
+    height: 76px;
+    margin: 4px auto 0;
+    padding: 0;
+    border-radius: 50%;
+    border-width: 2.5px;
     box-shadow: 4px 4px 0 var(--ink);
+    transform: rotate(6deg);
+    animation: none;
   }
-  .hero-speed-sticker-ring { inset: 5px; }
-  .hero-speed-sticker-label { font-size: .5rem; }
-  .hero-speed-sticker strong { font-size: 1.05rem; }
+  .hero-speed-sticker-ring {
+    display: block;
+    inset: 5px;
+  }
+  .hero-speed-sticker-copy {
+    display: grid;
+    gap: 2px;
+    justify-items: center;
+    padding: 6px;
+  }
+  .hero-speed-sticker-label {
+    font-size: .5rem;
+    letter-spacing: .1em;
+  }
+  .hero-speed-sticker strong {
+    font-size: 1.05rem;
+    letter-spacing: -.045em;
+  }
   .hero-actions {
     width: 100%;
     flex-direction: column;
+    margin-top: 4px;
   }
   .hero-actions .btn { width: 100%; }
   .section-title { margin-bottom: 45px; }
