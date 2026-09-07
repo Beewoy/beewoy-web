@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+# Po potvrdení produkčnej domény doplňte absolútnu Sitemap URL.
