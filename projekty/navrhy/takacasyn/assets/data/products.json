@@ -1,0 +1,660 @@
+[
+  {
+    "id": "p11",
+    "name": "Chlieb konzumný",
+    "weight": "950",
+    "crate": "15",
+    "category": "Chleby"
+  },
+  {
+    "id": "p12",
+    "name": "Chlieb konzumný",
+    "weight": "1200",
+    "crate": "10",
+    "category": "Chleby"
+  },
+  {
+    "id": "p13",
+    "name": "Chleb rascový",
+    "weight": "950",
+    "crate": "5",
+    "category": "Chleby"
+  },
+  {
+    "id": "p14",
+    "name": "Chlieb výražkový",
+    "weight": "950",
+    "crate": "15",
+    "category": "Chleby"
+  },
+  {
+    "id": "p15",
+    "name": "Chlieb konzumný krájaný bal.",
+    "weight": "470",
+    "crate": "10",
+    "category": "Chleby"
+  },
+  {
+    "id": "p16",
+    "name": "Chlieb konzumný krájaný bal.",
+    "weight": "600",
+    "crate": "10",
+    "category": "Chleby"
+  },
+  {
+    "id": "p17",
+    "name": "Chlieb konzumný krájaný bal.",
+    "weight": "950",
+    "crate": "5",
+    "category": "Chleby"
+  },
+  {
+    "id": "p18",
+    "name": "Chlieb konzumný krájaný bal.",
+    "weight": "1200",
+    "crate": "5",
+    "category": "Chleby"
+  },
+  {
+    "id": "p19",
+    "name": "Chlieb šumavský krájaný bal.",
+    "weight": "370",
+    "crate": "10",
+    "category": "Chleby"
+  },
+  {
+    "id": "p20",
+    "name": "Chlieb maďarský biely",
+    "weight": "1200",
+    "crate": "5",
+    "category": "Chleby"
+  },
+  {
+    "id": "p21",
+    "name": "Chlieb celozrnný krájaný bal.",
+    "weight": "450",
+    "crate": "5",
+    "category": "Chleby"
+  },
+  {
+    "id": "p22",
+    "name": "Chlieb sójový krájaný bal.",
+    "weight": "220",
+    "crate": "10",
+    "category": "Chleby"
+  },
+  {
+    "id": "p23",
+    "name": "Chlieb slnečnicový krájaný bal.",
+    "weight": "360",
+    "crate": "5",
+    "category": "Chleby"
+  },
+  {
+    "id": "p24",
+    "name": "Chlieb grahamový krájaný bal.",
+    "weight": "400",
+    "crate": "5",
+    "category": "Chleby"
+  },
+  {
+    "id": "p25",
+    "name": "Chlieb toastový krájaný bal.",
+    "weight": "240/500",
+    "crate": "10",
+    "category": "Chleby"
+  },
+  {
+    "id": "p26",
+    "name": "Chlieb vital fit krájaný bal.",
+    "weight": "500",
+    "crate": "5",
+    "category": "Chleby"
+  },
+  {
+    "id": "p27",
+    "name": "Chlieb tekvicový",
+    "weight": "500",
+    "crate": "5",
+    "category": "Chleby"
+  },
+  {
+    "id": "p28",
+    "name": "Chlieb ľanový",
+    "weight": "600",
+    "crate": "5",
+    "category": "Chleby"
+  },
+  {
+    "id": "p29",
+    "name": "Chlebová miska /na polievku/",
+    "weight": "300",
+    "crate": "30",
+    "category": "Chleby"
+  },
+  {
+    "id": "p30",
+    "name": "Rožok grahamový",
+    "weight": "60",
+    "crate": "60",
+    "category": "Bežné pečivo"
+  },
+  {
+    "id": "p31",
+    "name": "Rožok celozrnný",
+    "weight": "50",
+    "crate": "60",
+    "category": "Bežné pečivo"
+  },
+  {
+    "id": "p32",
+    "name": "Rožok sójový",
+    "weight": "60",
+    "crate": "60",
+    "category": "Bežné pečivo"
+  },
+  {
+    "id": "p33",
+    "name": "Kornspitz original",
+    "weight": "60",
+    "crate": "30",
+    "category": "Bežné pečivo"
+  },
+  {
+    "id": "p34",
+    "name": "Rožok obyčajný",
+    "weight": "50",
+    "crate": "60",
+    "category": "Bežné pečivo"
+  },
+  {
+    "id": "p35",
+    "name": "Rožok Brigitka",
+    "weight": "40",
+    "crate": "60",
+    "category": "Bežné pečivo"
+  },
+  {
+    "id": "p36",
+    "name": "Rožok Brigitka 10 ks.bal.",
+    "weight": "400",
+    "crate": "5",
+    "category": "Bežné pečivo"
+  },
+  {
+    "id": "p37",
+    "name": "Rožok slaný",
+    "weight": "50",
+    "crate": "60",
+    "category": "Bežné pečivo"
+  },
+  {
+    "id": "p38",
+    "name": "Rožok sézamový",
+    "weight": "50",
+    "crate": "60",
+    "category": "Bežné pečivo"
+  },
+  {
+    "id": "p39",
+    "name": "Rožok špeciál,posyp/soľ,mak/",
+    "weight": "50",
+    "crate": "40",
+    "category": "Bežné pečivo"
+  },
+  {
+    "id": "p40",
+    "name": "Granát",
+    "weight": "50",
+    "crate": "40",
+    "category": "Bežné pečivo"
+  },
+  {
+    "id": "p41",
+    "name": "Pizza rožok",
+    "weight": "60",
+    "crate": "30",
+    "category": "Slané pečivo"
+  },
+  {
+    "id": "p42",
+    "name": "Pizza rožok 2 ks. bal.",
+    "weight": "120",
+    "crate": "15",
+    "category": "Slané pečivo"
+  },
+  {
+    "id": "p43",
+    "name": "Pizza pletenka",
+    "weight": "70",
+    "crate": "20",
+    "category": "Slané pečivo"
+  },
+  {
+    "id": "p44",
+    "name": "Banketka",
+    "weight": "30",
+    "crate": "80",
+    "category": "Bežné pečivo"
+  },
+  {
+    "id": "p45",
+    "name": "Uzol malý",
+    "weight": "50",
+    "crate": "60",
+    "category": "Bežné pečivo"
+  },
+  {
+    "id": "p46",
+    "name": "Uzol veľký",
+    "weight": "100",
+    "crate": "30",
+    "category": "Bežné pečivo"
+  },
+  {
+    "id": "p47",
+    "name": "Žemla malá",
+    "weight": "75",
+    "crate": "40",
+    "category": "Bežné pečivo"
+  },
+  {
+    "id": "p48",
+    "name": "Žemla veľká",
+    "weight": "90",
+    "crate": "40",
+    "category": "Bežné pečivo"
+  },
+  {
+    "id": "p49",
+    "name": "Rožok veľký",
+    "weight": "100",
+    "crate": "30",
+    "category": "Bežné pečivo"
+  },
+  {
+    "id": "p50",
+    "name": "Bageta",
+    "weight": "250",
+    "crate": "10",
+    "category": "Bežné pečivo"
+  },
+  {
+    "id": "p51",
+    "name": "Pletenka",
+    "weight": "110",
+    "crate": "20",
+    "category": "Bežné pečivo"
+  },
+  {
+    "id": "p52",
+    "name": "Pletenka Original Baker",
+    "weight": "60",
+    "crate": "40",
+    "category": "Bežné pečivo"
+  },
+  {
+    "id": "p53",
+    "name": "Cesnakový venček",
+    "weight": "75",
+    "crate": "30",
+    "category": "Bežné pečivo"
+  },
+  {
+    "id": "p54",
+    "name": "Sendvič",
+    "weight": "400",
+    "crate": "5",
+    "category": "Bežné pečivo"
+  },
+  {
+    "id": "p62",
+    "name": "Strúhanka balená",
+    "weight": "1000",
+    "crate": "bal. 10 kg.",
+    "category": "Ostatné"
+  },
+  {
+    "id": "p63",
+    "name": "Praclík",
+    "weight": "50",
+    "crate": "30",
+    "category": "Slané pečivo"
+  },
+  {
+    "id": "p64",
+    "name": "Praclík 4 ks.bal.",
+    "weight": "200",
+    "crate": "5",
+    "category": "Slané pečivo"
+  },
+  {
+    "id": "p65",
+    "name": "Slané tyčinky volné",
+    "weight": "25",
+    "crate": "200",
+    "category": "Slané pečivo"
+  },
+  {
+    "id": "p66",
+    "name": "Slané tyčinky 4 ks. bal.",
+    "weight": "100",
+    "crate": "40",
+    "category": "Slané pečivo"
+  },
+  {
+    "id": "p67",
+    "name": "Slané tyčinky 20 ks. bal.",
+    "weight": "500",
+    "crate": "5",
+    "category": "Slané pečivo"
+  },
+  {
+    "id": "p68",
+    "name": "Škvarkové pagáče volné",
+    "weight": "60",
+    "crate": "30",
+    "category": "Slané pečivo"
+  },
+  {
+    "id": "p69",
+    "name": "Škvark.pagáče 4 ks. bal.",
+    "weight": "240",
+    "crate": "5",
+    "category": "Slané pečivo"
+  },
+  {
+    "id": "p70",
+    "name": "Škvark.pagáče 10 ks. bal.",
+    "weight": "300",
+    "crate": "5",
+    "category": "Slané pečivo"
+  },
+  {
+    "id": "p71",
+    "name": "Mini pizza bal.",
+    "weight": "120",
+    "crate": "10",
+    "category": "Slané pečivo"
+  },
+  {
+    "id": "p72",
+    "name": "Knedľa bal.",
+    "weight": "600",
+    "crate": "5",
+    "category": "Parené výrobky"
+  },
+  {
+    "id": "p73",
+    "name": "Knedľa malá bal.",
+    "weight": "300",
+    "crate": "5",
+    "category": "Parené výrobky"
+  },
+  {
+    "id": "p74",
+    "name": "Parené buchty lekvárové bal.",
+    "weight": "300",
+    "crate": "5",
+    "category": "Parené výrobky"
+  },
+  {
+    "id": "p75",
+    "name": "Parené buchty nugátové bal.",
+    "weight": "300",
+    "crate": "5",
+    "category": "Parené výrobky"
+  },
+  {
+    "id": "p76",
+    "name": "České buchty bal.",
+    "weight": "400",
+    "crate": "5",
+    "category": "Ostatné"
+  },
+  {
+    "id": "p77",
+    "name": "Vianočka veľká bal.",
+    "weight": "380",
+    "crate": "10",
+    "category": "Jemné pečivo"
+  },
+  {
+    "id": "p78",
+    "name": "Vianočka malá bal.",
+    "weight": "250",
+    "crate": "10",
+    "category": "Jemné pečivo"
+  },
+  {
+    "id": "p79",
+    "name": "Bábovka / 2 ks / bal.",
+    "weight": "90",
+    "crate": "10",
+    "category": "Jemné pečivo"
+  },
+  {
+    "id": "p80",
+    "name": "Pletenka sladká",
+    "weight": "130",
+    "crate": "10",
+    "category": "Jemné pečivo"
+  },
+  {
+    "id": "p81",
+    "name": "Makovka - špirála",
+    "weight": "90",
+    "crate": "10",
+    "category": "Jemné pečivo"
+  },
+  {
+    "id": "p82",
+    "name": "Makovka",
+    "weight": "70",
+    "crate": "20",
+    "category": "Jemné pečivo"
+  },
+  {
+    "id": "p83",
+    "name": "Lúpačka",
+    "weight": "45",
+    "crate": "40",
+    "category": "Jemné pečivo"
+  },
+  {
+    "id": "p84",
+    "name": "Lekvárová šatôčka",
+    "weight": "70",
+    "crate": "20",
+    "category": "Jemné pečivo"
+  },
+  {
+    "id": "p85",
+    "name": "Tvarohová šatôčka",
+    "weight": "70",
+    "crate": "20",
+    "category": "Jemné pečivo"
+  },
+  {
+    "id": "p86",
+    "name": "Nugátová šatôčka",
+    "weight": "70",
+    "crate": "20",
+    "category": "Jemné pečivo"
+  },
+  {
+    "id": "p87",
+    "name": "Orechový rožok",
+    "weight": "70",
+    "crate": "20",
+    "category": "Jemné pečivo"
+  },
+  {
+    "id": "p88",
+    "name": "Makový rožok",
+    "weight": "70",
+    "crate": "20",
+    "category": "Jemné pečivo"
+  },
+  {
+    "id": "p89",
+    "name": "Tlačený koláč",
+    "weight": "70",
+    "crate": "30",
+    "category": "Jemné pečivo"
+  },
+  {
+    "id": "p90",
+    "name": "Závin mak-jablko bal.",
+    "weight": "380",
+    "crate": "5",
+    "category": "Ostatné"
+  },
+  {
+    "id": "p91",
+    "name": "Závin orechový bal.",
+    "weight": "380",
+    "crate": "5",
+    "category": "Ostatné"
+  },
+  {
+    "id": "p92",
+    "name": "Závin kakaový bal.",
+    "weight": "300",
+    "crate": "5",
+    "category": "Ostatné"
+  },
+  {
+    "id": "p93",
+    "name": "Plundrový koláč",
+    "weight": "70",
+    "crate": "20",
+    "category": "Plundrované pečivo"
+  },
+  {
+    "id": "p94",
+    "name": "Plundrový koláč vanilk.puding",
+    "weight": "70",
+    "crate": "20",
+    "category": "Plundrované pečivo"
+  },
+  {
+    "id": "p95",
+    "name": "Croisant nugátový",
+    "weight": "80",
+    "crate": "20",
+    "category": "Plundrované pečivo"
+  },
+  {
+    "id": "p96",
+    "name": "Ufo-sézam",
+    "weight": "60",
+    "crate": "20",
+    "category": "Plundrované pečivo"
+  },
+  {
+    "id": "p97",
+    "name": "Ufo kakaové",
+    "weight": "70",
+    "crate": "20",
+    "category": "Plundrované pečivo"
+  },
+  {
+    "id": "p98",
+    "name": "Plundrový pikant",
+    "weight": "60",
+    "crate": "20",
+    "category": "Plundrované pečivo"
+  },
+  {
+    "id": "p99",
+    "name": "Plundrový uzol cesnakový",
+    "weight": "70",
+    "crate": "20",
+    "category": "Plundrované pečivo"
+  },
+  {
+    "id": "p100",
+    "name": "Dukátové buchtičky bal.",
+    "weight": "220",
+    "crate": "5",
+    "category": "Ostatné"
+  },
+  {
+    "id": "p101",
+    "name": "Muffin s hrozienkami",
+    "weight": "45",
+    "crate": "20",
+    "category": "Ostatné"
+  },
+  {
+    "id": "p102",
+    "name": "Štrúdla/mak,tvaroh,orech/",
+    "weight": "100",
+    "crate": "20",
+    "category": "Jemné pečivo"
+  },
+  {
+    "id": "p103",
+    "name": "Štvorec smotana+kôpor",
+    "weight": "90",
+    "crate": "20",
+    "category": "Plundrované pečivo"
+  },
+  {
+    "id": "p104",
+    "name": "Rolka salám + syr",
+    "weight": "100",
+    "crate": "10",
+    "category": "Plundrované pečivo"
+  },
+  {
+    "id": "p105",
+    "name": "Šiška s marhuľovým džemom",
+    "weight": "60",
+    "crate": "20",
+    "category": "Smažené výrobky"
+  },
+  {
+    "id": "p106",
+    "name": "Šiška s nutelou",
+    "weight": "60",
+    "crate": "20",
+    "category": "Smažené výrobky"
+  },
+  {
+    "id": "p107",
+    "name": "Lístkové cesto chladené",
+    "weight": "500",
+    "crate": "5",
+    "category": "Plundrované pečivo"
+  },
+  {
+    "id": "p108",
+    "name": "Droždie",
+    "weight": "1000",
+    "crate": "10",
+    "category": "Ostatné"
+  },
+  {
+    "id": "p109",
+    "name": "Plundrová mriežka",
+    "weight": "80",
+    "crate": "10",
+    "category": "Plundrované pečivo"
+  },
+  {
+    "id": "p110",
+    "name": "Plundrový hrebeň/mak,orech/",
+    "weight": "80",
+    "crate": "10",
+    "category": "Plundrované pečivo"
+  },
+  {
+    "id": "p111",
+    "name": "Švajčiarka škoricová",
+    "weight": "90",
+    "crate": "20",
+    "category": "Plundrované pečivo"
+  }
+]
