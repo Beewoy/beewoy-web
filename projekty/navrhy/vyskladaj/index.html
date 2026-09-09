@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="sk" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VysKladaj — Pekáreň &amp; kaviareň, Ružinov</title>
+<meta name="description" content="Lokálna pekáreň a kaviareň v Ružinove. Čerstvé pečivo, raňajky, krabičky a catering na objednávku.">
+<script>document.documentElement.classList.replace('no-js','js');</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500;1,9..144,600&family=Karla:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Caveat:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="preload" href="assets/images/hero-croissant.webp" as="image" type="image/webp" fetchpriority="high">
+<style>
+  :root{
+    --flour:#FBF3E6;
+    --flour-deep:#F1E3CB;
+    --paper:#FFFCF6;
+    --crust:#241609;
+    --crust-soft:#3C2717;
+    --honey:#E2A13B;
+    --honey-deep:#BE7E22;
+    --sage:#6F7F5C;
+    --sage-deep:#57634A;
+    --ink:#2B1B10;
+    --ink-soft:rgba(43,27,16,0.72);
+    --maxw:1240px;
+    --header-h:72px;
+    --radius:18px;
+    --btn-r:999px;
+  }
+
+  *{box-sizing:border-box;}
+  html{
+    scroll-behavior:smooth;
+    scroll-padding-top:calc(var(--header-h) + 12px);
+  }
+  body{
+    margin:0;
+    background:var(--flour);
+    color:var(--ink);
+    font-family:'Karla',sans-serif;
+    font-size:17px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,h4{
+    font-family:'Fraunces',serif;
+    font-weight:600;
+    line-height:1.08;
+    margin:0;
+    color:var(--crust);
+    letter-spacing:-0.02em;
+  }
+  p{margin:0;}
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;height:auto;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 28px;}
+  .script{font-family:'Caveat',cursive;font-weight:600;}
+
+  ::selection{background:var(--honey);color:var(--crust);}
+
+  :focus-visible{
+    outline:3px solid var(--honey);
+    outline-offset:3px;
+  }
+
+  .notice{
+    background:var(--sage);
+    color:var(--flour);
+    font-size:13.5px;
+    letter-spacing:.02em;
+    padding:8px 28px;
+    text-align:center;
+  }
+  .notice b{font-weight:700;}
+  .notice .wrap{padding:0;}
+
+  header{
+    position:sticky;
+    top:0;
+    z-index:50;
+    height:var(--header-h);
+    background:rgba(251,243,230,0.94);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(43,27,16,0.08);
+  }
+  .nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+    height:var(--header-h);
+    padding:0 28px;
+    max-width:var(--maxw);
+    margin:0 auto;
+  }
+  .brand{display:flex;align-items:center;gap:12px;min-width:0;}
+  .brand-mark{
+    width:36px;height:36px;
+    border-radius:50%;
+    background:var(--crust);
+    position:relative;
+    flex:none;
+  }
+  .brand-mark::after{
+    content:"";
+    position:absolute;inset:8px;
+    border-radius:50%;
+    border:4.5px solid var(--honey);
+  }
+  .brand-name{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    font-size:20px;
+    letter-spacing:.02em;
+    color:var(--crust);
+    display:block;
+  }
+  .brand-sub{
+    font-size:10.5px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin-top:1px;
+    display:block;
+  }
+  nav.links{display:flex;gap:28px;align-items:center;}
+  nav.links a{
+    font-size:15px;
+    font-weight:600;
+    color:var(--ink);
+    padding:6px 0;
+  }
+  nav.links a:hover{color:var(--honey-deep);}
+  .nav-right{display:flex;align-items:center;gap:16px;}
+  .tel{
+    font-size:14px;
+    font-weight:700;
+    color:var(--crust);
+    white-space:nowrap;
+  }
+  .tel:hover{color:var(--honey-deep);}
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+    gap:8px;
+    background:var(--crust);
+    color:var(--flour);
+    padding:12px 24px;
+    border-radius:var(--btn-r);
+    font-weight:700;
+    font-size:15px;
+    border:1.5px solid var(--crust);
+    transition:background .2s ease, border-color .2s ease, color .2s ease;
+    cursor:pointer;
+    white-space:nowrap;
+    min-height:48px;
+  }
+  .btn:hover{background:var(--crust-soft);}
+  .btn.ghost{
+    background:transparent;
+    color:var(--crust);
+  }
+  .btn.ghost:hover{background:rgba(43,27,16,0.06);}
+  .btn.honey{
+    background:var(--honey);
+    border-color:var(--honey);
+    color:var(--crust);
+  }
+  .btn.honey:hover{
+    background:var(--honey-deep);
+    border-color:var(--honey-deep);
+  }
+  .menu-toggle{
+    display:none;
+    background:none;
+    border:none;
+    cursor:pointer;
+    padding:10px;
+    min-width:44px;
+    min-height:44px;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:5px;
+  }
+  .menu-toggle span{
+    display:block;
+    width:22px;
+    height:2px;
+    background:var(--crust);
+    margin:0;
+    border-radius:1px;
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:48px 0 80px;
+  }
+  .hero .wrap{
+    display:grid;
+    grid-template-columns:0.9fr 1.1fr;
+    gap:56px;
+    align-items:center;
+  }
+  .eyebrow{
+    font-size:12.5px;
+    font-weight:700;
+    letter-spacing:.16em;
+    text-transform:uppercase;
+    color:var(--sage-deep);
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(44px, 6.2vw, 84px);
+    max-width:8.2ch;
+    line-height:1.02;
+    font-weight:600;
+    padding-bottom:0.06em;
+  }
+  .hero h1 em{
+    font-style:italic;
+    color:var(--honey-deep);
+    font-weight:500;
+  }
+  .hero p.lede{
+    margin-top:22px;
+    font-size:18px;
+    color:var(--ink-soft);
+    max-width:34ch;
+    line-height:1.55;
+  }
+  .hero-ctas{
+    display:flex;
+    gap:12px;
+    margin-top:30px;
+    flex-wrap:wrap;
+  }
+  .hero-ctas .btn{
+    min-width:168px;
+  }
+  .hero-art{
+    width:100%;
+    position:relative;
+    isolation:isolate;
+  }
+  .hero-art::before{
+    content:"";
+    position:absolute;
+    z-index:0;
+    top:18px;
+    left:0;
+    right:18px;
+    bottom:0;
+    border-radius:calc(var(--radius) + 2px);
+    background:var(--flour-deep);
+  }
+  .hero-photo{
+    position:relative;
+    z-index:1;
+    aspect-ratio:4/5;
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:var(--flour-deep);
+    margin:0 0 18px 18px;
+  }
+  .hero-photo picture,
+  .hero-photo img{
+    width:100%;
+    height:100%;
+  }
+  .hero-photo img{
+    object-fit:cover;
+    object-position:48% 42%;
+  }
+
+  section{
+    padding:96px 0;
+    scroll-margin-top:calc(var(--header-h) + 12px);
+  }
+  .section-head{max-width:560px;margin-bottom:40px;}
+  .section-head h2{
+    font-size:clamp(30px,3.6vw,44px);
+    margin-top:10px;
+  }
+  .section-head p{
+    margin-top:14px;
+    color:var(--ink-soft);
+    font-size:17px;
+  }
+
+  /* ---------- Values strip ---------- */
+  .values{
+    background:var(--crust);
+    color:var(--flour);
+    padding:56px 0;
+  }
+  .values .wrap{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:36px;
+  }
+  .value-item{
+    display:flex;
+    gap:18px;
+    align-items:flex-start;
+  }
+  .value-icon{
+    flex:none;
+    width:56px;
+    height:56px;
+    border-radius:50%;
+    border:1.5px solid var(--honey);
+    background:rgba(226,161,59,0.12);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--honey);
+  }
+  .value-icon svg{
+    width:24px;
+    height:24px;
+    stroke:currentColor;
+    fill:none;
+    stroke-width:1.8;
+    stroke-linecap:round;
+    stroke-linejoin:round;
+  }
+  .value-item h3{
+    color:var(--flour);
+    font-size:20px;
+    margin-bottom:8px;
+  }
+  .value-item p{
+    color:rgba(251,243,230,0.68);
+    font-size:15.5px;
+    max-width:30ch;
+  }
+
+  /* ---------- Offer ---------- */
+  #ponuka{padding-top:100px;}
+  .offer-layout{
+    display:grid;
+    grid-template-columns:0.95fr 1.05fr;
+    gap:48px;
+    align-items:start;
+  }
+  .offer-shot figure{margin:0;}
+  .offer-shot .media{
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:var(--flour-deep);
+    aspect-ratio:4/5;
+  }
+  .offer-shot .media img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 38%;
+  }
+  .offer-shot figcaption{margin-top:18px;}
+  .offer-shot h3{
+    font-size:24px;
+    margin-bottom:8px;
+  }
+  .offer-shot p{
+    color:var(--ink-soft);
+    font-size:16px;
+    max-width:36ch;
+  }
+
+  .offer-panel .script{
+    display:block;
+    color:var(--sage-deep);
+    font-size:24px;
+    margin-bottom:8px;
+  }
+  .offer-panel > h3{
+    font-size:clamp(26px,2.6vw,34px);
+    margin-bottom:12px;
+    max-width:16ch;
+  }
+  .offer-panel > p.lead{
+    color:var(--ink-soft);
+    font-size:16.5px;
+    max-width:36ch;
+    margin-bottom:28px;
+  }
+
+  .offer-list{
+    display:flex;
+    flex-direction:column;
+    border-top:1px solid rgba(43,27,16,0.12);
+  }
+  .offer-row{
+    display:grid;
+    grid-template-columns:52px 1fr;
+    gap:16px;
+    padding:20px 8px 20px 0;
+    border-bottom:1px solid rgba(43,27,16,0.12);
+    align-items:start;
+    transition:background .2s ease;
+  }
+  .offer-row:hover{
+    background:rgba(241,227,203,0.35);
+  }
+  .offer-idx{
+    font-family:'Fraunces',serif;
+    font-size:16px;
+    font-weight:600;
+    color:var(--honey-deep);
+    letter-spacing:.06em;
+    padding-top:5px;
+    line-height:1;
+  }
+  .offer-row h3{
+    font-size:20px;
+    margin-bottom:4px;
+  }
+  .offer-row p{
+    color:var(--ink-soft);
+    font-size:15.5px;
+    max-width:42ch;
+    line-height:1.5;
+  }
+
+  /* ---------- Catering block ---------- */
+  .feature{
+    background:var(--crust);
+    border-radius:24px;
+    color:var(--flour);
+    overflow:hidden;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+  }
+  .feature-copy{
+    padding:52px 48px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+  .feature-copy .script{
+    color:var(--honey);
+    font-size:24px;
+    display:block;
+    margin-bottom:8px;
+  }
+  .feature-copy h2{
+    color:var(--flour);
+    font-size:clamp(28px,3.2vw,40px);
+  }
+  .feature-copy > p{
+    color:rgba(251,243,230,0.72);
+    margin-top:14px;
+    font-size:16px;
+    max-width:38ch;
+  }
+  .feature-list{
+    margin-top:26px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:8px 20px;
+  }
+  .feature-list div{
+    font-size:14.5px;
+    color:rgba(251,243,230,0.88);
+    padding:6px 0;
+    border-bottom:1px solid rgba(251,243,230,0.12);
+  }
+  .feature-price{
+    margin-top:28px;
+    display:flex;
+    gap:28px;
+    flex-wrap:wrap;
+  }
+  .price-box .g{
+    font-size:13px;
+    color:rgba(251,243,230,0.55);
+    letter-spacing:.04em;
+  }
+  .price-box .e{
+    font-family:'Fraunces',serif;
+    font-size:28px;
+    color:var(--honey);
+    margin-top:4px;
+  }
+  .price-box .e small{
+    font-size:15px;
+    font-weight:400;
+    color:rgba(251,243,230,0.5);
+  }
+  .feature-copy .btn{
+    margin-top:30px;
+    align-self:flex-start;
+    min-width:200px;
+  }
+  .feature-art{
+    min-height:100%;
+    background:var(--crust-soft);
+  }
+  .feature-art picture,
+  .feature-art img{
+    width:100%;
+    height:100%;
+    min-height:480px;
+    object-fit:cover;
+    object-position:center;
+  }
+
+  /* ---------- Steps ---------- */
+  .steps{
+    background:transparent;
+    padding:72px 0;
+  }
+  .steps .section-head{margin-bottom:40px;}
+  .steps-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:0 36px;
+  }
+  .step{
+    display:grid;
+    grid-template-columns:56px 1fr;
+    gap:18px 20px;
+    align-items:start;
+    padding:0 12px 0 0;
+    border-right:1px solid rgba(43,27,16,0.12);
+  }
+  .step:last-child{
+    border-right:0;
+    padding-right:0;
+  }
+  .step-num{
+    font-family:'Fraunces',serif;
+    font-size:40px;
+    font-weight:600;
+    line-height:1;
+    color:var(--honey-deep);
+    margin:0;
+    padding-top:2px;
+  }
+  .step-body{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    padding-top:6px;
+  }
+  .step h3{
+    font-size:20px;
+    margin:0;
+    line-height:1.3;
+  }
+  .step p{
+    font-size:15.5px;
+    color:var(--ink-soft);
+    max-width:28ch;
+    margin:0;
+    line-height:1.55;
+  }
+
+  /* ---------- Team ---------- */
+  .team{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:48px;
+    align-items:center;
+  }
+  .team-photo{
+    border-radius:var(--radius);
+    overflow:hidden;
+    background:var(--flour-deep);
+    aspect-ratio:16/10;
+  }
+  .team-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:center 30%;
+  }
+  .team-copy .script{
+    font-size:24px;
+    color:var(--sage-deep);
+    display:block;
+    margin-bottom:8px;
+  }
+  .team-copy h2{
+    font-size:clamp(28px,3.2vw,40px);
+  }
+  .team-copy p{
+    margin-top:16px;
+    color:var(--ink-soft);
+    font-size:17px;
+    max-width:40ch;
+  }
+  .team-copy p+p{margin-top:12px;}
+
+  /* ---------- Contact ---------- */
+  #kontakt{padding-bottom:100px;}
+  .location{
+    display:grid;
+    grid-template-columns:1.05fr 0.95fr;
+    gap:0;
+    border-radius:24px;
+    overflow:hidden;
+    background:var(--paper);
+    border:1px solid rgba(43,27,16,0.08);
+  }
+  .location-copy{padding:48px 44px;}
+  .location-copy h2{font-size:clamp(28px,3vw,38px);}
+  .location-copy p.lede{
+    margin-top:12px;
+    color:var(--ink-soft);
+    font-size:16.5px;
+    max-width:40ch;
+  }
+  .loc-rows{
+    margin-top:28px;
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+  }
+  .loc-row b{display:block;font-size:15px;margin-bottom:2px;}
+  .loc-row span,
+  .loc-row a{
+    font-size:16px;
+    color:var(--ink-soft);
+  }
+  .loc-row a:hover{color:var(--honey-deep);}
+  .loc-actions{
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+    margin-top:28px;
+  }
+  .loc-actions .btn{min-height:46px;}
+  .map-embed{
+    background:var(--flour-deep);
+    min-height:360px;
+  }
+  .map-embed iframe{
+    width:100%;
+    height:100%;
+    min-height:360px;
+    border:0;
+    display:block;
+    filter:sepia(0.06);
+  }
+
+  footer{
+    background:var(--crust);
+    color:rgba(251,243,230,0.65);
+  }
+  .foot-top{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-start;
+    padding:56px 0 36px;
+    flex-wrap:wrap;
+    gap:36px;
+  }
+  .foot-brand{display:flex;align-items:center;gap:14px;}
+  .foot-brand .brand-name{color:var(--flour);}
+  .foot-links{display:flex;gap:56px;flex-wrap:wrap;}
+  .foot-col h4{
+    color:var(--flour);
+    font-size:12.5px;
+    letter-spacing:.08em;
+    text-transform:uppercase;
+    font-weight:700;
+    margin-bottom:14px;
+    font-family:'Karla',sans-serif;
+  }
+  .foot-col a{
+    display:block;
+    font-size:14.5px;
+    margin-bottom:9px;
+    color:rgba(251,243,230,0.65);
+  }
+  .foot-col a:hover{color:var(--honey);}
+  .foot-bottom{
+    border-top:1px solid rgba(251,243,230,0.12);
+    padding:20px 0;
+    display:flex;
+    justify-content:space-between;
+    font-size:12.5px;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+
+  .js .reveal{
+    opacity:0;
+    transform:translateY(14px);
+    transition:opacity .65s ease, transform .65s ease;
+  }
+  .js .reveal.show,
+  .no-js .reveal{
+    opacity:1;
+    transform:none;
+  }
+
+  @media(max-width:1024px){
+    .hero .wrap{gap:40px;}
+    .hero h1{font-size:clamp(48px,6vw,72px);}
+    .offer-layout{gap:36px;}
+    .feature-copy{padding:40px 32px;}
+  }
+
+  @media(max-width:900px){
+    header{height:auto;min-height:var(--header-h);}
+    .nav{position:relative;}
+    nav.links{display:none;}
+    nav.links.is-open{
+      display:flex;
+      flex-direction:column;
+      position:absolute;
+      top:100%;
+      left:0;right:0;
+      background:var(--flour);
+      padding:8px 20px 20px;
+      gap:4px;
+      border-bottom:1px solid rgba(43,27,16,0.08);
+      box-shadow:0 16px 32px -20px rgba(36,22,9,0.4);
+      z-index:60;
+    }
+    nav.links.is-open a{
+      padding:12px 4px;
+      font-size:16px;
+      border-bottom:1px solid rgba(43,27,16,0.08);
+    }
+    nav.links.is-open a:last-child{border-bottom:0;}
+    .menu-toggle{display:inline-flex;}
+    .tel{display:none;}
+    .nav-right{gap:10px;}
+    .nav-right .btn.honey{
+      padding:10px 16px;
+      min-height:42px;
+      font-size:14px;
+    }
+
+    .hero{padding:32px 0 56px;}
+    .hero .wrap{
+      grid-template-columns:1fr;
+      gap:28px;
+    }
+    .hero h1{
+      font-size:clamp(44px,11vw,52px);
+      max-width:9ch;
+    }
+    .hero p.lede{font-size:16.5px;margin-top:16px;}
+    .hero-ctas{margin-top:22px;}
+    .hero-art{
+      width:100%;
+      max-width:420px;
+      margin:0 auto;
+    }
+    .hero-photo{
+      aspect-ratio:4/5;
+      max-width:100%;
+      margin:0 auto;
+    }
+
+    .values .wrap{grid-template-columns:1fr;gap:28px;}
+    .offer-layout{grid-template-columns:1fr;gap:36px;}
+    .offer-shot .media{aspect-ratio:5/4;max-width:520px;}
+    .feature{grid-template-columns:1fr;}
+    .feature-art picture,
+    .feature-art img{min-height:280px;max-height:340px;}
+    .feature-list{grid-template-columns:1fr;}
+    .steps-grid{grid-template-columns:1fr;gap:28px;}
+    .step{
+      grid-template-columns:48px 1fr;
+      border-right:0;
+      border-bottom:1px solid rgba(43,27,16,0.12);
+      padding:0 0 24px;
+      gap:14px 16px;
+    }
+    .step:last-child{border-bottom:0;padding-bottom:0;}
+    .step-num{font-size:36px;}
+    .team{grid-template-columns:1fr;gap:28px;}
+    .team-copy{order:-1;}
+    .location{grid-template-columns:1fr;}
+    .map-embed iframe{min-height:280px;}
+  }
+
+  @media(max-width:560px){
+    .wrap,.nav{padding-left:20px;padding-right:20px;}
+    .notice{padding:7px 16px;font-size:12px;}
+    body{font-size:16px;}
+    section{padding:72px 0;}
+    .hero{padding:24px 0 44px;}
+    .hero-ctas .btn{width:100%;}
+    .feature-copy,.location-copy{padding:28px 22px;}
+    .loc-actions .btn{width:100%;}
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    .js .reveal{
+      opacity:1;
+      transform:none;
+      transition:none;
+    }
+    .btn{transition:none;}
+  }
+</style>
+</head>
+<body>
+
+<div class="notice">
+  <span class="wrap"><b>Otvorené teraz</b> · Po–Pi 7:00–18:00 · So 8:00–13:00 · Komárnická 11, Ružinov</span>
+</div>
+
+<header>
+  <div class="nav">
+    <a href="#top" class="brand">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span>
+        <span class="brand-name">VysKladaj</span>
+        <span class="brand-sub">Pekáreň &amp; kaviareň</span>
+      </span>
+    </a>
+    <nav class="links" id="primary-nav" aria-label="Hlavná navigácia">
+      <a href="#ponuka">Ponuka</a>
+      <a href="#krabicky">Catering</a>
+      <a href="#o-nas">O nás</a>
+      <a href="#kontakt">Kontakt</a>
+    </nav>
+    <div class="nav-right">
+      <a class="tel" href="tel:+421917475076">0917 475 076</a>
+      <a class="btn honey" href="#krabicky">Objednať</a>
+      <button class="menu-toggle" type="button" aria-label="Otvoriť menu" aria-expanded="false" aria-controls="primary-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="reveal show">
+      <div class="eyebrow">Ružinov, Bratislava</div>
+      <h1>Vyskladajte si <em>kúsok</em> svojho dňa.</h1>
+      <p class="lede">Čerstvé pečivo, raňajky a krabičky na objednávku. Pečieme priamo u nás v Ružinove, každé ráno odznova.</p>
+      <div class="hero-ctas">
+        <a href="#krabicky" class="btn honey">Objednať krabičku</a>
+        <a href="#krabicky" class="btn ghost">Catering na akcie</a>
+      </div>
+    </div>
+    <div class="hero-art reveal show">
+      <div class="hero-photo">
+        <picture>
+          <source srcset="assets/images/hero-croissant.webp" type="image/webp">
+          <img
+            src="assets/images/hero-croissant.jpg"
+            alt="Zlatisté croissanty čerstvo z pece"
+            width="960"
+            height="1200"
+            fetchpriority="high"
+            decoding="async">
+        </picture>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="values">
+  <div class="wrap">
+    <div class="value-item reveal">
+      <div class="value-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><path d="M4 18c2-6 5-10 8-10s6 4 8 10"/><path d="M7 14c1.5-2 3-3 5-3s3.5 1 5 3"/><path d="M12 8V5"/></svg>
+      </div>
+      <div>
+        <h3>Pečieme denne v malých várkach</h3>
+        <p>Cesto miesime a pečieme priamo na prevádzke, nie v centrálnej pekárni.</p>
+      </div>
+    </div>
+    <div class="value-item reveal">
+      <div class="value-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8"/><path d="M12 8v4l2.5 1.5"/></svg>
+      </div>
+      <div>
+        <h3>Na konkrétny čas</h3>
+        <p>Raňajky a krabičky pripravíme tak, aby ste si ich vyzdvihli, keď potrebujete.</p>
+      </div>
+    </div>
+    <div class="value-item reveal">
+      <div class="value-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24"><rect x="4" y="8" width="16" height="11" rx="2"/><path d="M8 8V6a4 4 0 0 1 8 0v2"/><path d="M9 13h6"/></svg>
+      </div>
+      <div>
+        <h3>Catering na akcie</h3>
+        <p>Pečivo a sladké krabičky pre firemné raňajky, oslavy aj menšie eventy.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="ponuka">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Naša ponuka</div>
+      <h2>Objednajte si to, čo práve pečieme.</h2>
+      <p>Od kváskového chleba po raňajkové krabičky. Všetko pripravíme čerstvo, na objednávku aj na počkanie.</p>
+    </div>
+
+    <div class="offer-layout reveal">
+      <article class="offer-shot">
+        <figure>
+          <div class="media">
+            <picture>
+              <source srcset="assets/images/story-flour.webp" type="image/webp">
+              <img
+                src="assets/images/story-flour.jpg"
+                alt="Detail práce s múkou a cestom v pekárni"
+                width="900"
+                height="1350"
+                loading="lazy"
+                decoding="async">
+            </picture>
+          </div>
+          <figcaption>
+            <h3>Remeslo za pečivom</h3>
+            <p>Cesto miesime a pečieme priamo na prevádzke. Každý deň od skorého rána, v malých várkach.</p>
+          </figcaption>
+        </figure>
+      </article>
+
+      <div class="offer-panel">
+        <span class="script">Čerstvo z pece</span>
+        <h3>Denná ponuka, ktorú vyskladáme podľa vás.</h3>
+        <p class="lead">Bagely, raňajky aj kávu pripravíme na mieste. Bezlepkové a bezlaktózové varianty stačí spomenúť pri objednávke.</p>
+
+        <div class="offer-list" id="offer-list">
+          <div class="offer-row">
+            <span class="offer-idx" aria-hidden="true">01</span>
+            <div>
+              <h3>Chlieb &amp; pečivo</h3>
+              <p>Kváskový chlieb, croissanty a pečivo z našej pece. Ideálne na vyzdvihnutie ráno cestou do práce.</p>
+            </div>
+          </div>
+          <div class="offer-row">
+            <span class="offer-idx" aria-hidden="true">02</span>
+            <div>
+              <h3>Domáce bagely</h3>
+              <p>Vlastná receptúra so sladkými aj slanými náplňami. Objednajte si ich na konkrétny deň.</p>
+            </div>
+          </div>
+          <div class="offer-row">
+            <span class="offer-idx" aria-hidden="true">03</span>
+            <div>
+              <h3>Raňajky &amp; obedy</h3>
+              <p>Raňajkové misky, toasty a jednoduché obedy. Na mieste aj so sebou, podľa dennej ponuky.</p>
+            </div>
+          </div>
+          <div class="offer-row">
+            <span class="offer-idx" aria-hidden="true">04</span>
+            <div>
+              <h3>Kávička</h3>
+              <p>Espresso, flat white a mliečne kávy. K raňajkám aj k chvíli pokoja pri stole.</p>
+            </div>
+          </div>
+          <div class="offer-row">
+            <span class="offer-idx" aria-hidden="true">05</span>
+            <div>
+              <h3>Vegan, bez lepku a laktózy</h3>
+              <p>Vybrané pečivo a raňajky aj v bezlepkovej a bezlaktózovej verzii. Stačí sa opýtať.</p>
+            </div>
+          </div>
+          <div class="offer-row">
+            <span class="offer-idx" aria-hidden="true">06</span>
+            <div>
+              <h3>Catering na akcie</h3>
+              <p>Pečivo, raňajky a sladké krabičky pre firemné stretnutia, oslavy aj menšie eventy.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="krabicky">
+  <div class="wrap">
+    <div class="feature reveal">
+      <div class="feature-copy">
+        <span class="script">Vyskladané</span>
+        <h2>Krabičky a catering na objednávku</h2>
+        <p>Ručne pripravené krabičky s pečivom a sladkosťami. Dohodneme počet porcií, obsah aj čas vyzdvihnutia.</p>
+        <div class="feature-list">
+          <div>Linecké srdiečka</div>
+          <div>Orechové kolieska</div>
+          <div>Strojčekové tyčinky</div>
+          <div>Vanilkové rožky</div>
+          <div>Makovo-slivkové hviezdičky</div>
+          <div>Čoko stromčeky kokos</div>
+          <div>Malinovo-citrónové linecké</div>
+          <div>Crincles čoko-škorica</div>
+        </div>
+        <div class="feature-price">
+          <div class="price-box">
+            <div class="g">Malá krabička</div>
+            <div class="e"><small>od </small>27,90 €</div>
+          </div>
+          <div class="price-box">
+            <div class="g">Veľká krabička</div>
+            <div class="e"><small>od </small>52,90 €</div>
+          </div>
+        </div>
+        <a href="mailto:objednavky@vyskladaj.sk?subject=Objednávka%20krabičky" class="btn honey">Objednať krabičku</a>
+      </div>
+      <div class="feature-art">
+        <picture>
+          <source srcset="assets/images/catering-pastry.webp" type="image/webp">
+          <img
+            src="assets/images/catering-pastry.jpg"
+            alt="Cateringové pečivo na podnosoch pripravené na podávanie"
+            width="1100"
+            height="1100"
+            loading="lazy"
+            decoding="async">
+        </picture>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="steps" id="ako-objednat">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="eyebrow">Jednoducho</div>
+      <h2>Ako objednávka funguje</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step reveal">
+        <div class="step-num" aria-hidden="true">1</div>
+        <div class="step-body">
+          <h3>Vyberiete si krabičku alebo catering</h3>
+          <p>Pozriete si ponuku a napíšete nám, čo potrebujete.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num" aria-hidden="true">2</div>
+        <div class="step-body">
+          <h3>Dohodneme porcie a čas</h3>
+          <p>Upresníme obsah, počet ľudí, alergény aj vyzdvihnutie.</p>
+        </div>
+      </div>
+      <div class="step reveal">
+        <div class="step-num" aria-hidden="true">3</div>
+        <div class="step-body">
+          <h3>Pripravíme čerstvo</h3>
+          <p>V deň objednávky všetko upečieme a pripravíme na odovzdanie.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="o-nas">
+  <div class="wrap">
+    <div class="team">
+      <div class="team-photo reveal">
+        <picture>
+          <source srcset="assets/images/team.webp" type="image/webp">
+          <img
+            src="assets/images/team.jpg"
+            alt="Tím pekárne VysKladaj pred pultom s pečivom"
+            width="1100"
+            height="403"
+            loading="lazy"
+            decoding="async">
+        </picture>
+      </div>
+      <div class="team-copy reveal">
+        <span class="script">Kto to pre vás vyskladá</span>
+        <h2>Malý tím, ktorý pečie s láskou od skorého rána.</h2>
+        <p>Sme lokálna pekáreň a kaviareň v Ružinove. Nie reťazec, ale prevádzka, kde sa každý deň miesi cesto, plnia bagety a pripravujú raňajky priamo pred vami.</p>
+        <p>Za pultom aj v peci nájdete šikovné ruky, ktoré vstávajú skôr, než sa mesto zobudí.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="kontakt">
+  <div class="wrap">
+    <div class="location reveal">
+      <div class="location-copy">
+        <div class="eyebrow">Nájdete nás</div>
+        <h2>Zastavte sa, alebo si objednajte.</h2>
+        <p class="lede">Sme kúsok od Štrkoveckého jazera v srdci Ružinova. Krabičky a catering vybavíme mailom alebo telefonicky.</p>
+        <div class="loc-rows">
+          <div class="loc-row">
+            <b>Adresa</b>
+            <span>Komárnická 11, 821 03 Bratislava – Ružinov</span>
+          </div>
+          <div class="loc-row">
+            <b>Otváracie hodiny</b>
+            <span>Po–Pi 7:00–18:00 · So 8:00–13:00</span>
+          </div>
+          <div class="loc-row">
+            <b>Telefón</b>
+            <a href="tel:+421917475076">0917 475 076</a>
+          </div>
+          <div class="loc-row">
+            <b>E-mail</b>
+            <a href="mailto:objednavky@vyskladaj.sk">objednavky@vyskladaj.sk</a>
+          </div>
+        </div>
+        <div class="loc-actions">
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Komárnická+11,+821+03+Bratislava" class="btn honey" target="_blank" rel="noopener">Navigovať</a>
+          <a href="tel:+421917475076" class="btn">Zavolať</a>
+          <a href="mailto:objednavky@vyskladaj.sk" class="btn ghost">Napísať</a>
+        </div>
+      </div>
+      <div class="map-embed">
+        <iframe src="https://www.google.com/maps?q=Vyskladaj+s.r.o.+Kom%C3%A1rnick%C3%A1+11+Bratislava&output=embed" loading="lazy" allowfullscreen title="Mapa — VysKladaj, Komárnická 11"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <div>
+          <span class="brand-name">VysKladaj</span>
+          <div class="brand-sub" style="color:rgba(251,243,230,0.55);">Pekáreň &amp; kaviareň</div>
+        </div>
+      </div>
+      <div class="foot-links">
+        <div class="foot-col">
+          <h4>Ponuka</h4>
+          <a href="#ponuka">Pečivo &amp; raňajky</a>
+          <a href="#krabicky">Catering &amp; krabičky</a>
+        </div>
+        <div class="foot-col">
+          <h4>O nás</h4>
+          <a href="#o-nas">Náš tím</a>
+          <a href="#kontakt">Kontakt</a>
+        </div>
+        <div class="foot-col">
+          <h4>Sledujte nás</h4>
+          <a href="https://www.instagram.com/vyskladaj/" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Vyskladaj s.r.o. · Komárnická 11, Bratislava-Ružinov</span>
+      <span>IČO 54 649 846</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const toggle = document.querySelector('.menu-toggle');
+  const links = document.querySelector('nav.links');
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('is-open');
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    toggle.setAttribute('aria-label', open ? 'Zavrieť menu' : 'Otvoriť menu');
+  });
+  links.querySelectorAll('a').forEach((a) => {
+    a.addEventListener('click', () => {
+      links.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Otvoriť menu');
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && links.classList.contains('is-open')) {
+      links.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+      toggle.setAttribute('aria-label', 'Otvoriť menu');
+      toggle.focus();
+    }
+  });
+
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduce) {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add('show');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    document.querySelectorAll('.reveal').forEach((el) => io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach((el) => el.classList.add('show'));
+  }
+</script>
+
+</body>
+</html>
