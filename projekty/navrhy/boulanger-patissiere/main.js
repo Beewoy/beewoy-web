@@ -1,9 +1,9 @@
 const header = document.querySelector('[data-header]');
 const menuButton = document.querySelector('[data-menu-button]');
-const menuLabel = document.querySelector('[data-menu-label]');
 const nav = document.querySelector('[data-nav]');
 const hero = document.querySelector('.hero');
 const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let menuScrollY = 0;
 
 const copy = {
   sk: {
@@ -22,6 +22,8 @@ const copy = {
     emailAria: 'Napísať e-mail na boulangerpatissiere@gmail.com',
     phoneAria: 'Zavolať na +421 940 050 801',
     langGroup: 'Jazyk',
+    menuOpenAria: 'Otvoriť menu',
+    menuCloseAria: 'Zavrieť menu',
     menu: 'Menu',
     menuClose: 'Zavrieť',
     heroEyebrow: 'Vyrobené s láskou',
@@ -153,6 +155,8 @@ const copy = {
     emailAria: 'Email boulangerpatissiere@gmail.com',
     phoneAria: 'Call +421 940 050 801',
     langGroup: 'Language',
+    menuOpenAria: 'Open menu',
+    menuCloseAria: 'Close menu',
     menu: 'Menu',
     menuClose: 'Close',
     heroEyebrow: 'Made with love',
@@ -294,9 +298,9 @@ const applyLang = (lang) => {
   document.querySelectorAll('[data-lang]').forEach((button) => {
     button.setAttribute('aria-pressed', String(button.dataset.lang === currentLang));
   });
-  if (menuLabel) {
+  if (menuButton) {
     const menuOpen = menuButton.getAttribute('aria-expanded') === 'true';
-    menuLabel.textContent = menuOpen ? strings.menuClose : strings.menu;
+    menuButton.setAttribute('aria-label', menuOpen ? strings.menuCloseAria : strings.menuOpenAria);
   }
   const submitLabel = document.querySelector('[data-form-submit-label]');
   const form = document.querySelector('[data-contact-form]');
@@ -322,25 +326,38 @@ const headerObserver = new IntersectionObserver(([entry]) => {
 }, { threshold: 0.86 });
 headerObserver.observe(document.querySelector('.hero-inner') || hero);
 
+const setMenuOpen = (willOpen) => {
+  menuButton.setAttribute('aria-expanded', String(willOpen));
+  menuButton.setAttribute('aria-label', willOpen ? copy[currentLang].menuCloseAria : copy[currentLang].menuOpenAria);
+  nav.classList.toggle('is-open', willOpen);
+  header.classList.toggle('menu-active', willOpen);
+  document.documentElement.classList.toggle('menu-open', willOpen);
+  document.body.classList.toggle('menu-open', willOpen);
+
+  if (willOpen) {
+    menuScrollY = window.scrollY;
+    document.body.style.top = `-${menuScrollY}px`;
+  } else {
+    document.body.style.top = '';
+    window.scrollTo(0, menuScrollY);
+  }
+};
+
 const closeMenu = () => {
-  menuButton.setAttribute('aria-expanded', 'false');
-  menuLabel.textContent = copy[currentLang].menu;
-  nav.classList.remove('is-open');
-  header.classList.remove('menu-active');
-  document.body.classList.remove('menu-open');
+  if (menuButton.getAttribute('aria-expanded') !== 'true') return;
+  setMenuOpen(false);
 };
 
 menuButton.addEventListener('click', () => {
   const willOpen = menuButton.getAttribute('aria-expanded') !== 'true';
-  menuButton.setAttribute('aria-expanded', String(willOpen));
-  menuLabel.textContent = willOpen ? copy[currentLang].menuClose : copy[currentLang].menu;
-  nav.classList.toggle('is-open', willOpen);
-  header.classList.toggle('menu-active', willOpen);
-  document.body.classList.toggle('menu-open', willOpen);
+  setMenuOpen(willOpen);
 });
 
 nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
 window.addEventListener('keydown', (event) => { if (event.key === 'Escape') closeMenu(); });
+window.addEventListener('resize', () => {
+  if (window.matchMedia('(min-width: 821px)').matches) closeMenu();
+});
 
 if (reduceMotion) {
   document.querySelectorAll('[data-reveal]').forEach((element) => element.classList.add('is-visible'));
@@ -351,85 +368,11 @@ if (reduceMotion) {
       entry.target.classList.add('is-visible');
       observer.unobserve(entry.target);
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -4% 0px' });
+  }, { threshold: 0.05, rootMargin: '0px 0px 8% 0px' });
   document.querySelectorAll('[data-reveal]').forEach((element) => revealObserver.observe(element));
 }
 
 document.querySelector('[data-year]').textContent = new Date().getFullYear();
-
-const initCategoryParallax = () => {
-  if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  const mm = gsap.matchMedia();
-
-  const bindParallax = (yFrom, yTo, scale) => () => {
-    gsap.utils.toArray(".cat-card-media").forEach((wrap) => {
-      const img = wrap.querySelector("img");
-      const frame = wrap.querySelector(".cat-card-frame") || wrap;
-      if (!img) return;
-      gsap.fromTo(img, {
-        yPercent: yFrom,
-        scale
-      }, {
-        yPercent: yTo,
-        scale,
-        ease: "none",
-        scrollTrigger: {
-          trigger: frame,
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 0.8
-        }
-      });
-    });
-  };
-
-  mm.add("(min-width: 821px) and (prefers-reduced-motion: no-preference)", bindParallax(-5, 5, 1.1));
-  mm.add("(max-width: 820px) and (prefers-reduced-motion: no-preference)", bindParallax(-2, 2, 1.06));
-
-  const refresh = () => ScrollTrigger.refresh();
-  document.querySelectorAll(".cat-card-media img").forEach((img) => {
-    if (img.complete) return;
-    img.addEventListener("load", refresh, { once: true });
-  });
-
-  const revert = () => mm.revert();
-  window.addEventListener("pagehide", revert);
-};
-
-const initDecoParallax = () => {
-  if (typeof gsap === "undefined" || typeof ScrollTrigger === "undefined") return;
-
-  gsap.registerPlugin(ScrollTrigger);
-
-  const mm = gsap.matchMedia();
-
-  mm.add("(min-width: 821px) and (prefers-reduced-motion: no-preference)", () => {
-    gsap.utils.toArray("[data-deco-parallax]").forEach((el) => {
-      const amount = Number(el.dataset.decoParallax);
-      if (!Number.isFinite(amount) || amount === 0) return;
-      gsap.fromTo(el, {
-        yPercent: -amount
-      }, {
-        yPercent: amount,
-        ease: "none",
-        scrollTrigger: {
-          trigger: el.closest("section"),
-          start: "top bottom",
-          end: "bottom top",
-          scrub: 0.7
-        }
-      });
-    });
-  });
-
-  window.addEventListener("pagehide", () => mm.revert());
-};
-
-initCategoryParallax();
-initDecoParallax();
 
 const initContactForm = () => {
   const form = document.querySelector('[data-contact-form]');
