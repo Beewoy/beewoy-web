@@ -1,0 +1,526 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <meta name="theme-color" content="#f8f3ec">
+  <meta name="description" content="Prémiový návrh redizajnu webu Boulanger &amp; Patissiere v Bratislave.">
+  <title>Boulanger &amp; Patissiere | Prémiový redizajn</title>
+  <link rel="preload" href="assets/hero-romantic.jpg" as="image">
+  <link rel="stylesheet" href="styles.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+  <script defer src="main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#obsah" data-i18n="skip">Preskočiť na obsah</a>
+
+  <div class="topline" aria-label="Motto značky" data-i18n-aria="mottoAria">
+    <span aria-hidden="true"></span>
+    <p data-i18n="topline">Dezerty. Torty. Chvíle.</p>
+    <span aria-hidden="true"></span>
+  </div>
+
+  <header class="site-header" data-header>
+    <div class="header-inner shell">
+      <a class="brand" href="#hore" aria-label="Boulanger and Patissiere, domov" data-i18n-aria="brandHome">
+        <picture>
+          <source srcset="assets/logo-bpdownload.webp" type="image/webp">
+          <img src="assets/logo-bp.png" width="656" height="526" alt="">
+        </picture>
+      </a>
+      <nav class="site-nav" id="hlavna-navigacia" aria-label="Hlavná navigácia" data-nav data-i18n-aria="mainNav">
+        <a href="#ponuka" data-i18n="navOffer">Ponuka</a>
+        <a href="#pekaren" data-i18n="navBakery">Pekáreň</a>
+        <a href="#o-nas" data-i18n="navAbout">O nás</a>
+        <a href="#torty" data-i18n="navCakes">Torty na mieru</a>
+        <a href="#prevadzka" data-i18n="navVisit">Prevádzka</a>
+        <a href="#kontakt" data-i18n="navContact">Kontakt</a>
+        <div class="nav-contacts">
+          <a href="mailto:boulangerpatissiere@gmail.com">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.4" y="5.4" width="17.2" height="13.2" rx="2"></rect><path d="m5 8 7 5.2L19 8"></path></svg>
+            <span>boulangerpatissiere@gmail.com</span>
+          </a>
+          <a href="tel:+421940050801">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.4 3.8h2.6l1.2 3.4-1.8 1.2a11.5 11.5 0 0 0 6.2 6.2l1.2-1.8 3.4 1.2v2.5c0 .9-.6 1.8-1.7 2-8.3.9-12.8-8.4-13.1-13.1-.1-1.1.8-1.6 1.6-1.6Z"></path></svg>
+            <span>+421 940 050 801</span>
+          </a>
+        </div>
+      </nav>
+      <div class="header-tools">
+        <a class="header-contact" href="mailto:boulangerpatissiere@gmail.com" aria-label="Napísať e-mail na boulangerpatissiere@gmail.com" data-i18n-aria="emailAria">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.4" y="5.4" width="17.2" height="13.2" rx="2"></rect><path d="m5 8 7 5.2L19 8"></path></svg>
+        </a>
+        <a class="header-contact" href="tel:+421940050801" aria-label="Zavolať na +421 940 050 801" data-i18n-aria="phoneAria">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.4 3.8h2.6l1.2 3.4-1.8 1.2a11.5 11.5 0 0 0 6.2 6.2l1.2-1.8 3.4 1.2v2.5c0 .9-.6 1.8-1.7 2-8.3.9-12.8-8.4-13.1-13.1-.1-1.1.8-1.6 1.6-1.6Z"></path></svg>
+        </a>
+        <div class="lang-switch" role="group" aria-label="Jazyk" data-lang-switch data-i18n-aria="langGroup">
+          <button type="button" data-lang="sk" aria-pressed="true">SK</button>
+          <span aria-hidden="true">/</span>
+          <button type="button" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+        <button class="menu-button" type="button" aria-expanded="false" aria-controls="hlavna-navigacia" data-menu-button><span data-menu-label data-i18n="menu">Menu</span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="obsah">
+    <section class="hero" id="hore" aria-labelledby="hero-title">
+      <img class="hero-image" src="assets/hero-romantic.jpg" width="1672" height="941" alt="Slávnostná malinová torta s makrónkami, pistáciami a drobnými kvetmi">
+      <div class="hero-inner shell">
+        <div class="hero-copy">
+          <p class="eyebrow" data-i18n="heroEyebrow">Vyrobené s láskou</p>
+          <h1 id="hero-title" data-i18n="heroTitle" data-i18n-html>Život chutí<br><em>lepšie</em><br>s&nbsp;dezertom.</h1>
+          <p data-i18n="heroLead">Remeselná cukráreň a pekáreň v Bratislave. Pečieme torty na mieru, dezerty a čerstvé pečivo pre každý deň aj výnimočné chvíle.</p>
+          <div class="hero-actions">
+            <a class="button" href="tel:+421940050801">
+              <svg class="button-mark button-mark-cake" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M5 17.35c0-1.1 3.15-2 7-2s7 .9 7 2v2.15c0 1.1-3.15 2-7 2s-7-.9-7-2Z"></path>
+                <path d="M6.2 16.95V13.2c0-.9 2.6-1.65 5.8-1.65s5.8.75 5.8 1.65v3.75"></path>
+                <path d="M8.15 12.7c.6-2.85 2.2-4.35 3.85-1.7 1.65-2.65 3.25-1.15 3.85 1.7"></path>
+                <path d="M12 9.7V6.55"></path>
+                <path class="button-mark-accent" d="M12 4.2c1.2 1.15 1.4 2.35 0 2.85-1.4-.5-1.2-1.7 0-2.85Z"></path>
+              </svg>
+              <span data-i18n="heroOrder">Objednať tortu</span>
+            </a>
+            <a class="button button-outline" href="#ponuka">
+              <svg class="button-mark button-mark-spark" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M11.4 3.2c.35 3.35 1.55 5.7 4.55 6.8-3 1.1-4.2 3.45-4.55 6.8-.35-3.35-1.55-5.7-4.55-6.8 3-1.1 4.2-3.45 4.55-6.8Z"></path>
+                <path class="button-mark-accent" d="M17.85 5.1c.16 1.05.55 1.75 1.5 2.05-.95.3-1.34 1-1.5 2.05-.16-1.05-.55-1.75-1.5-2.05.95-.3 1.34-1 1.5-2.05Z"></path>
+              </svg>
+              <span data-i18n="heroOffer">Pozrieť ponuku</span>
+            </a>
+          </div>
+          <a class="hero-google" href="https://www.google.com/maps/search/?api=1&amp;query=Boulanger%26Patissiere%2C+%C4%BD.+Fullu+5245%2F62%2C+Bratislava" target="_blank" rel="noopener noreferrer" aria-label="Google hodnotenie 4,8 z 5 podľa 110 recenzií" data-i18n-aria="heroGoogleAria">
+            <span class="hero-google-top">
+              <span class="hero-google-stars" aria-hidden="true">★★★★★</span>
+              <span data-i18n="heroGoogleScore">4,8 z 5 na Google</span>
+              <svg class="hero-google-mark" viewBox="0 0 24 24" aria-hidden="true">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09Z"></path>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23Z"></path>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.66-2.84Z"></path>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53Z"></path>
+              </svg>
+            </span>
+            <span class="hero-google-count" data-i18n="heroGoogleCount">podľa 110 overených recenzií</span>
+          </a>
+        </div>
+        <p class="hero-sticker" aria-hidden="true">
+          <svg class="hero-sticker-shape" viewBox="0 0 200 200">
+            <circle class="hero-sticker-fill" cx="100" cy="100" r="93"></circle>
+          </svg>
+          <span data-i18n="sticker" data-i18n-html>Malé detaily,<br>veľké radosti.</span>
+        </p>
+      </div>
+    <section class="values" aria-label="Naše hodnoty" data-i18n-aria="valuesAria" data-reveal>
+      <div class="section-deco" aria-hidden="true">
+        <span class="section-deco-item deco-values-croissant">
+          <img src="assets/illustrations/butter-croissant.webp" width="768" height="512" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        </span>
+        <span class="section-deco-item deco-values-macarons">
+          <img src="assets/illustrations/pink-macarons.webp" width="768" height="512" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        </span>
+      </div>
+      <div class="shell values-grid">
+        <article>
+          <svg class="value-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 22c1.2 12 6.2 18 14 18s12.8-6 14-18Z"></path><path d="M10 22h28M18 22c.6-6 3-10 6-10s5.4 4 6 10"></path><path d="M28 8c2.4 2.2 3 5.5.6 8.2"></path><path d="m26.5 9.5 4.2-2.2M30.2 12.8l3.4-1.4"></path></svg>
+          <h2 data-i18n="value1Title">Vlastná výroba</h2>
+          <p data-i18n="value1Text">Pripravujeme priamo u nás.</p>
+        </article>
+        <article>
+          <svg class="value-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M10 28c0-2.2 6.2-4 14-4s14 1.8 14 4v9c0 2.2-6.2 4-14 4s-14-1.8-14-4Z"></path><path d="M10 28v9M38 28v9"></path><path d="M16 25.2c2.4-3.4 5.2-3.6 8 .4 2.8-4 5.6-3.8 8-.4"></path><path d="M24 14.2c2.2 2 2.4 5.2 0 6.6-2.4-1.4-2.2-4.6 0-6.6Z"></path><path d="M24 20.8V24"></path></svg>
+          <h2 data-i18n="value2Title">Torty na mieru</h2>
+          <p data-i18n="value2Text">Pre oslavy, svadby a výnimočné chvíle.</p>
+        </article>
+        <article>
+          <svg class="value-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M9 30c2.2-11 11-17.5 22-13.2 6.4 2.5 10.2 9 9.2 15.6-8.4-1.6-16.6.4-23.4 6.2-4.2-2.2-7-5-7.8-8.6Z"></path><path d="M15 29.2c6.4-5 15.2-5.6 22.2-.6"></path><path d="M18.5 33.2c5-2.6 11.4-2.8 16.6.6"></path><path d="M22 11.5c.2-2.4 2-4.2 4.4-4.4M31.6 10.2c1.6-1.8 4.2-2.2 6.2-.8M16.2 14c-1.8-1.6-4.5-1.4-6.2.4"></path></svg>
+          <h2 data-i18n="value3Title">Čerstvé každý deň</h2>
+          <p data-i18n="value3Text">Chlieb, pečivo aj dezerty.</p>
+        </article>
+        <article>
+          <svg class="value-icon" viewBox="0 0 48 48" aria-hidden="true"><circle cx="17" cy="15" r="7"></circle><circle cx="33" cy="15" r="7"></circle><path d="M4 41v-4a13 13 0 0 1 26 0v4M27 26a13 13 0 0 1 17 12v3"></path></svg>
+          <h2 data-i18n="value4Title">Osobný prístup</h2>
+          <p data-i18n="value4Text">Od prvého nápadu po hotovú objednávku.</p>
+        </article>
+      </div>
+    </section>
+    </section>
+
+    <section class="popular section" id="ponuka" aria-labelledby="popular-title">
+      <div class="section-deco" aria-hidden="true">
+        <span class="section-deco-item deco-popular-cake">
+          <img src="assets/illustrations/berry-celebration-cake.webp" width="768" height="693" alt="" aria-hidden="true" loading="lazy" decoding="async" data-deco-parallax="5">
+        </span>
+        <span class="section-deco-item deco-popular-mousse">
+          <img src="assets/illustrations/berry-mousse-slice.webp" width="768" height="640" alt="" aria-hidden="true" loading="lazy" decoding="async" data-deco-parallax="-4">
+        </span>
+      </div>
+      <div class="shell">
+        <div class="center-heading" data-reveal><p class="eyebrow" data-i18n="popularEyebrow">Objavte našu ponuku</p><h2 id="popular-title" data-i18n="popularTitle">Naše najobľúbenejšie</h2></div>
+        <div class="cat-main" data-reveal>
+          <a class="cat-card cat-card-main" href="#">
+            <span class="cat-card-media"><span class="cat-card-frame"><span class="cat-card-zoom"><img src="assets/biscuit.webp" width="658" height="1170" alt="Piškótová torta s krémom a physalis" loading="lazy" data-i18n-alt="catBiscuitAlt"></span></span></span>
+            <span class="cat-card-copy">
+              <strong data-i18n="catBiscuit">Piškótové torty</strong>
+              <span data-i18n="catBiscuitText">Klasická piškóta, krém a sezónne ovocie.</span>
+              <span class="cat-card-link"><span data-i18n="catDiscover">Objaviť</span> <b aria-hidden="true">→</b></span>
+            </span>
+          </a>
+          <a class="cat-card cat-card-main" href="#">
+            <span class="cat-card-media"><span class="cat-card-frame"><span class="cat-card-zoom"><img src="assets/source-03.jpg" width="855" height="1520" alt="Čokoládový mousse dezert" loading="lazy" data-i18n-alt="catMousseAlt"></span></span></span>
+            <span class="cat-card-copy">
+              <strong data-i18n="catMousse">Mousse torty</strong>
+              <span data-i18n="catMousseText">Jemný mousse a lesklá čokoláda.</span>
+              <span class="cat-card-link"><span data-i18n="catDiscover">Objaviť</span> <b aria-hidden="true">→</b></span>
+            </span>
+          </a>
+          <a class="cat-card cat-card-main" href="#">
+            <span class="cat-card-media"><span class="cat-card-frame"><span class="cat-card-zoom"><img src="assets/cheesecake.jpg" width="960" height="1280" alt="Rez cheesecaku s karamelom" loading="lazy" data-i18n-alt="catCheesecakeAlt"></span></span></span>
+            <span class="cat-card-copy">
+              <strong data-i18n="catCheesecake">Cheesecaky</strong>
+              <span data-i18n="catCheesecakeText">Krémový rez s karamelom.</span>
+              <span class="cat-card-link"><span data-i18n="catDiscover">Objaviť</span> <b aria-hidden="true">→</b></span>
+            </span>
+          </a>
+        </div>
+        <div class="cat-side" data-reveal>
+          <a class="cat-card cat-card-side" href="#">
+            <span class="cat-card-media"><span class="cat-card-frame"><span class="cat-card-zoom"><img src="assets/macrons.jpeg" width="658" height="1170" alt="Farebný výber makróniek" loading="lazy" data-i18n-alt="catPetitAlt"></span></span></span>
+            <span class="cat-card-copy">
+              <strong data-i18n="catPetit">Tartaletky, makrónky, choux</strong>
+              <span class="cat-card-link"><span data-i18n="catDiscover">Objaviť</span> <b aria-hidden="true">→</b></span>
+            </span>
+          </a>
+          <a class="cat-card cat-card-side" href="#">
+            <span class="cat-card-media"><span class="cat-card-frame"><span class="cat-card-zoom"><img src="assets/travelcake.jpeg" width="658" height="1170" alt="Cestovný koláč s orechmi a kandizovaným ovocím" loading="lazy" data-i18n-alt="catTravelAlt"></span></span></span>
+            <span class="cat-card-copy">
+              <strong data-i18n="catTravel">Cestovné koláče</strong>
+              <span class="cat-card-link"><span data-i18n="catDiscover">Objaviť</span> <b aria-hidden="true">→</b></span>
+            </span>
+          </a>
+          <a class="cat-card cat-card-side" href="#">
+            <span class="cat-card-media"><span class="cat-card-frame"><span class="cat-card-zoom"><img src="assets/vegancake.png" width="834" height="1112" alt="Vegánsky banánový koláč s orechmi" loading="lazy" data-i18n-alt="catVeganAlt"></span></span></span>
+            <span class="cat-card-copy">
+              <strong data-i18n="catVegan">Vegánske torty</strong>
+              <span class="cat-card-link"><span data-i18n="catDiscover">Objaviť</span> <b aria-hidden="true">→</b></span>
+            </span>
+          </a>
+          <a class="cat-card cat-card-side" href="#">
+            <span class="cat-card-media"><span class="cat-card-frame"><span class="cat-card-zoom"><img src="assets/glutenfreecake.jpeg" width="437" height="582" alt="Bezgluténové pavlové s ovocím" loading="lazy" data-i18n-alt="catGlutenAlt"></span></span></span>
+            <span class="cat-card-copy">
+              <strong data-i18n="catGluten">Bez lepku</strong>
+              <span class="cat-card-link"><span data-i18n="catDiscover">Objaviť</span> <b aria-hidden="true">→</b></span>
+            </span>
+          </a>
+        </div>
+        <div class="popular-action" data-reveal><a class="text-link" href="#"><span data-i18n="fullOffer">Celá ponuka</span> <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+
+    <section class="bakery" id="pekaren" aria-labelledby="bakery-title">
+      <div class="bakery-inner">
+        <div class="bakery-image" data-reveal>
+          <picture>
+            <source srcset="assets/618565450_18304672045262518_850137392248075748_n.webp" type="image/webp">
+            <img src="assets/618565450_18304672045262518_850137392248075748_n.jpg" width="960" height="1280" alt="Čerstvo upečené bagety na drevenom stole" loading="lazy" decoding="async" data-i18n-alt="bakeryAlt">
+          </picture>
+        </div>
+        <div class="bakery-copy" data-reveal>
+          <svg class="bakery-wheat" viewBox="0 0 180 280" aria-hidden="true">
+            <path d="M88 262c4-62 6-124 2-228"></path>
+            <path d="M90 64l-16-22M90 78l16-22M90 94l-16-22M90 108l16-22M90 124l-16-20M90 138l16-20"></path>
+            <path d="M90 52c-8-16-6-28 2-36 8 8 10 20 2 36Z"></path>
+            <path d="M118 248c-2-48 8-96 28-148"></path>
+            <path d="M140 122l12-18M138 138l-12-16M142 154l12-16"></path>
+          </svg>
+          <p class="eyebrow" data-i18n="bakeryEyebrow">Naša pekáreň</p>
+          <h2 id="bakery-title" data-i18n="bakeryTitle">Ráno začína vôňou chleba.</h2>
+          <p data-i18n="bakeryText">Naše remeslo sa nekončí pri dezertoch. Pečieme chlieb, chrumkavé bagety a čerstvé pečivo na každý deň.</p>
+          <ul class="bakery-cats">
+            <li data-i18n="bakeryCatBread">Chlieb</li>
+            <li data-i18n="bakeryCatBaguette">Bagety</li>
+            <li data-i18n="bakeryCatPastry">Čerstvé pečivo</li>
+          </ul>
+          <a class="button" href="#">
+            <span data-i18n="bakeryCta">Pozrieť pečivo</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="story" id="o-nas" aria-labelledby="story-title">
+      <div class="story-inner">
+        <div class="story-copy" data-reveal>
+          <svg class="story-botanical" viewBox="0 0 220 280" aria-hidden="true">
+            <path d="M168 262c-10-58 6-112 38-168"></path>
+            <path d="M198 128c22-18 42-18 58 2"></path>
+            <path d="M186 168c-28-10-48 2-58 24"></path>
+            <path d="M204 96c16-22 18-42 6-62"></path>
+            <path d="M176 204c24-8 44 2 54 22"></path>
+            <path d="M190 148c8-16 8-32-2-46"></path>
+          </svg>
+          <p class="eyebrow" data-i18n="storyEyebrow">Náš príbeh</p>
+          <h2 id="story-title" data-i18n="storyTitle" data-i18n-html>Viac než dezert.<br>Je to spomienka.</h2>
+          <p data-i18n="storyText">Boulanger &amp; Patissiere je miesto, kde sa spája poctivé remeslo, kvalitné suroviny a láska k detailom. Pečieme, aby sme boli súčasťou vašich výnimočných chvíľ, malých aj veľkých.</p>
+          <a class="text-link story-cta" href="#prevadzka"><span data-i18n="storyCta">Spoznať náš príbeh</span> <span aria-hidden="true">→</span></a>
+          <p class="story-note" aria-hidden="true" data-i18n="storyNote">s láskou</p>
+        </div>
+        <div class="story-image" data-reveal>
+          <img src="assets/source-02.jpg" width="854" height="1519" alt="Útulné posedenie v prevádzke Boulanger and Patissiere" loading="lazy" decoding="async" data-i18n-alt="storyAlt">
+        </div>
+      </div>
+    </section>
+
+    <section class="custom" id="torty" aria-labelledby="custom-title">
+      <div class="section-deco" aria-hidden="true">
+        <span class="section-deco-item deco-custom-macarons">
+          <img src="assets/illustrations/pink-macarons.webp" width="768" height="512" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        </span>
+      </div>
+      <div class="custom-inner">
+        <div class="custom-image" data-reveal>
+          <img src="assets/source-15.png" width="834" height="1112" alt="Slávnostná torta na mieru so zlatými detailmi" loading="lazy" decoding="async" data-i18n-alt="customAlt">
+        </div>
+        <div class="custom-content" data-reveal>
+          <div class="custom-copy">
+            <p class="eyebrow" data-i18n="customEyebrow">Vaša predstava, naše remeslo</p>
+            <h2 id="custom-title" data-i18n="customTitle">Torta podľa vašej predstavy</h2>
+            <p data-i18n="customText">Či už snívate o narodeninovej torte, svadobnej lahôdke alebo torte pre akúkoľvek inú príležitosť, radi premeníme vaše nápady na sladkú realitu.</p>
+          </div>
+          <ol class="custom-steps">
+            <li>
+              <span class="custom-step-num">01</span>
+              <p data-i18n="step1">Vyberte si štýl a príchuť</p>
+            </li>
+            <li>
+              <span class="custom-step-num">02</span>
+              <p data-i18n="step2">Povedzte nám svoju predstavu</p>
+            </li>
+            <li>
+              <span class="custom-step-num">03</span>
+              <p data-i18n="step3">Dohodneme detaily a termín</p>
+            </li>
+            <li>
+              <span class="custom-step-num">04</span>
+              <p data-i18n="step4">Tortu pre vás s láskou upečieme</p>
+            </li>
+          </ol>
+          <a class="button custom-cta" href="?typ=torta-na-mieru#kontakt" data-i18n="customCta">Objednať tortu</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="details" aria-labelledby="details-title">
+      <div class="section-deco" aria-hidden="true">
+        <span class="section-deco-item deco-details-croissant">
+          <img src="assets/illustrations/butter-croissant.webp" width="768" height="512" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        </span>
+      </div>
+      <div class="shell reviews-pack">
+        <div class="section-copy" data-reveal>
+          <p class="eyebrow" data-i18n="reviewsEyebrow">Čo o nás hovoria</p>
+          <h2 id="details-title" data-i18n="reviewsTitle">Sladké slová od našich zákazníkov</h2>
+        </div>
+        <a class="text-link reviews-cta" href="https://www.google.com/maps/search/?api=1&amp;query=Boulanger%26Patissiere%2C+%C4%BD.+Fullu+5245%2F62%2C+Bratislava" target="_blank" rel="noopener noreferrer" data-reveal>
+          <span class="reviews-cta-inner">
+            <svg class="hero-google-mark" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09Z"></path>
+              <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23Z"></path>
+              <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.66-2.84Z"></path>
+              <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53Z"></path>
+            </svg>
+            <span data-i18n="reviewsGoogle">Všetky recenzie na Google</span>
+            <span class="reviews-cta-arrow" aria-hidden="true">→</span>
+          </span>
+        </a>
+        <figure class="review review-main" data-reveal>
+          <div class="stars" role="img" aria-label="5 z 5 hviezdičiek" data-i18n-aria="starsAria"><span aria-hidden="true">★★★★★</span></div>
+          <blockquote data-i18n="review1">„Najlepšie dezerty v Bratislave! Vždy čerstvé, krásne a hlavne výborné.“</blockquote>
+          <figcaption>Veronika K.</figcaption>
+        </figure>
+        <div class="reviews-side">
+          <figure class="review" data-reveal>
+            <div class="stars" role="img" aria-label="5 z 5 hviezdičiek" data-i18n-aria="starsAria"><span aria-hidden="true">★★★★★</span></div>
+            <blockquote data-i18n="review2">„Torta predčila naše očakávania. Nielen krásna, ale aj úžasne chutná.“</blockquote>
+            <figcaption>Martin Š.</figcaption>
+          </figure>
+          <figure class="review" data-reveal>
+            <div class="stars" role="img" aria-label="5 z 5 hviezdičiek" data-i18n-aria="starsAria"><span aria-hidden="true">★★★★★</span></div>
+            <blockquote data-i18n="review3">„Príjemná atmosféra, milý personál a neuveriteľný výber. Odporúčam!“</blockquote>
+            <figcaption>Lucia M.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="instagram" aria-labelledby="instagram-title">
+      <div class="section-deco" aria-hidden="true">
+        <span class="section-deco-item deco-instagram-mousse">
+          <img src="assets/illustrations/berry-mousse-slice.webp" width="768" height="640" alt="" aria-hidden="true" loading="lazy" decoding="async">
+        </span>
+      </div>
+      <div class="shell instagram-pack">
+        <div class="section-copy" data-reveal>
+          <p class="eyebrow" data-i18n="igEyebrow">Sledujte nás</p>
+          <h2 id="instagram-title" data-i18n="igTitle">Sladké chvíle z našej cukrárne</h2>
+        </div>
+        <a class="text-link instagram-cta" href="https://www.instagram.com/boulanger_patissiere" target="_blank" rel="noopener noreferrer" data-reveal>
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r=".8"></circle></svg>
+          <span data-i18n="igCta">Sledovať na Instagrame</span>
+          <span aria-hidden="true">→</span>
+        </a>
+        <div class="instagram-grid">
+          <a class="instagram-feature" href="https://www.instagram.com/boulanger_patissiere" target="_blank" rel="noopener noreferrer" data-reveal>
+            <img src="assets/source-10.jpg" width="1170" height="780" alt="Jubilejná torta v zlatých tónoch" loading="lazy" decoding="async" data-i18n-alt="igAltFeature">
+          </a>
+          <a href="https://www.instagram.com/boulanger_patissiere" target="_blank" rel="noopener noreferrer" data-reveal>
+            <img src="assets/source-05.jpg" width="658" height="1170" alt="Farebné makrónky" loading="lazy" decoding="async" data-i18n-alt="igAltMacarons">
+          </a>
+          <a href="https://www.instagram.com/boulanger_patissiere" target="_blank" rel="noopener noreferrer" data-reveal>
+            <img src="assets/618565450_18304672045262518_850137392248075748_n.jpg" width="960" height="1280" alt="Čerstvo upečené bagety na drevenom stole" loading="lazy" decoding="async" data-i18n-alt="igAltBread">
+          </a>
+          <a href="https://www.instagram.com/boulanger_patissiere" target="_blank" rel="noopener noreferrer" data-reveal>
+            <img src="assets/source-02.jpg" width="854" height="1519" alt="Útulné posedenie v prevádzke Boulanger and Patissiere" loading="lazy" decoding="async" data-i18n-alt="igAltInterior">
+          </a>
+          <a href="https://www.instagram.com/boulanger_patissiere" target="_blank" rel="noopener noreferrer" data-reveal>
+            <img src="assets/source-08.jpg" width="696" height="927" alt="Jahodová torta s čokoládovou dekoráciou" loading="lazy" decoding="async" data-i18n-alt="igAltBerry">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="visit" id="prevadzka" aria-labelledby="visit-title">
+      <div class="visit-inner">
+        <div class="visit-copy">
+          <p class="eyebrow visit-order-eyebrow" data-reveal data-i18n="visitEyebrow">Navštívte nás</p>
+          <h2 id="visit-title" class="visit-order-title" data-reveal data-i18n="visitTitle">Zastavte sa u nás.</h2>
+          <div class="visit-details visit-order-details" data-reveal>
+            <p class="visit-name">Boulanger &amp; Pâtissière</p>
+            <div class="visit-line">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.2A7 7 0 0 1 12 3a7 7 0 0 1 7 6.8C19 14.8 12 21 12 21Z"></path><circle cx="12" cy="9.8" r="2.4"></circle></svg>
+              <address><a href="https://maps.app.goo.gl/rUNerm5v478fXwws7" target="_blank" rel="noopener noreferrer">Ľ. Fullu 5245/62, Bratislava</a></address>
+            </div>
+            <div class="visit-line">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"></circle><path d="M12 7.5V12l3.2 2"></path></svg>
+              <span data-i18n="visitHours">Objednávky prijímame denne od 9:00 do 18:00.</span>
+            </div>
+            <p class="visit-note" data-i18n="visitNote">Osobný odber po dohode, doručenie v Bratislave od 10 €.</p>
+            <div class="visit-line">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.4 3.8h2.6l1.2 3.4-1.8 1.2a11.5 11.5 0 0 0 6.2 6.2l1.2-1.8 3.4 1.2v2.5c0 .9-.6 1.8-1.7 2-8.3.9-12.8-8.4-13.1-13.1-.1-1.1.8-1.6 1.6-1.6Z"></path></svg>
+              <a href="tel:+421940050801">+421 940 050 801</a>
+            </div>
+            <div class="visit-line">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.4" y="5.4" width="17.2" height="13.2" rx="2"></rect><path d="m5 8 7 5.2L19 8"></path></svg>
+              <a href="mailto:boulangerpatissiere@gmail.com">boulangerpatissiere@gmail.com</a>
+            </div>
+          </div>
+          <a class="text-link visit-maps-link visit-order-maps" href="https://maps.app.goo.gl/rUNerm5v478fXwws7" target="_blank" rel="noopener noreferrer" data-reveal>
+            <span data-i18n="visitMaps">Otvoriť v Google Maps</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+          <a class="text-link visit-form-link visit-order-write" href="#kontakt" data-reveal data-i18n="visitWrite">Napísať správu</a>
+          <blockquote class="visit-quote visit-order-quote" data-reveal data-i18n="visitQuote" data-i18n-html>Tešíme sa<br>na vašu návštevu.</blockquote>
+        </div>
+        <div class="visit-map visit-order-map">
+          <div class="visit-map-frame">
+            <iframe
+              title="Mapa prevádzky Boulanger &amp; Pâtissière"
+              src="https://www.google.com/maps?q=Boulanger%26Patissiere%2C+%C4%BD.+Fullu+5245%2F62%2C+Bratislava&amp;output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="kontakt" aria-labelledby="contact-title">
+      <div class="shell contact-inner">
+        <div class="contact-intro" data-reveal>
+          <p class="eyebrow" data-i18n="contactEyebrow">Napíšte nám</p>
+          <h2 id="contact-title" data-i18n="contactTitle" data-i18n-html>Máte otázku alebo sladkú<br>predstavu?</h2>
+          <p data-i18n="contactLead">Napíšte nám, čo pre vás môžeme pripraviť. Ozveme sa vám čo najskôr.</p>
+        </div>
+        <!-- Contact form awaits backend endpoint wiring; do not fake successful delivery. -->
+        <form class="contact-form" id="contact-form" data-contact-form data-endpoint="" novalidate data-reveal>
+          <div class="form-status" id="contact-form-status" role="status" aria-live="polite" tabindex="-1" hidden></div>
+
+          <div class="hp-field" aria-hidden="true">
+            <label for="contact-website">Website</label>
+            <input id="contact-website" name="website" type="text" tabindex="-1" autocomplete="off">
+          </div>
+
+          <div class="form-grid">
+            <div class="field">
+              <label for="contact-name"><span data-i18n="formName">Meno a priezvisko</span> <span class="req" aria-hidden="true">*</span></label>
+              <input id="contact-name" class="form-control" name="name" type="text" autocomplete="name" required aria-describedby="contact-name-error">
+              <p class="field-error" id="contact-name-error"></p>
+            </div>
+            <div class="field">
+              <label for="contact-email"><span data-i18n="formEmail">E-mail</span> <span class="req" aria-hidden="true">*</span></label>
+              <input id="contact-email" class="form-control" name="email" type="email" autocomplete="email" required aria-describedby="contact-email-error">
+              <p class="field-error" id="contact-email-error"></p>
+            </div>
+            <div class="field">
+              <label for="contact-phone" data-i18n="formPhone">Telefón</label>
+              <input id="contact-phone" class="form-control" name="phone" type="tel" autocomplete="tel" aria-describedby="contact-phone-error">
+              <p class="field-error" id="contact-phone-error"></p>
+            </div>
+            <div class="field">
+              <label for="contact-type" data-i18n="formType">Typ požiadavky</label>
+              <select id="contact-type" class="form-control" name="type" autocomplete="off">
+                <option value="" data-i18n="formTypeEmpty">Vyberte typ</option>
+                <option value="torta-na-mieru" data-i18n="formTypeCake">Torta na mieru</option>
+                <option value="ponuka" data-i18n="formTypeOffer">Ponuka produktov</option>
+                <option value="objednavka" data-i18n="formTypeOrder">Objednávka</option>
+                <option value="vseobecna" data-i18n="formTypeGeneral">Všeobecná otázka</option>
+              </select>
+            </div>
+            <div class="field field-full">
+              <label for="contact-message"><span data-i18n="formMessage">Správa</span> <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="contact-message" class="form-control" name="message" rows="5" required aria-describedby="contact-message-error"></textarea>
+              <p class="field-error" id="contact-message-error"></p>
+            </div>
+          </div>
+
+          <div class="form-footer">
+            <div class="field field-consent">
+              <label class="consent" for="contact-consent">
+                <input id="contact-consent" class="form-control" name="consent" type="checkbox" value="1" required aria-describedby="contact-consent-error">
+                <span data-i18n="formConsent">Súhlasím so spracovaním osobných údajov na účely vybavenia tejto správy.</span>
+                <span class="req" aria-hidden="true">*</span>
+              </label>
+              <p class="field-error" id="contact-consent-error"></p>
+            </div>
+            <button class="button" type="submit" data-form-submit>
+              <span data-form-submit-label data-i18n="formSubmit">Odoslať správu</span>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-main">
+      <a class="brand brand-footer" href="#hore" aria-label="Boulanger and Patissiere, domov">
+        <picture>
+          <source srcset="assets/logo-bpdownload.webp" type="image/webp">
+          <img src="assets/logo-bp.png" width="656" height="526" alt="">
+        </picture>
+      </a>
+      <nav aria-label="Navigácia v päte" data-i18n-aria="footerNav">
+        <a href="#ponuka" data-i18n="navOffer">Ponuka</a><a href="#pekaren" data-i18n="navBakery">Pekáreň</a><a href="#o-nas" data-i18n="navAbout">O nás</a><a href="#torty" data-i18n="navCakes">Torty na mieru</a><a href="#prevadzka" data-i18n="navVisit">Prevádzka</a><a href="#kontakt" data-i18n="navContact">Kontakt</a>
+      </nav>
+      <div class="socials">
+        <a href="https://www.instagram.com/boulanger_patissiere" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.2" cy="6.8" r=".8"></circle></svg></a>
+        <a href="#kontakt" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v8h4v-8h3l1-4h-4V9c0-.6.4-1 1-1Z"></path></svg></a>
+        <a href="#kontakt" aria-label="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 4v10.2a3.8 3.8 0 1 1-3.2-3.75V13a1.6 1.6 0 1 0 1.4 1.6V4h1.8c.5 2.6 2.3 4.6 4.8 5.2V11c-1.7-.2-3.3-1-4.8-2.2V4Z"></path></svg></a>
+      </div>
+    </div>
+    <div class="shell footer-bottom"><p>© <span data-year></span> Boulanger &amp; Patissiere. <span data-i18n="rights">Všetky práva vyhradené.</span></p><p data-i18n="fromBa">S láskou z Bratislavy.</p></div>
+  </footer>
+</body>
+</html>
