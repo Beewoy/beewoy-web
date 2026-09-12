@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Verejnoprospešné služby Snina, s.r.o. — pohrebné služby, zverejňovanie dokumentov a kontakt.">
-  <title>Verejnoprospešné služby Snina, s.r.o.</title>
-  <link rel="stylesheet" href="assets/frontend.min.css">
-  <link rel="icon" href="assets/images/favicon.ico" sizes="any">
-  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+  <meta name="description" content="Prevádzkové oznamy — Verejnoprospešné služby Snina, s.r.o.">
+  <title>Oznamy — VPS Snina</title>
+  <link rel="stylesheet" href="../assets/frontend.min.css">
+  <link rel="icon" href="../assets/images/favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
   <style>
 
     /* Demo-only utilities; components use official IDSK/GOVUK classes */
@@ -195,8 +195,8 @@
 
     <div class="govuk-predheader govuk-width-container">
       <div class="govuk-header__logo">
-        <a href="./" class="govuk-header__link govuk-header__link--homepage vps-brand" title="Odkaz na titulnú stránku">
-          <img class="vps-brand__logo" src="assets/images/logo-vps.svg" width="64" height="64" alt="">
+        <a href="../" class="govuk-header__link govuk-header__link--homepage vps-brand" title="Odkaz na titulnú stránku">
+          <img class="vps-brand__logo" src="../assets/images/logo-vps.svg" width="64" height="64" alt="">
           <span class="vps-brand__text">
             <span class="vps-brand__name">Verejnoprospešné služby Snina, s.r.o.</span>
             <span class="vps-brand__org">Mestská spoločnosť · mesto Snina</span>
@@ -217,20 +217,20 @@
       <span class="text">Menu</span>
       <div class="govuk-header__navigation-list">
         <ul>
+          <li class="govuk-header__navigation-item">
+            <a class="govuk-header__link" href="../">Domov</a>
+          </li>
+          <li class="govuk-header__navigation-item">
+            <a class="govuk-header__link" href="../pohrebne-sluzby/">Pohrebné služby</a>
+          </li>
+          <li class="govuk-header__navigation-item">
+            <a class="govuk-header__link" href="../dokumenty/">Dokumenty</a>
+          </li>
           <li class="govuk-header__navigation-item govuk-header__navigation-item--active" aria-current="page">
-            <a class="govuk-header__link" href="./">Domov</a>
+            <a class="govuk-header__link" href="../oznamy/">Oznamy</a>
           </li>
           <li class="govuk-header__navigation-item">
-            <a class="govuk-header__link" href="pohrebne-sluzby/">Pohrebné služby</a>
-          </li>
-          <li class="govuk-header__navigation-item">
-            <a class="govuk-header__link" href="dokumenty/">Dokumenty</a>
-          </li>
-          <li class="govuk-header__navigation-item">
-            <a class="govuk-header__link" href="oznamy/">Oznamy</a>
-          </li>
-          <li class="govuk-header__navigation-item">
-            <a class="govuk-header__link" href="kontakt/">Kontakt</a>
+            <a class="govuk-header__link" href="../kontakt/">Kontakt</a>
           </li>
         </ul>
       </div>
@@ -240,136 +240,40 @@
 
 
 <div class="govuk-width-container">
+  <nav class="govuk-breadcrumbs" aria-label="Omrvinková navigácia">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="../">Domov</a></li>
+      <li class="govuk-breadcrumbs__list-item" aria-current="page">Oznamy</li>
+    </ol>
+  </nav>
   <main class="govuk-main-wrapper" id="main-content" tabindex="-1">
 
-    <!-- 2.1 Informačná lišta — maintenance (CONTENT DELTA 2.4) -->
-    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__header">
-        <p class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Informácia
-        </p>
-      </div>
-      <div class="govuk-notification-banner__content">
-        <p class="govuk-notification-banner__heading">
-          Webová stránka sa obnovuje
-        </p>
-        <p class="govuk-body">
-          Oficiálna stránka www.vpssnina.sk je dočasne v režime údržby.
-          Kontaktujte nás telefonicky na
-          <a class="govuk-notification-banner__link" href="tel:+421577622594">+421&nbsp;57&nbsp;762&nbsp;25&nbsp;94</a>
-          alebo e-mailom na
-          <a class="govuk-notification-banner__link" href="mailto:info@vpssnina.sk">info@vpssnina.sk</a>.
-          <a class="govuk-notification-banner__link" href="oznamy/">Všetky oznamy</a>
-        </p>
-      </div>
-    </div>
-
-    <!-- 2.2 H1 + lead + CTA -->
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Verejnoprospešné služby Snina</h1>
+        <h1 class="govuk-heading-xl">Oznamy</h1>
         <p class="govuk-body-l">
-          Spoločnosť <strong>Verejnoprospešné služby Snina, s.r.o.</strong> poskytuje najmä
-          <strong>pohrebné služby</strong> a zverejňuje povinné dokumenty pre občanov a dodávateľov.
+          Príležitostné prevádzkové oznamy (údržba webu, sviatky, mimoriadne zatvorenie).
+          Nie je to blog ani spravodajský archív.
         </p>
-        <p class="govuk-body">
-          Ostatné mestské služby (odpad, zeleň, komunikácie a pod.) zabezpečuje
-          <a class="govuk-link" href="https://www.snina.sk/" target="_blank" rel="noopener noreferrer">mesto Snina<span class="govuk-visually-hidden"> (otvorí sa v novom okne)</span></a>.
-          Tento web slúži na informácie o pohrebných službách, zverejňovanie dokumentov a kontakt.
-        </p>
-        <div class="vps-cta-group">
-          <a class="govuk-button govuk-button__basic" data-module="govuk-button" href="tel:+421577622594">Zavolať pohrebné služby</a>
-          <a class="govuk-button govuk-button--sec" data-module="govuk-button" href="dokumenty/">Zverejnené dokumenty</a>
-        </div>
-        <img class="vps-lead-img" src="assets/images/photo-o-nas.jpg" width="800" height="600" alt="Verejnoprospešné služby Snina — sídlo a tím spoločnosti">
+
+        <article class="govuk-!-margin-top-6" id="oznam-obnova-webu">
+          <h2 class="govuk-heading-m">Obnova webovej stránky</h2>
+          <p class="govuk-body">
+            <time datetime="2026-09-12">12. 09. 2026</time>
+          </p>
+          <p class="govuk-body">
+            Oficiálna webová stránka www.vpssnina.sk je dočasne v režime údržby („Na webovej stránke sa pracuje“`).
+            Tento IDSK&nbsp;3 demo web slúži ako dočasná orientácia pre občanov.
+          </p>
+          <p class="govuk-body">
+            V prípade potreby nás kontaktujte na
+            <a class="govuk-link" href="tel:+421577622594">+421&nbsp;57&nbsp;762&nbsp;25&nbsp;94</a>
+            alebo
+            <a class="govuk-link" href="mailto:info@vpssnina.sk">info@vpssnina.sk</a>.
+          </p>
+        </article>
       </div>
     </div>
-
-    <!-- 2.3 Rázcestník — 3 položky -->
-    <section class="vps-section" aria-labelledby="nav-info-heading">
-      <h2 class="govuk-heading-l" id="nav-info-heading">Najčastejšie úlohy</h2>
-      <div class="vps-signpost-grid vps-signpost-grid--3">
-        <a class="govuk-signpost govuk-signpost__card govuk-signpost__link" href="pohrebne-sluzby/">
-          <div class="govuk-signpost__icon">
-            <span class="material-icons" aria-hidden="true">info</span>
-          </div>
-          <div class="govuk-signpost__container">
-            <div>
-              <h3 class="govuk-signpost__title">Pohrebné služby</h3>
-              <p class="govuk-signpost__description">Správa cintorínov, pohrebná služba, cenník a evidencia hrobových miest.</p>
-            </div>
-            <div class="govuk-signpost__arrow-icon">
-              <span class="material-icons" aria-hidden="true">east</span>
-            </div>
-          </div>
-        </a>
-        <a class="govuk-signpost govuk-signpost__card govuk-signpost__link" href="dokumenty/">
-          <div class="govuk-signpost__icon">
-            <span class="material-icons" aria-hidden="true">description</span>
-          </div>
-          <div class="govuk-signpost__container">
-            <div>
-              <h3 class="govuk-signpost__title">Dokumenty</h3>
-              <p class="govuk-signpost__description">Objednávky, faktúry, verejné obstarávanie a iné povinné zverejnenia.</p>
-            </div>
-            <div class="govuk-signpost__arrow-icon">
-              <span class="material-icons" aria-hidden="true">east</span>
-            </div>
-          </div>
-        </a>
-        <a class="govuk-signpost govuk-signpost__card govuk-signpost__link" href="kontakt/">
-          <div class="govuk-signpost__icon">
-            <span class="material-icons" aria-hidden="true">call</span>
-          </div>
-          <div class="govuk-signpost__container">
-            <div>
-              <h3 class="govuk-signpost__title">Kontakt a úradné hodiny</h3>
-              <p class="govuk-signpost__description">Adresa, telefón, e-mail, úradné hodiny a fakturačné údaje.</p>
-            </div>
-            <div class="govuk-signpost__arrow-icon">
-              <span class="material-icons" aria-hidden="true">east</span>
-            </div>
-          </div>
-        </a>
-      </div>
-    </section>
-
-    <!-- 2.4 Skrátený kontakt -->
-    <section class="vps-section" aria-labelledby="kontakt-short-heading">
-      <h2 class="govuk-heading-l" id="kontakt-short-heading">Kontakt</h2>
-      <p class="govuk-body">
-        Budovateľská 2202/10, 069 01 Snina<br>
-        Tel: <a class="govuk-link" href="tel:+421577622594">+421 57 762 25 94</a><br>
-        E-mail: <a class="govuk-link" href="mailto:info@vpssnina.sk">info@vpssnina.sk</a><br>
-        Pondelok–Piatok · Zima 7:00–15:00 · Leto 6:00–14:00
-      </p>
-      <p class="govuk-body">
-        <a class="govuk-link" href="kontakt/">Všetky údaje a fakturácia</a>
-      </p>
-    </section>
-
-    <!-- 2.5 Aktuálne oznamy (1 položka) -->
-    <section class="vps-section" aria-labelledby="oznamy-heading">
-      <h2 class="govuk-heading-l" id="oznamy-heading">Aktuálne oznamy</h2>
-      <div class="idsk-card">
-        <div class="idsk-card__content">
-          <div class="idsk-card__heading">
-            <h3 class="govuk-heading-m"><a class="govuk-link" href="oznamy/#oznam-obnova-webu">Obnova webovej stránky</a></h3>
-          </div>
-          <div class="idsk-card__description">
-            Oficiálna stránka sa obnovuje. Urgentný kontakt: telefón alebo e-mail.
-          </div>
-          <p class="idsk-card__date-tags">
-            <time datetime="2026-09-12">12. 09. 2026</time>
-            <span>—</span>
-            <span>Prevádzka</span>
-          </p>
-        </div>
-      </div>
-      <p class="govuk-body govuk-!-margin-top-4">
-        <a class="govuk-link" href="oznamy/">Všetky oznamy</a>
-      </p>
-    </section>
 
   </main>
 </div>
@@ -380,11 +284,11 @@
       <div class="govuk-footer__section govuk-grid-column-two-thirds">
         <h2 class="govuk-footer__heading govuk-heading-m">Navigácia</h2>
         <ul class="govuk-footer__list govuk-footer__list--columns-2">
-          <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="./">Domov</a></li>
-          <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="pohrebne-sluzby/">Pohrebné služby</a></li>
-          <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="dokumenty/">Dokumenty</a></li>
-          <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="oznamy/">Oznamy</a></li>
-          <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="kontakt/">Kontakt</a></li>
+          <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="../">Domov</a></li>
+          <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="../pohrebne-sluzby/">Pohrebné služby</a></li>
+          <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="../dokumenty/">Dokumenty</a></li>
+          <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="../oznamy/">Oznamy</a></li>
+          <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="../kontakt/">Kontakt</a></li>
         </ul>
       </div>
       <div class="govuk-footer__section govuk-grid-column-one-third">
@@ -404,10 +308,10 @@
         <h2 class="govuk-visually-hidden">Ďalšie odkazy</h2>
         <ul class="govuk-footer__inline-list">
           <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" href="vyhlasenie-o-pristupnosti/">Vyhlásenie o prístupnosti</a>
+            <a class="govuk-footer__link" href="../vyhlasenie-o-pristupnosti/">Vyhlásenie o prístupnosti</a>
           </li>
           <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" href="ochrana-udajov/">Cookies a ochrana osobných údajov</a>
+            <a class="govuk-footer__link" href="../ochrana-udajov/">Cookies a ochrana osobných údajov</a>
           </li>
           <li class="govuk-footer__inline-list-item">
             <a class="govuk-footer__link" href="https://www.crz.gov.sk/" target="_blank" rel="noopener noreferrer">Centrálny register zmlúv<span class="govuk-visually-hidden"> (otvorí sa v novom okne)</span></a>
@@ -427,8 +331,8 @@
         </span>
       </div>
       <div class="govuk-footer__meta-item">
-        <a class="govuk-footer__link govuk-footer__copyright-logo" href="./">
-          <img src="assets/images/logo-vps.svg" alt="VPS Snina">
+        <a class="govuk-footer__link govuk-footer__copyright-logo" href="../">
+          <img src="../assets/images/logo-vps.svg" alt="VPS Snina">
         </a>
       </div>
     </div>
@@ -438,7 +342,7 @@
 
 
 <script type="module">
-  import { initAll } from 'assets/frontend.min.js';
+  import { initAll } from '../assets/frontend.min.js';
   initAll();
 
   const skip = document.querySelector('.govuk-skip-link');

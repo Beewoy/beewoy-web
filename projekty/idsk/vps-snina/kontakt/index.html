@@ -3,14 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Informácie o cookies a ochrane osobných údajov — Verejnoprospešné služby Snina.">
-  <title>Cookies a ochrana osobných údajov — Verejnoprospešné služby Snina</title>
-  <link rel="stylesheet" href="assets/frontend.min.css">
-  <link rel="icon" href="assets/images/favicon.ico" sizes="any">
-  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
-
+  <meta name="description" content="Kontakt, úradné hodiny a fakturačné údaje — VPS Snina.">
+  <title>Kontakt — VPS Snina</title>
+  <link rel="stylesheet" href="../assets/frontend.min.css">
+  <link rel="icon" href="../assets/images/favicon.ico" sizes="any">
+  <link rel="icon" href="../assets/images/favicon.svg" type="image/svg+xml">
   <style>
 
+    /* Demo-only utilities; components use official IDSK/GOVUK classes */
     .vps-section { margin-top: 2.5rem; margin-bottom: 2.5rem; }
     .vps-signpost-grid {
       display: grid;
@@ -23,12 +23,18 @@
     @media (min-width: 48.0625rem) {
       .vps-signpost-grid.vps-signpost-grid--3 { grid-template-columns: 1fr 1fr 1fr; }
     }
-    .vps-doc-panel {
+    .vps-cta-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1.5rem;
       margin-bottom: 1.5rem;
-      padding-bottom: 1rem;
-      border-bottom: 1px solid #b1b4b6;
     }
-    .vps-doc-panel:last-child { border-bottom: 0; }
+    .vps-cta-group .govuk-button { margin-bottom: 0; }
+    @media (max-width: 40.0625rem) {
+      .vps-cta-group { flex-direction: column; }
+      .vps-cta-group .govuk-button { width: 100%; text-align: center; }
+    }
     .govuk-header__logo { min-width: 0; flex: 1 1 auto; }
     .vps-brand {
       display: flex;
@@ -71,12 +77,12 @@
     }
     @media (min-width: 40.0625rem) {
       .vps-brand__logo { width: 64px; height: 64px; }
-      .vps-brand__name { font-size: 1.375rem; }
-      .vps-brand__org { font-size: 1rem; }
+      .vps-brand__name { font-size: 1.25rem; }
+      .vps-brand__org { font-size: 0.9375rem; }
     }
     @media (max-width: 40.0625rem) {
-      .vps-brand__name { font-size: 1rem; }
-      .vps-brand__org { font-size: 0.8125rem; }
+      .vps-brand__name { font-size: 0.9375rem; }
+      .vps-brand__org { font-size: 0.75rem; }
     }
     .govuk-footer__copyright-logo img {
       width: 48px;
@@ -84,37 +90,20 @@
       border-radius: 50%;
       object-fit: cover;
     }
-    .vps-hero-img {
+    .vps-lead-img {
       display: block;
       width: 100%;
+      max-width: 40rem;
       height: auto;
       border-radius: 4px;
-      margin-top: 0.5rem;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
     }
-    .vps-gallery {
-      display: grid;
-      gap: 1rem;
-      grid-template-columns: 1fr;
-      margin-top: 1.5rem;
+    .vps-doc-section {
+      margin-top: 2rem;
+      padding-top: 0.5rem;
+      scroll-margin-top: 1rem;
     }
-    @media (min-width: 40.0625rem) {
-      .vps-gallery { grid-template-columns: 1fr 1fr 1fr; }
-    }
-    .vps-gallery figure { margin: 0; }
-    .vps-gallery img {
-      display: block;
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 4px;
-    }
-    .vps-gallery figcaption {
-      margin-top: 0.5rem;
-      font-size: 0.875rem;
-      color: #505a5f;
-    }
-
-
     /* GOV.UK-equivalent skip-link (missing from IDSK 3.0.0-beta bundle) */
     .govuk-skip-link {
       position: absolute;
@@ -157,28 +146,6 @@
       position: absolute;
       z-index: 1000;
     }
-    /* Feedback bar: wrap / stack on small screens */
-    .govuk-feedback-bar__body {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 0.75rem;
-      max-width: 100%;
-    }
-    .govuk-feedback-bar__actions,
-    .govuk-feedback-bar__action {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-      max-width: 100%;
-    }
-    @media (max-width: 40.0625rem) {
-      .govuk-feedback-bar__body {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-    }
-    /* Disabled / mock document links (non-navigating) */
     span.govuk-link[aria-disabled="true"],
     .vps-mock-link {
       color: #1d70b8;
@@ -188,7 +155,6 @@
     }
 
   </style>
-
 </head>
 <body class="govuk-template__body">
 <script>document.body.className += ' js-enabled' + ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');</script>
@@ -229,13 +195,13 @@
 
     <div class="govuk-predheader govuk-width-container">
       <div class="govuk-header__logo">
-        <a href="index.html" class="govuk-header__link govuk-header__link--homepage vps-brand" title="Odkaz na titulnú stránku">
-          <img class="vps-brand__logo" src="assets/images/logo-vps.svg" width="64" height="64" alt="">
+        <a href="../" class="govuk-header__link govuk-header__link--homepage vps-brand" title="Odkaz na titulnú stránku">
+          <img class="vps-brand__logo" src="../assets/images/logo-vps.svg" width="64" height="64" alt="">
           <span class="vps-brand__text">
-            <span class="vps-brand__name">Verejnoprospešné služby Snina</span>
+            <span class="vps-brand__name">Verejnoprospešné služby Snina, s.r.o.</span>
             <span class="vps-brand__org">Mestská spoločnosť · mesto Snina</span>
           </span>
-          <span class="govuk-visually-hidden">Verejnoprospešné služby Snina — titulná stránka</span>
+          <span class="govuk-visually-hidden">Verejnoprospešné služby Snina, s.r.o. — titulná stránka</span>
         </a>
       </div>
       <div class="govuk-header__btns-search">
@@ -244,7 +210,6 @@
             Menu
           </button>
         </div>
-        <a class="govuk-button govuk-button__basic mobile-hidden" href="index.html#kontakt">Kontakt</a>
       </div>
     </div>
 
@@ -253,66 +218,84 @@
       <div class="govuk-header__navigation-list">
         <ul>
           <li class="govuk-header__navigation-item">
-            <a class="govuk-header__link" href="index.html">Domov</a>
+            <a class="govuk-header__link" href="../">Domov</a>
           </li>
           <li class="govuk-header__navigation-item">
-            <a class="govuk-header__link" href="index.html#dokumenty">Dokumenty</a>
+            <a class="govuk-header__link" href="../pohrebne-sluzby/">Pohrebné služby</a>
           </li>
           <li class="govuk-header__navigation-item">
-            <a class="govuk-header__link" href="index.html#pohrebne-sluzby">Pohrebné služby</a>
+            <a class="govuk-header__link" href="../dokumenty/">Dokumenty</a>
           </li>
           <li class="govuk-header__navigation-item">
-            <a class="govuk-header__link" href="index.html#oznamy">Oznamy</a>
+            <a class="govuk-header__link" href="../oznamy/">Oznamy</a>
           </li>
-          <li class="govuk-header__navigation-item">
-            <a class="govuk-header__link" href="index.html#kontakt">Kontakt</a>
+          <li class="govuk-header__navigation-item govuk-header__navigation-item--active" aria-current="page">
+            <a class="govuk-header__link" href="../kontakt/">Kontakt</a>
           </li>
         </ul>
-      </div>
-      <div class="btnWrapper desktop-hidden">
-        <a class="govuk-button govuk-button__basic" href="index.html#kontakt">Kontakt</a>
       </div>
     </nav>
   </header>
 </div>
 
+
 <div class="govuk-width-container">
   <nav class="govuk-breadcrumbs" aria-label="Omrvinková navigácia">
     <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="index.html">Domov</a></li>
-      <li class="govuk-breadcrumbs__list-item" aria-current="page">Cookies a ochrana osobných údajov</li>
+      <li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="../">Domov</a></li>
+      <li class="govuk-breadcrumbs__list-item" aria-current="page">Kontakt</li>
     </ol>
   </nav>
   <main class="govuk-main-wrapper" id="main-content" tabindex="-1">
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Cookies a ochrana osobných údajov</h1>
-
-        <p class="govuk-body-l">Informácie o cookies a ochrane osobných údajov (GDPR) — demo stub pre VPS Snina.</p>
-
-        <h2 class="govuk-heading-m">Prevádzkovateľ</h2>
-        <p class="govuk-body">
-          <strong>Verejnoprospešné služby Snina, s.r.o.</strong><br>
-          Budovateľská 2202/10, 069 01 Snina<br>
-          IČO: 43904157 · E-mail: <a class="govuk-link" href="mailto:info@vpssnina.sk">info@vpssnina.sk</a>
-        </p>
-
-        <h2 class="govuk-heading-m">Cookies</h2>
-        <p class="govuk-body">Táto demo stránka používa len <strong>nevyhnutné technické cookies</strong> (prípadne lokálne nastavenia prehliadača) potrebné na zobrazenie a základnú funkčnosť. Nepoužívame cookies na marketing ani sledovanie tretích strán.</p>
-        <p class="govuk-body">V produkčnej verzii tu bude kompletný zoznam cookies, účely, doba uchovania a možnosti nastavenia súhlasu.</p>
-
-        <h2 class="govuk-heading-m">Ochrana osobných údajov</h2>
-        <p class="govuk-body">Osobné údaje spracúvame v súlade s nariadením (EÚ)&nbsp;2016/679 (GDPR) a zákonom č.&nbsp;18/2018&nbsp;Z.&nbsp;z. typicky na základe zákonnej povinnosti alebo oprávneného záujmu pri poskytovaní služieb a komunikácii s občanmi.</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>Účely: komunikácia, evidencia súvisiaca s pohrebnými službami, zákonné zverejňovanie</li>
-          <li>Práva: prístup, oprava, výmaz (ak zákon dovolí), obmedzenie, námietka, sťažnosť na ÚOOÚ</li>
-          <li>Kontakt na uplatnenie práv: <a class="govuk-link" href="mailto:info@vpssnina.sk">info@vpssnina.sk</a></li>
-        </ul>
-        <p class="govuk-body">Tento text je ukážkový stub pre IDSK&nbsp;3 demo; finálne znenie pripraví prevádzkovateľ pred spustením produkcie.</p>
-
-        <p class="govuk-body"><a class="govuk-link" href="index.html">← Späť na titulnú stránku</a></p>
+        <h1 class="govuk-heading-xl">Kontakt</h1>
       </div>
     </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <h2 class="govuk-heading-m">Adresa a spojenie</h2>
+        <p class="govuk-body">
+          <strong>Verejnoprospešné služby Snina, s.r.o.</strong><br>
+          Budovateľská 2202/10<br>
+          069 01 Snina
+        </p>
+        <p class="govuk-body">
+          Telefón: <a class="govuk-link" href="tel:+421577622594">+421 57 762 25 94</a><br>
+          E-mail: <a class="govuk-link" href="mailto:info@vpssnina.sk">info@vpssnina.sk</a><br>
+          Web: <a class="govuk-link" href="https://www.vpssnina.sk/" target="_blank" rel="noopener noreferrer">www.vpssnina.sk<span class="govuk-visually-hidden"> (otvorí sa v novom okne)</span></a>
+        </p>
+
+        <h2 class="govuk-heading-m">Úradné hodiny</h2>
+        <p class="govuk-body">
+          Pondelok–Piatok<br>
+          Zima: 7:00–15:00<br>
+          Leto: 6:00–14:00
+        </p>
+      </div>
+      <div class="govuk-grid-column-one-half">
+        <h2 class="govuk-heading-m">Fakturačné údaje</h2>
+        <p class="govuk-body">
+          <strong>IČO:</strong> 43904157<br>
+          <strong>DIČ:</strong> 2022508081<br>
+          <strong>IČ DPH:</strong> SK2022508081 (podľa §4)<br>
+          <strong>Register:</strong> Obchodný register Okresného súdu Prešov, oddiel Sro, vložka 19518/P<br>
+          <strong>Spoločník:</strong> mesto Snina (100&nbsp;%)
+        </p>
+      </div>
+    </div>
+
+    <div class="govuk-!-margin-top-8 govuk-!-margin-bottom-2">
+      <h2 class="govuk-heading-m">Spätná väzba</h2>
+      <div class="govuk-inset-text">
+        <p class="govuk-body" style="margin-bottom:0">
+          Spätná väzba bude dostupná po spustení webu.
+        </p>
+      </div>
+    </div>
+
   </main>
 </div>
 
@@ -322,12 +305,11 @@
       <div class="govuk-footer__section govuk-grid-column-two-thirds">
         <h2 class="govuk-footer__heading govuk-heading-m">Navigácia</h2>
         <ul class="govuk-footer__list govuk-footer__list--columns-2">
-          <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="index.html">Domov</a></li>
-          <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="index.html#dokumenty">Dokumenty</a></li>
-          <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="index.html#pohrebne-sluzby">Pohrebné služby</a></li>
-          <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="index.html#oznamy">Oznamy</a></li>
-          <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="index.html#kontakt">Kontakt</a></li>
-          <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="https://www.crz.gov.sk/" target="_blank" rel="noopener noreferrer">Centrálny register zmlúv<span class="govuk-visually-hidden"> (otvorí sa v novom okne)</span></a></li>
+          <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="../">Domov</a></li>
+          <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="../pohrebne-sluzby/">Pohrebné služby</a></li>
+          <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="../dokumenty/">Dokumenty</a></li>
+          <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="../oznamy/">Oznamy</a></li>
+          <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="../kontakt/">Kontakt</a></li>
         </ul>
       </div>
       <div class="govuk-footer__section govuk-grid-column-one-third">
@@ -335,6 +317,7 @@
         <ul class="govuk-footer__list">
           <li class="govuk-footer__list-item">Verejnoprospešné služby Snina, s.r.o.</li>
           <li class="govuk-footer__list-item">Budovateľská 2202/10, 069 01 Snina</li>
+          <li class="govuk-footer__list-item">IČO 43904157</li>
           <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="mailto:info@vpssnina.sk">info@vpssnina.sk</a></li>
           <li class="govuk-footer__list-item"><a class="govuk-footer__link" href="tel:+421577622594">+421 57 762 25 94</a></li>
         </ul>
@@ -346,16 +329,16 @@
         <h2 class="govuk-visually-hidden">Ďalšie odkazy</h2>
         <ul class="govuk-footer__inline-list">
           <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" href="pristupnost.html">Vyhlásenie o prístupnosti</a>
+            <a class="govuk-footer__link" href="../vyhlasenie-o-pristupnosti/">Vyhlásenie o prístupnosti</a>
           </li>
           <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" href="ochrana-udajov.html">Cookies a ochrana osobných údajov</a>
+            <a class="govuk-footer__link" href="../ochrana-udajov/">Cookies a ochrana osobných údajov</a>
           </li>
           <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" href="index.html#kontakt">Kontakt na prevádzkovateľa</a>
+            <a class="govuk-footer__link" href="https://www.crz.gov.sk/" target="_blank" rel="noopener noreferrer">Centrálny register zmlúv<span class="govuk-visually-hidden"> (otvorí sa v novom okne)</span></a>
           </li>
           <li class="govuk-footer__inline-list-item">
-            <a class="govuk-footer__link" href="index.html#oznamy">Oznamy</a>
+            <a class="govuk-footer__link" href="https://www.snina.sk/" target="_blank" rel="noopener noreferrer">Mesto Snina<span class="govuk-visually-hidden"> (otvorí sa v novom okne)</span></a>
           </li>
         </ul>
         <span class="govuk-footer__licence-description">
@@ -364,11 +347,13 @@
           Demo rozhrania vytvorené v súlade s IDSK 3 (Jednotný dizajn manuál elektronických služieb).
           <br>
           IČO 43904157 · DIČ 2022508081 · IČ DPH SK2022508081
+          <br>
+          © 2026 Verejnoprospešné služby Snina, s.r.o.
         </span>
       </div>
       <div class="govuk-footer__meta-item">
-        <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.vpssnina.sk/">
-          <img src="assets/images/logo-vps.svg" alt="VPS Snina">
+        <a class="govuk-footer__link govuk-footer__copyright-logo" href="../">
+          <img src="../assets/images/logo-vps.svg" alt="VPS Snina">
         </a>
       </div>
     </div>
@@ -376,23 +361,21 @@
 </footer>
 
 
+
 <script type="module">
-  import { initAll } from './assets/frontend.min.js';
+  import { initAll } from '../assets/frontend.min.js';
   initAll();
 
-  // Skip link: move focus to main after activation
   const skip = document.querySelector('.govuk-skip-link');
   const main = document.getElementById('main-content');
   if (skip && main) {
     skip.addEventListener('click', function () {
-      // defer until hash navigation / scroll completes
       setTimeout(function () {
         main.focus({ preventScroll: false });
       }, 0);
     });
   }
 
-  // Keep secondary-nav panel out of a11y tree when collapsed
   function syncSecNavHidden() {
     const btn = document.querySelector('.idsk-secondary-navigation__heading-button');
     const panel = document.querySelector('.idsk-secondary-navigation__body');
@@ -416,6 +399,7 @@
     observer.observe(secBtn, { attributes: true, attributeFilter: ['aria-expanded'] });
   }
 </script>
+
 
 </body>
 </html>
