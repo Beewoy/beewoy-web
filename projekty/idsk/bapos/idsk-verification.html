@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>IDSK 3 – overenie komponentov</title>
+  <link rel="stylesheet" href="assets/frontend.min.css">
+</head>
+<body class="govuk-frontend-supported">
+<a class="govuk-skip-link" href="#main-content">Preskočiť na hlavný obsah</a>
+<header class="govuk-header" data-module="govuk-header">
+  <div class="govuk-header__container govuk-width-container">
+    <a href="#main-content" class="govuk-header__link govuk-header__link--homepage">
+      <img src="assets/images/logotyp.svg" alt="Odkaz na domovskú stránku">
+    </a>
+    <nav aria-label="Hlavná navigácia" class="govuk-header__navigation">
+      <ul class="govuk-header__navigation-list">
+        <li class="govuk-header__navigation-item" aria-current="page"><a class="govuk-header__link" href="#buttons">Tlačidlá</a></li>
+        <li class="govuk-header__navigation-item"><a class="govuk-header__link" href="#cards">Kartičky</a></li>
+        <li class="govuk-header__navigation-item"><a class="govuk-header__link" href="#footer">Päta</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<main id="main-content" class="govuk-main-wrapper">
+  <div class="govuk-width-container">
+    <span class="govuk-caption-xl">IDSK 3 Frontend</span>
+    <h1 class="govuk-heading-xl">Overenie oficiálnych komponentov</h1>
+    <p class="govuk-body-l">Táto stránka používa iba markup a build overený z implementačných príkladov IDSK.</p>
+    <section id="buttons" class="govuk-!-margin-top-8">
+      <h2 class="govuk-heading-l">Tlačidlá</h2>
+      <button type="submit" class="govuk-button govuk-button__basic" data-module="govuk-button">Primárne tlačidlo</button>
+      <button type="button" class="govuk-button govuk-button__secondary" data-module="govuk-button">Sekundárne tlačidlo</button>
+      <a href="#cards" class="govuk-button govuk-button__text" data-module="govuk-button">Textové tlačidlo</a>
+    </section>
+    <section id="cards" class="govuk-!-margin-top-8">
+      <h2 class="govuk-heading-l">Kartičky</h2>
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third"><div class="idsk-card"><div class="idsk-card__content"><div class="idsk-card__heading"><h3><a href="#" class="govuk-link">Nadpis kartičky</a></h3></div><div class="idsk-card__description">V tejto časti nájdete všetky potrebné informácie spojené s komponentom.</div></div></div></div>
+        <div class="govuk-grid-column-one-third"><div class="idsk-card"><div class="idsk-card__content"><div class="idsk-card__heading"><h3><a href="#" class="govuk-link">Druhá kartička</a></h3></div><div class="idsk-card__description">Kartička používa oficiálnu IDSK štruktúru a triedy.</div></div></div></div>
+      </div>
+    </section>
+  </div>
+</main>
+<footer id="footer" class="govuk-footer"><div class="govuk-width-container"><div class="govuk-footer__meta"><div class="govuk-footer__meta-item govuk-footer__meta-item--grow"><h2 class="govuk-visually-hidden">Päta stránky</h2><ul class="govuk-footer__inline-list"><li class="govuk-footer__inline-list-item"><a class="govuk-footer__link" href="#">Vyhlásenie o prístupnosti</a></li><li class="govuk-footer__inline-list-item"><a class="govuk-footer__link" href="#">Kontakt na prevádzkovateľa</a></li><li class="govuk-footer__inline-list-item"><a class="govuk-footer__link" href="#">Mapa stránky</a></li></ul><span class="govuk-footer__licence-description">Overovací shell IDSK 3.</span></div></div></div></footer>
+<script src="assets/frontend.file.js"></script>
+</body>
+</html>
