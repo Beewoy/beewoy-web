@@ -8,11 +8,9 @@
 </head>
 <body class="govuk-frontend-supported">
 <a class="govuk-skip-link" href="#main-content">Preskočiť na hlavný obsah</a>
-<header class="govuk-header" data-module="govuk-header">
+<header data-idsk="header" class="w-full font-source-sans-pro bg-white" data-module="govuk-header">
   <div class="govuk-header__container govuk-width-container">
-    <a href="#main-content" class="govuk-header__link govuk-header__link--homepage">
-      <img src="assets/images/logotyp.svg" alt="Odkaz na domovskú stránku">
-    </a>
+    <a href="#main-content" class="govuk-header__link govuk-header__link--homepage"><img src="assets/images/logotyp.svg" alt=""><span>BAPOS, mestský podnik Bardejov</span></a>
     <nav aria-label="Hlavná navigácia" class="govuk-header__navigation">
       <ul class="govuk-header__navigation-list">
         <li class="govuk-header__navigation-item" aria-current="page"><a class="govuk-header__link" href="#buttons">Tlačidlá</a></li>
@@ -20,12 +18,13 @@
         <li class="govuk-header__navigation-item"><a class="govuk-header__link" href="#footer">Päta</a></li>
       </ul>
     </nav>
+    <nav data-idsk="website-navigation" class="idsk-website-nav" aria-label="Hlavná navigácia"><div class="govuk-width-container"><ul class="govuk-header__navigation-list"><li><a class="govuk-header__link" href="#buttons">Komponenty</a></li><li><a class="govuk-header__link" href="#footer">Päta</a></li></ul></div></nav>
 </header>
 <main id="main-content" class="govuk-main-wrapper">
 <div class="govuk-width-container">
     <section class="govuk-!-margin-top-8">
       <h2 class="govuk-heading-l">Všetky overené IDSK komponenty</h2>
-      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion"><div class="govuk-accordion__section"><h3 class="govuk-accordion__section-heading"><span class="govuk-accordion__section-button">Akordeón</span></h3><div class="govuk-accordion__section-content"><p class="govuk-body">Obsah akordeónu.</p></div></div></div>
+      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion"><div class="govuk-accordion__section"><h3 class="govuk-accordion__section-heading"><button type="button" class="govuk-accordion__section-button" aria-controls="accordion-content" aria-expanded="false"><span class="govuk-accordion__section-heading-text"><span class="govuk-accordion__section-heading-text-focus">Akordeón</span></span><span class="govuk-accordion__section-toggle"><span class="govuk-accordion__section-toggle-text">Zobraziť</span></span></button></h3><div id="accordion-content" class="govuk-accordion__section-content"><p class="govuk-body">Obsah akordeónu.</p></div></div></div>
       <div class="govuk-notification-banner" role="region" aria-labelledby="notification-title"><div class="govuk-notification-banner__header"><h3 class="govuk-notification-banner__title" id="notification-title">Informačná lišta</h3></div><div class="govuk-notification-banner__content"><p class="govuk-notification-banner__heading">Dôležitá informácia pre používateľa.</p></div></div>
       <nav class="govuk-breadcrumbs" aria-label="Omrvinková navigácia"><ol class="govuk-breadcrumbs__list"><li class="govuk-breadcrumbs__list-item"><a class="govuk-breadcrumbs__link" href="#">Domov</a></li><li class="govuk-breadcrumbs__list-item" aria-current="page">Komponenty</li></ol></nav>
       <div class="govuk-inset-text">Lišta spätnej väzby: <a class="govuk-link" href="#">Pomohla vám táto stránka?</a></div>
