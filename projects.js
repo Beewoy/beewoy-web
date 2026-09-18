@@ -12,7 +12,7 @@
       category: "Interiéry na mieru",
       type: "Webová stránka · Interiéry na mieru",
       result:
-        "Moderná prezentácia stolárskej dielne so silným hero, jasnými službami (kuchyne, vstavané skrine, nábytok) a jednoduchou cestou k bezplatnej konzultácii.",
+        "Z neprehľadnej prezentácie vznikol jasný web stolárskej dielne — služby, realizácie a jednoduchá cesta k bezplatnej konzultácii na jednom mieste.",
       resultShort:
         "Moderná prezentácia stolárskej dielne so silným hero a jasnou cestou k konzultácii.",
       image: "assets/projects/ceko-hero.jpg",
@@ -26,7 +26,7 @@
       category: "Športový klub",
       type: "Webová stránka · Športový klub",
       result:
-        "Komunitný web pre hokejbal a areál Alviano — členstvo, tréningy, tréneri a kontakt na jednom mieste. Čitateľná štruktúra pre rodičov aj dospelých hráčov.",
+        "Roztrieštené informácie o tréningoch a členstve sme spojili do čitateľného komunitného webu pre rodičov aj dospelých hráčov.",
       resultShort:
         "Členstvo, tréningy a kontakt na jednom mieste.",
       image: "assets/projects/skvajnory-hero.jpg",
@@ -40,7 +40,7 @@
       category: "Interiérový dizajn",
       type: "Webová stránka · Interiérový dizajn · EN/FR/PL",
       result:
-        "Prémiová viacjazyčná stránka pre európske stolárske a dizajnové štúdio — služby, projekty a proces od konceptu po montáž.",
+        "Viacjazyčný web predstavuje služby, projekty a proces európskeho dizajnového štúdia od prvého konceptu po montáž.",
       resultShort:
         "Prémiová viacjazyčná stránka od konceptu po montáž.",
       image: "assets/projects/br-interior-hero.jpg",
@@ -55,7 +55,7 @@
       type: "Vlastný digitálny produkt",
       ownProduct: true,
       result:
-        "Webová a Android aplikácia pre organizáciu tímových udalostí — tréningy, zápasy, RSVP, kapacita, čakáreň a komunikácia na jednom mieste.",
+        "Organizáciu tréningov, zápasov a RSVP sme premenili na webovú a Android aplikáciu s kapacitou, čakárňou a komunikáciou v jednom nástroji.",
       resultShort:
         "Organizácia tímových udalostí a komunikácie na jednom mieste.",
       image: "assets/projects/timio-hero.jpg",
@@ -71,7 +71,7 @@
       category: "Mestská spoločnosť",
       type: "Webová stránka · Verejné služby",
       result:
-        "Prehľadný informačný web pre mestskú spoločnosť — pohrebné služby, zverejňovanie dokumentov, kontakty a praktické informácie pre obyvateľov Sniny.",
+        "Zložité mestské informácie sme usporiadali do prehľadného produkčného webu — pohrebné služby, dokumenty, kontakty a praktické informácie pre obyvateľov Sniny.",
       resultShort:
         "Prehľadný web mestských služieb, dokumentov a kontaktov.",
       image: "assets/projects/vps-snina-hero.png",
