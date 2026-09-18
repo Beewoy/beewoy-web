@@ -3,7 +3,6 @@
   const HOME_LIST_SLUGS = [
     "vps-snina",
     "timio",
-    "jessu-redizajn",
   ];
 
   const PROJECTS = [
@@ -46,106 +45,8 @@
         "Prémiová viacjazyčná stránka od konceptu po montáž.",
       image: "assets/projects/br-interior-hero.jpg",
       alt: "Hero sekcia webu BR Interior & Exterior — luxury interior design",
-      url: "https://brinteriorexterior.netlify.app/en",
-      linkLabel: "brinteriorexterior.netlify.app",
-    },
-    {
-      slug: "magic-ranch",
-      name: "Magic Ranch Čáry",
-      category: "Jazdecký areál",
-      type: "Webová stránka · Jazdecký areál",
-      result:
-        "Pokojná a autentická prezentácia jazdeckého areálu v Čároch — ustajnenie koní, jazdecký výcvik, tábory a zážitky pre deti aj dospelých.",
-      resultShort:
-        "Prezentačný web areálu, výcviku a táborov.",
-      image: "assets/projects/magic-ranch-hero.jpg",
-      alt: "Hero sekcia webu Magic Ranch Čáry — jazdecký areál a výcvik koní",
-      url: "https://davidkolisek.netlify.app/clients/magicranchcary/",
-      linkLabel: "Magic Ranch Čáry",
-    },
-    {
-      slug: "jessu-redizajn",
-      name: "Autoservis JESSU",
-      category: "Autoservis",
-      type: "Webová stránka · Autoservis a pneuservis",
-      result:
-        "Výrazný redizajn webu pre autoservis a pneuservis v Holíči — služby, dôvody na výber, kontakt a priama cesta k rezervácii termínu.",
-      resultShort:
-        "Redizajn webu autoservisu s jednoduchou rezerváciou termínu.",
-      image: "assets/projects/jessu-redizajn-hero.jpg",
-      alt: "Hero sekcia redizajnu webu Autoservis JESSU v Holíči",
-      url: "https://tiborantal.netlify.app/projects/7/jessu-redizajn.html",
-      linkLabel: "JESSU redizajn",
-    },
-    {
-      slug: "vyskladaj-redesign",
-      name: "Vyskladaj",
-      category: "Pekáreň a catering",
-      type: "Webová stránka · Pekáreň a catering",
-      result:
-        "Hrejivá prezentácia pekárne a kaviarne v Ružinove — čerstvé pečivo, raňajkové krabičky, catering a jednoduché objednanie ponuky.",
-      resultShort:
-        "Web pekárne a kaviarne s ponukou raňajok, krabičiek a cateringu.",
-      image: "assets/projects/vyskladaj-redesign-hero.jpg",
-      alt: "Hero sekcia redizajnu webu Vyskladaj — pekáreň, kaviareň a catering",
-      url: "https://tiborantal.netlify.app/projects/5/vyskladaj-redesign.html",
-      linkLabel: "Vyskladaj redizajn",
-    },
-    {
-      slug: "club-bar-brodske",
-      name: "Club Bar Brodské",
-      category: "Bar a kaviareň",
-      type: "Webová stránka · Bar a kaviareň",
-      result:
-        "Atmosférický web pre lokálny bar a kaviareň v Brodskom — ponuka, galéria, rezervácia stola a spojenie dennej kávy s večerným programom.",
-      resultShort:
-        "Atmosférická prezentácia baru s ponukou, galériou a rezerváciou.",
-      image: "assets/projects/club-bar-brodske-hero.jpg",
-      alt: "Hero sekcia webu Club Bar Brodské — kaviareň a nočný bar",
-      url: "https://davidkolisek.netlify.app/clients/clubbarbrodske/",
-      linkLabel: "Club Bar Brodské",
-    },
-    {
-      slug: "due-fratelli-redesign",
-      name: "Due Fratelli",
-      category: "Motocykle a servis",
-      type: "Webová stránka · Motocykle a servis",
-      result:
-        "Dynamický redizajn pre predajcu motocyklov, skútrov a štvorkoliek — skladové vozidlá, servis, predajne a výrazná cesta ku kontaktu.",
-      resultShort:
-        "Web predajcu motocyklov so skladovou ponukou a servisom.",
-      image: "assets/projects/due-fratelli-redesign-hero.jpg",
-      alt: "Hero sekcia redizajnu webu Due Fratelli — predaj a servis motocyklov",
-      url: "https://tiborantal.netlify.app/projects/8/due-fratelli-redesign",
-      linkLabel: "Due Fratelli redizajn",
-    },
-    {
-      slug: "rutyvet-redizajn",
-      name: "RutyVet",
-      category: "Veterinárna ambulancia",
-      type: "Webová stránka · Veterinárna ambulancia",
-      result:
-        "Dôveryhodná prezentácia veterinárnej ambulancie v Karlovej Vsi — služby, tím, ordinačné hodiny a jednoduchá žiadosť o termín.",
-      resultShort:
-        "Dôveryhodný web ambulancie s objednávkovým formulárom.",
-      image: "assets/projects/rutyvet-redizajn-hero.jpg",
-      alt: "Hero sekcia redizajnu webu RutyVet — veterinárna ambulancia v Karlovej Vsi",
-      url: "https://tiborantal.netlify.app/projects/18/rutyvet-redizajn.html",
-      linkLabel: "RutyVet redizajn",
-    },
-    {
-      slug: "lesteniecom",
-      name: "Leštenie.com",
-      category: "Renovácia svetlometov",
-      type: "Webová stránka · Renovácia svetlometov",
-      result:
-        "Konverzne orientovaná webová stránka pre profesionálne leštenie a renováciu svetlometov v Bratislave — služby, cenník, ukážky práce a jednoduchá cesta k cenovej ponuke.",
-      resultShort:
-        "Prezentácia renovácie svetlometov s jasnou cestou k objednávke.",
-      image: "assets/projects/lesteniecom-hero.jpg",
-      alt: "Hero sekcia webu Leštenie.com — renovácia a leštenie svetlometov v Bratislave",
-      url: "https://davidkolisek.netlify.app/clients/lesteniecom/",
-      linkLabel: "Leštenie.com",
+      url: "https://br-interiorexterior.com/",
+      linkLabel: "br-interiorexterior.com",
     },
     {
       slug: "timio",

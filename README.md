@@ -59,7 +59,7 @@ Potom otvor `http://localhost:3000` (alebo port zo `serve` / `http.server`).
 
 1. [CeKo Interier](https://www.ceko.sk/) — `assets/projects/ceko-hero.jpg`
 2. [Športový klub Vajnory](https://skvajnory.sk/) — `assets/projects/skvajnory-hero.jpg`
-3. [BR Interior & Exterior](https://brinteriorexterior.netlify.app/en) — `assets/projects/br-interior-hero.jpg`
+3. [BR Interior & Exterior](https://br-interiorexterior.com/) — `assets/projects/br-interior-hero.jpg`
 4. [Timio](https://timio.sk/) — `assets/projects/timio-hero.jpg`
 5. [Verejnoprospešné služby Snina](https://beewoy.sk/projekty/idsk/vps-snina/) — `assets/projects/vps-snina-hero.png`
 
