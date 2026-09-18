@@ -3150,7 +3150,7 @@ body.cookie-modal-open { overflow: hidden; }
   gap: 14px;
   padding: 28px 24px 24px;
   border: 1px solid var(--line);
-  background: var(--paper);
+  background: #fff;
 }
 .cennik-plan.popular {
   background: var(--ink);
@@ -3158,6 +3158,29 @@ body.cookie-modal-open { overflow: hidden; }
   border-color: var(--ink);
   box-shadow: 8px 8px 0 var(--yellow);
 }
+.cennik-terms {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+.cennik-terms p {
+  position: relative;
+  margin: 0;
+  padding: 24px 24px 26px;
+  background: #fff;
+  border: 1px solid var(--line);
+  font-size: 1rem;
+  line-height: 1.55;
+}
+.cennik-terms p::before {
+  content: "";
+  display: block;
+  width: 28px;
+  height: 4px;
+  margin-bottom: 24px;
+  background: var(--yellow);
+}
+.cennik-terms strong { display: block; margin-bottom: 8px; font-size: 1.12rem; }
 .cennik-plan-badge {
   position: absolute;
   top: 0;
@@ -3255,6 +3278,31 @@ body.cookie-modal-open { overflow: hidden; }
 .cennik-section-head .section-title {
   max-width: 18ch;
 }
+.cennik-decision-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.cennik-decision {
+  min-height: 260px;
+  padding: 26px 22px 24px;
+  background: #fff;
+}
+.cennik-decision--dark { background: var(--ink); color: #fff; }
+.cennik-decision-number {
+  display: block;
+  margin-bottom: 44px;
+  color: var(--yellow);
+  font: 700 .78rem/1 "Manrope", sans-serif;
+  letter-spacing: .08em;
+}
+.cennik-decision h3 { margin: 0 0 18px; font-size: 1.2rem; line-height: 1.18; }
+.cennik-decision p { margin: 0; color: var(--muted); font-size: .95rem; line-height: 1.5; }
+.cennik-decision--dark p { color: rgba(255,255,255,.7); }
+.cennik-decision p strong { color: var(--ink); }
+.cennik-decision--dark p strong { color: var(--yellow); }
 .cennik-table-wrap {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
@@ -3391,4 +3439,5 @@ body.cookie-modal-open { overflow: hidden; }
 
 @media (max-width: 900px) {
   .cennik-plans { grid-template-columns: 1fr; max-width: 420px; }
+  .cennik-terms, .cennik-decision-grid { grid-template-columns: 1fr; }
 }
