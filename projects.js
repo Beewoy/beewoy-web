@@ -1,6 +1,10 @@
 (() => {
-  const HOME_FEATURED_SLUGS = ["ceko", "br-interior", "jessu-redizajn"];
-  const HOME_LIST_SLUGS = ["club-bar-brodske", "due-fratelli-redesign", "rutyvet-redizajn"];
+  const HOME_FEATURED_SLUGS = ["ceko", "br-interior", "skvajnory"];
+  const HOME_LIST_SLUGS = [
+    "vps-snina",
+    "timio",
+    "jessu-redizajn",
+  ];
 
   const PROJECTS = [
     {
@@ -159,6 +163,20 @@
       linkLabel: "timio.sk",
       secondaryUrl: "https://app.timio.sk/",
       secondaryLinkLabel: "app.timio.sk",
+    },
+    {
+      slug: "vps-snina",
+      name: "Verejnoprospešné služby Snina",
+      category: "Mestská spoločnosť",
+      type: "Webová stránka · Verejné služby",
+      result:
+        "Prehľadný informačný web pre mestskú spoločnosť — pohrebné služby, zverejňovanie dokumentov, kontakty a praktické informácie pre obyvateľov Sniny.",
+      resultShort:
+        "Prehľadný web mestských služieb, dokumentov a kontaktov.",
+      image: "assets/projects/vps-snina-hero.png",
+      alt: "Hero sekcia webu Verejnoprospešné služby Snina",
+      url: "https://beewoy.sk/projekty/idsk/vps-snina/",
+      linkLabel: "VPS Snina",
     },
   ];
 

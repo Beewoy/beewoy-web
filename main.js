@@ -242,7 +242,7 @@
   const nameInput = document.querySelector("#contact-name");
   const formStatus = document.querySelector(".form-status");
   const SEO_OPTION = "SEO, výkon alebo servis";
-  const PACKAGE_IDS = new Set(["start", "profi", "individual", "ine"]);
+  const PACKAGE_IDS = new Set(["basic", "start", "profi", "individual", "neviem"]);
   const PROJECT_TYPE_MAP = {
     redizajn: "Redizajn existujúceho webu",
     novy: "Nový web",
@@ -275,7 +275,7 @@
 
   const applyPreset = (preset) => {
     if (preset === "seo") {
-      if (!setBalikValue("ine")) setBalikValue(SEO_OPTION);
+      if (!setBalikValue("neviem")) setBalikValue(SEO_OPTION);
       return;
     }
     if (PACKAGE_IDS.has(preset)) setBalikValue(preset);
