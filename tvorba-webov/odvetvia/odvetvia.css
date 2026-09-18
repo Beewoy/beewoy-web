@@ -382,7 +382,7 @@
 .ind-related-section .ind-lead { max-width: 42ch; margin-left: auto; margin-right: auto; }
 .ind-related {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
   max-width: 900px;
   margin: 0 auto;
