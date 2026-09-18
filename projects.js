@@ -76,8 +76,8 @@
         "Prehľadný web mestských služieb, dokumentov a kontaktov.",
       image: "assets/projects/vps-snina-hero.png",
       alt: "Hero sekcia webu Verejnoprospešné služby Snina",
-      url: "https://beewoy.sk/projekty/idsk/vps-snina/",
-      linkLabel: "VPS Snina",
+      url: "https://www.vpssnina.sk/",
+      linkLabel: "vpssnina.sk",
     },
   ];
 
