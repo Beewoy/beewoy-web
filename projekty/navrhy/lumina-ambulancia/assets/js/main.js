@@ -86,10 +86,10 @@
     const phone = form.elements.phone.value.trim() || "neuvedené";
     const email = form.elements.email.value.trim();
     const message = form.elements.message.value.trim();
-    const subject = encodeURIComponent("Správa z webu B-DENTA – " + name);
+    const subject = encodeURIComponent("Správa z webu Lumina Dental - " + name);
     const body = encodeURIComponent("Meno: " + name + "\nTelefón: " + phone + "\nE-mail: " + email + "\n\nSpráva:\n" + message);
 
-    status.textContent = "Otváram e-mailovú aplikáciu…";
-    window.location.href = "mailto:bdentasro@gmail.com?subject=" + subject + "&body=" + body;
+    status.textContent = "Otváram e-mailovú aplikáciu...";
+    window.location.href = "mailto:recepcia@luminadental.sk?subject=" + subject + "&body=" + body;
   });
 })();
