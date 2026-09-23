@@ -72,9 +72,8 @@ Homepage zobrazí prvých **6** projektov z `projects.js`, stránka `/referencie
 1. Ulož hero screenshot do `assets/projects/` (ideálne JPG ~1600px široký).
 2. Prípadný HTML náhľad konceptu daj do `projekty/navrhy/<slug>/` (stránky majú `noindex`).
 3. Pridaj záznam do poľa `PROJECTS` v `projects.js` (`name`, `type`, `result`, `resultShort`, `image`, `alt`, `url`, `linkLabel`).
-4. Na stránke `/referencie/` doplň zodpovedajúci `CreativeWork` do JSON-LD v `<head>`.
-5. Homepage aj `/referencie/` si karty vyrenderujú automaticky z `projects.js`.
-
+4. Na stránke `/referencie/` doplň zodpovedajúci `CreativeWork` do JSON-LD v `<head>` **a** statickú kartu do HTML (obsah je SSR kvôli crawlability; `projects.js` homepage stále renderuje dynamicky).
+5. Homepage si karty vyrenderuje z `projects.js`; `/referencie/` číta statické HTML.
 ---
 
 ## SEO / doména
@@ -82,6 +81,29 @@ Homepage zobrazí prvých **6** projektov z `projects.js`, stránka `/referencie
 - Canonical a schema používajú `https://beewoy.sk/`
 - Po deployi over Open Graph (napr. Facebook Sharing Debugger)
 - V Google Search Console pridaj property `beewoy.sk` a odošli `sitemap.xml`
+
+### Canonical host (povinné v Cloudflare Dashboard)
+
+`_redirects` na Cloudflare Pages **nevie** hostname redirecty. Nastav Bulk Redirect:
+
+1. DNS: proxied A záznam `www` → `192.0.2.1` (ak ešte nie je).
+2. **Bulk Redirects** → nový list, napr. `beewoy-apex`:
+
+| Source URL | Target URL | Status | Subpath matching | Preserve query string | Include subdomains |
+| --- | --- | --- | --- | --- | --- |
+| `www.beewoy.sk` | `https://beewoy.sk` | 301 | áno | áno | nie |
+
+3. Vytvor Bulk Redirect Rule, ktorá list používa.
+4. SSL/TLS → **Always Use HTTPS** = On (http → https).
+5. Overenie:
+
+```bash
+curl -sI https://www.beewoy.sk/cennik/?x=1 | head -5
+curl -sI http://beewoy.sk/cennik/?x=1 | head -5
+# očakávaj Location: https://beewoy.sk/cennik/?x=1 a 301
+```
+
+Repo fallback: `functions/_middleware.js` (Pages Functions) + `.htaccess` (Apache).
 
 Ak sa zmení e-mail na `@beewoy.sk`, uprav mailto + texty v `index.html`, `cookies.html`, `ochrana-udajov.html`.
 
@@ -112,7 +134,7 @@ Vygeneruje favicony, maskable PWA ikony a `og-image.png` z `logo.svg`.
 ## Deploy checklist
 
 - [ ] Nasadiť obsah koreňa na hosting pre `beewoy.sk`
-- [ ] HTTPS + redirect `www` → apex (alebo naopak)
+- [ ] Always Use HTTPS + Bulk Redirect `www.beewoy.sk` → `https://beewoy.sk` (301, path + query)
 - [ ] Doplniť IČO / sídlo v ochrane údajov
 - [ ] Overiť cookie banner, OG image, favicon, PWA (Chrome → Application)
 - [ ] Search Console + sitemap

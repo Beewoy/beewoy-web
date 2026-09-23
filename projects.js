@@ -175,6 +175,11 @@
     </article>`;
 
   const renderMount = (mount) => {
+    // Prefer server-rendered markup when present (crawlable without JS).
+    if (mount.hasAttribute("data-refs-static") && mount.children.length > 0) {
+      return;
+    }
+
     const mode = mount.getAttribute("data-refs-mount") || "page";
     const assetBase = mount.getAttribute("data-asset-base") || "";
 

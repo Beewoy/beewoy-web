@@ -747,6 +747,27 @@ h1, h2, h3 {
   letter-spacing: -.02em;
   color: var(--muted);
 }
+.how-industry-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 20px;
+  width: 100%;
+  max-width: 52ch;
+}
+.how-industry-list a {
+  color: var(--ink);
+  font: 600 .95rem/1.35 "Manrope", sans-serif;
+  letter-spacing: -.01em;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.how-industry-list a:hover,
+.how-industry-list a:focus-visible {
+  border-bottom-color: var(--ink);
+}
 .how-industry .how-industry-link {
   flex-shrink: 0;
   min-height: 44px;
@@ -2818,6 +2839,10 @@ body.cookie-modal-open { overflow: hidden; }
     padding-top: 18px;
   }
   .how-industry-copy {
+    max-width: none;
+  }
+  .how-industry-list {
+    grid-template-columns: 1fr;
     max-width: none;
   }
   .how-industry .kicker { margin-bottom: 6px; }

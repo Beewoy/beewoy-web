@@ -180,20 +180,24 @@
       ],
       "faq": [
         {
-          "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "q": "Koľko stojí web pre stolársku dielňu?",
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa rozsahu (napr. viacjazyčnosť alebo väčšia galéria). Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
-          "a": "Pri pripravených podkladoch vieme dodať web aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+          "a": "Pri pripravených podkladoch a fotkách realizácií vieme dodať web aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu galérie."
         },
         {
           "q": "Ako sa aktualizujú nové realizácie?",
-          "a": "Zmeny obsahu a nové projekty riešime v rámci mesačnej starostlivosti — podľa dohody v pláne."
+          "a": "Nové projekty a fotky dopĺňame v rámci mesačnej starostlivosti — podľa dohody v pláne Start alebo Profi."
         },
         {
-          "q": "Potrebujem e-shop?",
-          "a": "Zvyčajne nie. Pre zákazky na mieru stačí galéria a dopytový formulár."
+          "q": "Potrebujem e-shop na nábytok?",
+          "a": "Zvyčajne nie. Pri zákazkách na mieru stačí galéria, popis procesu a dopytový formulár. E-shop dáva zmysel len pri skladovom sortimente."
+        },
+        {
+          "q": "Čo ak nemám profesionálne fotky?",
+          "a": "Začneme s tým, čo máte, a nastavíme štruktúru galérie. Lepšie fotky vieme doplniť neskôr bez prestavby webu."
         }
       ],
       "related": [
@@ -217,18 +221,40 @@
       "final_text": "Napíšte nám o dielni a tom, čo na webe chýba. Pripravíme nezáväzný pohľad na rozsah.",
       "layout": {
         "hero_centered": true,
-        "show_audience": false,
-        "show_scenario": false,
-        "show_checklist": false,
+        "show_audience": true,
+        "show_scenario": true,
+        "show_checklist": true,
         "show_secondary_cta": false,
-        "show_process_steps": false,
+        "show_process_steps": true,
         "pricing_model": "packages",
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -430,7 +456,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -498,9 +524,31 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -707,20 +755,24 @@
       ],
       "faq": [
         {
-          "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "q": "Koľko stojí web pre ambulanciu?",
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
-          "a": "Pri pripravených podkladoch vieme dodať web aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+          "a": "Pri pripravených podkladoch (služby, hodiny, tím) vieme dodať web aj do 48 hodín od schválenia návrhu."
         },
         {
           "q": "Objednávka online alebo telefón?",
-          "a": "Záleží od procesu ambulancie. Často funguje kombinácia: formulár + výrazný telefón."
+          "a": "Záleží od procesu ambulancie. Často funguje kombinácia: formulár + výrazný telefón. Online kalendár vieme doplniť, ak ho používate."
         },
         {
-          "q": "GDPR vo formulári?",
-          "a": "Pripravíme zrozumiteľný súhlas a odkaz na ochranu údajov."
+          "q": "Ako riešite GDPR vo formulári?",
+          "a": "Pripravíme zrozumiteľný súhlas a odkaz na ochranu údajov — bez právnického žargónu, ale v súlade s praxou ambulancie."
+        },
+        {
+          "q": "Čo má byť na webe ambulancie povinné?",
+          "a": "Služby, ordinačné hodiny, kontakt, tím alebo lekár, cesta k objednaniu a mapa. Bez toho pacient odchádza inam."
         }
       ],
       "related": [
@@ -770,18 +822,40 @@
       "features_title": "Funkcie pre dentálnu prax",
       "layout": {
         "hero_centered": true,
-        "show_audience": false,
-        "show_scenario": false,
-        "show_checklist": false,
+        "show_audience": true,
+        "show_scenario": true,
+        "show_checklist": true,
         "show_secondary_cta": false,
         "show_process_steps": false,
         "pricing_model": "packages",
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -989,7 +1063,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -1057,9 +1131,31 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -1266,20 +1362,24 @@
       ],
       "faq": [
         {
-          "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "q": "Koľko stojí web pre reštauráciu?",
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
-          "a": "Pri pripravených podkladoch vieme dodať web aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+          "a": "Pri pripravenom menu a fotkách vieme dodať web aj do 48 hodín od schválenia návrhu."
         },
         {
           "q": "Online menu alebo PDF?",
-          "a": "Odporúčame aktuálne HTML menu na webe — PDF rýchlo zastaráva. Aktualizácie riešime v rámci starostlivosti."
+          "a": "Odporúčame HTML menu na webe — PDF rýchlo zastaráva a na mobile sa zle číta. Aktualizácie riešime v starostlivosti."
         },
         {
-          "q": "Ako sa aktualizuje menu?",
-          "a": "Menu držíme aktuálne v rámci starostlivosti. PDF namiesto toho neodporúčame — rýchlo zastaráva."
+          "q": "Ako riešite rezervácie stolov?",
+          "a": "Jednoduchý formulár, telefón, alebo napojenie na existujúci booking — podľa toho, čo už v prevádzke používate."
+        },
+        {
+          "q": "Potrebujem aj rozvoz / objednávky?",
+          "a": "Ak rozvážate, dáme jasný odkaz na Wolt, Bolt alebo vlastný formulár. Primárne však web drží menu, hodiny a rezerváciu."
         }
       ],
       "related": [
@@ -1326,18 +1426,40 @@
       "process_intro": "Spolupráca prebieha priamo s Davidom a Tiborom — bez account managerov.",
       "layout": {
         "hero_centered": true,
-        "show_audience": false,
-        "show_scenario": false,
-        "show_checklist": false,
+        "show_audience": true,
+        "show_scenario": true,
+        "show_checklist": true,
         "show_secondary_cta": false,
         "show_process_steps": false,
         "pricing_model": "packages",
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -1540,7 +1662,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -1608,9 +1730,31 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -1817,20 +1961,24 @@
       ],
       "faq": [
         {
-          "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "q": "Koľko stojí web pre elektrikára?",
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
-          "a": "Pri pripravených podkladoch vieme dodať web aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+          "a": "Pri pripravených službách a regióne vieme dodať web aj do 48 hodín od schválenia návrhu."
         },
         {
-          "q": "Lokálne SEO?",
-          "a": "Áno — technický základ a lokálny obsah, aby vás našli ľudia v regióne."
+          "q": "Ako uviesť oprávnenia a certifikácie?",
+          "a": "Stručne a zrozumiteľne na webe — nie len v šuflíku. Zákazník ich hľadá pred výjazdom."
         },
         {
-          "q": "Ako uviesť certifikácie?",
-          "a": "Stručne a zrozumiteľne na webe — nie len v šuflíku."
+          "q": "Čo ak robím havárie / nonstop?",
+          "a": "Výrazný telefón a jasný blok „havarijný výjazd“ majú byť hneď na mobile. Formulár nestačí ako jediný kontakt."
+        },
+        {
+          "q": "Stačí Facebook namiesto webu?",
+          "a": "Facebook mizne z vyhľadávania. Web drží služby, región a telefón — aj keď socials spadnú alebo ich algoritmus zmení."
         }
       ],
       "related": [
@@ -1877,18 +2025,40 @@
       "process_intro": "Spolupráca prebieha priamo s Davidom a Tiborom — bez account managerov.",
       "layout": {
         "hero_centered": true,
-        "show_audience": false,
-        "show_scenario": false,
-        "show_checklist": false,
+        "show_audience": true,
+        "show_scenario": true,
+        "show_checklist": true,
         "show_secondary_cta": false,
         "show_process_steps": false,
         "pricing_model": "packages",
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -2132,28 +2302,27 @@
       ],
       "faq": [
         {
-          "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "q": "Koľko stojí web pre autoservis?",
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
-          "a": "Pri pripravených podkladoch vieme dodať web aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+          "a": "Pri pripravenom zozname služieb a cenníku vieme dodať web aj do 48 hodín od schválenia návrhu."
         },
         {
-          "q": "Online objednávka alebo telefón?",
-          "a": "Najčastejšie funguje kombinácia: formulár na termín + výrazný telefón. Presný proces nastavíme podľa vašej prevádzky."
+          "q": "Online objednávka termínu alebo telefón?",
+          "a": "Najčastejšie funguje kombinácia: formulár na termín + výrazný telefón. Presný proces nastavíme podľa dielne."
         },
         {
           "q": "Ako riešiť sezónne prezutie?",
-          "a": "Pripravíme sezónny blok alebo upozornenie — aktualizácie vieme riešiť v rámci mesačnej starostlivosti."
+          "a": "Pripravíme sezónny blok alebo upozornenie na pneuservis — aktualizácie vieme riešiť v mesačnej starostlivosti."
+        },
+        {
+          "q": "Má byť na webe cenník prác?",
+          "a": "Orientačný cenník (diagnostika, výmena oleja, prezutie) znižuje zbytočné hovory. Presné ceny môžu zostať „od“."
         }
       ],
       "related": [
-        {
-          "slug": "logistika-spedicia",
-          "label": "Logistika",
-          "blurb": "B2B web pre dopravu a spedíciu"
-        },
         {
           "slug": "elektrikar",
           "label": "Elektrikár",
@@ -2163,24 +2332,51 @@
           "slug": "stavebna-firma",
           "label": "Stavebná firma",
           "blurb": "Dôvera a dopyty"
+        },
+        {
+          "slug": "stahovanie-vypratavanie",
+          "label": "Sťahovanie",
+          "blurb": "Lokálne dopyty a termíny"
         }
       ],
       "final_title": "Web, ktorý privedie termíny — nie len návštevy.",
       "final_text": "Napíšte nám o servise a tom, čo na webe chýba. Pripravíme nezáväzný pohľad na rozsah.",
       "layout": {
         "hero_centered": true,
-        "show_audience": false,
-        "show_scenario": false,
-        "show_checklist": false,
+        "show_audience": true,
+        "show_scenario": true,
+        "show_checklist": true,
         "show_secondary_cta": false,
         "show_process_steps": false,
         "pricing_model": "packages",
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -2425,7 +2621,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -2470,9 +2666,31 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -2712,7 +2930,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -2757,9 +2975,31 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -3004,7 +3244,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -3049,9 +3289,31 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -3296,7 +3558,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -3341,9 +3603,31 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -3588,7 +3872,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -3633,9 +3917,31 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -3874,20 +4180,24 @@
       ],
       "faq": [
         {
-          "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "q": "Koľko stojí web pre kaderníctvo?",
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
-          "a": "Pri pripravených podkladoch vieme dodať web aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+          "a": "Pri pripravenom cenníku a fotkách vieme dodať web aj do 48 hodín od schválenia návrhu."
         },
         {
           "q": "Vlastný formulár alebo booking systém?",
-          "a": "Oboje vieme napojiť. Vyberieme podľa vašej prevádzky a veľkosti tímu."
+          "a": "Oboje vieme napojiť (napr. Reservio, Bookio). Vyberieme podľa veľkosti tímu a toho, čo už používate."
         },
         {
-          "q": "Stačí Instagram?",
-          "a": "Instagram pomáha, ale web drží cenník, hodiny a rezerváciu — aj keď socials spadnú."
+          "q": "Stačí Instagram namiesto webu?",
+          "a": "Instagram pomáha s galériou, ale web drží cenník, hodiny a rezerváciu — aj keď socials spadnú alebo účet zablokujú."
+        },
+        {
+          "q": "Má byť na webe cenník podľa kaderníka?",
+          "a": "Áno, ak máte viac ľudí s rôznymi cenami. Zákazník si vyberie skôr, než zavolá."
         }
       ],
       "related": [
@@ -3897,32 +4207,54 @@
           "blurb": "Rezervácie a cenník"
         },
         {
-          "slug": "restauracia",
-          "label": "Reštaurácia",
-          "blurb": "Lokálna prevádzka a rezervácie"
-        },
-        {
           "slug": "fitness-centrum",
           "label": "Fitness centrum",
           "blurb": "Cenník a návštevnosť"
+        },
+        {
+          "slug": "cukraren",
+          "label": "Cukráreň",
+          "blurb": "Lokálna prevádzka a objednávky"
         }
       ],
       "final_title": "Web, ktorý privedie rezervácie — nie len like.",
       "final_text": "Napíšte nám o salóne a tom, čo na webe chýba.",
       "layout": {
         "hero_centered": true,
-        "show_audience": false,
-        "show_scenario": false,
-        "show_checklist": false,
+        "show_audience": true,
+        "show_scenario": true,
+        "show_checklist": true,
         "show_secondary_cta": false,
         "show_process_steps": false,
         "pricing_model": "packages",
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -4162,7 +4494,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -4207,9 +4539,31 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -4449,7 +4803,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -4494,9 +4848,31 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -4731,7 +5107,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -4776,9 +5152,31 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -5018,7 +5416,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -5063,9 +5461,31 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -5305,7 +5725,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -5350,9 +5770,31 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -5581,7 +6023,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -5626,9 +6068,31 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -5857,7 +6321,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -5902,9 +6366,31 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -6133,7 +6619,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -6178,9 +6664,31 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -6410,7 +6918,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -6455,9 +6963,31 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",
@@ -6686,7 +7216,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -6731,9 +7261,31 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Tri plány, žiadna viazanosť. Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
         "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
           {
             "id": "start",
             "name": "Start",

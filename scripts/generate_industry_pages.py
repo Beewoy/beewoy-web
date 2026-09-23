@@ -347,15 +347,43 @@ def render_faq(faqs: list[dict]) -> str:
 
 def render_related(items: list[dict], depth_to_tv: str = "../") -> str:
     links = []
-    for r in items:
-        icon_key = INDUSTRY_ICONS.get(r["slug"], "spark")
+    for r in items[:5]:
+        slug = r["slug"]
+        icon_key = INDUSTRY_ICONS.get(slug, "spark")
+        label = r.get("short_name") or r.get("label") or slug
         links.append(
-            f'''<a class="reveal" href="{depth_to_tv}pre-{e(r["slug"])}/">
+            f'''<a class="reveal" href="{depth_to_tv}pre-{e(slug)}/">
           <span class="ind-related-icon" aria-hidden="true">{icon_html(icon_key)}</span>
-          <strong>{e(r["short_name"])}</strong>
+          <strong>{e(label)}</strong>
         </a>'''
         )
-    return f'<div class="ind-related">{"".join(links)}</div>'
+    more = (
+        f'<p class="ind-related-all reveal">'
+        f'<a class="text-link" href="{depth_to_tv}odvetvia/">Všetky odvetvia <span class="arrow">→</span></a>'
+        f"</p>"
+    )
+    return f'<div class="ind-related">{"".join(links)}</div>{more}'
+
+
+def resolve_related(ind: dict, all_inds: list[dict] | None) -> list[dict]:
+    """Use explicit related list from data (max 5); never dump all industries."""
+    by_slug = {i["slug"]: i for i in (all_inds or [])}
+    out: list[dict] = []
+    for entry in (ind.get("related") or [])[:5]:
+        slug = entry["slug"] if isinstance(entry, dict) else str(entry)
+        peer = by_slug.get(slug)
+        if not peer:
+            continue
+        label = None
+        if isinstance(entry, dict):
+            label = entry.get("label") or entry.get("short_name")
+        out.append(
+            {
+                "slug": peer["slug"],
+                "short_name": label or peer["short_name"],
+            }
+        )
+    return out
 
 
 def render_industry(ind: dict, all_inds=None) -> str:
@@ -373,7 +401,7 @@ def render_industry(ind: dict, all_inds=None) -> str:
     show_process = layout.get("show_process_steps", True)
     pricing_model = layout.get("pricing_model", "factors")
     hide_depth = layout.get("hide_depth_in_kicker", False)
-    peers = [i for i in (all_inds or []) if i["slug"] != slug]
+    peers = resolve_related(ind, all_inds)
 
     graph = {
         "@context": "https://schema.org",
@@ -762,16 +790,31 @@ def update_sitemap(slugs: list[str]) -> None:
         ("https://beewoy.sk/cennik/", "0.9", "monthly"),
         ("https://beewoy.sk/kontakt/", "0.9", "monthly"),
         ("https://beewoy.sk/referencie/", "0.7", "monthly"),
-        ("https://beewoy.sk/ochrana-udajov/", "0.3", "yearly"),
-        ("https://beewoy.sk/cookies/", "0.3", "yearly"),
     ]
-    parts = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    parts = [
+        '<?xml version="1.0" encoding="UTF-8"?>',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+    ]
     for loc, pri, freq in urls:
         parts.append(
-            f"  <url>\n    <loc>{loc}</loc>\n    <lastmod>{TODAY}</lastmod>\n    <changefreq>{freq}</changefreq>\n    <priority>{pri}</priority>\n  </url>"
+            f"  <url>\n"
+            f"    <loc>{loc}</loc>\n"
+            f"    <changefreq>{freq}</changefreq>\n"
+            f"    <priority>{pri}</priority>\n"
+            f"  </url>"
         )
     parts.append("</urlset>\n")
     sm.write_text("\n".join(parts), encoding="utf-8")
+
+
+PRIORITY_TEASER_SLUGS = (
+    "stolarstvo-interiery",
+    "zubna-ambulancia",
+    "restauracia",
+    "autoservis-pneuservis",
+    "elektrikar",
+    "kadernictvo-barbershop",
+)
 
 
 def patch_tvorba_webov(inds: list[dict]) -> None:
@@ -784,10 +827,8 @@ def patch_tvorba_webov(inds: list[dict]) -> None:
     marker = '  <section class="section dark" id="faq"'
     if marker not in text:
         return
-    tips = [
-        i for i in inds
-        if i["slug"] in {"stolarstvo-interiery", "zubna-ambulancia", "restauracia", "elektrikar"}
-    ] or inds[:4]
+    by_slug = {i["slug"]: i for i in inds}
+    tips = [by_slug[s] for s in PRIORITY_TEASER_SLUGS if s in by_slug] or inds[:6]
     cards = "".join(
         f'''
         <a class="reveal" href="./pre-{e(i['slug'])}/">

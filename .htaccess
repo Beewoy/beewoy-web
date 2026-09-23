@@ -1,5 +1,10 @@
 RewriteEngine On
 
+# Canonical host: https://beewoy.sk (path + query preserved)
+RewriteCond %{HTTPS} !=on [OR]
+RewriteCond %{HTTP_HOST} ^www\.beewoy\.sk$ [NC]
+RewriteRule ^ https://beewoy.sk%{REQUEST_URI} [R=301,L]
+
 # 301 from legacy .html URLs to clean trailing-slash paths
 RewriteRule ^referencie\.html$ /referencie/ [R=301,L]
 RewriteRule ^ochrana-udajov\.html$ /ochrana-udajov/ [R=301,L]
