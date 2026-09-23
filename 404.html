@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>404 – Stránka sa nenašla | Beewoy</title>
+<meta name="description" content="Táto stránka sa nenašla. Odkaz môže byť neaktuálny alebo bola stránka presunutá.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#f3f0e8">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+
+<link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/styles.css" as="style">
+<link rel="stylesheet" href="/styles.css">
+<style>
+  .not-found-page {
+    padding: 140px 0 100px;
+    min-height: calc(100svh - 220px);
+    display: flex;
+    align-items: center;
+  }
+  .not-found-page .wrap { max-width: 640px; }
+  .not-found-page .kicker { margin-bottom: 18px; }
+  .not-found-code {
+    margin: 0 0 12px;
+    font: 700 clamp(4.2rem, 14vw, 7rem)/.9 "Manrope", sans-serif;
+    letter-spacing: -.06em;
+    color: rgba(21, 21, 21, .1);
+    user-select: none;
+  }
+  .not-found-page h1 {
+    max-width: 14ch;
+    margin-bottom: 16px;
+    font-size: clamp(2rem, 5vw, 3.1rem);
+    font-weight: 600;
+  }
+  .not-found-lead {
+    margin: 0 0 36px;
+    max-width: 38ch;
+    color: var(--muted);
+    font-size: 1.05rem;
+    line-height: 1.55;
+  }
+  .not-found-actions { margin-bottom: 48px; }
+  .not-found-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 28px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+  .not-found-links a {
+    color: #47453f;
+    font: 600 .9rem/1 "Manrope", sans-serif;
+    transition: color .25s, transform .3s var(--ease);
+  }
+  .not-found-links a:hover {
+    color: #000;
+    transform: translateY(-1px);
+  }
+  .not-found-footer { padding-top: 80px; }
+  @media (max-width: 600px) {
+    .not-found-page { padding: 110px 0 72px; min-height: auto; }
+    .not-found-actions .btn { width: 100%; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#obsah">Preskočiť na obsah</a>
+
+<header class="header scrolled" id="siteHeader">
+  <div class="header-inner">
+    <a class="logo" href="/" aria-label="Beewoy — úvod">
+      <img src="/logo.svg" alt="Beewoy logo" width="26" height="29">beewoy
+    </a>
+    <nav class="nav" aria-label="Hlavná navigácia">
+      <a href="/tvorba-webov/">Tvorba webov</a>
+      <a href="/cennik/">Cenník</a>
+      <a href="/referencie/">Referencie</a>
+      <a href="/kontakt/">Kontakt</a>
+    </nav>
+    <a class="btn btn-primary legal-header-cta" href="/kontakt/">Chcem web <span class="arrow">→</span></a>
+  </div>
+</header>
+
+<main id="obsah" class="not-found-page">
+  <div class="wrap">
+    <p class="kicker">Stránka sa nenašla</p>
+    <p class="not-found-code" aria-hidden="true">404</p>
+    <h1>Táto stránka sa nenašla.</h1>
+    <p class="not-found-lead">Odkaz môže byť neaktuálny alebo bola stránka presunutá.</p>
+    <div class="not-found-actions">
+      <a class="btn btn-primary" href="/">Späť na úvod <span class="arrow">→</span></a>
+    </div>
+    <nav class="not-found-links" aria-label="Užitočné odkazy">
+      <a href="/tvorba-webov/">Tvorba webov</a>
+      <a href="/referencie/">Referencie</a>
+      <a href="/cennik/">Cenník</a>
+      <a href="/kontakt/">Kontakt</a>
+    </nav>
+  </div>
+</main>
+
+<section class="final not-found-footer" aria-label="Pätička">
+  <div class="wrap">
+    <footer class="footer">
+      <a class="logo" href="/"><img src="/logo.svg" alt="Beewoy" width="26" height="29">beewoy</a>
+      <nav class="footer-links" aria-label="Pätičková navigácia">
+        <a href="/">Domov</a>
+        <a href="/tvorba-webov/">Tvorba webov</a>
+        <a href="/cennik/">Cenník</a>
+        <a href="/referencie/">Referencie</a>
+        <a href="/kontakt/">Kontakt</a>
+        <a href="/cookies/">Cookies</a>
+        <a href="/ochrana-udajov/">Ochrana údajov</a>
+      </nav>
+      <span>© 2026 Beewoy</span>
+      <div class="footer-legal">
+        <button type="button" data-cookie-settings>Nastavenia cookies</button>
+      </div>
+    </footer>
+  </div>
+</section>
+
+<script src="/cookies.js" defer></script>
+<script src="/analytics.js" defer></script>
+</body>
+</html>
