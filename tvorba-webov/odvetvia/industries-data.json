@@ -1,7 +1,7 @@
 {
   "hub": {
     "title": "Weby podľa odvetvia | Beewoy",
-    "description": "Tvorba webov pre konkrétne odvetvia na Slovensku. Stolárstvo, ambulancie, autoservis, kaderníctvo, realitky, fitness, sťahovanie, gastro a ďalšie. Plány Start, Profi a Individual.",
+    "description": "Tvorba webov pre konkrétne odvetvia na Slovensku. Stolárstvo, ambulancie, autoservis, kaderníctvo, realitky, fitness, materské školy, veterinári, sťahovanie, gastro a ďalšie. Plány Start, Profi a Individual.",
     "h1": "Weby podľa odvetvia",
     "lead": "Každé odvetvie má iné otázky, iný spôsob dopytu a inú dôveru. Preto nepredávame univerzálnu šablónu — navrhujeme web podľa toho, čo vaši zákazníci skutočne potrebujú nájsť."
   },
@@ -790,6 +790,11 @@
           "slug": "rehabilitacne-centrum",
           "label": "Rehabilitačné centrum",
           "blurb": "Objednávky a dôvera"
+        },
+        {
+          "slug": "veterinarna-klinika",
+          "label": "Veterinárna klinika",
+          "blurb": "Služby a objednanie"
         }
       ],
       "final_title": "Web, ktorý pacientovi uľahčí rozhodnutie.",
@@ -6948,6 +6953,11 @@
           "slug": "nechtovy-salon",
           "label": "Nechtový salón",
           "blurb": "Cenník a rezervácie"
+        },
+        {
+          "slug": "materska-skola",
+          "label": "Materská škola",
+          "blurb": "Program a prijímanie"
         }
       ],
       "final_title": "Web, ktorý privedie nových členov.",
@@ -7348,6 +7358,604 @@
               {
                 "label": "Ideálne pre",
                 "value": "väčší región alebo viac služieb"
+              }
+            ],
+            "cta": "Chcem Individual"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "materska-skola",
+      "name": "Materská škola",
+      "short_name": "Materská škola",
+      "cluster": "Šport, vzdelávanie a komunity",
+      "depth": "compact",
+      "hub_blurb": "Web pre materskú školu: program, prijímanie, školné a dôvera pre rodičov.",
+      "title": "Tvorba webu pre materskú školu | Beewoy",
+      "description": "Web pre materskú školu: denný program, prijímanie detí, školné a kontakt. Start, Profi alebo Individual — Beewoy.",
+      "h1": "Web pre materskú školu",
+      "hero_lead": "Rodič chce vedieť, ako u vás vyzerá deň, či sú voľné miesta a koľko stojí školné. Navrhneme web, ktorý to ukáže jasne — a privedie prihlášky bez chaosu medzi sociálnymi sieťami a telefónom.",
+      "hero_proof": [
+        "Denný program",
+        "Prijímanie",
+        "Školné",
+        "Jasná cena"
+      ],
+      "cta_primary": "Chcem web pre materskú školu",
+      "cta_secondary": "",
+      "audience": "Pre súkromné aj obecné materské školy, ktoré chcú rodičom ukázať program, priestory a cestu k zápisu.",
+      "problems_intro": "Pri výbere škôlky rozhoduje dôvera, program a praktické informácie. Slabý web to nenesie.",
+      "problems": [
+        {
+          "t": "Prijímanie nie je jasné",
+          "d": "Rodič nevie, či sú voľné miesta a kedy je zápis."
+        },
+        {
+          "t": "Program chýba",
+          "d": "Denný režim, jazyky a aktivity nie sú popísané."
+        },
+        {
+          "t": "Školné je skryté",
+          "d": "Bez prehľadu poplatkov rastie neistota."
+        },
+        {
+          "t": "Priestory nie sú viditeľné",
+          "d": "Fotky tried a dvora rozhodujú o dôvere."
+        }
+      ],
+      "help_intro": "Dobrý web materskej školy je program, prijímanie a jasný kontakt na jednom mieste.",
+      "help_points": [
+        {
+          "t": "Ukázovať program",
+          "d": "Deň, aktivity, jazyky.",
+          "icon": "school"
+        },
+        {
+          "t": "Vysvetliť zápis",
+          "d": "Termíny a voľné miesta.",
+          "icon": "calendar"
+        },
+        {
+          "t": "Vyjasniť školné",
+          "d": "Poplatky bez hádania.",
+          "icon": "tag"
+        },
+        {
+          "t": "Budovať dôveru",
+          "d": "Tím, priestory, fotky.",
+          "icon": "shield"
+        }
+      ],
+      "features_intro": "Funkcie pre materskú školu — kompaktne a prakticky.",
+      "features": [
+        {
+          "t": "Denný program",
+          "d": "Režim, aktivity a prístup.",
+          "icon": "list"
+        },
+        {
+          "t": "Prijímanie detí",
+          "d": "Zápis, vek a voľné miesta.",
+          "icon": "calendar"
+        },
+        {
+          "t": "Školné a poplatky",
+          "d": "Prehľadné ceny.",
+          "icon": "tag"
+        },
+        {
+          "t": "Priestory a galéria",
+          "d": "Triedy, dvor, jedáleň.",
+          "icon": "image"
+        },
+        {
+          "t": "Dokumenty pre rodičov",
+          "d": "Prihlášky a tlačivá.",
+          "icon": "edit"
+        },
+        {
+          "t": "Tím",
+          "d": "Učiteľky a vedenie.",
+          "icon": "users"
+        },
+        {
+          "t": "Mapa a kontakt",
+          "d": "Adresa, hodiny, telefón.",
+          "icon": "map"
+        },
+        {
+          "t": "Mobil a SEO",
+          "d": "Lokálne vyhľadávanie.",
+          "icon": "smartphone"
+        }
+      ],
+      "scenario_title": "Cesta rodiča",
+      "scenario_intro": "Typický priebeh pred prihláškou:",
+      "scenario": [
+        "Hľadá škôlku v okolí.",
+        "Prečíta program a pozrie priestory.",
+        "Overí školné a termín zápisu.",
+        "Zavolá alebo pošle prihlášku.",
+        "Vy dostanete jasnejší dopyt."
+      ],
+      "process_intro": "Spolupráca prebieha priamo s Davidom a Tiborom — bez account managerov.",
+      "process": [
+        {
+          "t": "Úvodná konzultácia",
+          "d": "Prejdeme škôlku, rodičov, súčasný stav a cieľ webu."
+        },
+        {
+          "t": "Rozsah a ponuka",
+          "d": "Navrhneme štruktúru, priority, harmonogram a individuálnu cenu."
+        },
+        {
+          "t": "Obsah a návrh",
+          "d": "Pripravíme osnovu, texty a vizuál podľa odvetvia."
+        },
+        {
+          "t": "Vývoj a spustenie",
+          "d": "Postavíme web, otestujeme formuláre, rýchlosť a SEO základ."
+        },
+        {
+          "t": "Podpora",
+          "d": "Po štarte vieme web udržiavať a rozvíjať."
+        }
+      ],
+      "price_intro": "Cenu ovplyvňuje najmä rozsah:",
+      "price_factors": [
+        "Program a stránky",
+        "Galéria",
+        "Dokumenty",
+        "Starostlivosť",
+        "Migrácia",
+        "Rozvoj"
+      ],
+      "proof_title": "Checklist webu materskej školy",
+      "proof_intro": "Kompaktná odvetvová stránka s jasným checklistom.",
+      "checklist": [
+        "Program",
+        "Prijímanie",
+        "Školné",
+        "Galéria",
+        "Dokumenty",
+        "Kontakt",
+        "SEO"
+      ],
+      "faq": [
+        {
+          "q": "Koľko stojí web?",
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+        },
+        {
+          "q": "Ako dlho trvá dodávka?",
+          "a": "Pri pripravených podkladoch vieme dodať web aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+        },
+        {
+          "q": "Vieme zobraziť voľné miesta a zápis?",
+          "a": "Áno. Sekcia s termínom zápisu, vekom detí a stavom miest — aktualizovateľná v rámci starostlivosti."
+        },
+        {
+          "q": "Dajú sa na web dať prihlášky na stiahnutie?",
+          "a": "Áno. Prihlášky, súhlasy a ďalšie tlačivá pre rodičov vieme umiestniť na jedno miesto."
+        }
+      ],
+      "related": [
+        {
+          "slug": "fitness-centrum",
+          "label": "Fitness centrum",
+          "blurb": "Lokálna komunita"
+        },
+        {
+          "slug": "psycholog-ambulancia",
+          "label": "Psychológ",
+          "blurb": "Dôvera a kontakt"
+        },
+        {
+          "slug": "zubna-ambulancia",
+          "label": "Zubná ambulancia",
+          "blurb": "Ordinačné hodiny a objednanie"
+        }
+      ],
+      "final_title": "Web, ktorý rodičom uľahčí výber škôlky.",
+      "final_text": "Napíšte nám o škôlke a tom, čo rodičia na webe dnes nenájdu.",
+      "layout": {
+        "hero_centered": true,
+        "show_audience": false,
+        "show_scenario": false,
+        "show_checklist": false,
+        "show_process_steps": false,
+        "show_secondary_cta": false,
+        "pricing_model": "packages",
+        "hide_depth_in_kicker": true
+      },
+      "packages": {
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
+          {
+            "id": "start",
+            "name": "Start",
+            "price": "39€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web + starostlivosť"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "v cene"
+              },
+              {
+                "label": "Ideálne pre",
+                "value": "škôlky, ktoré chcú program a prijímanie"
+              }
+            ],
+            "cta": "Chcem Start"
+          },
+          {
+            "id": "profi",
+            "name": "Profi",
+            "price": "59€",
+            "period": "/mes",
+            "popular": true,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web + aktívny rast"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "v cene"
+              },
+              {
+                "label": "Rast",
+                "value": "Google profil, voľné miesta, socials"
+              }
+            ],
+            "cta": "Chcem Profi"
+          },
+          {
+            "id": "individual",
+            "name": "Individual",
+            "custom": true,
+            "price_label": "Dohodou",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web na mieru"
+              },
+              {
+                "label": "Rozsah",
+                "value": "podľa dohody"
+              },
+              {
+                "label": "Ideálne pre",
+                "value": "viac tried alebo viacero prevádzok"
+              }
+            ],
+            "cta": "Chcem Individual"
+          }
+        ]
+      }
+    },
+    {
+      "slug": "veterinarna-klinika",
+      "name": "Veterinárna klinika",
+      "short_name": "Veterinárna klinika",
+      "cluster": "Zdravie a starostlivosť",
+      "depth": "compact",
+      "hub_blurb": "Web pre veterinára: služby, ordinačné hodiny, objednanie a dôvera majiteľov zvierat.",
+      "title": "Tvorba webu pre veterinára | Beewoy",
+      "description": "Web pre veterinárnu kliniku: služby, ordinačné hodiny, objednanie termínu a kontakt. Start, Profi alebo Individual — Beewoy.",
+      "h1": "Web pre veterinárnu kliniku",
+      "hero_lead": "Majiteľ zvieraťa chce vedieť, čo ošetrujete, kedy máte otvorené a ako sa objednať. Navrhneme web, ktorý to ukáže jasne — a privedie termíny bez zbytočných telefonátov.",
+      "hero_proof": [
+        "Služby",
+        "Ordinačné hodiny",
+        "Objednanie",
+        "Jasná cena"
+      ],
+      "cta_primary": "Chcem web pre veterinára",
+      "cta_secondary": "",
+      "audience": "Pre veterinárne ambulancie a kliniky, ktoré chcú prehľadné služby, hodiny a cestu k termínu.",
+      "problems_intro": "Pri výbere veterinára rozhoduje dôvera, dostupnosť a jasné služby. Slabý web to nenesie.",
+      "problems": [
+        {
+          "t": "Služby sú neprehľadné",
+          "d": "Preventívka, chirurgia, laboratórium — čo robíte?"
+        },
+        {
+          "t": "Objednanie je zložité",
+          "d": "Telefón v pätičke nestačí, keď majiteľ hľadá termín."
+        },
+        {
+          "t": "Pohotovosť nie je viditeľná",
+          "d": "Nie je jasné, kedy ste otvorení a kam volať mimo hodín."
+        },
+        {
+          "t": "Chýba dôvera",
+          "d": "Tím, vybavenie a druhy zvierat ostávajú skryté."
+        }
+      ],
+      "help_intro": "Dobrý web veterinára je služby, hodiny a objednanie na jednom mieste.",
+      "help_points": [
+        {
+          "t": "Vyjasniť služby",
+          "d": "Čo ošetrujete a pre koho.",
+          "icon": "paw"
+        },
+        {
+          "t": "Ukázovať hodiny",
+          "d": "Ordinačné časy a pohotovosť.",
+          "icon": "clock"
+        },
+        {
+          "t": "Uľahčiť termín",
+          "d": "Formulár alebo kontakt.",
+          "icon": "calendar"
+        },
+        {
+          "t": "Budovať dôveru",
+          "d": "Tím a vybavenie.",
+          "icon": "shield"
+        }
+      ],
+      "features_intro": "Funkcie pre veterinárnu kliniku — kompaktne a prakticky.",
+      "features": [
+        {
+          "t": "Prehľad služieb",
+          "d": "Prevencia, chirurgia, diagnostika.",
+          "icon": "list"
+        },
+        {
+          "t": "Druhy zvierat",
+          "d": "Psy, mačky, exoty.",
+          "icon": "paw"
+        },
+        {
+          "t": "Ordinačné hodiny",
+          "d": "Vrátane pohotovosti.",
+          "icon": "clock"
+        },
+        {
+          "t": "Objednanie termínu",
+          "d": "Formulár s dôvodom návštevy.",
+          "icon": "calendar"
+        },
+        {
+          "t": "Tím a vybavenie",
+          "d": "Lekári a prístroje.",
+          "icon": "users"
+        },
+        {
+          "t": "Orientačný cenník",
+          "d": "Znižuje neistotu pred návštevou.",
+          "icon": "tag"
+        },
+        {
+          "t": "Mapa a kontakt",
+          "d": "Adresa a telefón.",
+          "icon": "map"
+        },
+        {
+          "t": "Mobil a SEO",
+          "d": "Lokálne vyhľadávanie.",
+          "icon": "smartphone"
+        }
+      ],
+      "scenario_title": "Cesta majiteľa",
+      "scenario_intro": "Typický priebeh pred objednaním:",
+      "scenario": [
+        "Hľadá veterinára v okolí.",
+        "Overí služby a ordinačné hodiny.",
+        "Pozrie tím alebo cenník.",
+        "Objedná termín.",
+        "Vy dostanete použiteľný dopyt."
+      ],
+      "process_intro": "Spolupráca prebieha priamo s Davidom a Tiborom — bez account managerov.",
+      "process": [
+        {
+          "t": "Úvodná konzultácia",
+          "d": "Prejdeme kliniku, klientov, súčasný stav a cieľ webu."
+        },
+        {
+          "t": "Rozsah a ponuka",
+          "d": "Navrhneme štruktúru, priority, harmonogram a individuálnu cenu."
+        },
+        {
+          "t": "Obsah a návrh",
+          "d": "Pripravíme osnovu, texty a vizuál podľa odvetvia."
+        },
+        {
+          "t": "Vývoj a spustenie",
+          "d": "Postavíme web, otestujeme formuláre, rýchlosť a SEO základ."
+        },
+        {
+          "t": "Podpora",
+          "d": "Po štarte vieme web udržiavať a rozvíjať."
+        }
+      ],
+      "price_intro": "Cenu ovplyvňuje najmä rozsah:",
+      "price_factors": [
+        "Počet služieb",
+        "Formulár",
+        "Cenník",
+        "Starostlivosť",
+        "Migrácia",
+        "Rozvoj"
+      ],
+      "proof_title": "Checklist webu veterinárnej kliniky",
+      "proof_intro": "Kompaktná odvetvová stránka s jasným checklistom.",
+      "checklist": [
+        "Služby",
+        "Hodiny",
+        "Objednanie",
+        "Tím",
+        "Cenník",
+        "Mapa",
+        "SEO"
+      ],
+      "faq": [
+        {
+          "q": "Koľko stojí web?",
+          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+        },
+        {
+          "q": "Ako dlho trvá dodávka?",
+          "a": "Pri pripravených podkladoch vieme dodať web aj do 48 hodín od schválenia zadania. Presný termín potvrdíme podľa rozsahu."
+        },
+        {
+          "q": "Dá sa na webe objednať termín?",
+          "a": "Áno. Formulár s druhom zvieraťa a dôvodom návštevy. Prepojenie na rezervačný systém vieme doplniť podľa dohody."
+        },
+        {
+          "q": "Ako uviesť pohotovosť?",
+          "a": "Ordinačné hodiny a pohotovostný kontakt dáme na viditeľné miesto — v hlavičke aj na kontaktnej stránke."
+        }
+      ],
+      "related": [
+        {
+          "slug": "zubna-ambulancia",
+          "label": "Zubná ambulancia",
+          "blurb": "Ordinačné hodiny a objednanie"
+        },
+        {
+          "slug": "rehabilitacne-centrum",
+          "label": "Rehabilitačné centrum",
+          "blurb": "Služby a dôvera"
+        },
+        {
+          "slug": "gynekologia-ambulancia",
+          "label": "Gynekologická ambulancia",
+          "blurb": "Web pre ambulanciu"
+        }
+      ],
+      "final_title": "Web, ktorý privedie termíny na kliniku.",
+      "final_text": "Napíšte nám o ambulancii a tom, čo majitelia zvierat na webe dnes nenájdu.",
+      "layout": {
+        "hero_centered": true,
+        "show_audience": false,
+        "show_scenario": false,
+        "show_checklist": false,
+        "show_process_steps": false,
+        "show_secondary_cta": false,
+        "pricing_model": "packages",
+        "hide_depth_in_kicker": true
+      },
+      "packages": {
+        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
+        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "items": [
+          {
+            "id": "basic",
+            "name": "Basic",
+            "price": "19€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Jednoduchý informačný web"
+              },
+              {
+                "label": "Prevádzka",
+                "value": "hosting, SSL a technický základ"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "od 15 € za objednávku"
+              }
+            ],
+            "cta": "Chcem Basic"
+          },
+          {
+            "id": "start",
+            "name": "Start",
+            "price": "39€",
+            "period": "/mes",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web + starostlivosť"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "v cene"
+              },
+              {
+                "label": "Ideálne pre",
+                "value": "kliniky, ktoré chcú služby a objednanie"
+              }
+            ],
+            "cta": "Chcem Start"
+          },
+          {
+            "id": "profi",
+            "name": "Profi",
+            "price": "59€",
+            "period": "/mes",
+            "popular": true,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web + aktívny rast"
+              },
+              {
+                "label": "Zmeny obsahu",
+                "value": "v cene"
+              },
+              {
+                "label": "Rast",
+                "value": "Google profil, služby, socials"
+              }
+            ],
+            "cta": "Chcem Profi"
+          },
+          {
+            "id": "individual",
+            "name": "Individual",
+            "custom": true,
+            "price_label": "Dohodou",
+            "popular": false,
+            "rows": [
+              {
+                "label": "Čo je to",
+                "value": "Web na mieru"
+              },
+              {
+                "label": "Rozsah",
+                "value": "podľa dohody"
+              },
+              {
+                "label": "Ideálne pre",
+                "value": "väčšie kliniky alebo viacero pobočiek"
               }
             ],
             "cta": "Chcem Individual"
