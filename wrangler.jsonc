@@ -6,6 +6,8 @@
     "enabled": true
   },
   "assets": {
-    "directory": "."
+    "directory": ".",
+    // Serve /404.html with HTTP 404 for unmatched paths (default is empty body).
+    "not_found_handling": "404-page"
   }
 }
