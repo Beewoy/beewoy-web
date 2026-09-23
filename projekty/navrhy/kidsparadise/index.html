@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Súkromná materská škola Kids Paradise v Bratislave — Petržalka a Ružinov. Deti 2–6 rokov, učenie hrou.">
+  <meta name="theme-color" content="#fff8ec">
+  <title>Kids Paradise | Súkromná materská škola v Bratislave</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Nunito:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container topbar-inner">
+      <a class="topbar-note" href="letna-skolka.html"><span class="topbar-dot"></span> Letná škôlka 2027 — viac info</a>
+      <div class="topbar-links">
+        <a href="tel:+421908036888"><i data-lucide="phone"></i> Petržalka 0908 036 888</a>
+        <a href="tel:+421905677964"><i data-lucide="phone"></i> Ružinov 0905 677 964</a>
+      </div>
+    </div>
+  </div>
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-inner">
+      <a class="brand" href="index.html" aria-label="Kids Paradise – domov">
+        <img src="https://www.kidsparadise.sk/engine/wp-content/themes/kidsparadise/images/logo-kids-paradise.png" alt="Kids Paradise">
+      </a>
+      <nav aria-label="Hlavná navigácia">
+        <ul class="nav-links">
+          <li class="nav-dropdown">
+            <button type="button" class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">Pobočky <i data-lucide="chevron-down"></i></button>
+            <div class="nav-dropdown-menu" role="menu">
+              <a href="petrzalka.html" role="menuitem">Petržalka</a>
+              <a href="ruzinov.html" role="menuitem">Ružinov</a>
+            </div>
+          </li>
+          <li><a href="ako-to-u-nas-funguje.html">Ako to u nás funguje</a></li>
+          <li><a href="cennik.html">Cenník</a></li>
+          <li><a href="galeria.html">Galéria</a></li>
+          <li><a href="prijimanie.html">Prijímanie</a></li>
+          <li><a href="kontakt.html">Kontakt</a></li>
+        </ul>
+      </nav>
+      <a class="btn btn-primary nav-cta header-cta" href="prijimanie.html">Overiť voľné miesto <i data-lucide="arrow-up-right"></i></a>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Otvoriť menu" aria-expanded="false">
+        <i data-lucide="menu"></i>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobilná navigácia">
+    <div class="mobile-sub">
+      <button type="button" class="mobile-subtoggle" aria-expanded="false">Pobočky <i data-lucide="chevron-down"></i></button>
+      <div class="mobile-subpanel">
+        <a href="petrzalka.html">Petržalka</a>
+        <a href="ruzinov.html">Ružinov</a>
+      </div>
+    </div>
+    <a href="ako-to-u-nas-funguje.html">Ako to u nás funguje</a>
+    <a href="cennik.html">Cenník</a>
+    <a href="galeria.html">Galéria</a>
+    <a href="prijimanie.html">Prijímanie</a>
+    <a href="kontakt.html">Kontakt</a>
+    <a class="btn btn-primary" href="prijimanie.html">Overiť voľné miesto</a>
+  </nav>
+  <main>
+
+    <section class="hero" id="domov">
+      <div class="container hero-grid">
+        <div class="hero-copy" data-reveal>
+          <div class="eyebrow"><i data-lucide="sparkles"></i> Súkromná materská škola v Bratislave</div>
+          <h1>Miesto, kde deti rady <span class="highlight">objavujú</span> svet</h1>
+          <p class="hero-lead">Láskavé a podnetné prostredie pre deti od 2 do 6 rokov, kde sa učia hrou, objavujú nové veci a môžu byť samy sebou. V Petržalke aj Ružinove.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#pobocky">Pozrieť pobočky <i data-lucide="map-pin"></i></a>
+            <a class="btn btn-secondary" href="prijimanie.html">Prijímanie detí <i data-lucide="arrow-up-right"></i></a>
+          </div>
+        </div>
+        <div class="hero-visual" data-reveal>
+          <div class="hero-wave"></div>
+          <svg class="doodle-star one" viewBox="0 0 60 60" aria-hidden="true"><path fill="currentColor" d="M30 1l5.8 19.2L55 26l-19.2 5.8L30 51l-5.8-19.2L5 26l19.2-5.8L30 1z"/></svg>
+          <svg class="doodle-star two" viewBox="0 0 60 60" aria-hidden="true"><path fill="currentColor" d="M30 1l5.8 19.2L55 26l-19.2 5.8L30 51l-5.8-19.2L5 26l19.2-5.8L30 1z"/></svg>
+          <div class="hero-photo-main">
+            <img src="https://www.kidsparadise.sk/engine/wp-content/uploads/2022/01/petrzalka_interier_1.jpg" alt="Trieda Kids Paradise Petržalka" fetchpriority="high">
+          </div>
+          <div class="hero-photo-small">
+            <img src="https://www.kidsparadise.sk/engine/wp-content/uploads/2022/01/petrzalka_exterier_1.jpg" alt="Ihrisko Kids Paradise Petržalka">
+          </div>
+          <div class="hero-sticker"><span><strong>2–6</strong> rokov</span></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="quick-facts">
+      <div class="container fact-row" data-reveal>
+        <div class="fact">
+          <div class="fact-icon"><i data-lucide="map-pinned"></i></div>
+          <div><strong>Petržalka &amp; Ružinov</strong><span>Bratislava</span></div>
+        </div>
+        <div class="fact">
+          <div class="fact-icon"><i data-lucide="baby"></i></div>
+          <div><strong>Deti 2–6 rokov</strong><span>súkromná materská škola</span></div>
+        </div>
+        <div class="fact">
+          <div class="fact-icon"><i data-lucide="languages"></i></div>
+          <div><strong>Angličtina a nemčina</strong><span>prirodzená komunikácia</span></div>
+        </div>
+        <div class="fact">
+          <div class="fact-icon"><i data-lucide="sun"></i></div>
+          <div><strong>Celodenná starostlivosť</strong><span>aj flexibilné formy</span></div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section pricing" id="pobocky">
+      <div class="container">
+        <div class="section-intro center" data-reveal>
+          <div class="section-kicker">Kde nás nájdete</div>
+          <h2>Vyberte si pobočku, ktorá vám vyhovuje</h2>
+          <p>Kids Paradise pôsobí na dvoch adresách v Bratislave. Každá pobočka má vlastné priestory a kontakt.</p>
+        </div>
+        <div class="price-grid branches">
+          <article class="price-card branch-petrzalka" data-reveal>
+            <div class="price-tag">Petržalka</div>
+            <div class="branch-photo">
+              <img src="https://www.kidsparadise.sk/engine/wp-content/uploads/2022/01/petrzalka_exterier_4.jpg" alt="Kids Paradise Petržalka">
+            </div>
+            <h3>Kids Paradise Petržalka</h3>
+            <p class="price-hours">Vyšehradská 12 a 18<br>851 06 Bratislava – Petržalka</p>
+            <ul class="price-list">
+              <li><i data-lucide="phone"></i> <a href="tel:+421908036888">0908 036 888</a></li>
+              <li><i data-lucide="mail"></i> <a href="mailto:vysehradska@kidsparadise.sk">vysehradska@kidsparadise.sk</a></li>
+            </ul>
+            <a class="btn btn-primary" href="petrzalka.html">Pozrieť pobočku <i data-lucide="arrow-up-right"></i></a>
+          </article>
+          <article class="price-card branch-ruzinov" data-reveal>
+            <div class="price-tag">Ružinov</div>
+            <div class="branch-photo">
+              <img src="https://www.kidsparadise.sk/engine/wp-content/uploads/2022/01/ruzinov_ostatne_6.jpg" alt="Kids Paradise Ružinov">
+            </div>
+            <h3>Kids Paradise Ružinov</h3>
+            <p class="price-hours">Martinčekova 13<br>821 01 Bratislava – Ružinov</p>
+            <ul class="price-list">
+              <li><i data-lucide="phone"></i> <a href="tel:+421905677964">0905 677 964</a></li>
+              <li><i data-lucide="mail"></i> <a href="mailto:stanislava.slovakova@kidsparadise.sk">stanislava.slovakova@kidsparadise.sk</a></li>
+            </ul>
+            <a class="btn btn-primary" href="ruzinov.html">Pozrieť pobočku <i data-lucide="arrow-up-right"></i></a>
+          </article>
+        </div>
+        <div class="branch-help" data-reveal>
+          <p>Nie ste si istí, ktorá pobočka je pre vás vhodnejšia? Ozvite sa nám a radi vám poradíme.</p>
+          <a class="btn btn-secondary" href="kontakt.html">Kontaktovať nás <i data-lucide="message-circle"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="o-nas">
+      <div class="container about-grid">
+        <div class="about-media" data-reveal>
+          <div class="photo-a"><img src="https://www.kidsparadise.sk/engine/wp-content/uploads/2022/01/ruzinov_ostatne_1.jpg" alt="Priestory Kids Paradise Ružinov"></div>
+          <div class="photo-b"><img src="https://www.kidsparadise.sk/engine/wp-content/uploads/2022/01/petrzalka_interier_2.jpg" alt="Trieda v Kids Paradise"></div>
+        </div>
+        <div class="about-copy" data-reveal>
+          <div class="section-kicker">Prečo Kids Paradise</div>
+          <h2>Škôlka, kde má detstvo svoje miesto</h2>
+          <p>Kids Paradise poskytuje starostlivosť o deti vo veku od 2 do 6 rokov a používa učenie hrou. Vytvárame láskavé, otvorené a podmanivé prostredie, kde sa deti cítia príjemne a bezpečne.</p>
+          <ul class="check-list">
+            <li><i data-lucide="check-circle-2"></i> Učenie hrou</li>
+            <li><i data-lucide="check-circle-2"></i> Individuálny rozvoj dieťaťa</li>
+            <li><i data-lucide="check-circle-2"></i> Anglický a nemecký jazyk</li>
+            <li><i data-lucide="check-circle-2"></i> Zážitkové a tematické aktivity</li>
+          </ul>
+          <a class="btn btn-primary" href="ako-to-u-nas-funguje.html">Ako to u nás funguje <i data-lucide="arrow-up-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section experiences" id="program">
+      <div class="container">
+        <div class="section-intro center" data-reveal>
+          <div class="section-kicker">Každý deň je iný</div>
+          <h2>Každý deň priestor objavovať, tvoriť a rásť</h2>
+          <p>Program staviame na hrách, projektoch a tematických aktivitách — tak, aby dieťa napredovalo prirodzene.</p>
+        </div>
+        <div class="experience-grid">
+          <article class="experience-card" data-reveal>
+            <div class="experience-number">01</div>
+            <div class="experience-icon"><i data-lucide="puzzle"></i></div>
+            <h3>Učenie hrou</h3>
+            <p>Hra je základným spôsobom, akým deti spoznávajú svet a rozvíjajú svoje schopnosti.</p>
+          </article>
+          <article class="experience-card" data-reveal>
+            <div class="experience-number">02</div>
+            <div class="experience-icon"><i data-lucide="languages"></i></div>
+            <h3>Jazyky prirodzene</h3>
+            <p>Anglický a nemecký jazyk — možnosť komunikácie v AJ alebo NJ podľa programu pobočky.</p>
+          </article>
+          <article class="experience-card" data-reveal>
+            <div class="experience-number">03</div>
+            <div class="experience-icon"><i data-lucide="palette"></i></div>
+            <h3>Pohyb a tvorivosť</h3>
+            <p>Popoludňajšie krúžky: pohybové, výtvarné, hudobné a dramatické aktivity.</p>
+          </article>
+          <article class="experience-card" data-reveal>
+            <div class="experience-number">04</div>
+            <div class="experience-icon"><i data-lucide="sparkles"></i></div>
+            <h3>Zážitkové učenie</h3>
+            <p>Projekty a tematické edukačné aktivity, ktoré sprevádzajú deti počas dňa a mesiaca.</p>
+          </article>
+        </div>
+        <div class="section-cta-row" data-reveal>
+          <a class="btn btn-secondary" href="ako-to-u-nas-funguje.html">Pozrieť náš program <i data-lucide="arrow-up-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="priestory">
+      <div class="container program-grid">
+        <div class="program-photo" data-reveal>
+          <img src="https://www.kidsparadise.sk/engine/wp-content/uploads/2022/01/petrzalka_exterier_3.jpg" alt="Ihrisko a exteriéry Kids Paradise" loading="lazy">
+          <div class="program-photo-badge">Priestranné triedy, ihrisko a terasa.</div>
+        </div>
+        <div data-reveal>
+          <div class="section-kicker">Priestory</div>
+          <h2>Priestor, kde sa deti môžu cítiť dobre</h2>
+          <p style="color:var(--ink-soft)">Podnetné triedne prostredie, priestranné triedy a ihrisko či terasa na pohyb vonku.</p>
+          <div class="program-list">
+            <div class="program-item">
+              <div class="program-item-icon"><i data-lucide="school"></i></div>
+              <div><h3>Priestranné triedy</h3><p>Priestor na hru, učenie aj oddych.</p></div>
+            </div>
+            <div class="program-item">
+              <div class="program-item-icon"><i data-lucide="trees"></i></div>
+              <div><h3>Ihrisko a terasa</h3><p>Pohyb a pobyt vonku priamo pri škôlke.</p></div>
+            </div>
+            <div class="program-item">
+              <div class="program-item-icon"><i data-lucide="heart"></i></div>
+              <div><h3>Podnetné prostredie</h3><p>Miesto, kde sa deti cítia príjemne a bezpečne.</p></div>
+            </div>
+          </div>
+          <div style="margin-top:24px">
+            <a class="btn btn-secondary" href="#pobocky">Pozrieť naše pobočky <i data-lucide="map-pin"></i></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="cena">
+      <div class="container">
+        <div class="pricing-preview" data-reveal>
+          <div class="section-kicker" style="justify-content:center">Školné 2026/2027</div>
+          <h2>Dochádzka podľa vašich potrieb</h2>
+          <div class="price-from">od 399 € <small>/ mesiac</small></div>
+          <p style="margin:0 auto;max-width:480px;color:var(--ink-soft)">Flexibilné možnosti dochádzky, celodenná starostlivosť a program podľa veku. Strava sa účtuje samostatne.</p>
+          <div class="pricing-chips">
+            <span>3 dni / týždeň</span>
+            <span>5 dní / týždeň</span>
+            <span>Predškolák Plus</span>
+          </div>
+          <a class="btn btn-primary" href="cennik.html">Pozrieť celý cenník <i data-lucide="arrow-up-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section gallery" id="galeria">
+      <div class="container">
+        <div class="section-intro center" data-reveal>
+          <div class="section-kicker">Galéria</div>
+          <h2>Pozrite sa, ako to u nás vyzerá</h2>
+          <p>Interiéry, ihrisko a priestory pobočiek v Petržalke a Ružinove.</p>
+        </div>
+        <div class="gallery-grid" data-reveal>
+          <a class="gallery-item" href="galeria.html"><span class="gallery-badge">Petržalka</span><img src="https://www.kidsparadise.sk/engine/wp-content/uploads/2022/01/petrzalka_interier_3.jpg" alt="Interiér Petržalka" loading="lazy"></a>
+          <a class="gallery-item" href="galeria.html"><span class="gallery-badge">Petržalka</span><img src="https://www.kidsparadise.sk/engine/wp-content/uploads/2022/01/petrzalka_exterier_2.jpg" alt="Ihrisko Petržalka" loading="lazy"></a>
+          <a class="gallery-item" href="galeria.html"><span class="gallery-badge">Ružinov</span><img src="https://www.kidsparadise.sk/engine/wp-content/uploads/2022/01/ruzinov_ostatne_2.jpg" alt="Priestory Ružinov" loading="lazy"></a>
+          <a class="gallery-item" href="galeria.html"><span class="gallery-badge">Petržalka</span><img src="https://www.kidsparadise.sk/engine/wp-content/uploads/2022/01/petrzalka_exterier_5.jpg" alt="Exteriér Petržalka" loading="lazy"></a>
+          <a class="gallery-item" href="galeria.html"><span class="gallery-badge">Ružinov</span><img src="https://www.kidsparadise.sk/engine/wp-content/uploads/2022/01/ruzinov_ostatne_4.jpg" alt="Priestory Ružinov" loading="lazy"></a>
+          <a class="gallery-item" href="galeria.html"><span class="gallery-badge">Petržalka</span><img src="https://www.kidsparadise.sk/engine/wp-content/uploads/2022/01/petrzalka_interier_6.jpg" alt="Trieda Petržalka" loading="lazy"></a>
+        </div>
+        <div class="gallery-cta" data-reveal>
+          <a class="btn btn-secondary" href="galeria.html">Pozrieť celú galériu <i data-lucide="images"></i></a>
+        </div>
+        <div class="gallery-social" data-reveal>
+          <div class="gallery-social-copy">
+            <h3>Každý deň sa u nás niečo deje</h3>
+            <p>Ďalšie momenty zo života Kids Paradise nájdete na našom Instagrame a Facebooku.</p>
+          </div>
+          <div class="gallery-social-actions">
+            <a class="btn btn-ghost" href="https://www.instagram.com/materskaskolakidsparadise/" target="_blank" rel="noopener noreferrer"><i data-lucide="instagram"></i> Instagram</a>
+            <a class="btn btn-ghost" href="https://www.facebook.com/kidsparadise.sk/" target="_blank" rel="noopener noreferrer"><i data-lucide="facebook"></i> Facebook</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="admit" id="prijimanie">
+      <div class="container">
+        <div class="admit-box" data-reveal>
+          <div class="section-kicker" style="justify-content:center">Prijímanie detí</div>
+          <h2>Hľadáte miesto pre svoje dieťa?</h2>
+          <p>Chcete vedieť, či máme voľné miesto v Petržalke alebo Ružinove? Ozvite sa nám a radi vám povieme viac.</p>
+          <div class="admit-actions">
+            <a class="btn btn-primary" href="prijimanie.html">Overiť voľné miesto <i data-lucide="arrow-up-right"></i></a>
+            <a class="btn btn-secondary" href="prijimanie.html">Ako prebieha prijatie <i data-lucide="file-text"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="section" id="faq">
+      <div class="container faq-grid">
+        <div class="faq-side" data-reveal>
+          <div class="section-kicker">FAQ</div>
+          <h2>Čo rodičov zaujíma najčastejšie?</h2>
+          <p>Stručné odpovede. Viac praktických informácií nájdete v sekcii Pre rodičov.</p>
+          <div class="faq-mini">
+            <strong>Viac informácií pre rodičov</strong>
+            <a href="pre-rodicov.html">Prejsť na praktické info →</a>
+          </div>
+        </div>
+        <div class="faq-list" data-reveal>
+          <div class="faq-item open">
+            <button class="faq-question" type="button" aria-expanded="true">Od akého veku prijímate deti?<span class="faq-plus"><i data-lucide="plus"></i></span></button>
+            <div class="faq-answer"><div><p>Prijímame deti vo veku od 2 do 6 rokov.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">Je možné nastúpiť aj počas školského roka?<span class="faq-plus"><i data-lucide="plus"></i></span></button>
+            <div class="faq-answer"><div><p>Áno — v prípade voľného miesta. Odporúčame overiť aktuálnu kapacitu telefonicky alebo cez formulár.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">Aké sú možnosti dochádzky?<span class="faq-plus"><i data-lucide="plus"></i></span></button>
+            <div class="faq-answer"><div><p>Celodenná dochádzka počas celého týždňa, 3 dni v týždni, poldenná forma a program Predškolák Plus. Detaily a ceny sú v cenníku.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">Ako funguje stravovanie?<span class="faq-plus"><i data-lucide="plus"></i></span></button>
+            <div class="faq-answer"><div><p>Stravu zabezpečuje Zdravý projekt. Stravná jednotka je 5,8 € / deň podľa dochádzky. Diéty podľa intolerancií — viac v sekcii Pre rodičov.</p></div></div>
+          </div>
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">Ako môžem zistiť voľnú kapacitu?<span class="faq-plus"><i data-lucide="plus"></i></span></button>
+            <div class="faq-answer"><div><p>Kontaktujte nás telefonicky alebo cez formulár na stránke Prijímanie — radi overíme aktuálne voľné miesta v Petržalke alebo Ružinove.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-about">
+          <a class="footer-logo" href="index.html">
+            <img src="https://www.kidsparadise.sk/engine/wp-content/themes/kidsparadise/images/logo-kids-paradise.png" alt="Kids Paradise">
+          </a>
+          <p>Súkromná materská škola pre deti od 2 do 6 rokov. Petržalka a Ružinov.</p>
+          <h3>Sledujte Kids Paradise</h3>
+          <div class="footer-socials">
+            <a href="https://www.instagram.com/materskaskolakidsparadise/" target="_blank" rel="noopener noreferrer"><i data-lucide="instagram"></i> Instagram</a>
+            <a href="https://www.facebook.com/kidsparadise.sk/" target="_blank" rel="noopener noreferrer"><i data-lucide="facebook"></i> Facebook</a>
+          </div>
+        </div>
+        <div>
+          <h3>Pobočky</h3>
+          <ul class="footer-links">
+            <li><a href="petrzalka.html">Petržalka</a></li>
+            <li><a href="ruzinov.html">Ružinov</a></li>
+          </ul>
+          <h3 style="margin-top:22px">Kids Paradise</h3>
+          <ul class="footer-links">
+            <li><a href="ako-to-u-nas-funguje.html">Ako to u nás funguje</a></li>
+            <li><a href="cennik.html">Cenník</a></li>
+            <li><a href="galeria.html">Galéria</a></li>
+            <li><a href="prijimanie.html">Prijímanie</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Pre rodičov</h3>
+          <ul class="footer-links">
+            <li><a href="pre-rodicov.html">Praktické informácie</a></li>
+            <li><a href="kontakt.html">Kontakt</a></li>
+            <li><a href="letna-skolka.html">Letná škôlka</a></li>
+          </ul>
+        </div>
+        <div class="footer-branch">
+          <h3>Kontakty</h3>
+          <p><strong>Petržalka</strong><br>Vyšehradská 12 a 18<br><a href="tel:+421908036888">0908 036 888</a></p>
+          <p style="margin-top:14px"><strong>Ružinov</strong><br>Martinčekova 13<br><a href="tel:+421905677964">0905 677 964</a></p>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© Kids Paradise. Návrh webu — Beewoy.</span>
+        <span>Prvotný koncept webu</span>
+      </div>
+    </div>
+  </footer>
+
+  <button class="back-top" id="backTop" type="button" aria-label="Späť hore"><i data-lucide="arrow-up"></i></button>
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/site.js" defer></script>
+</body>
+</html>
