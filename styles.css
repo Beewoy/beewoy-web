@@ -1672,6 +1672,16 @@ h1, h2, h3 {
 }
 .contact-intro { margin: 0; max-width: 420px; color: #aaa7a0; font-size: 1.15rem; }
 .contact-form { display: grid; gap: 18px; scroll-margin-top: 0; }
+
+/* Homepage promotion for the price estimator. */
+.price-estimator-promo { padding-top: 74px; padding-bottom: 74px; background: #ebe8df; }
+.price-estimator-promo-inner { display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(280px, .75fr); gap: 48px; align-items: end; }
+.price-estimator-promo-lead { max-width: 660px; margin: 18px 0 0; color: #716f68; font-size: 1.1rem; }
+.price-estimator-promo-action { display: grid; justify-items: start; gap: 18px; padding: 24px; background: #fff; border: 1px solid #d8d5cd; }
+.price-estimator-promo-action span { color: #716f68; font-size: .95rem; }
+@media (max-width: 760px) {
+  .price-estimator-promo-inner { grid-template-columns: 1fr; gap: 28px; }
+}
 .form-honeypot { position: absolute; left: -9999px; }
 .form-field { display: grid; gap: 8px; }
 .form-field label {

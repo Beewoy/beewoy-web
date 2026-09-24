@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="sk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cenová kalkulačka webu | Beewoy</title>
+  <meta name="description" content="Zistite orientačnú cenu nového webu alebo pravidelnej správy. Odpovedzte na pár otázok a Beewoy vám odporučí vhodný balík.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+  <link rel="canonical" href="https://beewoy.sk/kalkulacka/">
+  <meta name="theme-color" content="#f3f0e8">
+  <link rel="icon" href="../favicon.ico" sizes="any">
+  <link rel="stylesheet" href="../styles.css">
+  <script defer src="../main.js"></script>
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"WebPage",
+    "name":"Cenová kalkulačka webu | Beewoy",
+    "url":"https://beewoy.sk/kalkulacka/",
+    "description":"Orientačná kalkulačka ceny webu a pravidelnej starostlivosti od Beewoy.",
+    "isPartOf":{"@id":"https://beewoy.sk/#website"},
+    "inLanguage":"sk-SK"
+  }
+  </script>
+  <style>
+    .calc-hero { padding: 110px 0 64px; }
+    .calc-hero .wrap { max-width: 1080px; }
+    .calc-kicker { display:flex; align-items:center; gap:10px; color:#b18a00; font-size:.78rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+    .calc-kicker i { width:34px; height:2px; background:#f1c40f; }
+    .calc-hero h1 { max-width:850px; margin:20px 0 24px; font-size:clamp(3rem,7vw,6.7rem); line-height:.96; letter-spacing:-.07em; }
+    .calc-hero p { max-width:690px; color:#716f68; font-size:clamp(1.05rem,2vw,1.3rem); }
+    .calc-shell { padding:30px 0 120px; background:#ebe8df; }
+    .calc-box { width:min(1000px,100%); margin:0 auto; background:#fff; border:0; }
+    .calc-progress { display:flex; align-items:center; gap:16px; padding:22px 28px; border-bottom:1px solid #e1ded6; }
+    .calc-progress-bar { flex:1; height:5px; background:#e8e6df; }
+    .calc-progress-bar span { display:block; width:16.66%; height:100%; background:#f1c40f; transition:width .25s ease; }
+    .calc-progress-label { color:#77746c; font-size:.83rem; white-space:nowrap; }
+    .calc-step { display:none; padding:42px 48px 46px; }
+    .calc-step { border:0; margin:0; min-width:0; }
+    .calc-step.is-active { display:block; }
+    .calc-step h2 { margin:0 0 10px; font-size:clamp(1.8rem,4vw,3rem); letter-spacing:-.05em; }
+    .calc-step > p { margin:0 0 28px; color:#77746c; }
+    .calc-options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+    .calc-option { position:relative; }
+    .calc-option input { position:absolute; opacity:0; pointer-events:none; }
+    .calc-option label { display:flex; flex-direction:column; gap:6px; min-height:112px; padding:20px; border:1px solid #d6d3cb; background:#faf9f6; cursor:pointer; transition:.2s ease; }
+    .calc-option label:hover { border-color:#f1c40f; transform:translateY(-2px); }
+    .calc-option input:checked + label { border-color:#111; background:#111; color:#fff; box-shadow:5px 5px 0 #f1c40f; }
+    .calc-option strong { font-size:1.05rem; }
+    .calc-option small { color:#77746c; line-height:1.4; }
+    .calc-option input:checked + label small { color:#d8d6d0; }
+    .calc-nav { display:flex; justify-content:space-between; gap:12px; margin-top:34px; }
+    .calc-nav .btn { min-width:130px; }
+    .calc-nav .back { background:transparent; color:#111; border:1px solid #c9c6be; }
+    .calc-error { min-height:22px; margin-top:16px; color:#a43e35; font-size:.9rem; }
+    .calc-result { display:grid; grid-template-columns:minmax(250px,.78fr) minmax(0,1.22fr); gap:24px; align-items:start; }
+    .calc-result-card { padding:22px; background:#111; color:#fff; }
+    .calc-result-card .calc-kicker { color:#f1c40f; }
+    .calc-result-card h3 { margin:16px 0 4px; font-size:2rem; letter-spacing:-.05em; }
+    .calc-result-price { color:#f1c40f; font-size:1.65rem; font-weight:800; }
+    .calc-result-card p { color:#d8d6d0; }
+    .calc-result-list { margin:22px 0 0; padding:0; list-style:none; }
+    .calc-result-list li { padding:9px 0; border-top:1px solid #333; }
+    .calc-contact { padding:30px; border:1px solid #d6d3cb; background:#faf9f6; }
+    .calc-contact h3 { margin:0 0 8px; font-size:1.65rem; }
+    .calc-contact p { color:#77746c; }
+    .calc-fields { display:grid; gap:13px; margin-top:20px; }
+    .calc-fields label { display:grid; gap:6px; font-size:.9rem; font-weight:700; }
+    .calc-fields input { width:100%; padding:13px 14px; border:1px solid #c9c6be; background:#fff; }
+    .calc-fields input:focus { outline:2px solid #f1c40f; outline-offset:2px; }
+    .calc-consent { display:flex; gap:8px; align-items:flex-start; margin:16px 0; color:#77746c; font-size:.82rem; font-weight:400!important; }
+    .calc-consent input { width:auto; margin-top:4px; }
+    .calc-contact-status { margin:14px 0 0; font-size:.9rem; }
+    .calc-contact-status.success { color:#357052; }
+    .calc-contact-status.error { color:#a43e35; }
+    .calc-seo { padding:80px 0; }
+    .calc-seo .wrap { display:grid; grid-template-columns:1fr 1fr; gap:50px; }
+    .calc-seo h2 { margin-top:0; font-size:clamp(2rem,4vw,3.5rem); letter-spacing:-.06em; }
+    .calc-seo p { color:#716f68; }
+    .calc-seo ul { margin:0; padding-left:20px; color:#4d4b46; }
+    @media(max-width:700px) {
+      .calc-hero { padding:80px 0 44px; }
+      .calc-step { padding:30px 20px 32px; }
+      .calc-progress { padding:18px 20px; }
+      .calc-options,.calc-result,.calc-seo .wrap { grid-template-columns:1fr; }
+      .calc-progress-label { font-size:.75rem; }
+    }
+  </style>
+</head>
+<body>
+<a class="skip" href="#obsah">Preskočiť na obsah</a>
+<header class="header" id="siteHeader">
+  <div class="header-inner">
+    <a class="logo" href="../" aria-label="Beewoy — domov"><img src="../logo.svg" alt="Beewoy logo" width="26" height="29">beewoy</a>
+    <nav class="nav" aria-label="Hlavná navigácia">
+      <a href="../tvorba-webov/">Tvorba webov</a>
+      <a href="../cennik/">Cenník</a>
+      <a href="../referencie/">Referencie</a>
+      <a class="active" href="./">Cenová kalkulačka</a>
+    </nav>
+    <a class="btn btn-primary header-cta" href="#kalkulacka">Vypočítať cenu <span class="arrow">→</span></a>
+    <button class="burger" id="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Otvoriť menu"><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobilná navigácia">
+  <a href="../tvorba-webov/">Tvorba webov</a><a href="../cennik/">Cenník</a><a href="../referencie/">Referencie</a><a href="./">Cenová kalkulačka</a><a href="../kontakt/">Kontakt</a>
+</nav>
+<main id="obsah">
+  <section class="calc-hero">
+    <div class="wrap">
+      <div class="calc-kicker"><i></i> Cenová kalkulačka webu</div>
+      <h1>Koľko by stál web pre vás?</h1>
+      <p>Odpovedzte na pár jednoduchých otázok. Za minútu zistíte, ktorý spôsob spolupráce vám najviac sedí a aký mesačný rozpočet si pripraviť.</p>
+    </div>
+  </section>
+  <section class="calc-shell" id="kalkulacka" aria-label="Kalkulačka ceny webu">
+    <div class="wrap">
+      <div class="calc-box">
+        <div class="calc-progress" aria-live="polite"><div class="calc-progress-bar"><span id="progressBar"></span></div><span class="calc-progress-label" id="progressLabel">1 z 6</span></div>
+        <form id="calculator">
+          <fieldset class="calc-step is-active" data-step="1">
+            <h2>Čo chcete vyriešiť?</h2><p>Vyberte možnosť, ktorá je vám najbližšie.</p>
+            <div class="calc-options">
+              <div class="calc-option"><input id="goal-new" type="radio" name="goal" value="new"><label for="goal-new"><strong>Nový web</strong><small>Začíname od nuly.</small></label></div>
+              <div class="calc-option"><input id="goal-redesign" type="radio" name="goal" value="redesign"><label for="goal-redesign"><strong>Nový vzhľad</strong><small>Web už mám, ale nefunguje podľa predstáv.</small></label></div>
+              <div class="calc-option"><input id="goal-care" type="radio" name="goal" value="care"><label for="goal-care"><strong>Starostlivosť o web</strong><small>Web mám, potrebujem spoľahlivú správu.</small></label></div>
+              <div class="calc-option"><input id="goal-special" type="radio" name="goal" value="special"><label for="goal-special"><strong>Špeciálne riešenie</strong><small>Rezervácie, katalóg, integrácia alebo aplikácia.</small></label></div>
+            </div><p class="calc-error" data-error></p><div class="calc-nav"><span></span><button class="btn btn-primary" type="button" data-next>Pokračovať <span class="arrow">→</span></button></div>
+          </fieldset>
+          <fieldset class="calc-step" data-step="2">
+            <h2>Aký web potrebujete?</h2><p>Nemusíte poznať technické názvy. Stačí vybrať rozsah.</p>
+            <div class="calc-options">
+              <div class="calc-option"><input id="size-one" type="radio" name="size" value="one"><label for="size-one"><strong>Jedna jasná stránka</strong><small>Kontakty, služby, ponuka a výzva k akcii.</small></label></div>
+              <div class="calc-option"><input id="size-company" type="radio" name="size" value="company"><label for="size-company"><strong>Firemný web</strong><small>Viac sekcií, služby, referencie a formulár.</small></label></div>
+              <div class="calc-option"><input id="size-content" type="radio" name="size" value="content"><label for="size-content"><strong>Web, ktorý sa pravidelne mení</strong><small>Aktuality, projekty, obsahová starostlivosť.</small></label></div>
+              <div class="calc-option"><input id="size-system" type="radio" name="size" value="system"><label for="size-system"><strong>Niečo väčšie</strong><small>Katalóg, rezervácie, viac jazykov alebo vlastné funkcie.</small></label></div>
+            </div><p class="calc-error" data-error></p><div class="calc-nav"><button class="btn back" type="button" data-prev>Späť</button><button class="btn btn-primary" type="button" data-next>Pokračovať <span class="arrow">→</span></button></div>
+          </fieldset>
+          <fieldset class="calc-step" data-step="3">
+            <h2>Čo má web vedieť?</h2><p>Vyberte všetko, čo sa vás týka.</p>
+            <div class="calc-options">
+              <div class="calc-option"><input id="feature-leads" type="checkbox" name="features" value="leads"><label for="feature-leads"><strong>Priviesť dopyty</strong><small>Formulár, telefonát alebo jasná výzva.</small></label></div>
+              <div class="calc-option"><input id="feature-gallery" type="checkbox" name="features" value="gallery"><label for="feature-gallery"><strong>Ukázať prácu</strong><small>Galéria realizácií, referencie alebo projekty.</small></label></div>
+              <div class="calc-option"><input id="feature-booking" type="checkbox" name="features" value="booking"><label for="feature-booking"><strong>Rezervácie alebo objednávky</strong><small>Termíny, dopyty alebo jednoduchý booking.</small></label></div>
+              <div class="calc-option"><input id="feature-languages" type="checkbox" name="features" value="languages"><label for="feature-languages"><strong>Viac jazykov</strong><small>Slovenčina plus ďalšie jazykové verzie.</small></label></div>
+              <div class="calc-option"><input id="feature-catalog" type="checkbox" name="features" value="catalog"><label for="feature-catalog"><strong>Katalóg alebo cenník</strong><small>Produkty, služby, parametre alebo ponuka.</small></label></div>
+              <div class="calc-option"><input id="feature-seo" type="checkbox" name="features" value="seo"><label for="feature-seo"><strong>Lokálna viditeľnosť</strong><small>Technický základ a obsah pre vyhľadávanie.</small></label></div>
+            </div><p class="calc-error" data-error></p><div class="calc-nav"><button class="btn back" type="button" data-prev>Späť</button><button class="btn btn-primary" type="button" data-next>Pokračovať <span class="arrow">→</span></button></div>
+          </fieldset>
+          <fieldset class="calc-step" data-step="4">
+            <h2>Akú starostlivosť chcete?</h2><p>Web môže iba fungovať, alebo môže priebežne rásť.</p>
+            <div class="calc-options">
+              <div class="calc-option"><input id="care-basic" type="radio" name="care" value="basic"><label for="care-basic"><strong>Len prevádzka</strong><small>Jednoduchý web, hosting a SSL.</small></label></div>
+              <div class="calc-option"><input id="care-start" type="radio" name="care" value="start"><label for="care-start"><strong>Občasné zmeny</strong><small>Web a bežná starostlivosť bez stresu.</small></label></div>
+              <div class="calc-option"><input id="care-profi" type="radio" name="care" value="profi"><label for="care-profi"><strong>Aktívna starostlivosť</strong><small>Obsah, lokálna viditeľnosť a pravidelný posun.</small></label></div>
+              <div class="calc-option"><input id="care-unsure" type="radio" name="care" value="unsure"><label for="care-unsure"><strong>Neviem, poraďte mi</strong><small>Na konzultácii vyberieme rozumný rozsah.</small></label></div>
+            </div><p class="calc-error" data-error></p><div class="calc-nav"><button class="btn back" type="button" data-prev>Späť</button><button class="btn btn-primary" type="button" data-next>Pokračovať <span class="arrow">→</span></button></div>
+          </fieldset>
+          <fieldset class="calc-step" data-step="5">
+            <h2>Máte už web?</h2><p>Pomôže nám to pripraviť presnejšiu odpoveď.</p>
+            <div class="calc-options">
+              <div class="calc-option"><input id="existing-no" type="radio" name="existing" value="no"><label for="existing-no"><strong>Nie, ešte ho nemám</strong><small>Potrebujem nový web.</small></label></div>
+              <div class="calc-option"><input id="existing-old" type="radio" name="existing" value="old"><label for="existing-old"><strong>Áno, ale potrebuje zmenu</strong><small>Chcem nový vzhľad alebo lepší obsah.</small></label></div>
+              <div class="calc-option"><input id="existing-good" type="radio" name="existing" value="good"><label for="existing-good"><strong>Áno, chcem ho rozvíjať</strong><small>Potrebujem servis alebo nové funkcie.</small></label></div>
+              <div class="calc-option"><input id="existing-unsure" type="radio" name="existing" value="unsure"><label for="existing-unsure"><strong>Nie som si istý</strong><small>Pošlem URL a pozrieme sa naň spolu.</small></label></div>
+            </div>
+            <label class="calc-url-label" style="display:grid;gap:7px;margin-top:22px;font-weight:700" for="website">Ak máte web, môžete pridať jeho URL <span style="font-weight:400;color:#77746c">(nepovinné)</span><input id="website" name="website" type="url" placeholder="https://vasweb.sk" style="padding:13px 14px;border:1px solid #c9c6be;background:#fff"></label>
+            <p class="calc-error" data-error></p><div class="calc-nav"><button class="btn back" type="button" data-prev>Späť</button><button class="btn btn-primary" type="button" data-next>Vyhodnotiť <span class="arrow">→</span></button></div>
+          </fieldset>
+          <fieldset class="calc-step" data-step="6">
+            <h2>Váš orientačný výsledok</h2><p>Podľa odpovedí vám odporúčame tento spôsob spolupráce.</p>
+            <div class="calc-result">
+              <div class="calc-result-card"><div class="calc-kicker"><i></i> Odporúčanie Beewoy</div><h3 id="resultName">Start</h3><div class="calc-result-price" id="resultPrice">39 €/mes</div><p id="resultText">Web s technickou prevádzkou a bežnou starostlivosťou.</p><ul class="calc-result-list" id="resultList"></ul></div>
+              <div class="calc-contact"><h3>Chcete to prebrať?</h3><p>Nechajte nám kontakt. Odpovede z kalkulačky pošleme spolu s vašou správou.</p><div class="calc-fields"><label for="lead-name">Meno alebo firma<input id="lead-name" name="lead_name" required autocomplete="name"></label><label for="lead-email">E-mail<input id="lead-email" name="lead_email" type="email" required autocomplete="email"></label><label for="lead-phone">Telefón <span style="font-weight:400;color:#77746c">(nepovinné)</span><input id="lead-phone" name="lead_phone" type="tel" autocomplete="tel"></label></div><label class="calc-consent"><input id="lead-gdpr" name="gdpr" type="checkbox" required><span>Súhlasím so spracovaním údajov podľa <a href="../ochrana-udajov/">Ochrany osobných údajov</a>.</span></label><button class="btn btn-primary" type="submit">Chcem ponuku <span class="arrow">→</span></button><p class="calc-contact-status" id="contactStatus" role="status" aria-live="polite"></p></div>
+            </div>
+            <div class="calc-nav"><button class="btn back" type="button" data-prev>Upraviť odpovede</button><span></span></div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+  </section>
+  <section class="calc-seo">
+    <div class="wrap"><div><div class="calc-kicker"><i></i> Bez skrytých podmienok</div><h2>Webový balík má dávať zmysel, nie komplikovať rozhodnutie.</h2></div><div><p>Neúčtujeme vstupný poplatok za samotnú prípravu jednoduchého webu. Rozdiel medzi balíkmi je v rozsahu webu a v tom, koľko starostlivosti chcete po spustení.</p><ul><li>Basic od 19 €/mes pre jednoduchý informačný web.</li><li>Start od 39 €/mes pre firemný web a bežnú starostlivosť.</li><li>Profi od 59 €/mes pre aktívny obsah, SEO a pravidelný rast.</li><li>Väčšie funkcie riešime individuálne po dohode.</li></ul></div></div>
+  </section>
+</main>
+<footer class="footer"><div class="wrap"><div class="footer-bottom"><span>© 2026 Beewoy</span><span><a href="../ochrana-udajov/">Ochrana údajov</a> · <a href="../cookies/">Cookies</a> · <a href="../kontakt/">Kontakt</a></span></div></div></footer>
+<script>
+(() => {
+  const form = document.querySelector("#calculator");
+  const steps = [...document.querySelectorAll(".calc-step")];
+  const progress = document.querySelector("#progressBar");
+  const label = document.querySelector("#progressLabel");
+  const status = document.querySelector("#contactStatus");
+  let current = 1;
+  const selected = name => document.querySelector('input[name="' + name + '"]:checked')?.value || "";
+  const errorFor = step => step.querySelector("[data-error]");
+  const validate = step => {
+    const requiredNames = {1:"goal",2:"size",3:"features",4:"care",5:"existing"};
+    const name = requiredNames[Number(step.dataset.step)];
+    const ok = name === "features" ? step.querySelectorAll('input[name="features"]:checked').length > 0 : !!selected(name);
+    errorFor(step).textContent = ok ? "" : "Vyberte, prosím, jednu možnosť.";
+    return ok;
+  };
+  const show = n => {
+    current = n;
+    steps.forEach(step => step.classList.toggle("is-active", Number(step.dataset.step) === n));
+    progress.style.width = (n / steps.length * 100) + "%";
+    label.textContent = n + " z " + steps.length;
+    document.querySelector(".calc-box").scrollIntoView({behavior:"smooth", block:"start"});
+  };
+  const calculate = () => {
+    const goal=selected("goal"), size=selected("size"), care=selected("care");
+    const features=[...document.querySelectorAll('input[name="features"]:checked')].map(x=>x.value);
+    let plan="start", price="39 €/mes", name="Start", text="Firemný web s technickou prevádzkou a bežnou starostlivosťou.", list=["Web s jasnou štruktúrou","Hosting, SSL a technický základ","Zmeny obsahu podľa dohody"];
+    if (goal==="special" || size==="system" || features.some(x=>["booking","languages","catalog"].includes(x))) { plan="individual"; price="Podľa dohody"; name="Individual"; text="Web na mieru s funkciami, ktoré treba najprv presne navrhnúť."; list=["Rozsah podľa konkrétneho zadania","Funkcie a integrácie podľa dohody","Nacenenie ešte pred realizáciou"]; }
+    else if (care==="profi" || size==="content" || features.includes("seo")) { plan="profi"; price="59 €/mes"; name="Profi"; text="Web plus pravidelná práca na obsahu, lokálnej viditeľnosti a raste."; list=["Všetko zo Start","Pravidelná obsahová starostlivosť","Google profil, SEO a priebežný posun"]; }
+    else if (goal==="care" || care==="start" || size==="company" || goal==="redesign") { plan="start"; price="39 €/mes"; name="Start"; text="Spoľahlivý firemný web s hostingom, SSL a zmenami obsahu podľa dohody."; list=["Firemný web s viacerými sekciami","Hosting, SSL a technická prevádzka","Zmeny obsahu podľa dohody"]; }
+    else if (size==="one" && care==="basic" && goal==="new") { plan="basic"; price="19 €/mes"; name="Basic"; text="Jednoduchý jednostránkový informačný web pre firmu, živnostníka alebo službu."; list=["Jedna jasná informačná stránka","Hosting, SSL a technický základ","Zmeny po spustení od 15 € za objednávku"]; }
+    document.querySelector("#resultName").textContent=name;
+    document.querySelector("#resultPrice").textContent=price;
+    document.querySelector("#resultText").textContent=text;
+    document.querySelector("#resultList").innerHTML=list.map(item=>"<li>"+item+"</li>").join("");
+    form.dataset.recommended=plan;
+  };
+  document.querySelectorAll("[data-next]").forEach(button => button.addEventListener("click", () => {
+    const step=button.closest(".calc-step");
+    if (!validate(step)) return;
+    if (current===5) calculate();
+    show(Math.min(6,current+1));
+  }));
+  document.querySelectorAll("[data-prev]").forEach(button => button.addEventListener("click", () => show(Math.max(1,current-1))));
+  form.addEventListener("submit", async event => {
+    event.preventDefault();
+    if (!form.reportValidity()) return;
+    const submit = form.querySelector('button[type="submit"]');
+    submit.disabled=true; submit.setAttribute("aria-busy","true"); status.className="calc-contact-status"; status.textContent="Odosielam…";
+    const data = new FormData(form);
+    data.set("recommended_plan", document.querySelector("#resultName").textContent);
+    data.set("recommended_price", document.querySelector("#resultPrice").textContent);
+    data.set("answers", [...form.querySelectorAll("input:checked")].map(x=>x.name+"="+x.value).join(", "));
+    data.set("_subject", "Nový lead z kalkulačky Beewoy");
+    data.set("_captcha", "false");
+    data.set("_template", "table");
+    const payload=Object.fromEntries(data.entries());
+    try {
+      const response=await fetch("https://formsubmit.co/ajax/ahoj@beewoy.sk",{method:"POST",headers:{"Content-Type":"application/json","Accept":"application/json"},body:JSON.stringify(payload)});
+      const result=await response.json().catch(()=>null);
+      if (!response.ok || result?.success===false || result?.success==="false") throw new Error("submit failed");
+      status.className="calc-contact-status success"; status.textContent="Ďakujeme. Odpovede sme dostali a ozveme sa vám.";
+      submit.textContent="Odoslané ✓";
+      window.BeewoyAnalytics?.track?.("generate_lead",{form_id:"kalkulacka",page_path:window.location.pathname});
+    } catch {
+      status.className="calc-contact-status error"; status.textContent="Odoslanie sa nepodarilo. Napíšte nám na ahoj@beewoy.sk.";
+      submit.disabled=false; submit.removeAttribute("aria-busy");
+    }
+  });
+})();
+</script>
+</body>
+</html>
