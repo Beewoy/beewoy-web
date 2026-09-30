@@ -4,3 +4,6 @@
 /referencie.html    /referencie/    301
 /ochrana-udajov.html    /ochrana-udajov/    301
 /cookies.html    /cookies/    301
+/projekt/navrhy/psycholog    /projekty/navrhy/psycholog/    301
+/projekt/navrhy/psycholog/    /projekty/navrhy/psycholog/    301
+/projekt/navrhy/psycholog/*    /projekty/navrhy/psycholog/:splat    301
