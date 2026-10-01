@@ -19,6 +19,8 @@ wrangler.jsonc
 .venv/**
 node_modules
 node_modules/**
+care
+care/**
 
 # Development-only files
 .DS_Store
