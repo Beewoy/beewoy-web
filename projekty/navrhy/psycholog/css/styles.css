@@ -350,14 +350,18 @@ body,
 }
 
 .topic-index {
-  display: flex;
-  align-items: center;
-  gap: 0.55rem;
+  display: grid;
+  place-items: center;
+  width: 3.35rem;
+  height: 3.35rem;
+  margin: 0;
+  border-radius: 0.95rem;
+  background: #e4ebe6;
 }
 
 .topic-index .icon {
-  width: 1.2rem;
-  height: 1.2rem;
+  width: 1.65rem;
+  height: 1.65rem;
 }
 
 .site-header {
@@ -614,6 +618,10 @@ body,
 .topic h3,
 .step h3 {
   margin-top: 0.9rem;
+}
+
+.topic h3 {
+  margin-top: 1.85rem;
 }
 
 .topic p:last-child,
