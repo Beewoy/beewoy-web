@@ -57,13 +57,15 @@ Potom otvor `http://localhost:3000` (alebo port zo `serve` / `http.server`).
 
 ### Portfólio (aktuálne)
 
-1. [CeKo Interier](https://www.ceko.sk/) — `assets/projects/ceko-hero.jpg`
-2. [Športový klub Vajnory](https://skvajnory.sk/) — `assets/projects/skvajnory-hero.jpg`
-3. [BR Interior & Exterior](https://br-interiorexterior.com/) — `assets/projects/br-interior-hero.jpg`
-4. [Timio](https://timio.sk/) — `assets/projects/timio-hero.jpg`
-5. [Verejnoprospešné služby Snina](https://beewoy.sk/projekty/idsk/vps-snina/) — `assets/projects/vps-snina-hero.png`
+1. [Kids Paradise](https://kidsparadise.beewoy.sk/) — `assets/projects/kids-paradise-hero.webp`
+2. [Baby’s world](https://babysworld.beewoy.sk/) — `assets/projects/babys-world-hero.webp`
+3. [CeKo Interier](https://www.ceko.sk/) — `assets/projects/ceko-hero.jpg`
+4. [Športový klub Vajnory](https://skvajnory.sk/) — `assets/projects/skvajnory-hero.jpg`
+5. [BR Interior & Exterior](https://br-interiorexterior.com/) — `assets/projects/br-interior-hero.jpg`
+6. [Timio](https://timio.sk/) — `assets/projects/timio-hero.jpg`
+7. [Verejnoprospešné služby Snina](https://beewoy.sk/projekty/idsk/vps-snina/) — `assets/projects/vps-snina-hero.png`
 
-Homepage zobrazí prvých **6** projektov z `projects.js`, stránka `/referencie/` všetky.
+Homepage zobrazí featured + list projekty z `projects.js`, stránka `/referencie/` všetky.
 
 ---
 

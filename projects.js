@@ -1,11 +1,45 @@
 (() => {
   const HOME_FEATURED_SLUGS = ["ceko", "br-interior", "skvajnory"];
   const HOME_LIST_SLUGS = [
+    "kids-paradise",
+    "babys-world",
     "vps-snina",
     "timio",
   ];
 
   const PROJECTS = [
+    {
+      slug: "kids-paradise",
+      name: "Kids Paradise",
+      category: "Súkromná materská škola",
+      type: "Webová stránka · Súkromná materská škola",
+      result:
+        "Program, školné a pobočky v Petržalke a Ružinove sme spojili do jasného webu, kde rodič hneď vidí, čo škôlka ponúka a ako overiť voľné miesto.",
+      resultShort:
+        "Program, školné a pobočky v Petržalke a Ružinove na jednom mieste.",
+      image: "assets/projects/kids-paradise-hero.webp",
+      alt: "Hero sekcia webu Kids Paradise — súkromná materská škola v Bratislave",
+      url: "https://kidsparadise.beewoy.sk/",
+      linkLabel: "kidsparadise.beewoy.sk",
+      width: 1024,
+      height: 645,
+    },
+    {
+      slug: "babys-world",
+      name: "Baby’s world",
+      category: "Súkromné jasle a škôlka",
+      type: "Webová stránka · Súkromné jasle a škôlka",
+      result:
+        "Denný režim, cenník a cestu k osobnej návšteve sme usporiadali do prehľadného webu jaslí a škôlky v Stupave.",
+      resultShort:
+        "Denný režim, cenník a cesta k návšteve v Stupave.",
+      image: "assets/projects/babys-world-hero.webp",
+      alt: "Hero sekcia webu Baby’s world — súkromné jasle a škôlka v Stupave",
+      url: "https://babysworld.beewoy.sk/",
+      linkLabel: "babysworld.beewoy.sk",
+      width: 1024,
+      height: 653,
+    },
     {
       slug: "ceko",
       name: "CeKo Interier",
@@ -96,8 +130,8 @@
       <img
         src="${escapeHtml(assetBase + project.image)}"
         alt="${escapeHtml(project.alt)}"
-        width="1600"
-        height="1000"
+        width="${project.width || 1600}"
+        height="${project.height || 1000}"
         loading="lazy"
         decoding="async"
       >

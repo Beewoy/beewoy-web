@@ -1,5 +1,5 @@
 /* Beewoy shell cache — offline-friendly PWA */
-const CACHE = "beewoy-v50";
+const CACHE = "beewoy-v51";
 const ASSETS = [
   "./",
   "./index.html",
