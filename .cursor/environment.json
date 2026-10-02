@@ -1,0 +1,17 @@
+{
+  "name": "Beewoy web",
+  "install": "npm install -g --prefix \"$HOME/.local\" serve@14",
+  "terminals": [
+    {
+      "name": "serve",
+      "command": "\"$HOME/.local/bin/serve\" -l 3000 .",
+      "description": "Static dev server for the Beewoy site on http://localhost:3000 (clean URLs + directory indexes)."
+    }
+  ],
+  "ports": [
+    {
+      "name": "web",
+      "port": 3000
+    }
+  ]
+}
