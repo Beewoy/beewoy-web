@@ -8,6 +8,22 @@
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
   <link rel="canonical" href="https://beewoy.sk/kalkulacka/">
   <meta name="theme-color" content="#f3f0e8">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="sk_SK">
+  <meta property="og:site_name" content="Beewoy">
+  <meta property="og:url" content="https://beewoy.sk/kalkulacka/">
+  <meta property="og:title" content="Cenová kalkulačka webu | Beewoy">
+  <meta property="og:description" content="Zistite orientačnú cenu nového webu alebo pravidelnej správy. Odpovedzte na pár otázok a Beewoy vám odporučí vhodný balík.">
+  <meta property="og:image" content="https://beewoy.sk/og-main.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Cenová kalkulačka webu | Beewoy">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Cenová kalkulačka webu | Beewoy">
+  <meta name="twitter:description" content="Zistite orientačnú cenu nového webu alebo pravidelnej správy. Odpovedzte na pár otázok a Beewoy vám odporučí vhodný balík.">
+  <meta name="twitter:image" content="https://beewoy.sk/og-main.png">
+  <meta name="twitter:image:alt" content="Cenová kalkulačka webu | Beewoy">
   <link rel="icon" href="../favicon.ico" sizes="any">
   <link rel="stylesheet" href="../styles.css">
   <script defer src="../main.js"></script>
@@ -152,7 +168,6 @@
             <div class="calc-options">
               <div class="calc-option"><input id="care-basic" type="radio" name="care" value="basic"><label for="care-basic"><strong>Len prevádzka</strong><small>Jednoduchý web, hosting a SSL.</small></label></div>
               <div class="calc-option"><input id="care-start" type="radio" name="care" value="start"><label for="care-start"><strong>Občasné zmeny</strong><small>Web a bežná starostlivosť bez stresu.</small></label></div>
-              <div class="calc-option"><input id="care-profi" type="radio" name="care" value="profi"><label for="care-profi"><strong>Aktívna starostlivosť</strong><small>Obsah, lokálna viditeľnosť a pravidelný posun.</small></label></div>
               <div class="calc-option"><input id="care-unsure" type="radio" name="care" value="unsure"><label for="care-unsure"><strong>Neviem, poraďte mi</strong><small>Na konzultácii vyberieme rozumný rozsah.</small></label></div>
             </div><p class="calc-error" data-error></p><div class="calc-nav"><button class="btn back" type="button" data-prev>Späť</button><button class="btn btn-primary" type="button" data-next>Pokračovať <span class="arrow">→</span></button></div>
           </fieldset>
@@ -180,7 +195,7 @@
     </div>
   </section>
   <section class="calc-seo">
-    <div class="wrap"><div><div class="calc-kicker"><i></i> Bez skrytých podmienok</div><h2>Webový balík má dávať zmysel, nie komplikovať rozhodnutie.</h2></div><div><p>Neúčtujeme vstupný poplatok za samotnú prípravu jednoduchého webu. Rozdiel medzi balíkmi je v rozsahu webu a v tom, koľko starostlivosti chcete po spustení.</p><ul><li>Basic od 19 €/mes pre jednoduchý informačný web.</li><li>Start od 39 €/mes pre firemný web a bežnú starostlivosť.</li><li>Profi od 59 €/mes pre aktívny obsah, SEO a pravidelný rast.</li><li>Väčšie funkcie riešime individuálne po dohode.</li></ul></div></div>
+    <div class="wrap"><div><div class="calc-kicker"><i></i> Bez skrytých podmienok</div><h2>Webový balík má dávať zmysel, nie komplikovať rozhodnutie.</h2></div><div><p>Neúčtujeme vstupný poplatok za samotnú prípravu jednoduchého webu. Rozdiel medzi balíkmi je v rozsahu webu a v tom, koľko starostlivosti chcete po spustení.</p><ul><li>Basic od 19 €/mes pre jednoduchý informačný web.</li><li>Start od 39 €/mes pre firemný web, SEO priamo na stránke a bežnú starostlivosť.</li><li>Väčšie funkcie a integrácie riešime individuálne po dohode.</li></ul></div></div>
   </section>
 </main>
 <footer class="footer"><div class="wrap"><div class="footer-bottom"><span>© 2026 Beewoy</span><span><a href="../ochrana-udajov/">Ochrana údajov</a> · <a href="../cookies/">Cookies</a> · <a href="../kontakt/">Kontakt</a></span></div></div></footer>
@@ -211,11 +226,10 @@
   const calculate = () => {
     const goal=selected("goal"), size=selected("size"), care=selected("care");
     const features=[...document.querySelectorAll('input[name="features"]:checked')].map(x=>x.value);
-    let plan="start", price="39 €/mes", name="Start", text="Firemný web s technickou prevádzkou a bežnou starostlivosťou.", list=["Web s jasnou štruktúrou","Hosting, SSL a technický základ","Zmeny obsahu podľa dohody"];
+    let plan="start", price="39 €/mes", name="Start", text="Firemný web s technickou prevádzkou, SEO priamo na stránke a bežnou starostlivosťou.", list=["Web do 5 obsahových sekcií","Hosting, SSL a technická údržba","SEO na stránke, zálohovanie a obsahové zmeny"];
     if (goal==="special" || size==="system" || features.some(x=>["booking","languages","catalog"].includes(x))) { plan="individual"; price="Podľa dohody"; name="Individual"; text="Web na mieru s funkciami, ktoré treba najprv presne navrhnúť."; list=["Rozsah podľa konkrétneho zadania","Funkcie a integrácie podľa dohody","Nacenenie ešte pred realizáciou"]; }
-    else if (care==="profi" || size==="content" || features.includes("seo")) { plan="profi"; price="59 €/mes"; name="Profi"; text="Web plus pravidelná práca na obsahu, lokálnej viditeľnosti a raste."; list=["Všetko zo Start","Pravidelná obsahová starostlivosť","Google profil, SEO a priebežný posun"]; }
-    else if (goal==="care" || care==="start" || size==="company" || goal==="redesign") { plan="start"; price="39 €/mes"; name="Start"; text="Spoľahlivý firemný web s hostingom, SSL a zmenami obsahu podľa dohody."; list=["Firemný web s viacerými sekciami","Hosting, SSL a technická prevádzka","Zmeny obsahu podľa dohody"]; }
-    else if (size==="one" && care==="basic" && goal==="new") { plan="basic"; price="19 €/mes"; name="Basic"; text="Jednoduchý jednostránkový informačný web pre firmu, živnostníka alebo službu."; list=["Jedna jasná informačná stránka","Hosting, SSL a technický základ","Zmeny po spustení od 15 € za objednávku"]; }
+    else if (goal==="care" || care==="start" || size==="company" || size==="content" || goal==="redesign" || features.includes("seo")) { plan="start"; price="39 €/mes"; name="Start"; text="Spoľahlivý firemný web s hostingom, SSL, SEO priamo na stránke a zmenami obsahu podľa dohody."; list=["Firemný web do 5 obsahových sekcií","SEO: titulky, meta popisy, nadpisy a alt texty","Zálohovanie a bežné obsahové zmeny"]; }
+    else if (size==="one" && care==="basic" && goal==="new") { plan="basic"; price="19 €/mes"; name="Basic"; text="Jednoduchý jednostránkový informačný web pre firmu, živnostníka alebo službu."; list=["Jedna jasná informačná stránka","Hosting, SSL a základné SEO na stránke","Zmeny po spustení od 15 € za objednávku"]; }
     document.querySelector("#resultName").textContent=name;
     document.querySelector("#resultPrice").textContent=price;
     document.querySelector("#resultText").textContent=text;

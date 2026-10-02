@@ -5,14 +5,14 @@
 ## Ponuka
 
 - Web do ~48 hodín pri pripravených podkladoch
-- Mesačné plány bez vstupného poplatku a bez viazanosti: **Start 39 €/mes**, **Profi 59 €/mes**, **Individual** dohodou
-- V paušále: návrh, realizácia, hosting, údržba a zmeny obsahu podľa plánu; Profi pridáva Google profil, recenzie a socials
+- Mesačné plány bez vstupného poplatku a bez viazanosti: **Basic 19 €/mes**, **Start 39 €/mes**, **Individual** dohodou
+- Basic je jednoduchý jednostránkový informačný web so základným SEO na stránke. Start pridáva web do 5 sekcií, hosting, SSL, technickú údržbu, SEO priamo na stránke, zálohovanie a bežné obsahové úpravy podľa dohody. Služby mimo webu, ako Google Business profil, Search Console, spätné odkazy a SEO kampane, riešime samostatne.
 
 ## Stránky
 
 - [Domov](https://beewoy.sk/): Hero, ako to funguje, služby, referencie, cenník, FAQ, tím, kontakt
 - [Tvorba webových stránok](https://beewoy.sk/tvorba-webov/): Firemné weby, landing pages a redizajny — dizajn, rýchlosť, SEO, prístupnosť
-- [Cenník](https://beewoy.sk/cennik/): Start, Profi, Individual — porovnanie a FAQ k cenám
+- [Cenník](https://beewoy.sk/cennik/): Basic, Start, Individual — porovnanie a FAQ k cenám
 - [Weby podľa odvetvia](https://beewoy.sk/tvorba-webov/odvetvia/): Stolárstvo, stavebníctvo, ambulancie, rehab, reštaurácie, logistika, elektrikári
 - [Referencie](https://beewoy.sk/referencie/): Vybrané projekty
 - [Kontakt](https://beewoy.sk/kontakt/): Nezáväzný dopyt

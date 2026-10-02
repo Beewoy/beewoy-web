@@ -3173,7 +3173,7 @@ body.cookie-modal-open { overflow: hidden; }
 }
 .cennik-plans {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 16px;
   max-width: 1200px;
   margin: 0 auto;
@@ -3315,7 +3315,7 @@ body.cookie-modal-open { overflow: hidden; }
 }
 .cennik-decision-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 1px;
   background: var(--line);
   border: 1px solid var(--line);

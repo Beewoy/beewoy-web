@@ -1,7 +1,7 @@
 {
   "hub": {
     "title": "Weby podľa odvetvia | Beewoy",
-    "description": "Tvorba webov pre konkrétne odvetvia na Slovensku. Stolárstvo, ambulancie, autoservis, kaderníctvo, realitky, fitness, materské školy, veterinári, sťahovanie, gastro a ďalšie. Plány Start, Profi a Individual.",
+    "description": "Tvorba webov pre konkrétne odvetvia na Slovensku. Stolárstvo, ambulancie, autoservis, kaderníctvo, realitky, fitness, materské školy, veterinári, sťahovanie, gastro a ďalšie. Plány Basic, Start a Individual.",
     "h1": "Weby podľa odvetvia",
     "lead": "Každé odvetvie má iné otázky, iný spôsob dopytu a inú dôveru. Preto nepredávame univerzálnu šablónu — navrhujeme web podľa toho, čo vaši zákazníci skutočne potrebujú nájsť."
   },
@@ -14,7 +14,7 @@
       "depth": "flagship",
       "hub_blurb": "Galéria realizácií, proces od merania po montáž a web, ktorý privedie dopyty na konzultáciu.",
       "title": "Tvorba webu pre stolárstvo a interiéry | Beewoy",
-      "description": "Web pre stolársku dielňu a interiéry na mieru: galéria realizácií, prehľad služieb a jasná cesta k dopytu. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre stolársku dielňu a interiéry na mieru: galéria realizácií, prehľad služieb a jasná cesta k dopytu. Start alebo Individual — Beewoy.",
       "h1": "Web pre stolárstvo a interiéry na mieru",
       "hero_lead": "Keď zákazník nevidí kvalitu vašej práce online, vyberie si niekoho, kto ju ukáže. Navrhneme web, ktorý predstaví realizácie, vysvetlí služby a privedie nezáväzné dopyty — priamo s vývojármi, bez agentúrnych medzičlánkov.",
       "hero_proof": [
@@ -181,7 +181,7 @@
       "faq": [
         {
           "q": "Koľko stojí web pre stolársku dielňu?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa rozsahu (napr. viacjazyčnosť alebo väčšia galéria). Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa rozsahu (napr. viacjazyčnosť alebo väčšia galéria). Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -189,7 +189,7 @@
         },
         {
           "q": "Ako sa aktualizujú nové realizácie?",
-          "a": "Nové projekty a fotky dopĺňame v rámci mesačnej starostlivosti — podľa dohody v pláne Start alebo Profi."
+          "a": "Nové projekty a fotky dopĺňame v rámci mesačnej starostlivosti — podľa dohody v pláne Start."
         },
         {
           "q": "Potrebujem e-shop na nábytok?",
@@ -230,8 +230,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -249,6 +249,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -260,44 +264,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "dielne, ktoré chcú galériu a spoľahlivý dopyt"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, realizácie, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -332,7 +314,7 @@
       "depth": "standard",
       "hub_blurb": "Dôveryhodný web s prehľadom prác, regiónom a jasnou cestou k dopytu.",
       "title": "Tvorba webu pre stavebnú firmu | Beewoy",
-      "description": "Web pre malú stavebnú firmu: prehľad prác, dôvera, región a jasný dopyt. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre malú stavebnú firmu: prehľad prác, dôvera, región a jasný dopyt. Start alebo Individual — Beewoy.",
       "h1": "Web pre stavebnú firmu",
       "hero_lead": "Stavebná firma predáva dôveru skôr než vizuál. Navrhneme web, ktorý ukáže rozsah prác, pôsobí seriózne a pomáha zbierať dopyty — s jasnou cenou a cestou ku kontaktu.",
       "hero_proof": [
@@ -456,7 +438,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -524,8 +506,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -543,6 +525,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -554,44 +540,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "malé firmy, ktoré chcú dôveryhodný web a dopyty"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, referencie, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -626,7 +590,7 @@
       "depth": "standard",
       "hub_blurb": "Web pre dentálnu prax: služby, hodiny, dôvera pacienta a jasná cesta k objednaniu.",
       "title": "Tvorba webu pre zubnú ambulanciu | Beewoy",
-      "description": "Web pre zubnú ambulanciu: služby, ordinačné hodiny, dôvera a cesta k objednaniu. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre zubnú ambulanciu: služby, ordinačné hodiny, dôvera a cesta k objednaniu. Start alebo Individual — Beewoy.",
       "h1": "Web pre zubnú ambulanciu",
       "hero_lead": "Pre majiteľov zubných ambulancií, ktorí chcú dôveryhodný web: jasné služby, hodiny, tím a jednoduché objednanie — bez marketingových fráz namiesto obsahu.",
       "hero_proof": [
@@ -756,7 +720,7 @@
       "faq": [
         {
           "q": "Koľko stojí web pre ambulanciu?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -836,8 +800,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -855,6 +819,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -866,44 +834,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "ambulancie, ktoré chcú jasný a spoľahlivý web"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, recenzie, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -938,7 +884,7 @@
       "depth": "standard",
       "hub_blurb": "Špecializácie, tím terapeutov, objednanie a prístupný web pre rehabilitáciu a fyzioterapiu.",
       "title": "Web pre rehabilitačné a fyzioterapeutické centrum | Beewoy",
-      "description": "Web pre rehabilitáciu a fyzioterapiu: špecializácie, tím, hodiny a jasné objednanie. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre rehabilitáciu a fyzioterapiu: špecializácie, tím, hodiny a jasné objednanie. Start alebo Individual — Beewoy.",
       "h1": "Web pre rehabilitačné a fyzioterapeutické centrum",
       "hero_lead": "Pacient potrebuje pochopiť špecializácie, nájsť terapeuta a vedieť, ako sa objednať. Navrhneme web, ktorý je zrozumiteľný a prístupný — nie tenký one-pager s generickými frázami.",
       "hero_proof": [
@@ -1068,7 +1014,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -1136,8 +1082,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -1155,6 +1101,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -1166,44 +1116,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "centrá, ktoré chcú jasný a prístupný web"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, recenzie, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -1238,7 +1166,7 @@
       "depth": "standard",
       "hub_blurb": "Aktuálne menu, otváracie hodiny, rezervácia a atmosféra prevádzky na jednom mieste.",
       "title": "Tvorba webu pre reštauráciu | Beewoy",
-      "description": "Web pre reštauráciu: aktuálne menu, otváracie hodiny, rezervácia a atmosféra prevádzky. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre reštauráciu: aktuálne menu, otváracie hodiny, rezervácia a atmosféra prevádzky. Start alebo Individual — Beewoy.",
       "h1": "Web pre reštauráciu",
       "hero_lead": "Hostia rozhodujú skôr, než prekročia prah: menu, hodiny, rezervácia a dojem z prevádzky. Navrhneme web, ktorý tieto informácie udrží aktuálne a zrozumiteľné — oddelený od kaviarne či cukrárne.",
       "hero_proof": [
@@ -1368,7 +1296,7 @@
       "faq": [
         {
           "q": "Koľko stojí web pre reštauráciu?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -1440,8 +1368,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -1459,6 +1387,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -1470,44 +1402,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "prevádzky, ktoré chcú aktuálne menu a rezervácie"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, recenzie, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -1542,7 +1452,7 @@
       "depth": "standard",
       "hub_blurb": "B2B web pre logistiku a spedíciu: služby, kapacity, dôvera a štruktúrovaný dopyt.",
       "title": "Tvorba webu pre logistiku a spedíciu | Beewoy",
-      "description": "B2B web pre logistickú a spedičnú firmu: služby, kapacity, dôvera a jasný dopyt. Start, Profi alebo Individual — Beewoy.",
+      "description": "B2B web pre logistickú a spedičnú firmu: služby, kapacity, dôvera a jasný dopyt. Start alebo Individual — Beewoy.",
       "h1": "Web pre logistiku a spedíciu",
       "hero_lead": "V logistike rozhoduje dojem spoľahlivosti. Navrhneme B2B web, ktorý komunikuje služby, pokrytie a cestu k dopytu — seriózne, bez reklamného balastu a bez falošných metrík.",
       "hero_proof": [
@@ -1667,7 +1577,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -1735,8 +1645,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -1754,6 +1664,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -1765,44 +1679,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "firmy, ktoré chcú seriózny B2B web a dopyty"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, LinkedIn, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -1837,7 +1729,7 @@
       "depth": "standard",
       "hub_blurb": "Web pre elektrikára: služby, oprávnenia, región a jasný lokálny dopyt — aj bez case study.",
       "title": "Tvorba webu pre elektrikára | Beewoy",
-      "description": "Web pre elektrikára a elektroinštalácie: služby, oprávnenia, región a jasný dopyt. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre elektrikára a elektroinštalácie: služby, oprávnenia, región a jasný dopyt. Start alebo Individual — Beewoy.",
       "h1": "Web pre elektrikára",
       "hero_lead": "Zákazník chce vedieť, či ste dostupní, oprávnení a či pôsobíte v jeho regióne. Navrhneme web elektrikára, ktorý tieto otázky zodpovie — aj keď ešte nemáte veľké portfólio referencií.",
       "hero_proof": [
@@ -1967,7 +1859,7 @@
       "faq": [
         {
           "q": "Koľko stojí web pre elektrikára?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -2039,8 +1931,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -2058,6 +1950,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -2069,44 +1965,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "remeselníkov, ktorí chcú lokálne dopyty"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, recenzie, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -2141,7 +2015,7 @@
       "depth": "standard",
       "hub_blurb": "Web pre autoservis a pneuservis: služby, cenník, hodiny a jasná cesta k objednaniu termínu.",
       "title": "Tvorba webu pre autoservis a pneuservis | Beewoy",
-      "description": "Web pre autoservis a pneuservis: prehľad služieb, cenník, otváracie hodiny a objednávka termínu. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre autoservis a pneuservis: prehľad služieb, cenník, otváracie hodiny a objednávka termínu. Start alebo Individual — Beewoy.",
       "h1": "Web pre autoservis a pneuservis",
       "hero_lead": "Keď zákazník hľadá servis, rozhoduje rýchlosť a dôvera. Navrhneme web, ktorý ukáže služby, cenník a otváracie hodiny — a prevedie ho k objednaniu termínu bez telefonického kolotoča.",
       "hero_proof": [
@@ -2308,7 +2182,7 @@
       "faq": [
         {
           "q": "Koľko stojí web pre autoservis?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -2357,8 +2231,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -2376,6 +2250,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -2387,44 +2265,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "servisy, ktoré chcú služby, hodiny a dopyty"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, sezónne služby, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -2459,7 +2315,7 @@
       "depth": "standard",
       "hub_blurb": "Katalóg produktov, technické parametre a B2B/B2C dopyt pre výrobcov betónu a kamenárov.",
       "title": "Tvorba webu pre betónovú výrobu a kamenárstvo | Beewoy",
-      "description": "Web pre betónovú výrobu a kamenárstvo: katalóg, parametre, región dodania a jasný dopyt. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre betónovú výrobu a kamenárstvo: katalóg, parametre, región dodania a jasný dopyt. Start alebo Individual — Beewoy.",
       "h1": "Web pre betónovú výrobu a kamenárstvo",
       "hero_lead": "Technický sortiment sa na webe často stratí v PDF a starých fotkách. Navrhneme web, ktorý predstaví produkty, parametre a región dodania — a privedie použiteľné B2B aj B2C dopyty.",
       "hero_proof": [
@@ -2626,7 +2482,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -2671,8 +2527,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -2690,6 +2546,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -2701,44 +2561,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "výrobcov s katalógom a dopytmi"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, sortiment, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -2773,7 +2611,7 @@
       "depth": "standard",
       "hub_blurb": "Web pre geodeta: služby, oprávnenia, typy výstupov a jasný B2B dopyt.",
       "title": "Tvorba webu pre geodeta a kartografiu | Beewoy",
-      "description": "Web pre geodetické a kartografické služby: prehľad prác, oprávnenia, výstupy a dopyt. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre geodetické a kartografické služby: prehľad prác, oprávnenia, výstupy a dopyt. Start alebo Individual — Beewoy.",
       "h1": "Web pre geodeta a kartografiu",
       "hero_lead": "Klient geodeta hľadá oprávnenia, rozsah služieb a spoľahlivý kontakt. Navrhneme web, ktorý tieto otázky zodpovie — seriózne, bez reklamného šumu a s jasnou cestou k dopytu.",
       "hero_proof": [
@@ -2935,7 +2773,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -2980,8 +2818,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -2999,6 +2837,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -3010,44 +2852,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "geodetov, ktorí chcú dôveryhodný web a dopyty"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, služby, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -3082,7 +2902,7 @@
       "depth": "standard",
       "hub_blurb": "Web pre gynekologickú ambulanciu: služby, tím, hodiny, poisťovne a citlivá cesta k objednaniu.",
       "title": "Tvorba webu pre gynekologickú ambulanciu | Beewoy",
-      "description": "Web pre gynekologickú ambulanciu: služby, tím, ordinačné hodiny a objednanie. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre gynekologickú ambulanciu: služby, tím, ordinačné hodiny a objednanie. Start alebo Individual — Beewoy.",
       "h1": "Web pre gynekologickú ambulanciu",
       "hero_lead": "Pacientka potrebuje cítiť dôveru ešte pred prvým kontaktom. Navrhneme web, ktorý predstaví služby, tím a hodiny — a uľahčí objednanie bez zbytočného stresu.",
       "hero_proof": [
@@ -3249,7 +3069,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -3294,8 +3114,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -3313,6 +3133,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -3324,44 +3148,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "ambulancie, ktoré chcú dôveru a objednávky"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, služby, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -3396,7 +3198,7 @@
       "depth": "standard",
       "hub_blurb": "B2B web pre kovovýrobu: kapacity, certifikácie, realizácie a štruktúrovaný dopyt.",
       "title": "Tvorba webu pre kovovýrobu a zváranie | Beewoy",
-      "description": "Web pre kovovýrobnú firmu a zváranie: kapacity, certifikácie, realizácie a B2B dopyt. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre kovovýrobnú firmu a zváranie: kapacity, certifikácie, realizácie a B2B dopyt. Start alebo Individual — Beewoy.",
       "h1": "Web pre kovovýrobu a zváranie",
       "hero_lead": "B2B klient hľadá kapacity, certifikácie a dôkaz, že zvládnete zákazku. Navrhneme web, ktorý to ukáže — s jasnou cestou k dopytu a bez falošných marketingových fráz.",
       "hero_proof": [
@@ -3563,7 +3365,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -3608,8 +3410,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -3627,6 +3429,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -3638,44 +3444,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "dielne, ktoré chcú seriózny B2B web"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, realizácie, LinkedIn"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -3710,7 +3494,7 @@
       "depth": "standard",
       "hub_blurb": "Web pre psychológa: špecializácie, prístup, GDPR a citlivá cesta k prvej konzultácii.",
       "title": "Tvorba webu pre psychológa | Beewoy",
-      "description": "Web pre psychologickú ambulanciu: špecializácie, prístup, cenník a objednanie. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre psychologickú ambulanciu: špecializácie, prístup, cenník a objednanie. Start alebo Individual — Beewoy.",
       "h1": "Web pre psychológa a psychologickú ambulanciu",
       "hero_lead": "Klient hľadá dôveru, špecializáciu a dostupnosť termínu. Navrhneme web, ktorý pôsobí pokojne, vysvetlí prístup a uľahčí prvý kontakt — s ohľadom na GDPR a citlivý obsah.",
       "hero_proof": [
@@ -3877,7 +3661,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -3922,8 +3706,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -3941,6 +3725,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -3952,44 +3740,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "prax, ktoré chcú dôveru a kontakt"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, obsah, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -4024,7 +3790,7 @@
       "depth": "standard",
       "hub_blurb": "Web pre kaderníctvo a barbershop: cenník, tím, galéria a jasná rezervácia.",
       "title": "Tvorba webu pre kaderníctvo a barbershop | Beewoy",
-      "description": "Web pre kaderníctvo a barbershop: služby, cenník, tím a rezervácia. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre kaderníctvo a barbershop: služby, cenník, tím a rezervácia. Start alebo Individual — Beewoy.",
       "h1": "Web pre kaderníctvo a barbershop",
       "hero_lead": "Zákazník chce vedieť cenník, služby a či má voľný termín. Navrhneme web, ktorý ukáže tím a prácu — a prevedie ho k rezervácii bez telefonického kolotoča.",
       "hero_proof": [
@@ -4186,7 +3952,7 @@
       "faq": [
         {
           "q": "Koľko stojí web pre kaderníctvo?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -4235,8 +4001,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -4254,6 +4020,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -4265,44 +4035,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "salóny, ktoré chcú cenník a dopyty"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, galéria, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -4337,7 +4085,7 @@
       "depth": "standard",
       "hub_blurb": "Web pre hotel a penzión: izby, galéria, lokalita a jasná cesta k rezervácii.",
       "title": "Tvorba webu pre hotel a penzión | Beewoy",
-      "description": "Web pre hotel, penzión a ubytovanie: izby, galéria, cenník a rezervácia. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre hotel, penzión a ubytovanie: izby, galéria, cenník a rezervácia. Start alebo Individual — Beewoy.",
       "h1": "Web pre hotel, penzión a ubytovanie",
       "hero_lead": "Hosť rozhoduje podľa fotiek, lokality a jednoduchosti rezervácie. Navrhneme web, ktorý ukáže izby a atmosféru — a prevedie k rezervácii bez chaosu medzi portálmi.",
       "hero_proof": [
@@ -4499,7 +4247,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -4544,8 +4292,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -4563,6 +4311,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -4574,44 +4326,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "penzióny, ktoré chcú priame dopyty"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, sezónne ponuky, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -4646,7 +4376,7 @@
       "depth": "standard",
       "hub_blurb": "Web pre realitku: ponuka, filter, tím maklérov a jasná cesta k leadu.",
       "title": "Tvorba webu pre realitnú kanceláriu | Beewoy",
-      "description": "Web pre realitnú kanceláriu: katalóg nehnuteľností, tím a dopyty. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre realitnú kanceláriu: katalóg nehnuteľností, tím a dopyty. Start alebo Individual — Beewoy.",
       "h1": "Web pre realitnú kanceláriu",
       "hero_lead": "Klient hľadá dôveryhodnú kanceláriu a aktuálnu ponuku. Navrhneme web, ktorý ukáže nehnuteľnosti, tím a prevedie k dopytu — bez chaosu medzi portálmi a vizitkou.",
       "hero_proof": [
@@ -4808,7 +4538,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -4853,8 +4583,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -4872,6 +4602,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -4883,44 +4617,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "kancelárie, ktoré chcú vlastné leady"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, ponuka, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -4955,7 +4667,7 @@
       "depth": "standard",
       "hub_blurb": "Web pre záhradníctvo: sezónna ponuka, galéria realizácií a lokálne dopyty.",
       "title": "Tvorba webu pre záhradníctvo | Beewoy",
-      "description": "Web pre záhradníctvo a údržbu zelene: služby, sezónna ponuka a dopyt. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre záhradníctvo a údržbu zelene: služby, sezónna ponuka a dopyt. Start alebo Individual — Beewoy.",
       "h1": "Web pre záhradníctvo a údržbu zelene",
       "hero_lead": "Sezóna rozhoduje. Navrhneme web, ktorý ukáže služby a realizácie — a privedie lokálne dopyty vtedy, keď zákazníci hľadajú kosenie, výsadbu alebo údržbu.",
       "hero_proof": [
@@ -5112,7 +4824,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -5157,8 +4869,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -5176,6 +4888,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -5187,44 +4903,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "firmy, ktoré chcú sezónne dopyty"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, sezónne služby, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -5259,7 +4953,7 @@
       "depth": "standard",
       "hub_blurb": "Web pre montáž alarmov a CCTV: typy riešení, certifikácie, referencie a dopyt.",
       "title": "Tvorba webu pre bezpečnostné systémy a CCTV | Beewoy",
-      "description": "Web pre firmy montujúce alarmy a kamery: riešenia, certifikácie a dopyt. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre firmy montujúce alarmy a kamery: riešenia, certifikácie a dopyt. Start alebo Individual — Beewoy.",
       "h1": "Web pre bezpečnostné systémy a CCTV",
       "hero_lead": "Klient hľadá typy riešení, referencie a spoľahlivý kontakt. Navrhneme web, ktorý vysvetlí ponuku pre domácnosti aj firmy — a privedie kvalifikované dopyty na montáž a servis.",
       "hero_proof": [
@@ -5421,7 +5115,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -5466,8 +5160,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -5485,6 +5179,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -5496,44 +5194,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "firmy, ktoré chcú dopyty na montáž"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, referencie, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -5568,7 +5244,7 @@
       "depth": "standard",
       "hub_blurb": "Web pre kaviareň a pekáreň: ponuka, hodiny, catering a atmosféra prevádzky.",
       "title": "Tvorba webu pre kaviareň a pekáreň | Beewoy",
-      "description": "Web pre kaviareň a pekáreň: ponuka, hodiny, catering a kontakt. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre kaviareň a pekáreň: ponuka, hodiny, catering a kontakt. Start alebo Individual — Beewoy.",
       "h1": "Web pre kaviareň a pekáreň",
       "hero_lead": "Zákazník chce vedieť, čo máte, kedy ste otvorení a či robíte catering. Navrhneme web, ktorý ukáže atmosféru a ponuku — a privedie návštevy aj objednávky.",
       "hero_proof": [
@@ -5730,7 +5406,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -5775,8 +5451,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -5794,6 +5470,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -5805,44 +5485,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "prevádzky, ktoré chcú hodiny a dopyty"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, ponuka, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -5877,7 +5535,7 @@
       "depth": "compact",
       "hub_blurb": "Web pre nechtový salón: cenník, galéria, rezervácia a otváracie hodiny.",
       "title": "Tvorba webu pre nechtový salón | Beewoy",
-      "description": "Web pre nechtový salón: cenník, galéria a rezervácia. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre nechtový salón: cenník, galéria a rezervácia. Start alebo Individual — Beewoy.",
       "h1": "Web pre nechtový salón",
       "hero_lead": "Klientka chce cenník, fotky práce a voľný termín. Navrhneme web, ktorý to ukáže jasne — a prevedie k rezervácii bez chaosu medzi Instagramom a telefónom.",
       "hero_proof": [
@@ -6028,7 +5686,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -6073,8 +5731,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -6092,6 +5750,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -6103,44 +5765,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "salóny, ktoré chcú cenník a rezervácie"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, galéria, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -6175,7 +5815,7 @@
       "depth": "compact",
       "hub_blurb": "Web pre cukráreň: sortiment, objednávka tort a otváracie hodiny.",
       "title": "Tvorba webu pre cukráreň | Beewoy",
-      "description": "Web pre cukráreň: ponuka, objednávka tort a kontakt. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre cukráreň: ponuka, objednávka tort a kontakt. Start alebo Individual — Beewoy.",
       "h1": "Web pre cukráreň",
       "hero_lead": "Zákazník chce vidieť torty, sortiment a ako objednať. Navrhneme web, ktorý ukáže ponuku a uľahčí objednávky — aj mimo sezónnych sviatkov.",
       "hero_proof": [
@@ -6326,7 +5966,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -6371,8 +6011,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -6390,6 +6030,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -6401,44 +6045,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "cukrárne, ktoré chcú objednávky"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, galéria, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -6473,7 +6095,7 @@
       "depth": "compact",
       "hub_blurb": "Web pre advokáta: špecializácie, tím, dôvera a jasný kontakt — v rámci pravidiel.",
       "title": "Tvorba webu pre advokáta | Beewoy",
-      "description": "Web pre advokáta a právnu kanceláriu: špecializácie, tím a kontakt. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre advokáta a právnu kanceláriu: špecializácie, tím a kontakt. Start alebo Individual — Beewoy.",
       "h1": "Web pre advokáta a právnu kanceláriu",
       "hero_lead": "Klient hľadá špecializáciu, dôveru a spoľahlivý kontakt. Navrhneme seriózny web, ktorý vysvetlí oblasti praxe — bez preháňania a v súlade s pravidlami prezentácie advokátov.",
       "hero_proof": [
@@ -6624,7 +6246,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -6669,8 +6291,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -6688,6 +6310,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -6699,44 +6325,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "kancelárie, ktoré chcú dôveru a kontakt"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, obsah, LinkedIn"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -6771,7 +6375,7 @@
       "depth": "compact",
       "hub_blurb": "Web pre fitness: cenník, rozvrh, vybavenie a cesta k skúšobnej návšteve.",
       "title": "Tvorba webu pre fitness centrum | Beewoy",
-      "description": "Web pre fitness centrum: cenník, rozvrh, vybavenie a kontakt. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre fitness centrum: cenník, rozvrh, vybavenie a kontakt. Start alebo Individual — Beewoy.",
       "h1": "Web pre fitness centrum",
       "hero_lead": "Zákazník chce cenník, vybavenie a či môže prísť vyskúšať. Navrhneme web, ktorý to ukáže jasne — a privedie nových členov bez chaosu medzi socials a telefónom.",
       "hero_proof": [
@@ -6923,7 +6527,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -6973,8 +6577,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -6992,6 +6596,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -7003,44 +6611,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "centrá, ktoré chcú cenník a skúšky"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, rozvrh, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -7075,7 +6661,7 @@
       "depth": "compact",
       "hub_blurb": "Web pre sťahovanie: služby, pokrytie regiónu, cenník orientačne a jasný dopyt.",
       "title": "Tvorba webu pre sťahovanie | Beewoy",
-      "description": "Web pre sťahovaciu firmu: služby, región a dopyt. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre sťahovaciu firmu: služby, región a dopyt. Start alebo Individual — Beewoy.",
       "h1": "Web pre sťahovanie a vypratávanie",
       "hero_lead": "Zákazník chce vedieť pokrytie, cenu orientačne a či ste dostupní. Navrhneme web, ktorý to ukáže jasne — a privedie lokálne dopyty bez nekvalitných e-mailov.",
       "hero_proof": [
@@ -7226,7 +6812,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -7271,8 +6857,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -7290,6 +6876,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -7301,44 +6891,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "firmy, ktoré chcú lokálne dopyty"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, služby, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -7373,7 +6941,7 @@
       "depth": "compact",
       "hub_blurb": "Web pre materskú školu: program, prijímanie, školné a dôvera pre rodičov.",
       "title": "Tvorba webu pre materskú školu | Beewoy",
-      "description": "Web pre materskú školu: denný program, prijímanie detí, školné a kontakt. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre materskú školu: denný program, prijímanie detí, školné a kontakt. Start alebo Individual — Beewoy.",
       "h1": "Web pre materskú školu",
       "hero_lead": "Rodič chce vedieť, ako u vás vyzerá deň, či sú voľné miesta a koľko stojí školné. Navrhneme web, ktorý to ukáže jasne — a privedie prihlášky bez chaosu medzi sociálnymi sieťami a telefónom.",
       "hero_proof": [
@@ -7525,7 +7093,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -7570,8 +7138,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -7589,6 +7157,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -7600,44 +7172,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "škôlky, ktoré chcú program a prijímanie"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, voľné miesta, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",
@@ -7672,7 +7222,7 @@
       "depth": "compact",
       "hub_blurb": "Web pre veterinára: služby, ordinačné hodiny, objednanie a dôvera majiteľov zvierat.",
       "title": "Tvorba webu pre veterinára | Beewoy",
-      "description": "Web pre veterinárnu kliniku: služby, ordinačné hodiny, objednanie termínu a kontakt. Start, Profi alebo Individual — Beewoy.",
+      "description": "Web pre veterinárnu kliniku: služby, ordinačné hodiny, objednanie termínu a kontakt. Start alebo Individual — Beewoy.",
       "h1": "Web pre veterinárnu kliniku",
       "hero_lead": "Majiteľ zvieraťa chce vedieť, čo ošetrujete, kedy máte otvorené a ako sa objednať. Navrhneme web, ktorý to ukáže jasne — a privedie termíny bez zbytočných telefonátov.",
       "hero_proof": [
@@ -7824,7 +7374,7 @@
       "faq": [
         {
           "q": "Koľko stojí web?",
-          "a": "Basic 19 €/mes, Start 39 €/mes a Profi 59 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
+          "a": "Basic 19 €/mes a Start 39 €/mes. Individual podľa dohody. Bez vstupného poplatku a bez viazanosti."
         },
         {
           "q": "Ako dlho trvá dodávka?",
@@ -7869,8 +7419,8 @@
         "hide_depth_in_kicker": true
       },
       "packages": {
-        "intro": "Štyri plány, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes, Profi 59 €/mes; Individual podľa dohody.",
-        "note": "PPC a ďalší rast vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
+        "intro": "Tri možnosti, žiadna viazanosť. Basic 19 €/mes, Start 39 €/mes; Individual podľa dohody.",
+        "note": "Služby mimo webu, napríklad PPC kampane alebo správa Google profilu, vieme doplniť podľa dohody. Detailný rozsah prejdeme na konzultácii.",
         "items": [
           {
             "id": "basic",
@@ -7888,6 +7438,10 @@
                 "value": "hosting, SSL a technický základ"
               },
               {
+                "label": "SEO na stránke",
+                "value": "základné titulky, meta popis a alt texty"
+              },
+              {
                 "label": "Zmeny obsahu",
                 "value": "od 15 € za objednávku"
               }
@@ -7899,44 +7453,22 @@
             "name": "Start",
             "price": "39€",
             "period": "/mes",
-            "popular": false,
-            "rows": [
-              {
-                "label": "Čo je to",
-                "value": "Web + starostlivosť"
-              },
-              {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
-              },
-              {
-                "label": "Ideálne pre",
-                "value": "kliniky, ktoré chcú služby a objednanie"
-              }
-            ],
-            "cta": "Chcem Start"
-          },
-          {
-            "id": "profi",
-            "name": "Profi",
-            "price": "59€",
-            "period": "/mes",
             "popular": true,
             "rows": [
               {
                 "label": "Čo je to",
-                "value": "Web + aktívny rast"
+                "value": "Web do 5 obsahových sekcií"
               },
               {
-                "label": "Zmeny obsahu",
-                "value": "v cene"
+                "label": "SEO na stránke",
+                "value": "titulky, meta popisy, nadpisy a alt texty"
               },
               {
-                "label": "Rast",
-                "value": "Google profil, služby, socials"
+                "label": "Starostlivosť",
+                "value": "hosting, SSL, údržba a obsahové zmeny podľa dohody"
               }
             ],
-            "cta": "Chcem Profi"
+            "cta": "Chcem Start"
           },
           {
             "id": "individual",

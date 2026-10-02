@@ -242,7 +242,7 @@
   const nameInput = document.querySelector("#contact-name");
   const formStatus = document.querySelector(".form-status");
   const SEO_OPTION = "SEO, výkon alebo servis";
-  const PACKAGE_IDS = new Set(["basic", "start", "profi", "individual", "neviem"]);
+  const PACKAGE_IDS = new Set(["basic", "start", "individual", "neviem"]);
   const PROJECT_TYPE_MAP = {
     redizajn: "Redizajn existujúceho webu",
     novy: "Nový web",
@@ -357,8 +357,9 @@
 
     if (industryInput && odvetvie) industryInput.value = odvetvie;
 
-    if (PACKAGE_IDS.has(balik)) {
-      applyPreset(balik);
+    const normalizedBalik = balik === "profi" ? "start" : balik;
+    if (PACKAGE_IDS.has(normalizedBalik)) {
+      applyPreset(normalizedBalik);
       window.setTimeout(focusFirstEmpty, 300);
     } else if (typ === "seo") {
       applyPreset("seo");

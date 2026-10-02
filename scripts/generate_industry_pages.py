@@ -269,7 +269,7 @@ def render_packages(packages: dict, depth: str, slug: str) -> str:
     for item in packages["items"]:
         popular = item.get("popular")
         custom = item.get("custom") or not item.get("price")
-        badge = '<span class="ind-plan-badge">Populárne</span>' if popular else ""
+        badge = '<span class="ind-plan-badge">Najčastejšia voľba</span>' if popular else ""
         rows = "".join(
             f'<div class="ind-plan-row"><span>{e(r["label"])}</span><strong>{e(r["value"])}</strong></div>'
             for r in item["rows"]
@@ -748,7 +748,7 @@ def render_hub(data: dict) -> str:
     <div class="wrap-narrow">
       <p class="kicker">Ďalšie odvetvia</p>
       <h2 class="section-title section-title--lg reveal" id="hub-more-title">Nemáte svoje odvetvie v zozname?</h2>
-      <p class="ind-lead reveal">Pripravujeme ďalšie kategórie. Ak potrebujete web pre iný segment, navrhneme riešenie podľa vašich zákazníkov a cieľov — v plánoch Start, Profi alebo Individual.</p>
+      <p class="ind-lead reveal">Pripravujeme ďalšie kategórie. Ak potrebujete web pre iný segment, navrhneme riešenie podľa vašich zákazníkov a cieľov — v plánoch Basic, Start alebo Individual.</p>
       <div class="ind-hero-actions reveal">
         <a class="btn btn-primary" href="{depth}kontakt/">Napísať o inom odvetví <span class="arrow">→</span></a>
       </div>
@@ -792,6 +792,7 @@ def update_sitemap(slugs: list[str]) -> None:
         urls.append((f"https://beewoy.sk/tvorba-webov/pre-{s}/", "0.8", "monthly"))
     urls += [
         ("https://beewoy.sk/cennik/", "0.9", "monthly"),
+        ("https://beewoy.sk/kalkulacka/", "0.9", "monthly"),
         ("https://beewoy.sk/kontakt/", "0.9", "monthly"),
         ("https://beewoy.sk/referencie/", "0.7", "monthly"),
     ]
