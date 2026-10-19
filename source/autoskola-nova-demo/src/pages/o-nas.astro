@@ -1,0 +1,133 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import CallToAction from "../components/CallToAction.astro";
+import { instructors } from "../data/instructors";
+import { vehicles } from "../data/vehicles";
+import { Check } from "@lucide/astro";
+---
+
+<SiteLayout
+  title="O nás"
+  description="Spoznaj filozofiu ukážkovej Autoškoly NOVA, jej ilustračný tím a výcvikové autá."
+>
+  <PageHero
+    eyebrow="NÁŠ PRÍSTUP · DEMO"
+    title="Istota za volantom začína dôverou."
+    text="NOVA je fiktívna autoškola vytvorená na ukážku moderného webu. Predstavujeme, ako môže škola jednoducho hovoriť o svojom prístupe k výcviku."
+    image="/images/lesson.jpg"
+    imageAlt="Ilustračná scéna inštruktora a študentky pri jazde"
+    cta="Pozrieť kurzy"
+    href="/kurzy/"
+  />
+  <section class="section">
+    <div class="shell editorial-split">
+      <div class="editorial-copy">
+        <p class="eyebrow">FILOZOFIA VÝCVIKU</p>
+        <h2>Jazda sa učí krok za krokom.</h2>
+        <p>
+          Za volantom nemusíš vedieť všetko hneď. Dobrá výučba vytvára priestor
+          na otázky, opakovanie a postupné zvládanie náročnejších situácií.
+        </p>
+        <div class="feature-list">
+          <div>
+            <Check size={22} />
+            <h3>Bezpečný začiatok</h3>
+            <p>Najskôr základy, potom zložitejšia premávka.</p>
+          </div>
+          <div>
+            <Check size={22} />
+            <h3>Zrozumiteľná spätná väzba</h3>
+            <p>Vieš, čo ti ide a čo ešte precvičiť.</p>
+          </div>
+          <div>
+            <Check size={22} />
+            <h3>Reálne trasy</h3>
+            <p>Jazdy v meste a bežných situáciách.</p>
+          </div>
+          <div>
+            <Check size={22} />
+            <h3>Vlastné tempo</h3>
+            <p>Pokrok bez zbytočného tlaku.</p>
+          </div>
+        </div>
+      </div>
+      <div class="editorial-image">
+        <img
+          src="/images/interior.jpg"
+          alt="Ilustračná jazda v modernom kompaktnom aute"
+          width="1536"
+          height="1024"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+  {instructors.length > 0 && (
+    <section class="section section-soft">
+      <div class="shell">
+        <SectionHeading
+          eyebrow="ĽUDIA"
+          title="Za každou jazdou je človek."
+          text="Takto môže vyzerať predstavenie skutočných inštruktorov po doplnení ich súhlasu a fotografií."
+        />
+        <div class="portrait-grid">
+          {instructors.map((person) => (
+            <article class="portrait-card">
+              <img
+                src={person.image}
+                alt={`Ilustračná fotografia profilu ${person.name}`}
+                width="1024"
+                height="1536"
+                loading="lazy"
+                style={`object-position:${person.position}`}
+              />
+              <div class="portrait-card-body">
+                <h3>{person.name}</h3>
+                <small>{person.role}</small>
+                <p>{person.text}</p>
+              </div>
+            </article>
+          ))}
+        </div>
+        <p class="demo-note">
+          Všetky profily sú ilustračné. Nejde o skutočných pracovníkov
+          autoškoly.
+        </p>
+      </div>
+    </section>
+  )}
+  {vehicles.length > 0 && (
+    <section class="section">
+      <div class="shell">
+        <SectionHeading
+          eyebrow="VOZOVÝ PARK"
+          title="Autá pre skutočné cesty."
+          text="V ostrej verzii tu môžu byť konkrétne modely, vybavenie aj typ prevodovky."
+        />
+        <div class="vehicle-grid">
+          {vehicles.map((vehicle) => (
+            <article class="vehicle-card">
+              <img
+                src={vehicle.image}
+                alt={`Ilustračné vozidlo s prevodovkou: ${vehicle.gearbox}`}
+                width="1536"
+                height="1024"
+                loading="lazy"
+              />
+              <div class="vehicle-card-content">
+                <h3>{vehicle.name}</h3>
+                <p>{vehicle.gearbox} · ilustračné vozidlo</p>
+              </div>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+  <CallToAction
+    title="Pridáš sa na cestu?"
+    text="Vyber si kurz, ktorý ti sadne, a prejdi na ukážkovú prihlášku."
+  />
+</SiteLayout>

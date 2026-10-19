@@ -1,0 +1,53 @@
+---
+import { ArrowUpRight, Check } from "@lucide/astro";
+import type { Course } from "../data/courses";
+interface Props {
+  course: Course;
+  index?: number;
+}
+const { course, index = 0 } = Astro.props;
+---
+
+<article class="course-card">
+  <a
+    href={course.href}
+    class="course-card-image"
+    aria-label={`Detail kurzu ${course.name}`}
+  >
+    <img
+      src={course.image}
+      alt={course.imageAlt}
+      width="1536"
+      height="1024"
+      loading="lazy"
+      style={`object-position:${index === 1 ? "65% center" : "center"}`}
+    />
+    <span class="course-index">0{index + 1}</span>
+  </a>
+  <div class="course-card-content">
+    <p class="eyebrow">{course.eyebrow}</p>
+    <h3>{course.name}</h3>
+    <p>{course.description}</p>
+    <ul>
+      {course.features.map((feature) => (
+        <li>
+          <Check size={15} stroke-width={2} />
+          {feature}
+        </li>
+      ))}
+    </ul>
+    <div class="course-card-bottom">
+      <div>
+        <small>Ilustračná cena {course.priceNote}</small>
+        <strong>{course.price}</strong>
+      </div>
+      <a
+        class="circle-link"
+        href={course.href}
+        aria-label={`Zistiť viac o kurze ${course.name}`}
+      >
+        <ArrowUpRight size={22} stroke-width={1.7} />
+      </a>
+    </div>
+  </div>
+</article>

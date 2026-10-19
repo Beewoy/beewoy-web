@@ -1,0 +1,95 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import CallToAction from "../components/CallToAction.astro";
+import { courses } from "../data/courses";
+import { ArrowUpRight, Info } from "@lucide/astro";
+---
+
+<SiteLayout
+  title="Cenník"
+  description="Prehľadný ukážkový cenník vodičských kurzov, kondičných jázd a individuálneho výcviku. Všetky ceny sú ilustračné."
+>
+  <PageHero
+    eyebrow="CENNÍK · ILUSTRAČNÉ CENY"
+    title="Jasno v cenách. Od začiatku."
+    text="Na jednom mieste vidíš možnosti aj to, čo je v ukážkovej cene zahrnuté. Presné podmienky by vždy potvrdila konkrétna autoškola."
+  />
+  <section class="section">
+    <div class="shell">
+      <SectionHeading
+        eyebrow="KURZY A SLUŽBY"
+        title="Vyber si podľa svojho cieľa."
+      />
+      <div class="price-grid">
+        {courses.map((course) => (
+          <article class="price-card">
+            <p class="eyebrow">{course.eyebrow}</p>
+            <h3>{course.name}</h3>
+            <p>{course.description}</p>
+            <strong>{course.price}</strong>
+            {course.id === "skupina-b" && (
+              <p>
+                Automatická prevodovka: ilustračný príplatok 100 €. Prevodovku
+                si vyberieš pri prihláške.
+              </p>
+            )}
+            <p>V ukážkovej ponuke:</p>
+            <ul>
+              {course.includes.map((item) => (
+                <li>{item}</li>
+              ))}
+            </ul>
+            <a class="button button-dark" href={course.href}>
+              Pozrieť detail <ArrowUpRight size={18} />
+            </a>
+          </article>
+        ))}
+      </div>
+      <p class="demo-note">
+        Všetky ceny sú ilustračné. Konečná cena, prípadné poplatky a rozsah
+        služby by boli potvrdené v ostrej ponuke.
+      </p>
+    </div>
+  </section>
+  <section class="section section-soft">
+    <div class="shell">
+      <SectionHeading
+        eyebrow="DOPLNKOVÉ INFORMÁCIE"
+        title="Čo ešte vedieť o cene?"
+      />
+      <div class="info-strip">
+        <div>
+          <Info size={23} />
+          <h3>Kondičné jazdy</h3>
+          <p>
+            Ukážková cena začína od 35 € za jazdu. Dĺžka jazdy a balíčky by boli
+            uvedené v reálnom cenníku.
+          </p>
+        </div>
+        <div>
+          <Info size={23} />
+          <h3>Individuálny výcvik</h3>
+          <p>
+            Cena sa odvíja od dohodnutého rozsahu. V deme slúži táto položka ako
+            príklad dopytu.
+          </p>
+        </div>
+        <div>
+          <Info size={23} />
+          <h3>Platba na splátky</h3>
+          <p>
+            Možnosť a podmienky splátok sa dohodnú s konkrétnou autoškolou. Demo
+            negarantuje splátkový plán.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <CallToAction
+    title="Našiel si svoj kurz?"
+    button="Ukážková prihláška"
+    href="/prihlaska/"
+  />
+</SiteLayout>

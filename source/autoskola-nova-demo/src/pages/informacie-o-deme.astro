@@ -1,0 +1,38 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import PageHero from "../components/PageHero.astro";
+---
+
+<SiteLayout
+  title="Informácie o deme"
+  description="Informácie o fiktívnej značke Autoškola NOVA, ukážkových údajoch a neodosielajúcich formulároch."
+>
+  <PageHero
+    eyebrow="PRÁVNE INFORMÁCIE · DEMO"
+    title="Toto je ukážka webu."
+    text="AUTOŠKOLA NOVA je fiktívna značka vytvorená na predstavenie webovej šablóny. Stránka nie je ponukou skutočnej autoškoly."
+  />
+  <section class="section">
+    <div class="shell prose-block" style="max-width:850px">
+      <h2>Ukážkové údaje</h2>
+      <p>
+        Ceny, termíny, kontakty, profily inštruktorov, vozidlá a lokality sú
+        ilustračné. Fotografie boli vytvorené pre toto demo a nepredstavujú
+        skutočných ľudí ani vozidlá konkrétnej autoškoly.
+      </p>
+      <h2 class="spaced">Formuláre a osobné údaje</h2>
+      <p>
+        Kontaktný formulár aj prihláška sú len vizuálne ukážky. Pri bežnom
+        použití sa ich obsah neposiela na server ani neukladá do databázy či
+        úložiska stránky. Prosíme, nezadávaj skutočné osobné údaje.
+      </p>
+      <h2 class="spaced">Pred použitím v ostrej prevádzke</h2>
+      <p>
+        Prevádzkovateľ autoškoly musí doplniť správne identifikačné a kontaktné
+        údaje, aktuálnu ponuku, skutočné fotografie s potrebnými súhlasmi a
+        vlastné právne dokumenty vrátane informácií o spracúvaní osobných
+        údajov. Až následne môže byť web publikovaný ako reálna služba.
+      </p>
+    </div>
+  </section>
+</SiteLayout>

@@ -1,0 +1,151 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import { courses } from "../data/courses";
+import { terms } from "../data/terms";
+import { ArrowUpRight, Info, LockKeyhole } from "@lucide/astro";
+---
+
+<SiteLayout
+  title="Ukážková prihláška"
+  description="Vyskúšaj demo prihlášku na vodičský kurz. Formulár nič neodosiela a osobné údaje sa neukladajú."
+>
+  <PageHero
+    eyebrow="UKÁŽKOVÁ PRIHLÁŠKA"
+    title="Tvoj prvý krok za volant."
+    text="Pozri sa, ako jednoducho môže vyzerať prihlásenie. Formulár je len demonštrácia používateľského rozhrania."
+  />
+  <section class="section">
+    <div class="shell contact-grid">
+      <div>
+        <p class="eyebrow">AKO TO FUNGUJE</p>
+        <h2 style="font-size:clamp(38px,4vw,57px)">
+          Pár údajov.
+          <br />
+          Jasný ďalší krok.
+        </h2>
+        <p style="color:#677486;max-width:470px">
+          Vyber kurz, pri skupine B prevodovku a termín, vyplň kontakt a
+          vyskúšaj priebeh formulára. Po kliknutí uvidíš iba informačné
+          potvrdenie ukážky.
+        </p>
+        <div
+          class="info-strip"
+          style="grid-template-columns:1fr;margin-top:35px"
+        >
+          <div>
+            <Info size={22} />
+            <h3>Žiadne odosielanie</h3>
+            <p>Údaje sa neposielajú do autoškoly ani na žiadny server.</p>
+          </div>
+          <div>
+            <LockKeyhole size={22} />
+            <h3>Žiadne ukladanie</h3>
+            <p>Formulár nepoužíva databázu ani úložisko v prehliadači.</p>
+          </div>
+        </div>
+      </div>
+      <div class="form-card">
+        <h2>Ukážka prihlášky</h2>
+        <p>Polia označené * sú v rámci dema povinné.</p>
+        <form class="demo-form" novalidate data-demo-form>
+          <div class="field">
+            <label for="course">Vybraný kurz *</label>
+            <select id="course" name="course" required>
+              <option value="">Vyber si kurz</option>
+              {courses.map((course) => (
+                <option value={course.id}>{course.name}</option>
+              ))}
+            </select>
+            <span class="field-error" data-error-for="course"></span>
+          </div>
+          <div class="field" data-gearbox-field hidden>
+            <label for="gearbox">Prevodovka pri kurze skupiny B *</label>
+            <select id="gearbox" name="gearbox" disabled>
+              <option value="">Vyber si prevodovku</option>
+              <option value="manual">Manuál</option>
+              <option value="automatic">Automat</option>
+            </select>
+            <small>
+              Skúška na automate obmedzí vodičské oprávnenie na vozidlá s
+              automatickou prevodovkou. Dostupnosť auta potvrdí autoškola.
+            </small>
+            <span class="field-error" data-error-for="gearbox"></span>
+          </div>
+          <div class="field">
+            <label for="term">Preferovaný termín</label>
+            <select id="term" name="term">
+              <option value="">Termín dohodnem neskôr</option>
+              {terms.map((term) => (
+                <option value={term.id} data-course={term.courseId}>
+                  {term.date} · {term.course}
+                </option>
+              ))}
+            </select>
+            <span class="field-error" data-error-for="term"></span>
+          </div>
+          <div class="field-grid">
+            <div class="field">
+              <label for="name">Meno a priezvisko *</label>
+              <input
+                id="name"
+                name="name"
+                autocomplete="name"
+                required
+                minlength="2"
+              />
+              <span class="field-error" data-error-for="name"></span>
+            </div>
+            <div class="field">
+              <label for="email">E-mail *</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                required
+              />
+              <span class="field-error" data-error-for="email"></span>
+            </div>
+          </div>
+          <div class="field">
+            <label for="phone">Telefón *</label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              inputmode="tel"
+              autocomplete="tel"
+              required
+              pattern="[+0-9 ()-]{9,20}"
+            />
+            <span class="field-error" data-error-for="phone"></span>
+          </div>
+          <div class="field">
+            <label for="note">Poznámka</label>
+            <textarea
+              id="note"
+              name="note"
+              placeholder="Čo by si chcel vedieť alebo povedať?"
+            ></textarea>
+            <span class="field-error" data-error-for="note"></span>
+          </div>
+          <button class="button button-lime form-submit" type="button">
+            Vyskúšať prihlášku <ArrowUpRight size={18} />
+          </button>
+          <div
+            class="form-status"
+            role="status"
+            aria-live="polite"
+            hidden
+          ></div>
+          <p class="form-disclaimer">
+            Tento formulár nič neodosiela. Prosíme, nevypĺňaj skutočné osobné
+            údaje.
+          </p>
+        </form>
+      </div>
+    </div>
+  </section>
+  <script src="../scripts/demoForms.ts"></script>
+</SiteLayout>

@@ -35,6 +35,8 @@ README.md
 **/README.txt
 scripts
 scripts/**
+source
+source/**
 **/__pycache__
 **/*.py[cod]
 

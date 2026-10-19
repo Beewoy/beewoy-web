@@ -1,0 +1,26 @@
+{
+  "name": "autoskola-nova-demo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev --host 127.0.0.1",
+    "build": "astro build",
+    "build:beewoy": "astro build && node scripts/prefix-for-beewoy.mjs",
+    "preview": "astro preview --host 127.0.0.1",
+    "check": "astro check",
+    "format": "prettier --plugin prettier-plugin-astro --write 'src/**/*.{astro,ts,css}'"
+  },
+  "dependencies": {
+    "@lucide/astro": "^1.59.0",
+    "@tailwindcss/vite": "^4.1.0",
+    "astro": "^5.16.0",
+    "tailwindcss": "^4.1.0",
+    "typescript": "^5.7.0"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.0",
+    "prettier": "^3.9.10",
+    "prettier-plugin-astro": "^1.1.1"
+  }
+}

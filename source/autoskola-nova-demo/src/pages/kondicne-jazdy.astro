@@ -1,0 +1,156 @@
+---
+import SiteLayout from "../layouts/SiteLayout.astro";
+import PageHero from "../components/PageHero.astro";
+import SectionHeading from "../components/SectionHeading.astro";
+import Faq from "../components/Faq.astro";
+import CallToAction from "../components/CallToAction.astro";
+import { faq } from "../data/faq";
+import {
+  ArrowUpRight,
+  MapPin,
+  SquareParking,
+  ShieldCheck,
+} from "@lucide/astro";
+---
+
+<SiteLayout
+  title="Kondičné jazdy"
+  description="Kondičné jazdy sú ukážkovou službou pre vodičov, ktorí chcú získať viac istoty v meste, pri parkovaní alebo po dlhšej prestávke."
+>
+  <PageHero
+    eyebrow="SPÄŤ ZA VOLANT"
+    title="Znova jazdi s istotou."
+    text="Vodičák už máš, ale za volantom si dlho nesedel? Kondičná jazda je priestor precvičiť si presne to, čo potrebuješ."
+    image="/images/lesson.jpg"
+    imageAlt="Ilustračná kondičná jazda s inštruktorom"
+    cta="Ukážkový dopyt"
+    href="/prihlaska/?course=kondicne-jazdy"
+  />
+  <section class="section">
+    <div class="shell">
+      <SectionHeading
+        eyebrow="PRE KOHO"
+        title="Vráť sa k jazde po svojom."
+        text="Kondičné jazdy nie sú skúškou. Sú praktickým tréningom pre vodiča, ktorý chce získať pokoj v konkrétnych situáciách."
+      />
+      <div class="info-strip">
+        <div>
+          <SquareParking size={25} />
+          <h3>Parkovanie</h3>
+          <p>
+            Precvič si cúvanie, parkovacie miesta a manévrovanie v úzkych
+            priestoroch.
+          </p>
+        </div>
+        <div>
+          <MapPin size={25} />
+          <h3>Mestská premávka</h3>
+          <p>
+            Prejdi si križovatky, pripájanie a trasy, po ktorých chceš jazdiť
+            bežne.
+          </p>
+        </div>
+        <div>
+          <ShieldCheck size={25} />
+          <h3>Dlhšia prestávka</h3>
+          <p>
+            Pripomeň si návyky, ktoré pomáhajú získať späť prirodzený pocit za
+            volantom.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section-soft">
+    <div class="shell editorial-split">
+      <div class="editorial-image">
+        <img
+          src="/images/interior.jpg"
+          alt="Ilustračný výhľad z interiéru auta počas mestskej jazdy"
+          width="1536"
+          height="1024"
+          loading="lazy"
+        />
+      </div>
+      <div class="editorial-copy">
+        <p class="eyebrow">JAZDA PODĽA POTREBY</p>
+        <h2>Manuál alebo automat? Ty rozhodneš.</h2>
+        <p>
+          V ukážkovej ponuke si môžeš zvoliť typ prevodovky aj tému jazdy. Pred
+          jazdou si povieš, čo chceš precvičiť; po nej dostaneš konkrétnu spätnú
+          väzbu.
+        </p>
+        <div class="legal-note">
+          Ilustračná cena od <strong>35 € za jazdu</strong>. Dĺžka jazdy,
+          vozidlo a presné podmienky by boli súčasťou reálnej ponuky autoškoly.
+        </div>
+        <div style="margin-top:26px">
+          <a
+            class="button button-dark"
+            href="/prihlaska/?course=kondicne-jazdy"
+          >
+            Zobraziť ukážkovú prihlášku <ArrowUpRight size={18} />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section-dark">
+    <div class="shell">
+      <SectionHeading
+        eyebrow="JEDNODUCHÝ POSTUP"
+        title="Ako kondičná jazda prebieha?"
+        light={true}
+      />
+      <div class="timeline">
+        <div class="timeline-step">
+          <span>01</span>
+          <h3>Povieš, čo potrebuješ.</h3>
+          <p>Opíšeš, kedy si naposledy jazdil a čo ti robí problém.</p>
+        </div>
+        <div class="timeline-step">
+          <span>02</span>
+          <h3>Vyberieš si auto.</h3>
+          <p>Manuál alebo automat podľa dostupnosti ukážkovej ponuky.</p>
+        </div>
+        <div class="timeline-step">
+          <span>03</span>
+          <h3>Precvičíš trasu.</h3>
+          <p>S inštruktorom sa zameriaš na konkrétne situácie.</p>
+        </div>
+        <div class="timeline-step">
+          <span>04</span>
+          <h3>Odídeš s plánom.</h3>
+          <p>Vieš, v čom pokračovať a čo si ešte zopakovať.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="shell" style="max-width:1000px">
+      <SectionHeading eyebrow="FAQ" title="Otázky pred prvou jazdou." />
+      <Faq
+        questions={[
+          faq[6],
+          faq[3],
+          {
+            question: "Musím mať vlastné auto?",
+            answer:
+              "V tomto deme sa počíta s jazdou na výcvikovom aute. Presné možnosti by potvrdila reálna autoškola.",
+          },
+          {
+            question: "Môžem si vybrať trasu?",
+            answer:
+              "Ukážkový koncept počíta s tréningom situácií, ktoré chceš precvičiť. Konkrétnu trasu by ste dohodli s inštruktorom.",
+          },
+        ]}
+      />
+    </div>
+  </section>
+  <CallToAction
+    title="Začni tam, kde si teraz."
+    text="Stačí pomenovať, čo chceš precvičiť. Ostatné sa dá naplánovať."
+    button="Ukážkový dopyt"
+    href="/prihlaska/?course=kondicne-jazdy"
+  />
+</SiteLayout>

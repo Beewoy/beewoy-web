@@ -1,0 +1,141 @@
+---
+import SiteLayout from "../../layouts/SiteLayout.astro";
+import PageHero from "../../components/PageHero.astro";
+import SectionHeading from "../../components/SectionHeading.astro";
+import TermList from "../../components/TermList.astro";
+import Faq from "../../components/Faq.astro";
+import CallToAction from "../../components/CallToAction.astro";
+import { courses, type Course } from "../../data/courses";
+import { faq } from "../../data/faq";
+import { ArrowUpRight, Check, ChevronRight } from "@lucide/astro";
+
+export function getStaticPaths() {
+  return courses
+    .filter((course) => course.id === "skupina-b")
+    .map((course) => ({ params: { slug: course.id }, props: { course } }));
+}
+interface Props {
+  course: Course;
+}
+const { course } = Astro.props;
+---
+
+<SiteLayout
+  title={course.name}
+  description={`${course.description} Ukážkový detail kurzu s ilustračnou cenou ${course.price} a termínmi v Bratislave.`}
+  image={course.image}
+>
+  <PageHero
+    eyebrow={`${course.eyebrow} · DEMO`}
+    title={course.name}
+    text={course.detail}
+    image={course.image}
+    imageAlt={course.imageAlt}
+    cta="Ukážková prihláška"
+    href={`/prihlaska/?course=${course.id}`}
+  />
+  <section class="section">
+    <div class="shell content-grid">
+      <div>
+        <div class="prose-block">
+          <p class="eyebrow">O KURZE</p>
+          <h2>Začni s dobrým pocitom.</h2>
+          <p>
+            {course.description} Výcvik je rozdelený na zrozumiteľné kroky, aby
+            si vedel, čo sa učíš a kam sa posúvaš.
+          </p>
+          <h2 class="spaced">Čo kurz zahŕňa</h2>
+          <ul>
+            {course.includes.map((item) => (
+              <li>
+                <Check size={18} />
+                {item}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <img
+          class="content-photo"
+          src="/images/lesson.jpg"
+          alt="Ilustračný priebeh jazdy s inštruktorom"
+          width="1536"
+          height="1024"
+          loading="lazy"
+        />
+        <div class="prose-block">
+          <h2>Ako prebieha výcvik</h2>
+          <p>
+            Po výbere kurzu by nasledovalo potvrdenie podmienok, rozpis teórie a
+            dohodnutie praktických jázd. Najprv si osvojíš základy ovládania
+            auta, potom sa postupne presunieš do reálnej premávky.
+          </p>
+          <p>
+            Konkrétny rozsah a priebeh musí v ostrej verzii potvrdiť
+            prevádzkovateľ autoškoly.
+          </p>
+        </div>
+      </div>
+      <aside class="sticky-summary">
+        <p class="eyebrow">{course.name}</p>
+        <small>Ilustračná cena {course.priceNote}</small>
+        <strong>{course.price}</strong>
+        <p>
+          Pri výcviku na automate je v deme príplatok 100 €. Presné podmienky
+          potvrdí reálna autoškola.
+        </p>
+        <a class="button button-lime" href={`/prihlaska/?course=${course.id}`}>
+          Prihlásiť sa <ArrowUpRight size={18} />
+        </a>
+        <a class="text-link" style="margin-top:20px" href="/cennik/">
+          Celý cenník <ChevronRight size={16} />
+        </a>
+      </aside>
+    </div>
+  </section>
+  <section class="section" id="prevodovka">
+    <div class="shell">
+      <SectionHeading
+        eyebrow="VOĽBA VOZIDLA"
+        title="Manuál alebo automat?"
+        text="V tejto ukážkovej ponuke majú oba varianty spoločné termíny začiatku. Typ prevodovky si vyberieš v prihláške; dostupnosť výcvikového auta by potvrdila autoškola."
+      />
+      <div class="info-strip">
+        <div>
+          <h3>Manuál</h3>
+          <p>
+            Naučíš sa pracovať so spojkou a radením. Ilustračná cena kurzu
+            začína od 1 090 €.
+          </p>
+        </div>
+        <div>
+          <h3>Automat</h3>
+          <p>
+            Jazdíš bez radenia. V deme je ilustračný príplatok 100 € a skúška
+            na automate obmedzí oprávnenie na vozidlá s automatickou prevodovkou.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="section section-soft">
+    <div class="shell">
+      <SectionHeading
+        eyebrow="TERMÍNY"
+        title="Kedy môžeš začať?"
+        text="Ukážka spoločných termínov začiatku kurzu skupiny B."
+      />
+      <TermList courseId={course.id} />
+    </div>
+  </section>
+  <section class="section">
+    <div class="shell" style="max-width:1000px">
+      <SectionHeading eyebrow="FAQ" title="Ešte máš otázky?" />
+      <Faq questions={faq.slice(0, 6)} />
+    </div>
+  </section>
+  <CallToAction
+    title="Tvoja cesta sa môže začať tu."
+    button="Otvoriť prihlášku"
+    href={`/prihlaska/?course=${course.id}`}
+  />
+</SiteLayout>

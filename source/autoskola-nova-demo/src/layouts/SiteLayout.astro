@@ -1,0 +1,226 @@
+---
+import "../styles/global.css";
+import { ArrowUpRight, Menu, X, Phone } from "@lucide/astro";
+import { schoolConfig } from "../data/schoolConfig";
+import { courses } from "../data/courses";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+}
+const { title, description, image = "/images/hero-car-city.jpg" } = Astro.props;
+const current = Astro.url.pathname;
+const nav = [
+  { label: "Kurzy", href: "/kurzy/" },
+  { label: "Cenník", href: "/cennik/" },
+  { label: "O nás", href: "/o-nas/" },
+  ...(courses.some((course) => course.id === "kondicne-jazdy")
+    ? [{ label: "Kondičné jazdy", href: "/kondicne-jazdy/" }]
+    : []),
+  { label: "Kontakt", href: "/kontakt/" },
+];
+---
+
+<!doctype html>
+<html
+  lang="sk"
+  style={`--accent:${schoolConfig.colors.accent};--dark:${schoolConfig.colors.dark};--page:${schoolConfig.colors.background}`}
+>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="theme-color" content={schoolConfig.colors.dark} />
+    <meta name="description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content={`${title} | ${schoolConfig.name} · DEMO`}
+    />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <title>{title} | {schoolConfig.name} · DEMO</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    {current === "/" && (
+      <link rel="preload" as="image" href="/images/hero-car-city.jpg" />
+    )}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">
+      Preskočiť na obsah
+    </a>
+    <div class="demo-ribbon">
+      <span>UKÁŽKOVÝ WEB</span>
+      <span>Fiktívna autoškola · ceny, termíny a kontakty sú ilustračné</span>
+    </div>
+    <header class="site-header" id="site-header">
+      <div class="shell header-inner">
+        <a
+          class="brand"
+          href="/"
+          aria-label={`${schoolConfig.name} – úvodná stránka`}
+        >
+          <img
+            class="brand-logo"
+            src={schoolConfig.logo}
+            alt=""
+            width="44"
+            height="44"
+          />
+          <span class="brand-name">{schoolConfig.name}</span>
+        </a>
+        <nav class="desktop-nav" aria-label="Hlavná navigácia">
+          {nav.map((item) => (
+            <a
+              href={item.href}
+              aria-current={
+                current === item.href ||
+                (item.href === "/kurzy/" && current.startsWith("/kurzy/"))
+                  ? "page"
+                  : undefined
+              }
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
+        <a class="button button-dark header-cta" href="/prihlaska/">
+          Prihlásiť sa <ArrowUpRight size={17} stroke-width={1.8} />
+        </a>
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="Otvoriť menu"
+          aria-controls="mobile-nav"
+          aria-expanded="false"
+        >
+          <Menu class="menu-open-icon" size={25} />
+          <X class="menu-close-icon" size={25} />
+        </button>
+      </div>
+      <nav
+        class="mobile-nav"
+        id="mobile-nav"
+        aria-label="Mobilná navigácia"
+        hidden
+      >
+        {nav.map((item) => (
+          <a href={item.href}>
+            {item.label}
+            <ArrowUpRight size={18} />
+          </a>
+        ))}
+        <a href="/prihlaska/">
+          Ukážková prihláška
+          <ArrowUpRight size={18} />
+        </a>
+      </nav>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="shell footer-main">
+        <div class="footer-brand">
+          <a class="brand brand-light" href="/">
+            <img
+              class="brand-logo"
+              src={schoolConfig.logo}
+              alt=""
+              width="44"
+              height="44"
+            />
+            <span class="brand-name">{schoolConfig.name}</span>
+          </a>
+          <p>
+            {schoolConfig.slogan}
+            <br />
+            Moderné ukážkové demo pre autoškoly.
+          </p>
+          <span class="footer-demo">
+            DEMO PROJEKT · ŽIADNA REÁLNA PREVÁDZKA
+          </span>
+          <div class="footer-social">
+            {schoolConfig.social.length > 0
+              ? schoolConfig.social.map((item) => (
+                  <a href={item.url} rel="noopener noreferrer" target="_blank">
+                    {item.label}
+                  </a>
+                ))
+              : "Sociálne siete: odkazy doplní reálna autoškola."}
+          </div>
+        </div>
+        <div>
+          <h2>Objav</h2>
+          <a href="/kurzy/">Kurzy</a>
+          <a href="/cennik/">Cenník</a>
+          {courses.some((course) => course.id === "kondicne-jazdy") && (
+            <a href="/kondicne-jazdy/">Kondičné jazdy</a>
+          )}
+          <a href="/o-nas/">O nás</a>
+        </div>
+        <div>
+          <h2>Kontakt · ukážka</h2>
+          <span>{schoolConfig.contact.phoneDisplay}</span>
+          <span>{schoolConfig.contact.email}</span>
+          <span>Lokality: {schoolConfig.locations.join(", ")}</span>
+          <span>{schoolConfig.contact.hours}</span>
+          <a href="/kontakt/">Kontaktná stránka ↗</a>
+        </div>
+      </div>
+      <div class="shell footer-bottom">
+        <span>
+          © {new Date().getFullYear()} {schoolConfig.name}. Fiktívna značka.
+        </span>
+        <a href="/informacie-o-deme/">
+          Právne informácie a ochrana údajov v deme ↗
+        </a>
+      </div>
+    </footer>
+    <div class="mobile-action-bar" aria-label="Rýchle akcie">
+      <a href="/kontakt/">
+        <Phone size={17} /> Kontakt
+      </a>
+      <a href="/prihlaska/">
+        Prihlásiť sa <ArrowUpRight size={17} />
+      </a>
+    </div>
+    <script>
+      const toggle = document.querySelector<HTMLButtonElement>("#menu-toggle");
+      const menu = document.querySelector<HTMLElement>("#mobile-nav");
+      const header = document.querySelector<HTMLElement>("#site-header");
+      toggle?.addEventListener("click", () => {
+        const open = toggle.getAttribute("aria-expanded") !== "true";
+        toggle.setAttribute("aria-expanded", String(open));
+        toggle.setAttribute(
+          "aria-label",
+          open ? "Zavrieť menu" : "Otvoriť menu",
+        );
+        if (menu) menu.hidden = !open;
+      });
+      document.addEventListener("keydown", (event) => {
+        if (
+          event.key === "Escape" &&
+          toggle?.getAttribute("aria-expanded") === "true"
+        ) {
+          toggle.setAttribute("aria-expanded", "false");
+          toggle.setAttribute("aria-label", "Otvoriť menu");
+          if (menu) menu.hidden = true;
+          toggle.focus();
+        }
+      });
+      const observer = new IntersectionObserver(
+        ([entry]) =>
+          header?.classList.toggle("is-scrolled", !entry.isIntersecting),
+        { threshold: 0 },
+      );
+      const sentinel = document.createElement("span");
+      sentinel.setAttribute("aria-hidden", "true");
+      sentinel.className = "header-sentinel";
+      document.body.prepend(sentinel);
+      observer.observe(sentinel);
+    </script>
+  </body>
+</html>

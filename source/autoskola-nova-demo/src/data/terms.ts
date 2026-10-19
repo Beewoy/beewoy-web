@@ -1,0 +1,32 @@
+export const terms = [
+  {
+    id: "nov-12",
+    day: "12",
+    month: "NOV",
+    date: "12. novembra 2026",
+    courseId: "skupina-b",
+    course: "Vodičský kurz skupiny B",
+    city: "Bratislava",
+    price: "1 090 €",
+  },
+  {
+    id: "nov-26",
+    day: "26",
+    month: "NOV",
+    date: "26. novembra 2026",
+    courseId: "skupina-b",
+    course: "Vodičský kurz skupiny B",
+    city: "Bratislava",
+    price: "1 090 €",
+  },
+  {
+    id: "dec-10",
+    day: "10",
+    month: "DEC",
+    date: "10. decembra 2026",
+    courseId: "skupina-b",
+    course: "Vodičský kurz skupiny B",
+    city: "Bratislava",
+    price: "1 090 €",
+  },
+];

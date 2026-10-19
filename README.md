@@ -37,12 +37,22 @@ Potom otvor `http://localhost:3000` (alebo port zo `serve` / `http.server`).
 | `icons/` | Favicony + PWA ikony |
 | `assets/projects/` | Screenshoty hero sekcií klientov |
 | `projekty/navrhy/<slug>/` | HTML náhľady konceptov (`index.html` → `/projekty/navrhy/<slug>/`, `noindex`) |
+| `source/autoskola-nova-demo/` | Zdroj Astro dema autoškoly; verejný náhľad je v `projekty/navrhy/autoskola-nova/` |
 | `og-image.png` | Open Graph obrázok (1200×630) |
 | `manifest.webmanifest` | PWA manifest |
 | `sw.js` | Service worker (cache shellu) |
 | `robots.txt` / `sitemap.xml` | SEO |
 | `scripts/generate-icons.py` | Regenerácia ikon a OG z `logo.svg` |
 | `signatures/` | E-mailové podpisy (David, Tibor) |
+
+---
+
+### Obnova náhľadu autoškoly
+
+V `source/autoskola-nova-demo/` spusti `npm ci`, `npm run check` a
+`npm run build:beewoy`. Obsah vytvoreného `dist/` skopíruj do
+`projekty/navrhy/autoskola-nova/`. Zdrojový priečinok je v `.assetsignore`,
+takže sa pri nasadení nepublikuje.
 
 ---
 

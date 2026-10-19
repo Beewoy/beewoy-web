@@ -1,0 +1,21 @@
+---
+import { Plus } from "@lucide/astro";
+import { faq } from "../data/faq";
+interface Props {
+  questions?: typeof faq;
+}
+const { questions = faq } = Astro.props;
+---
+
+<div class="faq-list">
+  {questions.map((item, index) => (
+    <details class="faq-item">
+      <summary>
+        <span class="faq-number">{String(index + 1).padStart(2, "0")}</span>
+        <span>{item.question}</span>
+        <Plus size={20} class="faq-plus" />
+      </summary>
+      <div class="faq-answer">{item.answer}</div>
+    </details>
+  ))}
+</div>

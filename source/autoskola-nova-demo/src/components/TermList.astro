@@ -1,0 +1,55 @@
+---
+import { ArrowUpRight, MapPin } from "@lucide/astro";
+import { terms } from "../data/terms";
+import { courses } from "../data/courses";
+interface Props {
+  courseId?: string;
+}
+const { courseId } = Astro.props;
+const visibleTerms = terms.filter(
+  (term) =>
+    (!courseId || term.courseId === courseId) &&
+    courses.some((course) => course.id === term.courseId),
+);
+---
+
+<div class="terms-widget">
+  {visibleTerms.length > 0 ? (
+    <div class="term-list">
+      {visibleTerms.map((term) => (
+        <article class="term-row" data-course={term.courseId}>
+          <div class="term-date">
+            <strong>{term.day}</strong>
+            <span>{term.month}</span>
+          </div>
+          <div class="term-main">
+            <h3>{term.course}</h3>
+            <p>
+              <MapPin size={15} /> {term.city} <span aria-hidden="true">·</span>{" "}
+              {term.date}
+            </p>
+          </div>
+          <div class="term-price">
+            <small>Ilustračná cena</small>
+            <strong>{term.price}</strong>
+          </div>
+          <a
+            class="term-action"
+            href={`/prihlaska/?course=${term.courseId}&term=${term.id}`}
+          >
+            Mám záujem <ArrowUpRight size={18} />
+          </a>
+        </article>
+      ))}
+    </div>
+  ) : (
+    <p class="legal-note">
+      Termíny momentálne nie sú uvedené. Informácie poskytne autoškola na
+      kontakte.
+    </p>
+  )}
+  <p class="demo-note">
+    Prevodovku si vyberieš v prihláške. Pri automate je ilustračný príplatok
+    100 €. Termíny a ceny sú ilustračné; dostupnosť neodráža skutočný stav.
+  </p>
+</div>

@@ -1,0 +1,29 @@
+---
+import { ArrowUpRight } from "@lucide/astro";
+interface Props {
+  title?: string;
+  text?: string;
+  button?: string;
+  href?: string;
+}
+const {
+  title = "Pripravený vyraziť?",
+  text = "Tvoj vodičák začína jedným rozhodnutím.",
+  button = "Vybrať si kurz",
+  href = "/kurzy/",
+} = Astro.props;
+---
+
+<section class="cta-section">
+  <div class="shell cta-inner">
+    <div>
+      <p class="eyebrow">ĎALŠÍ KROK</p>
+      <h2>{title}</h2>
+      <p>{text}</p>
+    </div>
+    <a class="button button-lime" href={href}>
+      {button}
+      <ArrowUpRight size={19} />
+    </a>
+  </div>
+</section>
