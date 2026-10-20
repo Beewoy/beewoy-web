@@ -90,6 +90,9 @@ svg {
   width: min(100% - 48px, 1280px);
   margin-inline: auto;
 }
+section[id] {
+  scroll-margin-top: 82px;
+}
 .skip-link {
   position: absolute;
   z-index: 1000;
@@ -365,9 +368,11 @@ svg {
   min-height: 580px;
   min-height: clamp(580px, calc(90svh - 107px), 900px);
   background-image:
-    linear-gradient(180deg, #0b1425c9 0%, #0b1425a8 58%, #0b14257a 100%),
+    linear-gradient(90deg, #0b1425bd 0%, #0b14259e 48%, #0b142552 100%),
+    linear-gradient(180deg, #0b14252b 0%, #0b142500 55%, #0b14253b 100%),
     url("/images/hero-car-school.jpg");
   background-position:
+    center,
     center,
     center 57%;
   background-size: cover;
@@ -419,22 +424,25 @@ svg {
   background: #ffffff30;
 }
 .quick-actions {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
-  background: #ffffff36;
+  background: #0b1425f2;
   border-top: 1px solid #ffffff36;
-  backdrop-filter: blur(12px);
+}
+.quick-actions-inner {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 .quick-action {
   display: flex;
   min-height: 122px;
   flex-direction: column;
   justify-content: space-between;
-  background: #0b1425e6;
+  border-left: 1px solid #ffffff30;
   color: white;
   padding: 23px 27px;
   transition: background 0.2s;
+}
+.quick-action:last-child {
+  border-right: 1px solid #ffffff30;
 }
 .quick-action:hover,
 .quick-action:focus-visible {
@@ -1396,7 +1404,7 @@ svg {
   .hero-copy h1 {
     font-size: clamp(58px, 8vw, 76px);
   }
-  .quick-actions {
+  .quick-actions-inner {
     grid-template-columns: 1fr 1fr;
   }
   .quick-action {
@@ -1533,6 +1541,9 @@ svg {
     font-size: 11px;
   }
   .hero {
+    background-image:
+      linear-gradient(180deg, #0b142575 0%, #0b1425a3 45%, #0b1425bd 100%),
+      url("/images/hero-car-school.jpg");
     background-position:
       center,
       63% center;
@@ -1557,9 +1568,6 @@ svg {
     gap: 10px;
     padding: 0 10px;
     font-size: 12px;
-  }
-  .quick-actions {
-    gap: 1px;
   }
   .quick-action {
     padding: 16px;

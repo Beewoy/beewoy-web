@@ -18,6 +18,7 @@ import {
   Clock3,
   Handshake,
   MapPin,
+  Route,
   ShieldCheck,
 } from "@lucide/astro";
 ---
@@ -53,59 +54,61 @@ import {
       </div>
     </div>
     <nav class="quick-actions" aria-label="Rýchle akcie">
-      <a href="/kurzy/" class="quick-action">
-        <span>
-          <CarFront size={22} />
-          <ArrowUpRight class="quick-arrow" size={18} />
-        </span>
-        <span>
-          <strong>Kurzy a ceny</strong>
-          <small>Porovnaj si ponuku</small>
-        </span>
-      </a>
-      <a href="/#terminy" class="quick-action">
-        <span>
-          <CalendarDays size={21} />
-          <ArrowUpRight class="quick-arrow" size={18} />
-        </span>
-        <span>
-          <strong>Najbližšie termíny</strong>
-          <small>Pozri, kedy začať</small>
-        </span>
-      </a>
-      {courses.some((course) => course.id === "kondicne-jazdy") ? (
-        <a href="/kondicne-jazdy/" class="quick-action">
+      <div class="shell quick-actions-inner">
+        <a href="/#ako-to-funguje" class="quick-action">
           <span>
-            <CarFront size={22} />
+            <Route size={22} />
             <ArrowUpRight class="quick-arrow" size={18} />
           </span>
           <span>
-            <strong>Kondičné jazdy</strong>
-            <small>Vráť sa za volant</small>
+            <strong>Ako to funguje</strong>
+            <small>Od prihlášky po skúšku</small>
           </span>
         </a>
-      ) : (
-        <a href="/prihlaska/" class="quick-action">
+        <a href="/#terminy" class="quick-action">
           <span>
-            <CarFront size={22} />
+            <CalendarDays size={21} />
             <ArrowUpRight class="quick-arrow" size={18} />
           </span>
           <span>
-            <strong>Prihláška</strong>
-            <small>Urob prvý krok</small>
+            <strong>Najbližšie termíny</strong>
+            <small>Pozri, kedy začať</small>
           </span>
         </a>
-      )}
-      <a href="/kontakt/" class="quick-action">
-        <span>
-          <MapPin size={21} />
-          <ArrowUpRight class="quick-arrow" size={18} />
-        </span>
-        <span>
-          <strong>Kontakt</strong>
-          <small>Napíš nám v deme</small>
-        </span>
-      </a>
+        {courses.some((course) => course.id === "kondicne-jazdy") ? (
+          <a href="/kondicne-jazdy/" class="quick-action">
+            <span>
+              <CarFront size={22} />
+              <ArrowUpRight class="quick-arrow" size={18} />
+            </span>
+            <span>
+              <strong>Kondičné jazdy</strong>
+              <small>Vráť sa za volant</small>
+            </span>
+          </a>
+        ) : (
+          <a href="/prihlaska/" class="quick-action">
+            <span>
+              <CarFront size={22} />
+              <ArrowUpRight class="quick-arrow" size={18} />
+            </span>
+            <span>
+              <strong>Prihláška</strong>
+              <small>Urob prvý krok</small>
+            </span>
+          </a>
+        )}
+        <a href="/kontakt/" class="quick-action">
+          <span>
+            <MapPin size={21} />
+            <ArrowUpRight class="quick-arrow" size={18} />
+          </span>
+          <span>
+            <strong>Kontakt</strong>
+            <small>Napíš nám v deme</small>
+          </span>
+        </a>
+      </div>
     </nav>
   </section>
   <section class="section section-soft" id="kurzy">
@@ -185,7 +188,7 @@ import {
       </div>
     </div>
   </section>
-  <section class="section section-dark">
+  <section class="section section-dark" id="ako-to-funguje">
     <div class="shell">
       <SectionHeading
         eyebrow="AKO TO FUNGUJE"
