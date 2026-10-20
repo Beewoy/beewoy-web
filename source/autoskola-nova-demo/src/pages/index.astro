@@ -52,62 +52,62 @@ import {
         </div>
       </div>
     </div>
+    <nav class="quick-actions" aria-label="Rýchle akcie">
+      <a href="/kurzy/" class="quick-action">
+        <span>
+          <CarFront size={22} />
+          <ArrowUpRight class="quick-arrow" size={18} />
+        </span>
+        <span>
+          <strong>Kurzy a ceny</strong>
+          <small>Porovnaj si ponuku</small>
+        </span>
+      </a>
+      <a href="/#terminy" class="quick-action">
+        <span>
+          <CalendarDays size={21} />
+          <ArrowUpRight class="quick-arrow" size={18} />
+        </span>
+        <span>
+          <strong>Najbližšie termíny</strong>
+          <small>Pozri, kedy začať</small>
+        </span>
+      </a>
+      {courses.some((course) => course.id === "kondicne-jazdy") ? (
+        <a href="/kondicne-jazdy/" class="quick-action">
+          <span>
+            <CarFront size={22} />
+            <ArrowUpRight class="quick-arrow" size={18} />
+          </span>
+          <span>
+            <strong>Kondičné jazdy</strong>
+            <small>Vráť sa za volant</small>
+          </span>
+        </a>
+      ) : (
+        <a href="/prihlaska/" class="quick-action">
+          <span>
+            <CarFront size={22} />
+            <ArrowUpRight class="quick-arrow" size={18} />
+          </span>
+          <span>
+            <strong>Prihláška</strong>
+            <small>Urob prvý krok</small>
+          </span>
+        </a>
+      )}
+      <a href="/kontakt/" class="quick-action">
+        <span>
+          <MapPin size={21} />
+          <ArrowUpRight class="quick-arrow" size={18} />
+        </span>
+        <span>
+          <strong>Kontakt</strong>
+          <small>Napíš nám v deme</small>
+        </span>
+      </a>
+    </nav>
   </section>
-  <nav class="quick-actions" aria-label="Rýchle akcie">
-    <a href="/kurzy/" class="quick-action">
-      <span>
-        <CarFront size={22} />
-        <ArrowUpRight class="quick-arrow" size={18} />
-      </span>
-      <span>
-        <strong>Kurzy a ceny</strong>
-        <small>Porovnaj si ponuku</small>
-      </span>
-    </a>
-    <a href="/#terminy" class="quick-action">
-      <span>
-        <CalendarDays size={21} />
-        <ArrowUpRight class="quick-arrow" size={18} />
-      </span>
-      <span>
-        <strong>Najbližšie termíny</strong>
-        <small>Pozri, kedy začať</small>
-      </span>
-    </a>
-    {courses.some((course) => course.id === "kondicne-jazdy") ? (
-      <a href="/kondicne-jazdy/" class="quick-action">
-        <span>
-          <CarFront size={22} />
-          <ArrowUpRight class="quick-arrow" size={18} />
-        </span>
-        <span>
-          <strong>Kondičné jazdy</strong>
-          <small>Vráť sa za volant</small>
-        </span>
-      </a>
-    ) : (
-      <a href="/prihlaska/" class="quick-action">
-        <span>
-          <CarFront size={22} />
-          <ArrowUpRight class="quick-arrow" size={18} />
-        </span>
-        <span>
-          <strong>Prihláška</strong>
-          <small>Urob prvý krok</small>
-        </span>
-      </a>
-    )}
-    <a href="/kontakt/" class="quick-action">
-      <span>
-        <MapPin size={21} />
-        <ArrowUpRight class="quick-arrow" size={18} />
-      </span>
-      <span>
-        <strong>Kontakt</strong>
-        <small>Napíš nám v deme</small>
-      </span>
-    </a>
-  </nav>
   <section class="section section-soft" id="kurzy">
     <div class="shell">
       <SectionHeading
