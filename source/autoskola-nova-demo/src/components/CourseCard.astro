@@ -1,5 +1,5 @@
 ---
-import { ArrowUpRight, Check } from "@lucide/astro";
+import { ArrowUpRight } from "@lucide/astro";
 import type { Course } from "../data/courses";
 interface Props {
   course: Course;
@@ -12,7 +12,7 @@ const { course, index = 0 } = Astro.props;
   <a
     href={course.href}
     class="course-card-image"
-    aria-label={`Detail kurzu ${course.name}`}
+    aria-label={`${course.id === "individualny-vycvik" ? "Dopyt k službe" : "Detail kurzu"} ${course.name}`}
   >
     <img
       src={course.image}
@@ -20,7 +20,6 @@ const { course, index = 0 } = Astro.props;
       width="1536"
       height="1024"
       loading="lazy"
-      style={`object-position:${index === 1 ? "65% center" : "center"}`}
     />
     <span class="course-index">0{index + 1}</span>
   </a>
@@ -28,12 +27,9 @@ const { course, index = 0 } = Astro.props;
     <p class="eyebrow">{course.eyebrow}</p>
     <h3>{course.name}</h3>
     <p>{course.description}</p>
-    <ul>
+    <ul class="course-tags">
       {course.features.map((feature) => (
-        <li>
-          <Check size={15} stroke-width={2} />
-          {feature}
-        </li>
+        <li>{feature}</li>
       ))}
     </ul>
     <div class="course-card-bottom">
@@ -41,12 +37,9 @@ const { course, index = 0 } = Astro.props;
         <small>Ilustračná cena {course.priceNote}</small>
         <strong>{course.price}</strong>
       </div>
-      <a
-        class="circle-link"
-        href={course.href}
-        aria-label={`Zistiť viac o kurze ${course.name}`}
-      >
-        <ArrowUpRight size={22} stroke-width={1.7} />
+      <a class="course-card-link" href={course.href}>
+        {course.id === "individualny-vycvik" ? "Opýtať sa" : "Detail kurzu"}
+        <ArrowUpRight size={18} stroke-width={1.8} />
       </a>
     </div>
   </div>

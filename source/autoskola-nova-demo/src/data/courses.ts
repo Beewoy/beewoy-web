@@ -37,6 +37,27 @@ export const courses: Course[] = [
     ],
   },
   {
+    id: "intenzivny-b",
+    name: "Intenzívny kurz skupiny B",
+    shortName: "Intenzívny B",
+    eyebrow: "Keď chceš jazdiť častejšie",
+    price: "1 390 €",
+    priceNote: "od",
+    description:
+      "Hustejší plán teórie a jázd pre tých, ktorí chcú výcviku venovať viac času naraz.",
+    detail:
+      "Kurz skupiny B s intenzívnejším plánom výučby a jázd. Konkrétny rozvrh a dostupnosť by potvrdila autoškola.",
+    href: "/kurzy/intenzivny-b/",
+    image: "/images/hero-car-school.jpg",
+    imageAlt: "Ilustračné výcvikové auto s označením autoškola",
+    features: ["Častejšie jazdy", "Manuál alebo automat", "Plán podľa dohody"],
+    includes: [
+      "Teoretická príprava",
+      "Praktický výcvik s hustejším rozvrhom",
+      "Príprava na záverečnú skúšku",
+    ],
+  },
+  {
     id: "kondicne-jazdy",
     name: "Kondičné jazdy",
     shortName: "Kondičné jazdy",

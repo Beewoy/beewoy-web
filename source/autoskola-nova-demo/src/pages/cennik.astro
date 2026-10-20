@@ -1,94 +1,103 @@
 ---
 import SiteLayout from "../layouts/SiteLayout.astro";
 import PageHero from "../components/PageHero.astro";
-import SectionHeading from "../components/SectionHeading.astro";
 import CallToAction from "../components/CallToAction.astro";
 import { courses } from "../data/courses";
-import { ArrowUpRight, Info } from "@lucide/astro";
+import { ArrowUpRight, Check } from "@lucide/astro";
+
+const groups = [
+  {
+    number: "01",
+    title: "Vodičské kurzy skupiny B",
+    description: "Pre tvoj prvý vodičák. Prevodovku si vyberieš pri prihláške.",
+    items: courses.filter((course) =>
+      ["skupina-b", "intenzivny-b"].includes(course.id),
+    ),
+  },
+  {
+    number: "02",
+    title: "Jazdy podľa potreby",
+    description: "Keď už vodičák máš alebo potrebuješ osobný plán.",
+    items: courses.filter((course) =>
+      ["kondicne-jazdy", "individualny-vycvik"].includes(course.id),
+    ),
+  },
+];
 ---
 
 <SiteLayout
   title="Cenník"
-  description="Prehľadný ukážkový cenník vodičských kurzov, kondičných jázd a individuálneho výcviku. Všetky ceny sú ilustračné."
+  description="Prehľadné ilustračné ceny kurzov skupiny B, kondičných jázd a individuálneho výcviku Autoškoly NOVA."
 >
   <PageHero
     eyebrow="CENNÍK · ILUSTRAČNÉ CENY"
-    title="Jasno v cenách. Od začiatku."
-    text="Na jednom mieste vidíš možnosti aj to, čo je v ukážkovej cene zahrnuté. Presné podmienky by vždy potvrdila konkrétna autoškola."
+    title="Ceny, v ktorých sa vyznáš."
+    text="Najprv si vyber cieľ. Hneď vedľa vidíš orientačnú cenu aj to, čo ukážková ponuka zahŕňa."
   />
   <section class="section">
-    <div class="shell">
-      <SectionHeading
-        eyebrow="KURZY A SLUŽBY"
-        title="Vyber si podľa svojho cieľa."
-      />
-      <div class="price-grid">
-        {courses.map((course) => (
-          <article class="price-card">
-            <p class="eyebrow">{course.eyebrow}</p>
-            <h3>{course.name}</h3>
-            <p>{course.description}</p>
-            <strong>{course.price}</strong>
-            {course.id === "skupina-b" && (
-              <p>
-                Automatická prevodovka: ilustračný príplatok 100 €. Prevodovku
-                si vyberieš pri prihláške.
-              </p>
-            )}
-            <p>V ukážkovej ponuke:</p>
-            <ul>
-              {course.includes.map((item) => (
-                <li>{item}</li>
+    <div class="shell pricing-shell">
+      <div class="pricing-intro">
+        <p class="eyebrow">PREHĽAD PONUKY</p>
+        <h2>Štyri možnosti. Jeden prehľad.</h2>
+        <p>
+          Ceny sú súčasťou dema fiktívnej autoškoly. Rozsah a konečnú cenu by
+          vždy potvrdila skutočná prevádzka.
+        </p>
+      </div>
+      <div class="pricing-groups">
+        {groups.map((group) => (
+          <section class="pricing-group" aria-label={group.title}>
+            <div class="pricing-group-heading">
+              <span>{group.number}</span>
+              <div>
+                <h3>{group.title}</h3>
+                <p>{group.description}</p>
+              </div>
+            </div>
+            <div class="pricing-rows">
+              {group.items.map((course) => (
+                <article class="pricing-row">
+                  <div class="pricing-row-main">
+                    <p class="eyebrow">{course.eyebrow}</p>
+                    <h4>{course.name}</h4>
+                    <p>{course.description}</p>
+                    <ul>
+                      {course.includes.map((item) => (
+                        <li>
+                          <Check size={15} />
+                          {item}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div class="pricing-row-side">
+                    <small>Ilustračná cena {course.priceNote}</small>
+                    <strong>{course.price}</strong>
+                    <a href={course.href}>
+                      {course.id === "individualny-vycvik"
+                        ? "Opýtať sa"
+                        : "Pozrieť detail"}
+                      <ArrowUpRight size={17} />
+                    </a>
+                  </div>
+                </article>
               ))}
-            </ul>
-            <a class="button button-dark" href={course.href}>
-              Pozrieť detail <ArrowUpRight size={18} />
-            </a>
-          </article>
+            </div>
+          </section>
         ))}
       </div>
-      <p class="demo-note">
-        Všetky ceny sú ilustračné. Konečná cena, prípadné poplatky a rozsah
-        služby by boli potvrdené v ostrej ponuke.
-      </p>
-    </div>
-  </section>
-  <section class="section section-soft">
-    <div class="shell">
-      <SectionHeading
-        eyebrow="DOPLNKOVÉ INFORMÁCIE"
-        title="Čo ešte vedieť o cene?"
-      />
-      <div class="info-strip">
-        <div>
-          <Info size={23} />
-          <h3>Kondičné jazdy</h3>
-          <p>
-            Ukážková cena začína od 35 € za jazdu. Dĺžka jazdy a balíčky by boli
-            uvedené v reálnom cenníku.
-          </p>
-        </div>
-        <div>
-          <Info size={23} />
-          <h3>Individuálny výcvik</h3>
-          <p>
-            Cena sa odvíja od dohodnutého rozsahu. V deme slúži táto položka ako
-            príklad dopytu.
-          </p>
-        </div>
-        <div>
-          <Info size={23} />
-          <h3>Platba na splátky</h3>
-          <p>
-            Možnosť a podmienky splátok sa dohodnú s konkrétnou autoškolou. Demo
-            negarantuje splátkový plán.
-          </p>
-        </div>
+      <div class="pricing-note">
+        <strong>Manuál alebo automat?</strong>
+        <p>
+          Pri oboch kurzoch skupiny B si prevodovku vyberieš v prihláške. Za
+          automat je v tejto ukážke príplatok 100 €. Dostupnosť vozidla aj
+          konečnú cenu by potvrdila autoškola.
+        </p>
       </div>
     </div>
   </section>
   <CallToAction
-    title="Našiel si svoj kurz?"
+    title="Našiel si svoju cestu?"
     button="Ukážková prihláška"
     href="/prihlaska/"
   />

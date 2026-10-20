@@ -31,7 +31,9 @@ document
     const course = form.querySelector<HTMLSelectElement>('[name="course"]');
     const term = form.querySelector<HTMLSelectElement>('[name="term"]');
     const gearbox = form.querySelector<HTMLSelectElement>('[name="gearbox"]');
-    const gearboxField = form.querySelector<HTMLElement>("[data-gearbox-field]");
+    const gearboxField = form.querySelector<HTMLElement>(
+      "[data-gearbox-field]",
+    );
     if (course) {
       const params = new URLSearchParams(window.location.search);
       const fromUrl = params.get("course");
@@ -42,7 +44,7 @@ document
         course.value = fromUrl;
       if (fromUrl === "skupina-b-automat") course.value = "skupina-b";
       const updateGearbox = () => {
-        const isGroupB = course.value === "skupina-b";
+        const isGroupB = ["skupina-b", "intenzivny-b"].includes(course.value);
         if (gearboxField) gearboxField.hidden = !isGroupB;
         if (gearbox) {
           gearbox.disabled = !isGroupB;
@@ -53,12 +55,10 @@ document
       };
       updateGearbox();
       const gearboxFromUrl =
-        fromUrl === "skupina-b-automat"
-          ? "automatic"
-          : params.get("gearbox");
+        fromUrl === "skupina-b-automat" ? "automatic" : params.get("gearbox");
       if (
         gearbox &&
-        course.value === "skupina-b" &&
+        ["skupina-b", "intenzivny-b"].includes(course.value) &&
         ["manual", "automatic"].includes(gearboxFromUrl ?? "")
       )
         gearbox.value = gearboxFromUrl ?? "";
@@ -73,9 +73,11 @@ document
         term
           ?.querySelectorAll<HTMLOptionElement>("option[data-course]")
           .forEach((option) => {
-            option.disabled = Boolean(
+            const unavailable = Boolean(
               course.value && option.dataset.course !== course.value,
             );
+            option.disabled = unavailable;
+            option.hidden = unavailable;
           });
         if (term?.selectedOptions[0]?.disabled) term.value = "";
       };

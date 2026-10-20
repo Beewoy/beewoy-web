@@ -366,8 +366,10 @@ svg {
   min-height: clamp(580px, calc(90svh - 107px), 900px);
   background-image:
     linear-gradient(180deg, #0b1425c9 0%, #0b1425a8 58%, #0b14257a 100%),
-    url("/images/hero-car-city.jpg");
-  background-position: center, center 57%;
+    url("/images/hero-car-school.jpg");
+  background-position:
+    center,
+    center 57%;
   background-size: cover;
   color: white;
 }
@@ -465,27 +467,26 @@ svg {
 .courses-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 18px;
-}
-.courses-grid:has(> :nth-child(3):last-child) > :first-child {
-  grid-column: 1 / -1;
+  gap: 20px;
 }
 .course-card {
-  display: grid;
-  grid-template-columns: 44% 56%;
-  min-height: 390px;
-  background: white;
-  border: 1px solid #e8ebee;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: #fff;
+  border: 1px solid #dfe5e9;
   transition:
     box-shadow 0.25s,
     transform 0.25s;
 }
 .course-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 45px #13203316;
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px #13203314;
 }
 .course-card-image {
   position: relative;
+  display: block;
+  height: 205px;
   overflow: hidden;
   background: #d9dee1;
 }
@@ -496,59 +497,62 @@ svg {
   transition: transform 0.5s;
 }
 .course-card:hover img {
-  transform: scale(1.04);
+  transform: scale(1.035);
 }
 .course-index {
   position: absolute;
-  left: 20px;
-  top: 19px;
-  color: white;
+  left: 22px;
+  top: 20px;
+  padding: 7px 10px;
+  background: #111827cc;
+  color: #fff;
   font-size: 11px;
   font-weight: 800;
-  letter-spacing: 0.15em;
-  text-shadow: 0 1px 8px #0009;
+  letter-spacing: 0.13em;
 }
 .course-card-content {
   display: flex;
+  flex: 1;
   flex-direction: column;
-  padding: 28px;
+  padding: 26px 30px 28px;
 }
 .course-card-content .eyebrow {
-  margin-bottom: 13px;
+  margin-bottom: 9px;
 }
 .course-card-content h3 {
-  font-size: 27px;
-  line-height: 1.08;
-  margin: 0 0 12px;
+  font-size: clamp(25px, 2.25vw, 31px);
+  line-height: 1.12;
+  margin: 0 0 9px;
 }
 .course-card-content > p:not(.eyebrow) {
-  font-size: 13px;
-  color: #687588;
+  max-width: 52ch;
+  font-size: 14px;
+  color: #647184;
   margin-bottom: 16px;
 }
-.course-card-content ul {
+.course-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
   list-style: none;
   padding: 0;
-  margin: 0 0 22px;
-  display: grid;
-  gap: 8px;
+  margin: 0 0 24px;
 }
-.course-card-content li {
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 12px;
+.course-tags li {
+  padding: 7px 10px;
+  background: #f1f4f2;
+  color: #48566a;
+  font-size: 11px;
   font-weight: 700;
-}
-.course-card-content li svg {
-  color: #7f9e27;
+  line-height: 1.2;
 }
 .course-card-bottom {
   display: flex;
   align-items: end;
   justify-content: space-between;
+  gap: 16px;
   margin-top: auto;
-  padding-top: 16px;
+  padding-top: 18px;
   border-top: 1px solid #e8ebee;
 }
 .course-card-bottom small,
@@ -556,22 +560,28 @@ svg {
   display: block;
   font-size: 10px;
   color: #717d8d;
-  margin-bottom: 2px;
+  margin-bottom: 3px;
 }
 .course-card-bottom strong {
-  font-size: 22px;
+  font-size: 24px;
   letter-spacing: -0.04em;
+  line-height: 1.2;
 }
-.circle-link {
-  display: grid;
-  place-items: center;
-  width: 43px;
-  height: 43px;
-  background: var(--accent);
+.course-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid currentColor;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+.course-card-link svg {
   transition: transform 0.2s;
 }
-.circle-link:hover {
-  transform: rotate(45deg);
+.course-card-link:hover svg {
+  transform: translate(3px, -3px);
 }
 .term-list {
   border-top: 1px solid #dce1e5;
@@ -1001,39 +1011,143 @@ svg {
   object-fit: cover;
   margin-bottom: 40px;
 }
-.price-grid {
+.pricing-shell {
+  max-width: 1160px;
+}
+.pricing-intro {
+  max-width: 650px;
+  margin-bottom: 54px;
+}
+.pricing-intro h2 {
+  font-size: clamp(36px, 4vw, 55px);
+  line-height: 1.08;
+  margin-bottom: 14px;
+}
+.pricing-intro > p:last-child {
+  color: #647184;
+  max-width: 60ch;
+}
+.pricing-groups {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  gap: 54px;
+}
+.pricing-group-heading {
+  display: flex;
+  align-items: start;
   gap: 18px;
+  margin-bottom: 19px;
 }
-.price-card {
-  padding: 35px;
-  background: #fff;
-  border: 1px solid #e0e5e9;
+.pricing-group-heading > span {
+  color: #729221;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  padding-top: 6px;
 }
-.price-card h3 {
-  font-size: 27px;
+.pricing-group-heading h3 {
+  font-size: clamp(25px, 2.7vw, 35px);
+  line-height: 1.12;
+  margin-bottom: 5px;
+}
+.pricing-group-heading p {
+  color: #647184;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.pricing-rows {
+  border-top: 1px solid #dfe5e9;
+}
+.pricing-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 260px;
+  border-bottom: 1px solid #dfe5e9;
+}
+.pricing-row-main {
+  padding: 27px 34px 28px 0;
+}
+.pricing-row-main .eyebrow {
   margin-bottom: 7px;
 }
-.price-card strong {
-  display: block;
-  font-size: 38px;
-  letter-spacing: -0.06em;
-  margin: 20px 0;
+.pricing-row-main h4 {
+  font-size: clamp(23px, 2.25vw, 29px);
+  letter-spacing: -0.045em;
+  line-height: 1.18;
+  margin: 0 0 8px;
 }
-.price-card > p {
+.pricing-row-main > p:not(.eyebrow) {
+  color: #647184;
   font-size: 14px;
-  color: #677486;
+  margin-bottom: 15px;
 }
-.price-card ul {
-  min-height: 100px;
-  padding-left: 19px;
+.pricing-row-main ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px 19px;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+.pricing-row-main li {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #425063;
+  font-size: 12px;
+  font-weight: 700;
+}
+.pricing-row-main li svg {
+  color: #789c23;
+}
+.pricing-row-side {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  padding: 25px 28px;
+  background: #f4f6f5;
+}
+.pricing-row-side small {
+  color: #667488;
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+.pricing-row-side strong {
+  font-size: clamp(26px, 2.8vw, 36px);
+  letter-spacing: -0.055em;
+  line-height: 1.18;
+}
+.pricing-row-side a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 17px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid currentColor;
+  font-size: 12px;
+  font-weight: 800;
+}
+.pricing-row-side a svg {
+  transition: transform 0.2s;
+}
+.pricing-row-side a:hover svg {
+  transform: translate(3px, -3px);
+}
+.pricing-note {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 25px;
+  margin-top: 43px;
+  padding: 25px 28px;
+  background: #e9f0e9;
+  border-left: 4px solid var(--accent);
+}
+.pricing-note strong {
+  font-size: 16px;
+}
+.pricing-note p {
+  color: #4d5a65;
   font-size: 13px;
-  line-height: 2;
-  color: #465365;
-}
-.price-card .button {
-  width: 100%;
+  margin: 0;
 }
 .info-strip {
   display: grid;
@@ -1077,38 +1191,39 @@ svg {
   font-size: 22px;
   letter-spacing: -0.04em;
 }
-.map-placeholder {
-  min-height: 330px;
-  background: #e9eeeb;
-  display: grid;
-  place-items: center;
-  text-align: center;
-  padding: 25px;
-  color: #4f615b;
-  position: relative;
+.map-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 28px;
+}
+.map-heading h2 {
+  font-size: clamp(38px, 4.4vw, 58px);
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+.map-heading p:last-child {
+  max-width: 600px;
+  color: #647184;
+  font-size: 14px;
+  margin-bottom: 0;
+}
+.map-heading .text-link {
+  flex: none;
+  margin-bottom: 8px;
+}
+.map-frame {
+  height: 460px;
   overflow: hidden;
+  background: #dce6de;
+  border: 1px solid #d5ded9;
 }
-.map-placeholder:before,
-.map-placeholder:after {
-  content: "";
-  position: absolute;
-  transform: rotate(25deg);
-  background: #fff8;
-  width: 150%;
-  height: 35px;
-}
-.map-placeholder:after {
-  transform: rotate(-40deg);
-  height: 22px;
-}
-.map-placeholder > div {
-  z-index: 1;
-  background: white;
-  padding: 25px;
-  box-shadow: 0 15px 35px #1c31331c;
-}
-.map-placeholder svg {
-  margin: auto auto 8px;
+.map-frame iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 .form-card {
   background: white;
@@ -1232,15 +1347,6 @@ svg {
   .hero-copy h1 {
     font-size: clamp(58px, 7vw, 82px);
   }
-  .course-card {
-    grid-template-columns: 1fr;
-  }
-  .course-card-image {
-    height: 230px;
-  }
-  .course-card-content {
-    min-height: 310px;
-  }
 }
 @media (max-width: 800px) {
   .shell {
@@ -1312,6 +1418,37 @@ svg {
   .contact-grid {
     grid-template-columns: 1fr;
     gap: 40px;
+  }
+  .pricing-row {
+    grid-template-columns: 1fr;
+  }
+  .pricing-row-main {
+    padding: 25px 0;
+  }
+  .pricing-row-side {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 9px 18px;
+    padding: 18px 22px;
+  }
+  .pricing-row-side small {
+    width: 100%;
+  }
+  .pricing-row-side a {
+    margin-top: 0;
+  }
+  .pricing-note {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+  .map-heading {
+    align-items: start;
+    flex-direction: column;
+  }
+  .map-frame {
+    height: 380px;
   }
   .editorial-image {
     min-height: 380px;
@@ -1396,13 +1533,18 @@ svg {
     font-size: 11px;
   }
   .hero {
-    background-position: center, 63% center;
+    background-position:
+      center,
+      63% center;
   }
   .hero-grid {
     min-height: 0;
   }
   .hero-copy {
-    padding: 70px 0 62px;
+    padding: 155px 0 25px;
+  }
+  .hero-copy .eyebrow {
+    text-align: left;
   }
   .hero-copy h1 {
     font-size: clamp(48px, 10vw, 60px);
@@ -1441,18 +1583,23 @@ svg {
   .courses-grid,
   .portrait-grid,
   .vehicle-grid,
-  .price-grid,
   .info-strip {
     grid-template-columns: 1fr;
   }
-  .course-card {
-    grid-template-columns: 1fr;
-  }
   .course-card-image {
-    height: 240px;
+    height: 190px;
   }
   .course-card-content {
-    min-height: 310px;
+    padding: 23px 22px 24px;
+  }
+  .pricing-intro {
+    margin-bottom: 38px;
+  }
+  .pricing-groups {
+    gap: 42px;
+  }
+  .map-frame {
+    height: 320px;
   }
   .term-row {
     grid-template-columns: 60px 1fr;
@@ -1592,18 +1739,12 @@ svg {
     display: none;
   }
 }
-.courses-grid:has(> :only-child),
-.price-grid:has(> :only-child) {
+.courses-grid:has(> :only-child) {
   grid-template-columns: minmax(0, 650px);
 }
 .portrait-grid:has(> :only-child),
 .vehicle-grid:has(> :only-child) {
   grid-template-columns: minmax(0, 520px);
-}
-.map-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 360px), 1fr));
-  gap: 18px;
 }
 .footer-social a {
   display: inline-block;

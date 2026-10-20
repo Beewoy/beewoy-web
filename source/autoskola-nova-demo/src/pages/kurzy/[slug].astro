@@ -11,13 +11,14 @@ import { ArrowUpRight, Check, ChevronRight } from "@lucide/astro";
 
 export function getStaticPaths() {
   return courses
-    .filter((course) => course.id === "skupina-b")
+    .filter((course) => ["skupina-b", "intenzivny-b"].includes(course.id))
     .map((course) => ({ params: { slug: course.id }, props: { course } }));
 }
 interface Props {
   course: Course;
 }
 const { course } = Astro.props;
+const isIntensive = course.id === "intenzivny-b";
 ---
 
 <SiteLayout
@@ -103,30 +104,45 @@ const { course } = Astro.props;
         <div>
           <h3>Manuál</h3>
           <p>
-            Naučíš sa pracovať so spojkou a radením. Ilustračná cena kurzu
-            začína od 1 090 €.
+            Naučíš sa pracovať so spojkou a radením. Ilustračná cena tohto kurzu
+            začína od {course.price}.
           </p>
         </div>
         <div>
           <h3>Automat</h3>
           <p>
-            Jazdíš bez radenia. V deme je ilustračný príplatok 100 € a skúška
-            na automate obmedzí oprávnenie na vozidlá s automatickou prevodovkou.
+            Jazdíš bez radenia. V deme je ilustračný príplatok 100 € a skúška na
+            automate obmedzí oprávnenie na vozidlá s automatickou prevodovkou.
           </p>
         </div>
       </div>
     </div>
   </section>
-  <section class="section section-soft">
-    <div class="shell">
-      <SectionHeading
-        eyebrow="TERMÍNY"
-        title="Kedy môžeš začať?"
-        text="Ukážka spoločných termínov začiatku kurzu skupiny B."
-      />
-      <TermList courseId={course.id} />
-    </div>
-  </section>
+  {isIntensive ? (
+    <section class="section section-soft">
+      <div class="shell">
+        <SectionHeading
+          eyebrow="TERMÍN PODĽA DOHODY"
+          title="Plán nastavíme individuálne."
+          text="Intenzívnejší rozvrh v tomto deme nemá vypísaný termín. Dostupnosť, tempo a cenu by potvrdila skutočná autoškola."
+        />
+        <a class="text-link" href="/kontakt/?tema=intenzivny-b">
+          Opýtať sa na možnosti <ArrowUpRight size={17} />
+        </a>
+      </div>
+    </section>
+  ) : (
+    <section class="section section-soft">
+      <div class="shell">
+        <SectionHeading
+          eyebrow="TERMÍNY"
+          title="Kedy môžeš začať?"
+          text="Ukážka spoločných termínov začiatku kurzu skupiny B."
+        />
+        <TermList courseId={course.id} />
+      </div>
+    </section>
+  )}
   <section class="section">
     <div class="shell" style="max-width:1000px">
       <SectionHeading eyebrow="FAQ" title="Ešte máš otázky?" />
