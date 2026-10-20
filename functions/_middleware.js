@@ -21,5 +21,17 @@ export async function onRequest(context) {
     return Response.redirect(url.toString(), 301);
   }
 
-  return context.next();
+  const response = await context.next();
+
+  if (url.pathname.startsWith("/projekty/navrhy/")) {
+    const headers = new Headers(response.headers);
+    headers.set("X-Robots-Tag", "noindex, nofollow, noarchive, nosnippet");
+    return new Response(response.body, {
+      status: response.status,
+      statusText: response.statusText,
+      headers,
+    });
+  }
+
+  return response;
 }
