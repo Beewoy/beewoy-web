@@ -6,6 +6,8 @@ const lightboxCounter = document.querySelector('#lightbox-counter');
 const previousButton = document.querySelector('#lightbox-prev');
 const nextButton = document.querySelector('#lightbox-next');
 const closeButton = document.querySelector('#lightbox-close');
+const archiveMoreButton = document.querySelector('#archive-more');
+const extraArchiveItems = [...document.querySelectorAll('.archive-item[hidden]')];
 const header = document.querySelector('.site-header');
 const menuToggle = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#main-nav');
@@ -47,21 +49,30 @@ window.addEventListener('resize', () => {
 });
 
 function showImage(index) {
-  activeImage = (index + galleryItems.length) % galleryItems.length;
-  const item = galleryItems[activeImage];
+  const visibleItems = galleryItems.filter((item) => !item.hidden);
+  activeImage = (index + visibleItems.length) % visibleItems.length;
+  const item = visibleItems[activeImage];
   const image = item.querySelector('img');
   lightboxImage.src = item.dataset.full;
   lightboxImage.alt = image.alt;
   lightboxCaption.textContent = item.dataset.caption;
-  lightboxCounter.textContent = `${activeImage + 1} / ${galleryItems.length}`;
+  lightboxCounter.textContent = `${activeImage + 1} / ${visibleItems.length}`;
+  dialog.classList.toggle('lightbox-archive', item.classList.contains('archive-item'));
 }
 
-galleryItems.forEach((item, index) => {
+galleryItems.forEach((item) => {
   item.addEventListener('click', () => {
     opener = item;
-    showImage(index);
+    showImage(galleryItems.filter((entry) => !entry.hidden).indexOf(item));
     dialog.showModal();
   });
+});
+
+archiveMoreButton.addEventListener('click', () => {
+  const expanded = archiveMoreButton.getAttribute('aria-expanded') === 'true';
+  extraArchiveItems.forEach((item) => { item.hidden = expanded; });
+  archiveMoreButton.setAttribute('aria-expanded', String(!expanded));
+  archiveMoreButton.querySelector('span').textContent = expanded ? 'Zobraziť celý fotoarchív' : 'Zobraziť menej fotografií';
 });
 
 previousButton.addEventListener('click', () => showImage(activeImage - 1));
