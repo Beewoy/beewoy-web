@@ -28,8 +28,8 @@ Potom otvor `http://localhost:3000` (alebo port zo `serve` / `http.server`).
 | --- | --- |
 | `index.html` | Hlavná landing page |
 | `styles.css` | Všetky štýly |
-| `main.js` | Navigácia, scroll-spy, PWA registrácia |
-| `projects.js` | Dáta a render kariet referencií |
+| `main.js` | Hlavička, mobilné menu, kontaktný formulár, PWA registrácia |
+| `scripts/generate_industry_pages.py` | Generuje `/tvorba-webov/odvetvia/` a 26 stránok `pre-<slug>/` z `industries-data.json` |
 | `cookies.js` | Cookie consent (GDPR / ePrivacy) |
 | `cookies.html` | Zásady cookies |
 | `ochrana-udajov.html` | Ochrana osobných údajov |
@@ -58,12 +58,10 @@ takže sa pri nasadení nepublikuje.
 
 ## Čo stránka obsahuje
 
-- Hero + služby (webová stránka, aplikácie, interné systémy, AI/automatizácie)
-- Prečo Beewoy, proces, referencie (grid), care, pricing, tím, FAQ, kontakt
-- Active nav (scroll-spy)
+- Hero s cenou od 19 €, prečo paušál, cenník (Basic / Start / Individual), 3 kroky, referencie, FAQ, kontakt
 - Cookie banner + nastavenia (nevyhnutné / funkčné / analytické / marketingové)
 - PWA (manifest + SW) — zapne sa až po **funkčnom** cookie súhlase
-- Google Fonts sa načítajú vždy (nie sú viazané na cookie súhlas)
+- Písmo: systémový font Apple (SF Pro), inde self-hostovaný Inter (`fonts/`, OFL) — žiadne externé fonty
 
 ### Portfólio (aktuálne)
 
@@ -75,7 +73,7 @@ takže sa pri nasadení nepublikuje.
 6. [Timio](https://timio.sk/) — `assets/projects/timio-hero.jpg`
 7. [Verejnoprospešné služby Snina](https://beewoy.sk/projekty/idsk/vps-snina/) — `assets/projects/vps-snina-hero.png`
 
-Homepage zobrazí featured + list projekty z `projects.js`, stránka `/referencie/` všetky.
+Homepage zobrazí CeKo, Kids Paradise a ŠK Vajnory, stránka `/referencie/` všetky (statické HTML).
 
 ---
 
@@ -83,9 +81,8 @@ Homepage zobrazí featured + list projekty z `projects.js`, stránka `/referenci
 
 1. Ulož hero screenshot do `assets/projects/` (ideálne JPG ~1600px široký).
 2. Prípadný HTML náhľad konceptu daj do `projekty/navrhy/<slug>/` (stránky majú `noindex`).
-3. Pridaj záznam do poľa `PROJECTS` v `projects.js` (`name`, `type`, `result`, `resultShort`, `image`, `alt`, `url`, `linkLabel`).
-4. Na stránke `/referencie/` doplň zodpovedajúci `CreativeWork` do JSON-LD v `<head>` **a** statickú kartu do HTML (obsah je SSR kvôli crawlability; `projects.js` homepage stále renderuje dynamicky).
-5. Homepage si karty vyrenderuje z `projects.js`; `/referencie/` číta statické HTML.
+3. Na stránke `/referencie/` pridaj nový `<article class="case">` a zodpovedajúci `CreativeWork` do JSON-LD v `<head>`.
+4. Ak má byť projekt aj na homepage, uprav sekciu `#referencie` v `index.html`.
 ---
 
 ## SEO / doména
@@ -157,5 +154,7 @@ Vygeneruje favicony, maskable PWA ikony a `og-image.png` z `logo.svg`.
 
 - Náhľady v `projekty/navrhy/` sú neindexované (`noindex`) a nie sú určené na verejné SEO; screenshoty zostávajú v `assets/projects/`.
 - Jazyk UI: slovenčina (`lang="sk"`)
-- Dizajn: paper estetika (`#f3f0e8`), žltý akcent, fonty DM Sans + Manrope
+- Dizajn: biela, takmer čierna, striedmy žltý akcent (`#f4c430`), systémové písmo / Inter; tokeny sú na začiatku `styles.css`
+- Odvetvové stránky neupravuj ručne — zmeň `tvorba-webov/odvetvia/industries-data.json` alebo šablónu v `scripts/generate_industry_pages.py` a spusti `python3 scripts/generate_industry_pages.py`
+- Po zmene cachovaných súborov zvýš verziu `CACHE` v `sw.js`
 - Žiadny npm build — po úprave HTML/CSS/JS stačí refresh / redeploy

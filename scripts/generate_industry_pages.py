@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Generate static HTML for /tvorba-webov/odvetvia/ hub and Wave 1 category pages."""
+"""Generate static HTML for /tvorba-webov/odvetvia/ hub and industry pages."""
 
 from __future__ import annotations
 
@@ -11,11 +11,19 @@ ROOT = Path(__file__).resolve().parents[1]
 TV = ROOT / "tvorba-webov"
 DATA = TV / "odvetvia" / "industries-data.json"
 BASE = "https://beewoy.sk"
-TODAY = "2026-08-07"
+
+# Sitemap <lastmod> values maintained by hand; kept on regeneration.
+SITEMAP_LASTMOD = {
+    "https://beewoy.sk/kalkulacka/": "2026-09-23",
+}
 
 
 def e(s: str) -> str:
     return html.escape(s, quote=True)
+
+
+def cap(s: str) -> str:
+    return s[:1].upper() + s[1:] if s else s
 
 
 def faq_schema(faqs: list[dict], page_id: str) -> dict:
@@ -33,16 +41,7 @@ def faq_schema(faqs: list[dict], page_id: str) -> dict:
     }
 
 
-def head_block(
-    *,
-    title: str,
-    description: str,
-    canonical: str,
-    og_image: str,
-    depth_css: str,
-    json_ld: dict,
-    css_extra: str,
-) -> str:
+def head_block(*, title: str, description: str, canonical: str, og_image: str, depth: str, json_ld: dict) -> str:
     return f"""<!DOCTYPE html>
 <html lang="sk">
 <head>
@@ -52,15 +51,15 @@ def head_block(
 <meta name="description" content="{e(description)}">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="author" content="Beewoy">
-<meta name="theme-color" content="#f3f0e8">
+<meta name="theme-color" content="#ffffff">
 <meta name="geo.region" content="SK">
 <link rel="canonical" href="{e(canonical)}">
-<link rel="manifest" href="{depth_css}manifest.webmanifest">
-<link rel="icon" href="{depth_css}favicon.ico" sizes="any">
-<link rel="icon" href="{depth_css}icons/favicon.svg" type="image/svg+xml">
-<link rel="icon" type="image/png" sizes="32x32" href="{depth_css}icons/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="16x16" href="{depth_css}icons/favicon-16x16.png">
-<link rel="apple-touch-icon" sizes="180x180" href="{depth_css}icons/apple-touch-icon.png">
+<link rel="manifest" href="{depth}manifest.webmanifest">
+<link rel="icon" href="{depth}favicon.ico" sizes="any">
+<link rel="icon" href="{depth}icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="{depth}icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="{depth}icons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="{depth}icons/apple-touch-icon.png">
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="sk_SK">
@@ -79,11 +78,7 @@ def head_block(
 <meta name="twitter:description" content="{e(description)}">
 <meta name="twitter:image" content="{e(og_image)}">
 
-<link rel="preload" href="{depth_css}fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="{depth_css}styles.css" as="style">
-<link rel="stylesheet" href="{depth_css}styles.css">
-{css_extra}
-<noscript><style>.reveal{{opacity:1;transform:none}}</style></noscript>
+<link rel="stylesheet" href="{depth}styles.css">
 
 <script type="application/ld+json">
 {json.dumps(json_ld, ensure_ascii=False, indent=2)}
@@ -92,62 +87,60 @@ def head_block(
 """
 
 
-def header_nav(depth: str, *, current: str = "", odvetvie: str = "") -> str:
-    odvetvia = f"{depth}tvorba-webov/odvetvia/"
-    tvorba = f"{depth}tvorba-webov/"
-    cennik = f"{depth}cennik/"
-    kontakt = f"{depth}kontakt/"
-    kontakt_cta = (
-        f"{kontakt}?odvetvie={e(odvetvie)}#kontakt-form" if odvetvie else kontakt
-    )
-    aria = ' aria-current="page"' if current == "hub" else ""
-    return f"""
+def header_nav(depth: str, *, cta_href: str) -> str:
+    return f"""<body>
 <a class="skip" href="#obsah">Preskočiť na obsah</a>
+
 <header class="header" id="siteHeader">
-  <div class="header-inner">
-    <a class="logo" href="{depth}" aria-label="Beewoy — domov">
-      <img src="{depth}logo.svg" alt="Beewoy logo" width="26" height="29">beewoy
-    </a>
+  <div class="wrap header-inner">
+    <a class="logo" href="{depth}" aria-label="Beewoy — úvod"><img src="{depth}logo.svg" alt="" width="22" height="24">beewoy</a>
     <nav class="nav" aria-label="Hlavná navigácia">
-      <a href="{tvorba}">Tvorba webov</a>
-      <a href="{odvetvia}"{aria}>Odvetvia</a>
-      <a href="{cennik}">Cenník</a>
+      <a href="{depth}tvorba-webov/">Tvorba webov</a>
+      <a href="{depth}cennik/">Cenník</a>
       <a href="{depth}referencie/">Referencie</a>
-      <a href="{kontakt}">Kontakt</a>
+      <a href="{depth}kontakt/">Kontakt</a>
     </nav>
-    <a class="btn btn-primary header-cta" href="{kontakt_cta}" data-analytics-cta="header_industry">Chcem web <span class="arrow">→</span></a>
-    <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Otvoriť menu">
-      <span></span><span></span>
-    </button>
+    <a class="btn btn-primary btn-sm header-cta" href="{cta_href}" data-analytics-cta="header_industry">Chcem web</a>
+    <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Otvoriť menu"><span></span><span></span></button>
   </div>
 </header>
 <nav class="mobile-menu" id="mobileMenu" aria-label="Mobilná navigácia">
-  <a href="{tvorba}">Tvorba webov</a>
-  <a href="{odvetvia}">Odvetvia</a>
-  <a href="{cennik}">Cenník</a>
+  <a href="{depth}tvorba-webov/">Tvorba webov</a>
+  <a href="{depth}cennik/">Cenník</a>
   <a href="{depth}referencie/">Referencie</a>
-  <a href="{kontakt}">Kontakt</a>
+  <a href="{depth}kontakt/">Kontakt</a>
+  <a class="btn btn-primary btn-lg" href="{cta_href}">Chcem web</a>
+  <p class="mobile-menu-foot">Alebo napíšte na <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a></p>
 </nav>
 """
 
 
 def footer_block(depth: str) -> str:
-    return f"""
-<footer class="footer">
-  <a class="logo" href="{depth}"><img src="{depth}logo.svg" alt="Beewoy" width="26" height="29">beewoy</a>
-  <nav class="footer-links" aria-label="Pätičková navigácia">
-    <a href="{depth}">Domov</a>
-    <a href="{depth}tvorba-webov/">Tvorba webov</a>
-    <a href="{depth}tvorba-webov/odvetvia/">Odvetvia</a>
-    <a href="{depth}cennik/">Cenník</a>
-    <a href="{depth}referencie/">Referencie</a>
-    <a href="{depth}kontakt/">Kontakt</a>
-  </nav>
-  <span>© 2026 Beewoy · weby na mieru · Slovensko</span>
-  <div class="footer-legal">
-    <a href="{depth}ochrana-udajov/">Ochrana údajov</a>
-    <a href="{depth}cookies/">Cookies</a>
-    <button type="button" data-cookie-settings>Nastavenia cookies</button>
+    return f"""<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="{depth}"><img src="{depth}logo.svg" alt="" width="22" height="24">beewoy</a>
+        <p>Moderné webstránky pre firmy v mesačnom paušále.</p>
+        <a class="footer-mail" href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a>
+      </div>
+      <nav class="footer-col" aria-labelledby="f-offer"><h2 id="f-offer">Ponuka</h2><ul>
+        <li><a href="{depth}tvorba-webov/">Tvorba webov</a></li>
+        <li><a href="{depth}tvorba-webov/odvetvia/">Weby podľa odvetvia</a></li>
+        <li><a href="{depth}cennik/">Cenník</a></li>
+        <li><a href="{depth}kalkulacka/">Kalkulačka ceny</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="f-beewoy"><h2 id="f-beewoy">Beewoy</h2><ul>
+        <li><a href="{depth}referencie/">Referencie</a></li>
+        <li><a href="{depth}kontakt/">Kontakt</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="f-legal"><h2 id="f-legal">Právne</h2><ul>
+        <li><a href="{depth}ochrana-udajov/">Ochrana údajov</a></li>
+        <li><a href="{depth}cookies/">Cookies</a></li>
+        <li><button type="button" data-cookie-settings>Nastavenia cookies</button></li>
+      </ul></nav>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Beewoy</span><span>Slovensko</span></div>
   </div>
 </footer>
 """
@@ -163,105 +156,33 @@ def scripts(depth: str) -> str:
 """
 
 
+def section_head(eyebrow: str, title: str, title_id: str, lead: str = "") -> str:
+    lead_html = f'\n        <p class="lead">{e(lead)}</p>' if lead else ""
+    return f"""      <div class="section-head">
+        <p class="eyebrow">{e(eyebrow)}</p>
+        <h2 class="h2" id="{title_id}">{e(title)}</h2>{lead_html}
+      </div>"""
+
+
 def render_problems(items: list[dict]) -> str:
-    rows = []
-    for i, p in enumerate(items, 1):
-        rows.append(
-            f'<li class="reveal"><span class="n" aria-hidden="true">{i:02d}</span>'
-            f'<div><strong>{e(p["t"])}</strong><p>{e(p["d"])}</p></div></li>'
-        )
-    return '<ul class="ind-list">' + "".join(rows) + "</ul>"
+    rows = "".join(
+        f'\n        <div class="row row--num"><span class="row-num">{n:02d}</span><h3 class="h4">{e(p["t"])}</h3><p>{e(p["d"])}</p></div>'
+        for n, p in enumerate(items, 1)
+    )
+    return f'      <div class="rows">{rows}\n      </div>'
 
 
-ICONS = {
-    "list": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13"/><path d="M8 12h13"/><path d="M8 18h13"/><path d="M3 6h.01"/><path d="M3 12h.01"/><path d="M3 18h.01"/></svg>',
-    "users": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>',
-    "calendar": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M16 2v4"/><path d="M8 2v4"/><path d="M3 10h18"/></svg>',
-    "shield": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>',
-    "tooth": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-2.8 0-5 2.4-5 5.3 0 1.5.5 2.8 1.2 4 .6 1 1.1 2.1 1.1 3.4V21h5.4v-6.3c0-1.3.5-2.4 1.1-3.4.7-1.2 1.2-2.5 1.2-4C17 4.4 14.8 2 12 2z"/></svg>',
-    "clock": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>',
-    "phone": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.81.36 1.6.68 2.34a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.74.32 1.53.55 2.34.68A2 2 0 0 1 22 16.92z"/></svg>',
-    "tag": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.428 0l6.758-6.758a2.426 2.426 0 0 0 0-3.428z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></svg>',
-    "search": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>',
-    "edit": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg>',
-    "spark": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>',
-    "activity": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"/></svg>',
-    "zap": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg>',
-    "hammer": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"/></svg>',
-    "building": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 22V4a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v18Z"/><path d="M6 12H4a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h2"/><path d="M18 9h2a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-2"/><path d="M10 6h4"/><path d="M10 10h4"/><path d="M10 14h4"/><path d="M10 18h4"/></svg>',
-    "utensils": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>',
-    "image": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21"/></svg>',
-    "map": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"/><circle cx="12" cy="10" r="3"/></svg>',
-    "globe": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>',
-    "smartphone": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="20" x="5" y="2" rx="2"/><path d="M12 18h.01"/></svg>',
-    "layers": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z"/><path d="m22 17.65-9.17 4.16a2 2 0 0 1-1.66 0L2 17.65"/><path d="m22 12.65-9.17 4.16a2 2 0 0 1-1.66 0L2 12.65"/></svg>',
-    "route": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="19" r="3"/><path d="M9 19h8.5a3.5 3.5 0 0 0 0-7h-11a3.5 3.5 0 0 1 0-7H15"/><circle cx="18" cy="5" r="3"/></svg>',
-    "star": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z"/></svg>',
-    "eye": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"/><circle cx="12" cy="12" r="3"/></svg>',
-    "workflow": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="8" x="3" y="3" rx="2"/><path d="M7 11v4a2 2 0 0 0 2 2h4"/><rect width="8" height="8" x="13" y="13" rx="2"/></svg>',
-    "gauge": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>',
-    "wrench": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>',
-    "flame": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>',
-    "truck": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"/><path d="M15 18H9"/><path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"/><circle cx="17" cy="18" r="2"/><circle cx="7" cy="18" r="2"/></svg>',
-    "compass": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m16.24 7.76-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"/></svg>',
-    "brain": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.599 6.5a3 3 0 0 0 .399-1.375"/><path d="M6.003 5.125A3 3 0 0 0 6.401 6.5"/><path d="M3.023 10.125a4 4 0 0 1 1.652-1.25"/><path d="M19.325 8.875a4 4 0 0 1 1.652 1.25"/><path d="M6.445 17.138a4 4 0 0 1-1.42-.98"/><path d="M19 16.158a4 4 0 0 1-1.42.98"/></svg>',
-    "scissors": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg>',
-    "home": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>',
-    "leaf": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/></svg>',
-    "coffee": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 2v2"/><path d="M14 2v2"/><path d="M16 8a1 1 0 0 1 1 1v8a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V9a1 1 0 0 1 1-1h14a4 4 0 1 1 0 8h-1"/><path d="M6 2v2"/></svg>',
-    "cake": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8"/><path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1"/><path d="M2 21h20"/><path d="M7 8v3"/><path d="M12 8v3"/><path d="M17 8v3"/><path d="M7 4h0.01"/><path d="M12 4h0.01"/><path d="M17 4h0.01"/></svg>',
-    "scale": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m16 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="m2 16 3-8 3 8c-.87.65-1.92 1-3 1s-2.13-.35-3-1Z"/><path d="M7 21h10"/><path d="M12 3v18"/><path d="M3 7h2c2 0 5-1 7-2 2 1 5 2 7 2h2"/></svg>',
-    "school": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 22v-4a2 2 0 1 0-4 0v4"/><path d="m18 10 3.447 1.724a1 1 0 0 1 .553.894V20a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-7.382a1 1 0 0 1 .553-.894L6 10"/><path d="M18 5v17"/><path d="m4 6 7.106-3.553a2 2 0 0 1 1.788 0L20 6"/><path d="M6 5v17"/><circle cx="12" cy="9" r="2"/></svg>',
-    "paw": '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="4" r="2"/><circle cx="18" cy="8" r="2"/><circle cx="20" cy="16" r="2"/><path d="M9 10a5 5 0 0 1 5 5v3.5a3.5 3.5 0 0 1-6.84 1.045Q6.52 17.48 4.46 16.84A3.5 3.5 0 0 1 5.5 10Z"/></svg>',
-}
-
-INDUSTRY_ICONS = {
-    "zubna-ambulancia": "tooth",
-    "rehabilitacne-centrum": "activity",
-    "elektrikar": "zap",
-    "stolarstvo-interiery": "hammer",
-    "stavebna-firma": "building",
-    "restauracia": "utensils",
-    "logistika-spedicia": "truck",
-    "autoservis-pneuservis": "wrench",
-    "betonova-vyroba-kamenarstvo": "layers",
-    "geodet-kartografia": "compass",
-    "gynekologia-ambulancia": "users",
-    "kovovyroba-zvarenie": "flame",
-    "psycholog-ambulancia": "brain",
-    "kadernictvo-barbershop": "scissors",
-    "hotel-penzion-ubytovanie": "building",
-    "realitna-kancelaria": "home",
-    "zahradnictvo-udrzba-zelene": "leaf",
-    "bezpecnostne-systemy-cctv": "eye",
-    "kaviaren-pekaren": "coffee",
-    "nechtovy-salon": "spark",
-    "cukraren": "cake",
-    "advokat-pravna-kancelaria": "scale",
-    "fitness-centrum": "activity",
-    "stahovanie-vypratavanie": "truck",
-    "materska-skola": "school",
-    "veterinarna-klinika": "paw",
-}
+def render_items(items: list[dict]) -> str:
+    cells = "".join(
+        f'\n        <div class="item"><h3 class="h4">{e(x["t"])}</h3><p>{e(x["d"])}</p></div>'
+        for x in items
+    )
+    return f'      <div class="grid-2">{cells}\n      </div>'
 
 
-def icon_html(name: str) -> str:
-    return ICONS.get(name, ICONS["spark"])
-
-
-def render_cards(items: list[dict], cls: str = "ind-grid") -> str:
-    cards = []
-    for x in items:
-        icon = x.get("icon")
-        icon_block = (
-            f'<span class="ind-card-icon" aria-hidden="true">{icon_html(icon)}</span>'
-            if icon
-            else ""
-        )
-        cards.append(
-            f'<article class="ind-card reveal">{icon_block}<h3>{e(x["t"])}</h3><p>{e(x["d"])}</p></article>'
-        )
-    return f'<div class="{cls}">{"".join(cards)}</div>'
+def render_feature_list(items: list[dict]) -> str:
+    lis = "".join(f'\n        <li><span><strong>{e(x["t"])}</strong> {e(x["d"])}</span></li>' for x in items)
+    return f'      <ul class="ind-checklist ind-checklist--rich">{lis}\n      </ul>'
 
 
 def render_packages(packages: dict, depth: str, slug: str) -> str:
@@ -269,104 +190,55 @@ def render_packages(packages: dict, depth: str, slug: str) -> str:
     for item in packages["items"]:
         popular = item.get("popular")
         custom = item.get("custom") or not item.get("price")
-        badge = '<span class="ind-plan-badge">Najčastejšia voľba</span>' if popular else ""
-        rows = "".join(
-            f'<div class="ind-plan-row"><span>{e(r["label"])}</span><strong>{e(r["value"])}</strong></div>'
-            for r in item["rows"]
-        )
-        tone = "ind-plan popular" if popular else ("ind-plan custom" if custom else "ind-plan")
+        rows = item["rows"]
+        plan_for = cap(rows[0]["value"]) if rows else ""
+        bullets = "".join(f"\n            <li>{e(cap(r['value']))}</li>" for r in rows[1:])
         if custom:
-            price_html = (
-                f'<p class="ind-plan-price custom">{e(item.get("price_label", "Dohodou"))}</p>'
-            )
+            price_html = f'<p class="plan-price plan-price--text">{e(item.get("price_label", "Dohodou"))}</p>'
         else:
-            price_html = (
-                f'<p class="ind-plan-price">{e(item["price"])}<span>{e(item.get("period", ""))}</span></p>'
-            )
-        btn_cls = "btn-light" if popular else ""
+            price = item["price"].replace("€", "").strip()
+            price_html = f'<p class="plan-price">{e(price)}&nbsp;€<small>/ mesiac</small></p>'
+        badge = '\n          <span class="plan-badge">Najčastejšia voľba</span>' if popular else ""
+        btn = "btn-primary" if popular else "btn-secondary"
+        cls = "plan plan--featured" if popular else "plan"
         cards.append(
             f"""
-      <article class="{tone} reveal">
-        {badge}
-        <p class="ind-plan-name">{e(item["name"])}</p>
-        {price_html}
-        <div class="ind-plan-rows">{rows}</div>
-        <a class="btn {btn_cls}" href="{depth}kontakt/?balik={e(item['id'])}&odvetvie={e(slug)}#kontakt-form" data-analytics-cta="plan_{e(item['id'])}_{e(slug)}">{e(item["cta"])} <span class="arrow">→</span></a>
-      </article>"""
+        <article class="{cls}">{badge}
+          <h3 class="plan-name">{e(item["name"])}</h3>
+          <p class="plan-for">{e(plan_for)}</p>
+          {price_html}
+          <ul class="plan-list">{bullets}
+          </ul>
+          <a class="btn {btn}" href="{depth}kontakt/?balik={e(item['id'])}&amp;odvetvie={e(slug)}#kontakt-form" data-analytics-cta="plan_{e(item['id'])}_{e(slug)}">{e(item["cta"])}</a>
+        </article>"""
         )
+    note = packages.get("note", "")
+    note_html = f'\n      <p class="plans-note">{e(note)}</p>' if note else ""
     return f"""
-  <section class="ind-section" id="cena" aria-labelledby="price-title">
+  <section class="section section--soft" id="cena" aria-labelledby="price-title">
     <div class="wrap">
-      <div class="ind-section-head center reveal">
-        <p class="kicker">Proces a cena</p>
-        <h2 class="section-title section-title--sm" id="price-title">Transparentný cenník</h2>
-        <p class="ind-lead">{e(packages["intro"])}</p>
-      </div>
-      <div class="ind-plans">{"".join(cards)}</div>
-      <p class="ind-plan-note reveal">{e(packages.get("note", ""))}</p>
-    </div>
-  </section>
-"""
-
-
-def render_offer_banner(banner: dict) -> str:
-    cols = "".join(
-        f'<div class="ind-banner-col"><span class="lbl">{e(i["label"])}</span><strong>{e(i["value"])}</strong><span class="hint">{e(i["hint"])}</span></div>'
-        for i in banner["items"]
-    )
-    return f"""
-  <section class="ind-section alt" aria-labelledby="banner-title">
-    <div class="wrap">
-      <h2 class="visually-hidden" id="banner-title">Základ ponuky</h2>
-      <div class="ind-offer-banner reveal">
-        <div class="ind-banner-grid">{cols}</div>
-        <div class="ind-banner-foot">
-          <span class="ind-banner-shield" aria-hidden="true">{icon_html("shield")}</span>
-          <p>{e(banner["footer"])}</p>
+      <div class="section-head section-head--center">
+        <div>
+          <p class="eyebrow">Cena</p>
+          <h2 class="h2" id="price-title">Web od 19&nbsp;€ mesačne.</h2>
         </div>
+        <p class="lead">Bez vstupného poplatku a bez viazanosti. Paušál platíte od spustenia webu.</p>
+      </div>
+      <div class="plans">{"".join(cards)}
+      </div>{note_html}
+      <div class="plans-more">
+        <a class="link-arrow" href="{depth}cennik/">Podrobný cenník <span class="arrow" aria-hidden="true">→</span></a>
       </div>
     </div>
   </section>
 """
-
-
-def render_steps(items: list[dict]) -> str:
-    steps = "".join(
-        f'<article class="ind-step reveal"><h3>{e(x["t"])}</h3><p>{e(x["d"])}</p></article>'
-        for x in items
-    )
-    return f'<div class="ind-steps">{steps}</div>'
-
-
-def render_checklist(items: list[str]) -> str:
-    return '<ul class="ind-checklist">' + "".join(f"<li>{e(x)}</li>" for x in items) + "</ul>"
 
 
 def render_faq(faqs: list[dict]) -> str:
     return "".join(
-        f'<details class="faq-item reveal"><summary>{e(f["q"])}</summary><div class="faq-answer">{e(f["a"])}</div></details>'
+        f'\n        <details class="faq-item"><summary>{e(f["q"])}</summary><div class="faq-answer">{e(f["a"])}</div></details>'
         for f in faqs
     )
-
-
-def render_related(items: list[dict], depth_to_tv: str = "../") -> str:
-    links = []
-    for r in items[:5]:
-        slug = r["slug"]
-        icon_key = INDUSTRY_ICONS.get(slug, "spark")
-        label = r.get("short_name") or r.get("label") or slug
-        links.append(
-            f'''<a class="reveal" href="{depth_to_tv}pre-{e(slug)}/">
-          <span class="ind-related-icon" aria-hidden="true">{icon_html(icon_key)}</span>
-          <strong>{e(label)}</strong>
-        </a>'''
-        )
-    more = (
-        f'<p class="ind-related-all reveal">'
-        f'<a class="text-link" href="{depth_to_tv}odvetvia/">Všetky odvetvia <span class="arrow">→</span></a>'
-        f"</p>"
-    )
-    return f'<div class="ind-related">{"".join(links)}</div>{more}'
 
 
 def resolve_related(ind: dict, all_inds: list[dict] | None) -> list[dict]:
@@ -381,30 +253,40 @@ def resolve_related(ind: dict, all_inds: list[dict] | None) -> list[dict]:
         label = None
         if isinstance(entry, dict):
             label = entry.get("label") or entry.get("short_name")
-        out.append(
-            {
-                "slug": peer["slug"],
-                "short_name": label or peer["short_name"],
-            }
-        )
+        out.append({"slug": peer["slug"], "short_name": label or peer["short_name"]})
     return out
+
+
+def render_related(items: list[dict]) -> str:
+    links = "".join(f'\n        <a href="../pre-{e(r["slug"])}/">{e(r["short_name"])}</a>' for r in items)
+    return f"""      <div class="tag-links">{links}
+        <a class="tag-more" href="../odvetvia/">Všetky odvetvia →</a>
+      </div>"""
+
+
+def cta_panel(title: str, text: str, href: str, label: str, analytics: str) -> str:
+    return f"""
+  <section class="section section--sm" id="kontakt" aria-labelledby="final-title">
+    <div class="wrap">
+      <div class="cta-panel">
+        <h2 class="h2" id="final-title">{e(title)}</h2>
+        <p>{e(text)}</p>
+        <div class="actions">
+          <a class="btn btn-light btn-lg" href="{href}" data-analytics-cta="{analytics}">{e(label)} <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+"""
 
 
 def render_industry(ind: dict, all_inds=None) -> str:
     slug = ind["slug"]
-    url = f"{BASE}/tvorba-webov/pre-{slug}/"
+    page_id = f"{BASE}/tvorba-webov/pre-{slug}/"
     depth = "../../"
-    css = f'<link rel="stylesheet" href="../odvetvia/odvetvia.css">'
-    page_id = url.rstrip("/") + "/"
+    contact = f"{depth}kontakt/?odvetvie={e(slug)}#kontakt-form"
     layout = ind.get("layout") or {}
-    hero_centered = layout.get("hero_centered", False)
-    show_audience = layout.get("show_audience", True)
-    show_scenario = layout.get("show_scenario", True)
-    show_checklist = layout.get("show_checklist", True)
-    show_secondary = layout.get("show_secondary_cta", True) and ind.get("cta_secondary")
-    show_process = layout.get("show_process_steps", True)
-    pricing_model = layout.get("pricing_model", "factors")
-    hide_depth = layout.get("hide_depth_in_kicker", False)
+    show_scenario = layout.get("show_scenario", True) and ind.get("scenario")
     peers = resolve_related(ind, all_inds)
 
     graph = {
@@ -451,200 +333,96 @@ def render_industry(ind: dict, all_inds=None) -> str:
         ],
     }
 
-    proof_li = "".join(f"<li>{e(x)}</li>" for x in ind.get("hero_proof", []))
-    kicker = e(ind["cluster"]) if hide_depth else f'{e(ind["cluster"])} · {e(ind["depth"])}'
-    hero_class = "ind-hero centered" if hero_centered else "ind-hero"
-    secondary_cta = (
-        f'<a class="btn" href="#funkcie">{e(ind["cta_secondary"])}</a>'
-        if show_secondary
-        else ""
-    )
-
-    audience_html = ""
-    if show_audience:
-        audience_html = f"""
-  <section class="ind-section" aria-labelledby="audience-title">
-    <div class="wrap-narrow">
-      <p class="kicker">Pre koho</p>
-      <h2 class="section-title section-title--lg reveal" id="audience-title">Komu je táto stránka určená</h2>
-      <p class="ind-lead reveal">{e(ind["audience"])}</p>
-    </div>
-  </section>
-"""
-
-    problems_title = ind.get("problems_title", "Čo firmy v tomto odvetví na webe najčastejšie trápí")
+    meta = "".join(f"<li>{e(x)}</li>" for x in ["Od 19 € mesačne", *ind.get("hero_proof", [])[:3]])
+    problems_title = ind.get("problems_title", "Čo firmy v tomto odvetví na webe najčastejšie trápi")
     help_title = ind.get("help_title", "Ako má web pomáhať podnikaniu")
     features_title = ind.get("features_title", "Odporúčané funkcie webu")
 
     scenario_html = ""
-    if show_scenario and ind.get("scenario"):
-        scenario = "".join(f"<li>{e(x)}</li>" for x in ind["scenario"])
+    if show_scenario:
+        steps = "".join(f"\n        <li>{e(x)}</li>" for x in ind["scenario"])
         scenario_html = f"""
-  <section class="ind-section" aria-labelledby="scenario-title">
-    <div class="wrap-narrow">
-      <p class="kicker">Scenár</p>
-      <h2 class="section-title section-title--lg reveal" id="scenario-title">{e(ind["scenario_title"])}</h2>
-      <div class="ind-scenario reveal">
-        <p>{e(ind["scenario_intro"])}</p>
-        <ol>{scenario}</ol>
+  <section class="section" aria-labelledby="scenario-title">
+    <div class="wrap split">
+      <div class="split-sticky">
+        <p class="eyebrow">Scenár</p>
+        <h2 class="h2" id="scenario-title">{e(ind["scenario_title"])}</h2>
+        <p class="lead">{e(ind["scenario_intro"])}</p>
       </div>
+      <ol class="ind-scenario">{steps}
+      </ol>
     </div>
   </section>
 """
 
-    process_html = ""
-    if show_process:
-        process_html = f"""
-  <section class="ind-section alt" aria-labelledby="process-title">
-    <div class="wrap-narrow">
-      <p class="kicker">Proces</p>
-      <h2 class="section-title section-title--lg reveal" id="process-title">Ako prebieha spolupráca s Beewoy</h2>
-      <p class="ind-lead reveal">{e(ind.get("process_intro", ""))}</p>
-      {render_steps(ind["process"])}
-      <p class="ind-note reveal">Viac o tvorbe webov nájdete na stránke <a href="../">Tvorba webov</a>.</p>
-    </div>
-  </section>
-"""
-
-    if pricing_model == "packages" and ind.get("packages"):
-        pricing_html = render_packages(ind["packages"], depth, slug)
-    else:
-        price = "".join(f"<li>{e(x)}</li>" for x in ind.get("price_factors", []))
-        pricing_html = f"""
-  <section class="ind-section" aria-labelledby="price-title">
-    <div class="wrap-narrow">
-      <p class="kicker">Cena</p>
-      <h2 class="section-title section-title--lg reveal" id="price-title">Čo ovplyvňuje cenu</h2>
-      <p class="ind-lead reveal">{e(ind.get("price_intro", ""))}</p>
-      <ul class="ind-price-factors reveal">{price}</ul>
-      <p class="ind-note reveal">Po konzultácii dostanete individuálnu nezáväznú ponuku.</p>
-    </div>
-  </section>
-"""
-
-    proof_html = ""
-    if show_checklist and ind.get("checklist"):
-        proof_html = f"""
-  <section class="ind-section alt" aria-labelledby="proof-title">
-    <div class="wrap-narrow">
-      <p class="kicker">Odborný model</p>
-      <h2 class="section-title section-title--lg reveal" id="proof-title">{e(ind["proof_title"])}</h2>
-      <p class="ind-lead reveal">{e(ind["proof_intro"])}</p>
-      {render_checklist(ind["checklist"])}
-    </div>
-  </section>
-"""
-    elif ind.get("offer_banner"):
-        proof_html = render_offer_banner(ind["offer_banner"])
-
-    body = f"""
-<body id="top" class="industry-page">
-{header_nav(depth, odvetvie=slug)}
+    body = f"""{header_nav(depth, cta_href=contact)}
 <main id="obsah">
-  <section class="{hero_class}" aria-labelledby="ind-hero-title">
+  <section class="page-hero" aria-labelledby="ind-hero-title">
     <div class="wrap">
-      <nav class="breadcrumbs reveal" aria-label="Navigácia breadcrumbs">
-        <ol>
-          <li><a href="{depth}">Domov</a></li>
-          <li><a href="../">Tvorba webov</a></li>
-          <li><a href="../odvetvia/">Odvetvia</a></li>
-          <li aria-current="page">{e(ind["short_name"])}</li>
-        </ol>
+      <nav class="breadcrumbs" aria-label="Omrvinková navigácia">
+        <ol><li><a href="{depth}">Domov</a></li><li><a href="../">Tvorba webov</a></li><li><a href="../odvetvia/">Odvetvia</a></li><li aria-current="page">{e(ind["short_name"])}</li></ol>
       </nav>
-      <div class="ind-hero-inner">
-        <p class="kicker reveal">{kicker}</p>
-        <h1 id="ind-hero-title" class="reveal">{e(ind["h1"])}</h1>
-        <p class="ind-hero-lead reveal">{e(ind["hero_lead"])}</p>
-        <div class="ind-hero-actions reveal">
-          <a class="btn btn-primary" href="{depth}kontakt/?odvetvie={e(slug)}#kontakt-form" data-analytics-cta="industry_hero_{e(slug)}">{e(ind["cta_primary"])} <span class="arrow">→</span></a>
-          {secondary_cta}
-        </div>
-        <ul class="ind-hero-meta reveal" aria-label="Čo na stránke nájdete">{proof_li}</ul>
+      <h1 class="h1" id="ind-hero-title">{e(ind["h1"])}</h1>
+      <p class="lead">{e(ind["hero_lead"])}</p>
+      <div class="actions">
+        <a class="btn btn-primary btn-lg" href="{contact}" data-analytics-cta="industry_hero_{e(slug)}">Chcem web <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn-secondary btn-lg" href="#cena">Pozrieť cenu</a>
       </div>
-    </div>
-  </section>
-{audience_html}
-  <section class="ind-section ind-problems" aria-labelledby="problems-title">
-    <div class="wrap">
-      <div class="ind-section-head center reveal">
-        <p class="kicker">Problémy odvetvia</p>
-        <h2 class="section-title section-title--sm" id="problems-title">{e(problems_title)}</h2>
-        <p class="ind-lead">{e(ind["problems_intro"])}</p>
-      </div>
-      {render_problems(ind["problems"])}
+      <ul class="page-hero-meta">{meta}</ul>
     </div>
   </section>
 
-  <section class="ind-section" aria-labelledby="help-title">
+  <section class="section" aria-labelledby="problems-title">
     <div class="wrap">
-      <div class="ind-section-head reveal">
-        <p class="kicker">Ako pomáha web</p>
-        <h2 class="section-title section-title--lg" id="help-title">{e(help_title)}</h2>
-        <p class="ind-lead">{e(ind["help_intro"])}</p>
-      </div>
-      {render_cards(ind["help_points"])}
+{section_head("Na čo narážate", problems_title, "problems-title", ind.get("problems_intro", ""))}
+{render_problems(ind["problems"])}
     </div>
   </section>
 
-  <section class="ind-section alt" id="funkcie" aria-labelledby="features-title">
+  <section class="section" aria-labelledby="help-title">
     <div class="wrap">
-      <div class="ind-section-head reveal">
-        <p class="kicker">Funkcie</p>
-        <h2 class="section-title section-title--lg" id="features-title">{e(features_title)}</h2>
-        <p class="ind-lead">{e(ind["features_intro"])}</p>
-      </div>
-      {render_cards(ind["features"])}
-    </div>
-  </section>
-{scenario_html}
-{process_html}
-{pricing_html}
-{proof_html}
-  <section class="section dark ind-faq" id="faq" aria-labelledby="faq-title">
-    <div class="wrap faq-grid">
-      <div>
-        <p class="kicker">FAQ</p>
-        <h2 class="section-title section-title--lg reveal" id="faq-title">Časté otázky</h2>
-      </div>
-      <div class="faq-list">{render_faq(ind["faq"])}</div>
+{section_head("Ako pomôže web", help_title, "help-title", ind.get("help_intro", ""))}
+{render_items(ind["help_points"])}
     </div>
   </section>
 
-  <section class="ind-section ind-related-section" aria-labelledby="related-title">
+  <section class="section" id="funkcie" aria-labelledby="features-title">
     <div class="wrap">
-      <div class="ind-section-head center reveal">
-        <p class="kicker">Súvisiace</p>
-        <h2 class="section-title section-title--sm" id="related-title">Ďalšie odvetvia a služby</h2>
-        <p class="ind-lead">Prehľad <a href="../odvetvia/">všetkých odvetví</a> a pilier <a href="../">tvorby webov</a>.</p>
+{section_head("Funkcie", features_title, "features-title", ind.get("features_intro", ""))}
+{render_feature_list(ind["features"])}
+    </div>
+  </section>
+{scenario_html}{render_packages(ind["packages"], depth, slug)}
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="wrap split">
+      <div class="split-sticky">
+        <p class="eyebrow">Časté otázky</p>
+        <h2 class="h2" id="faq-title">Na rovinu.</h2>
       </div>
-      {render_related(peers)}
+      <div class="faq">{render_faq(ind["faq"])}
+      </div>
     </div>
   </section>
 
-  <section class="ind-final" id="kontakt" aria-labelledby="final-title">
+  <section class="section section--soft" aria-labelledby="related-title">
     <div class="wrap">
-      <p class="kicker">Nezáväzná konzultácia</p>
-      <h2 class="reveal" id="final-title">{e(ind["final_title"])}</h2>
-      <p class="reveal">{e(ind["final_text"])}</p>
-      <div class="hero-actions reveal">
-        <a class="btn btn-light" href="{depth}kontakt/?odvetvie={e(slug)}#kontakt-form" data-analytics-cta="industry_final_{e(slug)}">Požiadať o konzultáciu <span class="arrow">→</span></a>
-        <a class="btn btn-outline" href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a>
+      <div class="section-head">
+        <h2 class="h3" id="related-title">Weby pre ďalšie odvetvia</h2>
       </div>
-      {footer_block(depth)}
+{render_related(peers)}
     </div>
   </section>
-</main>
-{scripts(depth)}
-"""
+{cta_panel(ind["final_title"], ind["final_text"], contact, "Chcem web", f"industry_final_{e(slug)}")}</main>
+
+{footer_block(depth)}{scripts(depth)}"""
 
     return head_block(
         title=ind["title"],
         description=ind["description"],
         canonical=page_id,
         og_image=f"{BASE}/og-main.png",
-        depth_css=depth,
+        depth=depth,
         json_ld=graph,
-        css_extra=css,
     ) + body
 
 
@@ -653,19 +431,26 @@ def render_hub(data: dict) -> str:
     inds = data["industries"]
     depth = "../../"
     url = f"{BASE}/tvorba-webov/odvetvia/"
-    css = '<link rel="stylesheet" href="./odvetvia.css">'
 
-    cards = "".join(
-        f"""
-        <a class="reveal" href="../pre-{e(i['slug'])}/">
-          <span class="ind-related-icon" aria-hidden="true">{icon_html(INDUSTRY_ICONS.get(i['slug'], 'spark'))}</span>
-          <span class="ind-related-copy">
-            <strong>{e(i['short_name'])}</strong>
-            <span class="ind-related-desc">{e(i['hub_blurb'])}</span>
-          </span>
-        </a>"""
-        for i in inds
-    )
+    clusters: dict[str, list[dict]] = {}
+    for i in inds:
+        clusters.setdefault(i["cluster"], []).append(i)
+
+    groups = []
+    for name, items in clusters.items():
+        links = "".join(
+            f"""
+          <a class="ind-link" href="../pre-{e(i['slug'])}/"><strong>{e(i['short_name'])}</strong><span>{e(i['hub_blurb'])}</span><i aria-hidden="true">→</i></a>"""
+            for i in items
+        )
+        groups.append(
+            f"""
+      <div class="ind-group">
+        <h2>{e(name)}<span>{len(items)} {"odvetvie" if len(items) == 1 else ("odvetvia" if len(items) < 5 else "odvetví")}</span></h2>
+        <div class="ind-links">{links}
+        </div>
+      </div>"""
+        )
 
     graph = {
         "@context": "https://schema.org",
@@ -707,77 +492,32 @@ def render_hub(data: dict) -> str:
         ],
     }
 
-    body = f"""
-<body id="top" class="industry-page">
-{header_nav(depth, current="hub")}
+    body = f"""{header_nav(depth, cta_href=f"{depth}kontakt/#kontakt-form")}
 <main id="obsah">
-  <section class="ind-hero centered" aria-labelledby="hub-hero-title">
+  <section class="page-hero" aria-labelledby="hub-hero-title">
     <div class="wrap">
-      <nav class="breadcrumbs reveal" aria-label="Navigácia breadcrumbs">
-        <ol>
-          <li><a href="{depth}">Domov</a></li>
-          <li><a href="../">Tvorba webov</a></li>
-          <li aria-current="page">Odvetvia</li>
-        </ol>
+      <nav class="breadcrumbs" aria-label="Omrvinková navigácia">
+        <ol><li><a href="{depth}">Domov</a></li><li><a href="../">Tvorba webov</a></li><li aria-current="page">Odvetvia</li></ol>
       </nav>
-      <div class="ind-hero-inner">
-        <p class="kicker reveal">Tvorba webov</p>
-        <h1 id="hub-hero-title" class="reveal">{e(hub["h1"])}</h1>
-        <p class="ind-hero-lead reveal">{e(hub["lead"])}</p>
-        <div class="ind-hero-actions reveal">
-          <a class="btn btn-primary" href="{depth}kontakt/" data-analytics-cta="hub_hero">Chcem konzultáciu <span class="arrow">→</span></a>
-          <a class="btn" href="../">Späť na tvorbu webov</a>
-        </div>
-      </div>
+      <h1 class="h1" id="hub-hero-title">{e(hub["h1"])}</h1>
+      <p class="lead">{e(hub["lead"])}</p>
     </div>
   </section>
 
-  <section class="ind-section" aria-labelledby="hub-list-title">
-    <div class="wrap">
-      <div class="ind-section-head center">
-        <p class="kicker">Odvetvia</p>
-        <h2 class="section-title section-title--sm reveal" id="hub-list-title">Vyberte si svoje odvetvie</h2>
-        <p class="ind-lead reveal">Každá stránka rieši iné otázky zákazníkov — od galérie a objednania až po B2B dopyt. Otvorte to, čo je vám najbližšie.</p>
-      </div>
-      <div class="ind-related ind-related--rich">{cards}
-      </div>
+  <section class="section section--flush-top" aria-label="Zoznam odvetví">
+    <div class="wrap ind-index">{"".join(groups)}
     </div>
   </section>
+{cta_panel("Nemáte svoje odvetvie v zozname?", "Napíšte nám. Web navrhneme podľa vašich zákazníkov, v plánoch Basic, Start alebo Individual.", f"{depth}kontakt/#kontakt-form", "Napísať nám", "hub_final")}</main>
 
-  <section class="ind-section alt" aria-labelledby="hub-more-title">
-    <div class="wrap-narrow">
-      <p class="kicker">Ďalšie odvetvia</p>
-      <h2 class="section-title section-title--lg reveal" id="hub-more-title">Nemáte svoje odvetvie v zozname?</h2>
-      <p class="ind-lead reveal">Pripravujeme ďalšie kategórie. Ak potrebujete web pre iný segment, navrhneme riešenie podľa vašich zákazníkov a cieľov — v plánoch Basic, Start alebo Individual.</p>
-      <div class="ind-hero-actions reveal">
-        <a class="btn btn-primary" href="{depth}kontakt/">Napísať o inom odvetví <span class="arrow">→</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="ind-final" aria-labelledby="hub-final-title">
-    <div class="wrap">
-      <p class="kicker">Ďalší krok</p>
-      <h2 class="reveal" id="hub-final-title">Začnime nezáväznou konzultáciou.</h2>
-      <p class="reveal">Povieme vám, aký rozsah dáva zmysel pre vaše odvetvie a čo by mal web vedieť vyriešiť ako prvé.</p>
-      <div class="hero-actions reveal">
-        <a class="btn btn-light" href="{depth}kontakt/" data-analytics-cta="hub_final">Požiadať o konzultáciu <span class="arrow">→</span></a>
-        <a class="btn btn-outline" href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a>
-      </div>
-      {footer_block(depth)}
-    </div>
-  </section>
-</main>
-{scripts(depth)}
-"""
+{footer_block(depth)}{scripts(depth)}"""
     return head_block(
         title=hub["title"],
         description=hub["description"],
         canonical=url,
         og_image=f"{BASE}/og-main.png",
-        depth_css=depth,
+        depth=depth,
         json_ld=graph,
-        css_extra=css,
     ) + body
 
 
@@ -801,71 +541,18 @@ def update_sitemap(slugs: list[str]) -> None:
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
     ]
     for loc, pri, freq in urls:
+        lastmod = SITEMAP_LASTMOD.get(loc)
+        lastmod_xml = f"    <lastmod>{lastmod}</lastmod>\n" if lastmod else ""
         parts.append(
             f"  <url>\n"
             f"    <loc>{loc}</loc>\n"
+            f"{lastmod_xml}"
             f"    <changefreq>{freq}</changefreq>\n"
             f"    <priority>{pri}</priority>\n"
             f"  </url>"
         )
     parts.append("</urlset>\n")
     sm.write_text("\n".join(parts), encoding="utf-8")
-
-
-PRIORITY_TEASER_SLUGS = (
-    "stolarstvo-interiery",
-    "zubna-ambulancia",
-    "restauracia",
-    "autoservis-pneuservis",
-    "elektrikar",
-    "kadernictvo-barbershop",
-)
-
-
-def patch_tvorba_webov(inds: list[dict]) -> None:
-    """No-op if service page already has the industries teaser (manual source of truth)."""
-    path = TV / "index.html"
-    text = path.read_text(encoding="utf-8")
-    if "web-industries--teaser" in text or "web-industries-teaser" in text:
-        return
-    # Legacy one-shot inject kept for older checkouts only.
-    marker = '  <section class="section dark" id="faq"'
-    if marker not in text:
-        return
-    by_slug = {i["slug"]: i for i in inds}
-    tips = [by_slug[s] for s in PRIORITY_TEASER_SLUGS if s in by_slug] or inds[:6]
-    cards = "".join(
-        f'''
-        <a class="reveal" href="./pre-{e(i['slug'])}/">
-          <span class="ind-related-icon" aria-hidden="true">{icon_html(INDUSTRY_ICONS.get(i['slug'], 'spark'))}</span>
-          <strong>{e(i['short_name'])}</strong>
-        </a>'''
-        for i in tips
-    )
-    block = f"""
-  <section class="section web-industries web-industries--teaser" id="odvetvia" aria-labelledby="industries-title">
-    <div class="wrap">
-      <div class="ind-section-head center">
-        <p class="kicker">Podľa odvetvia</p>
-        <h2 class="section-title section-title--sm reveal" id="industries-title">Web podľa vášho odvetvia.</h2>
-        <p class="ind-lead reveal">Stolár, ambulancia, autoservis, kaderníctvo aj reštaurácia potrebujú iný web. Vyberte si odvetvie a pozrite, čo konkrétne riešime.</p>
-      </div>
-      <div class="ind-related">{cards}
-      </div>
-      <div class="web-industries-actions reveal">
-        <a class="btn btn-primary" href="./odvetvia/">Všetky odvetvia <span class="arrow">→</span></a>
-      </div>
-    </div>
-  </section>
-
-"""
-    if "odvetvia/odvetvia.css" not in text:
-        text = text.replace(
-            '<link rel="stylesheet" href="./hero-dark.css">',
-            '<link rel="stylesheet" href="./hero-dark.css">\n<link rel="stylesheet" href="./odvetvia/odvetvia.css">',
-        )
-    text = text.replace(marker, block + marker)
-    path.write_text(text, encoding="utf-8")
 
 
 def clean_html(s: str) -> str:
@@ -885,8 +572,7 @@ def main() -> None:
         print("Wrote", out.relative_to(ROOT))
 
     update_sitemap([i["slug"] for i in inds])
-    patch_tvorba_webov(inds)
-    print("Wrote hub, sitemap, patched tvorba-webov")
+    print("Wrote hub and sitemap")
     print("OK", len(inds), "pages")
 
 

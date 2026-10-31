@@ -3,220 +3,43 @@
   const burger = document.querySelector("#burger");
   const mobileMenu = document.querySelector("#mobileMenu");
 
-  const updateHeader = () => header?.classList.toggle("scrolled", window.scrollY > 12);
+  /* Header border once the page scrolls */
+  const updateHeader = () => header?.classList.toggle("scrolled", window.scrollY > 8);
   updateHeader();
   window.addEventListener("scroll", updateHeader, { passive: true });
 
-  const closeMenu = () => {
-    burger?.setAttribute("aria-expanded", "false");
-    burger?.setAttribute("aria-label", "Otvoriť menu");
-    mobileMenu?.classList.remove("open");
-    document.body.classList.remove("menu-open");
+  const getNavOffset = () => (header?.getBoundingClientRect().height || 64) + 16;
+
+  /* Mobile menu */
+  const setMenu = (open) => {
+    if (!burger || !mobileMenu) return;
+    burger.setAttribute("aria-expanded", String(open));
+    burger.setAttribute("aria-label", open ? "Zavrieť menu" : "Otvoriť menu");
+    mobileMenu.classList.toggle("open", open);
+    mobileMenu.toggleAttribute("inert", !open);
+    document.body.classList.toggle("menu-open", open);
   };
+  mobileMenu?.toggleAttribute("inert", true);
 
   burger?.addEventListener("click", () => {
-    const open = burger.getAttribute("aria-expanded") === "true";
-    burger.setAttribute("aria-expanded", String(!open));
-    burger.setAttribute("aria-label", open ? "Otvoriť menu" : "Zatvoriť menu");
-    mobileMenu?.classList.toggle("open", !open);
-    document.body.classList.toggle("menu-open", !open);
+    setMenu(burger.getAttribute("aria-expanded") !== "true");
+  });
+  mobileMenu?.querySelectorAll("a").forEach((link) => link.addEventListener("click", () => setMenu(false)));
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape" && burger?.getAttribute("aria-expanded") === "true") {
+      setMenu(false);
+      burger.focus();
+    }
+  });
+  window.matchMedia("(min-width: 900px)").addEventListener?.("change", (event) => {
+    if (event.matches) setMenu(false);
   });
 
-  mobileMenu?.querySelectorAll("a").forEach(link => link.addEventListener("click", closeMenu));
-
-  const reveal = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
-        reveal.unobserve(entry.target);
-      }
-    });
-  }, { threshold: .1, rootMargin: "0px 0px -45px" });
-
-  document.querySelectorAll(".reveal").forEach(element => reveal.observe(element));
-
-  /* Active nav anchor (scroll spy) */
-  const navAnchors = [...document.querySelectorAll('.nav a[href^="#"], .mobile-menu a[href^="#"]')]
-    .filter(a => {
-      const href = a.getAttribute("href");
-      return href && href !== "#kontakt" && href !== "#top";
-    });
-  const navSections = [...new Set(navAnchors.map(a => a.getAttribute("href")))]
-    .map(href => document.querySelector(href))
-    .filter(Boolean);
-
-  const getNavOffset = () => {
-    const headerHeight = header?.getBoundingClientRect().height || 72;
-    return headerHeight + 12;
-  };
-
-  const setActiveNav = (id) => {
-    navAnchors.forEach(a => {
-      const on = a.getAttribute("href") === id;
-      a.classList.toggle("active", on);
-      if (on) a.setAttribute("aria-current", "true");
-      else a.removeAttribute("aria-current");
-    });
-  };
-
-  const updateActiveNav = () => {
-    if (!navSections.length) return;
-    const marker = getNavOffset();
-    let current = null;
-    for (const section of navSections) {
-      if (section.getBoundingClientRect().top <= marker + 8) current = section;
-    }
-    setActiveNav(current ? "#" + current.id : null);
-  };
-
-  let navRaf = 0;
-  const scheduleActiveNav = () => {
-    if (navRaf) return;
-    navRaf = requestAnimationFrame(() => {
-      navRaf = 0;
-      updateActiveNav();
-    });
-  };
-  window.addEventListener("scroll", scheduleActiveNav, { passive: true });
-  window.addEventListener("resize", scheduleActiveNav, { passive: true });
-  updateActiveNav();
-
-  navAnchors.forEach((anchor) => {
-    anchor.addEventListener("click", () => {
-      const href = anchor.getAttribute("href");
-      if (!href || !href.startsWith("#")) return;
-      setActiveNav(href);
-      window.setTimeout(updateActiveNav, 350);
-      window.setTimeout(updateActiveNav, 700);
-    });
-  });
-  window.addEventListener("hashchange", () => {
-    window.setTimeout(updateActiveNav, 50);
-    window.setTimeout(updateActiveNav, 400);
-  });
-
-  /* Process timeline — highlight steps while scrolling top to bottom */
-  const processSection = document.querySelector("#proces");
-  const processSteps = [...document.querySelectorAll("#proces .step")];
-  const updateProcessSteps = () => {
-    if (!processSteps.length || !processSection) return;
-    const marker = window.innerHeight * 0.42;
-    const sectionRect = processSection.getBoundingClientRect();
-
-    if (sectionRect.top > marker) {
-      processSteps.forEach((step) => step.classList.remove("active", "done"));
-      return;
-    }
-
-    if (sectionRect.bottom < marker) {
-      const last = processSteps.length - 1;
-      processSteps.forEach((step, i) => {
-        step.classList.toggle("active", i === last);
-        step.classList.toggle("done", i < last);
-      });
-      return;
-    }
-
-    let activeIndex = 0;
-    processSteps.forEach((step, i) => {
-      const rect = step.getBoundingClientRect();
-      const trigger = rect.top + rect.height * 0.35;
-      if (trigger <= marker) activeIndex = i;
-    });
-    processSteps.forEach((step, i) => {
-      step.classList.toggle("active", i === activeIndex);
-      step.classList.toggle("done", i < activeIndex);
-    });
-  };
-
-  let processRaf = 0;
-  window.addEventListener("scroll", () => {
-    if (processRaf) return;
-    processRaf = requestAnimationFrame(() => {
-      processRaf = 0;
-      updateProcessSteps();
-    });
-  }, { passive: true });
-  updateProcessSteps();
-
-  /* Hero grid — cursor-reactive focus and snapped grid point */
-  const gridInteraction = window.matchMedia("(min-width: 901px) and (hover: hover) and (pointer: fine)");
-  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-  const gridSize = 72;
-
-  const bindHeroGrid = (hero, heroGrid) => {
-    if (!hero || !heroGrid) return;
-
-    let gridFrame = 0;
-    let pointerX = 0;
-    let pointerY = 0;
-    let gridPhaseX = 0;
-    let gridPhaseY = 0;
-
-    const readGridPhase = () => {
-      const drift = parseFloat(getComputedStyle(heroGrid).getPropertyValue("--grid-drift")) || 0;
-      gridPhaseX = drift;
-      gridPhaseY = drift;
-    };
-
-    const renderGridPointer = () => {
-      gridFrame = 0;
-      const rect = hero.getBoundingClientRect();
-      const x = Math.max(0, Math.min(rect.width, pointerX - rect.left));
-      const y = Math.max(0, Math.min(rect.height, pointerY - rect.top));
-      const snapX = Math.round((x - gridPhaseX) / gridSize) * gridSize + gridPhaseX;
-      const snapY = Math.round((y - gridPhaseY) / gridSize) * gridSize + gridPhaseY;
-
-      hero.style.setProperty("--grid-cursor-x", `${x}px`);
-      hero.style.setProperty("--grid-cursor-y", `${y}px`);
-      hero.style.setProperty("--grid-snap-x", `${snapX}px`);
-      hero.style.setProperty("--grid-snap-y", `${snapY}px`);
-    };
-
-    const resetGridPointer = () => {
-      hero.classList.remove("grid-active");
-      if (gridFrame) cancelAnimationFrame(gridFrame);
-      gridFrame = 0;
-    };
-
-    hero.addEventListener("pointerenter", (event) => {
-      if (!gridInteraction.matches || reducedMotion.matches) return;
-      pointerX = event.clientX;
-      pointerY = event.clientY;
-      hero.classList.add("grid-active");
-      readGridPhase();
-      renderGridPointer();
-    }, { passive: true });
-
-    hero.addEventListener("pointermove", (event) => {
-      if (!hero.classList.contains("grid-active")) {
-        if (!gridInteraction.matches || reducedMotion.matches) return;
-        hero.classList.add("grid-active");
-        readGridPhase();
-      }
-      pointerX = event.clientX;
-      pointerY = event.clientY;
-      if (gridFrame) return;
-      gridFrame = requestAnimationFrame(renderGridPointer);
-    }, { passive: true });
-
-    hero.addEventListener("pointerleave", resetGridPointer, { passive: true });
-    gridInteraction.addEventListener?.("change", (event) => {
-      if (!event.matches) resetGridPointer();
-    });
-    reducedMotion.addEventListener?.("change", (event) => {
-      if (event.matches) resetGridPointer();
-    });
-  };
-
-  bindHeroGrid(document.querySelector(".hero"), document.querySelector(".hero-grid"));
-  bindHeroGrid(document.querySelector(".web-hero"), document.querySelector(".web-hero-grid"));
-
+  /* PWA service worker — only with functional consent */
   const registerSW = () => {
     if (!("serviceWorker" in navigator)) return;
     navigator.serviceWorker.register("/sw.js").catch(() => {});
   };
-
   const unregisterSW = async () => {
     if (!("serviceWorker" in navigator)) return;
     const regs = await navigator.serviceWorker.getRegistrations();
@@ -226,12 +49,10 @@
       await Promise.all(keys.map((k) => caches.delete(k)));
     }
   };
-
   const syncSW = (consent) => {
     if (consent?.functional) registerSW();
     else unregisterSW();
   };
-
   syncSW(window.BeewoyConsent?.get?.() || window.beewoyConsent || null);
   window.addEventListener("beewoy:consent", (event) => syncSW(event.detail));
 
@@ -240,7 +61,7 @@
   const typeSelect = document.querySelector("#contact-type");
   const industryInput = document.querySelector("#contact-industry");
   const nameInput = document.querySelector("#contact-name");
-  const formStatus = document.querySelector(".form-status");
+  const formStatus = contactForm?.querySelector(".form-status");
   const SEO_OPTION = "SEO, výkon alebo servis";
   const PACKAGE_IDS = new Set(["basic", "start", "individual", "neviem"]);
   const PROJECT_TYPE_MAP = {
@@ -276,6 +97,9 @@
   const applyPreset = (preset) => {
     if (preset === "seo") {
       if (!setBalikValue("neviem")) setBalikValue(SEO_OPTION);
+      setProjectType("redizajn");
+      const message = contactForm?.querySelector("#contact-message");
+      if (message && !message.value) message.value = "Mám záujem o bezplatný mini-audit webu: ";
       return;
     }
     if (PACKAGE_IDS.has(preset)) setBalikValue(preset);
@@ -289,11 +113,6 @@
     }
     if (typeSelect && !typeSelect.value) {
       typeSelect.focus(focusOpts);
-      return;
-    }
-    const checkedBalik = contactForm?.querySelector('input[type="radio"][name="balik"]:checked');
-    if (contactForm?.querySelector('input[type="radio"][name="balik"]') && !checkedBalik) {
-      contactForm.querySelector('input[type="radio"][name="balik"]')?.focus(focusOpts);
       return;
     }
     const firstEmpty = contactForm?.querySelector("input:not([type=hidden]):not([type=checkbox]):not([type=radio]):invalid, textarea:invalid, select:invalid");
@@ -319,36 +138,47 @@
     window.setTimeout(run, 700);
   };
 
-  document.querySelectorAll("[data-preset]").forEach((trigger) => {
-    trigger.addEventListener("click", (event) => {
-      event.preventDefault();
-      applyPreset(trigger.dataset.preset);
-      scrollToForm();
-      afterScrollSettled(focusFirstEmpty);
+  if (contactForm) {
+    document.querySelectorAll("[data-preset]").forEach((trigger) => {
+      trigger.addEventListener("click", (event) => {
+        event.preventDefault();
+        applyPreset(trigger.dataset.preset);
+        scrollToForm();
+        afterScrollSettled(focusFirstEmpty);
+      });
     });
-  });
 
-  document.querySelectorAll("[data-typ]").forEach((trigger) => {
-    trigger.addEventListener("click", (event) => {
-      event.preventDefault();
-      setProjectType(trigger.dataset.typ);
-      scrollToForm();
-      afterScrollSettled(focusFirstEmpty);
+    document.querySelectorAll("[data-typ]").forEach((trigger) => {
+      trigger.addEventListener("click", (event) => {
+        event.preventDefault();
+        setProjectType(trigger.dataset.typ);
+        scrollToForm();
+        afterScrollSettled(focusFirstEmpty);
+      });
     });
-  });
 
-  document.querySelectorAll('a[href="#kontakt"]').forEach((trigger) => {
-    if (trigger.hasAttribute("data-typ") || trigger.hasAttribute("data-preset")) return;
-    trigger.addEventListener("click", (event) => {
-      const target = document.querySelector("#kontakt");
-      if (!target) return;
-      event.preventDefault();
-      scrollToForm();
-      history.pushState(null, "", "#kontakt");
+    /* Same-page plan buttons (e.g. ?balik=start#kontakt on the homepage) */
+    document.querySelectorAll("a[data-balik]").forEach((trigger) => {
+      trigger.addEventListener("click", (event) => {
+        event.preventDefault();
+        applyPreset(trigger.dataset.balik);
+        scrollToForm();
+        afterScrollSettled(focusFirstEmpty);
+      });
     });
-  });
+
+    document.querySelectorAll('a[href="#kontakt"]').forEach((trigger) => {
+      if (trigger.hasAttribute("data-typ") || trigger.hasAttribute("data-preset") || trigger.hasAttribute("data-balik")) return;
+      trigger.addEventListener("click", (event) => {
+        event.preventDefault();
+        scrollToForm();
+        history.pushState(null, "", "#kontakt");
+      });
+    });
+  }
 
   const initFormPreset = () => {
+    if (!contactForm) return;
     const params = new URLSearchParams(window.location.search);
     const hash = window.location.hash;
     const balik = (params.get("balik") || params.get("plan") || "").toLowerCase();
@@ -366,7 +196,7 @@
     } else if (PROJECT_TYPE_MAP[typ]) {
       setProjectType(typ);
       window.setTimeout(focusFirstEmpty, 300);
-    } else if (hash === "#kontakt-form" && !contactForm?.querySelector('input[type="radio"][name="balik"]')) {
+    } else if (hash === "#kontakt-form" && !contactForm.querySelector('input[type="radio"][name="balik"]')) {
       applyPreset("seo");
       window.setTimeout(focusFirstEmpty, 300);
     }

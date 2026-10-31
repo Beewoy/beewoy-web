@@ -6,7 +6,7 @@
 <title>Ochrana osobných údajov | Beewoy</title>
 <meta name="description" content="Informácie o spracúvaní osobných údajov podľa GDPR na webe Beewoy. Vaše práva, účely spracovania a kontakt na prevádzkovateľa.">
 <meta name="robots" content="noindex, follow">
-<meta name="theme-color" content="#f3f0e8">
+<meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="https://beewoy.sk/ochrana-udajov/">
 <link rel="manifest" href="../manifest.webmanifest">
 <link rel="icon" href="../favicon.ico" sizes="any">
@@ -33,8 +33,6 @@
 <meta name="twitter:image" content="https://beewoy.sk/og-main.png">
 <meta name="twitter:image:alt" content="Ochrana osobných údajov | Beewoy">
 
-<link rel="preload" href="../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../styles.css" as="style">
 <link rel="stylesheet" href="../styles.css">
 
 <script type="application/ld+json">
@@ -75,29 +73,57 @@
 <body>
 <a class="skip" href="#obsah">Preskočiť na obsah</a>
 
-<header class="header scrolled" id="siteHeader">
-  <div class="header-inner">
-    <a class="logo" href="../" aria-label="Beewoy — úvod">
-      <img src="../logo.svg" alt="Beewoy logo" width="26" height="29">beewoy
-    </a>
+<header class="header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="logo" href="../" aria-label="Beewoy — úvod"><img src="../logo.svg" alt="" width="22" height="24">beewoy</a>
     <nav class="nav" aria-label="Hlavná navigácia">
       <a href="../tvorba-webov/">Tvorba webov</a>
       <a href="../cennik/">Cenník</a>
       <a href="../referencie/">Referencie</a>
       <a href="../kontakt/">Kontakt</a>
     </nav>
-    <a class="btn btn-primary legal-header-cta" href="../kontakt/">Chcem web <span class="arrow">→</span></a>
+    <a class="btn btn-primary btn-sm header-cta" href="../kontakt/#kontakt-form" data-analytics-cta="header_start">Chcem web</a>
+    <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Otvoriť menu"><span></span><span></span></button>
   </div>
 </header>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobilná navigácia">
+  <a href="../tvorba-webov/">Tvorba webov</a>
+  <a href="../cennik/">Cenník</a>
+  <a href="../referencie/">Referencie</a>
+  <a href="../kontakt/">Kontakt</a>
+  <a class="btn btn-primary btn-lg" href="../kontakt/#kontakt-form">Chcem web</a>
+  <p class="mobile-menu-foot">Alebo napíšte na <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a></p>
+</nav>
 
-<main id="obsah" class="legal-page">
-  <div class="wrap">
-    <p class="kicker">Právne informácie</p>
-    <h1>Ochrana osobných údajov</h1>
-    <p class="legal-meta">Posledná aktualizácia: 31. 7. 2026. Tento dokument popisuje, ako Beewoy spracúva osobné údaje návštevníkov webu <a href="https://beewoy.sk/">beewoy.sk</a> v súlade s nariadením GDPR (EÚ) 2016/679 a slovenskými predpismi.</p>
+<main id="obsah">
+  <section class="page-hero" aria-labelledby="legal-title">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Omrvinková navigácia">
+        <ol><li><a href="../">Domov</a></li><li aria-current="page">Ochrana osobných údajov</li></ol>
+      </nav>
+      <h1 class="h1" id="legal-title">Ochrana osobných údajov</h1>
+      <p class="legal-updated">Posledná aktualizácia: 31. 7. 2026. Tento dokument popisuje, ako Beewoy spracúva osobné údaje návštevníkov webu <a href="https://beewoy.sk/">beewoy.sk</a> v súlade s nariadením GDPR (EÚ) 2016/679 a slovenskými predpismi.</p>
+    </div>
+  </section>
 
-    <div class="legal-content">
-      <h2>1. Prevádzkovateľ</h2>
+  <section class="section section--flush-top">
+    <div class="wrap legal-layout">
+      <nav class="legal-toc" aria-label="Obsah dokumentu">
+        <p>Obsah</p>
+        <ol>
+          <li><a href="#prevadzkovatel">1. Prevádzkovateľ</a></li>
+          <li><a href="#ake-udaje-spracuvame">2. Aké údaje spracúvame</a></li>
+          <li><a href="#ucely-a-pravne-zaklady">3. Účely a právne základy</a></li>
+          <li><a href="#prijemcovia-a-tretie-strany">4. Príjemcovia a tretie strany</a></li>
+          <li><a href="#doba-uchovavania">5. Doba uchovávania</a></li>
+          <li><a href="#vase-prava">6. Vaše práva</a></li>
+          <li><a href="#bezpecnost">7. Bezpečnosť</a></li>
+          <li><a href="#deti">8. Deti</a></li>
+          <li><a href="#zmeny">9. Zmeny</a></li>
+        </ol>
+      </nav>
+      <div class="prose">
+      <h2 id="prevadzkovatel">1. Prevádzkovateľ</h2>
       <p>Prevádzkovateľom osobných údajov je:</p>
       <ul>
         <li><strong>Beewoy</strong></li>
@@ -106,7 +132,7 @@
       </ul>
       <p>V otázkach ochrany osobných údajov nás kontaktujte na <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a>.</p>
 
-      <h2>2. Aké údaje spracúvame</h2>
+      <h2 id="ake-udaje-spracuvame">2. Aké údaje spracúvame</h2>
       <h3>2.1 Údaje, ktoré nám sami poskytnete</h3>
       <p>Ak nám napíšete e-mail (napr. na <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a>) alebo vyplníte kontaktný formulár na webe, spracúvame údaje, ktoré nám poskytnete — typicky meno, e-mailovú adresu, typ projektu, obsah správy a prípadné prílohy. Tieto údaje používame výhradne na vybavenie dopytu a súvisiacu komunikáciu.</p>
       <h3>2.2 Technické údaje pri návšteve webu</h3>
@@ -114,7 +140,7 @@
       <h3>2.3 Cookies a podobné technológie</h3>
       <p>Podrobnosti o cookies, kategóriách a možnostiach súhlasu nájdete v dokumente <a href="../cookies/">Cookies</a>.</p>
 
-      <h2>3. Účely a právne základy</h2>
+      <h2 id="ucely-a-pravne-zaklady">3. Účely a právne základy</h2>
       <ul>
         <li><strong>Komunikácia a predzmluvné vzťahy</strong> — vybavenie dopytov a príprava spolupráce (čl. 6 ods. 1 písm. b) GDPR, prípadne oprávnený záujem podľa písm. f).</li>
         <li><strong>Prevádzka webu a bezpečnosť</strong> — zabezpečenie fungovania stránky (čl. 6 ods. 1 písm. f) GDPR — oprávnený záujem).</li>
@@ -122,7 +148,7 @@
         <li><strong>Plnenie zákonných povinností</strong> — ak to vyžaduje zákon (čl. 6 ods. 1 písm. c) GDPR).</li>
       </ul>
 
-      <h2>4. Príjemcovia a tretie strany</h2>
+      <h2 id="prijemcovia-a-tretie-strany">4. Príjemcovia a tretie strany</h2>
       <p>Údaje nepredávame. Môžu byť sprístupnené:</p>
       <ul>
         <li><strong>poskytovateľovi hostingu</strong> webu (prevádzka infraštruktúry),</li>
@@ -133,48 +159,60 @@
       </ul>
       <p>Pri prenose mimo EÚ / EHP zabezpečíme primerané záruky podľa GDPR (napr. štandardné zmluvné doložky), ak je to relevantné.</p>
 
-      <h2>5. Doba uchovávania</h2>
+      <h2 id="doba-uchovavania">5. Doba uchovávania</h2>
       <ul>
         <li>E-mailová komunikácia a dopyty cez kontaktný formulár: po dobu vybavenia dopytu a primeranú ochranu práv (spravidla do 3 rokov od posledného kontaktu, ak nevznikne zmluva alebo iná povinnosť uchovania).</li>
         <li>Záznam o súhlase s cookies: po dobu platnosti súhlasu / do odvolania, najdlhšie 12 mesiacov, potom znova vyžiadame rozhodnutie.</li>
         <li>Technické logy: podľa nastavenia hostingu, spravidla krátkodobo.</li>
       </ul>
 
-      <h2>6. Vaše práva</h2>
+      <h2 id="vase-prava">6. Vaše práva</h2>
       <p>Máte právo na prístup, opravu, vymazanie, obmedzenie spracúvania, prenosnosť (ak sa uplatní), namietanie voči spracúvaniu na základe oprávneného záujmu a odvolanie súhlasu (ak je spracúvanie založené na súhlase). Odvolanie súhlasu nemá vplyv na zákonnosť spracúvania pred odvolaním.</p>
       <p>Žiadosť o uplatnenie práv pošlite na <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a>. Máte tiež právo podať sťažnosť na Úrad na ochranu osobných údajov SR (<a href="https://dataprotection.gov.sk" rel="noopener noreferrer" target="_blank">dataprotection.gov.sk</a>).</p>
 
-      <h2>7. Bezpečnosť</h2>
+      <h2 id="bezpecnost">7. Bezpečnosť</h2>
       <p>Primerané technické a organizačné opatrenia používame na ochranu údajov pred neoprávneným prístupom, stratou alebo zneužitím. Absolútnu bezpečnosť internetovej komunikácie však nie je možné zaručiť.</p>
 
-      <h2>8. Deti</h2>
+      <h2 id="deti">8. Deti</h2>
       <p>Web nie je určený deťom mladším ako 16 rokov a vedome od nich údaje nezbierame.</p>
 
-      <h2>9. Zmeny</h2>
+      <h2 id="zmeny">9. Zmeny</h2>
       <p>Dokument môžeme aktualizovať. Aktuálna verzia je vždy na tejto stránke. Pri podstatných zmenách upravíme dátum aktualizácie.</p>
+      </div>
     </div>
-  </div>
+  </section>
 </main>
 
-<section class="final" id="kontakt" aria-label="Pätička">
+<footer class="footer">
   <div class="wrap">
-    <footer class="footer">
-      <a class="logo" href="../"><img src="../logo.svg" alt="Beewoy" width="26" height="29">beewoy</a>
-      <nav class="footer-links" aria-label="Pätičková navigácia">
-        <a href="../">Domov</a>
-        <a href="../kontakt/">Kontakt</a>
-        <a href="../cookies/">Cookies</a>
-        <a href="./">Ochrana údajov</a>
-      </nav>
-      <span>© 2026 Beewoy</span>
-      <div class="footer-legal">
-        <button type="button" data-cookie-settings>Nastavenia cookies</button>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="../"><img src="../logo.svg" alt="" width="22" height="24">beewoy</a>
+        <p>Moderné webstránky pre firmy v mesačnom paušále.</p>
+        <a class="footer-mail" href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a>
       </div>
-    </footer>
+      <nav class="footer-col" aria-labelledby="f-offer"><h2 id="f-offer">Ponuka</h2><ul>
+        <li><a href="../tvorba-webov/">Tvorba webov</a></li>
+        <li><a href="../tvorba-webov/odvetvia/">Weby podľa odvetvia</a></li>
+        <li><a href="../cennik/">Cenník</a></li>
+        <li><a href="../kalkulacka/">Kalkulačka ceny</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="f-beewoy"><h2 id="f-beewoy">Beewoy</h2><ul>
+        <li><a href="../referencie/">Referencie</a></li>
+        <li><a href="../kontakt/">Kontakt</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="f-legal"><h2 id="f-legal">Právne</h2><ul>
+        <li><a href="../ochrana-udajov/">Ochrana údajov</a></li>
+        <li><a href="../cookies/">Cookies</a></li>
+        <li><button type="button" data-cookie-settings>Nastavenia cookies</button></li>
+      </ul></nav>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Beewoy</span><span>Slovensko</span></div>
   </div>
-</section>
+</footer>
 
 <script src="../cookies.js" defer></script>
 <script src="../analytics.js" defer></script>
+<script src="../main.js" defer></script>
 </body>
 </html>

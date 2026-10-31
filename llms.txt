@@ -10,7 +10,7 @@
 
 ## Stránky
 
-- [Domov](https://beewoy.sk/): Hero, ako to funguje, služby, referencie, cenník, FAQ, tím, kontakt
+- [Domov](https://beewoy.sk/): Web od 19 €/mes, prečo paušál, cenník, ako to funguje, referencie, FAQ, kontakt
 - [Tvorba webových stránok](https://beewoy.sk/tvorba-webov/): Firemné weby, landing pages a redizajny — dizajn, rýchlosť, SEO, prístupnosť
 - [Cenník](https://beewoy.sk/cennik/): Basic, Start, Individual — porovnanie a FAQ k cenám
 - [Weby podľa odvetvia](https://beewoy.sk/tvorba-webov/odvetvia/): Stolárstvo, stavebníctvo, ambulancie, rehab, reštaurácie, logistika, elektrikári

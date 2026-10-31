@@ -4,10 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tvorba webových stránok na mieru | Beewoy</title>
-<meta name="description" content="Tvorba webových stránok na mieru — rýchly, prístupný web so starostlivosťou v mesačnom paušále. Priamo s vývojármi Beewoy, bez agentúry.">
+<meta name="description" content="Tvorba webových stránok na mieru — rýchly, prístupný web so starostlivosťou v mesačnom paušále od 19 €. Priamo s vývojármi Beewoy, bez agentúry.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="author" content="Beewoy">
-<meta name="theme-color" content="#151411">
+<meta name="theme-color" content="#ffffff">
 <meta name="geo.region" content="SK">
 <meta name="geo.placename" content="Slovensko">
 <link rel="canonical" href="https://beewoy.sk/tvorba-webov/">
@@ -36,12 +36,7 @@
 <meta name="twitter:image" content="https://beewoy.sk/og-main.png">
 <meta name="twitter:image:alt" content="Beewoy — tvorba webových stránok na mieru">
 
-<link rel="preload" href="../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../styles.css" as="style">
 <link rel="stylesheet" href="../styles.css">
-<link rel="stylesheet" href="./hero-dark.css">
-<link rel="stylesheet" href="./odvetvia/odvetvia.css">
-<noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
 
 <script type="application/ld+json">
 {
@@ -73,443 +68,216 @@
         "url": "https://beewoy.sk/",
         "email": "ahoj@beewoy.sk"
       },
-      "areaServed": {
-        "@type": "Country",
-        "name": "Slovensko"
-      }
+      "areaServed": { "@type": "Country", "name": "Slovensko" }
     },
     {
       "@type": "BreadcrumbList",
       "@id": "https://beewoy.sk/tvorba-webov/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Domov",
-          "item": "https://beewoy.sk/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Tvorba webov",
-          "item": "https://beewoy.sk/tvorba-webov/"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Domov", "item": "https://beewoy.sk/" },
+        { "@type": "ListItem", "position": 2, "name": "Tvorba webov", "item": "https://beewoy.sk/tvorba-webov/" }
       ]
     }
   ]
 }
 </script>
 </head>
-<body id="top" class="web-service-page web-landing-dark">
+<body>
 <a class="skip" href="#obsah">Preskočiť na obsah</a>
 
 <header class="header" id="siteHeader">
-  <div class="header-inner">
-    <a class="logo" href="../" aria-label="Beewoy — domov">
-      <img src="../logo.svg" alt="Beewoy logo" width="26" height="29">beewoy
-    </a>
+  <div class="wrap header-inner">
+    <a class="logo" href="../" aria-label="Beewoy — úvod"><img src="../logo.svg" alt="" width="22" height="24">beewoy</a>
     <nav class="nav" aria-label="Hlavná navigácia">
-      <a href="#co-ziskate">Čo získate</a>
-      <a href="./odvetvia/">Odvetvia</a>
+      <a href="./" aria-current="page">Tvorba webov</a>
       <a href="../cennik/">Cenník</a>
-      <a href="#proces">Proces</a>
+      <a href="../referencie/">Referencie</a>
+      <a href="../kontakt/">Kontakt</a>
     </nav>
-    <a class="btn btn-primary header-cta" href="#kontakt" data-analytics-cta="header_new_web">Chcem nový web <span class="arrow">→</span></a>
-    <button class="burger" id="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Otvoriť menu">
-      <span></span><span></span>
-    </button>
+    <a class="btn btn-primary btn-sm header-cta" href="#kontakt" data-analytics-cta="header_new_web">Chcem web</a>
+    <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Otvoriť menu"><span></span><span></span></button>
   </div>
 </header>
-
 <nav class="mobile-menu" id="mobileMenu" aria-label="Mobilná navigácia">
-  <a href="#co-ziskate">Čo získate</a>
-  <a href="./odvetvia/">Odvetvia</a>
+  <a href="./" aria-current="page">Tvorba webov</a>
   <a href="../cennik/">Cenník</a>
-  <a href="#proces">Proces</a>
-  <a href="#kontakt">Chcem nový web</a>
+  <a href="../referencie/">Referencie</a>
+  <a href="../kontakt/">Kontakt</a>
+  <a class="btn btn-primary btn-lg" href="#kontakt">Chcem web</a>
+  <p class="mobile-menu-foot">Alebo napíšte na <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a></p>
 </nav>
 
-<main id="obsah" class="web-page">
-  <section class="web-hero" aria-labelledby="web-hero-title">
-    <div class="web-hero-grid" aria-hidden="true"></div>
-    <div class="wrap web-hero-layout">
-      <div class="web-hero-copy">
-        <nav class="breadcrumbs reveal" aria-label="Navigácia breadcrumbs">
-          <ol>
-            <li><a href="../">Domov</a></li>
-            <li aria-current="page">Tvorba webov</li>
-          </ol>
-        </nav>
-        <h1 id="web-hero-title" class="reveal">Tvorba webov, ktoré neostanú iba <em>peknou vizitkou.</em></h1>
-        <p class="web-hero-lead reveal">Navrhneme a vytvoríme rýchly, prístupný web na mieru, ktorý buduje dôveru a pomáha získavať zákazníkov. Priamo s vývojármi, bez agentúrnych medzičlánkov.</p>
-        <div class="hero-actions web-hero-actions reveal">
-          <a class="btn btn-primary" href="#kontakt" data-analytics-cta="hero_new_web">Chcem nový web <span class="arrow">→</span></a>
-          <a class="btn" href="#odvetvia">Podľa odvetvia</a>
+<main id="obsah">
+  <section class="page-hero" aria-labelledby="web-hero-title">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Omrvinková navigácia">
+        <ol><li><a href="../">Domov</a></li><li aria-current="page">Tvorba webov</li></ol>
+      </nav>
+      <h1 class="h1" id="web-hero-title">Tvorba webových stránok pre firmy.</h1>
+      <p class="lead">Web navrhneme, postavíme a potom sa oň staráme. Priamo s vývojármi, v mesačnom paušále od 19&nbsp;€.</p>
+      <div class="actions">
+        <a class="btn btn-primary btn-lg" href="#kontakt" data-analytics-cta="hero_new_web">Chcem web <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn btn-secondary btn-lg" href="../cennik/" data-analytics-cta="hero_pricing">Pozrieť cenník</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="co-ziskate" aria-labelledby="offer-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Čo urobíme za vás</p>
+        <h2 class="h2" id="offer-title">Od prvého nápadu po spustenie.</h2>
+      </div>
+      <div class="rows">
+        <div class="row"><h3 class="h3">Obsah a štruktúra</h3><p>Pomôžeme rozhodnúť, čo má web povedať, a poskladáme to tak, aby zákazník rýchlo našiel kontakt.</p></div>
+        <div class="row"><h3 class="h3">Dizajn pre mobil aj počítač</h3><p>Čistý, prístupný návrh, ktorý dobre funguje na každom zariadení.</p></div>
+        <div class="row"><h3 class="h3">Rýchlosť a SEO základ</h3><p>Rýchle načítanie, správna indexácia a meranie dôležitých akcií.</p></div>
+        <div class="row"><h3 class="h3">Hosting a starostlivosť</h3><p>Hosting, údržbu a zmeny obsahu riešime my v mesačnom paušále.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="ake-weby" aria-labelledby="kinds-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Aké weby robíme</p>
+        <h2 class="h2" id="kinds-title">Pre firmy, služby aj jednu kampaň.</h2>
+      </div>
+      <div class="grid-4">
+        <div class="item"><h3 class="h4">Firemné weby</h3><p>Služby, tím a skúsenosti, ktoré budujú dôveru ešte pred prvým telefonátom.</p></div>
+        <div class="item"><h3 class="h4">Weby pre služby a značky</h3><p>Hodnota jasná na prvý pohľad, bez zbytočného vizuálneho šumu.</p></div>
+        <div class="item"><h3 class="h4">Landing pages</h3><p>Jedna služba alebo kampaň, jeden cieľ a krátka cesta k dopytu.</p></div>
+        <div class="item"><h3 class="h4">Nový web namiesto starého</h3><p>Posúdime, čo zachovať vrátane SEO, a zvyšok postavíme nanovo.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft" id="odvetvia" aria-labelledby="industries-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Podľa odvetvia</p>
+        <h2 class="h2" id="industries-title">Každé odvetvie potrebuje iný web.</h2>
+      </div>
+      <div class="tag-links">
+        <a href="./pre-stolarstvo-interiery/">Stolárstvo a interiéry</a>
+        <a href="./pre-zubna-ambulancia/">Zubná ambulancia</a>
+        <a href="./pre-restauracia/">Reštaurácia</a>
+        <a href="./pre-autoservis-pneuservis/">Autoservis a pneuservis</a>
+        <a href="./pre-elektrikar/">Elektrikár</a>
+        <a href="./pre-kadernictvo-barbershop/">Kaderníctvo a barbershop</a>
+        <a class="tag-more" href="./odvetvia/">Všetky odvetvia →</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="proces" aria-labelledby="process-title">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Postup</p>
+        <h2 class="h2" id="process-title">Štyri kroky. Žiadne prekvapenie na konci.</h2>
+      </div>
+      <ol class="steps steps--4">
+        <li class="step"><h3 class="h3">Rozhovor</h3><p>Prejdeme vašu firmu, zákazníkov a cieľ webu.</p></li>
+        <li class="step"><h3 class="h3">Rozsah a cena</h3><p>Navrhneme plán, termín a cenu vopred.</p></li>
+        <li class="step"><h3 class="h3">Návrh a vývoj</h3><p>Priebežne vám ukazujeme, ako web vzniká.</p></li>
+        <li class="step"><h3 class="h3">Spustenie a starostlivosť</h3><p>Otestujeme, spustíme a ďalej sa o web staráme.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section--soft" id="kontakt" aria-labelledby="contact-title">
+    <div class="wrap contact">
+      <div class="contact-aside split-sticky">
+        <p class="eyebrow">Kontakt</p>
+        <h2 class="h2" id="contact-title">Začnime s vaším webom.</h2>
+        <p class="lead">Napíšte pár viet. Ozveme sa a navrhneme, čo dáva zmysel. Nezáväzne.</p>
+        <div class="contact-team">
+          <div class="contact-team-faces" aria-hidden="true">
+            <img src="../team/david-k-avatar.jpg" alt="" width="160" height="160" loading="lazy" decoding="async">
+            <img src="../team/tibor-a-avatar.jpg" alt="" width="160" height="160" loading="lazy" decoding="async">
+          </div>
+          <p>Píšete priamo nám — <strong>Davidovi a Tiborovi</strong>, spoluzakladateľom Beewoy.</p>
         </div>
-        <ul class="web-hero-proof reveal" aria-label="Na čom pri tvorbe webu záleží">
-          <li>Priamo s vývojármi</li>
-          <li>Web na mieru</li>
-          <li>SEO a výkon</li>
-          <li>Podpora po spustení</li>
-        </ul>
+        <div class="contact-mail"><span class="tiny">E-mail</span><a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a></div>
       </div>
-
-      <div class="web-preview-cluster reveal" aria-hidden="true">
-        <div class="web-preview">
-          <div class="web-preview-toolbar">
-            <div class="web-preview-lights"><span></span><span></span><span></span></div>
-            <div class="web-preview-controls"><span>‹</span><span>›</span></div>
-            <div class="web-preview-address"><span class="web-preview-lock"></span><i>vášnovýweb.sk</i></div>
-            <span class="web-preview-more">•••</span>
-          </div>
-          <div class="web-preview-body">
-            <div class="web-preview-nav">
-              <strong><span></span>vaša značka</strong>
-              <div><span>Služby</span><span>O nás</span><span>Kontakt</span></div>
-            </div>
-            <div class="web-preview-hero">
-              <small>Jasná hodnota pre zákazníka</small>
-              <strong>Web, ktorý vysvetlí, presvedčí a privedie dopyt.</strong>
-              <span class="web-preview-line"></span>
-              <span class="web-preview-line short"></span>
-              <i>Chcem vedieť viac →</i>
-            </div>
-            <div class="web-preview-cards">
-              <div><i></i><strong>Jasný obsah</strong><span>Bez zbytočností</span></div>
-              <div><i></i><strong>Rýchly web</strong><span>Na každom zariadení</span></div>
-              <div><i></i><strong>Starostlivosť</strong><span>O web sa staráme my</span></div>
-            </div>
-          </div>
-        </div>
-        <ul class="web-preview-rail">
-          <li class="web-preview-badge">
-            <span class="web-preview-badge-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            </span>
-            <span class="web-preview-badge-copy">
-              <strong>Rýchly</strong>
-              <span>Optimalizovaný od začiatku</span>
-            </span>
-          </li>
-          <li class="web-preview-badge">
-            <span class="web-preview-badge-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="7" r="1.4" fill="currentColor" stroke="none"/><path d="M12 10.5v3.5"/><path d="m9.2 20 2.8-6 2.8 6"/><path d="M8.5 14h7"/></svg>
-            </span>
-            <span class="web-preview-badge-copy">
-              <strong>Prístupný</strong>
-              <span>Použiteľný pre viac ľudí</span>
-            </span>
-          </li>
-          <li class="web-preview-badge">
-            <span class="web-preview-badge-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.376 3.622a1 1 0 0 1 3.002 3.002L7.368 18.635a2 2 0 0 1-.855.506l-2.872.838a.5.5 0 0 1-.62-.62l.838-2.872a2 2 0 0 1 .506-.854z"/></svg>
-            </span>
-            <span class="web-preview-badge-copy">
-              <strong>Pod kontrolou</strong>
-              <span>Hosting a zmeny riešime my</span>
-            </span>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section class="section web-industries web-industries--teaser" id="odvetvia" aria-labelledby="industries-title">
-    <div class="wrap">
-      <div class="ind-section-head center">
-        <p class="kicker">Podľa odvetvia</p>
-        <h2 class="section-title section-title--sm reveal" id="industries-title">Web podľa vášho odvetvia.</h2>
-        <p class="ind-lead reveal">Stolár, ambulancia, autoservis, kaderníctvo aj reštaurácia potrebujú iný web. Vyberte si odvetvie a pozrite, čo konkrétne riešime.</p>
-      </div>
-      <div class="ind-related">
-        <a class="reveal" href="./pre-stolarstvo-interiery/">
-          <span class="ind-related-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 12-8.373 8.373a1 1 0 1 1-3-3L12 9"/><path d="m18 15 4-4"/><path d="m21.5 11.5-1.914-1.914A2 2 0 0 1 19 8.172V7l-2.26-2.26a6 6 0 0 0-4.202-1.756L9 2.96l.92.82A6.18 6.18 0 0 1 12 8.4V10l2 2h1.172a2 2 0 0 1 1.414.586L18.5 14.5"/></svg></span>
-          <strong>Stolárstvo a interiéry</strong>
-        </a>
-        <a class="reveal" href="./pre-zubna-ambulancia/">
-          <span class="ind-related-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2c-2.8 0-5 2.4-5 5.3 0 1.5.5 2.8 1.2 4 .6 1 1.1 2.1 1.1 3.4V21h5.4v-6.3c0-1.3.5-2.4 1.1-3.4.7-1.2 1.2-2.5 1.2-4C17 4.4 14.8 2 12 2z"/></svg></span>
-          <strong>Zubná ambulancia</strong>
-        </a>
-        <a class="reveal" href="./pre-restauracia/">
-          <span class="ind-related-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg></span>
-          <strong>Reštaurácia</strong>
-        </a>
-        <a class="reveal" href="./pre-autoservis-pneuservis/">
-          <span class="ind-related-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></span>
-          <strong>Autoservis a pneuservis</strong>
-        </a>
-        <a class="reveal" href="./pre-elektrikar/">
-          <span class="ind-related-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z"/></svg></span>
-          <strong>Elektrikár</strong>
-        </a>
-        <a class="reveal" href="./pre-kadernictvo-barbershop/">
-          <span class="ind-related-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="6" cy="6" r="3"/><path d="M8.12 8.12 12 12"/><path d="M20 4 8.12 15.88"/><circle cx="6" cy="18" r="3"/><path d="M14.8 14.8 20 20"/></svg></span>
-          <strong>Kaderníctvo a barbershop</strong>
-        </a>
-      </div>
-      <div class="web-industries-actions reveal">
-        <a class="btn btn-primary" href="./odvetvia/">Všetky odvetvia <span class="arrow">→</span></a>
-      </div>
-    </div>
-  </section>
-
-  <section class="section web-gain" id="co-ziskate" aria-labelledby="offer-title">
-    <div class="wrap web-gain-layout">
-      <div class="web-gain-intro">
-        <p class="kicker">Čo získate</p>
-        <h2 class="section-title section-title--lg reveal" id="offer-title">Web od prvého nápadu po spustenie.</h2>
-        <p class="reveal">Pomôžeme so stratégiou, obsahom, dizajnom aj technickým riešením.</p>
-      </div>
-      <ul class="web-lined-list">
-        <li class="web-lined-item reveal">
-          <div class="web-lined-copy">
-            <h3>Smer a obsah</h3>
-            <p>Stratégia, štruktúra a jasná cesta návštevníka k dopytu.</p>
-          </div>
-        </li>
-        <li class="web-lined-item reveal">
-          <div class="web-lined-copy">
-            <h3>Dizajn a použiteľnosť</h3>
-            <p>UX/UI dizajn, responzivita a prístupnosť na každom zariadení.</p>
-          </div>
-        </li>
-        <li class="web-lined-item reveal">
-          <div class="web-lined-copy">
-            <h3>Vývoj na mieru</h3>
-            <p>Čistý technický základ s dôrazom na rýchlosť a výkon.</p>
-          </div>
-        </li>
-        <li class="web-lined-item reveal">
-          <div class="web-lined-copy">
-            <h3>SEO a meranie</h3>
-            <p>Technické SEO, správna indexácia a analytika dôležitých akcií.</p>
-          </div>
-        </li>
-        <li class="web-lined-item reveal">
-          <div class="web-lined-copy">
-            <h3>Starostlivosť o web</h3>
-            <p>Hosting, údržba a zmeny obsahu v mesačnom paušále — vy sa sústredíte na biznis.</p>
-          </div>
-        </li>
-        <li class="web-lined-item reveal">
-          <div class="web-lined-copy">
-            <h3>Spustenie a podpora</h3>
-            <p>Nasadenie, kontrola a partner pre ďalšie úpravy a rozvoj.</p>
-          </div>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section web-kinds" id="ake-weby" aria-labelledby="kinds-title">
-    <div class="wrap">
-      <h2 class="kicker reveal" id="kinds-title">Aké weby tvoríme</h2>
-      <ul class="web-kind-list">
-        <li class="web-kind-item reveal">
-          <h3>Firemné weby</h3>
-          <p>Pre firmy, ktoré potrebujú dôveryhodne predstaviť služby, tím a skúsenosti. Jasná štruktúra, silný kontakt a obsah, ktorý buduje dôveru ešte pred prvým hovorom.</p>
-        </li>
-        <li class="web-kind-item reveal">
-          <h3>Weby pre služby a značky</h3>
-          <p>Pre odborníkov a značky, ktorých hodnota musí byť jasná na prvý pohľad. Odlišujeme vás od konkurencie bez zbytočného vizuálneho šumu.</p>
-        </li>
-        <li class="web-kind-item reveal">
-          <h3>Landing pages</h3>
-          <p>Pre konkrétnu službu, produkt alebo kampaň s jedným hlavným cieľom. Jedna jasná CTA, krátka cesta návštevníka a merateľný výsledok.</p>
-        </li>
-        <li class="web-kind-item reveal">
-          <h3>Redizajny webov</h3>
-          <p>Keď súčasný web už nezodpovedá značke, obsahu ani potrebám zákazníkov. Posúdime, čo zachovať (vrátane SEO), a čo postaviť nanovo čistejšie.</p>
-        </li>
-      </ul>
-    </div>
-  </section>
-
-  <section class="section dark" id="proces" aria-labelledby="process-title">
-    <div class="wrap process-layout">
-      <div class="process-sticky">
-        <p class="kicker">Ako vzniká nový web</p>
-        <h2 class="section-title section-title--lg reveal" id="process-title">Od prvého rozhovoru po ďalší rast.</h2>
-        <p class="reveal">Jasné kroky, priebežné ukážky a rozhodnutia vtedy, keď ich treba urobiť. Bez veľkého odhalenia až na konci.</p>
-      </div>
-      <div class="steps">
-        <article class="step reveal">
-          <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-message-circle"/></svg></span>
-          <h3>Úvodná konzultácia</h3>
-          <p>Prejdeme váš biznis, zákazníkov, súčasný stav a cieľ, ktorý má nový web splniť.</p>
-        </article>
-        <article class="step reveal">
-          <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-compass"/></svg></span>
-          <h3>Rozsah a ponuka</h3>
-          <p>Navrhneme vhodný rozsah, priority, harmonogram a zrozumiteľnú cenovú ponuku.</p>
-        </article>
-        <article class="step reveal">
-          <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-blocks"/></svg></span>
-          <h3>Štruktúra a obsah</h3>
-          <p>Rozložíme informácie do logickej cesty a pomôžeme určiť, čo má stránka komunikovať.</p>
-        </article>
-        <article class="step reveal">
-          <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-layout-grid"/></svg></span>
-          <h3>Dizajn a vývoj</h3>
-          <p>Vizuálny návrh premieňame na funkčný web a priebežne vám ukazujeme výsledok.</p>
-        </article>
-        <article class="step reveal">
-          <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-shield-check"/></svg></span>
-          <h3>Testovanie a spustenie</h3>
-          <p>Skontrolujeme zariadenia, rýchlosť, prístupnosť, SEO základ, formuláre a nasadenie.</p>
-        </article>
-        <article class="step reveal">
-          <span class="step-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-heart-handshake"/></svg></span>
-          <h3>Podpora a rozvoj</h3>
-          <p>Po štarte vieme web udržiavať, vyhodnocovať a rozvíjať podľa nových potrieb.</p>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <section class="section kontakt-form-section" id="kontakt" aria-labelledby="contact-title">
-    <div class="wrap">
-      <p class="kicker">Kontakt</p>
-      <h2 class="section-title section-title--sm" id="contact-title">Napíšte nám.</h2>
-      <div class="contact-layout contact-layout--centered">
-        <p class="contact-intro">Vyberte balík alebo napíšte o softvérovom projekte. Ozveme sa, prejdeme možnosti a úprimne povieme, či vám vieme pomôcť.</p>
-        <form class="contact-form" name="kontakt" method="POST" id="kontakt-form">
+      <div class="contact-form-box">
+        <form class="form" name="kontakt" method="POST" id="kontakt-form">
           <input type="hidden" name="odvetvie" id="contact-industry" value="">
-          <div class="form-field">
-            <label for="contact-name">Meno</label>
-            <input type="text" id="contact-name" name="meno" required autocomplete="name">
+          <div class="form-honey" aria-hidden="true"><label for="contact-honey">Nevypĺňajte</label><input type="text" id="contact-honey" name="_honey" tabindex="-1" autocomplete="off"></div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="contact-name">Meno</label>
+              <input type="text" id="contact-name" name="meno" required autocomplete="name">
+            </div>
+            <div class="form-field">
+              <label for="contact-email">E-mail</label>
+              <input type="email" id="contact-email" name="email" required autocomplete="email">
+            </div>
           </div>
           <div class="form-field">
-            <label for="contact-email">E-mail</label>
-            <input type="email" id="contact-email" name="email" required autocomplete="email">
-          </div>
-          <div class="form-field">
-            <label for="contact-type">Typ projektu</label>
+            <label for="contact-type">Čo potrebujete <span class="optional">(nepovinné)</span></label>
             <select id="contact-type" name="typ_projektu">
-              <option value="" disabled selected>Vyberte…</option>
-              <option value="Redizajn existujúceho webu">Redizajn existujúceho webu</option>
+              <option value="" selected>Vyberte…</option>
               <option value="Nový web">Nový web</option>
-              <option value="Softvér / aplikácia">Softvér / aplikácia</option>
+              <option value="Redizajn existujúceho webu">Nový web namiesto starého</option>
+              <option value="Softvér / aplikácia">Aplikácia alebo systém na mieru</option>
               <option value="Iné">Iné</option>
             </select>
           </div>
-          <fieldset class="form-field package-radios">
-            <legend>Balík</legend>
-            <div class="package-radio-grid" role="radiogroup" aria-label="Výber balíka">
-              <label class="package-radio">
-                <input type="radio" name="balik" value="basic">
-                <span class="package-radio-card">
-                  <strong>Basic</strong>
-                  <em>19 €/mes</em>
-                  <small>Jednoduchý jednostránkový web</small>
-                </span>
-              </label>
-              <label class="package-radio package-radio--popular">
-                <input type="radio" name="balik" value="start">
-                <span class="package-radio-card">
-                  <span class="package-radio-badge">Najčastejšia voľba</span>
-                  <strong>Start</strong>
-                  <em>39 €/mes</em>
-                  <small>Web + starostlivosť</small>
-                </span>
-              </label>
-              <label class="package-radio">
-                <input type="radio" name="balik" value="individual">
-                <span class="package-radio-card">
-                  <strong>Individual</strong>
-                  <em>Dohodou</em>
-                  <small>Web na mieru</small>
-                </span>
-              </label>
-              <label class="package-radio">
-                <input type="radio" name="balik" value="neviem">
-                <span class="package-radio-card">
-                  <strong>Neviem, poraďte mi</strong>
-                  <em>Podľa dohody</em>
-                  <small>Softvér / aplikácia</small>
-                </span>
-              </label>
+          <fieldset class="form-field">
+            <legend>Plán <span class="optional">(nepovinné)</span></legend>
+            <div class="package-radio-grid">
+              <label class="package-radio"><input type="radio" name="balik" value="basic"><span class="package-radio-card"><strong>Basic</strong><em>19 € / mesiac</em></span></label>
+              <label class="package-radio"><input type="radio" name="balik" value="start"><span class="package-radio-card"><strong>Start</strong><em>39 € / mesiac</em></span></label>
+              <label class="package-radio"><input type="radio" name="balik" value="individual"><span class="package-radio-card"><strong>Individual</strong><em>Dohodou</em></span></label>
+              <label class="package-radio"><input type="radio" name="balik" value="neviem"><span class="package-radio-card"><strong>Neviem</strong><em>Poraďte mi</em></span></label>
             </div>
           </fieldset>
           <div class="form-field">
             <label for="contact-message">Správa</label>
-            <textarea id="contact-message" name="sprava" rows="5" required placeholder="Stručne o firme, webe a čo potrebujete."></textarea>
+            <textarea id="contact-message" name="sprava" rows="5" required placeholder="Čím sa zaoberáte a čo má web robiť?"></textarea>
           </div>
           <label class="form-consent">
             <input type="checkbox" name="gdpr" value="súhlas" required>
             <span>Súhlasím so spracovaním údajov podľa <a href="../ochrana-udajov/">Ochrany osobných údajov</a>.</span>
           </label>
           <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Odoslať správu <span class="arrow">→</span></button>
+            <button type="submit" class="btn btn-primary btn-lg">Odoslať dopyt <span class="arrow" aria-hidden="true">→</span></button>
           </div>
           <p class="form-status" role="status" aria-live="polite" hidden></p>
         </form>
       </div>
-      <p class="contact-alt">Alebo napíšte na <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a></p>
     </div>
   </section>
 </main>
 
-<section class="final kontakt-footer" aria-label="Pätička">
+<footer class="footer">
   <div class="wrap">
-    <footer class="footer">
-      <a class="logo" href="../"><img src="../logo.svg" alt="Beewoy" width="26" height="29">beewoy</a>
-      <nav class="footer-links" aria-label="Pätičková navigácia">
-        <a href="../">Domov</a>
-        <a href="./" aria-current="page">Tvorba webov</a>
-        <a href="../cennik/">Cenník</a>
-        <a href="../referencie/">Referencie</a>
-        <a href="../kontakt/">Kontakt</a>
-      </nav>
-      <span>© 2026 Beewoy · weby na mieru · Slovensko</span>
-      <div class="footer-legal">
-        <a href="../ochrana-udajov/">Ochrana údajov</a>
-        <a href="../cookies/">Cookies</a>
-        <button type="button" data-cookie-settings>Nastavenia cookies</button>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="../"><img src="../logo.svg" alt="" width="22" height="24">beewoy</a>
+        <p>Moderné webstránky pre firmy v mesačnom paušále.</p>
+        <a class="footer-mail" href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a>
       </div>
-    </footer>
+      <nav class="footer-col" aria-labelledby="f-offer"><h2 id="f-offer">Ponuka</h2><ul>
+        <li><a href="./">Tvorba webov</a></li>
+        <li><a href="./odvetvia/">Weby podľa odvetvia</a></li>
+        <li><a href="../cennik/">Cenník</a></li>
+        <li><a href="../kalkulacka/">Kalkulačka ceny</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="f-beewoy"><h2 id="f-beewoy">Beewoy</h2><ul>
+        <li><a href="../referencie/">Referencie</a></li>
+        <li><a href="../kontakt/">Kontakt</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="f-legal"><h2 id="f-legal">Právne</h2><ul>
+        <li><a href="../ochrana-udajov/">Ochrana údajov</a></li>
+        <li><a href="../cookies/">Cookies</a></li>
+        <li><button type="button" data-cookie-settings>Nastavenia cookies</button></li>
+      </ul></nav>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Beewoy</span><span>Slovensko</span></div>
   </div>
-</section>
-
-<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none">
-  <symbol id="icon-sparkles" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/>
-    <path d="M20 3v4"/><path d="M22 5h-4"/><path d="M4 17v2"/><path d="M5 18H3"/>
-  </symbol>
-  <symbol id="icon-trending-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/>
-  </symbol>
-  <symbol id="icon-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
-  </symbol>
-  <symbol id="icon-layout-grid" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/>
-  </symbol>
-  <symbol id="icon-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/>
-  </symbol>
-  <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
-  </symbol>
-  <symbol id="icon-compass" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="m16.24 7.76-1.804 5.411a2 2 0 0 1-1.265 1.265L7.76 16.24l1.804-5.411a2 2 0 0 1 1.265-1.265z"/><circle cx="12" cy="12" r="10"/>
-  </symbol>
-  <symbol id="icon-blocks" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <rect width="7" height="7" x="14" y="3" rx="1"/><path d="M10 21V8a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-5a1 1 0 0 0-1-1H3"/>
-  </symbol>
-  <symbol id="icon-rocket" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/>
-  </symbol>
-  <symbol id="icon-heart-handshake" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/><path d="m18 15-2-2"/><path d="m15 18-2-2"/>
-  </symbol>
-  <symbol id="icon-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>
-  </symbol>
-  <symbol id="icon-message-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
-  </symbol>
-</svg>
+</footer>
 
 <script src="../cookies.js" defer></script>
 <script src="../analytics.js" defer></script>

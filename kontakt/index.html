@@ -4,9 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Kontakt — Beewoy | web od 19 €/mes</title>
-<meta name="description" content="Napíšte Beewoy o jednoduchom webe od 19 €/mes, pláne Start, Individual alebo softvérovom projekte. Nezáväzne — ozveme sa.">
+<meta name="description" content="Napíšte Beewoy o webe od 19 €/mes, pláne Start, Individual alebo aplikácii na mieru. Nezáväzne — ozveme sa.">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
-<meta name="theme-color" content="#f3f0e8">
+<meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="https://beewoy.sk/kontakt/">
 <link rel="manifest" href="../manifest.webmanifest">
 <link rel="icon" href="../favicon.ico" sizes="any">
@@ -20,7 +20,7 @@
 <meta property="og:site_name" content="Beewoy">
 <meta property="og:url" content="https://beewoy.sk/kontakt/">
 <meta property="og:title" content="Kontakt — Beewoy | web od 19 €/mes">
-<meta property="og:description" content="Napíšte Beewoy o jednoduchom webe od 19 €/mes, pláne Start, Individual alebo softvérovom projekte. Nezáväzne — ozveme sa.">
+<meta property="og:description" content="Napíšte Beewoy o webe od 19 €/mes, pláne Start, Individual alebo aplikácii na mieru. Nezáväzne — ozveme sa.">
 <meta property="og:image" content="https://beewoy.sk/og-main.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
@@ -29,12 +29,10 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Kontakt — Beewoy | web od 19 €/mes">
-<meta name="twitter:description" content="Napíšte Beewoy o jednoduchom webe od 19 €/mes, pláne Start, Individual alebo softvérovom projekte. Nezáväzne — ozveme sa.">
+<meta name="twitter:description" content="Napíšte Beewoy o webe od 19 €/mes, pláne Start, Individual alebo aplikácii na mieru. Nezáväzne — ozveme sa.">
 <meta name="twitter:image" content="https://beewoy.sk/og-main.png">
 <meta name="twitter:image:alt" content="Kontaktný formulár Beewoy">
 
-<link rel="preload" href="../fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="../styles.css" as="style">
 <link rel="stylesheet" href="../styles.css">
 
 <script type="application/ld+json">
@@ -46,7 +44,7 @@
       "@id": "https://beewoy.sk/kontakt/#webpage",
       "url": "https://beewoy.sk/kontakt/",
       "name": "Kontakt — Beewoy",
-      "description": "Kontaktný formulár Beewoy — jednoduchý web od 19 €/mes, balíky Basic/Start/Individual alebo softvérový projekt.",
+      "description": "Kontaktný formulár Beewoy — web od 19 €/mes, plány Basic, Start, Individual alebo aplikácia na mieru.",
       "isPartOf": { "@id": "https://beewoy.sk/#website" },
       "about": { "@id": "https://beewoy.sk/#organization" },
       "inLanguage": "sk-SK"
@@ -55,18 +53,8 @@
       "@type": "BreadcrumbList",
       "@id": "https://beewoy.sk/kontakt/#breadcrumb",
       "itemListElement": [
-        {
-          "@type": "ListItem",
-          "position": 1,
-          "name": "Domov",
-          "item": "https://beewoy.sk/"
-        },
-        {
-          "@type": "ListItem",
-          "position": 2,
-          "name": "Kontakt",
-          "item": "https://beewoy.sk/kontakt/"
-        }
+        { "@type": "ListItem", "position": 1, "name": "Domov", "item": "https://beewoy.sk/" },
+        { "@type": "ListItem", "position": 2, "name": "Kontakt", "item": "https://beewoy.sk/kontakt/" }
       ]
     },
     {
@@ -89,177 +77,142 @@
 <body>
 <a class="skip" href="#obsah">Preskočiť na obsah</a>
 
-<header class="header scrolled" id="siteHeader">
-  <div class="header-inner">
-    <a class="logo" href="../" aria-label="Beewoy — úvod">
-      <img src="../logo.svg" alt="Beewoy logo" width="26" height="29">beewoy
-    </a>
+<header class="header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="logo" href="../" aria-label="Beewoy — úvod"><img src="../logo.svg" alt="" width="22" height="24">beewoy</a>
     <nav class="nav" aria-label="Hlavná navigácia">
       <a href="../tvorba-webov/">Tvorba webov</a>
       <a href="../cennik/">Cenník</a>
       <a href="../referencie/">Referencie</a>
       <a href="./" aria-current="page">Kontakt</a>
     </nav>
-    <a class="btn btn-primary legal-header-cta" href="#kontakt-form">Chcem web <span class="arrow">→</span></a>
+    <a class="btn btn-primary btn-sm header-cta" href="#kontakt-form" data-analytics-cta="header_start">Chcem web</a>
+    <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Otvoriť menu"><span></span><span></span></button>
   </div>
 </header>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobilná navigácia">
+  <a href="../tvorba-webov/">Tvorba webov</a>
+  <a href="../cennik/">Cenník</a>
+  <a href="../referencie/">Referencie</a>
+  <a href="./" aria-current="page">Kontakt</a>
+  <a class="btn btn-primary btn-lg" href="#kontakt-form">Chcem web</a>
+  <p class="mobile-menu-foot">Alebo napíšte na <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a></p>
+</nav>
 
-<main id="obsah" class="kontakt-page">
-  <section class="section kontakt-form-section" id="kontakt" aria-labelledby="contact-title">
-    <div class="wrap">
-      <p class="kicker">Kontakt</p>
-      <h1 class="section-title section-title--sm" id="contact-title">Napíšte nám.</h1>
-      <div class="contact-layout contact-layout--centered">
-        <p class="contact-intro">Vyberte balík alebo napíšte o softvérovom projekte. Ozveme sa, prejdeme možnosti a úprimne povieme, či vám vieme pomôcť.</p>
-        <form class="contact-form" name="kontakt" method="POST" id="kontakt-form">
+<main id="obsah">
+  <section class="section section--page-top" id="kontakt" aria-labelledby="contact-title">
+    <div class="wrap contact">
+      <div class="contact-aside split-sticky">
+        <nav class="breadcrumbs" aria-label="Omrvinková navigácia">
+          <ol><li><a href="../">Domov</a></li><li aria-current="page">Kontakt</li></ol>
+        </nav>
+        <h1 class="h1" id="contact-title">Napíšte nám.</h1>
+        <p class="lead">Stačí pár viet o vašej firme. Ozveme sa a navrhneme, čo dáva zmysel. Nezáväzne.</p>
+        <div class="contact-team" id="o-nas">
+          <div class="contact-team-faces" aria-hidden="true">
+            <img src="../team/david-k-avatar.jpg" alt="" width="160" height="160" decoding="async">
+            <img src="../team/tibor-a-avatar.jpg" alt="" width="160" height="160" decoding="async">
+          </div>
+          <p>Píšete priamo nám — <strong>Davidovi a Tiborovi</strong>, spoluzakladateľom Beewoy. Web vám navrhneme, postavíme aj spravujeme.</p>
+        </div>
+        <div class="contact-mail"><span class="tiny">E-mail</span><a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a></div>
+      </div>
+      <div class="contact-form-box">
+        <form class="form" name="kontakt" method="POST" id="kontakt-form">
           <input type="hidden" name="odvetvie" id="contact-industry" value="">
-          <div class="form-field">
-            <label for="contact-name">Meno</label>
-            <input type="text" id="contact-name" name="meno" required autocomplete="name">
+          <div class="form-honey" aria-hidden="true"><label for="contact-honey">Nevypĺňajte</label><input type="text" id="contact-honey" name="_honey" tabindex="-1" autocomplete="off"></div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="contact-name">Meno</label>
+              <input type="text" id="contact-name" name="meno" required autocomplete="name">
+            </div>
+            <div class="form-field">
+              <label for="contact-email">E-mail</label>
+              <input type="email" id="contact-email" name="email" required autocomplete="email">
+            </div>
           </div>
           <div class="form-field">
-            <label for="contact-email">E-mail</label>
-            <input type="email" id="contact-email" name="email" required autocomplete="email">
-          </div>
-          <div class="form-field">
-            <label for="contact-type">Typ projektu</label>
+            <label for="contact-type">Čo potrebujete <span class="optional">(nepovinné)</span></label>
             <select id="contact-type" name="typ_projektu">
-              <option value="" disabled selected>Vyberte…</option>
-              <option value="Redizajn existujúceho webu">Redizajn existujúceho webu</option>
+              <option value="" selected>Vyberte…</option>
               <option value="Nový web">Nový web</option>
-              <option value="Softvér / aplikácia">Softvér / aplikácia</option>
+              <option value="Redizajn existujúceho webu">Nový web namiesto starého</option>
+              <option value="Softvér / aplikácia">Aplikácia alebo systém na mieru</option>
               <option value="Iné">Iné</option>
             </select>
           </div>
-          <fieldset class="form-field package-radios">
-            <legend>Balík</legend>
-            <div class="package-radio-grid" role="radiogroup" aria-label="Výber balíka">
-              <label class="package-radio">
-                <input type="radio" name="balik" value="basic">
-                <span class="package-radio-card">
-                  <strong>Basic</strong>
-                  <em>19 €/mes</em>
-                  <small>Jednoduchý jednostránkový web</small>
-                </span>
-              </label>
-              <label class="package-radio package-radio--popular">
-                <input type="radio" name="balik" value="start">
-                <span class="package-radio-card">
-                  <span class="package-radio-badge">Najčastejšia voľba</span>
-                  <strong>Start</strong>
-                  <em>39 €/mes</em>
-                  <small>Web + starostlivosť</small>
-                </span>
-              </label>
-              <label class="package-radio">
-                <input type="radio" name="balik" value="individual">
-                <span class="package-radio-card">
-                  <strong>Individual</strong>
-                  <em>Dohodou</em>
-                  <small>Web na mieru</small>
-                </span>
-              </label>
-              <label class="package-radio">
-                <input type="radio" name="balik" value="neviem">
-                <span class="package-radio-card">
-                  <strong>Neviem, poraďte mi</strong>
-                  <em>Podľa dohody</em>
-                  <small>Softvér / aplikácia</small>
-                </span>
-              </label>
+          <fieldset class="form-field">
+            <legend>Plán <span class="optional">(nepovinné)</span></legend>
+            <div class="package-radio-grid">
+              <label class="package-radio"><input type="radio" name="balik" value="basic"><span class="package-radio-card"><strong>Basic</strong><em>19 € / mesiac</em></span></label>
+              <label class="package-radio"><input type="radio" name="balik" value="start"><span class="package-radio-card"><strong>Start</strong><em>39 € / mesiac</em></span></label>
+              <label class="package-radio"><input type="radio" name="balik" value="individual"><span class="package-radio-card"><strong>Individual</strong><em>Dohodou</em></span></label>
+              <label class="package-radio"><input type="radio" name="balik" value="neviem"><span class="package-radio-card"><strong>Neviem</strong><em>Poraďte mi</em></span></label>
             </div>
           </fieldset>
           <div class="form-field">
             <label for="contact-message">Správa</label>
-            <textarea id="contact-message" name="sprava" rows="5" required placeholder="Stručne o firme, webe a čo potrebujete."></textarea>
+            <textarea id="contact-message" name="sprava" rows="5" required placeholder="Čím sa zaoberáte a čo má web robiť?"></textarea>
           </div>
           <label class="form-consent">
             <input type="checkbox" name="gdpr" value="súhlas" required>
             <span>Súhlasím so spracovaním údajov podľa <a href="../ochrana-udajov/">Ochrany osobných údajov</a>.</span>
           </label>
           <div class="form-actions">
-            <button type="submit" class="btn btn-primary">Odoslať správu <span class="arrow">→</span></button>
+            <button type="submit" class="btn btn-primary btn-lg">Odoslať dopyt <span class="arrow" aria-hidden="true">→</span></button>
           </div>
           <p class="form-status" role="status" aria-live="polite" hidden></p>
         </form>
       </div>
-      <p class="contact-alt">Alebo napíšte na <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a></p>
     </div>
   </section>
 
-  <section class="section audit-section" aria-labelledby="audit-title">
-    <div class="wrap audit-grid">
-      <div class="audit-copy">
-        <p class="kicker">Bezplatný mini-audit</p>
-        <h2 class="section-title section-title--lg" id="audit-title">Máte už web?</h2>
-        <p class="audit-lead">Pošleme vám <strong>bezplatný mini-audit</strong> — konkrétne zistenia, žiadne frázy. Úplne nezáväzne.</p>
-      </div>
-      <div class="audit-side">
-        <div class="truths" aria-label="Čo skontrolujeme">
-          <p class="truths-label">Čo skontrolujeme</p>
-          <div class="truth">
-            <span class="truth-icon icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-gauge"/></svg></span>
-            <div class="truth-body">
-              <p class="truth-title">Rýchlosť načítania a Core Web Vitals</p>
-            </div>
-          </div>
-          <div class="truth">
-            <span class="truth-icon icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-search"/></svg></span>
-            <div class="truth-body">
-              <p class="truth-title">Technické SEO — indexácia, schema, sitemap</p>
-            </div>
-          </div>
-          <div class="truth">
-            <span class="truth-icon icon" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#icon-shield-check"/></svg></span>
-            <div class="truth-body">
-              <p class="truth-title">Základná kontrola bezpečnosti a HTTPS</p>
-            </div>
-          </div>
+  <section class="section section--soft" aria-labelledby="audit-title">
+    <div class="wrap">
+      <div class="section-head section-head--split section-head--flush">
+        <div>
+          <p class="eyebrow">Bezplatný mini-audit</p>
+          <h2 class="h2" id="audit-title">Máte už web? Pozrieme sa naň zadarmo.</h2>
         </div>
-        <div class="audit-cta">
-          <a class="btn btn-primary" href="#kontakt-form" data-preset="seo" data-analytics-cta="seo_audit">Chcem bezplatný audit <span class="arrow">→</span></a>
-          <p class="audit-note">Bez záväzku · audit pošleme do 2–3 dní</p>
+        <div class="stack">
+          <p class="lead">Skontrolujeme rýchlosť, technické SEO a bezpečnosť. Konkrétne zistenia pošleme do 2–3 dní.</p>
+          <a class="btn btn-primary" href="#kontakt-form" data-preset="seo" data-analytics-cta="seo_audit">Chcem mini-audit <span class="arrow" aria-hidden="true">→</span></a>
         </div>
       </div>
     </div>
   </section>
 </main>
 
-<section class="final kontakt-footer" aria-label="Pätička">
+<footer class="footer">
   <div class="wrap">
-    <footer class="footer">
-      <a class="logo" href="../"><img src="../logo.svg" alt="Beewoy" width="26" height="29">beewoy</a>
-      <nav class="footer-links" aria-label="Pätičková navigácia">
-        <a href="../">Domov</a>
-        <a href="../tvorba-webov/">Tvorba webov</a>
-        <a href="../cennik/">Cenník</a>
-        <a href="../referencie/">Referencie</a>
-        <a href="./">Kontakt</a>
-        <a href="../cookies/">Cookies</a>
-        <a href="../ochrana-udajov/">Ochrana údajov</a>
-      </nav>
-      <span>© 2026 Beewoy · softvér na mieru · Slovensko</span>
-      <div class="footer-legal">
-        <button type="button" data-cookie-settings>Nastavenia cookies</button>
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="../"><img src="../logo.svg" alt="" width="22" height="24">beewoy</a>
+        <p>Moderné webstránky pre firmy v mesačnom paušále.</p>
+        <a class="footer-mail" href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a>
       </div>
-    </footer>
+      <nav class="footer-col" aria-labelledby="f-offer"><h2 id="f-offer">Ponuka</h2><ul>
+        <li><a href="../tvorba-webov/">Tvorba webov</a></li>
+        <li><a href="../tvorba-webov/odvetvia/">Weby podľa odvetvia</a></li>
+        <li><a href="../cennik/">Cenník</a></li>
+        <li><a href="../kalkulacka/">Kalkulačka ceny</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="f-beewoy"><h2 id="f-beewoy">Beewoy</h2><ul>
+        <li><a href="../referencie/">Referencie</a></li>
+        <li><a href="./">Kontakt</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="f-legal"><h2 id="f-legal">Právne</h2><ul>
+        <li><a href="../ochrana-udajov/">Ochrana údajov</a></li>
+        <li><a href="../cookies/">Cookies</a></li>
+        <li><button type="button" data-cookie-settings>Nastavenia cookies</button></li>
+      </ul></nav>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Beewoy</span><span>Slovensko</span></div>
   </div>
-</section>
+</footer>
 
 <script src="../cookies.js" defer></script>
 <script src="../analytics.js" defer></script>
 <script src="../main.js" defer></script>
-
-<svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:none">
-  <symbol id="icon-gauge" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/>
-  </symbol>
-  <symbol id="icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/>
-  </symbol>
-  <symbol id="icon-shield-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-    <path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/>
-  </symbol>
-</svg>
 </body>
 </html>
