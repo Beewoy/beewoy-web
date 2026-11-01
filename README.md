@@ -65,12 +65,11 @@ takže sa pri nasadení nepublikuje.
 
 ### Portfólio (aktuálne)
 
-1. [Baby’s world](https://babysworld.beewoy.sk/) — `assets/projects/babys-world-hero.webp`
-2. [CeKo Interier](https://www.ceko.sk/) — `assets/projects/ceko-hero.jpg`
-3. [Športový klub Vajnory](https://skvajnory.sk/) — `assets/projects/skvajnory-hero.jpg`
-4. [BR Interior & Exterior](https://br-interiorexterior.com/) — `assets/projects/br-interior-hero.jpg`
-5. [Timio](https://timio.sk/) — `assets/projects/timio-hero.jpg`
-6. [Verejnoprospešné služby Snina](https://beewoy.sk/projekty/idsk/vps-snina/) — `assets/projects/vps-snina-hero.png`
+1. [CeKo Interier](https://www.ceko.sk/) — `assets/projects/ceko-hero.jpg`
+2. [Športový klub Vajnory](https://skvajnory.sk/) — `assets/projects/skvajnory-hero.jpg`
+3. [BR Interior & Exterior](https://br-interiorexterior.com/) — `assets/projects/br-interior-hero.jpg`
+4. [Timio](https://timio.sk/) — `assets/projects/timio-hero.jpg`
+5. [Verejnoprospešné služby Snina](https://beewoy.sk/projekty/idsk/vps-snina/) — `assets/projects/vps-snina-hero.png`
 
 Homepage zobrazí CeKo, BR Interior & Exterior a ŠK Vajnory, stránka `/referencie/` všetky (statické HTML).
 
