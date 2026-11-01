@@ -251,7 +251,7 @@
               <div class="calc-result-card">
                 <p class="eyebrow">Rekomendacja</p>
                 <h3 id="resultName">Start</h3>
-                <div class="calc-result-price" id="resultPrice">39 €/mies.</div>
+                <div class="calc-result-price" id="resultPrice">171 zł/mies.</div>
                 <p id="resultText">Strona z obsługą techniczną i bieżącą opieką.</p>
                 <ul class="calc-result-list" id="resultList"></ul>
               </div>
@@ -271,8 +271,8 @@
         </form>
       </div>
       <ul class="plans-terms">
-        <li>Basic 19 €/mies.</li>
-        <li>Start 39 €/mies.</li>
+        <li>Basic 84 zł/mies.</li>
+        <li>Start 171 zł/mies.</li>
         <li>Individual do uzgodnienia</li>
       </ul>
       <div class="plans-more">
@@ -340,10 +340,10 @@
   const calculate = () => {
     const goal=selected("goal"), size=selected("size"), care=selected("care");
     const features=[...document.querySelectorAll('input[name="features"]:checked')].map(x=>x.value);
-    let plan="start", price="39 €/mies.", name="Start", text="Strona firmowa z obsługą techniczną, SEO bezpośrednio na stronie i bieżącą opieką.", list=["Strona do 5 sekcji z treścią","Hosting, SSL i utrzymanie techniczne","SEO na stronie, kopie zapasowe i zmiany treści"];
+    let plan="start", price="171 zł/mies.", name="Start", text="Strona firmowa z obsługą techniczną, SEO bezpośrednio na stronie i bieżącą opieką.", list=["Strona do 5 sekcji z treścią","Hosting, SSL i utrzymanie techniczne","SEO na stronie, kopie zapasowe i zmiany treści"];
     if (goal==="special" || size==="system" || features.some(x=>["booking","languages","catalog"].includes(x))) { plan="individual"; price="Do uzgodnienia"; name="Individual"; text="Strona na wymiar z funkcjami, które trzeba najpierw dokładnie zaprojektować."; list=["Zakres według konkretnego briefu","Funkcje i integracje według ustaleń","Wycena jeszcze przed realizacją"]; }
-    else if (goal==="care" || care==="start" || size==="company" || size==="content" || goal==="redesign" || features.includes("seo")) { plan="start"; price="39 €/mies."; name="Start"; text="Niezawodna strona firmowa z hostingiem, SSL, SEO bezpośrednio na stronie i zmianami treści według ustaleń."; list=["Strona firmowa do 5 sekcji z treścią","SEO: tytuły, meta opisy, nagłówki i teksty alt","Kopie zapasowe i bieżące zmiany treści"]; }
-    else if (size==="one" && care==="basic" && goal==="new") { plan="basic"; price="19 €/mies."; name="Basic"; text="Prosta jednostronicowa strona informacyjna dla firmy, przedsiębiorcy lub usługi."; list=["Jedna przejrzysta strona informacyjna","Hosting, SSL i podstawowe SEO na stronie","Zmiany po uruchomieniu od 15 € za zlecenie"]; }
+    else if (goal==="care" || care==="start" || size==="company" || size==="content" || goal==="redesign" || features.includes("seo")) { plan="start"; price="171 zł/mies."; name="Start"; text="Niezawodna strona firmowa z hostingiem, SSL, SEO bezpośrednio na stronie i zmianami treści według ustaleń."; list=["Strona firmowa do 5 sekcji z treścią","SEO: tytuły, meta opisy, nagłówki i teksty alt","Kopie zapasowe i bieżące zmiany treści"]; }
+    else if (size==="one" && care==="basic" && goal==="new") { plan="basic"; price="84 zł/mies."; name="Basic"; text="Prosta jednostronicowa strona informacyjna dla firmy, przedsiębiorcy lub usługi."; list=["Jedna przejrzysta strona informacyjna","Hosting, SSL i podstawowe SEO na stronie","Zmiany po uruchomieniu od 66 zł za zlecenie"]; }
     document.querySelector("#resultName").textContent=name;
     document.querySelector("#resultPrice").textContent=price;
     document.querySelector("#resultText").textContent=text;
