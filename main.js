@@ -1,4 +1,29 @@
 (() => {
+  const STRINGS = {
+    sk: {
+      menuOpen: "Otvoriť menu",
+      menuClose: "Zavrieť menu",
+      auditMessage: "Mám záujem o bezplatný mini-audit webu: ",
+      sent: "Ďakujeme! Správu sme dostali a ozveme sa vám čo najskôr.",
+      failed: "Odoslanie sa nepodarilo. Skúste to znova alebo nám napíšte na ahoj@beewoy.sk."
+    },
+    pl: {
+      menuOpen: "Otwórz menu",
+      menuClose: "Zamknij menu",
+      auditMessage: "Interesuje mnie bezpłatny mini-audyt strony: ",
+      sent: "Dziękujemy! Otrzymaliśmy wiadomość i odezwiemy się jak najszybciej.",
+      failed: "Nie udało się wysłać wiadomości. Spróbuj ponownie lub napisz na ahoj@beewoy.sk."
+    },
+    en: {
+      menuOpen: "Open menu",
+      menuClose: "Close menu",
+      auditMessage: "I'm interested in a free website mini-audit: ",
+      sent: "Thank you! We've received your message and will get back to you soon.",
+      failed: "Sending failed. Please try again or email us at ahoj@beewoy.sk."
+    }
+  };
+  const t = STRINGS[(document.documentElement.lang || "sk").slice(0, 2)] || STRINGS.sk;
+
   const header = document.querySelector("#siteHeader");
   const burger = document.querySelector("#burger");
   const mobileMenu = document.querySelector("#mobileMenu");
@@ -14,7 +39,7 @@
   const setMenu = (open) => {
     if (!burger || !mobileMenu) return;
     burger.setAttribute("aria-expanded", String(open));
-    burger.setAttribute("aria-label", open ? "Zavrieť menu" : "Otvoriť menu");
+    burger.setAttribute("aria-label", open ? t.menuClose : t.menuOpen);
     mobileMenu.classList.toggle("open", open);
     mobileMenu.toggleAttribute("inert", !open);
     document.body.classList.toggle("menu-open", open);
@@ -99,7 +124,7 @@
       if (!setBalikValue("neviem")) setBalikValue(SEO_OPTION);
       setProjectType("redizajn");
       const message = contactForm?.querySelector("#contact-message");
-      if (message && !message.value) message.value = "Mám záujem o bezplatný mini-audit webu: ";
+      if (message && !message.value) message.value = t.auditMessage;
       return;
     }
     if (PACKAGE_IDS.has(preset)) setBalikValue(preset);
@@ -245,13 +270,13 @@
       }
 
       contactForm.reset();
-      showFormStatus("Ďakujeme! Správu sme dostali a ozveme sa vám čo najskôr.", "success");
+      showFormStatus(t.sent, "success");
       window.BeewoyAnalytics?.track?.("generate_lead", {
         form_id: "kontakt",
         page_path: window.BeewoyAnalytics.pagePath?.() || window.location.pathname
       });
     } catch {
-      showFormStatus("Odoslanie sa nepodarilo. Skúste to znova alebo nám napíšte na ahoj@beewoy.sk.", "error");
+      showFormStatus(t.failed, "error");
       window.BeewoyAnalytics?.track?.("form_error", {
         form_id: "kontakt",
         page_path: window.BeewoyAnalytics.pagePath?.() || window.location.pathname

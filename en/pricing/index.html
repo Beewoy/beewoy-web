@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Website pricing | from €19/month | Beewoy</title>
+<meta name="description" content="Beewoy pricing: Basic €19/month, Start €39/month and Individual by agreement. Hosting, SSL and technical care included. No setup fee, no commitment.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://beewoy.sk/en/pricing/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="sk" href="https://beewoy.sk/cennik/">
+<link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/cennik/">
+<link rel="alternate" hreflang="en" href="https://beewoy.sk/en/pricing/">
+<link rel="alternate" hreflang="x-default" href="https://beewoy.sk/cennik/">
+<script>
+(() => {
+  const KEY = "beewoy_lang";
+  const SESSION_KEY = "beewoy_lang_checked";
+  const LANGS = ["sk", "pl", "en"];
+  const current = (document.documentElement.lang || "sk").slice(0, 2);
+
+  const read = (store, key) => { try { return store.getItem(key); } catch { return null; } };
+  const write = (store, key, value) => { try { store.setItem(key, value); } catch {} };
+
+  const alternate = (lang) =>
+    document.querySelector(`link[rel="alternate"][hreflang="${lang}"]`)?.getAttribute("href");
+
+  // Slovak and Czech visitors stay on Slovak even when their browser UI is English.
+  const detect = () => {
+    const codes = (navigator.languages?.length ? navigator.languages : [navigator.language || ""])
+      .map((l) => String(l).toLowerCase().slice(0, 2));
+    if (codes.some((c) => c === "sk" || c === "cs")) return "sk";
+    if (codes.includes("pl")) return "pl";
+    return "en";
+  };
+
+  const isBot = /bot|crawl|spider|slurp|lighthouse|headless|preview|facebookexternalhit/i.test(navigator.userAgent);
+  const internal = (() => {
+    try { return !!document.referrer && new URL(document.referrer).origin === location.origin; } catch { return false; }
+  })();
+  const checked = read(sessionStorage, SESSION_KEY) === "1";
+  write(sessionStorage, SESSION_KEY, "1");
+
+  if (!isBot && !internal && !checked) {
+    const saved = read(localStorage, KEY);
+    const wanted = LANGS.includes(saved) ? saved : detect();
+    const url = wanted !== current && alternate(wanted);
+    if (url) {
+      location.replace(url + location.search + location.hash);
+      return;
+    }
+  }
+
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest("a[data-lang]");
+    if (link) write(localStorage, KEY, link.dataset.lang);
+    document.querySelectorAll("details[data-lang-switch][open]").forEach((d) => {
+      if (!d.contains(event.target)) d.open = false;
+    });
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    document.querySelectorAll("details[data-lang-switch][open]").forEach((d) => {
+      d.open = false;
+      d.querySelector("summary")?.focus();
+    });
+  });
+})();
+</script>
+<!-- /i18n:head -->
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<!-- i18n:og -->
+<meta property="og:locale:alternate" content="sk_SK">
+<meta property="og:locale:alternate" content="pl_PL">
+<!-- /i18n:og -->
+<meta property="og:site_name" content="Beewoy">
+<meta property="og:url" content="https://beewoy.sk/en/pricing/">
+<meta property="og:title" content="Website pricing | from €19/month | Beewoy">
+<meta property="og:description" content="Basic €19/month, Start €39/month and Individual by agreement. Hosting, SSL and technical care included.">
+<meta property="og:image" content="https://beewoy.sk/og-main.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Website pricing — Beewoy">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Website pricing | from €19/month | Beewoy">
+<meta name="twitter:description" content="Basic €19/month, Start €39/month and Individual by agreement. Hosting, SSL and technical care included.">
+<meta name="twitter:image" content="https://beewoy.sk/og-main.png">
+
+<link rel="stylesheet" href="/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://beewoy.sk/en/pricing/#webpage",
+      "url": "https://beewoy.sk/en/pricing/",
+      "name": "Website pricing | from €19/month | Beewoy",
+      "description": "Beewoy pricing: Basic €19/month, Start €39/month and Individual by agreement.",
+      "isPartOf": { "@id": "https://beewoy.sk/#website" },
+      "inLanguage": "en",
+      "mainEntity": { "@id": "https://beewoy.sk/en/pricing/#offers" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://beewoy.sk/en/pricing/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://beewoy.sk/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Pricing", "item": "https://beewoy.sk/en/pricing/" }
+      ]
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://beewoy.sk/en/pricing/#offers",
+      "name": "Monthly website plans",
+      "url": "https://beewoy.sk/en/pricing/",
+      "itemListElement": [
+        { "@type": "Offer", "name": "Basic", "description": "A simple one-page informational website hosted by Beewoy. Hosting, SSL and technical care included; changes on request.", "url": "https://beewoy.sk/en/pricing/", "price": "19", "priceCurrency": "EUR", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "19", "priceCurrency": "EUR", "billingDuration": "P1M" }, "availability": "https://schema.org/InStock" },
+        { "@type": "Offer", "name": "Start", "description": "A website with up to 5 content sections plus care: hosting, SSL, technical maintenance, on-page SEO and routine content updates as agreed.", "url": "https://beewoy.sk/en/pricing/", "price": "39", "priceCurrency": "EUR", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "39", "priceCurrency": "EUR", "billingDuration": "P1M" }, "availability": "https://schema.org/InStock" },
+        { "@type": "Offer", "name": "Individual", "description": "A custom website — non-standard features, integrations or multiple languages. Priced by agreement.", "url": "https://beewoy.sk/en/pricing/", "availability": "https://schema.org/InStock" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://beewoy.sk/en/pricing/#faq",
+      "inLanguage": "en",
+      "mainEntity": [
+        { "@type": "Question", "name": "Is there a minimum term?", "acceptedAnswer": { "@type": "Answer", "text": "No. You can cancel at any time. We host and maintain the website, so we switch it off when the plan ends." } },
+        { "@type": "Question", "name": "When do I start paying?", "acceptedAnswer": { "@type": "Answer", "text": "Only once your website is live. There is no setup fee." } },
+        { "@type": "Question", "name": "What isn't included?", "acceptedAnswer": { "@type": "Answer", "text": "Your domain, paid third-party services, extensive copywriting and features outside the plan. Google Business Profile, Search Console, backlinks and campaigns are handled separately. You always approve the price up front." } },
+        { "@type": "Question", "name": "How long does delivery take?", "acceptedAnswer": { "@type": "Answer", "text": "We launch a simple website within 48 hours of approving the brief, if your content is ready. For larger websites, the timeline depends on scope." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#obsah">Skip to content</a>
+
+<header class="header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="logo" href="/en/" aria-label="Beewoy — home"><img src="/logo.svg" alt="" width="22" height="24">beewoy</a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="/en/web-design/">Web design</a>
+      <a href="/en/pricing/" aria-current="page">Pricing</a>
+      <a href="/en/work/">Work</a>
+      <a href="/en/contact/">Contact</a>
+    </nav>
+    <!-- i18n:switch -->
+    <details class="lang" data-lang-switch>
+      <summary class="lang-btn" aria-label="Language: English">EN<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <ul class="lang-menu">
+        <li><a href="/cennik/" hreflang="sk" lang="sk" data-lang="sk"><span>SK</span>Slovenčina</a></li>
+        <li><a href="/pl/cennik/" hreflang="pl" lang="pl" data-lang="pl"><span>PL</span>Polski</a></li>
+        <li><a href="/en/pricing/" hreflang="en" lang="en" data-lang="en" aria-current="true"><span>EN</span>English</a></li>
+      </ul>
+    </details>
+    <!-- /i18n:switch -->
+    <a class="btn btn-primary btn-sm header-cta" href="/en/contact/#kontakt-form" data-analytics-cta="header_start">Get a website</a>
+    <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="/en/web-design/">Web design</a>
+  <a href="/en/pricing/" aria-current="page">Pricing</a>
+  <a href="/en/work/">Work</a>
+  <a href="/en/contact/">Contact</a>
+  <a class="btn btn-primary btn-lg" href="/en/contact/#kontakt-form">Get a website</a>
+  <!-- i18n:mswitch -->
+  <div class="mobile-lang" role="group" aria-label="Language"><a href="/cennik/" hreflang="sk" lang="sk" data-lang="sk">SK</a><a href="/pl/cennik/" hreflang="pl" lang="pl" data-lang="pl">PL</a><a href="/en/pricing/" hreflang="en" lang="en" data-lang="en" aria-current="true">EN</a></div>
+  <!-- /i18n:mswitch -->
+  <p class="mobile-menu-foot">Or email us at <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a></p>
+</nav>
+
+<main id="obsah">
+  <section class="page-hero page-hero--center" aria-labelledby="cennik-title">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol><li><a href="/en/">Home</a></li><li aria-current="page">Pricing</li></ol>
+      </nav>
+      <h1 class="h1" id="cennik-title">A website from <span class="mark">€19</span> a month.</h1>
+      <p class="lead">One monthly price for your website, hosting and technical care. You only pay once it's live.</p>
+      <ul class="page-hero-meta">
+        <li>No setup fee</li>
+        <li>No commitment</li>
+        <li>Hosting and SSL included</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--flush-top" aria-labelledby="plans-title">
+    <div class="wrap">
+      <h2 class="visually-hidden" id="plans-title">Plans</h2>
+      <div class="plans">
+        <article class="plan">
+          <h3 class="plan-name">Basic</h3>
+          <p class="plan-for">A simple website for a sole trader or small service.</p>
+          <p class="plan-price">€19<small>/ month</small></p>
+          <ul class="plan-list">
+            <li>One-page informational website</li>
+            <li>Contact details, services, photos and a call to action</li>
+            <li>Hosting, SSL and technical care</li>
+            <li>Basic on-page SEO</li>
+          </ul>
+          <p class="plan-note">Changes after launch on request. Small changes from €15; larger ones quoted up front.</p>
+          <a class="btn btn-secondary" href="/en/contact/?balik=basic#kontakt-form" data-analytics-cta="cennik_basic">Choose Basic</a>
+        </article>
+        <article class="plan plan--featured">
+          <span class="plan-badge">Most popular</span>
+          <h3 class="plan-name">Start</h3>
+          <p class="plan-for">A business website we look after for you.</p>
+          <p class="plan-price">€39<small>/ month</small></p>
+          <ul class="plan-list">
+            <li>Website with up to 5 content sections</li>
+            <li>Hosting, SSL and technical maintenance</li>
+            <li>On-page SEO: titles, descriptions, headings, alt text</li>
+            <li>Routine content updates as agreed</li>
+            <li>Backups and uptime monitoring</li>
+            <li>Direct contact with us</li>
+          </ul>
+          <a class="btn btn-primary" href="/en/contact/?balik=start#kontakt-form" data-analytics-cta="cennik_start">Choose Start</a>
+        </article>
+        <article class="plan">
+          <h3 class="plan-name">Individual</h3>
+          <p class="plan-for">Bookings, multiple languages or custom features.</p>
+          <p class="plan-price plan-price--text">Custom</p>
+          <ul class="plan-list">
+            <li>Scope by agreement</li>
+            <li>Bookings, forms and integrations</li>
+            <li>Multiple languages</li>
+            <li>Your own timeline</li>
+          </ul>
+          <p class="plan-note">We confirm the price and scope after a short call.</p>
+          <a class="btn btn-secondary" href="/en/contact/?balik=individual#kontakt-form" data-analytics-cta="cennik_individual">Choose Individual</a>
+        </article>
+      </div>
+      <ul class="plans-terms">
+        <li>Prices are monthly</li>
+        <li>You pay from the day the website goes live</li>
+        <li>Domain and paid third-party services billed separately</li>
+      </ul>
+      <div class="plans-more">
+        <a class="link-arrow" href="/en/calculator/" data-analytics-cta="cennik_estimator">Not sure which to pick? Calculator <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="value-title">
+    <div class="wrap wrap--narrow">
+      <div class="section-head">
+        <p class="eyebrow">What's in the monthly plan</p>
+        <h2 class="h2" id="value-title">One amount. No hidden invoice.</h2>
+        <p class="lead">This is the Start plan. Basic from €19. Individual by agreement.</p>
+      </div>
+      <ul class="value-sheet">
+        <li><span>Design and launch of the website</span><em>included</em></li>
+        <li><span>Website with up to 5 content sections</span><em>included</em></li>
+        <li><span>Hosting, SSL and technical maintenance</span><em>included</em></li>
+        <li><span>On-page SEO: titles, descriptions, headings, alt</span><em>included</em></li>
+        <li><span>Backups and uptime monitoring</span><em>included</em></li>
+        <li><span>Routine content updates as agreed</span><em>included</em></li>
+        <li class="out"><span>Domain</span><em>separate</em></li>
+        <li class="out"><span>Extensive copy and features outside the plan</span><em>separate</em></li>
+        <li class="out"><span>Google Business, Search Console, campaigns</span><em>not in the plan</em></li>
+      </ul>
+      <div class="value-pay">
+        <p class="tiny">You pay</p>
+        <p class="value-pay-price">€39<small>/ month</small></p>
+        <p>No setup fee. No commitment. Billing starts when the website is live.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft hide-sm" aria-labelledby="compare-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="h2" id="compare-title">Compare plans.</h2>
+      </div>
+      <div class="table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr><th scope="col"><span class="visually-hidden">What you get</span></th><th scope="col">Basic</th><th scope="col" class="col-featured">Start</th><th scope="col">Individual</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Monthly</th><td class="yes">€19</td><td class="yes col-featured">€39</td><td>Custom</td></tr>
+            <tr><th scope="row">Website scope</th><td>One page</td><td class="col-featured">Up to 5 content sections</td><td>By agreement</td></tr>
+            <tr><th scope="row">Hosting and SSL</th><td class="yes">Yes</td><td class="yes col-featured">Yes</td><td>By agreement</td></tr>
+            <tr><th scope="row">On-page SEO</th><td>Basic</td><td class="col-featured">Titles, descriptions, headings, alt text</td><td>By agreement</td></tr>
+            <tr><th scope="row">Changes after launch</th><td>On request, from €15</td><td class="col-featured">Routine updates as agreed</td><td>By agreement</td></tr>
+            <tr><th scope="row">Backups and uptime monitoring</th><td class="no">—<span class="visually-hidden">No</span></td><td class="yes col-featured">Yes</td><td>By agreement</td></tr>
+            <tr><th scope="row">Mobile and accessibility checks</th><td class="no">—<span class="visually-hidden">No</span></td><td class="yes col-featured">Yes</td><td>By agreement</td></tr>
+            <tr><th scope="row">Bookings, integrations, multiple languages</th><td class="no">—<span class="visually-hidden">No</span></td><td class="no col-featured">—<span class="visually-hidden">No</span></td><td class="yes">Yes</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="wrap split">
+      <div class="split-sticky">
+        <p class="eyebrow">FAQ</p>
+        <h2 class="h2" id="faq-title">Terms, plainly.</h2>
+      </div>
+      <div class="faq">
+        <details class="faq-item"><summary>Is there a minimum term?</summary><div class="faq-answer">No. You can cancel at any time. We host and maintain the website, so we switch it off when the plan ends.</div></details>
+        <details class="faq-item"><summary>When do I start paying?</summary><div class="faq-answer">Only once your website is live. There is no setup fee.</div></details>
+        <details class="faq-item"><summary>What isn't included?</summary><div class="faq-answer">Your domain, paid third-party services, extensive copywriting and features outside the plan. Google Business Profile, Search Console, backlinks and campaigns are handled separately. You always approve the price up front.</div></details>
+        <details class="faq-item"><summary>How long does delivery take?</summary><div class="faq-answer">We launch a simple website within 48 hours of approving the brief, if your content is ready. For larger websites, the timeline depends on scope.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sm" aria-labelledby="final-title">
+    <div class="wrap">
+      <div class="cta-panel">
+        <h2 class="h2" id="final-title">Pick a plan and get in touch.</h2>
+        <p>A few sentences about your business are enough. We'll reply and advise.</p>
+        <div class="actions">
+          <a class="btn btn-light btn-lg" href="/en/contact/?balik=start#kontakt-form" data-analytics-cta="cennik_final">Get a website <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="/en/"><img src="/logo.svg" alt="" width="22" height="24">beewoy</a>
+        <p>Modern websites for small businesses on one simple monthly plan.</p>
+        <a class="footer-mail" href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a>
+      </div>
+      <nav class="footer-col" aria-labelledby="f-offer"><h2 id="f-offer">Services</h2><ul>
+        <li><a href="/en/web-design/">Web design</a></li>
+        <li><a href="/en/pricing/">Pricing</a></li>
+        <li><a href="/en/calculator/">Price calculator</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="f-beewoy"><h2 id="f-beewoy">Beewoy</h2><ul>
+        <li><a href="/en/work/">Work</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="f-legal"><h2 id="f-legal">Legal</h2><ul>
+        <li><a href="/en/privacy/">Privacy policy</a></li>
+        <li><a href="/en/cookies/">Cookies</a></li>
+        <li><button type="button" data-cookie-settings>Cookie settings</button></li>
+      </ul></nav>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Beewoy</span><span>Slovakia</span></div>
+  </div>
+</footer>
+
+<script src="/cookies.js" defer></script>
+<script src="/analytics.js" defer></script>
+<script src="/main.js" defer></script>
+</body>
+</html>

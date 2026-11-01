@@ -8,6 +8,67 @@
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="theme-color" content="#ffffff">
 <link rel="canonical" href="https://beewoy.sk/cennik/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="sk" href="https://beewoy.sk/cennik/">
+<link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/cennik/">
+<link rel="alternate" hreflang="en" href="https://beewoy.sk/en/pricing/">
+<link rel="alternate" hreflang="x-default" href="https://beewoy.sk/cennik/">
+<script>
+(() => {
+  const KEY = "beewoy_lang";
+  const SESSION_KEY = "beewoy_lang_checked";
+  const LANGS = ["sk", "pl", "en"];
+  const current = (document.documentElement.lang || "sk").slice(0, 2);
+
+  const read = (store, key) => { try { return store.getItem(key); } catch { return null; } };
+  const write = (store, key, value) => { try { store.setItem(key, value); } catch {} };
+
+  const alternate = (lang) =>
+    document.querySelector(`link[rel="alternate"][hreflang="${lang}"]`)?.getAttribute("href");
+
+  // Slovak and Czech visitors stay on Slovak even when their browser UI is English.
+  const detect = () => {
+    const codes = (navigator.languages?.length ? navigator.languages : [navigator.language || ""])
+      .map((l) => String(l).toLowerCase().slice(0, 2));
+    if (codes.some((c) => c === "sk" || c === "cs")) return "sk";
+    if (codes.includes("pl")) return "pl";
+    return "en";
+  };
+
+  const isBot = /bot|crawl|spider|slurp|lighthouse|headless|preview|facebookexternalhit/i.test(navigator.userAgent);
+  const internal = (() => {
+    try { return !!document.referrer && new URL(document.referrer).origin === location.origin; } catch { return false; }
+  })();
+  const checked = read(sessionStorage, SESSION_KEY) === "1";
+  write(sessionStorage, SESSION_KEY, "1");
+
+  if (!isBot && !internal && !checked) {
+    const saved = read(localStorage, KEY);
+    const wanted = LANGS.includes(saved) ? saved : detect();
+    const url = wanted !== current && alternate(wanted);
+    if (url) {
+      location.replace(url + location.search + location.hash);
+      return;
+    }
+  }
+
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest("a[data-lang]");
+    if (link) write(localStorage, KEY, link.dataset.lang);
+    document.querySelectorAll("details[data-lang-switch][open]").forEach((d) => {
+      if (!d.contains(event.target)) d.open = false;
+    });
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    document.querySelectorAll("details[data-lang-switch][open]").forEach((d) => {
+      d.open = false;
+      d.querySelector("summary")?.focus();
+    });
+  });
+})();
+</script>
+<!-- /i18n:head -->
 <link rel="manifest" href="../manifest.webmanifest">
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" href="../icons/favicon.svg" type="image/svg+xml">
@@ -17,6 +78,10 @@
 
 <meta property="og:type" content="website">
 <meta property="og:locale" content="sk_SK">
+<!-- i18n:og -->
+<meta property="og:locale:alternate" content="pl_PL">
+<meta property="og:locale:alternate" content="en_GB">
+<!-- /i18n:og -->
 <meta property="og:site_name" content="Beewoy">
 <meta property="og:url" content="https://beewoy.sk/cennik/">
 <meta property="og:title" content="Cenník tvorby webov | od 19 €/mes | Beewoy">
@@ -125,6 +190,16 @@
       <a href="../referencie/">Referencie</a>
       <a href="../kontakt/">Kontakt</a>
     </nav>
+    <!-- i18n:switch -->
+    <details class="lang" data-lang-switch>
+      <summary class="lang-btn" aria-label="Jazyk: Slovenčina">SK<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <ul class="lang-menu">
+        <li><a href="/cennik/" hreflang="sk" lang="sk" data-lang="sk" aria-current="true"><span>SK</span>Slovenčina</a></li>
+        <li><a href="/pl/cennik/" hreflang="pl" lang="pl" data-lang="pl"><span>PL</span>Polski</a></li>
+        <li><a href="/en/pricing/" hreflang="en" lang="en" data-lang="en"><span>EN</span>English</a></li>
+      </ul>
+    </details>
+    <!-- /i18n:switch -->
     <a class="btn btn-primary btn-sm header-cta" href="../kontakt/#kontakt-form" data-analytics-cta="header_start">Chcem web</a>
     <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Otvoriť menu"><span></span><span></span></button>
   </div>
@@ -135,6 +210,9 @@
   <a href="../referencie/">Referencie</a>
   <a href="../kontakt/">Kontakt</a>
   <a class="btn btn-primary btn-lg" href="../kontakt/#kontakt-form">Chcem web</a>
+  <!-- i18n:mswitch -->
+  <div class="mobile-lang" role="group" aria-label="Jazyk"><a href="/cennik/" hreflang="sk" lang="sk" data-lang="sk" aria-current="true">SK</a><a href="/pl/cennik/" hreflang="pl" lang="pl" data-lang="pl">PL</a><a href="/en/pricing/" hreflang="en" lang="en" data-lang="en">EN</a></div>
+  <!-- /i18n:mswitch -->
   <p class="mobile-menu-foot">Alebo napíšte na <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a></p>
 </nav>
 
@@ -207,6 +285,32 @@
       </ul>
       <div class="plans-more">
         <a class="link-arrow" href="../kalkulacka/" data-analytics-cta="cennik_estimator">Neviete si vybrať? Kalkulačka <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="value-title">
+    <div class="wrap wrap--narrow">
+      <div class="section-head">
+        <p class="eyebrow">Čo je v paušáli</p>
+        <h2 class="h2" id="value-title">Jedna suma. Žiadna skrytá faktúra.</h2>
+        <p class="lead">Takto vyzerá plán Start. Basic je od 19&nbsp;€. Individual dohodou.</p>
+      </div>
+      <ul class="value-sheet">
+        <li><span>Návrh a spustenie webu</span><em>v cene</em></li>
+        <li><span>Web do 5 obsahových sekcií</span><em>v cene</em></li>
+        <li><span>Hosting, SSL a technická údržba</span><em>v cene</em></li>
+        <li><span>SEO na webe: titulky, popisy, nadpisy, alt</span><em>v cene</em></li>
+        <li><span>Zálohovanie a kontrola dostupnosti</span><em>v cene</em></li>
+        <li><span>Bežné úpravy obsahu podľa dohody</span><em>v cene</em></li>
+        <li class="out"><span>Doména</span><em>zvlášť</em></li>
+        <li class="out"><span>Rozsiahle texty a funkcie mimo plánu</span><em>zvlášť</em></li>
+        <li class="out"><span>Google Business, Search Console, kampane</span><em>nie v paušáli</em></li>
+      </ul>
+      <div class="value-pay">
+        <p class="tiny">Vy platíte</p>
+        <p class="value-pay-price">39&nbsp;€<small>/ mesiac</small></p>
+        <p>Bez vstupného poplatku. Bez viazanosti. Paušál začína, keď je web online.</p>
       </div>
     </div>
   </section>

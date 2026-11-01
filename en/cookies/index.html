@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cookies | Beewoy</title>
+<meta name="description" content="Information about cookies and similar technologies on the Beewoy website. Categories, purposes and how to manage consent.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://beewoy.sk/en/cookies/">
+<!-- i18n:head -->
+<script>
+(() => {
+  const KEY = "beewoy_lang";
+  const SESSION_KEY = "beewoy_lang_checked";
+  const LANGS = ["sk", "pl", "en"];
+  const current = (document.documentElement.lang || "sk").slice(0, 2);
+
+  const read = (store, key) => { try { return store.getItem(key); } catch { return null; } };
+  const write = (store, key, value) => { try { store.setItem(key, value); } catch {} };
+
+  const alternate = (lang) =>
+    document.querySelector(`link[rel="alternate"][hreflang="${lang}"]`)?.getAttribute("href");
+
+  // Slovak and Czech visitors stay on Slovak even when their browser UI is English.
+  const detect = () => {
+    const codes = (navigator.languages?.length ? navigator.languages : [navigator.language || ""])
+      .map((l) => String(l).toLowerCase().slice(0, 2));
+    if (codes.some((c) => c === "sk" || c === "cs")) return "sk";
+    if (codes.includes("pl")) return "pl";
+    return "en";
+  };
+
+  const isBot = /bot|crawl|spider|slurp|lighthouse|headless|preview|facebookexternalhit/i.test(navigator.userAgent);
+  const internal = (() => {
+    try { return !!document.referrer && new URL(document.referrer).origin === location.origin; } catch { return false; }
+  })();
+  const checked = read(sessionStorage, SESSION_KEY) === "1";
+  write(sessionStorage, SESSION_KEY, "1");
+
+  if (!isBot && !internal && !checked) {
+    const saved = read(localStorage, KEY);
+    const wanted = LANGS.includes(saved) ? saved : detect();
+    const url = wanted !== current && alternate(wanted);
+    if (url) {
+      location.replace(url + location.search + location.hash);
+      return;
+    }
+  }
+
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest("a[data-lang]");
+    if (link) write(localStorage, KEY, link.dataset.lang);
+    document.querySelectorAll("details[data-lang-switch][open]").forEach((d) => {
+      if (!d.contains(event.target)) d.open = false;
+    });
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    document.querySelectorAll("details[data-lang-switch][open]").forEach((d) => {
+      d.open = false;
+      d.querySelector("summary")?.focus();
+    });
+  });
+})();
+</script>
+<!-- /i18n:head -->
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Beewoy">
+<meta property="og:url" content="https://beewoy.sk/en/cookies/">
+<meta property="og:title" content="Cookies | Beewoy">
+<meta property="og:description" content="Information about cookies and similar technologies on the Beewoy website.">
+<meta property="og:image" content="https://beewoy.sk/og-main.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="stylesheet" href="/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://beewoy.sk/en/cookies/#webpage",
+      "url": "https://beewoy.sk/en/cookies/",
+      "name": "Cookies | Beewoy",
+      "isPartOf": { "@id": "https://beewoy.sk/#website" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://beewoy.sk/en/cookies/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://beewoy.sk/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Cookies", "item": "https://beewoy.sk/en/cookies/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#obsah">Skip to content</a>
+
+<header class="header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="logo" href="/en/" aria-label="Beewoy — home"><img src="/logo.svg" alt="" width="22" height="24">beewoy</a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="/en/web-design/">Web design</a>
+      <a href="/en/pricing/">Pricing</a>
+      <a href="/en/work/">Work</a>
+      <a href="/en/contact/">Contact</a>
+    </nav>
+    <!-- i18n:switch -->
+    <details class="lang" data-lang-switch>
+      <summary class="lang-btn" aria-label="Language: English">EN<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <ul class="lang-menu">
+        <li><a href="/cookies/" hreflang="sk" lang="sk" data-lang="sk"><span>SK</span>Slovenčina</a></li>
+        <li><a href="/pl/cookies/" hreflang="pl" lang="pl" data-lang="pl"><span>PL</span>Polski</a></li>
+        <li><a href="/en/cookies/" hreflang="en" lang="en" data-lang="en" aria-current="true"><span>EN</span>English</a></li>
+      </ul>
+    </details>
+    <!-- /i18n:switch -->
+    <a class="btn btn-primary btn-sm header-cta" href="/en/contact/#kontakt-form" data-analytics-cta="header_start">Get a website</a>
+    <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="/en/web-design/">Web design</a>
+  <a href="/en/pricing/">Pricing</a>
+  <a href="/en/work/">Work</a>
+  <a href="/en/contact/">Contact</a>
+  <a class="btn btn-primary btn-lg" href="/en/contact/#kontakt-form">Get a website</a>
+  <!-- i18n:mswitch -->
+  <div class="mobile-lang" role="group" aria-label="Language"><a href="/cookies/" hreflang="sk" lang="sk" data-lang="sk">SK</a><a href="/pl/cookies/" hreflang="pl" lang="pl" data-lang="pl">PL</a><a href="/en/cookies/" hreflang="en" lang="en" data-lang="en" aria-current="true">EN</a></div>
+  <!-- /i18n:mswitch -->
+  <p class="mobile-menu-foot">Or email us at <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a></p>
+</nav>
+
+<main id="obsah">
+  <section class="page-hero" aria-labelledby="legal-title">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol><li><a href="/en/">Home</a></li><li aria-current="page">Cookies</li></ol>
+      </nav>
+      <h1 class="h1" id="legal-title">Cookies</h1>
+      <p class="legal-updated">Last updated: 31 July 2026. This document explains which cookies and similar technologies the Beewoy website uses and how you can manage your consent under the GDPR and ePrivacy rules.</p>
+      <p class="legal-updated">This is a translation. The <a href="/cookies/" hreflang="sk" lang="sk">Slovak version</a> is binding.</p>
+    </div>
+  </section>
+
+  <section class="section section--flush-top">
+    <div class="wrap legal-layout">
+      <nav class="legal-toc" aria-label="Contents">
+        <p>Contents</p>
+        <ol>
+          <li><a href="#co-su-cookies">1. What cookies are</a></li>
+          <li><a href="#ako-spravovat-suhlas">2. Managing consent</a></li>
+          <li><a href="#kategorie">3. Categories</a></li>
+          <li><a href="#obsah-tretich-stran-na-webe">4. Third-party content</a></li>
+          <li><a href="#pravny-zaklad">5. Legal basis</a></li>
+          <li><a href="#odvolanie-suhlasu">6. Withdrawing consent</a></li>
+          <li><a href="#kontakt-cookies">7. Contact</a></li>
+        </ol>
+      </nav>
+      <div class="prose">
+      <h2 id="co-su-cookies">1. What cookies are</h2>
+      <p>Cookies are small text files stored on your device. Similar technologies include <code>localStorage</code>, <code>sessionStorage</code>, the service worker cache and browser identifiers. Some are necessary for the website to work; others we use only with your consent.</p>
+
+      <h2 id="ako-spravovat-suhlas">2. Managing consent</h2>
+      <p>On your first visit, we show a consent bar. You can:</p>
+      <ul>
+        <li><strong>Accept all</strong> — optional categories are enabled too,</li>
+        <li><strong>Necessary only</strong> — functional, analytics and marketing are switched off,</li>
+        <li><strong>Settings</strong> — choose categories one by one.</li>
+      </ul>
+      <p>You can change your consent at any time with the <button type="button" data-cookie-settings style="all:unset;cursor:pointer;text-decoration:underline;font:inherit;color:inherit">Cookie settings</button> button in the footer.</p>
+
+      <h2 id="kategorie">3. Categories</h2>
+
+      <h3>3.1 Necessary</h3>
+      <p>Always active. They provide basic website functionality and store your cookie decision.</p>
+      <ul>
+        <li><strong>beewoy_consent</strong> (localStorage) — stores your consent and chosen categories, valid for up to 12 months / until changed.</li>
+        <li><strong>beewoy_lang</strong> (localStorage) — remembers the language you pick in the language switcher. Kept until you clear it in your browser.</li>
+        <li><strong>beewoy_lang_checked</strong> (sessionStorage) — notes that your language has already been checked in this session, so the website doesn't redirect you again. Deleted when you close the browser.</li>
+      </ul>
+
+      <h3>3.2 Functional (optional)</h3>
+      <p>Enabled only with consent.</p>
+      <ul>
+        <li><strong>PWA / service worker</strong> — a local cache of website files for faster loading and the "Add to Home Screen" option.</li>
+      </ul>
+      <p>Typography (Google Fonts) always loads — it is part of displaying the website, not an optional cookie.</p>
+
+      <h3>3.3 Analytics (optional)</h3>
+      <p>Enabled only with consent. We use <strong>Firebase Analytics</strong> (Google Ireland / Google LLC, measurement ID <code>G-E9CCZPVP2X</code>) to measure traffic and interactions on the website.</p>
+      <ul>
+        <li><strong>page_view</strong> — a page view (URL, page title),</li>
+        <li><strong>cta_click</strong> — a click on selected calls to action,</li>
+        <li><strong>outbound_click</strong> — leaving via an external link,</li>
+        <li><strong>generate_lead</strong> / <strong>form_error</strong> — the result of submitting the contact form.</li>
+      </ul>
+      <p>The script does not load until you consent to analytics cookies in the cookie bar. After you withdraw consent, we send no further events.</p>
+
+      <h3>3.4 Marketing (optional)</h3>
+      <p>We <strong>currently do not use</strong> advertising or remarketing cookies. The category is prepared for the future and will not run without consent.</p>
+
+      <h2 id="obsah-tretich-stran-na-webe">4. Third-party content</h2>
+      <p>External links in the portfolio (e.g. to client websites) lead to third-party websites. Once you click, their own data processing rules apply. More about data processing is in the <a href="/en/privacy/">Privacy policy</a>.</p>
+
+      <h2 id="pravny-zaklad">5. Legal basis</h2>
+      <ul>
+        <li>Necessary technologies — legitimate interest / necessity to provide the website service.</li>
+        <li>Functional, analytics and marketing — consent (Art. 6(1)(a) GDPR).</li>
+      </ul>
+
+      <h2 id="odvolanie-suhlasu">6. Withdrawing consent</h2>
+      <p>You can withdraw consent at any time in the cookie settings. After you withdraw functional consent, we may unregister the service worker. You can also delete data already stored in your browser through your browser settings.</p>
+
+      <h2 id="kontakt-cookies">7. Contact</h2>
+      <p>Questions about cookies: <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a>. More about data processing: <a href="/en/privacy/">Privacy policy</a>.</p>
+
+      <p class="legal-note"><strong>Important:</strong> Analytics runs only after consent. We do not use marketing cookies at the moment.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="/en/"><img src="/logo.svg" alt="" width="22" height="24">beewoy</a>
+        <p>Modern websites for small businesses on one simple monthly plan.</p>
+        <a class="footer-mail" href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a>
+      </div>
+      <nav class="footer-col" aria-labelledby="f-offer"><h2 id="f-offer">Services</h2><ul>
+        <li><a href="/en/web-design/">Web design</a></li>
+        <li><a href="/en/pricing/">Pricing</a></li>
+        <li><a href="/en/calculator/">Price calculator</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="f-beewoy"><h2 id="f-beewoy">Beewoy</h2><ul>
+        <li><a href="/en/work/">Work</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="f-legal"><h2 id="f-legal">Legal</h2><ul>
+        <li><a href="/en/privacy/">Privacy policy</a></li>
+        <li><a href="/en/cookies/">Cookies</a></li>
+        <li><button type="button" data-cookie-settings>Cookie settings</button></li>
+      </ul></nav>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Beewoy</span><span>Slovakia</span></div>
+  </div>
+</footer>
+
+<script src="/cookies.js" defer></script>
+<script src="/analytics.js" defer></script>
+<script src="/main.js" defer></script>
+</body>
+</html>

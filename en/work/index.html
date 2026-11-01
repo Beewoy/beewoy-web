@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our work — websites and digital products | Beewoy</title>
+<meta name="description" content="Selected Beewoy projects — websites and digital products for CeKo Interier, Športový klub Vajnory, BR Interior &amp; Exterior and other clients.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://beewoy.sk/en/work/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="sk" href="https://beewoy.sk/referencie/">
+<link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/realizacje/">
+<link rel="alternate" hreflang="en" href="https://beewoy.sk/en/work/">
+<link rel="alternate" hreflang="x-default" href="https://beewoy.sk/referencie/">
+<script>
+(() => {
+  const KEY = "beewoy_lang";
+  const SESSION_KEY = "beewoy_lang_checked";
+  const LANGS = ["sk", "pl", "en"];
+  const current = (document.documentElement.lang || "sk").slice(0, 2);
+
+  const read = (store, key) => { try { return store.getItem(key); } catch { return null; } };
+  const write = (store, key, value) => { try { store.setItem(key, value); } catch {} };
+
+  const alternate = (lang) =>
+    document.querySelector(`link[rel="alternate"][hreflang="${lang}"]`)?.getAttribute("href");
+
+  // Slovak and Czech visitors stay on Slovak even when their browser UI is English.
+  const detect = () => {
+    const codes = (navigator.languages?.length ? navigator.languages : [navigator.language || ""])
+      .map((l) => String(l).toLowerCase().slice(0, 2));
+    if (codes.some((c) => c === "sk" || c === "cs")) return "sk";
+    if (codes.includes("pl")) return "pl";
+    return "en";
+  };
+
+  const isBot = /bot|crawl|spider|slurp|lighthouse|headless|preview|facebookexternalhit/i.test(navigator.userAgent);
+  const internal = (() => {
+    try { return !!document.referrer && new URL(document.referrer).origin === location.origin; } catch { return false; }
+  })();
+  const checked = read(sessionStorage, SESSION_KEY) === "1";
+  write(sessionStorage, SESSION_KEY, "1");
+
+  if (!isBot && !internal && !checked) {
+    const saved = read(localStorage, KEY);
+    const wanted = LANGS.includes(saved) ? saved : detect();
+    const url = wanted !== current && alternate(wanted);
+    if (url) {
+      location.replace(url + location.search + location.hash);
+      return;
+    }
+  }
+
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest("a[data-lang]");
+    if (link) write(localStorage, KEY, link.dataset.lang);
+    document.querySelectorAll("details[data-lang-switch][open]").forEach((d) => {
+      if (!d.contains(event.target)) d.open = false;
+    });
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    document.querySelectorAll("details[data-lang-switch][open]").forEach((d) => {
+      d.open = false;
+      d.querySelector("summary")?.focus();
+    });
+  });
+})();
+</script>
+<!-- /i18n:head -->
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<!-- i18n:og -->
+<meta property="og:locale:alternate" content="sk_SK">
+<meta property="og:locale:alternate" content="pl_PL">
+<!-- /i18n:og -->
+<meta property="og:site_name" content="Beewoy">
+<meta property="og:url" content="https://beewoy.sk/en/work/">
+<meta property="og:title" content="Our work — websites and digital products | Beewoy">
+<meta property="og:description" content="Selected Beewoy projects — websites and digital products for CeKo Interier, Športový klub Vajnory, BR Interior &amp; Exterior and other clients.">
+<meta property="og:image" content="https://beewoy.sk/og-main.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Beewoy projects">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Our work — websites and digital products | Beewoy">
+<meta name="twitter:description" content="Selected Beewoy projects — websites and digital products.">
+<meta name="twitter:image" content="https://beewoy.sk/og-main.png">
+
+<link rel="stylesheet" href="/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://beewoy.sk/en/work/#webpage",
+      "url": "https://beewoy.sk/en/work/",
+      "name": "Our work — websites and digital products | Beewoy",
+      "description": "Selected Beewoy projects — websites and digital products built around a clear business goal.",
+      "isPartOf": { "@id": "https://beewoy.sk/#website" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://beewoy.sk/en/work/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://beewoy.sk/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Our work", "item": "https://beewoy.sk/en/work/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#obsah">Skip to content</a>
+
+<header class="header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="logo" href="/en/" aria-label="Beewoy — home"><img src="/logo.svg" alt="" width="22" height="24">beewoy</a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="/en/web-design/">Web design</a>
+      <a href="/en/pricing/">Pricing</a>
+      <a href="/en/work/" aria-current="page">Work</a>
+      <a href="/en/contact/">Contact</a>
+    </nav>
+    <!-- i18n:switch -->
+    <details class="lang" data-lang-switch>
+      <summary class="lang-btn" aria-label="Language: English">EN<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <ul class="lang-menu">
+        <li><a href="/referencie/" hreflang="sk" lang="sk" data-lang="sk"><span>SK</span>Slovenčina</a></li>
+        <li><a href="/pl/realizacje/" hreflang="pl" lang="pl" data-lang="pl"><span>PL</span>Polski</a></li>
+        <li><a href="/en/work/" hreflang="en" lang="en" data-lang="en" aria-current="true"><span>EN</span>English</a></li>
+      </ul>
+    </details>
+    <!-- /i18n:switch -->
+    <a class="btn btn-primary btn-sm header-cta" href="/en/contact/#kontakt-form" data-analytics-cta="header_start">Get a website</a>
+    <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="/en/web-design/">Web design</a>
+  <a href="/en/pricing/">Pricing</a>
+  <a href="/en/work/" aria-current="page">Work</a>
+  <a href="/en/contact/">Contact</a>
+  <a class="btn btn-primary btn-lg" href="/en/contact/#kontakt-form">Get a website</a>
+  <!-- i18n:mswitch -->
+  <div class="mobile-lang" role="group" aria-label="Language"><a href="/referencie/" hreflang="sk" lang="sk" data-lang="sk">SK</a><a href="/pl/realizacje/" hreflang="pl" lang="pl" data-lang="pl">PL</a><a href="/en/work/" hreflang="en" lang="en" data-lang="en" aria-current="true">EN</a></div>
+  <!-- /i18n:mswitch -->
+  <p class="mobile-menu-foot">Or email us at <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a></p>
+</nav>
+
+<main id="obsah">
+  <section class="page-hero" aria-labelledby="refs-title">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol><li><a href="/en/">Home</a></li><li aria-current="page">Our work</li></ol>
+      </nav>
+      <h1 class="h1" id="refs-title">Websites we've launched.</h1>
+      <p class="lead">Real projects for real businesses. Open any of them and try it yourself.</p>
+    </div>
+  </section>
+
+  <section class="section section--flush-top" aria-label="Projects">
+    <div class="wrap cases">
+      <article class="case">
+        <a class="case-media work-media" href="https://www.ceko.sk/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+          <div class="browser"><div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-url">ceko.sk</span></div>
+          <img src="/assets/projects/ceko-hero.jpg" alt="CeKo Interier homepage — custom kitchens and furniture" width="1600" height="1000" decoding="async"></div>
+        </a>
+        <div class="case-copy">
+          <span class="case-type">Custom interiors</span>
+          <h2 class="h2">CeKo Interier</h2>
+          <p>A confusing presentation became a clear website for a joinery workshop. Services, projects and the path to a free consultation, all in one place.</p>
+          <div class="case-links"><a class="link-arrow" href="https://www.ceko.sk/" target="_blank" rel="noopener noreferrer">ceko.sk <span class="arrow" aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <a class="case-media work-media" href="https://skvajnory.sk/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+          <div class="browser"><div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-url">skvajnory.sk</span></div>
+          <img src="/assets/projects/skvajnory-hero.jpg" alt="Športový klub Vajnory homepage — ball hockey club in Bratislava" width="1600" height="1000" loading="lazy" decoding="async"></div>
+        </a>
+        <div class="case-copy">
+          <span class="case-type">Sports club</span>
+          <h2 class="h2">Športový klub Vajnory</h2>
+          <p>We brought scattered information about training and membership together into a clear website for parents and adult players.</p>
+          <div class="case-links"><a class="link-arrow" href="https://skvajnory.sk/" target="_blank" rel="noopener noreferrer">skvajnory.sk <span class="arrow" aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <a class="case-media work-media" href="https://br-interiorexterior.com/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+          <div class="browser"><div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-url">br-interiorexterior.com</span></div>
+          <img src="/assets/projects/br-interior-hero.jpg" alt="BR Interior &amp; Exterior homepage — interior design" width="1600" height="1000" loading="lazy" decoding="async"></div>
+        </a>
+        <div class="case-copy">
+          <span class="case-type">Interior design · EN, FR, PL</span>
+          <h2 class="h2">BR Interior &amp; Exterior</h2>
+          <p>A multilingual website for a European design studio. Services, projects and the process from first concept to installation.</p>
+          <div class="case-links"><a class="link-arrow" href="https://br-interiorexterior.com/" target="_blank" rel="noopener noreferrer">br-interiorexterior.com <span class="arrow" aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <a class="case-media work-media" href="https://babysworld.beewoy.sk/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+          <div class="browser"><div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-url">babysworld.beewoy.sk</span></div>
+          <img src="/assets/projects/babys-world-hero.webp" alt="Baby’s world homepage — private nursery and kindergarten in Stupava" width="1024" height="653" loading="lazy" decoding="async"></div>
+        </a>
+        <div class="case-copy">
+          <span class="case-type">Private nursery and kindergarten</span>
+          <h2 class="h2">Baby’s world</h2>
+          <p>Daily routine, fees and the path to a personal visit on a clear website for a nursery and kindergarten in Stupava.</p>
+          <div class="case-links"><a class="link-arrow" href="https://babysworld.beewoy.sk/" target="_blank" rel="noopener noreferrer">babysworld.beewoy.sk <span class="arrow" aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <a class="case-media work-media" href="https://www.vpssnina.sk/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+          <div class="browser"><div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-url">vpssnina.sk</span></div>
+          <img src="/assets/projects/vps-snina-hero.png" alt="Verejnoprospešné služby Snina homepage" width="1600" height="1000" loading="lazy" decoding="async"></div>
+        </a>
+        <div class="case-copy">
+          <span class="case-type">Municipal company</span>
+          <h2 class="h2">Verejnoprospešné služby Snina</h2>
+          <p>Complex municipal information on a clear website. Services, documents and contacts for the residents of Snina.</p>
+          <div class="case-links"><a class="link-arrow" href="https://www.vpssnina.sk/" target="_blank" rel="noopener noreferrer">vpssnina.sk <span class="arrow" aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <a class="case-media work-media" href="https://timio.sk/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+          <div class="browser"><div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-url">timio.sk</span></div>
+          <img src="/assets/projects/timio-hero.jpg" alt="Timio homepage — app for organising training sessions, matches and events" width="1600" height="1000" loading="lazy" decoding="async"></div>
+        </a>
+        <div class="case-copy">
+          <span class="case-badge">Our own product</span>
+          <h2 class="h2">Timio</h2>
+          <p>A web and Android app for organising training sessions, matches and events. Capacity limits, waitlists and messaging in one tool.</p>
+          <div class="case-links">
+            <a class="link-arrow" href="https://timio.sk/" target="_blank" rel="noopener noreferrer">timio.sk <span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="link-arrow" href="https://app.timio.sk/" target="_blank" rel="noopener noreferrer">app.timio.sk <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section--sm" aria-labelledby="final-title">
+    <div class="wrap">
+      <div class="cta-panel">
+        <h2 class="h2" id="final-title">Want a website like these?</h2>
+        <p>From €19 a month. No setup fee, no commitment.</p>
+        <div class="actions">
+          <a class="btn btn-light btn-lg" href="/en/contact/#kontakt-form" data-analytics-cta="referencie_project">Get a website <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost-light btn-lg" href="/en/pricing/">See pricing</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="/en/"><img src="/logo.svg" alt="" width="22" height="24">beewoy</a>
+        <p>Modern websites for small businesses on one simple monthly plan.</p>
+        <a class="footer-mail" href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a>
+      </div>
+      <nav class="footer-col" aria-labelledby="f-offer"><h2 id="f-offer">Services</h2><ul>
+        <li><a href="/en/web-design/">Web design</a></li>
+        <li><a href="/en/pricing/">Pricing</a></li>
+        <li><a href="/en/calculator/">Price calculator</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="f-beewoy"><h2 id="f-beewoy">Beewoy</h2><ul>
+        <li><a href="/en/work/">Work</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="f-legal"><h2 id="f-legal">Legal</h2><ul>
+        <li><a href="/en/privacy/">Privacy policy</a></li>
+        <li><a href="/en/cookies/">Cookies</a></li>
+        <li><button type="button" data-cookie-settings>Cookie settings</button></li>
+      </ul></nav>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Beewoy</span><span>Slovakia</span></div>
+  </div>
+</footer>
+
+<script src="/cookies.js" defer></script>
+<script src="/analytics.js" defer></script>
+<script src="/main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy policy | Beewoy</title>
+<meta name="description" content="How Beewoy processes personal data under the GDPR. Your rights, purposes of processing and how to contact the controller.">
+<meta name="robots" content="noindex, follow">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://beewoy.sk/en/privacy/">
+<!-- i18n:head -->
+<script>
+(() => {
+  const KEY = "beewoy_lang";
+  const SESSION_KEY = "beewoy_lang_checked";
+  const LANGS = ["sk", "pl", "en"];
+  const current = (document.documentElement.lang || "sk").slice(0, 2);
+
+  const read = (store, key) => { try { return store.getItem(key); } catch { return null; } };
+  const write = (store, key, value) => { try { store.setItem(key, value); } catch {} };
+
+  const alternate = (lang) =>
+    document.querySelector(`link[rel="alternate"][hreflang="${lang}"]`)?.getAttribute("href");
+
+  // Slovak and Czech visitors stay on Slovak even when their browser UI is English.
+  const detect = () => {
+    const codes = (navigator.languages?.length ? navigator.languages : [navigator.language || ""])
+      .map((l) => String(l).toLowerCase().slice(0, 2));
+    if (codes.some((c) => c === "sk" || c === "cs")) return "sk";
+    if (codes.includes("pl")) return "pl";
+    return "en";
+  };
+
+  const isBot = /bot|crawl|spider|slurp|lighthouse|headless|preview|facebookexternalhit/i.test(navigator.userAgent);
+  const internal = (() => {
+    try { return !!document.referrer && new URL(document.referrer).origin === location.origin; } catch { return false; }
+  })();
+  const checked = read(sessionStorage, SESSION_KEY) === "1";
+  write(sessionStorage, SESSION_KEY, "1");
+
+  if (!isBot && !internal && !checked) {
+    const saved = read(localStorage, KEY);
+    const wanted = LANGS.includes(saved) ? saved : detect();
+    const url = wanted !== current && alternate(wanted);
+    if (url) {
+      location.replace(url + location.search + location.hash);
+      return;
+    }
+  }
+
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest("a[data-lang]");
+    if (link) write(localStorage, KEY, link.dataset.lang);
+    document.querySelectorAll("details[data-lang-switch][open]").forEach((d) => {
+      if (!d.contains(event.target)) d.open = false;
+    });
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    document.querySelectorAll("details[data-lang-switch][open]").forEach((d) => {
+      d.open = false;
+      d.querySelector("summary")?.focus();
+    });
+  });
+})();
+</script>
+<!-- /i18n:head -->
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_GB">
+<meta property="og:site_name" content="Beewoy">
+<meta property="og:url" content="https://beewoy.sk/en/privacy/">
+<meta property="og:title" content="Privacy policy | Beewoy">
+<meta property="og:description" content="How Beewoy processes personal data under the GDPR.">
+<meta property="og:image" content="https://beewoy.sk/og-main.png">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="stylesheet" href="/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://beewoy.sk/en/privacy/#webpage",
+      "url": "https://beewoy.sk/en/privacy/",
+      "name": "Privacy policy | Beewoy",
+      "isPartOf": { "@id": "https://beewoy.sk/#website" },
+      "inLanguage": "en"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://beewoy.sk/en/privacy/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://beewoy.sk/en/" },
+        { "@type": "ListItem", "position": 2, "name": "Privacy policy", "item": "https://beewoy.sk/en/privacy/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#obsah">Skip to content</a>
+
+<header class="header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="logo" href="/en/" aria-label="Beewoy — home"><img src="/logo.svg" alt="" width="22" height="24">beewoy</a>
+    <nav class="nav" aria-label="Main navigation">
+      <a href="/en/web-design/">Web design</a>
+      <a href="/en/pricing/">Pricing</a>
+      <a href="/en/work/">Work</a>
+      <a href="/en/contact/">Contact</a>
+    </nav>
+    <!-- i18n:switch -->
+    <details class="lang" data-lang-switch>
+      <summary class="lang-btn" aria-label="Language: English">EN<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <ul class="lang-menu">
+        <li><a href="/ochrana-udajov/" hreflang="sk" lang="sk" data-lang="sk"><span>SK</span>Slovenčina</a></li>
+        <li><a href="/pl/polityka-prywatnosci/" hreflang="pl" lang="pl" data-lang="pl"><span>PL</span>Polski</a></li>
+        <li><a href="/en/privacy/" hreflang="en" lang="en" data-lang="en" aria-current="true"><span>EN</span>English</a></li>
+      </ul>
+    </details>
+    <!-- /i18n:switch -->
+    <a class="btn btn-primary btn-sm header-cta" href="/en/contact/#kontakt-form" data-analytics-cta="header_start">Get a website</a>
+    <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Open menu"><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile navigation">
+  <a href="/en/web-design/">Web design</a>
+  <a href="/en/pricing/">Pricing</a>
+  <a href="/en/work/">Work</a>
+  <a href="/en/contact/">Contact</a>
+  <a class="btn btn-primary btn-lg" href="/en/contact/#kontakt-form">Get a website</a>
+  <!-- i18n:mswitch -->
+  <div class="mobile-lang" role="group" aria-label="Language"><a href="/ochrana-udajov/" hreflang="sk" lang="sk" data-lang="sk">SK</a><a href="/pl/polityka-prywatnosci/" hreflang="pl" lang="pl" data-lang="pl">PL</a><a href="/en/privacy/" hreflang="en" lang="en" data-lang="en" aria-current="true">EN</a></div>
+  <!-- /i18n:mswitch -->
+  <p class="mobile-menu-foot">Or email us at <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a></p>
+</nav>
+
+<main id="obsah">
+  <section class="page-hero" aria-labelledby="legal-title">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <ol><li><a href="/en/">Home</a></li><li aria-current="page">Privacy policy</li></ol>
+      </nav>
+      <h1 class="h1" id="legal-title">Privacy policy</h1>
+      <p class="legal-updated">Last updated: 31 July 2026. This document describes how Beewoy processes the personal data of visitors to <a href="https://beewoy.sk/">beewoy.sk</a> in accordance with the GDPR (EU) 2016/679 and Slovak law.</p>
+      <p class="legal-updated">This is a translation. The <a href="/ochrana-udajov/" hreflang="sk" lang="sk">Slovak version</a> is binding.</p>
+    </div>
+  </section>
+
+  <section class="section section--flush-top">
+    <div class="wrap legal-layout">
+      <nav class="legal-toc" aria-label="Contents">
+        <p>Contents</p>
+        <ol>
+          <li><a href="#prevadzkovatel">1. Controller</a></li>
+          <li><a href="#ake-udaje-spracuvame">2. What data we process</a></li>
+          <li><a href="#ucely-a-pravne-zaklady">3. Purposes and legal bases</a></li>
+          <li><a href="#prijemcovia-a-tretie-strany">4. Recipients and third parties</a></li>
+          <li><a href="#doba-uchovavania">5. Retention period</a></li>
+          <li><a href="#vase-prava">6. Your rights</a></li>
+          <li><a href="#bezpecnost">7. Security</a></li>
+          <li><a href="#deti">8. Children</a></li>
+          <li><a href="#zmeny">9. Changes</a></li>
+        </ol>
+      </nav>
+      <div class="prose">
+      <h2 id="prevadzkovatel">1. Controller</h2>
+      <p>The controller of personal data is:</p>
+      <ul>
+        <li><strong>Beewoy</strong></li>
+        <li>Email: <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a></li>
+        <li>Country: Slovakia</li>
+      </ul>
+      <p>For any data protection questions, contact us at <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a>.</p>
+
+      <h2 id="ake-udaje-spracuvame">2. What data we process</h2>
+      <h3>2.1 Data you give us</h3>
+      <p>If you email us (e.g. at <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a>) or fill in the contact form on the website, we process the data you provide — typically your name, email address, project type, message content and any attachments. We use this data solely to handle your enquiry and related communication.</p>
+      <h3>2.2 Technical data when you visit the website</h3>
+      <p>During a normal visit, servers and your browser may process technical data needed to deliver the page (e.g. IP address, browser type, time of request). We process this data to the extent necessary to operate and secure the website.</p>
+      <h3>2.3 Cookies and similar technologies</h3>
+      <p>Details about cookies, categories and consent options are in the <a href="/en/cookies/">Cookies</a> document.</p>
+
+      <h2 id="ucely-a-pravne-zaklady">3. Purposes and legal bases</h2>
+      <ul>
+        <li><strong>Communication and pre-contractual relations</strong> — handling enquiries and preparing a collaboration (Art. 6(1)(b) GDPR, or legitimate interest under point (f)).</li>
+        <li><strong>Website operation and security</strong> — keeping the website working (Art. 6(1)(f) GDPR — legitimate interest).</li>
+        <li><strong>Cookies and optional features</strong> — based on your consent (Art. 6(1)(a) GDPR) for non-essential cookies / features.</li>
+        <li><strong>Legal obligations</strong> — where required by law (Art. 6(1)(c) GDPR).</li>
+      </ul>
+
+      <h2 id="prijemcovia-a-tretie-strany">4. Recipients and third parties</h2>
+      <p>We do not sell data. It may be shared with:</p>
+      <ul>
+        <li>the website's <strong>hosting provider</strong> (infrastructure operation),</li>
+        <li><strong>FormSubmit</strong> — technical processing and delivery of data submitted through the contact form to our email,</li>
+        <li><strong>Google / Firebase Analytics</strong> (Google Ireland / Google LLC) — measuring traffic and interactions on the website only after you consent to analytics cookies; technical identifiers and page visit data may be transferred,</li>
+        <li><strong>Google Fonts</strong> (Google Ireland / Google LLC) — loading typography needed to display the website; your IP address may be transferred when fonts load,</li>
+        <li>other parties where required by law or necessary to protect our rights.</li>
+      </ul>
+      <p>For transfers outside the EU / EEA, we ensure appropriate safeguards under the GDPR (e.g. standard contractual clauses) where relevant.</p>
+
+      <h2 id="doba-uchovavania">5. Retention period</h2>
+      <ul>
+        <li>Email communication and contact form enquiries: for as long as needed to handle the enquiry and reasonably protect our rights (usually up to 3 years from the last contact, unless a contract or another retention obligation arises).</li>
+        <li>Cookie consent record: for the validity of the consent / until withdrawn, at most 12 months, after which we ask again.</li>
+        <li>Technical logs: according to hosting settings, usually short-term.</li>
+      </ul>
+
+      <h2 id="vase-prava">6. Your rights</h2>
+      <p>You have the right of access, rectification, erasure, restriction of processing, data portability (where applicable), to object to processing based on legitimate interest, and to withdraw consent (where processing is based on consent). Withdrawing consent does not affect the lawfulness of processing before withdrawal.</p>
+      <p>Send requests to exercise your rights to <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a>. You also have the right to lodge a complaint with the Office for Personal Data Protection of the Slovak Republic (<a href="https://dataprotection.gov.sk" rel="noopener noreferrer" target="_blank">dataprotection.gov.sk</a>).</p>
+
+      <h2 id="bezpecnost">7. Security</h2>
+      <p>We use appropriate technical and organisational measures to protect data against unauthorised access, loss or misuse. However, absolute security of internet communication cannot be guaranteed.</p>
+
+      <h2 id="deti">8. Children</h2>
+      <p>The website is not intended for children under 16, and we do not knowingly collect their data.</p>
+
+      <h2 id="zmeny">9. Changes</h2>
+      <p>We may update this document. The current version is always on this page. For significant changes, we update the date of the last update.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="/en/"><img src="/logo.svg" alt="" width="22" height="24">beewoy</a>
+        <p>Modern websites for small businesses on one simple monthly plan.</p>
+        <a class="footer-mail" href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a>
+      </div>
+      <nav class="footer-col" aria-labelledby="f-offer"><h2 id="f-offer">Services</h2><ul>
+        <li><a href="/en/web-design/">Web design</a></li>
+        <li><a href="/en/pricing/">Pricing</a></li>
+        <li><a href="/en/calculator/">Price calculator</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="f-beewoy"><h2 id="f-beewoy">Beewoy</h2><ul>
+        <li><a href="/en/work/">Work</a></li>
+        <li><a href="/en/contact/">Contact</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="f-legal"><h2 id="f-legal">Legal</h2><ul>
+        <li><a href="/en/privacy/">Privacy policy</a></li>
+        <li><a href="/en/cookies/">Cookies</a></li>
+        <li><button type="button" data-cookie-settings>Cookie settings</button></li>
+      </ul></nav>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Beewoy</span><span>Slovakia</span></div>
+  </div>
+</footer>
+
+<script src="/cookies.js" defer></script>
+<script src="/analytics.js" defer></script>
+<script src="/main.js" defer></script>
+</body>
+</html>

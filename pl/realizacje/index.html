@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Realizacje — strony internetowe i produkty cyfrowe | Beewoy</title>
+<meta name="description" content="Wybrane realizacje Beewoy — strony internetowe i produkty cyfrowe dla CeKo Interier, Športový klub Vajnory, BR Interior &amp; Exterior i innych klientów.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://beewoy.sk/pl/realizacje/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="sk" href="https://beewoy.sk/referencie/">
+<link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/realizacje/">
+<link rel="alternate" hreflang="en" href="https://beewoy.sk/en/work/">
+<link rel="alternate" hreflang="x-default" href="https://beewoy.sk/referencie/">
+<script>
+(() => {
+  const KEY = "beewoy_lang";
+  const SESSION_KEY = "beewoy_lang_checked";
+  const LANGS = ["sk", "pl", "en"];
+  const current = (document.documentElement.lang || "sk").slice(0, 2);
+
+  const read = (store, key) => { try { return store.getItem(key); } catch { return null; } };
+  const write = (store, key, value) => { try { store.setItem(key, value); } catch {} };
+
+  const alternate = (lang) =>
+    document.querySelector(`link[rel="alternate"][hreflang="${lang}"]`)?.getAttribute("href");
+
+  // Slovak and Czech visitors stay on Slovak even when their browser UI is English.
+  const detect = () => {
+    const codes = (navigator.languages?.length ? navigator.languages : [navigator.language || ""])
+      .map((l) => String(l).toLowerCase().slice(0, 2));
+    if (codes.some((c) => c === "sk" || c === "cs")) return "sk";
+    if (codes.includes("pl")) return "pl";
+    return "en";
+  };
+
+  const isBot = /bot|crawl|spider|slurp|lighthouse|headless|preview|facebookexternalhit/i.test(navigator.userAgent);
+  const internal = (() => {
+    try { return !!document.referrer && new URL(document.referrer).origin === location.origin; } catch { return false; }
+  })();
+  const checked = read(sessionStorage, SESSION_KEY) === "1";
+  write(sessionStorage, SESSION_KEY, "1");
+
+  if (!isBot && !internal && !checked) {
+    const saved = read(localStorage, KEY);
+    const wanted = LANGS.includes(saved) ? saved : detect();
+    const url = wanted !== current && alternate(wanted);
+    if (url) {
+      location.replace(url + location.search + location.hash);
+      return;
+    }
+  }
+
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest("a[data-lang]");
+    if (link) write(localStorage, KEY, link.dataset.lang);
+    document.querySelectorAll("details[data-lang-switch][open]").forEach((d) => {
+      if (!d.contains(event.target)) d.open = false;
+    });
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    document.querySelectorAll("details[data-lang-switch][open]").forEach((d) => {
+      d.open = false;
+      d.querySelector("summary")?.focus();
+    });
+  });
+})();
+</script>
+<!-- /i18n:head -->
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<!-- i18n:og -->
+<meta property="og:locale:alternate" content="sk_SK">
+<meta property="og:locale:alternate" content="en_GB">
+<!-- /i18n:og -->
+<meta property="og:site_name" content="Beewoy">
+<meta property="og:url" content="https://beewoy.sk/pl/realizacje/">
+<meta property="og:title" content="Realizacje — strony internetowe i produkty cyfrowe | Beewoy">
+<meta property="og:description" content="Wybrane realizacje Beewoy — strony internetowe i produkty cyfrowe dla CeKo Interier, Športový klub Vajnory, BR Interior &amp; Exterior i innych klientów.">
+<meta property="og:image" content="https://beewoy.sk/og-main.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Realizacje Beewoy">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Realizacje — strony internetowe i produkty cyfrowe | Beewoy">
+<meta name="twitter:description" content="Wybrane realizacje Beewoy — strony internetowe i produkty cyfrowe.">
+<meta name="twitter:image" content="https://beewoy.sk/og-main.png">
+
+<link rel="stylesheet" href="/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      "@id": "https://beewoy.sk/pl/realizacje/#webpage",
+      "url": "https://beewoy.sk/pl/realizacje/",
+      "name": "Realizacje — strony internetowe i produkty cyfrowe | Beewoy",
+      "description": "Wybrane realizacje Beewoy — strony internetowe i produkty cyfrowe tworzone z myślą o konkretnym celu biznesowym.",
+      "isPartOf": { "@id": "https://beewoy.sk/#website" },
+      "inLanguage": "pl-PL"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://beewoy.sk/pl/realizacje/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://beewoy.sk/pl/" },
+        { "@type": "ListItem", "position": 2, "name": "Realizacje", "item": "https://beewoy.sk/pl/realizacje/" }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#obsah">Przejdź do treści</a>
+
+<header class="header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="logo" href="/pl/" aria-label="Beewoy — strona główna"><img src="/logo.svg" alt="" width="22" height="24">beewoy</a>
+    <nav class="nav" aria-label="Nawigacja główna">
+      <a href="/pl/tworzenie-stron/">Tworzenie stron</a>
+      <a href="/pl/cennik/">Cennik</a>
+      <a href="/pl/realizacje/" aria-current="page">Realizacje</a>
+      <a href="/pl/kontakt/">Kontakt</a>
+    </nav>
+    <!-- i18n:switch -->
+    <details class="lang" data-lang-switch>
+      <summary class="lang-btn" aria-label="Język: Polski">PL<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <ul class="lang-menu">
+        <li><a href="/referencie/" hreflang="sk" lang="sk" data-lang="sk"><span>SK</span>Slovenčina</a></li>
+        <li><a href="/pl/realizacje/" hreflang="pl" lang="pl" data-lang="pl" aria-current="true"><span>PL</span>Polski</a></li>
+        <li><a href="/en/work/" hreflang="en" lang="en" data-lang="en"><span>EN</span>English</a></li>
+      </ul>
+    </details>
+    <!-- /i18n:switch -->
+    <a class="btn btn-primary btn-sm header-cta" href="/pl/kontakt/#kontakt-form" data-analytics-cta="header_start">Chcę stronę</a>
+    <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Otwórz menu"><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Nawigacja mobilna">
+  <a href="/pl/tworzenie-stron/">Tworzenie stron</a>
+  <a href="/pl/cennik/">Cennik</a>
+  <a href="/pl/realizacje/" aria-current="page">Realizacje</a>
+  <a href="/pl/kontakt/">Kontakt</a>
+  <a class="btn btn-primary btn-lg" href="/pl/kontakt/#kontakt-form">Chcę stronę</a>
+  <!-- i18n:mswitch -->
+  <div class="mobile-lang" role="group" aria-label="Język"><a href="/referencie/" hreflang="sk" lang="sk" data-lang="sk">SK</a><a href="/pl/realizacje/" hreflang="pl" lang="pl" data-lang="pl" aria-current="true">PL</a><a href="/en/work/" hreflang="en" lang="en" data-lang="en">EN</a></div>
+  <!-- /i18n:mswitch -->
+  <p class="mobile-menu-foot">Lub napisz na <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a></p>
+</nav>
+
+<main id="obsah">
+  <section class="page-hero" aria-labelledby="refs-title">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Okruszki">
+        <ol><li><a href="/pl/">Strona główna</a></li><li aria-current="page">Realizacje</li></ol>
+      </nav>
+      <h1 class="h1" id="refs-title">Strony, które uruchomiliśmy.</h1>
+      <p class="lead">Prawdziwe projekty dla prawdziwych firm. Każdy możesz otworzyć i sprawdzić.</p>
+    </div>
+  </section>
+
+  <section class="section section--flush-top" aria-label="Projekty">
+    <div class="wrap cases">
+      <article class="case">
+        <a class="case-media work-media" href="https://www.ceko.sk/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+          <div class="browser"><div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-url">ceko.sk</span></div>
+          <img src="/assets/projects/ceko-hero.jpg" alt="Strona główna CeKo Interier — kuchnie i meble na wymiar" width="1600" height="1000" decoding="async"></div>
+        </a>
+        <div class="case-copy">
+          <span class="case-type">Wnętrza na wymiar</span>
+          <h2 class="h2">CeKo Interier</h2>
+          <p>Z nieczytelnej prezentacji powstała przejrzysta strona pracowni stolarskiej. Usługi, realizacje i droga do bezpłatnej konsultacji w jednym miejscu.</p>
+          <div class="case-links"><a class="link-arrow" href="https://www.ceko.sk/" target="_blank" rel="noopener noreferrer">ceko.sk <span class="arrow" aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <a class="case-media work-media" href="https://skvajnory.sk/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+          <div class="browser"><div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-url">skvajnory.sk</span></div>
+          <img src="/assets/projects/skvajnory-hero.jpg" alt="Strona główna klubu Športový klub Vajnory — hokej na ulicy, Bratysława" width="1600" height="1000" loading="lazy" decoding="async"></div>
+        </a>
+        <div class="case-copy">
+          <span class="case-type">Klub sportowy</span>
+          <h2 class="h2">Športový klub Vajnory</h2>
+          <p>Rozproszone informacje o treningach i członkostwie połączyliśmy w czytelną stronę dla rodziców i dorosłych zawodników.</p>
+          <div class="case-links"><a class="link-arrow" href="https://skvajnory.sk/" target="_blank" rel="noopener noreferrer">skvajnory.sk <span class="arrow" aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <a class="case-media work-media" href="https://br-interiorexterior.com/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+          <div class="browser"><div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-url">br-interiorexterior.com</span></div>
+          <img src="/assets/projects/br-interior-hero.jpg" alt="Strona główna BR Interior &amp; Exterior — projektowanie wnętrz" width="1600" height="1000" loading="lazy" decoding="async"></div>
+        </a>
+        <div class="case-copy">
+          <span class="case-type">Projektowanie wnętrz · EN, FR, PL</span>
+          <h2 class="h2">BR Interior &amp; Exterior</h2>
+          <p>Wielojęzyczna strona europejskiego studia projektowego. Usługi, projekty i proces od pierwszej koncepcji po montaż.</p>
+          <div class="case-links"><a class="link-arrow" href="https://br-interiorexterior.com/" target="_blank" rel="noopener noreferrer">br-interiorexterior.com <span class="arrow" aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <a class="case-media work-media" href="https://babysworld.beewoy.sk/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+          <div class="browser"><div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-url">babysworld.beewoy.sk</span></div>
+          <img src="/assets/projects/babys-world-hero.webp" alt="Strona główna Baby’s world — prywatny żłobek i przedszkole w Stupavie" width="1024" height="653" loading="lazy" decoding="async"></div>
+        </a>
+        <div class="case-copy">
+          <span class="case-type">Prywatny żłobek i przedszkole</span>
+          <h2 class="h2">Baby’s world</h2>
+          <p>Plan dnia, cennik i droga do osobistej wizyty na przejrzystej stronie żłobka i przedszkola w Stupavie.</p>
+          <div class="case-links"><a class="link-arrow" href="https://babysworld.beewoy.sk/" target="_blank" rel="noopener noreferrer">babysworld.beewoy.sk <span class="arrow" aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <a class="case-media work-media" href="https://www.vpssnina.sk/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+          <div class="browser"><div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-url">vpssnina.sk</span></div>
+          <img src="/assets/projects/vps-snina-hero.png" alt="Strona główna Verejnoprospešné služby Snina" width="1600" height="1000" loading="lazy" decoding="async"></div>
+        </a>
+        <div class="case-copy">
+          <span class="case-type">Spółka miejska</span>
+          <h2 class="h2">Verejnoprospešné služby Snina</h2>
+          <p>Złożone informacje miejskie na przejrzystej stronie. Usługi, dokumenty i kontakty dla mieszkańców Sniny.</p>
+          <div class="case-links"><a class="link-arrow" href="https://www.vpssnina.sk/" target="_blank" rel="noopener noreferrer">vpssnina.sk <span class="arrow" aria-hidden="true">↗</span></a></div>
+        </div>
+      </article>
+
+      <article class="case">
+        <a class="case-media work-media" href="https://timio.sk/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+          <div class="browser"><div class="browser-bar"><span class="browser-dots"><i></i><i></i><i></i></span><span class="browser-url">timio.sk</span></div>
+          <img src="/assets/projects/timio-hero.jpg" alt="Strona główna Timio — aplikacja do organizacji treningów, meczów i wydarzeń" width="1600" height="1000" loading="lazy" decoding="async"></div>
+        </a>
+        <div class="case-copy">
+          <span class="case-badge">Własny produkt</span>
+          <h2 class="h2">Timio</h2>
+          <p>Aplikacja webowa i na Androida do organizacji treningów, meczów i wydarzeń. Limity miejsc, lista oczekujących i komunikacja w jednym narzędziu.</p>
+          <div class="case-links">
+            <a class="link-arrow" href="https://timio.sk/" target="_blank" rel="noopener noreferrer">timio.sk <span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="link-arrow" href="https://app.timio.sk/" target="_blank" rel="noopener noreferrer">app.timio.sk <span class="arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section section--sm" aria-labelledby="final-title">
+    <div class="wrap">
+      <div class="cta-panel">
+        <h2 class="h2" id="final-title">Chcesz taką stronę?</h2>
+        <p>Od 19 € miesięcznie. Bez opłaty wstępnej i bez zobowiązań.</p>
+        <div class="actions">
+          <a class="btn btn-light btn-lg" href="/pl/kontakt/#kontakt-form" data-analytics-cta="referencie_project">Chcę stronę <span class="arrow" aria-hidden="true">→</span></a>
+          <a class="btn btn-ghost-light btn-lg" href="/pl/cennik/">Zobacz cennik</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="/pl/"><img src="/logo.svg" alt="" width="22" height="24">beewoy</a>
+        <p>Nowoczesne strony internetowe dla firm w miesięcznym abonamencie.</p>
+        <a class="footer-mail" href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a>
+      </div>
+      <nav class="footer-col" aria-labelledby="f-offer"><h2 id="f-offer">Oferta</h2><ul>
+        <li><a href="/pl/tworzenie-stron/">Tworzenie stron</a></li>
+        <li><a href="/pl/cennik/">Cennik</a></li>
+        <li><a href="/pl/kalkulator/">Kalkulator ceny</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="f-beewoy"><h2 id="f-beewoy">Beewoy</h2><ul>
+        <li><a href="/pl/realizacje/">Realizacje</a></li>
+        <li><a href="/pl/kontakt/">Kontakt</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="f-legal"><h2 id="f-legal">Informacje prawne</h2><ul>
+        <li><a href="/pl/polityka-prywatnosci/">Polityka prywatności</a></li>
+        <li><a href="/pl/cookies/">Cookies</a></li>
+        <li><button type="button" data-cookie-settings>Ustawienia cookies</button></li>
+      </ul></nav>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Beewoy</span><span>Słowacja</span></div>
+  </div>
+</footer>
+
+<script src="/cookies.js" defer></script>
+<script src="/analytics.js" defer></script>
+<script src="/main.js" defer></script>
+</body>
+</html>

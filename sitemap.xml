@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://beewoy.sk/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://beewoy.sk/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beewoy.sk/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beewoy.sk/"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://beewoy.sk/tvorba-webov/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://beewoy.sk/tvorba-webov/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/tworzenie-stron/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beewoy.sk/en/web-design/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beewoy.sk/tvorba-webov/"/>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -147,23 +155,147 @@
   </url>
   <url>
     <loc>https://beewoy.sk/cennik/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://beewoy.sk/cennik/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/cennik/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beewoy.sk/en/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beewoy.sk/cennik/"/>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://beewoy.sk/kalkulacka/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://beewoy.sk/kalkulacka/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/kalkulator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beewoy.sk/en/calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beewoy.sk/kalkulacka/"/>
     <lastmod>2026-09-23</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://beewoy.sk/kontakt/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://beewoy.sk/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beewoy.sk/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beewoy.sk/kontakt/"/>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://beewoy.sk/referencie/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://beewoy.sk/referencie/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/realizacje/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beewoy.sk/en/work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beewoy.sk/referencie/"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://beewoy.sk/pl/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://beewoy.sk/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beewoy.sk/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beewoy.sk/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://beewoy.sk/en/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://beewoy.sk/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beewoy.sk/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beewoy.sk/"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://beewoy.sk/pl/tworzenie-stron/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://beewoy.sk/tvorba-webov/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/tworzenie-stron/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beewoy.sk/en/web-design/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beewoy.sk/tvorba-webov/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beewoy.sk/en/web-design/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://beewoy.sk/tvorba-webov/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/tworzenie-stron/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beewoy.sk/en/web-design/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beewoy.sk/tvorba-webov/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beewoy.sk/pl/cennik/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://beewoy.sk/cennik/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/cennik/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beewoy.sk/en/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beewoy.sk/cennik/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beewoy.sk/en/pricing/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://beewoy.sk/cennik/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/cennik/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beewoy.sk/en/pricing/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beewoy.sk/cennik/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beewoy.sk/pl/kalkulator/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://beewoy.sk/kalkulacka/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/kalkulator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beewoy.sk/en/calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beewoy.sk/kalkulacka/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beewoy.sk/en/calculator/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://beewoy.sk/kalkulacka/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/kalkulator/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beewoy.sk/en/calculator/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beewoy.sk/kalkulacka/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beewoy.sk/pl/kontakt/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://beewoy.sk/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beewoy.sk/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beewoy.sk/kontakt/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beewoy.sk/en/contact/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://beewoy.sk/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/kontakt/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beewoy.sk/en/contact/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beewoy.sk/kontakt/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://beewoy.sk/pl/realizacje/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://beewoy.sk/referencie/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/realizacje/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beewoy.sk/en/work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beewoy.sk/referencie/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://beewoy.sk/en/work/</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://beewoy.sk/referencie/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/realizacje/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://beewoy.sk/en/work/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://beewoy.sk/referencie/"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
 </urlset>

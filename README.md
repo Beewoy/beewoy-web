@@ -152,8 +152,9 @@ Vygeneruje favicony, maskable PWA ikony a `og-image.png` z `logo.svg`.
 ## Poznámky
 
 - Náhľady v `projekty/navrhy/` sú neindexované (`noindex`) a nie sú určené na verejné SEO; screenshoty zostávajú v `assets/projects/`.
-- Jazyk UI: slovenčina (`lang="sk"`)
+- Jazyky: slovenčina (predvolená), poľština `/pl/`, angličtina `/en/`. Prepínač v hlavičke; pri prvej návšteve detekcia podľa jazyka prehliadača (SK/CS ostávajú na SK). SEO: `hreflang` v HTML aj v `sitemap.xml`.
 - Dizajn: biela, takmer čierna, striedmy žltý akcent (`#f4c430`), systémové písmo / Inter; tokeny sú na začiatku `styles.css`
 - Odvetvové stránky neupravuj ručne — zmeň `tvorba-webov/odvetvia/industries-data.json` alebo šablónu v `scripts/generate_industry_pages.py` a spusti `python3 scripts/generate_industry_pages.py`
+- Po zmene verejných stránok spusti `python3 scripts/build_i18n.py` (hreflang, prepínač jazyka, detekcia)
 - Po zmene cachovaných súborov zvýš verziu `CACHE` v `sw.js`
 - Žiadny npm build — po úprave HTML/CSS/JS stačí refresh / redeploy

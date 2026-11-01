@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cennik stron internetowych | od 19 €/mies. | Beewoy</title>
+<meta name="description" content="Cennik Beewoy: Basic 19 €/mies., Start 39 €/mies. i Individual do uzgodnienia. Hosting, SSL i obsługa techniczna w cenie. Bez opłaty wstępnej i bez zobowiązań.">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="theme-color" content="#ffffff">
+<link rel="canonical" href="https://beewoy.sk/pl/cennik/">
+<!-- i18n:head -->
+<link rel="alternate" hreflang="sk" href="https://beewoy.sk/cennik/">
+<link rel="alternate" hreflang="pl" href="https://beewoy.sk/pl/cennik/">
+<link rel="alternate" hreflang="en" href="https://beewoy.sk/en/pricing/">
+<link rel="alternate" hreflang="x-default" href="https://beewoy.sk/cennik/">
+<script>
+(() => {
+  const KEY = "beewoy_lang";
+  const SESSION_KEY = "beewoy_lang_checked";
+  const LANGS = ["sk", "pl", "en"];
+  const current = (document.documentElement.lang || "sk").slice(0, 2);
+
+  const read = (store, key) => { try { return store.getItem(key); } catch { return null; } };
+  const write = (store, key, value) => { try { store.setItem(key, value); } catch {} };
+
+  const alternate = (lang) =>
+    document.querySelector(`link[rel="alternate"][hreflang="${lang}"]`)?.getAttribute("href");
+
+  // Slovak and Czech visitors stay on Slovak even when their browser UI is English.
+  const detect = () => {
+    const codes = (navigator.languages?.length ? navigator.languages : [navigator.language || ""])
+      .map((l) => String(l).toLowerCase().slice(0, 2));
+    if (codes.some((c) => c === "sk" || c === "cs")) return "sk";
+    if (codes.includes("pl")) return "pl";
+    return "en";
+  };
+
+  const isBot = /bot|crawl|spider|slurp|lighthouse|headless|preview|facebookexternalhit/i.test(navigator.userAgent);
+  const internal = (() => {
+    try { return !!document.referrer && new URL(document.referrer).origin === location.origin; } catch { return false; }
+  })();
+  const checked = read(sessionStorage, SESSION_KEY) === "1";
+  write(sessionStorage, SESSION_KEY, "1");
+
+  if (!isBot && !internal && !checked) {
+    const saved = read(localStorage, KEY);
+    const wanted = LANGS.includes(saved) ? saved : detect();
+    const url = wanted !== current && alternate(wanted);
+    if (url) {
+      location.replace(url + location.search + location.hash);
+      return;
+    }
+  }
+
+  document.addEventListener("click", (event) => {
+    const link = event.target.closest("a[data-lang]");
+    if (link) write(localStorage, KEY, link.dataset.lang);
+    document.querySelectorAll("details[data-lang-switch][open]").forEach((d) => {
+      if (!d.contains(event.target)) d.open = false;
+    });
+  });
+  document.addEventListener("keydown", (event) => {
+    if (event.key !== "Escape") return;
+    document.querySelectorAll("details[data-lang-switch][open]").forEach((d) => {
+      d.open = false;
+      d.querySelector("summary")?.focus();
+    });
+  });
+})();
+</script>
+<!-- /i18n:head -->
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/icons/favicon.svg" type="image/svg+xml">
+<link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pl_PL">
+<!-- i18n:og -->
+<meta property="og:locale:alternate" content="sk_SK">
+<meta property="og:locale:alternate" content="en_GB">
+<!-- /i18n:og -->
+<meta property="og:site_name" content="Beewoy">
+<meta property="og:url" content="https://beewoy.sk/pl/cennik/">
+<meta property="og:title" content="Cennik stron internetowych | od 19 €/mies. | Beewoy">
+<meta property="og:description" content="Basic 19 €/mies., Start 39 €/mies. i Individual do uzgodnienia. Hosting, SSL i obsługa techniczna w cenie.">
+<meta property="og:image" content="https://beewoy.sk/og-main.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Cennik stron internetowych — Beewoy">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Cennik stron internetowych | od 19 €/mies. | Beewoy">
+<meta name="twitter:description" content="Basic 19 €/mies., Start 39 €/mies. i Individual do uzgodnienia. Hosting, SSL i obsługa techniczna w cenie.">
+<meta name="twitter:image" content="https://beewoy.sk/og-main.png">
+
+<link rel="stylesheet" href="/styles.css">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": "https://beewoy.sk/pl/cennik/#webpage",
+      "url": "https://beewoy.sk/pl/cennik/",
+      "name": "Cennik stron internetowych | od 19 €/mies. | Beewoy",
+      "description": "Cennik Beewoy: Basic 19 €/mies., Start 39 €/mies. i Individual do uzgodnienia.",
+      "isPartOf": { "@id": "https://beewoy.sk/#website" },
+      "inLanguage": "pl-PL",
+      "mainEntity": { "@id": "https://beewoy.sk/pl/cennik/#offers" }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://beewoy.sk/pl/cennik/#breadcrumb",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Strona główna", "item": "https://beewoy.sk/pl/" },
+        { "@type": "ListItem", "position": 2, "name": "Cennik", "item": "https://beewoy.sk/pl/cennik/" }
+      ]
+    },
+    {
+      "@type": "OfferCatalog",
+      "@id": "https://beewoy.sk/pl/cennik/#offers",
+      "name": "Miesięczne plany stron internetowych",
+      "url": "https://beewoy.sk/pl/cennik/",
+      "itemListElement": [
+        { "@type": "Offer", "name": "Basic", "description": "Prosta jednostronicowa strona informacyjna hostowana przez Beewoy. Hosting, SSL i obsługa techniczna w cenie; zmiany na zamówienie.", "url": "https://beewoy.sk/pl/cennik/", "price": "19", "priceCurrency": "EUR", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "19", "priceCurrency": "EUR", "billingDuration": "P1M" }, "availability": "https://schema.org/InStock" },
+        { "@type": "Offer", "name": "Start", "description": "Strona do 5 sekcji z opieką: hosting, SSL, utrzymanie techniczne, SEO na stronie i bieżące zmiany treści według ustaleń.", "url": "https://beewoy.sk/pl/cennik/", "price": "39", "priceCurrency": "EUR", "priceSpecification": { "@type": "UnitPriceSpecification", "price": "39", "priceCurrency": "EUR", "billingDuration": "P1M" }, "availability": "https://schema.org/InStock" },
+        { "@type": "Offer", "name": "Individual", "description": "Strona na wymiar — nietypowe funkcje, integracje lub wielojęzyczność. Cena do uzgodnienia.", "url": "https://beewoy.sk/pl/cennik/", "availability": "https://schema.org/InStock" }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://beewoy.sk/pl/cennik/#faq",
+      "inLanguage": "pl-PL",
+      "mainEntity": [
+        { "@type": "Question", "name": "Czy obowiązuje okres zobowiązania?", "acceptedAnswer": { "@type": "Answer", "text": "Nie. Współpracę możesz zakończyć w każdej chwili. Stronę hostujemy i utrzymujemy my, dlatego po zakończeniu abonamentu ją wyłączamy." } },
+        { "@type": "Question", "name": "Kiedy zacznę płacić?", "acceptedAnswer": { "@type": "Answer", "text": "Dopiero po uruchomieniu strony. Nie płacisz opłaty wstępnej." } },
+        { "@type": "Question", "name": "Czego nie ma w cenie?", "acceptedAnswer": { "@type": "Answer", "text": "Domeny, płatnych usług zewnętrznych, obszernego pisania tekstów i funkcji spoza planu. Profil Firmy w Google, Search Console, linki zewnętrzne i kampanie realizujemy osobno. Cenę zawsze zatwierdzasz z góry." } },
+        { "@type": "Question", "name": "Ile trwa realizacja?", "acceptedAnswer": { "@type": "Answer", "text": "Prostą stronę uruchomimy w 48 godzin od zatwierdzenia briefu, jeśli masz gotowe materiały. Przy większych stronach termin zależy od zakresu." } }
+      ]
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#obsah">Przejdź do treści</a>
+
+<header class="header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="logo" href="/pl/" aria-label="Beewoy — strona główna"><img src="/logo.svg" alt="" width="22" height="24">beewoy</a>
+    <nav class="nav" aria-label="Nawigacja główna">
+      <a href="/pl/tworzenie-stron/">Tworzenie stron</a>
+      <a href="/pl/cennik/" aria-current="page">Cennik</a>
+      <a href="/pl/realizacje/">Realizacje</a>
+      <a href="/pl/kontakt/">Kontakt</a>
+    </nav>
+    <!-- i18n:switch -->
+    <details class="lang" data-lang-switch>
+      <summary class="lang-btn" aria-label="Język: Polski">PL<svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></summary>
+      <ul class="lang-menu">
+        <li><a href="/cennik/" hreflang="sk" lang="sk" data-lang="sk"><span>SK</span>Slovenčina</a></li>
+        <li><a href="/pl/cennik/" hreflang="pl" lang="pl" data-lang="pl" aria-current="true"><span>PL</span>Polski</a></li>
+        <li><a href="/en/pricing/" hreflang="en" lang="en" data-lang="en"><span>EN</span>English</a></li>
+      </ul>
+    </details>
+    <!-- /i18n:switch -->
+    <a class="btn btn-primary btn-sm header-cta" href="/pl/kontakt/#kontakt-form" data-analytics-cta="header_start">Chcę stronę</a>
+    <button type="button" class="burger" id="burger" aria-expanded="false" aria-controls="mobileMenu" aria-label="Otwórz menu"><span></span><span></span></button>
+  </div>
+</header>
+<nav class="mobile-menu" id="mobileMenu" aria-label="Nawigacja mobilna">
+  <a href="/pl/tworzenie-stron/">Tworzenie stron</a>
+  <a href="/pl/cennik/" aria-current="page">Cennik</a>
+  <a href="/pl/realizacje/">Realizacje</a>
+  <a href="/pl/kontakt/">Kontakt</a>
+  <a class="btn btn-primary btn-lg" href="/pl/kontakt/#kontakt-form">Chcę stronę</a>
+  <!-- i18n:mswitch -->
+  <div class="mobile-lang" role="group" aria-label="Język"><a href="/cennik/" hreflang="sk" lang="sk" data-lang="sk">SK</a><a href="/pl/cennik/" hreflang="pl" lang="pl" data-lang="pl" aria-current="true">PL</a><a href="/en/pricing/" hreflang="en" lang="en" data-lang="en">EN</a></div>
+  <!-- /i18n:mswitch -->
+  <p class="mobile-menu-foot">Lub napisz na <a href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a></p>
+</nav>
+
+<main id="obsah">
+  <section class="page-hero page-hero--center" aria-labelledby="cennik-title">
+    <div class="wrap">
+      <nav class="breadcrumbs" aria-label="Okruszki">
+        <ol><li><a href="/pl/">Strona główna</a></li><li aria-current="page">Cennik</li></ol>
+      </nav>
+      <h1 class="h1" id="cennik-title">Strona od <span class="mark">19&nbsp;€</span> miesięcznie.</h1>
+      <p class="lead">Jedna miesięczna kwota za stronę, hosting i obsługę techniczną. Płacisz dopiero od uruchomienia.</p>
+      <ul class="page-hero-meta">
+        <li>Bez opłaty wstępnej</li>
+        <li>Bez zobowiązań</li>
+        <li>Hosting i SSL w cenie</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--flush-top" aria-labelledby="plans-title">
+    <div class="wrap">
+      <h2 class="visually-hidden" id="plans-title">Plany</h2>
+      <div class="plans">
+        <article class="plan">
+          <h3 class="plan-name">Basic</h3>
+          <p class="plan-for">Prosta strona dla przedsiębiorcy lub małej usługi.</p>
+          <p class="plan-price">19&nbsp;€<small>/ miesiąc</small></p>
+          <ul class="plan-list">
+            <li>Jednostronicowa strona informacyjna</li>
+            <li>Kontakt, usługi, zdjęcia i wezwanie do działania</li>
+            <li>Hosting, SSL i obsługa techniczna</li>
+            <li>Podstawowe SEO na stronie</li>
+          </ul>
+          <p class="plan-note">Zmiany po uruchomieniu na zamówienie. Drobna zmiana od 15&nbsp;€, większe wycenimy z góry.</p>
+          <a class="btn btn-secondary" href="/pl/kontakt/?balik=basic#kontakt-form" data-analytics-cta="cennik_basic">Wybieram Basic</a>
+        </article>
+        <article class="plan plan--featured">
+          <span class="plan-badge">Najczęściej wybierany</span>
+          <h3 class="plan-name">Start</h3>
+          <p class="plan-for">Strona firmowa, o którą dbamy za Ciebie.</p>
+          <p class="plan-price">39&nbsp;€<small>/ miesiąc</small></p>
+          <ul class="plan-list">
+            <li>Strona do 5 sekcji z treścią</li>
+            <li>Hosting, SSL i utrzymanie techniczne</li>
+            <li>SEO na stronie: tytuły, opisy, nagłówki, teksty alt</li>
+            <li>Bieżące zmiany treści według ustaleń</li>
+            <li>Kopie zapasowe i kontrola dostępności</li>
+            <li>Bezpośredni kontakt z nami</li>
+          </ul>
+          <a class="btn btn-primary" href="/pl/kontakt/?balik=start#kontakt-form" data-analytics-cta="cennik_start">Wybieram Start</a>
+        </article>
+        <article class="plan">
+          <h3 class="plan-name">Individual</h3>
+          <p class="plan-for">Rezerwacje, kilka języków lub własne funkcje.</p>
+          <p class="plan-price plan-price--text">Do uzgodnienia</p>
+          <ul class="plan-list">
+            <li>Zakres według ustaleń</li>
+            <li>Rezerwacje, formularze i integracje</li>
+            <li>Wielojęzyczność</li>
+            <li>Własny harmonogram</li>
+          </ul>
+          <p class="plan-note">Cenę i zakres potwierdzimy po krótkiej rozmowie.</p>
+          <a class="btn btn-secondary" href="/pl/kontakt/?balik=individual#kontakt-form" data-analytics-cta="cennik_individual">Wybieram Individual</a>
+        </article>
+      </div>
+      <ul class="plans-terms">
+        <li>Ceny są miesięczne</li>
+        <li>Abonament płacisz od uruchomienia strony</li>
+        <li>Domenę i płatne usługi zewnętrzne rozliczamy osobno</li>
+      </ul>
+      <div class="plans-more">
+        <a class="link-arrow" href="/pl/kalkulator/" data-analytics-cta="cennik_estimator">Nie wiesz, co wybrać? Kalkulator <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="value-title">
+    <div class="wrap wrap--narrow">
+      <div class="section-head">
+        <p class="eyebrow">Co obejmuje abonament</p>
+        <h2 class="h2" id="value-title">Jedna kwota. Żadnej ukrytej faktury.</h2>
+        <p class="lead">Tak wygląda plan Start. Basic od 19&nbsp;€. Individual do uzgodnienia.</p>
+      </div>
+      <ul class="value-sheet">
+        <li><span>Projekt i uruchomienie strony</span><em>w cenie</em></li>
+        <li><span>Strona do 5 sekcji z treścią</span><em>w cenie</em></li>
+        <li><span>Hosting, SSL i utrzymanie techniczne</span><em>w cenie</em></li>
+        <li><span>SEO na stronie: tytuły, opisy, nagłówki, alt</span><em>w cenie</em></li>
+        <li><span>Kopie zapasowe i kontrola dostępności</span><em>w cenie</em></li>
+        <li><span>Bieżące zmiany treści według ustaleń</span><em>w cenie</em></li>
+        <li class="out"><span>Domena</span><em>osobno</em></li>
+        <li class="out"><span>Obszerne teksty i funkcje spoza planu</span><em>osobno</em></li>
+        <li class="out"><span>Profil Firmy w Google, Search Console, kampanie</span><em>poza abonamentem</em></li>
+      </ul>
+      <div class="value-pay">
+        <p class="tiny">Płacisz</p>
+        <p class="value-pay-price">39&nbsp;€<small>/ miesiąc</small></p>
+        <p>Bez opłaty wstępnej. Bez zobowiązań. Abonament zaczyna się, gdy strona jest online.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--soft hide-sm" aria-labelledby="compare-title">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="h2" id="compare-title">Porównanie planów.</h2>
+      </div>
+      <div class="table-wrap">
+        <table class="compare-table">
+          <thead>
+            <tr><th scope="col"><span class="visually-hidden">Co dostajesz</span></th><th scope="col">Basic</th><th scope="col" class="col-featured">Start</th><th scope="col">Individual</th></tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Miesięcznie</th><td class="yes">19 €</td><td class="yes col-featured">39 €</td><td>Do uzgodnienia</td></tr>
+            <tr><th scope="row">Zakres strony</th><td>Jedna strona</td><td class="col-featured">Do 5 sekcji z treścią</td><td>Według ustaleń</td></tr>
+            <tr><th scope="row">Hosting i SSL</th><td class="yes">Tak</td><td class="yes col-featured">Tak</td><td>Według ustaleń</td></tr>
+            <tr><th scope="row">SEO na stronie</th><td>Podstawowe</td><td class="col-featured">Tytuły, opisy, nagłówki, teksty alt</td><td>Według ustaleń</td></tr>
+            <tr><th scope="row">Zmiany po uruchomieniu</th><td>Na zamówienie, od 15 €</td><td class="col-featured">Bieżące zmiany według ustaleń</td><td>Według ustaleń</td></tr>
+            <tr><th scope="row">Kopie zapasowe i kontrola dostępności</th><td class="no">—<span class="visually-hidden">Nie</span></td><td class="yes col-featured">Tak</td><td>Według ustaleń</td></tr>
+            <tr><th scope="row">Kontrola wersji mobilnej i dostępności</th><td class="no">—<span class="visually-hidden">Nie</span></td><td class="yes col-featured">Tak</td><td>Według ustaleń</td></tr>
+            <tr><th scope="row">Rezerwacje, integracje, kilka języków</th><td class="no">—<span class="visually-hidden">Nie</span></td><td class="no col-featured">—<span class="visually-hidden">Nie</span></td><td class="yes">Tak</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="faq" aria-labelledby="faq-title">
+    <div class="wrap split">
+      <div class="split-sticky">
+        <p class="eyebrow">Częste pytania</p>
+        <h2 class="h2" id="faq-title">Warunki bez gwiazdek.</h2>
+      </div>
+      <div class="faq">
+        <details class="faq-item"><summary>Czy obowiązuje okres zobowiązania?</summary><div class="faq-answer">Nie. Współpracę możesz zakończyć w każdej chwili. Stronę hostujemy i utrzymujemy my, dlatego po zakończeniu abonamentu ją wyłączamy.</div></details>
+        <details class="faq-item"><summary>Kiedy zacznę płacić?</summary><div class="faq-answer">Dopiero po uruchomieniu strony. Nie płacisz opłaty wstępnej.</div></details>
+        <details class="faq-item"><summary>Czego nie ma w cenie?</summary><div class="faq-answer">Domeny, płatnych usług zewnętrznych, obszernego pisania tekstów i funkcji spoza planu. Profil Firmy w Google, Search Console, linki zewnętrzne i kampanie realizujemy osobno. Cenę zawsze zatwierdzasz z góry.</div></details>
+        <details class="faq-item"><summary>Ile trwa realizacja?</summary><div class="faq-answer">Prostą stronę uruchomimy w 48 godzin od zatwierdzenia briefu, jeśli masz gotowe materiały. Przy większych stronach termin zależy od zakresu.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--sm" aria-labelledby="final-title">
+    <div class="wrap">
+      <div class="cta-panel">
+        <h2 class="h2" id="final-title">Wybierz plan i napisz do nas.</h2>
+        <p>Wystarczy kilka zdań o Twojej firmie. Odezwiemy się i doradzimy.</p>
+        <div class="actions">
+          <a class="btn btn-light btn-lg" href="/pl/kontakt/?balik=start#kontakt-form" data-analytics-cta="cennik_final">Chcę stronę <span class="arrow" aria-hidden="true">→</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="logo" href="/pl/"><img src="/logo.svg" alt="" width="22" height="24">beewoy</a>
+        <p>Nowoczesne strony internetowe dla firm w miesięcznym abonamencie.</p>
+        <a class="footer-mail" href="mailto:ahoj@beewoy.sk">ahoj@beewoy.sk</a>
+      </div>
+      <nav class="footer-col" aria-labelledby="f-offer"><h2 id="f-offer">Oferta</h2><ul>
+        <li><a href="/pl/tworzenie-stron/">Tworzenie stron</a></li>
+        <li><a href="/pl/cennik/">Cennik</a></li>
+        <li><a href="/pl/kalkulator/">Kalkulator ceny</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="f-beewoy"><h2 id="f-beewoy">Beewoy</h2><ul>
+        <li><a href="/pl/realizacje/">Realizacje</a></li>
+        <li><a href="/pl/kontakt/">Kontakt</a></li>
+      </ul></nav>
+      <nav class="footer-col" aria-labelledby="f-legal"><h2 id="f-legal">Informacje prawne</h2><ul>
+        <li><a href="/pl/polityka-prywatnosci/">Polityka prywatności</a></li>
+        <li><a href="/pl/cookies/">Cookies</a></li>
+        <li><button type="button" data-cookie-settings>Ustawienia cookies</button></li>
+      </ul></nav>
+    </div>
+    <div class="footer-bottom"><span>© 2026 Beewoy</span><span>Słowacja</span></div>
+  </div>
+</footer>
+
+<script src="/cookies.js" defer></script>
+<script src="/analytics.js" defer></script>
+<script src="/main.js" defer></script>
+</body>
+</html>

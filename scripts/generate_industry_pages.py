@@ -5,7 +5,11 @@ from __future__ import annotations
 
 import html
 import json
+import sys
 from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from site_i18n import sitemap_entries  # noqa: E402
 
 ROOT = Path(__file__).resolve().parents[1]
 TV = ROOT / "tvorba-webov"
@@ -536,16 +540,24 @@ def update_sitemap(slugs: list[str]) -> None:
         ("https://beewoy.sk/kontakt/", "0.9", "monthly"),
         ("https://beewoy.sk/referencie/", "0.7", "monthly"),
     ]
+    translated = {loc: alts for loc, _, _, alts in sitemap_entries()}
+    listed = {loc for loc, _, _ in urls}
+    urls += [(loc, f"{float(pri) - 0.1:.1f}", freq) for loc, pri, freq, _ in sitemap_entries() if loc not in listed]
     parts = [
         '<?xml version="1.0" encoding="UTF-8"?>',
-        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">',
     ]
     for loc, pri, freq in urls:
         lastmod = SITEMAP_LASTMOD.get(loc)
         lastmod_xml = f"    <lastmod>{lastmod}</lastmod>\n" if lastmod else ""
+        alt_xml = "".join(
+            f'    <xhtml:link rel="alternate" hreflang="{lang}" href="{href}"/>\n'
+            for lang, href in translated.get(loc, [])
+        )
         parts.append(
             f"  <url>\n"
             f"    <loc>{loc}</loc>\n"
+            f"{alt_xml}"
             f"{lastmod_xml}"
             f"    <changefreq>{freq}</changefreq>\n"
             f"    <priority>{pri}</priority>\n"
