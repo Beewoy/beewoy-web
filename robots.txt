@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Allow: /projekty/navrhy/
-Disallow: /projekty/
 
 Sitemap: https://beewoy.sk/sitemap.xml

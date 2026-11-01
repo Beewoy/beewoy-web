@@ -23,7 +23,7 @@ export async function onRequest(context) {
 
   const response = await context.next();
 
-  if (url.pathname.startsWith("/projekty/navrhy/")) {
+  if (url.pathname.startsWith("/projekty/")) {
     const headers = new Headers(response.headers);
     headers.set("X-Robots-Tag", "noindex, nofollow, noarchive, nosnippet");
     return new Response(response.body, {
