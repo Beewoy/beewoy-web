@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="sk"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_standard" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{colors:{"on-tertiary-fixed":"#0d1c2d","primary-container":"#f2640f","surface-container":"#1f1f23","surface-container-low":"#1b1b1f","on-error-container":"#ffdad6","inverse-primary":"#a23f00","on-tertiary-container":"#1c2b3c","secondary-container":"#ee9800","error":"#ffb4ab","secondary":"#ffb95f","on-tertiary":"#233143","on-background":"#e3e2e6","outline-variant":"#594137","surface-container-lowest":"#0d0e11","error-container":"#93000a","on-surface":"#e3e2e6","tertiary-fixed":"#d4e4fa","outline":"#a98a7e","surface-bright":"#38393c","surface-tint":"#ffb595","on-secondary":"#472a00","on-error":"#690005","on-primary":"#571e00","on-secondary-fixed-variant":"#653e00","surface":"#121316","primary":"#ffb595","primary-fixed-dim":"#ffb595","primary-fixed":"#ffdbcd","on-primary-fixed-variant":"#7c2e00","background":"#121316","surface-container-highest":"#343538","on-primary-fixed":"#360f00","surface-container-high":"#292a2d","on-secondary-fixed":"#2a1700","on-surface-variant":"#e1bfb2","surface-variant":"#343538","inverse-on-surface":"#2f3034","tertiary-fixed-dim":"#b9c8de","on-primary-container":"#4d1a00","on-tertiary-fixed-variant":"#39485a","tertiary-container":"#8392a6","on-secondary-container":"#5b3800","secondary-fixed-dim":"#ffb95f","surface-dim":"#121316","secondary-fixed":"#ffddb8","tertiary":"#b9c8de","inverse-surface":"#e3e2e6"},borderRadius:{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},spacing:{"margin":"3rem","space-xl":"2.5rem","space-lg":"1.5rem","space-sm":"0.5rem","gutter":"1.5rem","space-xs":"0.25rem","gutter-sm":"1rem","margin-sm":"1.25rem","space-md":"1rem"},fontFamily:{"headline-sm":["Space Grotesk"],"headline-xl-mobile":["Space Grotesk"],"headline-lg":["Space Grotesk"],"headline-lg-mobile":["Space Grotesk"],"body-sm":["Inter"],"body-lg":["Inter"],"label-sm":["Space Grotesk"],"headline-xl":["Space Grotesk"],"body-md":["Inter"],"headline-md":["Space Grotesk"],"label-md":["Space Grotesk"]},fontSize:{"headline-sm":["20px",{lineHeight:"28px",fontWeight:"600"}],"headline-xl-mobile":["34px",{lineHeight:"42px",letterSpacing:"-0.01em",fontWeight:"700"}],"headline-lg":["36px",{lineHeight:"44px",letterSpacing:"-0.015em",fontWeight:"700"}],"headline-lg-mobile":["28px",{lineHeight:"36px",letterSpacing:"-0.01em",fontWeight:"700"}],"body-sm":["14px",{lineHeight:"20px",fontWeight:"400"}],"body-lg":["18px",{lineHeight:"28px",fontWeight:"400"}],"label-sm":["12px",{lineHeight:"16px",letterSpacing:"0.08em",fontWeight:"600"}],"headline-xl":["48px",{lineHeight:"56px",letterSpacing:"-0.02em",fontWeight:"700"}],"body-md":["16px",{lineHeight:"24px",fontWeight:"400"}],"headline-md":["24px",{lineHeight:"32px",letterSpacing:"-0.01em",fontWeight:"600"}],"label-md":["14px",{lineHeight:"18px",letterSpacing:"0.05em",fontWeight:"600"}]}}}}</script><title>Ukážky realizácií | MB Garage</title><meta name="robots" content="noindex,nofollow,noarchive"><meta name="description" content="Návrh webu MB Garage – autoservis, karosárske práce, off-road úpravy, brány, ploty a kovovýroba v Rudlove."><style id="mbgarage-preview-fixes">
+html{scroll-behavior:smooth}body{overflow-x:hidden!important;padding-bottom:38px;font-family:Inter,Arial,sans-serif!important}h1,h2,h3,h4,.font-headline-sm,.font-headline-lg,.font-headline-xl,.font-label-sm,.font-label-md{font-family:"Space Grotesk",Inter,Arial,sans-serif!important}
+img{max-width:100%}.mb-preview-note{position:fixed;z-index:100;bottom:0;left:0;right:0;background:#f2640f;color:#281000;text-align:center;padding:9px 16px;font:600 12px/1.35 Inter,Arial,sans-serif;box-shadow:0 -4px 20px #0008}
+.mb-preview-note a{color:inherit;text-decoration:underline;font-weight:800}
+.mb-mobile-toggle{display:none;position:fixed;top:16px;right:16px;z-index:120;width:48px;height:48px;border:1px solid #6c4b3d;border-radius:10px;background:#292a2d;color:#ffb595;font-size:28px;line-height:1;cursor:pointer}
+.mb-mobile-nav{display:none;position:fixed;z-index:119;top:72px;right:16px;left:16px;padding:18px;background:#1b1b1f;border:1px solid #594137;border-radius:14px;box-shadow:0 20px 50px #000b}
+.mb-mobile-nav.open{display:grid;gap:4px}.mb-mobile-nav a{padding:12px 14px;color:#e3e2e6;text-decoration:none;font:600 16px Inter,Arial,sans-serif;border-radius:8px}.mb-mobile-nav a:hover,.mb-mobile-nav a:focus-visible{background:#343538;color:#ffb595}
+.mb-demo-cta{padding:24px;border:1px solid #594137;border-radius:14px;background:#292a2d;color:#e3e2e6}.mb-demo-cta p{margin:0 0 14px;max-width:50ch}.mb-demo-cta a{display:inline-block;background:#f2640f;color:#2b1000;padding:12px 18px;border-radius:8px;font-weight:800;text-decoration:none}
+@media(max-width:1279px){.mb-mobile-toggle{display:block}header nav,header details{display:none!important}header a[href^="tel:"]{display:none!important}header .w-8.h-8{display:none!important}header>div{padding-right:76px!important}}
+@media(max-width:640px){header img{max-width:42px}header>div{height:72px!important}main{padding-top:72px!important}.mb-preview-note{font-size:11px}.mb-mobile-toggle{top:12px;right:12px}#project-filters{max-width:calc(100vw - 32px);overflow-x:auto;white-space:nowrap;justify-content:flex-start}#project-filters button{flex:none}h1{font-size:clamp(30px,8vw,44px)!important;line-height:1.08!important}}
+</style></head><body class="bg-background font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><header class="fixed top-0 w-full z-50 bg-surface/90 backdrop-blur-xl border-b border-surface-container-high/60 shadow-[0_4px_20px_rgba(0,0,0,0.35)]"><div class="h-20 max-w-7xl mx-auto px-6 lg:px-12 flex items-center justify-between gap-4"><div class="flex items-center gap-3 shrink-0"><img alt="MB Garage Logo" class="h-8 w-auto object-contain" src="/projekty/navrhy/mbgarage/assets/logo.svg"/><a class="flex flex-col" data-path="domov" href="/projekty/navrhy/mbgarage/"><span class="font-headline-sm text-headline-sm tracking-tight text-on-surface leading-tight">MB GARAGE</span><span class="font-label-sm text-[10px] tracking-widest uppercase text-secondary font-semibold">Marek Bratko</span></a></div><nav class="hidden xl:flex items-center gap-1 lg:gap-2" data-active-classes="bg-surface-container-high text-primary font-bold rounded-lg"><a class="px-3 py-2 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 rounded-lg transition-colors" data-path="domov" href="/projekty/navrhy/mbgarage/">Domov</a><a class="px-3 py-2 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 rounded-lg transition-colors" data-path="autoservis" href="/projekty/navrhy/mbgarage/autoservis/">Autoservis</a><a class="px-3 py-2 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 rounded-lg transition-colors" data-path="brany-a-ploty" href="/projekty/navrhy/mbgarage/brany-a-ploty/">Brány a ploty</a><a class="px-3 py-2 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 rounded-lg transition-colors" data-path="realizacie" href="/projekty/navrhy/mbgarage/realizacie/">Realizácie</a><a class="px-3 py-2 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 rounded-lg transition-colors" data-path="o-nas" href="/projekty/navrhy/mbgarage/o-nas/">O nás</a><a class="px-3 py-2 font-label-md text-label-md text-on-surface-variant hover:text-on-surface hover:bg-surface-container/60 rounded-lg transition-colors" data-path="kontakt" href="/projekty/navrhy/mbgarage/kontakt/">Kontakt</a></nav><div class="flex items-center gap-3 shrink-0"><div class="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container border border-surface-container-high text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-[18px]">location_on</span><span class="font-label-sm text-label-sm tracking-normal">Rudlov, okres Vranov nad Topľou</span></div><a class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-label-md font-semibold hover:bg-secondary-container hover:text-on-secondary-container transition-all shadow-[0_0_16px_rgba(242,100,15,0.3)]" href="tel:+421944515583"><span class="material-symbols-outlined text-[18px]">call</span><span class="whitespace-nowrap">+421 944 515 583</span></a><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-20 bg-background"><div class="flex flex-col w-full">
+<!-- Top Hero & Breadcrumb Ribbon -->
+<section class="relative w-full pt-10 pb-16 px-6 lg:px-12 bg-surface overflow-hidden">
+<div class="absolute -top-32 right-1/4 w-96 h-96 bg-primary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="absolute top-20 -left-20 w-80 h-80 bg-secondary-container/10 rounded-full blur-3xl pointer-events-none"></div>
+<div class="max-w-7xl mx-auto flex flex-col gap-6 relative z-10">
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Ukážky riešení</span>
+<span class="text-on-surface-variant text-xs">/</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant uppercase tracking-wider">Rudlov • Vranov nad Topľou</span>
+</div>
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-8">
+<div class="max-w-3xl space-y-4">
+<h1 class="font-headline-xl text-headline-xl text-on-surface tracking-tight">
+            Ukážky realizácií
+          </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant leading-relaxed">
+            Prehliadnite si výber našich dokončených projektov v autoservise a zákazkovej výrobe brán a plotov. Fotografie a popisy sú ilustračné. Reálne zákazky doplníme po odsúhlasení s majiteľom.
+          </p>
+</div>
+<!-- Quick Stats Badge -->
+<div class="flex items-center gap-4 bg-surface-container-low p-4 rounded-xl shadow-md shrink-0">
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-primary font-bold">100%</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Vlastná výroba &amp; servis</span>
+</div>
+<div class="w-px h-10 bg-surface-container-highest"></div>
+<div class="flex flex-col">
+<span class="font-headline-md text-headline-md text-secondary font-bold">12+</span>
+<span class="font-label-sm text-label-sm text-on-surface-variant">Archivovaných zákaziek</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Filter Controls & CMS Ready Status Bar -->
+<section class="w-full bg-surface-container-low sticky top-20 z-30 shadow-md">
+<div class="max-w-7xl mx-auto px-6 lg:px-12 py-4 flex flex-col md:flex-row md:items-center justify-between gap-4">
+<!-- Filter Segmented Controller -->
+<div class="flex items-center gap-2 overflow-x-auto pb-1 md:pb-0" id="filter-container">
+<button class="filter-btn active-filter px-4 py-2 rounded-lg font-headline-sm text-label-md transition-all duration-200 bg-surface-container-high text-primary shadow-sm flex items-center gap-2" data-filter="all" type="button">
+<span>Všetky projekty</span>
+<span class="text-xs bg-surface-container px-2 py-0.5 rounded-full text-primary">6</span>
+</button>
+<button class="filter-btn px-4 py-2 rounded-lg font-headline-sm text-label-md transition-all duration-200 text-on-surface-variant hover:text-on-surface hover:bg-surface-container flex items-center gap-2" data-filter="gates" type="button">
+<span class="material-symbols-outlined text-[16px] text-secondary">fence</span>
+<span>Brány a ploty</span>
+<span class="text-xs bg-surface-container px-2 py-0.5 rounded-full text-on-surface-variant">3</span>
+</button>
+<button class="filter-btn px-4 py-2 rounded-lg font-headline-sm text-label-md transition-all duration-200 text-on-surface-variant hover:text-on-surface hover:bg-surface-container flex items-center gap-2" data-filter="auto" type="button">
+<span class="material-symbols-outlined text-[16px] text-primary-container">car_repair</span>
+<span>Autoservis</span>
+<span class="text-xs bg-surface-container px-2 py-0.5 rounded-full text-on-surface-variant">3</span>
+</button>
+</div>
+<!-- Live Sync / CMS Notice -->
+<div class="flex items-center gap-2 font-label-sm text-label-sm text-on-surface-variant">
+<span class="w-2 h-2 rounded-full bg-primary-container animate-pulse"></span>
+<span>Návrh galérie · fotografie čakajú na výmenu</span>
+</div>
+</div>
+</section>
+<!-- Project Gallery Grid -->
+<section class="w-full py-12 px-6 lg:px-12 bg-surface">
+<div class="max-w-7xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+<!-- Project 1: Samonosná lamelová brána -->
+<article class="project-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1" data-category="gates">
+<div class="relative h-64 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Ilustračná fotografia: Modern dark charcoal grey architectural cantilever sliding driveway gate with horizontal louvered slats in anthracite RAL 7016, industrial minimalist residential fence installation on clean concrete footing under crisp natural daylight, photographed from an oblique angle showing metallic coating and motor casing, cinematic lighting." src="/projekty/navrhy/mbgarage/assets/c818e93e2863.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-surface-container-highest/90 backdrop-blur-md text-secondary font-label-sm text-label-sm px-2.5 py-1 rounded">Brány a ploty</span>
+</div>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1 rounded-md text-on-surface flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">photo_camera</span>
+<span>ilustračná fotografia</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1 justify-between gap-4">
+<div class="space-y-3">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+<span>Rodinný dom, okres Vranov nad Topľou</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                Samonosná lamelová brána s elektrickým pohonom
+              </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">
+                Zákazková výroba posuvnej brány so žalúziovou lamelovou výplňou v antracitovej farbe RAL 7016. Osadenie talianskeho pohonu Nice a príprava pre optické senzory.
+              </p>
+</div>
+<div class="pt-4 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Pohon Nice • RAL 7016</span>
+<button class="inline-flex items-center gap-1 text-primary hover:text-secondary font-label-md text-label-md transition-colors" onclick="openModal('gate-detail')">
+<span>Detail</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Project 2: Brzdy a podvozok SUV -->
+<article class="project-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1" data-category="auto">
+<div class="relative h-64 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Ilustračná fotografia: Modern automotive repair garage workshop interior showing high-performance SUV on hydraulic two-post lift with front wheels removed, precision ceramic brake rotor discs, new metallic suspension arm bushings and stabilizer links illuminated under professional amber shop lamps, spotless mechanical workspace." src="/projekty/navrhy/mbgarage/assets/0aef116ee3ad.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary-container text-on-primary-container font-headline-sm text-label-sm px-2.5 py-1 rounded">Autoservis</span>
+</div>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1 rounded-md text-on-surface flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">photo_camera</span>
+<span>ilustračná fotografia</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1 justify-between gap-4">
+<div class="space-y-3">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">handyman</span>
+<span>Mechanické opravy • Brzdový systém</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                Kompletný servis bŕzd a podvozku na SUV
+              </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">
+                Výmena predných a zadných kotúčov a platničiek, výmena tyčiek stabilizátora a silentblokov ramien s dôrazom na bezpečnosť a stabilitu v zákrutách.
+              </p>
+</div>
+<div class="pt-4 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Kotúče ATE • Geometria</span>
+<button class="inline-flex items-center gap-1 text-primary hover:text-secondary font-label-md text-label-md transition-colors" onclick="openModal('auto-detail')">
+<span>Detail</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Project 3: Moderný plot z ťahokovu -->
+<article class="project-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1" data-category="gates">
+<div class="relative h-64 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Ilustračná fotografia: High-end modern architectural property boundary fencing constructed with expanded metal mesh panels and welded steel square frames, coated in micro-textured matte black powder coat, integrated video doorbell console and stainless steel latch handle, sunny day with green lawn contrast, razor-sharp architectural photography." src="/projekty/navrhy/mbgarage/assets/e84b841436f0.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-surface-container-highest/90 backdrop-blur-md text-secondary font-label-sm text-label-sm px-2.5 py-1 rounded">Brány a ploty</span>
+</div>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1 rounded-md text-on-surface flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">photo_camera</span>
+<span>ilustračná fotografia</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1 justify-between gap-4">
+<div class="space-y-3">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+<span>Novostavba, Prešovský kraj</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                Moderný uličný plot z ťahokovu s bránkou
+              </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">
+                Oceľová konštrukcia ošetrená žiarovým zinkovaním a jemnou štruktúrovanou práškovou farbou. Vstavaný videovrátnik a nerezové kovanie.
+              </p>
+</div>
+<div class="pt-4 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Ťahokov • Žiarový zinok</span>
+<button class="inline-flex items-center gap-1 text-primary hover:text-secondary font-label-md text-label-md transition-colors" onclick="openModal('gate-detail')">
+<span>Detail</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Project 4: Generálka nápravy & výfuk -->
+<article class="project-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1" data-category="auto">
+<div class="relative h-64 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Ilustračná fotografia: Detailed close up of an auto mechanic TIG welding an automotive stainless steel exhaust muffler system underneath a vehicle in a dark professional service bay, bright orange and blue welding arc illumination reflecting off raw metal and dark workshop floor, high technical accuracy." src="/projekty/navrhy/mbgarage/assets/aaf20f6e0d69.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary-container text-on-primary-container font-headline-sm text-label-sm px-2.5 py-1 rounded">Autoservis</span>
+</div>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1 rounded-md text-on-surface flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">photo_camera</span>
+<span>ilustračná fotografia</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1 justify-between gap-4">
+<div class="space-y-3">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">build</span>
+<span>Podvozok &amp; zváranie</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                Generálna oprava nápravy a výfukového potrubia
+              </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">
+                Odstránenie vôle na prednej náprave, precízne zvarenie tlmiča výfuku a celková dôkladná príprava vozidla pred technickou kontrolou STK.
+              </p>
+</div>
+<div class="pt-4 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Príprava STK / EK</span>
+<button class="inline-flex items-center gap-1 text-primary hover:text-secondary font-label-md text-label-md transition-colors" onclick="openModal('auto-detail')">
+<span>Detail</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Project 5: Dvojkrídlová kovaná brána -->
+<article class="project-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1" data-category="gates">
+<div class="relative h-64 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Ilustračná fotografia: Custom double swing driveway metal gate with forged decorative vertical bars and heavy steel hinges mounted between two stone masonry gate pillars, dual electric automatic swing motor arms with copper accents, elegant estate entrance at dusk with warm exterior spotlights." src="/projekty/navrhy/mbgarage/assets/bd1b06c8642c.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-surface-container-highest/90 backdrop-blur-md text-secondary font-label-sm text-label-sm px-2.5 py-1 rounded">Brány a ploty</span>
+</div>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1 rounded-md text-on-surface flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">photo_camera</span>
+<span>ilustračná fotografia</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1 justify-between gap-4">
+<div class="space-y-3">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">location_on</span>
+<span>Súkromný pozemok, Rudlov</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                Dvojkrídlová kovaná brána s automatickým otváraním
+              </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">
+                Klasickejší dizajn s modernými prvkami, masívne pánty a robustný pohon pre bezpečný a plynulý chod v náročných zimných podmienkach.
+              </p>
+</div>
+<div class="pt-4 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Kované prvky • Masívny profil</span>
+<button class="inline-flex items-center gap-1 text-primary hover:text-secondary font-label-md text-label-md transition-colors" onclick="openModal('gate-detail')">
+<span>Detail</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+<!-- Project 6: Pravidelná údržba & rozvody -->
+<article class="project-card group flex flex-col bg-surface-container-low rounded-xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-1" data-category="auto">
+<div class="relative h-64 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" data-alt="Ilustračná fotografia: Engine compartment of a modern turbo diesel automobile with timing belt tensioner and brand new water pump installed by professional master mechanic in garage, neat layout of specialized diagnostic tools and torque wrenches resting on magnetic trays, amber warm workshop light tone." src="/projekty/navrhy/mbgarage/assets/2954eda4cb29.jpg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-container-lowest via-transparent to-transparent opacity-80"></div>
+<div class="absolute top-4 left-4 flex gap-2">
+<span class="bg-primary-container text-on-primary-container font-headline-sm text-label-sm px-2.5 py-1 rounded">Autoservis</span>
+</div>
+<div class="absolute bottom-3 right-3 bg-surface-container-lowest/80 backdrop-blur-md px-2.5 py-1 rounded-md text-on-surface flex items-center gap-1.5 font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-secondary">photo_camera</span>
+<span>ilustračná fotografia</span>
+</div>
+</div>
+<div class="p-6 flex flex-col flex-1 justify-between gap-4">
+<div class="space-y-3">
+<div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">settings</span>
+<span>Motorový servis • Diagnostika</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface group-hover:text-primary transition-colors">
+                Pravidelná údržba, dekarbonizácia a výmena rozvodov
+              </h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant line-clamp-3">
+                Pravidelná servisná prehliadka podľa predpisu výrobcu, výmena vodnej pumpy, rozvodovej sady a všetkých prevádzkových kvapalín.
+              </p>
+</div>
+<div class="pt-4 flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-wider">Rozvodová sada • Shell Helix</span>
+<button class="inline-flex items-center gap-1 text-primary hover:text-secondary font-label-md text-label-md transition-colors" onclick="openModal('auto-detail')">
+<span>Detail</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</article>
+</div>
+</div>
+</section>
+<!-- Interactive Project Detail Lightbox Modal Preview Section -->
+<section class="w-full py-16 px-6 lg:px-12 bg-surface-container-lowest">
+<div class="max-w-7xl mx-auto space-y-8">
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<span class="font-label-sm text-label-sm text-secondary uppercase tracking-widest">Interaktívna ukážka</span>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight mt-1">
+            Príklad prezentácie zákazky
+          </h2>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant max-w-md">
+          Takto môže vyzerať detail zákazky po doplnení reálnych fotografií a potvrdených technických údajov.
+        </p>
+</div>
+<!-- Preview Lightbox Panel Component -->
+<div class="bg-surface-container-low rounded-2xl overflow-hidden shadow-2xl p-6 lg:p-10 flex flex-col lg:flex-row gap-8">
+<!-- Photo Multi-View Reel -->
+<div class="flex-1 flex flex-col gap-4">
+<div class="relative h-80 lg:h-96 w-full rounded-xl overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover transition-all duration-300" data-alt="Ilustračná fotografia: Wide panoramic photograph of a completed high quality custom steel cantilever sliding gate with motorized drive unit installed on residential driveway entrance in Slovakia, crisp evening lights illuminating matte metal finish, professional architectural craftsmanship." id="active-preview-img" src="/projekty/navrhy/mbgarage/assets/df5a7842835e.jpg"/>
+<div class="absolute bottom-4 left-4 bg-surface-container-lowest/90 backdrop-blur-md px-3 py-1.5 rounded-lg text-on-surface font-label-sm text-label-sm flex items-center gap-2">
+<span class="material-symbols-outlined text-secondary text-[16px]">verified</span>
+<span>Ilustračná fotodokumentácia • Projekt #048</span>
+</div>
+</div>
+<!-- Thumbnails Row -->
+<div class="grid grid-cols-4 gap-3">
+<div class="cursor-pointer rounded-lg overflow-hidden h-20 bg-surface-container shadow-sm group">
+<img class="w-full h-full object-cover group-hover:opacity-100 transition-opacity" data-alt="Ilustračná fotografia: Close up photograph of precision welding bead on steel gate chassis before hot dip galvanizing, showing clean industrial workshop craftsmanship." src="/projekty/navrhy/mbgarage/assets/c20ea39e5a85.jpg"/>
+</div>
+<div class="cursor-pointer rounded-lg overflow-hidden h-20 bg-surface-container shadow-sm group">
+<img class="w-full h-full object-cover group-hover:opacity-100 transition-opacity" data-alt="Ilustračná fotografia: Detail view of Italian Nice gate motor gear and stainless steel track teeth on bottom slider rail, industrial mechanical engineering." src="/projekty/navrhy/mbgarage/assets/7893ebca4ae8.jpg"/>
+</div>
+<div class="cursor-pointer rounded-lg overflow-hidden h-20 bg-surface-container shadow-sm group">
+<img class="w-full h-full object-cover group-hover:opacity-100 transition-opacity" data-alt="Ilustračná fotografia: Close-up of matte powder coated anthracite louvers RAL 7016 with micro-texture under sunlight showing no defects." src="/projekty/navrhy/mbgarage/assets/9a3cd16ced76.jpg"/>
+</div>
+<div class="cursor-pointer rounded-lg overflow-hidden h-20 bg-surface-container shadow-sm group flex items-center justify-center bg-surface-container-high text-on-surface-variant group-hover:text-primary">
+<div class="text-center font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[20px] block">grid_view</span>
+                +1 foto
+              </div>
+</div>
+</div>
+</div>
+<!-- Technical Specification Sheet -->
+<div class="lg:w-96 flex flex-col justify-between bg-surface-container p-6 rounded-xl">
+<div class="space-y-6">
+<div class="space-y-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary uppercase">Technický list projektu</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high text-secondary text-xs font-semibold">Odovzdané</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-on-surface">
+                Posuvná lamelová brána &amp; bránka
+              </h3>
+</div>
+<!-- Specs Grid -->
+<div class="space-y-3 font-body-sm text-body-sm">
+<div class="flex justify-between py-2 border-b border-surface-container-high">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Materiál:</span>
+<span class="text-on-surface font-semibold">Oceľový profil 80x80 / 60x40</span>
+</div>
+<div class="flex justify-between py-2 border-b border-surface-container-high">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Povrchová úprava:</span>
+<span class="text-on-surface font-semibold">Žiarový zinok + RAL 7016</span>
+</div>
+<div class="flex justify-between py-2 border-b border-surface-container-high">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Doba realizácie:</span>
+<span class="text-on-surface font-semibold">3 týždne od zamerania</span>
+</div>
+<div class="flex justify-between py-2 border-b border-surface-container-high">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Miesto realizácie:</span>
+<span class="text-on-surface font-semibold">Okres Vranov n. T.</span>
+</div>
+<div class="flex justify-between py-2">
+<span class="text-on-surface-variant font-label-sm text-label-sm">Automatizácia:</span>
+<span class="text-secondary font-semibold">Pohon Nice Robus 600</span>
+</div>
+</div>
+<div class="p-3.5 bg-surface-container-low rounded-lg text-xs text-on-surface-variant flex items-start gap-2.5">
+<span class="material-symbols-outlined text-primary text-[18px] shrink-0">check_circle</span>
+<span>Súčasťou dodávky bolo zameranie na mieste, betonáž základovej pätky, kompletná elektroinštalácia aj zaškolenie majiteľa.</span>
+</div>
+</div>
+<div class="pt-6">
+<a class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-label-md font-semibold hover:bg-secondary-container hover:text-on-secondary-container transition-all shadow-md" href="tel:+421944515583">
+<span class="material-symbols-outlined text-[18px]">calculate</span>
+<span>Nezáväzne oceniť podobný projekt</span>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- CMS Ready & Continuous Inflow Note Banner -->
+<section class="w-full py-10 px-6 lg:px-12 bg-surface-container-high/30">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 p-6 rounded-xl bg-surface-container-low shadow-sm">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-surface-container-highest flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[28px]">published_with_changes</span>
+</div>
+<div class="space-y-1">
+<h4 class="font-headline-sm text-headline-sm text-on-surface">
+            Pravidelne dopĺňame nové projekty a fotografie priamo z našej dielne.
+          </h4>
+<p class="font-body-sm text-body-sm text-on-surface-variant">
+            Práce prebiehajú kontinuálne. Ak hľadáte konkrétne riešenie, ktoré tu zatiaľ nevidíte, zavolajte nám a radi vám zašleme ďalšie ukážky.
+          </p>
+</div>
+</div>
+<a class="shrink-0 px-5 py-2.5 rounded-lg bg-surface-container-high text-on-surface font-headline-sm text-label-md hover:bg-surface-bright transition-colors flex items-center gap-2" href="tel:+421944515583">
+<span class="material-symbols-outlined text-[18px] text-secondary">phone_in_talk</span>
+<span>Konzultovať zámer</span>
+</a>
+</div>
+</section>
+<!-- Bottom CTA: Conversion Banner -->
+<section class="relative w-full py-20 px-6 lg:px-12 bg-surface overflow-hidden">
+<div class="max-w-5xl mx-auto rounded-3xl p-8 lg:p-14 bg-gradient-to-br from-surface-container-low via-surface-container to-surface-container-low shadow-2xl relative">
+<div class="absolute -right-20 -bottom-20 w-80 h-80 bg-primary-container/20 rounded-full blur-3xl pointer-events-none"></div>
+<div class="relative z-10 flex flex-col items-center text-center space-y-6 max-w-2xl mx-auto">
+<div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-highest text-secondary font-label-sm text-label-sm">
+<span class="material-symbols-outlined text-[16px]">handshake</span>
+<span>Poctivá zákazka bez skrytých poplatkov</span>
+</div>
+<h2 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+          Máte záujem o podobnú realizáciu pre váš domov alebo auto?
+        </h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+          Dohodnite si nezáväznú obhliadku a cenovú ponuku na mieru. Marek Bratko sa osobne postará o technické riešenie, výrobu aj finálnu montáž.
+        </p>
+<div class="flex flex-col sm:flex-row items-center gap-4 pt-4 w-full sm:w-auto">
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-lg bg-primary-container text-on-primary-container font-headline-sm text-label-md font-semibold hover:bg-secondary-container hover:text-on-secondary-container transition-all shadow-lg shadow-primary-container/20" href="tel:+421944515583">
+<span class="material-symbols-outlined text-[20px]">call</span>
+<span>+421 944 515 583</span>
+</a>
+<a class="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-lg bg-surface-container-high text-on-surface font-headline-sm text-label-md hover:bg-surface-bright transition-all" data-path="kontakt" href="/projekty/navrhy/mbgarage/kontakt/">
+<span class="material-symbols-outlined text-[20px] text-secondary">mail</span>
+<span>Požiadať o cenovú ponuku</span>
+</a>
+</div>
+<div class="pt-4 flex items-center gap-6 text-on-surface-variant font-label-sm text-label-sm">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">done</span>
+            Zameranie podľa dohody
+          </span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-secondary text-[16px]">done</span>
+            Podmienky podľa dohody
+          </span>
+</div>
+</div>
+</div>
+</section>
+<!-- Interactive Filter Logic -->
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const filterBtns = document.querySelectorAll('.filter-btn');
+      const cards = document.querySelectorAll('.project-card');
+
+      filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const filter = btn.getAttribute('data-filter');
+
+          // Style active button
+          filterBtns.forEach(b => {
+            b.classList.remove('bg-surface-container-high', 'text-primary', 'shadow-sm');
+            b.classList.add('text-on-surface-variant');
+          });
+          btn.classList.remove('text-on-surface-variant');
+          btn.classList.add('bg-surface-container-high', 'text-primary', 'shadow-sm');
+
+          // Filter cards
+          cards.forEach(card => {
+            const cat = card.getAttribute('data-category');
+            if (filter === 'all' || cat === filter) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    });
+
+    function openModal(type) {
+      const target = document.querySelector('#active-preview-img');
+      if (target) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        target.classList.add('ring-2', 'ring-primary-container');
+        setTimeout(() => target.classList.remove('ring-2', 'ring-primary-container'), 1500);
+      }
+    }
+  </script>
+</div></main><footer class="w-full bg-surface-container-lowest border-t border-surface-container-high/80 pt-16 pb-8"><div class="max-w-7xl mx-auto px-6 lg:px-12"><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-surface-container-high/60"><div class="space-y-4"><div class="flex items-center gap-2"><span class="font-headline-sm text-headline-sm text-on-surface">MB GARAGE</span><span class="font-label-sm text-label-sm px-2 py-0.5 rounded bg-surface-container text-secondary border border-surface-container-high">Dielňa</span></div><p class="font-body-sm text-body-sm text-on-surface-variant leading-relaxed">Poctivé remeslo a komplexný autoservis v regióne Vranov nad Topľou a Rudlov. Zakladateľ Marek Bratko prináša precízne opravy vozidiel a zákazkovú kovovýrobu brán i plotov s dôrazom na dlhú životnosť.</p><div class="flex items-center gap-2 text-on-surface-variant font-label-sm text-label-sm"><span class="material-symbols-outlined text-secondary text-[16px]">build</span><span>Kovovýroba &amp; Autodiagnostika</span></div></div><div class="space-y-4"><h4 class="font-headline-sm text-headline-sm text-on-surface text-base">Rýchle odkazy</h4><ul class="space-y-2.5 font-body-sm text-body-sm"><li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[14px]">chevron_right</span><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="domov" href="/projekty/navrhy/mbgarage/">Domov</a></li><li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[14px]">chevron_right</span><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="autoservis" href="/projekty/navrhy/mbgarage/autoservis/">Autoservis</a></li><li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[14px]">chevron_right</span><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="brany-a-ploty" href="/projekty/navrhy/mbgarage/brany-a-ploty/">Brány a ploty</a></li><li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[14px]">chevron_right</span><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="realizacie" href="/projekty/navrhy/mbgarage/realizacie/">Realizácie</a></li><li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[14px]">chevron_right</span><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="o-nas" href="/projekty/navrhy/mbgarage/o-nas/">O nás</a></li><li class="flex items-center gap-2"><span class="material-symbols-outlined text-secondary text-[14px]">chevron_right</span><a class="text-on-surface-variant hover:text-on-surface transition-colors" data-path="kontakt" href="/projekty/navrhy/mbgarage/kontakt/">Kontakt</a></li></ul></div><div class="space-y-4"><h4 class="font-headline-sm text-headline-sm text-on-surface text-base">Priamy kontakt</h4><div class="space-y-3 font-body-sm text-body-sm"><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">call</span><div><span class="block font-label-sm text-label-sm text-on-surface-variant">Telefón (Marek Bratko):</span><a class="font-headline-sm text-label-md text-primary hover:text-secondary transition-colors" href="tel:+421944515583">+421 944 515 583</a></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">location_on</span><div><span class="block font-label-sm text-label-sm text-on-surface-variant">Dielňa a adresa:</span><p class="text-on-surface">Rudlov, okres Vranov nad Topľou<br/><span class="text-on-surface-variant">okres Vranov nad Topľou, SR</span></p></div></div><div class="flex items-start gap-3"><span class="material-symbols-outlined text-secondary text-[20px] shrink-0 mt-0.5">schedule</span><div><span class="block font-label-sm text-label-sm text-on-surface-variant">Návšteva dielne:</span><p class="text-on-surface">Po telefonickej dohode<br/><span class="text-on-surface-variant"></span></p></div></div></div></div><div class="space-y-4"><h4 class="font-headline-sm text-headline-sm text-on-surface text-base">Sociálne siete</h4><p class="font-body-sm text-body-sm text-on-surface-variant">Sociálne profily doplníme po potvrdení majiteľom.</p><div class="flex flex-col gap-2.5"><span class="text-on-surface-variant text-sm">Sociálne siete pripravujeme</span><span class="text-on-surface-variant text-sm">Sociálne siete pripravujeme</span></div><div class="p-3 rounded-lg bg-surface-container/40 border border-surface-container-high text-on-surface-variant font-label-sm text-label-sm flex items-center gap-2"><span class="material-symbols-outlined text-primary text-[18px]">verified</span>Osobná garancia majiteľa</div></div></div><div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4 font-body-sm text-body-sm text-on-surface-variant"><p class="text-center md:text-left">© 2026 MB Garage – Marek Bratko. Všetky práva vyhradené. Vytvorené s dôrazom na kvalitu a remeslo.</p><div class="flex items-center gap-6 font-label-sm text-label-sm"><span class="hover:text-on-surface transition-colors cursor-pointer"></span><span class="hover:text-on-surface transition-colors cursor-pointer"></span></div></div></div></footer><button class="mb-mobile-toggle" type="button" aria-label="Otvoriť navigáciu" aria-controls="mb-mobile-nav" aria-expanded="false">☰</button><nav class="mb-mobile-nav" id="mb-mobile-nav" aria-label="Mobilná navigácia"><a href="/projekty/navrhy/mbgarage/">Domov</a><a href="/projekty/navrhy/mbgarage/autoservis/">Autoservis</a><a href="/projekty/navrhy/mbgarage/brany-a-ploty/">Brány a ploty</a><a href="/projekty/navrhy/mbgarage/realizacie/">Realizácie</a><a href="/projekty/navrhy/mbgarage/o-nas/">O nás</a><a href="/projekty/navrhy/mbgarage/kontakt/">Kontakt</a><a href="tel:+421944515583">Zavolať: +421 944 515 583</a></nav><aside class="mb-preview-note" role="note">Návrh webu MB Garage · Fotografie, projekty a niektoré detaily sú ilustračné. <a href="/projekty/navrhy/mbgarage/kontakt/">Kontakt</a></aside><script>document.addEventListener('DOMContentLoaded',()=>{const b=document.querySelector('.mb-mobile-toggle'),n=document.querySelector('.mb-mobile-nav');b?.addEventListener('click',()=>{let open=b.getAttribute('aria-expanded')!=='true';b.setAttribute('aria-expanded',String(open));b.textContent=open?'×':'☰';n.classList.toggle('open',open)});n?.addEventListener('click',e=>{if(e.target.closest('a')){b.setAttribute('aria-expanded','false');b.textContent='☰';n.classList.remove('open')}});document.addEventListener('keydown',e=>{if(e.key==='Escape'){b?.setAttribute('aria-expanded','false');if(b)b.textContent='☰';n?.classList.remove('open')}});});</script></body></html>
